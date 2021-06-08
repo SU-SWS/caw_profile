@@ -11,7 +11,7 @@ class ListsCest {
    * Allow all paragraph types by using state.
    */
   public function _before() {
-    \Drupal::state()->set('stanford_profile_allow_all_paragraphs', TRUE);
+    \Drupal::state()->set('caw_profile_allow_all_paragraphs', TRUE);
   }
 
   /**

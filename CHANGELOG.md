@@ -186,7 +186,7 @@ _Release Date: 2020-10-05_
 - D8CORE-2498 Tests for local footer link paths (39d0d70)
 - D8CORE-1200 Additional permission check for deleting home page (#298) (6ae14d5)
 - Merge pull request #295 from SU-SWS/field-permission-unset (5f5b8d0)
-- Merge branch '8.x-1.x' of https://github.com/SU-SWS/stanford_profile into D8CORE-2349-wrap-person (eab3a53)
+- Merge branch '8.x-1.x' of https://github.com/SU-SWS/caw_profile into D8CORE-2349-wrap-person (eab3a53)
 - CAP-52: Add more fields to import list from cap. (8f3ffb1)
 - removed module dependency (5bd68b0)
 - Removed unnecessary third party settings (039dca4)
@@ -464,7 +464,7 @@ _Release Date: 2020-02-05_
 - D8CORE-1018: Adjust content and media menu item titles
 - D8CORE-1243: SAML role mapping config page
 - D8CORE-1028: line length fix
-- Removed stanford_profile_install from being installed as it has nothing to do.
+- Removed caw_profile_install from being installed as it has nothing to do.
 
 8.x-1.0-alpha5
 --------------------------------------------------------------------------------

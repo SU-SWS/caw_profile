@@ -1,0 +1,5 @@
+name: 'Cardinal at Work Profile Helper'
+type: module
+description: 'Add on module and functionality for CAW.'
+core_version_requirement: ^8.8 || ^9
+package: 'Cardinal at Work'

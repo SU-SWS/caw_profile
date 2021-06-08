@@ -1,8 +1,8 @@
-# [Stanford Profile](https://github.com/SU-SWS/caw_profile)
+# [Cardinal at Work Profile](https://github.com/SU-SWS/caw_profile)
 ##### 8.x
-[![CircleCI](https://circleci.com/gh/SU-SWS/caw_profile.svg?style=svg)](https://circleci.com/gh/SU-SWS/caw_profile)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/test_coverage)](https://codeclimate.com/github/SU-SWS/caw_profile/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/maintainability)](https://codeclimate.com/github/SU-SWS/caw_profile/maintainability)
+[![CircleCI](https://circleci.com/gh/SU-SWS/caw_profile/tree/8.x-2.x.svg?style=svg))](https://circleci.com/gh/SU-SWS/caw_profile/tree/8.x-2.x)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/80a1a42087d920507793/test_coverage)](https://codeclimate.com/github/SU-SWS/caw_profile/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/80a1a42087d920507793/maintainability)](https://codeclimate.com/github/SU-SWS/caw_profile/maintainability)
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)
 

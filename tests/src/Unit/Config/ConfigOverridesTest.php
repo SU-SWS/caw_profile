@@ -1,24 +1,24 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Unit\Config;
+namespace Drupal\Tests\caw_profile\Unit\Config;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
-use Drupal\stanford_profile\Config\ConfigOverrides;
+use Drupal\caw_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ConfigOverridesTest
  *
- * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\Config\ConfigOverrides
+ * @group caw_profile
+ * @coversDefaultClass \Drupal\caw_profile\Config\ConfigOverrides
  */
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\stanford_profile\Config\ConfigOverrides
+   * @var \Drupal\caw_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 
@@ -82,13 +82,13 @@ class ConfigOverridesTest extends UnitTestCase {
    */
   public function getStateCallback($name) {
     switch ($name) {
-      case 'stanford_profile.403_page':
+      case 'caw_profile.403_page':
         return '/node/403';
 
-      case 'stanford_profile.404_page':
+      case 'caw_profile.404_page':
         return '/node/404';
 
-      case 'stanford_profile.front_page':
+      case 'caw_profile.front_page':
         return '/node/99';
 
     }

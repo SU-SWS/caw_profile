@@ -1,8 +1,8 @@
-name: 'Stanford Profile'
-description: 'Jumpstart Website Profile'
-version: 8.x-2.8
+name: 'Cardinal at Work Profile'
+description: 'CAW Website Profile'
+version: 8.x-2.0
 type: profile
-project: Jumpstart
+project: Cardinal at Work
 core_version_requirement: ^9
 install:
   - 'address:address'

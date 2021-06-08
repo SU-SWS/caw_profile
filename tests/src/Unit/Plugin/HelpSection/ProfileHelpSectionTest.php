@@ -1,18 +1,18 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Unit\Plugin\HelpSection;
+namespace Drupal\Tests\caw_profile\Unit\Plugin\HelpSection;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Utility\LinkGeneratorInterface;
-use Drupal\stanford_profile\Plugin\HelpSection\ProfileConnectSection;
-use Drupal\stanford_profile\Plugin\HelpSection\ProfileHelpSection;
+use Drupal\caw_profile\Plugin\HelpSection\ProfileConnectSection;
+use Drupal\caw_profile\Plugin\HelpSection\ProfileHelpSection;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ProfileConnectSectionTest
  *
- * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\Plugin\HelpSection\ProfileHelpSection
+ * @group caw_profile
+ * @coversDefaultClass \Drupal\caw_profile\Plugin\HelpSection\ProfileHelpSection
  */
 class ProfileHelpSectionTest extends UnitTestCase {
 

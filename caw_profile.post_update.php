@@ -2,7 +2,7 @@
 
 /**
  * @file
- * stanford_profile.install
+ * caw_profile.install
  */
 
 use Drupal\Core\Site\Settings;
@@ -13,18 +13,18 @@ use Drupal\paragraphs\Entity\Paragraph;
 /**
  * Implements hook_removed_post_updates().
  */
-function stanford_profile_removed_post_updates() {
+function caw_profile_removed_post_updates() {
   return [
-    'stanford_profile_post_update_8001' => '8.x-1.13',
-    'stanford_profile_post_update_8003' => '8.x-1.13',
-    'stanford_profile_post_update_8013' => '8.x-1.13',
+    'caw_profile_post_update_8001' => '8.x-1.13',
+    'caw_profile_post_update_8003' => '8.x-1.13',
+    'caw_profile_post_update_8013' => '8.x-1.13',
   ];
 }
 
 /**
  * Send out notification message about events and person importer.
  */
-function stanford_profile_post_update_8014() {
+function caw_profile_post_update_8014() {
   \Drupal::service('module_installer')->install(['stanford_notifications']);
   /** @var \Drupal\stanford_notifications\NotificationServiceInterface $notifications */
   $notifications = \Drupal::service('notification_service');
@@ -55,7 +55,7 @@ function stanford_profile_post_update_8014() {
 /**
  * Create blocks for sites with custom themes that were added to stanford_basic.
  */
-function stanford_profile_post_update_8015() {
+function caw_profile_post_update_8015() {
   $theme_name = \Drupal::config('system.theme')->get('default');
   // Default theme is good. Just end if so.
   if ($theme_name == "stanford_basic") {
@@ -109,7 +109,7 @@ function stanford_profile_post_update_8015() {
 /**
  * Restore missing content on unpublished nodes.
  */
-function _stanford_profile_react_paragraph_fix() {
+function _caw_profile_react_paragraph_fix() {
   $node_storage = \Drupal::entityTypeManager()->getStorage('node');
   $time = strtotime('September 14 2020, 11:59 PM PDT');
 

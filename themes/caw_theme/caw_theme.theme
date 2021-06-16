@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * caw_theme.theme
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'caw_theme_search') {
+    $suggestions[] = 'block__stanford_basic_search';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_book_tree(&$variables) {
+  _caw_theme_traverse_book_items($variables['items']);
+  if (theme_get_setting('nav_dropdown_enabled', 'stanford_basic')) {
+    $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
+  }
+}
+
+/**
+ * Traverse the book tree and make necessary changes for it to be a menu.
+ *
+ * @param array $items
+ */
+function _caw_theme_traverse_book_items(array &$items) {
+  foreach ($items as &$item) {
+    // Convert the `entity:node/123` path to a url object for rendering.
+    $item['url'] = Url::fromUri($item['url']);
+
+    if (!empty($item['below'])) {
+      _caw_theme_traverse_book_items($item['below']);
+    }
+  }
+}

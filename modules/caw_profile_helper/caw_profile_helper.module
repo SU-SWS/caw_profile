@@ -4,3 +4,42 @@
  * @file
  * Contains caw_profile_helper.module.
  */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\block\Entity\Block;
+use Drupal\node\NodeInterface;
+use Drupal\pathauto\PathautoPatternInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function caw_profile_helper_node_view(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  unset($build['book_navigation']);
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
+  if ($context['module'] == 'node' && $context['bundle'] == 'stanford_page') {
+    if (\Drupal::service('book.manager')->loadBookLink($context['data']['node']->id())) {
+      $pattern->setPattern('/[node:book:parents:join-path]/[node:title]');
+    }
+  }
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function caw_profile_helper_block_access(Block $block, $operation, AccountInterface $account) {
+  if($block->id() == 'caw_theme_main_navigation'){
+    if ($node = \Drupal::requestStack()->getCurrentRequest()->get('node')) {
+      if(!empty($node->book['bid']) && $node->book['bid']){
+        return AccessResult::forbidden();
+      }
+    }
+  }
+  return AccessResult::neutral();
+}

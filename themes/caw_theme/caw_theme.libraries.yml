@@ -1,0 +1,4 @@
+base:
+  css:
+    component:
+      dist/css/base.css: {}

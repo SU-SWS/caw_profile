@@ -1,9 +1,6 @@
 ignored_config_entities:
   - 'core.extension:theme'
   - 'system.theme:default'
-  - '~block.block.seven_*'
-  - '~block.block.stanford_basic_*'
-  - 'block.block.*'
   - 'google_tag.container.*'
   - 'user.role.custm_*'
   - 'system.action.user_add_role_action.custm_*'

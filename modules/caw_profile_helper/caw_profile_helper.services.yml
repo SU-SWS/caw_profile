@@ -1,0 +1,4 @@
+services:
+  book.manager:
+    class: Drupal\caw_profile_helper\BookManager
+    arguments: ['@entity_type.manager', '@string_translation', '@config.factory', '@book.outline_storage', '@renderer']

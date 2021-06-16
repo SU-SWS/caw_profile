@@ -1,0 +1,21 @@
+uuid: 8c0040b8-e110-46c7-9bb7-1248bbd8fa67
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+  theme:
+    - caw_theme
+id: caw_theme_book_main_navigation
+theme: caw_theme
+region: menu
+weight: 0
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book navigation'
+  provider: book
+  label_display: '0'
+  block_mode: 'book pages'
+visibility: {  }

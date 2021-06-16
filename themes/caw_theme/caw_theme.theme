@@ -22,7 +22,9 @@ function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $var
 function caw_theme_theme_suggestions_book_tree_alter(array &$suggestions, array $variables, $hook) {
   if (!empty($variables['attributes']['data-main-nav']) && $variables['attributes']['data-main-nav']) {
     $suggestions[] = $hook . '__main_menu';
+    return;
   }
+  $suggestions[] = $hook . '__secondary_nav';
 }
 
 function caw_theme_preprocess_block__book_navigation(&$variables) {

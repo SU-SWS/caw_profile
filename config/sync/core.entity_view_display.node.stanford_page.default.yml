@@ -14,7 +14,7 @@ dependencies:
     - node.type.stanford_page
     - system.menu.main
   module:
-    - book
+    - caw_profile_helper
     - entity_reference_revisions
     - jumpstart_ui
     - layout_builder
@@ -143,18 +143,28 @@ third_party_settings:
             additional: {  }
             weight: -10
             third_party_settings: {  }
-          b5a04aa2-f9fc-446b-8e1a-3d90fc880950:
-            uuid: b5a04aa2-f9fc-446b-8e1a-3d90fc880950
+          21f2f599-071a-4bc0-bcd7-2434b5be05cd:
+            uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
             region: left
             configuration:
-              id: book_navigation
-              label: 'Book navigation'
-              provider: book
+              id: subsite_menu_block
+              label: 'Subsite Menu block'
+              provider: caw_profile_helper
               label_display: '0'
               block_mode: 'book pages'
+              follow: null
+              follow_parent: null
+              level: null
+              depth: null
+              expand_all_items: false
+              parent: null
+              render_parent: null
+              suggestion: null
+              label_type: null
+              label_link: null
               context_mapping: {  }
             additional: {  }
-            weight: 1
+            weight: 2
             third_party_settings: {  }
         third_party_settings: {  }
   layout_library:

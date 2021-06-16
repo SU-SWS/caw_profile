@@ -24,7 +24,8 @@ function caw_profile_helper_node_view(array &$build, NodeInterface $entity, Enti
  */
 function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
   if ($context['module'] == 'node' && $context['bundle'] == 'stanford_page') {
-    if (\Drupal::service('book.manager')->loadBookLink($context['data']['node']->id())) {
+    $book_manager = \Drupal::service('book.manager');
+    if ($book_manager->loadBookLink($context['data']['node']->id())) {
       $pattern->setPattern('/[node:book:parents:join-path]/[node:title]');
     }
   }
@@ -34,9 +35,9 @@ function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pat
  * Implements hook_block_access().
  */
 function caw_profile_helper_block_access(Block $block, $operation, AccountInterface $account) {
-  if($block->id() == 'caw_theme_main_navigation'){
+  if ($block->id() == 'caw_theme_main_navigation') {
     if ($node = \Drupal::requestStack()->getCurrentRequest()->get('node')) {
-      if(!empty($node->book['bid']) && $node->book['bid']){
+      if (!empty($node->book['bid']) && $node->book['bid']) {
         return AccessResult::forbidden();
       }
     }

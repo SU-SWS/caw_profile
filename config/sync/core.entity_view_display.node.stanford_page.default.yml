@@ -14,6 +14,7 @@ dependencies:
     - node.type.stanford_page
     - system.menu.main
   module:
+    - book
     - entity_reference_revisions
     - jumpstart_ui
     - layout_builder
@@ -141,6 +142,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -10
+            third_party_settings: {  }
+          b5a04aa2-f9fc-446b-8e1a-3d90fc880950:
+            uuid: b5a04aa2-f9fc-446b-8e1a-3d90fc880950
+            region: left
+            configuration:
+              id: book_navigation
+              label: 'Book navigation'
+              provider: book
+              label_display: '0'
+              block_mode: 'book pages'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
             third_party_settings: {  }
         third_party_settings: {  }
   layout_library:

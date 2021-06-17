@@ -11,7 +11,20 @@ use Drupal\book\BookManager as Manager;
  */
 class BookManager extends Manager {
 
+  public static function getSubsiteNode(){
+    $current_bid = 0;
+    if ($node = \Drupal::requestStack()->getCurrentRequest()->get('node')) {
+      $current_bid = empty($node->book['bid']) ? 0 : $node->book['bid'];
+    }
+    if ($current_bid) {
+      return \Drupal::entityTypeManager()->getStorage('node')
+        ->load($current_bid);
+    }
+  }
+
   /**
+   * {@inheritDoc}
+   *
    * Override Core's book method to display the entire book tree.
    */
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {

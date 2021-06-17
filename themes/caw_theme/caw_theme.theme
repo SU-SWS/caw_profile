@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\caw_profile_helper\BookManager;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -13,6 +14,9 @@ use Drupal\Core\Url;
 function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'caw_theme_search') {
     $suggestions[] = 'block__stanford_basic_search';
+  }
+  if ($variables['elements']['#plugin_id'] == 'system_branding_block' && BookManager::getSubsiteNode()) {
+    $suggestions[] = 'block__subsite__system_branding_block';
   }
 }
 
@@ -55,6 +59,14 @@ function _caw_theme_traverse_book_items(array &$items) {
 
     if (!empty($item['below'])) {
       _caw_theme_traverse_book_items($item['below']);
+    }
+  }
+}
+
+function caw_theme_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    if ($subsite = BookManager::getSubsiteNode()) {
+      $variables['subsite_link'] = $subsite->toUrl()->toString();
     }
   }
 }

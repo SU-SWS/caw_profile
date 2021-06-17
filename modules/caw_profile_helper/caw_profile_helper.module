@@ -9,6 +9,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\block\Entity\Block;
+use Drupal\caw_profile_helper\BookManager;
 use Drupal\node\NodeInterface;
 use Drupal\pathauto\PathautoPatternInterface;
 
@@ -36,11 +37,8 @@ function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pat
  */
 function caw_profile_helper_block_access(Block $block, $operation, AccountInterface $account) {
   if ($block->id() == 'caw_theme_main_navigation') {
-    if ($node = \Drupal::requestStack()->getCurrentRequest()->get('node')) {
-      if (!empty($node->book['bid']) && $node->book['bid']) {
-        return AccessResult::forbidden();
-      }
-    }
+    $subsite = BookManager::getSubsiteNode();
+    return AccessResult::forbiddenIf(!is_null($subsite));
   }
   return AccessResult::neutral();
 }

@@ -2,3 +2,8 @@ services:
   book.manager:
     class: Drupal\caw_profile_helper\BookManager
     arguments: ['@entity_type.manager', '@string_translation', '@config.factory', '@book.outline_storage', '@renderer']
+  book.config_overrider:
+    class: Drupal\caw_profile_helper\Config\BookConfigOverridder
+    tags:
+      - {name: config.factory.override, priority: 5}
+    arguments: ['@entity_type.manager', '@request_stack']

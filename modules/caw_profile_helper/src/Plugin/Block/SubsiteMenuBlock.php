@@ -3,6 +3,7 @@
 namespace Drupal\caw_profile_helper\Plugin\Block;
 
 use Drupal\book\Plugin\Block\BookNavigationBlock;
+use Drupal\caw_profile_helper\BookManager;
 
 /**
  * Provides an subsite secondary navigation menu.
@@ -20,10 +21,7 @@ class SubsiteMenuBlock extends BookNavigationBlock {
    */
   public function build() {
     $build = parent::build();
-    $current_nid = 0;
-    if ($node = $this->requestStack->getCurrentRequest()->get('node')) {
-      $current_nid = empty($node->book['bid']) ? 0 : $node->id();
-    }
+    $subsite = BookManager::getSubsiteNode();
 
     $items = $build['#items'] ?? [];
     $build['#items'] = [];
@@ -31,7 +29,7 @@ class SubsiteMenuBlock extends BookNavigationBlock {
     foreach ($items as $item) {
       if ($item['in_active_trail'] && !empty($item['below'])) {
         $build['#items'] = $item['below'];
-        $this->setCurrentItem($build['#items'], $current_nid);
+        $this->setCurrentItem($build['#items'], $subsite ? $subsite->id() : NULL);
         return $build;
       }
     }

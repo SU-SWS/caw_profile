@@ -2,10 +2,8 @@
 
 namespace Drupal\Tests\caw_profile_helper\Kernel\Config;
 
-use Drupal\KernelTests\KernelTestBase;
-use Drupal\node\Entity\Node;
-use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeInterface;
+use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -14,39 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @group caw_profile
  * @coversDefaultClass \Drupal\caw_profile_helper\Config\BookConfigOverridder
  */
-class BookConfigOverridderTest extends KernelTestBase {
-
-  protected $subsite;
-
-  /**
-   * {@inheritdoc}
-   */
-  protected static $modules = [
-    'system',
-    'caw_profile_helper',
-    'book',
-    'node',
-    'user',
-  ];
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function setUp(): void {
-    parent::setUp();
-    $this->installEntitySchema('node');
-    $this->installEntitySchema('user');
-    $this->installConfig('system');
-    $this->installSchema('book', 'book');
-    \Drupal::configFactory()
-      ->getEditable('system.site')
-      ->set('name', 'Foo Bar')
-      ->save();
-
-    NodeType::create(['type' => 'page'])->save();
-    $this->subsite = Node::create(['type' => 'page', 'title' => 'Book Name']);
-    $this->subsite->save();
-  }
+class BookConfigOverridderTest extends CawProfileHelperKernelTestBase {
 
   /**
    * Site name should be overridden on book pages.

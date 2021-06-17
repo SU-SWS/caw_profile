@@ -75,7 +75,7 @@ class BookManager extends Manager {
       // Build the tree using the parameters; the resulting tree will be cached.
       $tree[$cid] = $this->bookTreeBuild($bid, $tree_parameters);
     }
-
+//var_dump($tree);
     return $tree[$cid];
   }
 

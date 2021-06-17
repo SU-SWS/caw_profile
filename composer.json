@@ -103,7 +103,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\caw_profile\\": "src/"
+            "Drupal\\caw_profile\\": "src/",
+            "Drupal\\caw_profile_helper\\": "modules/caw_profile_helper/src",
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\caw_profile\\": "tests/src",
+            "Drupal\\Tests\\caw_profile_helper\\": "modules/caw_profile_helper/tests/src"
         }
     },
     "extra": {

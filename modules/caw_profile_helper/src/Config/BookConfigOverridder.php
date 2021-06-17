@@ -46,6 +46,8 @@ class BookConfigOverridder implements ConfigFactoryOverrideInterface {
 
   /**
    * {@inheritDoc}
+   *
+   * @codeCoverageIgnore Nothing to test
    */
   public function createConfigObject($name, $collection = StorageInterface::DEFAULT_COLLECTION) {
     return NULL;

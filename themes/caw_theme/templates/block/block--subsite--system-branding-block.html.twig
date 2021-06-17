@@ -29,6 +29,7 @@
 {% endif %}
 
 {# The variant classes change when there is more than one line to render. #}
+{% set modifier_class = "su-lockup--option-a" %}
 {% if lockup.option is not empty %}
   {% set modifier_class = "su-lockup--option-" ~ lockup.option %}
 {% endif %}
@@ -58,23 +59,18 @@
   {% set line5 = '' %}
 {% endif %}
 
-
 <div {{ attributes }} class="su-lockup {{ modifier_class }}">
-  {% if subsite_link is not empty %}
+  {% if subsite_link is empty and link %}
   <a href="{{ link }}" {{ link_attributes }}>
     {% endif %}
 
     <div class="su-lockup__cell1">
+      {% if subsite_link and link %}
+      <a href="{{ link }}">
+        {% endif %}
       {% if site_logo|render|striptags|trim is not empty and use_logo %}
         <div class="su-lockup__logo-wrapper">
-          {% if subsite_link %}
-            <a href="{{ link }}">
-          {% endif %}
           <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
-
-              {% if subsite_link %}
-            </a>
-          {% endif %}
 
           {% if line4 is not empty %}
             <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
@@ -87,6 +83,9 @@
             <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
           {% endif %}
         </div>
+      {% endif %}
+        {% if subsite_link and link %}
+      </a>
       {% endif %}
     </div>
 
@@ -123,7 +122,7 @@
         {%- endblock -%}
       </div>
     {% endif %}
-    {% if subsite_link is not empty %}
+    {% if subsite_link is empty and link %}
   </a>
   {% endif %}
 </div>

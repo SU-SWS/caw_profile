@@ -1,0 +1,8 @@
+book.admin:
+  version: VERSION
+  js:
+    js/book.admin.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.form

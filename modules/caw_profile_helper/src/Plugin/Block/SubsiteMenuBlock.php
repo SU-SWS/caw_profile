@@ -21,15 +21,14 @@ class SubsiteMenuBlock extends BookNavigationBlock {
    */
   public function build() {
     $build = parent::build();
-    $subsite = BookManager::getSubsiteNode();
+    $subsite_node = BookManager::getSubsiteNode(TRUE);
 
     $items = $build['#items'] ?? [];
     $build['#items'] = [];
-
     foreach ($items as $item) {
       if ($item['in_active_trail'] && !empty($item['below'])) {
         $build['#items'] = $item['below'];
-        $this->setCurrentItem($build['#items'], $subsite ? $subsite->id() : NULL);
+        $this->setCurrentItem($build['#items'], $subsite_node ? $subsite_node->id() : NULL);
         return $build;
       }
     }

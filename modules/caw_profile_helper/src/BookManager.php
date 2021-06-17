@@ -3,6 +3,7 @@
 namespace Drupal\caw_profile_helper;
 
 use Drupal\book\BookManager as Manager;
+use Drupal\node\NodeInterface;
 
 /**
  * Class BookManager.
@@ -11,14 +12,33 @@ use Drupal\book\BookManager as Manager;
  */
 class BookManager extends Manager {
 
-  public static function getSubsiteNode(){
-    $current_bid = 0;
-    if ($node = \Drupal::requestStack()->getCurrentRequest()->get('node')) {
-      $current_bid = empty($node->book['bid']) ? 0 : $node->book['bid'];
+  /**
+   * Get the current page's book node or the current node if in the book.
+   *
+   * @param false $return_current_page
+   *   True to get the current page's node, false to get the top level node.
+   *
+   * @return \Drupal\node\NodeInterface|null
+   *   The node entity or null if not in a book.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public static function getSubsiteNode($return_current_page = FALSE) {
+    $node = &drupal_static(__FUNCTION__);
+    if (!$node) {
+      $node = \Drupal::requestStack()->getCurrentRequest()->get('node');
     }
-    if ($current_bid) {
+
+    // Ensure the request stack gave us the node entity and that the current
+    // node exists in a book.
+    if ($node && $node instanceof NodeInterface && !empty($node->book['bid'])) {
+      if ($return_current_page) {
+        return $node;
+      }
+
       return \Drupal::entityTypeManager()->getStorage('node')
-        ->load($current_bid);
+        ->load($node->book['bid']);
     }
   }
 

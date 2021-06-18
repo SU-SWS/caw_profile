@@ -7,7 +7,6 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\user\Entity\Role;
-use Drupal\user\RoleInterface;
 
 /**
  * Class BookManagerTest.
@@ -30,6 +29,7 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
   protected static $modules = [
     'system',
     'book',
+    'block',
     'node',
     'user',
     'caw_profile_helper',

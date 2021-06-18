@@ -28,7 +28,6 @@ class BookManager extends Manager {
     $node = &drupal_static(__FUNCTION__);
     if (!$node) {
       $node = \Drupal::routeMatch()->getParameter('node');
-//      var_dump(gettype($node));
     }
 
     // Ensure the request stack gave us the node entity and that the current

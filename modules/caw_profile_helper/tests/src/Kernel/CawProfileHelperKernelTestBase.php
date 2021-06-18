@@ -6,6 +6,8 @@ namespace Drupal\Tests\caw_profile_helper\Kernel;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
+use Drupal\user\Entity\Role;
+use Drupal\user\RoleInterface;
 
 /**
  * Class BookManagerTest.
@@ -40,6 +42,7 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
     parent::setUp();
     $this->installEntitySchema('node');
     $this->installEntitySchema('user');
+    $this->installConfig(['user']);
     $this->installConfig('system');
     $this->installSchema('book', 'book');
     \Drupal::configFactory()
@@ -47,8 +50,12 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
       ->set('name', 'Foo Bar')
       ->save();
 
+    $anonymous_role = Role::load(Role::ANONYMOUS_ID);
+    $anonymous_role->grantPermission('access content');
+    $anonymous_role->save();
+
     NodeType::create(['type' => 'page'])->save();
-    $this->subsite = Node::create(['type' => 'page', 'title' => 'Book Name']);
+    $this->subsite = Node::create(['type' => 'page', 'title' => 'Book Name', 'status' => TRUE]);
     $this->subsite->book = [
       'nid' => NULL,
       'bid' => 'new',

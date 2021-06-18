@@ -48,6 +48,7 @@ class BookManager extends Manager {
    * Override Core's book method to display the entire book tree.
    */
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
+
     $tree = &drupal_static(__METHOD__, []);
     $language_interface = \Drupal::languageManager()->getCurrentLanguage();
 
@@ -75,7 +76,7 @@ class BookManager extends Manager {
       // Build the tree using the parameters; the resulting tree will be cached.
       $tree[$cid] = $this->bookTreeBuild($bid, $tree_parameters);
     }
-//var_dump($tree);
+
     return $tree[$cid];
   }
 

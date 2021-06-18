@@ -37,7 +37,7 @@ class SubsiteMenuBlock extends BookNavigationBlock {
    *
    * @param array $items
    *   Keyed array of Book tree items.
-   * @param $current_nid
+   * @param int $current_nid
    *   The current page's Node ID.
    */
   protected function setCurrentItem(array &$items, $current_nid) {

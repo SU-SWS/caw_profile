@@ -15,7 +15,7 @@ class BookManager extends Manager {
   /**
    * Get the current page's book node or the current node if in the book.
    *
-   * @param false $return_current_page
+   * @param bool $return_current_page
    *   True to get the current page's node, false to get the top level node.
    *
    * @return \Drupal\node\NodeInterface|null

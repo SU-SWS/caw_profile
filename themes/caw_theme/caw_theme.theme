@@ -5,7 +5,6 @@
  * caw_theme.theme
  */
 
-use Drupal\Core\Url;
 use Drupal\caw_profile_helper\BookManager;
 
 /**
@@ -41,28 +40,14 @@ function caw_theme_preprocess_block__book_navigation(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function caw_theme_preprocess_book_tree(&$variables) {
-  _caw_theme_traverse_book_items($variables['items']);
   if (theme_get_setting('nav_dropdown_enabled', 'stanford_basic')) {
     $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
   }
 }
 
 /**
- * Traverse the book tree and make necessary changes for it to be a menu.
- *
- * @param array $items
+ * Implements hook_preprocess_HOOK().
  */
-function _caw_theme_traverse_book_items(array &$items) {
-  foreach ($items as &$item) {
-    // Convert the `entity:node/123` path to a url object for rendering.
-    $item['url'] = Url::fromUri($item['url']);
-
-    if (!empty($item['below'])) {
-      _caw_theme_traverse_book_items($item['below']);
-    }
-  }
-}
-
 function caw_theme_preprocess_block(&$variables) {
   if ($variables['plugin_id'] == 'system_branding_block') {
     if ($subsite = BookManager::getSubsiteNode()) {

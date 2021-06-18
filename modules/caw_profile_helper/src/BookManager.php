@@ -27,7 +27,8 @@ class BookManager extends Manager {
   public static function getSubsiteNode($return_current_page = FALSE) {
     $node = &drupal_static(__FUNCTION__);
     if (!$node) {
-      $node = \Drupal::requestStack()->getCurrentRequest()->get('node');
+      $node = \Drupal::routeMatch()->getParameter('node');
+//      var_dump(gettype($node));
     }
 
     // Ensure the request stack gave us the node entity and that the current

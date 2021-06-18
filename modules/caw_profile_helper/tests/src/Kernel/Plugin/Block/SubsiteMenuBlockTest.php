@@ -3,6 +3,7 @@
 namespace Drupal\Tests\caw_profile_helper\Kernel\Plugin\Block;
 
 use Drupal\caw_profile_helper\Plugin\Block\SubsiteMenuBlock;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,8 +52,9 @@ class SubsiteMenuBlockTest extends CawProfileHelperKernelTestBase {
     ];
     $child_page->save();
 
-    $request = new Request(['node' => $child_page]);
-    \Drupal::requestStack()->push($request);
+    $route_match = $this->createMock(RouteMatchInterface::class);
+    $route_match->method('getParameter')->willReturn($child_page);
+    \Drupal::getContainer()->set('current_route_match', $route_match);
   }
 
   /**

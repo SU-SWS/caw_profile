@@ -96,6 +96,7 @@
         }
     ],
     "require": {
+        "drupal/core": "^9.2",
         "su-sws/stanford_profile": "dev-8.x-2.x"
     },
     "config": {

@@ -3,6 +3,7 @@
 namespace Drupal\Tests\caw_profile_helper\Kernel;
 
 use Drupal\caw_profile_helper\BookManager;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AnonymousUserSession;
 use Drupal\node\Entity\Node;
 use Symfony\Component\HttpFoundation\Request;
@@ -76,8 +77,10 @@ class BookManagerTest extends CawProfileHelperKernelTestBase {
     $top_page_key = key($tree_data[$tree_key]['below']);
     $this->assertCount(1, $tree_data[key($tree_data)]['below'][$top_page_key]['below']);
 
-    $request = new Request(['node' => $child_page]);
-    \Drupal::requestStack()->push($request);
+    $route_match = $this->createMock(RouteMatchInterface::class);
+    $route_match->method('getParameter')->willReturn($child_page);
+    \Drupal::getContainer()->set('current_route_match', $route_match);
+
     $current_node = BookManager::getSubsiteNode(TRUE);
     $this->assertEquals($current_node->id(), $child_page->id());
   }

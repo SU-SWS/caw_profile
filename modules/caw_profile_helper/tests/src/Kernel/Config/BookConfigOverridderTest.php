@@ -2,9 +2,9 @@
 
 namespace Drupal\Tests\caw_profile_helper\Kernel\Config;
 
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class BookConfigOverridderTest.
@@ -15,29 +15,36 @@ use Symfony\Component\HttpFoundation\Request;
 class BookConfigOverridderTest extends CawProfileHelperKernelTestBase {
 
   /**
-   * Site name should be overridden on book pages.
+   * Just a basic config test without any node influence.
    */
-  public function testConfigOverrides() {
-    $this->assertEquals('Foo Bar', \Drupal::config('system.site')->get('name'));
-    $request = new Request(['node' => 'foo']);
-    \Drupal::requestStack()->push($request);
-    drupal_flush_all_caches();
-    $this->assertEquals('Foo Bar', \Drupal::config('system.site')->get('name'));
+  public function testSitename(){
+    $this->assertEquals('Foo Bar', \Drupal::config('system.site')
+      ->get('name'));
+  }
 
+  /**
+   * On an node page but not in a subsite, the sitename doesn't change.
+   */
+  public function testSitenameOutsideSubsite(){
     $node = $this->createMock(NodeInterface::class);
-    $node->book = ['bid' => 9];
-    $request = new Request(['node' => $node]);
-    \Drupal::requestStack()->push($request);
-    drupal_flush_all_caches();
-    $this->assertEquals('Foo Bar', \Drupal::config('system.site')->get('name'));
+    $node->book = ['bid' => 99999];
+    $route_match = $this->createMock(RouteMatchInterface::class);
+    $route_match->method('getParameter')->willReturn($node);
+    \Drupal::getContainer()->set('current_route_match',$route_match);
+    $this->assertEquals('Foo Bar', \Drupal::config('system.site')
+      ->get('name'));
+  }
 
+  /**
+   * On an node page in a subsite, the sitename changes.
+   */
+  public function testSiteNameWithinSubsite(){
     $node = $this->createMock(NodeInterface::class);
     $node->book = ['bid' => $this->subsite->id()];
-
-    $request = new Request(['node' => $node]);
-    \Drupal::requestStack()->push($request);
-    drupal_flush_all_caches();
-    $this->assertEquals('Book Name', \Drupal::config('system.site')
+    $route_match = $this->createMock(RouteMatchInterface::class);
+    $route_match->method('getParameter')->willReturn($node);
+    \Drupal::getContainer()->set('current_route_match',$route_match);
+    $this->assertEquals($this->subsite->label(), \Drupal::config('system.site')
       ->get('name'));
   }
 

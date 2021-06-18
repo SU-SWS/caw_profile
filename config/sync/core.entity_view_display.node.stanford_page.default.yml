@@ -14,7 +14,6 @@ dependencies:
     - node.type.stanford_page
     - system.menu.main
   module:
-    - caw_profile_helper
     - entity_reference_revisions
     - jumpstart_ui
     - layout_builder
@@ -33,6 +32,7 @@ third_party_settings:
           extra_classes: ''
           centered: null
           columns: default
+          context_mapping: {  }
         components:
           da20ed40-0f0f-4103-bda1-29d84c24975f:
             uuid: da20ed40-0f0f-4103-bda1-29d84c24975f
@@ -61,6 +61,7 @@ third_party_settings:
           extra_classes: ''
           centered: centered-container
           columns: default
+          context_mapping: {  }
         components:
           af0809fe-fe61-4e78-be4e-4837cd773c26:
             uuid: af0809fe-fe61-4e78-be4e-4837cd773c26
@@ -89,6 +90,7 @@ third_party_settings:
           extra_classes: ''
           centered: centered-container
           orientation: right
+          context_mapping: {  }
         components:
           582a6898-7096-40c2-bb65-99a556ada919:
             uuid: 582a6898-7096-40c2-bb65-99a556ada919

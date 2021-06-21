@@ -6,7 +6,7 @@ use Faker\Factory;
 /**
  * Class SubThemeCest.
  */
-class SubThemeCest {
+abstract class SubThemeCest {
 
   /**
    * Human readable name for the theme.

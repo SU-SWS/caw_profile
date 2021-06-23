@@ -25,10 +25,12 @@ class SubsiteMenuBlock extends BookNavigationBlock {
 
     $items = $build['#items'] ?? [];
     if ($subsite_node && $items) {
+      if (count($items) == 1 && empty($items[key($items)]['below'])) {
+        return [];
+      }
       $this->setCurrentItem($items, $subsite_node->id());
       $build['#items'] = $items;
     }
-
     return $build;
   }
 

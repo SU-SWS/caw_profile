@@ -20,6 +20,7 @@ permissions:
   - 'access user profiles'
   - 'access video_browser entity browser pages'
   - 'add citation entities'
+  - 'add content to books'
   - 'administer main menu items'
   - 'administer news-topics menu items'
   - 'administer nodes'

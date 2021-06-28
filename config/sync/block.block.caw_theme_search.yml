@@ -1,0 +1,23 @@
+uuid: 868b8d4a-bc0a-4ad1-87ab-5f339b06306a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - views
+  theme:
+    - caw_theme
+id: caw_theme_search
+theme: caw_theme
+region: search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search-results'
+settings:
+  id: 'views_exposed_filter_block:search-results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

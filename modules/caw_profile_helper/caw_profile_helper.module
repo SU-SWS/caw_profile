@@ -4,3 +4,66 @@
  * @file
  * Contains caw_profile_helper.module.
  */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\block\Entity\Block;
+use Drupal\caw_profile_helper\BookManager;
+use Drupal\node\NodeInterface;
+use Drupal\pathauto\PathautoPatternInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function caw_profile_helper_node_view(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  unset($build['book_navigation']);
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pattern, array $context) {
+  if ($context['module'] == 'node' && $context['bundle'] == 'stanford_page') {
+    $book_manager = \Drupal::service('book.manager');
+    if ($book_manager->loadBookLink($context['data']['node']->id())) {
+      $pattern->setPattern('/[node:book:parents:join-path]/[node:title]');
+    }
+  }
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function caw_profile_helper_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($block->id() == 'caw_theme_main_navigation') {
+    $subsite = BookManager::getSubsiteNode();
+    return AccessResult::forbiddenIf(!is_null($subsite));
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function caw_profile_helper_library_info_alter(&$libraries, $extension) {
+  if ($extension == 'book' && isset($libraries['drupal.book'])) {
+    unset($libraries['drupal.book']['js']);
+    $libraries['drupal.book']['dependencies'][] = 'caw_profile_helper/book.admin';
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_state->getFormObject()->getEntity()->bundle() != 'stanford_page') {
+    return;
+  }
+  $form['book']['#title'] = t('Subsite Outline');
+  $form['book']['bid']['#title'] = t('Subsite');
+  $form['book']['bid']['#description'] = t('Your page will be a part of the selected subsite');
+  $form['book']['bid']['#options']['new'] = t('- Create a new Subsite -');
+  $form['book']['pid']['#description'] = t('The parent page in the subsite. The maximum depth for a subsite and all child pages is 9. Some pages in the selected subsite may not be available as parents if selecting them would exceed this limit.');
+}

@@ -32,6 +32,7 @@ third_party_settings:
           extra_classes: ''
           centered: null
           columns: default
+          context_mapping: {  }
         components:
           da20ed40-0f0f-4103-bda1-29d84c24975f:
             uuid: da20ed40-0f0f-4103-bda1-29d84c24975f
@@ -60,6 +61,7 @@ third_party_settings:
           extra_classes: ''
           centered: centered-container
           columns: default
+          context_mapping: {  }
         components:
           af0809fe-fe61-4e78-be4e-4837cd773c26:
             uuid: af0809fe-fe61-4e78-be4e-4837cd773c26
@@ -88,6 +90,7 @@ third_party_settings:
           extra_classes: ''
           centered: centered-container
           orientation: right
+          context_mapping: {  }
         components:
           582a6898-7096-40c2-bb65-99a556ada919:
             uuid: 582a6898-7096-40c2-bb65-99a556ada919
@@ -141,6 +144,29 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -10
+            third_party_settings: {  }
+          21f2f599-071a-4bc0-bcd7-2434b5be05cd:
+            uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
+            region: left
+            configuration:
+              id: subsite_menu_block
+              label: 'Subsite Menu block'
+              provider: caw_profile_helper
+              label_display: '0'
+              block_mode: 'book pages'
+              follow: null
+              follow_parent: null
+              level: null
+              depth: null
+              expand_all_items: false
+              parent: null
+              render_parent: null
+              suggestion: null
+              label_type: null
+              label_link: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
             third_party_settings: {  }
         third_party_settings: {  }
   layout_library:

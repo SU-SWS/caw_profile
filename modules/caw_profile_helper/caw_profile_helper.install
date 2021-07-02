@@ -11,10 +11,11 @@ use Drupal\field\Entity\FieldStorageConfig;
  * Convert react paragraphs to layout paragraphs.
  */
 function caw_profile_helper_update_9000() {
-//  \Drupal::entityTypeManager()
-//    ->getStorage('paragraphs_type')
-//    ->create(['id' => 'layout'])
-//    ->save();
+  \Drupal::service('module_installer')->install(['layout_paragraphs']);
+  \Drupal::entityTypeManager()
+    ->getStorage('paragraphs_type')
+    ->create(['id' => 'layout'])
+    ->save();
 
   /** @var \Drupal\field\FieldStorageConfigInterface $field_storage */
   $field_storage = FieldStorageConfig::load('node.su_page_components');

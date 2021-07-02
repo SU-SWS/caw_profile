@@ -1,6 +1,6 @@
 {% set classes = [
-  'layout',
-  'layout--caw-two-column',
+  'caw-layout',
+  'caw-layout--three-column',
 ] %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
@@ -10,6 +10,10 @@
 
     <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
       {{ content.second }}
+    </div>
+
+    <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third') }}>
+      {{ content.third }}
     </div>
   </div>
 {% endif %}

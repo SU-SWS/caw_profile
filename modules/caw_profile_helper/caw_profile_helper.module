@@ -15,6 +15,15 @@ use Drupal\node\NodeInterface;
 use Drupal\pathauto\PathautoPatternInterface;
 
 /**
+ * Implements hook_page_attachments().
+ */
+function caw_profile_helper_page_attachments(array &$attachments) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'caw_profile_helper/admin';
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_view().
  */
 function caw_profile_helper_node_view(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
@@ -66,4 +75,11 @@ function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $for
   $form['book']['bid']['#description'] = t('Your page will be a part of the selected subsite');
   $form['book']['bid']['#options']['new'] = t('- Create a new Subsite -');
   $form['book']['pid']['#description'] = t('The parent page in the subsite. The maximum depth for a subsite and all child pages is 9. Some pages in the selected subsite may not be available as parents if selecting them would exceed this limit.');
+}
+
+/**
+ * Implements hook_ckeditor_plugin_info_alter().
+ */
+function caw_profile_helper_ckeditor_plugin_info_alter(array &$plugins) {
+  unset($plugins['fixed_toolbar']);
 }

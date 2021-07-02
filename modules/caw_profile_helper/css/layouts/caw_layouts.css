@@ -1,0 +1,9 @@
+.caw-layout {
+  display: grid;
+  column-gap: 48px;
+}
+
+.paragraph-item:not(.ptype-stanford-banner, .ptype-layout) {
+  max-width: 980px;
+  margin: 0 auto;
+}

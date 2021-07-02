@@ -2,7 +2,8 @@ caw_one_column:
   label: 'One column'
   category: 'CAW Layouts'
   class: '\Drupal\caw_profile_helper\Layouts\CawLayoutOne'
-  template: templates/layouts/one-column
+  template: templates/layouts/caw-one-column
+  library: caw_profile_helper/layouts.one_column
   default_region: first
   icon_map:
     - [first]
@@ -13,7 +14,8 @@ caw_two_column:
   label: 'Two column'
   category: 'CAW Layouts'
   class: '\Drupal\caw_profile_helper\Layouts\CawLayoutTwo'
-  template: templates/layouts/two-column
+  template: templates/layouts/caw-two-column
+  library: caw_profile_helper/layouts.two_column
   default_region: first
   icon_map:
     - [ first, second ]
@@ -26,7 +28,8 @@ caw_three_column:
   label: 'Three column'
   category: 'CAW Layouts'
   class: '\Drupal\caw_profile_helper\Layouts\CawLayoutThree'
-  template: templates/layouts/three-column
+  template: templates/layouts/caw-three-column
+  library: caw_profile_helper/layouts.three_column
   default_region: second
   icon_map:
     - [ first, second, third ]

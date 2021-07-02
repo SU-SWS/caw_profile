@@ -1,0 +1,27 @@
+.layout-paragraphs-item p {
+  font-size: 18px !important;
+}
+
+.layout-paragraphs-item ul {
+  font-size: 18px !important;
+}
+
+.layout-paragraphs-item h2 {
+  font-size: 30px !important;
+  line-height: 35px !important;
+}
+
+.layout-paragraphs-item h3 {
+  font-size: 26px !important;
+  line-height: 31px !important;
+}
+
+.layout-paragraphs-item h4 {
+  font-size: 23px !important;
+  line-height: 28px !important;
+}
+
+.paragraph:not(.paragraph--type--stanford-banner, .paragraph--type--layout) {
+  max-width: 980px;
+  margin: 0 auto;
+}

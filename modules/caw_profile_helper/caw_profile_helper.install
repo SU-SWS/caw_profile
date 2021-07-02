@@ -6,12 +6,13 @@
  */
 
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\node\NodeInterface;
 
 /**
  * Convert react paragraphs to layout paragraphs.
  */
 function caw_profile_helper_update_9000() {
-  \Drupal::service('module_installer')->install(['layout_paragraphs']);
+
   \Drupal::entityTypeManager()
     ->getStorage('paragraphs_type')
     ->create(['id' => 'layout'])
@@ -25,81 +26,98 @@ function caw_profile_helper_update_9000() {
   $nodes = \Drupal::entityTypeManager()
     ->getStorage('node')
     ->loadByProperties(['type' => 'stanford_page']);
+
+  array_walk($nodes, '_caw_profile_helper_convert_paragraph_rows');
+  // Make sure to do this last, because of a function in the module that breaks
+  // the migration efforts. @see layout_paragraphs_paragraph_presave().
+  \Drupal::service('module_installer')->install(['layout_paragraphs']);
+}
+
+/**
+ * Convert react paragraphs to the new layout paragraphs structure.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   Node entity.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function _caw_profile_helper_convert_paragraph_rows(NodeInterface $node) {
   $row_storage = \Drupal::entityTypeManager()->getStorage('paragraph_row');
   $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
 
-  foreach ($nodes as $node) {
-    $converted_components = [];
+  $converted_components = [];
 
-    $rows = $node->get('su_page_components')->getValue();
-    foreach ($rows as $row) {
-      $row = $row_storage->load($row['target_id']);
-      $old_components = $row->get('su_page_components')->getValue();
-      switch (count($old_components)) {
-        case 1:
-          $old_component = $paragraph_storage->load($old_components[0]['target_id']);
-          /** @var \Drupal\paragraphs\ParagraphInterface $new_component */
-          $new_component = $old_component->createDuplicate();
-          $new_component->setAllBehaviorSettings([]);
-          $new_component->setParentEntity($node, 'su_page_components')->save();
-          $old_component->delete();
-          $converted_components[] = [
-            'target_id' => $new_component->id(),
-            'target_revision_id' => $new_component->getRevisionId(),
-          ];
-          continue 2;
-        case 2:
-          $layout_id = 'caw_two_column';
-          break;
-        case 3:
-          $layout_id = 'caw_three_column';
-          break;
-      }
-
-      /** @var \Drupal\paragraphs\ParagraphInterface $new_row */
-      $new_row = $paragraph_storage->create(['type' => 'layout']);
-      $behavior = [
-        'region' => '',
-        'parent_uuid' => '',
-        'layout' => $layout_id,
-        'config' => [],
-      ];
-      $new_row->setBehaviorSettings('layout_paragraphs', $behavior);
-      $new_row->setParentEntity($node, 'su_page_components');
-      $new_row->save();
-      $converted_components[] = [
-        'target_id' => $new_row->id(),
-        'target_revision_id' => $new_row->getRevisionId(),
-      ];
-
-      $parent_delta = array_key_last($converted_components);
-
-      $region = 1;
-      foreach ($old_components as $component) {
-        /** @var \Drupal\paragraphs\ParagraphInterface $component */
-        $component = $paragraph_storage->load($component['target_id']);
-        $new_component = $component->createDuplicate();
-        $new_component->setParentEntity($node, 'su_page_components');
-        $behavior = [
-          'region' => $region == 1 ? 'first' : ($region == 2 ? 'second' : 'third'),
-          'parent_uuid' => $new_row->uuid(),
-          'layout' => '',
-          'config' => [],
-          'parent_delta' => $parent_delta,
-        ];
-        $new_component->setAllBehaviorSettings(['layout_paragraphs' => $behavior]);
-        $new_component->save();
-
+  $rows = $node->get('su_page_components')->getValue();
+  foreach ($rows as $row) {
+    $row = $row_storage->load($row['target_id']);
+    $old_components = $row->get('su_page_components')->getValue();
+    switch (count($old_components)) {
+      case 1:
+        $old_component = $paragraph_storage->load($old_components[0]['target_id']);
+        /** @var \Drupal\paragraphs\ParagraphInterface $new_component */
+        $new_component = $old_component->createDuplicate();
+        $new_component->setAllBehaviorSettings([]);
+        $new_component->setParentEntity($node, 'su_page_components')->save();
+        $old_component->delete();
         $converted_components[] = [
           'target_id' => $new_component->id(),
           'target_revision_id' => $new_component->getRevisionId(),
         ];
-        $component->delete();
-        $region++;
-      }
-      $row->delete();
+        continue 2;
+      case 2:
+        $layout_id = 'caw_two_column';
+        break;
+      case 3:
+        $layout_id = 'caw_three_column';
+        break;
     }
 
-    $node->set('su_page_components', $converted_components)->save();
+    /** @var \Drupal\paragraphs\ParagraphInterface $new_row */
+    $new_row = $paragraph_storage->create(['type' => 'layout']);
+    $behavior = [
+      'region' => '',
+      'parent_uuid' => '',
+      'layout' => $layout_id,
+      'config' => [],
+    ];
+    $new_row->setBehaviorSettings('layout_paragraphs', $behavior);
+    $new_row->setParentEntity($node, 'su_page_components');
+    $new_row->save();
+    $converted_components[] = [
+      'target_id' => $new_row->id(),
+      'target_revision_id' => $new_row->getRevisionId(),
+    ];
+    $paragraph_storage->resetCache();
+    $parent_delta = array_key_last($converted_components);
+
+    $region = 1;
+    foreach ($old_components as $component) {
+      /** @var \Drupal\paragraphs\ParagraphInterface $component */
+      $component = $paragraph_storage->load($component['target_id']);
+      $new_component = $component->createDuplicate();
+      $new_component->setParentEntity($node, 'su_page_components');
+      $behavior = [
+        'region' => $region == 1 ? 'first' : ($region == 2 ? 'second' : 'third'),
+        'parent_uuid' => $new_row->uuid(),
+        'layout' => '',
+        'config' => [],
+        'parent_delta' => $parent_delta,
+      ];
+      $new_component->setAllBehaviorSettings(['layout_paragraphs' => $behavior]);
+      $new_component->save();
+      $component->delete();
+
+      $converted_components[] = [
+        'target_id' => $new_component->id(),
+        'target_revision_id' => $new_component->getRevisionId(),
+      ];
+
+      $region++;
+    }
+    $row->delete();
   }
+
+  $node->set('su_page_components', $converted_components)->save();
 }

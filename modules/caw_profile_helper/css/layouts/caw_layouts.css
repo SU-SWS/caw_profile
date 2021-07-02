@@ -1,9 +1,20 @@
-.caw-layout {
-  display: grid;
-  column-gap: 48px;
+.caw-layout .layout__region {
+  margin-bottom: 10.8rem;
+}
+
+@media(min-width: 992px) {
+  .caw-layout {
+    display: grid;
+    column-gap: 48px;
+  }
+
+  .caw-layout .layout__region {
+    margin-bottom: 0;
+  }
 }
 
 .paragraph-item:not(.ptype-stanford-banner, .ptype-layout) {
+  width: calc(100% - 100px);
   max-width: 980px;
   margin: 0 auto;
 }

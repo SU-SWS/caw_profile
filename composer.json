@@ -100,6 +100,7 @@
         "drupal/core": "^9.2",
         "drupal/layout_builder_block": "^1.0",
         "drupal/layout_paragraphs": "^1.0",
+        "drupal/stage_file_proxy": "^1.1",
         "su-sws/stanford_profile": "dev-8.x-2.x"
     },
     "config": {

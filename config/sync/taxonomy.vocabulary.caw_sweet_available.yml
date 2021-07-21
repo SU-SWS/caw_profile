@@ -1,0 +1,8 @@
+uuid: b070c97d-db20-4f37-b94c-1c0138d7dfc5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sweetener Availability'
+vid: caw_sweet_available
+description: ''
+weight: 0

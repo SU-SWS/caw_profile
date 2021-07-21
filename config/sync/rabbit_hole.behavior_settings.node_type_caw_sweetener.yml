@@ -1,0 +1,14 @@
+uuid: bc32b709-3435-4162-a947-796e0a7d722a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.caw_sweetener
+id: node_type_caw_sweetener
+entity_type_id: node_type
+entity_id: caw_sweetener
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

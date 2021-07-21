@@ -1,0 +1,143 @@
+uuid: 7c230ea6-5e0d-4204-a969-e6212556d571
+langcode: en
+status: true
+dependencies: {  }
+id: caw_sweeteners
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'CAW Sweeteners'
+source:
+  track_changes: true
+  plugin: url
+  data_fetcher_plugin: http
+  urls:
+    - 'https://cardinalatwork.stanford.edu/api/sweeteners'
+  data_parser_plugin: simple_xml
+  item_selector: /nodes/node
+  fields:
+    -
+      name: uuid
+      label: UUID
+      selector: uuid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: body
+      label: Body
+      selector: body
+    -
+      name: imageAlt
+      label: imageAlt
+      selector: imageAlt
+    -
+      name: image
+      label: image
+      selector: image
+    -
+      name: infoLinkTitle
+      label: infoLinkTitle
+      selector: infoLinkTitle
+    -
+      name: infoLinkUrl
+      label: infoLinkUrl
+      selector: infoLinkUrl
+    -
+      name: availability
+      label: availability
+      selector: availability
+    -
+      name: categories
+      label: categories
+      selector: categories
+  ids:
+    uuid:
+      type: string
+  constants:
+    status: 1
+    type: caw_sweetener
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    image_path: 'public://media/images/sweetener/'
+process:
+  status: constants/status
+  type: constants/type
+  title: title
+  su_sweet_info/uri: infoLinkUrl
+  su_sweet_info/title: infoLinkTitle
+  su_sweet_avail:
+    -
+      plugin: explode
+      source: availability
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      access_check: false
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: caw_sweet_available
+      value_key: name
+      ignore_case: true
+  su_sweet_type:
+    -
+      plugin: explode
+      source: categories
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      access_check: false
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: caw_sweet_type
+      value_key: name
+      ignore_case: true
+  image_file:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: file_import
+      destination: constants/image_path
+      id_only: true
+      reuse: true
+  su_sweet_image/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@image_file'
+    -
+      plugin: entity_generate
+      source: '@image_file'
+      value_key: field_media_image
+      bundle_key: bundle
+      bundle: image
+      entity_type: media
+      ignore_case: true
+      values:
+        name: '@title'
+        field_media_image/target_id: '@image_file'
+        field_media_image/alt: imageAlt
+  paragraph:
+    plugin: migration_lookup
+    migration: caw_sweeteners_components
+    source: uuid
+  su_sweet_components/target_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 0
+  su_sweet_components/target_revision_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - caw_sweeteners_components

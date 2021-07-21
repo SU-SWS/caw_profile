@@ -1,0 +1,44 @@
+uuid: d5330a79-a8a8-4770-9a4b-1e271da0ce48
+langcode: en
+status: true
+dependencies: {  }
+id: caw_sweeteners_components
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'CAW Sweeteners'
+source:
+  track_changes: true
+  plugin: url
+  data_fetcher_plugin: http
+  urls:
+    - 'https://cardinalatwork.stanford.edu/api/sweeteners'
+  data_parser_plugin: simple_xml
+  item_selector: /nodes/node
+  fields:
+    -
+      name: uuid
+      label: UUID
+      selector: uuid
+    -
+      name: body
+      label: Body
+      selector: body
+  ids:
+    uuid:
+      type: string
+  constants:
+    status: 1
+    type: stanford_wysiwyg
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    image_path: 'public://media/images/sweetener/'
+process:
+  su_wysiwyg_text/value: body
+  su_wysiwyg_text/format: constants/stanford_html
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: stanford_wysiwyg
+migration_dependencies: {  }

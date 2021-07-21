@@ -1,0 +1,17 @@
+uuid: d5c378f4-6d70-4801-8104-82a3a93a263d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Sweetener
+type: caw_sweetener
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

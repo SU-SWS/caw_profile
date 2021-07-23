@@ -223,7 +223,7 @@ third_party_settings:
               label: Disclosures
               provider: layout_builder_block
               label_display: '0'
-              text: "<h2 class=\"text-align-center\">Favorites &amp; Feedback</h2>\r\n\r\n<p class=\"text-align-center\">Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email cardinalatworkspirit@stanford.edu.</p>\r\n\r\n<h2 class=\"text-align-center\">Note to Vendors</h2>\r\n\r\n<p class=\"text-align-center\">As a policy, we do not promote discounts by external vendors; please see details in our <a href=\"/cardinal-at-work-faq/external-organizations\">FAQ for External Organizations</a>.</p>\r\n"
+              text: "<div class=\"flex-container su-margin-top-3 su-margin-bottom-3\">\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Favorites &amp; Feedback</h2>\r\n\r\n<p class=\"text-align-center\">Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email cardinalatworkspirit@stanford.edu.</p>\r\n</div>\r\n\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Note to Vendors</h2>\r\n\r\n<p class=\"text-align-center\">As a policy, we do not promote discounts by external vendors; please see details in our <a href=\"/cardinal-at-work-faq/external-organizations\">FAQ for External Organizations</a>.</p>\r\n</div>\r\n</div>\r\n"
               format: stanford_html
               context_mapping: {  }
             additional: {  }

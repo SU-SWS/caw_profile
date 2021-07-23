@@ -461,6 +461,8 @@ display:
         style: false
         row: false
         footer: false
+        header: false
+        empty: false
       style:
         type: html_list
         options:
@@ -475,20 +477,9 @@ display:
         options:
           relationship: none
           view_mode: stanford_card
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: "<h2>Favorites & Feedback</h2>\r\n<p>Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email cardinalatworkspirit@stanford.edu.</p>\r\n\r\n<h2>Note to Vendors</h2>\r\n<p>As a policy, we do not promote discounts by external vendors; please see details in our <a href=\"/cardinal-at-work-faq/external-organizations\">FAQ for External Organizations</a>.</p>"
-            format: stanford_html
-          plugin_id: text
+      footer: {  }
+      header: {  }
+      empty: {  }
     cache_metadata:
       max-age: 0
       contexts:

@@ -1,0 +1,19 @@
+uuid: 4bea0b89-23f8-4566-a056-016c510c89c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_careers_lname
+    - node.type.caw_careers
+id: node.caw_careers.su_careers_lname
+field_name: su_careers_lname
+entity_type: node
+bundle: caw_careers
+label: 'Last Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: f12a28b9-f0f4-49c7-b0df-b23d92dddcaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.caw_careers
+id: node_type_caw_careers
+entity_type_id: node_type
+entity_id: caw_careers
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

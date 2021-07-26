@@ -48,7 +48,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_two_column
@@ -72,7 +71,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
-            third_party_settings: {  }
           691a3b23-5601-4580-9af4-2fef58b42282:
             uuid: 691a3b23-5601-4580-9af4-2fef58b42282
             region: left
@@ -87,7 +85,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

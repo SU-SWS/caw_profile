@@ -1,0 +1,110 @@
+uuid: 2d445dbb-997e-44b7-ac43-d0922770b57b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stanford_card
+    - field.field.node.caw_careers.su_careers_components
+    - field.field.node.caw_careers.su_careers_department
+    - field.field.node.caw_careers.su_careers_favorite_thing
+    - field.field.node.caw_careers.su_careers_fname
+    - field.field.node.caw_careers.su_careers_fun_fact
+    - field.field.node.caw_careers.su_careers_honored
+    - field.field.node.caw_careers.su_careers_image
+    - field.field.node.caw_careers.su_careers_job
+    - field.field.node.caw_careers.su_careers_legacy
+    - field.field.node.caw_careers.su_careers_lname
+    - field.field.node.caw_careers.su_careers_memory
+    - field.field.node.caw_careers.su_careers_proud_project
+    - field.field.node.caw_careers.su_careers_years
+    - node.type.caw_careers
+  module:
+    - ds
+    - field_formatter_class
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - stanford_media
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+      restricted_categories: {  }
+      allowed_layouts: {  }
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+          variant: default
+    regions:
+      card_image:
+        - su_careers_image
+      card_super_headline:
+        - node_title
+      card_body:
+        - su_careers_department
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          'link class': ''
+          wrapper: ''
+          class: ''
+          link: false
+id: node.caw_careers.stanford_card
+targetEntityType: node
+bundle: caw_careers
+mode: stanford_card
+content:
+  su_careers_department:
+    type: entity_reference_label
+    weight: 2
+    region: card_body
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+  su_careers_image:
+    type: media_responsive_image_formatter
+    weight: 0
+    region: card_image
+    label: hidden
+    settings:
+      view_mode: default
+      image_style: card_2_1
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+hidden:
+  links: true
+  search_api_excerpt: true
+  su_careers_components: true
+  su_careers_favorite_thing: true
+  su_careers_fname: true
+  su_careers_fun_fact: true
+  su_careers_honored: true
+  su_careers_job: true
+  su_careers_legacy: true
+  su_careers_lname: true
+  su_careers_memory: true
+  su_careers_proud_project: true
+  su_careers_years: true

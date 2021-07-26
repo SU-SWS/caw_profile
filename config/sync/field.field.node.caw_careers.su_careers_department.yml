@@ -1,0 +1,29 @@
+uuid: c35e911d-6a97-4adc-ab1f-4f4206e399f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_careers_department
+    - node.type.caw_careers
+    - taxonomy.vocabulary.careers_departments
+id: node.caw_careers.su_careers_department
+field_name: su_careers_department
+entity_type: node
+bundle: caw_careers
+label: Department
+description: 'Select the appropriate department. If the department is not listed, contact the website administrator.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      careers_departments: careers_departments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

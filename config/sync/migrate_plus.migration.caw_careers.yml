@@ -1,0 +1,178 @@
+uuid: 03042d23-1088-42b7-8f4f-1395dbfbb74a
+langcode: en
+status: true
+dependencies: {  }
+id: caw_careers
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'CAW Careers'
+source:
+  track_changes: true
+  plugin: url
+  data_fetcher_plugin: http
+  urls:
+    - 'https://cardinalatwork.stanford.edu/api/career-celebrations'
+  data_parser_plugin: simple_xml
+  item_selector: /nodes/node
+  fields:
+    -
+      name: uuid
+      label: UUID
+      selector: uuid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: body
+      label: Body
+      selector: body
+    -
+      name: imageAlt
+      label: imageAlt
+      selector: imageAlt
+    -
+      name: image
+      label: image
+      selector: image
+    -
+      name: firstName
+      label: firstName
+      selector: firstName
+    -
+      name: lastName
+      label: lastName
+      selector: lastName
+    -
+      name: jobTitle
+      label: jobTitle
+      selector: jobTitle
+    -
+      name: department
+      label: department
+      selector: department
+    -
+      name: honored
+      label: honored
+      selector: honored
+    -
+      name: years
+      label: years
+      selector: years
+    -
+      name: newHireGuidance
+      label: newHireGuidance
+      selector: newHireGuidance
+    -
+      name: proudProject
+      label: proudProject
+      selector: proudProject
+    -
+      name: funFact
+      label: funFact
+      selector: funFact
+    -
+      name: favoriteMemory
+      label: favoriteMemory
+      selector: favoriteMemory
+    -
+      name: likeAboutWorking
+      label: likeAboutWorking
+      selector: likeAboutWorking
+  ids:
+    uuid:
+      type: string
+  constants:
+    status: 1
+    type: caw_careers
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    image_path: 'public://media/images/sweetener/'
+process:
+  status: constants/status
+  type: constants/type
+  title: title
+  su_careers_department:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: department
+    -
+      plugin: entity_generate
+      access_check: false
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: careers_departments
+      value_key: name
+      ignore_case: true
+  su_careers_fname: firstName
+  su_careers_lname: lastName
+  su_careers_honored: honored
+  su_careers_job: jobTitle
+  su_careers_legacy: newHireGuidance
+  su_careers_proud_project: proudProject
+  su_careers_fun_fact: funFact
+  su_careers_memory: favoriteMemory
+  su_careers_favorite_thing: likeAboutWorking
+  su_careers_years:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: years
+    -
+      plugin: entity_generate
+      access_check: false
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: careers_years
+      value_key: name
+      ignore_case: true
+  image_file:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: file_import
+      destination: constants/image_path
+      id_only: true
+      reuse: true
+  su_careers_image/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@image_file'
+    -
+      plugin: entity_generate
+      source: '@image_file'
+      value_key: field_media_image
+      bundle_key: bundle
+      bundle: image
+      entity_type: media
+      ignore_case: true
+      values:
+        name: '@title'
+        field_media_image/target_id: '@image_file'
+        field_media_image/alt: imageAlt
+  paragraph:
+    plugin: migration_lookup
+    migration: caw_careers_components
+    source: uuid
+  su_careers_components/target_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 0
+  su_careers_components/target_revision_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - caw_careers_components

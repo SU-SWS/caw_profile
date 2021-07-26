@@ -1,0 +1,20 @@
+uuid: a0bbdf7f-6d26-48f2-a2ec-d8a7167e1037
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.su_careers_honored
+field_name: su_careers_honored
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

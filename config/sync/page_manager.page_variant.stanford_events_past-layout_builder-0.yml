@@ -34,7 +34,6 @@ variant_settings:
             context_mapping: {  }
           additional: {  }
           weight: 0
-          third_party_settings: {  }
       third_party_settings: {  }
     -
       layout_id: jumpstart_ui_one_column
@@ -68,7 +67,6 @@ variant_settings:
             context_mapping: {  }
           additional: {  }
           weight: 0
-          third_party_settings: {  }
       third_party_settings: {  }
 page: stanford_events_past
 weight: 0

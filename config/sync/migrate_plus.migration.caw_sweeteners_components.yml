@@ -36,7 +36,10 @@ source:
     stanford_minimal_html: stanford_minimal_html
     image_path: 'public://media/images/sweetener/'
 process:
-  su_wysiwyg_text/value: body
+  su_wysiwyg_text/value: 
+    plugin: skip_on_empty
+    method: row
+    source: body
   su_wysiwyg_text/format: constants/stanford_html
 destination:
   plugin: 'entity_reference_revisions:paragraph'

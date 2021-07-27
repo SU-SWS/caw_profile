@@ -90,7 +90,7 @@ source:
     type: caw_careers
     stanford_html: stanford_html
     stanford_minimal_html: stanford_minimal_html
-    image_path: 'public://media/images/sweetener/'
+    image_path: 'public://media/images/careers/'
 process:
   status: constants/status
   type: constants/type

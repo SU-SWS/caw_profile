@@ -5,9 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
     - node.type.caw_careers
+    - taxonomy.vocabulary.careers_departments
+    - taxonomy.vocabulary.careers_years
   module:
     - node
     - stanford_fields
+    - taxonomy
     - user
 id: caw_careers
 label: 'Career Celebrations'
@@ -141,6 +144,168 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Name
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+        su_careers_department_target_id:
+          id: su_careers_department_target_id
+          table: node__su_careers_department
+          field: su_careers_department_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_careers_department_target_id_op
+            label: Department
+            description: ''
+            use_operator: false
+            operator: su_careers_department_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: department
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: careers_departments
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        su_careers_years_target_id:
+          id: su_careers_years_target_id
+          table: node__su_careers_years
+          field: su_careers_years_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_careers_years_target_id_op
+            label: 'Years at Stanford'
+            description: ''
+            use_operator: false
+            operator: su_careers_years_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: years
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: careers_years
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         su_careers_lname_value:
           id: su_careers_lname_value
@@ -208,12 +373,17 @@ display:
           plugin_id: numeric
       display_extenders: {  }
       use_ajax: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -232,6 +402,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

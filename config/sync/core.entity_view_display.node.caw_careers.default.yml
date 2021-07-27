@@ -229,7 +229,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_careers:su_careers_years'
-              label: 'Years at Stranford'
+              label: 'Years at Stanford'
               provider: layout_builder
               label_display: '0'
               formatter:

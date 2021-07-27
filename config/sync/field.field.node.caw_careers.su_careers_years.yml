@@ -10,7 +10,7 @@ id: node.caw_careers.su_careers_years
 field_name: su_careers_years
 entity_type: node
 bundle: caw_careers
-label: 'Years at Stranford'
+label: 'Years at Stanford'
 description: ''
 required: false
 translatable: false

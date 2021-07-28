@@ -259,8 +259,8 @@ display:
           default_row_class: 1
           uses_fields: 0
           type: ul
-          wrapper_class: item-list
-          class: flex-container
+          wrapper_class: ''
+          class: 'su-list-unstyled flex-container'
       defaults:
         style: false
         row: false

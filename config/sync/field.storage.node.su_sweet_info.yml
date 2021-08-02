@@ -1,0 +1,19 @@
+uuid: fe9b9db2-4c42-4f88-aa82-d8970c51be6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.su_sweet_info
+field_name: su_sweet_info
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

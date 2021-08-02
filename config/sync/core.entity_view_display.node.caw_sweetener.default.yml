@@ -1,0 +1,253 @@
+uuid: 78d68293-19fa-4454-8e6b-5b6ef1ba35cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.caw_sweetener.su_sweet_avail
+    - field.field.node.caw_sweetener.su_sweet_components
+    - field.field.node.caw_sweetener.su_sweet_image
+    - field.field.node.caw_sweetener.su_sweet_info
+    - field.field.node.caw_sweetener.su_sweet_type
+    - node.type.caw_sweetener
+    - views.view.caw_sweeteners
+  module:
+    - jumpstart_ui
+    - layout_builder
+    - layout_builder_block
+    - layout_builder_restrictions
+    - layout_library
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: jumpstart_ui_two_column
+        layout_settings:
+          extra_classes: ''
+          centered: centered-container
+          orientation: equal
+          label: ''
+          context_mapping: {  }
+        components:
+          b92ff1ad-67a9-4d46-85c3-43de5ae73623:
+            uuid: b92ff1ad-67a9-4d46-85c3-43de5ae73623
+            region: main
+            configuration:
+              id: 'field_block:node:caw_sweetener:su_sweet_image'
+              label: 'Feature Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: media_responsive_image_formatter
+                settings:
+                  view_mode: full
+                  image_style: stanford_hero_block_wide
+                  link: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          71d0aed3-d86b-4cb0-bc47-329fc9516d89:
+            uuid: 71d0aed3-d86b-4cb0-bc47-329fc9516d89
+            region: left
+            configuration:
+              id: 'field_block:node:caw_sweetener:su_sweet_avail'
+              label: 'Available To'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_list_label_class
+                settings:
+                  link: false
+                  list_type: ul
+                  class: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          5c9846fa-42ba-4fe9-96b5-618dd7379dc3:
+            uuid: 5c9846fa-42ba-4fe9-96b5-618dd7379dc3
+            region: left
+            configuration:
+              id: 'field_block:node:caw_sweetener:su_sweet_type'
+              label: Category
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_list_label_class
+                settings:
+                  link: false
+                  list_type: ul
+                  class: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          66ffd9ce-2aa6-44f5-b743-3893c16da757:
+            uuid: 66ffd9ce-2aa6-44f5-b743-3893c16da757
+            region: left
+            configuration:
+              id: 'field_block:node:caw_sweetener:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_title_heading
+                settings:
+                  tag: h1
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          extra_classes: ''
+          centered: centered-container
+          columns: flex-8-of-12
+          label: ''
+          context_mapping: {  }
+        components:
+          2469a9b5-bb47-4a78-b277-22aeb7a30638:
+            uuid: 2469a9b5-bb47-4a78-b277-22aeb7a30638
+            region: main
+            configuration:
+              id: 'field_block:node:caw_sweetener:su_sweet_components'
+              label: Information
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-margin-bottom-3
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          1d1640a0-b40a-4389-aa3c-0a09db17140f:
+            uuid: 1d1640a0-b40a-4389-aa3c-0a09db17140f
+            region: main
+            configuration:
+              id: 'field_block:node:caw_sweetener:su_sweet_info'
+              label: 'More Information'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: link_class
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                  class: su-button
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-margin-bottom-3
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+          label: ''
+          context_mapping: {  }
+        components:
+          c0d8700c-b748-4731-8246-10b989df8296:
+            uuid: c0d8700c-b748-4731-8246-10b989df8296
+            region: main
+            configuration:
+              id: 'views_block:caw_sweeteners-related'
+              label: 'More Sweeteners'
+              provider: views
+              label_display: '0'
+              views_label: 'More Sweeteners'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          9a6449a0-c957-4b64-a6bd-da237d5bd967:
+            uuid: 9a6449a0-c957-4b64-a6bd-da237d5bd967
+            region: main
+            configuration:
+              id: layout_builder_block
+              label: 'More Sweeteners'
+              provider: layout_builder_block
+              label_display: '0'
+              text: "<h2 class=\"text-align-center\">More Sweeteners</h2>\r\n\r\n<p class=\"text-align-center\">It's pretty \"sweet\" to be connected with Stanford! Stanford Sweeteners present the \"sweetest\" perks and rewards of being affiliated with Stanford, from discounts and incentives to facilities access and professional development.</p>\r\n"
+              format: stanford_html
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          ebccf176-8faa-40f8-81bb-94f73cba2a99:
+            uuid: ebccf176-8faa-40f8-81bb-94f73cba2a99
+            region: main
+            configuration:
+              id: layout_builder_block
+              label: Disclosures
+              provider: layout_builder_block
+              label_display: '0'
+              text: "<div class=\"flex-container su-margin-top-3 su-margin-bottom-3\">\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Favorites &amp; Feedback</h2>\r\n\r\n<p class=\"text-align-center\">Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email cardinalatworkspirit@stanford.edu.</p>\r\n</div>\r\n\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Note to Vendors</h2>\r\n\r\n<p class=\"text-align-center\">As a policy, we do not promote discounts by external vendors; please see details in our <a href=\"/cardinal-at-work-faq/external-organizations\">FAQ for External Organizations</a>.</p>\r\n</div>\r\n</div>\r\n"
+              format: stanford_html
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+      restricted_categories: {  }
+      allowed_layouts: {  }
+id: node.caw_sweetener.default
+targetEntityType: node
+bundle: caw_sweetener
+mode: default
+content: {  }
+hidden:
+  links: true
+  search_api_excerpt: true
+  su_sweet_avail: true
+  su_sweet_components: true
+  su_sweet_image: true
+  su_sweet_info: true
+  su_sweet_type: true

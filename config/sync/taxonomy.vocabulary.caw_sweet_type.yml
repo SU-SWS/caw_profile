@@ -1,0 +1,8 @@
+uuid: 94d0256e-0e91-4b42-a700-cc27be3c42ce
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sweetener Type'
+vid: caw_sweet_type
+description: ''
+weight: 0

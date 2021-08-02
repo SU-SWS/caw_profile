@@ -1,0 +1,20 @@
+uuid: 12b7400d-9951-4e4c-ba49-fba1e3135a75
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.su_sweet_avail
+field_name: su_sweet_avail
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

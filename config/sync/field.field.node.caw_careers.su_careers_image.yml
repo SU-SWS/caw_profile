@@ -1,0 +1,29 @@
+uuid: 38ca1a4c-76a8-4fab-bc0e-700cd8d6fbc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_careers_image
+    - media.type.image
+    - node.type.caw_careers
+id: node.caw_careers.su_careers_image
+field_name: su_careers_image
+entity_type: node
+bundle: caw_careers
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

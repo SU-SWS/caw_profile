@@ -1,0 +1,20 @@
+uuid: 4b8879db-0dcb-4a96-9df7-f9dab9ed1a3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.su_careers_years
+field_name: su_careers_years
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: c11be9a8-e7ff-474b-8858-9e34ac418e36
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.caw_careers
+id: node.caw_careers.title
+field_name: title
+entity_type: node
+bundle: caw_careers
+label: 'Display Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

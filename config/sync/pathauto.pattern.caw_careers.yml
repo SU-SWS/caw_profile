@@ -1,0 +1,22 @@
+uuid: af003eb8-db58-4b58-a730-9e8dd1bfdcfd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: caw_careers
+label: 'Career Celebrations'
+type: 'canonical_entities:node'
+pattern: '/career-celebrations/[node:title]'
+selection_criteria:
+  241bb606-36d7-4855-a9bf-05d01d81837a:
+    id: node_type
+    bundles:
+      caw_careers: caw_careers
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 241bb606-36d7-4855-a9bf-05d01d81837a
+selection_logic: and
+weight: -5
+relationships: {  }

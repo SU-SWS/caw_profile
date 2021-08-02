@@ -1,0 +1,29 @@
+uuid: 9be62d13-81a5-4dc3-9905-a9f0fc4ae238
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_careers_years
+    - node.type.caw_careers
+    - taxonomy.vocabulary.careers_years
+id: node.caw_careers.su_careers_years
+field_name: su_careers_years
+entity_type: node
+bundle: caw_careers
+label: 'Years at Stanford'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      careers_years: careers_years
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

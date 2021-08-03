@@ -37,6 +37,7 @@ class CareerCelebrationsCest {
     $I->fillField('su_careers_legacy[0][value]', $faker->paragraph);
     $I->fillField('su_careers_memory[0][value]', $faker->paragraph);
     $I->fillField('su_careers_fun_fact[0][value]', $faker->paragraph);
+    $I->runDrush('cache:rebuild');
 
     $I->click('Save');
     $I->canSee("$first_name $last_name", 'h1');

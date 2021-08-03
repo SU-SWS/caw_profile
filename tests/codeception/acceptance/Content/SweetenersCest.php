@@ -25,6 +25,7 @@ class SweetenersCest {
     $I->fillField('su_sweet_info[0][uri]', 'http://google.com');
     $I->fillField('su_sweet_info[0][title]', 'More info link');
     $I->fillField('Body', 'Lorem Ipsum');
+    $I->runDrush('cache:rebuild');
     $I->click('Save');
     $I->canSee('Test Sweetener', 'h1');
     $I->canSee('Lorem Ipsum');

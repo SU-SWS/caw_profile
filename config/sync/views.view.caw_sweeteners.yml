@@ -8,6 +8,7 @@ dependencies:
     - taxonomy.vocabulary.caw_sweet_available
     - taxonomy.vocabulary.caw_sweet_type
   module:
+    - better_exposed_filters
     - node
     - stanford_fields
     - taxonomy
@@ -270,6 +271,7 @@ display:
         arguments: false
         filters: false
         filter_groups: false
+        exposed_form: false
       row:
         type: 'entity:node'
         options:
@@ -323,6 +325,62 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
+        su_sweet_type_target_id:
+          id: su_sweet_type_target_id
+          table: node__su_sweet_type
+          field: su_sweet_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_sweet_type_target_id_op
+            label: Category
+            description: ''
+            use_operator: 0
+            operator: su_sweet_type_target_id_op
+            operator_limit_selection: 0
+            operator_list: {  }
+            identifier: type
+            required: 0
+            remember: 0
+            multiple: 1
+            remember_roles:
+              authenticated: authenticated
+              administrator: 0
+              anonymous: 0
+              stanford_faculty: 0
+              stanford_staff: 0
+              stanford_student: 0
+              contributor: 0
+              site_manager: 0
+              site_editor: 0
+              site_builder: 0
+              site_developer: 0
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: caw_sweet_type
+          hierarchy: 0
+          error_message: 1
+          plugin_id: taxonomy_index_tid
         su_sweet_avail_target_id:
           id: su_sweet_avail_target_id
           table: node__su_sweet_avail
@@ -332,7 +390,7 @@ display:
           admin_label: ''
           operator: or
           value: {  }
-          group: '1'
+          group: 1
           exposed: true
           expose:
             operator_id: su_sweet_avail_target_id_op
@@ -378,65 +436,55 @@ display:
           hierarchy: 0
           error_message: 1
           plugin_id: taxonomy_index_tid
-        su_sweet_type_target_id:
-          id: su_sweet_type_target_id
-          table: node__su_sweet_type
-          field: su_sweet_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: '1'
-          exposed: true
-          expose:
-            operator_id: su_sweet_type_target_id_op
-            label: Type
-            description: ''
-            use_operator: 0
-            operator: su_sweet_type_target_id_op
-            operator_limit_selection: 0
-            operator_list: {  }
-            identifier: type
-            required: 0
-            remember: 0
-            multiple: 1
-            remember_roles:
-              authenticated: authenticated
-              administrator: 0
-              anonymous: 0
-              stanford_faculty: 0
-              stanford_staff: 0
-              stanford_student: 0
-              contributor: 0
-              site_manager: 0
-              site_editor: 0
-              site_builder: 0
-              site_developer: 0
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: 0
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: 0
-          type: select
-          limit: true
-          vid: caw_sweet_type
-          hierarchy: 0
-          error_message: 1
-          plugin_id: taxonomy_index_tid
       filter_groups:
         operator: AND
         groups:
           1: AND
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: 0
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: stanford_html
+          bef:
+            general:
+              autosubmit: 0
+              autosubmit_exclude_textfield: 0
+              autosubmit_textfield_delay: '500'
+              autosubmit_hide: 0
+              input_required: 0
+              allow_secondary: 0
+              secondary_label: 'Advanced options'
+              secondary_open: 0
+            filter:
+              su_sweet_type_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: 1
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+                select_all_none: 0
+                select_all_none_nested: false
+                display_inline: 1
+              su_sweet_avail_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: 1
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+                select_all_none: 0
+                select_all_none_nested: false
+                display_inline: 1
     cache_metadata:
       max-age: -1
       contexts:

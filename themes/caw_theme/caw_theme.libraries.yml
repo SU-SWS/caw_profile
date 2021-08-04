@@ -2,3 +2,7 @@ base:
   css:
     component:
       dist/css/base.css: {}
+sweeteners.views:
+  css:
+    component:
+      dist/css/sweeteners.views.css: {}

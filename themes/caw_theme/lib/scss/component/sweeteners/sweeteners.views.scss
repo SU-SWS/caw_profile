@@ -3,15 +3,23 @@
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
+.caw-sweetener-well {
+  .view.caw-sweeteners {
+    .caw-sweeteners-header {
+      @include modular-spacing(padding-top, 4);
+      @include modular-spacing(padding-bottom, 3);
+      @include box-shadow();
+      background: #F4F4F4;
+    }
+  }
+}
+
 .view.caw-sweeteners {
-  header,
-  form {
-    background: #F4F4F4;
+  .caw-sweeteners-header {
+    @include modular-spacing(margin-bottom, 5);
   }
 
   header {
-    @include modular-spacing(padding-top, 6);
-
     // TO DO: Replace with Sweetener block class/id
     > div:first-of-type {
       @include modular-spacing(padding-bottom, 5);
@@ -20,27 +28,26 @@
     > div:last-of-type {
       h2 {
         margin: 0;
+        @include modular-spacing(margin-top, 2);
+        @include modular-spacing(padding-bottom, 1);
       }
     }
   }
 
   form,
   header > div:last-of-type {
-    @include modular-spacing(padding-right, 6);
-    @include modular-spacing(padding-left, 6);
-
-    @include grid-media-min('lg') {
-      padding: 0 30rem;
-    }
+    @include flex-column(10);
+    margin: 0 auto;
   }
 
   // Filter styles
   form {
     @include modular-spacing(padding-top, 0);
-    @include modular-spacing(padding-bottom, 5);
     display: block;
 
     .form-composite {
+      @include modular-typography(0);
+
       .form--inline {
         .form-item {
           @include modular-spacing(margin-bottom, 1);
@@ -117,8 +124,6 @@
 
   // Result list styles
   .su-list-unstyled {
-    @include modular-spacing(padding-top, 6);
-    @include modular-spacing(padding-bottom, 6);
     @include centered-column();
 
     row-gap: 5rem;
@@ -132,13 +137,8 @@
       }
 
       @include grid-media-min('lg') {
-        flex: 0 0 calc(33% - 20px);
-        max-width: calc(33% - 20px);
-      }
-
-      @include grid-media-min('xl') {
-        flex: 0 0 calc(25% - 36px);
-        max-width: calc(25% - 36px);
+        flex: 0 0 calc(33% - 36px);
+        max-width: calc(33% - 36px);
       }
     }
 

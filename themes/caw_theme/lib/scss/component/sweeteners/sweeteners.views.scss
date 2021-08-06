@@ -95,8 +95,8 @@
       grid-template-columns: 3fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
-        "category people"
-        "button button";
+      "category people"
+      "button button";
 
       .form-composite {
         grid-area: category;
@@ -137,6 +137,7 @@
   .su-list-unstyled {
     @include modular-spacing(margin-bottom, 6);
     @include centered-column;
+    grid-row-gap: 5rem;
     row-gap: 5rem;
 
     .caw-sweetener {

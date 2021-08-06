@@ -3,20 +3,33 @@
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
+
 .caw-sweetener-well {
   .view.caw-sweeteners {
     .caw-sweeteners-header {
-      @include modular-spacing(padding-top, 4);
-      @include modular-spacing(padding-bottom, 3);
-      @include box-shadow();
-      background: #F4F4F4;
+      @include box-shadow;
+      background: $su-color-foggy-light;
     }
   }
 }
 
+.jumpstart-ui--one-column:not(.caw-sweetener-well) {
+  .caw-sweeteners-header {
+    .centered-container {
+      border-bottom: 1px solid $su-color-black-20;
+    }
+  }
+}
+
+
 .view.caw-sweeteners {
   .caw-sweeteners-header {
     @include modular-spacing(margin-bottom, 5);
+
+    .centered-container {
+      @include modular-spacing(padding-top, 4);
+      @include modular-spacing(padding-bottom, 3);
+    }
   }
 
   header {
@@ -118,29 +131,13 @@
           text-decoration: underline;
         }
       }
-
     }
   }
 
   // Result list styles
   .su-list-unstyled {
-    @include centered-column();
-
+    @include centered-column;
     row-gap: 5rem;
-
-    .flex-3-of-12 {
-      width: 100%;
-
-      @include grid-media-min('sm') {
-        flex: 0 0 calc(50% - 15px);
-        max-width: calc(50% - 15px);
-      }
-
-      @include grid-media-min('lg') {
-        flex: 0 0 calc(33% - 36px);
-        max-width: calc(33% - 36px);
-      }
-    }
 
     .caw-sweetener {
       a {

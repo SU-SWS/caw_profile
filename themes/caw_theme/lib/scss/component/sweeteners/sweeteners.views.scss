@@ -21,7 +21,6 @@
   }
 }
 
-
 .view.caw-sweeteners {
   .caw-sweeteners-header {
     @include modular-spacing(margin-bottom, 5);
@@ -136,6 +135,7 @@
 
   // Result list styles
   .su-list-unstyled {
+    @include modular-spacing(margin-bottom, 6);
     @include centered-column;
     row-gap: 5rem;
 

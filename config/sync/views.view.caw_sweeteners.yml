@@ -256,7 +256,7 @@ display:
       style:
         type: html_list
         options:
-          row_class: flex-3-of-12
+          row_class: flex-4-of-12
           default_row_class: 1
           uses_fields: 0
           type: ul
@@ -272,6 +272,7 @@ display:
         filters: false
         filter_groups: false
         exposed_form: false
+        header: false
       row:
         type: 'entity:node'
         options:
@@ -444,8 +445,8 @@ display:
         type: bef
         options:
           submit_button: Apply
-          reset_button: 0
-          reset_button_label: Reset
+          reset_button: 1
+          reset_button_label: 'Clear Filters'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -485,6 +486,33 @@ display:
                 select_all_none: 0
                 select_all_none_nested: false
                 display_inline: 1
+      header:
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: sweetener-block
+          empty: 0
+          tokenize: 0
+          content:
+            value: "<div class=\"su-card\">\r\n<div class=\"su-card__contents\">\r\n<p>To be replaced with Sweetener Block. It's pretty \"sweet\" to be connected with Stanford! Stanford Sweeteners presents the \"sweetest\" perks and rewards of being affiliated with Stanford, from discounts and incentives to facilities access and professional development.</p>\r\n</div>\r\n</div>"
+            format: stanford_html
+          plugin_id: text
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: search-by
+          empty: 0
+          tokenize: 0
+          content:
+            value: '<h2>Search by</h2>'
+            format: stanford_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

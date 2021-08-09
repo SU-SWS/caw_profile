@@ -7,6 +7,8 @@ dependencies:
     - node.type.caw_sweetener
     - taxonomy.vocabulary.caw_sweet_available
     - taxonomy.vocabulary.caw_sweet_type
+  content:
+    - 'block_content:stanford_component_block:f365713e-ac4b-4001-9494-538e98b632b3'
   module:
     - better_exposed_filters
     - node
@@ -487,19 +489,19 @@ display:
                 select_all_none_nested: false
                 display_inline: 1
       header:
-        area_1:
-          id: area_1
+        entity_block_content:
+          id: entity_block_content
           table: views
-          field: area
+          field: entity_block_content
           relationship: none
           group_type: group
-          admin_label: sweetener-block
+          admin_label: ''
           empty: 0
           tokenize: 0
-          content:
-            value: "<div class=\"su-card\">\r\n<div class=\"su-card__contents\">\r\n<p>To be replaced with Sweetener Block. It's pretty \"sweet\" to be connected with Stanford! Stanford Sweeteners presents the \"sweetest\" perks and rewards of being affiliated with Stanford, from discounts and incentives to facilities access and professional development.</p>\r\n</div>\r\n</div>"
-            format: stanford_html
-          plugin_id: text
+          target: f365713e-ac4b-4001-9494-538e98b632b3
+          view_mode: default
+          bypass_access: 0
+          plugin_id: entity
         area:
           id: area
           table: views

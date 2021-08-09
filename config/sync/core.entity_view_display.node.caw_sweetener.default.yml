@@ -10,7 +10,10 @@ dependencies:
     - field.field.node.caw_sweetener.su_sweet_type
     - node.type.caw_sweetener
     - views.view.caw_sweeteners
+  content:
+    - 'block_content:stanford_component_block:f365713e-ac4b-4001-9494-538e98b632b3'
   module:
+    - block_content
     - jumpstart_ui
     - layout_builder
     - layout_builder_block
@@ -26,7 +29,7 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_two_column
         layout_settings:
-          extra_classes: ''
+          extra_classes: su-margin-bottom-3
           centered: centered-container
           orientation: equal
           label: ''
@@ -45,7 +48,7 @@ third_party_settings:
                 type: media_responsive_image_formatter
                 settings:
                   view_mode: full
-                  image_style: stanford_hero_block_wide
+                  image_style: card_2_1
                   link: false
                 third_party_settings:
                   field_formatter_class:
@@ -69,7 +72,7 @@ third_party_settings:
                 settings:
                   link: false
                   list_type: ul
-                  class: ''
+                  class: su-list-unstyled
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -78,29 +81,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 2
-          5c9846fa-42ba-4fe9-96b5-618dd7379dc3:
-            uuid: 5c9846fa-42ba-4fe9-96b5-618dd7379dc3
-            region: left
-            configuration:
-              id: 'field_block:node:caw_sweetener:su_sweet_type'
-              label: Category
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: above
-                type: entity_reference_list_label_class
-                settings:
-                  link: false
-                  list_type: ul
-                  class: ''
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 1
           66ffd9ce-2aa6-44f5-b743-3893c16da757:
             uuid: 66ffd9ce-2aa6-44f5-b743-3893c16da757
             region: left
@@ -162,7 +142,7 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: hidden
+                label: above
                 type: link_class
                 settings:
                   trim_length: 80
@@ -170,7 +150,7 @@ third_party_settings:
                   url_plain: false
                   rel: '0'
                   target: '0'
-                  class: su-button
+                  class: ''
                 third_party_settings:
                   field_formatter_class:
                     class: su-margin-bottom-3
@@ -185,7 +165,7 @@ third_party_settings:
         layout_settings:
           extra_classes: ''
           centered: centered-container
-          columns: default
+          columns: flex-10-of-12
           label: ''
           context_mapping: {  }
         components:
@@ -201,20 +181,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 1
-          9a6449a0-c957-4b64-a6bd-da237d5bd967:
-            uuid: 9a6449a0-c957-4b64-a6bd-da237d5bd967
-            region: main
-            configuration:
-              id: layout_builder_block
-              label: 'More Sweeteners'
-              provider: layout_builder_block
-              label_display: '0'
-              text: "<h2 class=\"text-align-center\">More Sweeteners</h2>\r\n\r\n<p class=\"text-align-center\">It's pretty \"sweet\" to be connected with Stanford! Stanford Sweeteners present the \"sweetest\" perks and rewards of being affiliated with Stanford, from discounts and incentives to facilities access and professional development.</p>\r\n"
-              format: stanford_html
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+            weight: 2
           ebccf176-8faa-40f8-81bb-94f73cba2a99:
             uuid: ebccf176-8faa-40f8-81bb-94f73cba2a99
             region: main
@@ -227,7 +194,21 @@ third_party_settings:
               format: stanford_html
               context_mapping: {  }
             additional: {  }
-            weight: 2
+            weight: 3
+          7def151f-2a7a-47b3-8463-c55f1e914700:
+            uuid: 7def151f-2a7a-47b3-8463-c55f1e914700
+            region: main
+            configuration:
+              id: 'block_content:f365713e-ac4b-4001-9494-538e98b632b3'
+              label: 'Sweeteners Filter Intro'
+              provider: block_content
+              label_display: '0'
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
   layout_library:
     enable: false

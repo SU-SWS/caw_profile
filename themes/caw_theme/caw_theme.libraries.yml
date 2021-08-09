@@ -6,3 +6,8 @@ sweeteners.views:
   css:
     component:
       dist/css/sweeteners.views.css: {}
+
+sweeteners.node:
+  css:
+    component:
+      dist/css/sweeteners.node.css: {}

@@ -1,3 +1,31 @@
 @charset 'UTF-8';
 
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
 @import 'menu/book';
+
+
+// positive decanter multipliers
+.flex-container {
+  @for $i from 1 through 9 {
+    // Top.
+    &.su-margin-top-#{$i} {
+      @include modular-spacing('margin', $i null null null);
+    }
+
+    // Right.
+    &.su-margin-right-#{$i} {
+      @include modular-spacing('margin', null $i null null);
+    }
+
+    // Bottom.
+    &.su-margin-bottom-#{$i} {
+      @include modular-spacing('margin', null null $i null);
+    }
+
+    // Left
+    &.su-margin-left-#{$i} {
+      @include modular-spacing('margin', null null null $i);
+    }
+  }
+}

@@ -549,7 +549,7 @@ display:
           uses_fields: false
           type: ul
           wrapper_class: item-list
-          class: flex-container
+          class: 'flex-container su-list-unstyled'
       row:
         type: 'entity:node'
         options:

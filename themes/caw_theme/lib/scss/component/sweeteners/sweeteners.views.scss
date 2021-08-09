@@ -3,27 +3,11 @@
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
-
-.caw-sweetener-well {
-  .view.caw-sweeteners {
-    .caw-sweeteners-header {
-      @include box-shadow;
-      background: $su-color-foggy-light;
-    }
-  }
-}
-
-.jumpstart-ui--one-column:not(.caw-sweetener-well) {
-  .caw-sweeteners-header {
-    .centered-container {
-      border-bottom: 1px solid $su-color-black-20;
-    }
-  }
-}
-
 .view.caw-sweeteners {
   .caw-sweeteners-header {
     @include modular-spacing(margin-bottom, 5);
+    @include box-shadow;
+    background: $su-color-foggy-light;
 
     .centered-container {
       @include modular-spacing(padding-top, 4);
@@ -117,17 +101,22 @@
       flex-direction: column;
       align-items: center;
 
-      #edit-reset {
+      #edit-reset,
+      [id*='edit-reset'] {
         padding: 0;
         background: transparent;
         color: $su-color-digital-blue;
         text-decoration: underline;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &:focus-visible {
           background: transparent;
           color: $su-color-black;
           text-decoration: underline;
+          box-shadow: none;
+          outline: -webkit-focus-ring-color auto 1px;
+          outline-offset: 1px;
         }
       }
     }

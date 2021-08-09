@@ -54,7 +54,7 @@ third_party_settings:
         formatter: default
         settings:
           link: true
-          'link class': ''
+          'link class': su-link--action
           wrapper: ''
           class: ''
 id: node.caw_sweetener.stanford_card

@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.view.caw-sweeteners {
+  .caw-sweeteners-header {
+    @include modular-spacing(margin-bottom, 5);
+    @include box-shadow;
+    background: $su-color-foggy-light;
+
+    .centered-container {
+      @include modular-spacing(padding-top, 4);
+      @include modular-spacing(padding-bottom, 3);
+    }
+  }
+
+  header {
+    // TO DO: Replace with Sweetener block class/id
+    > div:first-of-type {
+      @include modular-spacing(padding-bottom, 5);
+    }
+
+    > div:last-of-type {
+      h2 {
+        margin: 0;
+        @include modular-spacing(margin-top, 2);
+        @include modular-spacing(padding-bottom, 1);
+      }
+    }
+  }
+
+  form,
+  header > div:last-of-type {
+    @include flex-column(10);
+    margin: 0 auto;
+  }
+
+  // Filter styles
+  form {
+    @include modular-spacing(padding-top, 0);
+    display: block;
+
+    .form-composite {
+      @include modular-typography(0);
+
+      .form--inline {
+        .form-item {
+          @include modular-spacing(margin-bottom, 1);
+          float: none;
+        }
+      }
+    }
+
+    @include grid-media-min('lg') {
+      display: block;
+
+      .form-composite {
+        .form--inline {
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          grid-template-rows: repeat(5, 1fr);
+          column-gap: 10rem;
+        }
+      }
+
+      .form-composite:last-of-type {
+        .form--inline {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(5, 1fr);
+        }
+      }
+    }
+
+    @include grid-media-min('xl') {
+      display: grid;
+      column-gap: 10rem;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+      "category people"
+      "button button";
+
+      .form-composite {
+        grid-area: category;
+      }
+
+      .form-composite:last-of-type {
+        grid-area: people;
+      }
+
+      .form-actions {
+        grid-area: button;
+      }
+    }
+
+    // Filter buttons
+    .form-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      #edit-reset,
+      [id*='edit-reset'] {
+        padding: 0;
+        background: transparent;
+        color: $su-color-digital-blue;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          background: transparent;
+          color: $su-color-black;
+          text-decoration: underline;
+          box-shadow: none;
+          outline: -webkit-focus-ring-color auto 1px;
+          outline-offset: 1px;
+        }
+      }
+    }
+  }
+
+  // Result list styles
+  .su-list-unstyled {
+    @include modular-spacing(margin-bottom, 6);
+    @include centered-column;
+    grid-row-gap: 5rem;
+    row-gap: 5rem;
+
+    .caw-sweetener {
+      a {
+        @include modular-typography(2);
+        color: $su-color-digital-red;
+
+        &::after {
+          background: $su-color-digital-red;
+        }
+      }
+    }
+  }
+}

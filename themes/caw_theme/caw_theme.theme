@@ -30,6 +30,19 @@ function caw_theme_theme_suggestions_book_tree_alter(array &$suggestions, array 
   $suggestions[] = $hook . '__secondary_nav';
 }
 
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function caw_theme_theme_suggestions_alter(&$suggestions, $variables, $hook) {
+  if ($hook == 'views_view') {
+    $suggestions[] = 'views_view__' . $variables['view']->id();
+    $suggestions[] = 'views_view__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function caw_theme_preprocess_block__book_navigation(&$variables) {
   if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'caw_theme_book_main_navigation') {
     $variables['content']['#attributes']['data-main-nav'] = TRUE;
@@ -53,5 +66,14 @@ function caw_theme_preprocess_block(&$variables) {
     if ($subsite = BookManager::getSubsiteNode()) {
       $variables['subsite_link'] = $subsite->toUrl()->toString();
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_views_view(&$variables) {
+  if ($variables['id'] == 'caw_sweeteners') {
+    $variables['#attached']['library'][] = 'caw_theme/sweeteners.views';
   }
 }

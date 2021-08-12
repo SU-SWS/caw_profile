@@ -30,6 +30,9 @@ settings:
       layout:
         weight: 12
         enabled: false
+      stanford_accordion:
+        weight: 14
+        enabled: false
       stanford_banner:
         weight: 13
         enabled: false

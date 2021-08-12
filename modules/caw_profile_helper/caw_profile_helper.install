@@ -9,7 +9,7 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\NodeInterface;
 
 /**
- * Convert react paragraphs to layout paragraphs.
+ * Adjust field settings for layout paragraphs
  */
 function caw_profile_helper_update_9000() {
 
@@ -21,13 +21,32 @@ function caw_profile_helper_update_9000() {
   /** @var \Drupal\field\FieldStorageConfigInterface $field_storage */
   $field_storage = FieldStorageConfig::load('node.su_page_components');
   $field_storage->setSetting('target_type', 'paragraph')->save();
+}
 
-  /** @var \Drupal\node\NodeInterface $nodes */
-  $nodes = \Drupal::entityTypeManager()
-    ->getStorage('node')
-    ->loadByProperties(['type' => 'stanford_page']);
+/**
+ * Migrate data to convert react paragraphs to layout paragraphs.
+ */
+function caw_profile_helper_update_9001(&$sandbox) {
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');;
+  if (!isset($sandbox['ids'])) {
+    /** @var \Drupal\node\NodeInterface $nodes */
+    $sandbox['ids'] = $node_storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', 'stanford_page')
+      ->execute();
+    $sandbox['total'] = count($sandbox['ids']);
+  }
 
+  $node_ids = array_splice($sandbox['ids'], 0, 10);
+  $nodes = $node_storage->loadMultiple($node_ids);
   array_walk($nodes, '_caw_profile_helper_convert_paragraph_rows');
+  $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : ($sandbox['total'] - count($sandbox['ids'])) / $sandbox['total'];
+}
+
+/**
+ * Enable layout paragraphs.
+ */
+function caw_profile_helper_update_9002() {
   // Make sure to do this last, because of a function in the module that breaks
   // the migration efforts. @see layout_paragraphs_paragraph_presave().
   \Drupal::service('module_installer')->install(['layout_paragraphs']);

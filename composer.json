@@ -123,6 +123,11 @@
             "services": {
                 "drush.services.yml": "^9"
             }
+        },
+        "patches": {
+            "drupal/layout_paragraphs": {
+                "https://www.drupal.org/project/layout_paragraphs/issues/3227998": "https://www.drupal.org/files/issues/2021-08-12/layout_paragraphs-3227998.patch"
+            }
         }
     }
 }

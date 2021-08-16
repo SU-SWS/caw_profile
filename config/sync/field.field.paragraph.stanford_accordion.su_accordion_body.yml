@@ -10,6 +10,7 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
+    stanford_limited_html: stanford_limited_html
     stanford_minimal_html: stanford_minimal_html
     stanford_html: '0'
     plain_text: '0'

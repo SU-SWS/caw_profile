@@ -72,6 +72,7 @@ permissions:
   - 'edit own stanford_publication content'
   - 'edit own video media'
   - 'update media'
+  - 'use text format stanford_limited_html'
   - 'view all revisions'
   - 'view any unpublished caw_careers content'
   - 'view any unpublished caw_sweetener content'

@@ -39,7 +39,9 @@ function caw_profile_helper_update_9001(&$sandbox) {
 
   $node_ids = array_splice($sandbox['ids'], 0, 10);
   $nodes = $node_storage->loadMultiple($node_ids);
-  array_walk($nodes, '_caw_profile_helper_convert_paragraph_rows');
+  foreach ($nodes as $node) {
+    _caw_profile_helper_convert_paragraph_rows($node);
+  }
   $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : ($sandbox['total'] - count($sandbox['ids'])) / $sandbox['total'];
 }
 

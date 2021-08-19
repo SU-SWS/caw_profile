@@ -18,3 +18,7 @@
   max-width: 980px;
   margin: 0 auto;
 }
+
+.ptype-stanford-spacer {
+  min-height: 40px;
+}

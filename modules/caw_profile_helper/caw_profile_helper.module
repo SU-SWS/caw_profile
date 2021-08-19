@@ -9,10 +9,105 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Template\Attribute;
 use Drupal\block\Entity\Block;
 use Drupal\caw_profile_helper\BookManager;
 use Drupal\node\NodeInterface;
 use Drupal\pathauto\PathautoPatternInterface;
+
+/**
+ * Implements hook_contextual_links_alter().
+ */
+function caw_profile_helper_contextual_links_alter(array &$links, $group, array $route_parameters) {
+  if (in_array($group, ['paragraph'])) {
+    $links = [];
+    return;
+  }
+  $entity_types = ['node' => 'Content', 'media' => 'Media Item'];
+  if (isset($entity_types[$group])) {
+    foreach ($links as &$link) {
+      $link['title'] .= " {$entity_types[$group]}";
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function caw_profile_helper_theme($existing, $type, $theme, $path) {
+  // Duplicate the patterns_use_wrapper theme so we can modify it to work with
+  // layout paragraphs.
+  return ['patterns_use_wrapper_admin' => ['variables' => ['use' => NULL]]];
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function caw_profile_helper_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if (strpos($hook, 'pattern_') === 0 && _caw_profile_helper_is_editing_layout_paragraphs()) {
+    // Add the theme suggestion when we're editing layout builder components.
+    $suggestions[] = 'patterns_use_wrapper_admin';
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function caw_profile_helper_preprocess(&$variables, $hook) {
+  // If not editing LP page, we don't want to do anything.
+  if (!_caw_profile_helper_is_editing_layout_paragraphs()) {
+    return;
+  }
+
+  // Remove any contextual links on the media/paragraphs/other entities when
+  // editing the layout paragraphs page.
+  if (!empty($variables['elements']['#entity_type'])) {
+    unset($variables['title_suffix']['contextual_links']);
+  }
+
+  // Manipulate the render array for the entity view so that we can pick it up
+  // in the later hook on the pattern.
+  if ($hook == 'ds_entity_view') {
+    if (!empty($variables['content']['controls'])) {
+      $variables['content']['#context']['layout_paragraphs'] = [
+        'controls' => $variables['content']['controls'],
+        'insert_before' => $variables['content']['insert_before'],
+        'insert_after' => $variables['content']['insert_after'],
+      ];
+    }
+  }
+
+  if (strpos($hook, 'pattern_') === 0) {
+
+    // Grab the layout paragraphs parts from the context that we saved above,
+    // and put them into a variable for use in the patterns_use_wrapper_admin
+    // template. Also move the normal attributes to a wrapper so that the
+    // layout paragraph attributes will be added to the wrapper around the
+    // layout paragraph controls/insert buttons.
+    $variables['layout_paragraphs'] = $variables['context']->getProperty('layout_paragraphs');
+    $variables['wrapper_attributes'] = $variables['attributes'];
+    $variables['attributes'] = new Attribute();
+  }
+}
+
+/**
+ * Is the user currently on editing the layout paragraphs?
+ *
+ * @return bool
+ *   True if the route matches known routes for LP.
+ */
+function _caw_profile_helper_is_editing_layout_paragraphs() {
+  $layout_paragraphs_routes = [
+    'layout_paragraphs.builder.insert',
+    'layout_paragraphs.builder.choose_component',
+    'layout_paragraphs.builder.edit_item',
+    'layout_paragraphs.builder.delete_item',
+    'layout_paragraphs.builder.reorder',
+    'entity.node.edit_form',
+  ];
+  return in_array(\Drupal::routeMatch()
+    ->getRouteName(), $layout_paragraphs_routes);
+}
 
 /**
  * Implements hook_page_attachments().

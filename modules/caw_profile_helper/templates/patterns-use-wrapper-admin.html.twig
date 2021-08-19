@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Simple wrapper used when an external Twig template is specified using the 'use:' property.
+ *
+ * @see \Drupal\ui_patterns\Element\Pattern::processUse().
+ */
+#}
+<div{{ wrapper_attributes }}>
+  {{ layout_paragraphs.controls }}
+  {{ layout_paragraphs.insert_before }}
+  {% include use %}
+  {{ layout_paragraphs.insert_after }}
+</div>

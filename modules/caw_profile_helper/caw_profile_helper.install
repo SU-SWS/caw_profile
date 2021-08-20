@@ -26,8 +26,8 @@ function caw_profile_helper_update_9000() {
 /**
  * Migrate data to convert react paragraphs to layout paragraphs.
  */
-function caw_profile_helper_update_9001(&$sandbox) {
-  $node_storage = \Drupal::entityTypeManager()->getStorage('node');;
+function caw_profile_helper_update_9001(&$sandbox = []) {
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
   if (!isset($sandbox['ids'])) {
     /** @var \Drupal\node\NodeInterface $nodes */
     $sandbox['ids'] = $node_storage->getQuery()
@@ -37,12 +37,16 @@ function caw_profile_helper_update_9001(&$sandbox) {
     $sandbox['total'] = count($sandbox['ids']);
   }
 
-  $node_ids = array_splice($sandbox['ids'], 0, 10);
+  $node_ids = array_splice($sandbox['ids'], 0, 20);
   $nodes = $node_storage->loadMultiple($node_ids);
   foreach ($nodes as $node) {
     _caw_profile_helper_convert_paragraph_rows($node);
   }
   $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : ($sandbox['total'] - count($sandbox['ids'])) / $sandbox['total'];
+  if (count($sandbox['ids']) % 4 === 0) {
+    // Flush the caches every 4th batch to prevent drush memory running out.
+    drupal_flush_all_caches();
+  }
 }
 
 /**
@@ -65,8 +69,9 @@ function caw_profile_helper_update_9002() {
  * @throws \Drupal\Core\Entity\EntityStorageException
  */
 function _caw_profile_helper_convert_paragraph_rows(NodeInterface $node) {
-  $row_storage = \Drupal::entityTypeManager()->getStorage('paragraph_row');
-  $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $etm = \Drupal::entityTypeManager();
+  $row_storage = $etm->getStorage('paragraph_row');
+  $paragraph_storage = $etm->getStorage('paragraph');
 
   $converted_components = [];
 

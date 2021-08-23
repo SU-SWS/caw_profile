@@ -8,6 +8,7 @@ use Drupal\layout_builder\Plugin\Layout\MultiWidthLayoutBase;
  * Class CawLayoutTwo.
  *
  * @package Drupal\caw_profile_helper\Layouts
+ * @codeCoverageIgnore
  */
 class CawLayoutTwo extends MultiWidthLayoutBase {
 

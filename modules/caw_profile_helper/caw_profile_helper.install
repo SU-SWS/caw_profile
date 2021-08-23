@@ -35,6 +35,7 @@ function caw_profile_helper_update_9001(&$sandbox = []) {
       ->condition('type', 'stanford_page')
       ->execute();
     $sandbox['total'] = count($sandbox['ids']);
+    $sandbox['run'] = 0;
   }
 
   $node_ids = array_splice($sandbox['ids'], 0, 20);
@@ -43,10 +44,11 @@ function caw_profile_helper_update_9001(&$sandbox = []) {
     _caw_profile_helper_convert_paragraph_rows($node);
   }
   $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : ($sandbox['total'] - count($sandbox['ids'])) / $sandbox['total'];
-  if (count($sandbox['ids']) % 4 === 0) {
+  if ($sandbox['run'] % 4 === 3) {
     // Flush the caches every 4th batch to prevent drush memory running out.
     drupal_flush_all_caches();
   }
+  $sandbox['run']++;
 }
 
 /**

@@ -10,6 +10,6 @@ use Drupal\Core\Plugin\PluginFormInterface;
  *
  * @package Drupal\caw_profile_helper\Layouts
  */
-class CawLayoutThree extends LayoutDefault implements PluginFormInterface{
+class CawLayoutThree extends LayoutDefault implements PluginFormInterface {
 
 }

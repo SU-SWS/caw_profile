@@ -9,7 +9,7 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\NodeInterface;
 
 /**
- * Adjust field settings for layout paragraphs
+ * Adjust field settings for layout paragraphs.
  */
 function caw_profile_helper_update_9000() {
   \Drupal::entityTypeManager()
@@ -93,9 +93,11 @@ function _caw_profile_helper_convert_paragraph_rows(NodeInterface $node) {
           'target_revision_id' => $new_component->getRevisionId(),
         ];
         continue 2;
+
       case 2:
         $layout_id = 'caw_two_column';
         break;
+
       case 3:
         $layout_id = 'caw_three_column';
         break;

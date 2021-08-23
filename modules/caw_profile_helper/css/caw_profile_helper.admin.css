@@ -25,8 +25,14 @@
   max-width: 980px;
   margin: 0 auto;
 }
+
 .js-lpb-component {
   min-height: 40px;
+  outline: 1px solid blue;
+}
+
+.js-lpb-region {
+  outline: 1px dotted rgba(0, 0, 255, 0.5)
 }
 
 .lpb-component-list__group--content {

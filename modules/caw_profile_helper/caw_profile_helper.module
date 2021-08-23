@@ -98,15 +98,11 @@ function caw_profile_helper_preprocess(&$variables, $hook) {
  */
 function _caw_profile_helper_is_editing_layout_paragraphs() {
   $layout_paragraphs_routes = [
-    'layout_paragraphs.builder.insert',
-    'layout_paragraphs.builder.choose_component',
-    'layout_paragraphs.builder.edit_item',
-    'layout_paragraphs.builder.delete_item',
-    'layout_paragraphs.builder.reorder',
     'entity.node.edit_form',
   ];
-  return in_array(\Drupal::routeMatch()
-    ->getRouteName(), $layout_paragraphs_routes);
+  $route_name = \Drupal::routeMatch()->getRouteName();
+//  \Drupal::logger('testing')->info($route_name);
+  return in_array($route_name, $layout_paragraphs_routes) || strpos($route_name, 'layout_paragraphs.') === 0;
 }
 
 /**

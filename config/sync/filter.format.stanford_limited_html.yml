@@ -9,15 +9,6 @@ name: 'Limited HTML'
 format: stanford_limited_html
 weight: 0
 filters:
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_media_types: {  }
-      allowed_view_modes: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
@@ -40,3 +31,12 @@ filters:
     weight: 0
     settings:
       title: true
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }

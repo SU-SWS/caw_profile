@@ -6,3 +6,8 @@
 .jumpstart-ui--one-column .caw-layout--three-column {
   width: calc(100% - 200px);
 }
+
+.caw-layout--three-column .layout__region .paragraph-item,
+.caw-layout--three-column .layout__region .ds-entity--paragraph {
+  width: 100%;
+}

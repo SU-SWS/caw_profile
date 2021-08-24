@@ -3,7 +3,7 @@
 use Faker\Factory;
 
 /**
- * Test for the lockup settings
+ * Test for the lockup settings.
  */
 class NavigationDropDownsCest {
 

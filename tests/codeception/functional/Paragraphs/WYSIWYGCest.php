@@ -74,6 +74,8 @@ class WYSIWYGCest {
 
   /**
    * Images in the WYSIWYG should display correctly.
+   *
+   * @group testme
    */
   public function testEmbeddedImage(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
@@ -81,18 +83,21 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components img');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
     $I->waitForElementVisible('.dropzone');
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
     $I->waitForText('Alternative text');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.su-page-components img');
   }
@@ -187,20 +192,12 @@ class WYSIWYGCest {
       ],
     ], 'paragraph');
 
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ], 'paragraph_row');
-
     return $I->createEntity([
       'type' => 'stanford_page',
       'title' => $faker->text(30),
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'entity' => $row,
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
       ],
     ]);
   }

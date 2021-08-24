@@ -6,7 +6,6 @@ use Faker\Factory;
  * Class SubsiteCest.
  *
  * @group content
- * @group testme
  */
 class SubsiteCest {
 

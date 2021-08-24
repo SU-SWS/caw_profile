@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
+    - taxonomy.vocabulary.media
   enforced:
     module:
       - media_library
@@ -12,6 +13,7 @@ dependencies:
     - image
     - media
     - media_library
+    - taxonomy
     - user
 id: media_library
 label: 'Media library'
@@ -407,6 +409,61 @@ display:
           entity_type: media
           entity_field: langcode
           plugin_id: language
+        su_media_category_target_id:
+          id: su_media_category_target_id
+          table: media__su_media_category
+          field: su_media_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_media_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: su_media_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: category
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: media
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         created:
           id: created
@@ -479,7 +536,27 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.embeddable.default'
+        - 'config:core.entity_view_display.media.embeddable.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.google_form.default'
+        - 'config:core.entity_view_display.media.google_form.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.stanford_image_large'
+        - 'config:core.entity_view_display.media.image.stanford_image_large_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_stanford_circle'
+        - 'config:core.entity_view_display.media.image.stanford_image_thumb_square'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.default'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.full'
+        - 'config:core.entity_view_display.media.video.media_library'
   page:
     display_plugin: page
     id: page
@@ -776,7 +853,27 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.embeddable.default'
+        - 'config:core.entity_view_display.media.embeddable.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.google_form.default'
+        - 'config:core.entity_view_display.media.google_form.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.stanford_image_large'
+        - 'config:core.entity_view_display.media.image.stanford_image_large_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_stanford_circle'
+        - 'config:core.entity_view_display.media.image.stanford_image_thumb_square'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.default'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.full'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget:
     display_plugin: page
     id: widget
@@ -1023,6 +1120,61 @@ display:
           entity_type: media
           entity_field: default_langcode
           plugin_id: boolean
+        su_media_category_target_id:
+          id: su_media_category_target_id
+          table: media__su_media_category
+          field: su_media_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_media_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: su_media_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: category
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: media
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       filter_groups:
         operator: AND
         groups:
@@ -1095,8 +1247,29 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
+        - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.embeddable.default'
+        - 'config:core.entity_view_display.media.embeddable.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.google_form.default'
+        - 'config:core.entity_view_display.media.google_form.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.stanford_image_large'
+        - 'config:core.entity_view_display.media.image.stanford_image_large_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium'
+        - 'config:core.entity_view_display.media.image.stanford_image_medium_square'
+        - 'config:core.entity_view_display.media.image.stanford_image_stanford_circle'
+        - 'config:core.entity_view_display.media.image.stanford_image_thumb_square'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.default'
+        - 'config:core.entity_view_display.media.stanford_gallery_images.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.full'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget_table:
     display_plugin: page
     id: widget_table
@@ -1311,6 +1484,61 @@ display:
           entity_type: media
           entity_field: default_langcode
           plugin_id: boolean
+        su_media_category_target_id:
+          id: su_media_category_target_id
+          table: media__su_media_category
+          field: su_media_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: su_media_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: su_media_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: category
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: shs
+          limit: true
+          vid: media
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       filter_groups:
         operator: AND
         groups:
@@ -1383,5 +1611,6 @@ display:
         - url
         - url.query_args
         - 'url.query_args:sort_by'
+        - user
         - user.permissions
       tags: {  }

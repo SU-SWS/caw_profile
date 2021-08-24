@@ -1,0 +1,8 @@
+uuid: 10ed16a3-4cc9-4015-98b7-ef934d61f72b
+langcode: en
+status: true
+dependencies: {  }
+name: Media
+vid: media
+description: 'Tags for categorizing media items.'
+weight: 0

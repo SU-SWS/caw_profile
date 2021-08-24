@@ -7,6 +7,7 @@ use Faker\Factory;
  *
  * @group paragraphs
  * @group wysiwyg
+ * @group testme
  */
 class WYSIWYGCest {
 
@@ -74,8 +75,6 @@ class WYSIWYGCest {
 
   /**
    * Images in the WYSIWYG should display correctly.
-   *
-   * @group testme
    */
   public function testEmbeddedImage(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
@@ -95,8 +94,14 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
-
+    $I->click('Source');
+    $text = $I->grabValueFrom('.cke_source');
+    $I->fillField('.cke_source', '<div>' . $text . '</div>');
+    $I->click('Source');
+    $I->resizeWindow(1200, 1200);
+    $I->wait(2);
     $I->click('Save', '.ui-dialog-buttonpane');
+
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.su-page-components img');
@@ -111,8 +116,8 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
     $I->waitForElementVisible('.dropzone');
@@ -133,10 +138,16 @@ class WYSIWYGCest {
 
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->fillField('Name', 'Test Youtube Video');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+
+    $I->click('Source');
+    $text = $I->grabValueFrom('.cke_source');
+    $I->fillField('.cke_source', '<div>' . $text . '</div>');
+    $I->click('Source');
+    $I->resizeWindow(1200, 1200);
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeNumberOfElements('iframe', 1);
   }
@@ -150,8 +161,8 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components a');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
     $I->waitForElementVisible('.dropzone');
@@ -163,10 +174,20 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/test.txt');
     $I->click('Upload and Continue');
     $I->waitForText('The media item has been created but has not yet been saved');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+
+
+    $I->click('Source');
+    $text = $I->grabValueFrom('.cke_source');
+    $I->fillField('.cke_source', '<div>' . $text . '</div>');
+
+    $I->click('Source');
+    $I->resizeWindow(1200, 1200);
+    $I->wait(5);
+    $I->click('Save', '.ui-dialog-buttonpane');
+
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.su-page-components a');
   }

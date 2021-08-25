@@ -140,6 +140,18 @@ process:
       destination: constants/image_path
       id_only: true
       reuse: true
+  image_category:
+    -
+      plugin: default_value
+      default_value: 'Career Celebrations'
+    -
+      plugin: entity_generate
+      access_check: false
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: media
+      value_key: name
+      ignore_case: true
   su_careers_image/target_id:
     -
       plugin: skip_on_empty
@@ -157,6 +169,7 @@ process:
         name: '@title'
         field_media_image/target_id: '@image_file'
         field_media_image/alt: imageAlt
+        su_media_category/target_id: '@image_category'
   paragraph:
     plugin: migration_lookup
     migration: caw_careers_components

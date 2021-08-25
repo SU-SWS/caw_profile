@@ -11,6 +11,8 @@ admin:
   css:
     component:
       css/caw_profile_helper.admin.css: {}
+  js:
+    js/fields.admin.js: {}
 layouts.one_column:
   version: VERSION
   css:

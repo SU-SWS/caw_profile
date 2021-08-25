@@ -93,12 +93,7 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
-    $I->click('Source');
-    $text = $I->grabValueFrom('.cke_source');
-    $I->fillField('.cke_source', '<div>' . $text . '</div>');
-    $I->click('Source');
     $I->resizeWindow(1200, 1200);
-    $I->wait(2);
     $I->click('Save', '.ui-dialog-buttonpane');
 
     $I->waitForElementNotVisible('.ui-dialog');
@@ -140,10 +135,6 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
-    $I->click('Source');
-    $text = $I->grabValueFrom('.cke_source');
-    $I->fillField('.cke_source', '<div>' . $text . '</div>');
-    $I->click('Source');
     $I->resizeWindow(1200, 1200);
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
@@ -153,6 +144,8 @@ class WYSIWYGCest {
 
   /**
    * Documents in the WYSIWYG should display correctly.
+   *
+   * @group testme
    */
   public function testEmbeddedDocument(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
@@ -176,14 +169,7 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
-
-    $I->click('Source');
-    $text = $I->grabValueFrom('.cke_source');
-    $I->fillField('.cke_source', '<div>' . $text . '</div>');
-
-    $I->click('Source');
     $I->resizeWindow(1200, 1200);
-    $I->wait(5);
     $I->click('Save', '.ui-dialog-buttonpane');
 
     $I->waitForElementNotVisible('.ui-dialog');

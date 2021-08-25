@@ -13,7 +13,7 @@
   }
 }
 
-.paragraph-item:not(.ptype-stanford-banner, .ptype-layout),
+.paragraph:not(.ptype-stanford-banner, .ptype-layout, .lpb-layout),
 .ds-entity--paragraph:not(.ds-entity--stanford-banner) {
   width: calc(100% - 100px);
   max-width: 980px;

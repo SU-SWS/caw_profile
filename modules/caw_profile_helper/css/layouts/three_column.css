@@ -7,7 +7,7 @@
   width: calc(100% - 200px);
 }
 
-.caw-layout--three-column .layout__region .paragraph-item,
+.caw-layout--three-column .layout__region .paragraph,
 .caw-layout--three-column .layout__region .ds-entity--paragraph {
   width: 100%;
 }

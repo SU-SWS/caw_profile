@@ -112,6 +112,13 @@ function caw_profile_helper_page_attachments(array &$attachments) {
 }
 
 /**
+ * Implements hook_field_widget_form_alter().
+ */
+function caw_profile_helper_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $element['#attached']['library'][] = 'caw_profile_helper/admin';
+}
+
+/**
  * Implements hook_ENTITY_TYPE_view().
  */
 function caw_profile_helper_node_view(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display, $view_mode) {

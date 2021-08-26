@@ -1,5 +1,4 @@
 (($, Drupal ) => {
-
   Drupal.behaviors.cawProfileHelperFields = {
     attach: function attach(context, settings) {
       if (typeof CKEDITOR !== 'undefined') {

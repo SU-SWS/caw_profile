@@ -13,6 +13,13 @@ targetEntityType: paragraph
 bundle: stanford_accordion
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_accordion_body:
     weight: 1
     settings:
@@ -31,4 +38,3 @@ content:
     region: content
 hidden:
   created: true
-  status: true

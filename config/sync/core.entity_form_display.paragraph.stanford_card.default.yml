@@ -19,6 +19,13 @@ targetEntityType: paragraph
 bundle: stanford_card
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_card_body:
     weight: 3
     settings:
@@ -66,4 +73,3 @@ content:
     region: content
 hidden:
   created: true
-  status: true

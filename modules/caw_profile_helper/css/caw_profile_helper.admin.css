@@ -35,6 +35,13 @@
   outline: 1px dotted rgba(0, 0, 255, 0.5)
 }
 
+.caw-one-column .js-lpb-component:not([data-type="stanford_banner"]),
+.caw-layout--one-column .js-lpb-component:not([data-type="stanford_banner"]) {
+  width: calc(100% - 100px);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 .lpb-component-list__group--content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

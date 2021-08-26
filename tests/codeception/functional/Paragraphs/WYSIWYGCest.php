@@ -93,6 +93,7 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
+    $I->wait(2);
     $I->resizeWindow(1200, 1200);
     $I->click('Save', '.ui-dialog-buttonpane');
 
@@ -135,6 +136,7 @@ class WYSIWYGCest {
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 
+    $I->wait(2);
     $I->resizeWindow(1200, 1200);
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');

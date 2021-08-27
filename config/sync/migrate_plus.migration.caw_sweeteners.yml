@@ -98,7 +98,7 @@ process:
   image_category:
     -
       plugin: default_value
-      default_value: 'Sweeteners'
+      default_value: Sweeteners
     -
       plugin: entity_generate
       access_check: false

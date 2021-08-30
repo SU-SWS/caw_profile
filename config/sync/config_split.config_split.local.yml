@@ -10,6 +10,7 @@ module:
   dblog: 0
   devel: 0
   devel_php: 0
+  stage_file_proxy: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }

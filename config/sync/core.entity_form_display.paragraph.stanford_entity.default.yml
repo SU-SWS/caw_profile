@@ -16,6 +16,13 @@ targetEntityType: paragraph
 bundle: stanford_entity
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_entity_button:
     weight: 3
     settings:
@@ -52,4 +59,3 @@ content:
     region: content
 hidden:
   created: true
-  status: true

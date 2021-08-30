@@ -25,18 +25,16 @@ class EntityReferenceCest {
 
     $node = $this->getNodeWithReferenceParagraph($I);
 
-    $I->amOnPage($node->toUrl()->toString());
-    $I->click('Edit', '.local-tasks-block');
-
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
 
     $I->waitForText('Content Item(s)');
-    $I->fillField('#su_entity_item', 'Foo Bar News');
-    $I->click('.MuiAutocomplete-option');
+    $I->fillField('su_entity_item[0][target_id]', 'Foo Bar News');
 
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSee('has been updated');
     $I->canSee('Foo Bar News', '.su-card.su-news-vertical-teaser');
@@ -58,17 +56,16 @@ class EntityReferenceCest {
     $I->canSee($publication_title, 'h1');
 
     $node = $this->getNodeWithReferenceParagraph($I);
-    $I->amOnPage("/node/{$node->id()}/edit");
+    $I->amOnPage($node->toUrl('edit-form')->toString());
 
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
 
     $I->waitForText('Content Item(s)');
-    $I->fillField('#su_entity_item', $publication_title);
-    $I->click('.MuiAutocomplete-option');
+    $I->fillField('su_entity_item[0][target_id]', $publication_title);
 
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSee('has been updated');
     $I->canSee($publication_title, 'h2');
@@ -95,20 +92,13 @@ class EntityReferenceCest {
       ],
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ], 'paragraph_row');
 
     return $I->createEntity([
       'type' => 'stanford_page',
       'title' => $faker->text(30),
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'entity' => $row,
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
       ],
     ]);
   }

@@ -16,6 +16,7 @@ module:
   purge_queuer_coretags: 0
   purge_tokens: 0
   update: 0
+  stage_file_proxy: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }

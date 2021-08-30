@@ -99,6 +99,8 @@
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/core": "^9.2",
         "drupal/layout_builder_block": "^1.0",
+        "drupal/layout_paragraphs": "dev-2.0.x",
+        "drupal/stage_file_proxy": "^1.1",
         "su-sws/stanford_profile": "dev-8.x-2.x"
     },
     "config": {
@@ -120,6 +122,11 @@
         "drush": {
             "services": {
                 "drush.services.yml": "^9"
+            }
+        },
+        "patches": {
+            "drupal/layout_paragraphs": {
+                "https://www.drupal.org/project/layout_paragraphs/issues/3229555": "https://www.drupal.org/files/issues/2021-08-24/layout_paragraphs-behaviors-3229555.patch"
             }
         }
     }

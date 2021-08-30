@@ -6,3 +6,27 @@ book.admin:
     - core/jquery
     - core/drupal
     - core/drupal.form
+admin:
+  version: VERSION
+  css:
+    component:
+      css/caw_profile_helper.admin.css: {}
+  js:
+    js/fields.admin.js: {}
+layouts.one_column:
+  version: VERSION
+  css:
+    layout:
+      css/layouts/caw_layouts.css: {}
+layouts.two_column:
+  version: VERSION
+  css:
+    layout:
+      css/layouts/caw_layouts.css: {}
+      css/layouts/two_column.css: {}
+layouts.three_column:
+  version: VERSION
+  css:
+    layout:
+      css/layouts/caw_layouts.css: {}
+      css/layouts/three_column.css: {}

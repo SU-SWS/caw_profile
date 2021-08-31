@@ -1,24 +1,27 @@
-.caw-layout p {
-  font-size: 18px !important;
-}
+.caw-layout {
+  p {
+    font-size: 18px !important;
+  }
 
-.caw-layout ul {
-  font-size: 18px !important;
-}
+  ul {
+    font-size: 18px !important;
+  }
 
-.caw-layout h2 {
-  font-size: 30px !important;
-  line-height: 35px !important;
-}
+  h2 {
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
 
-.caw-layout h3 {
-  font-size: 26px !important;
-  line-height: 31px !important;
-}
+  h3 {
+    font-size: 26px !important;
+    line-height: 31px !important;
+  }
 
-.caw-layout h4 {
-  font-size: 23px !important;
-  line-height: 28px !important;
+  h4 {
+    font-size: 23px !important;
+    line-height: 28px !important;
+  }
+
 }
 
 .paragraph:not(.paragraph--type--stanford-banner, .paragraph--type--layout) {
@@ -35,11 +38,13 @@
   outline: 1px dotted rgba(0, 0, 255, 0.5)
 }
 
-.caw-one-column .js-lpb-component:not([data-type="stanford_banner"]),
-.caw-layout--one-column .js-lpb-component:not([data-type="stanford_banner"]) {
-  width: calc(100% - 100px);
-  max-width: 980px;
-  margin: 0 auto;
+.caw-one-column,
+.caw-layout--one-column {
+  .js-lpb-component:not([data-type="stanford_banner"]) {
+    width: calc(100% - 100px);
+    max-width: 980px;
+    margin: 0 auto;
+  }
 }
 
 .lpb-component-list__group--content {

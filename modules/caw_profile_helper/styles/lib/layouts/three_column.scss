@@ -1,0 +1,15 @@
+.caw-layout--three-column {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+
+  .jumpstart-ui--one-column & {
+    width: calc(100% - 200px);
+  }
+
+  .layout__region {
+    .paragraph,
+    .ds-entity--paragraph {
+      width: 100%;
+    }
+  }
+}

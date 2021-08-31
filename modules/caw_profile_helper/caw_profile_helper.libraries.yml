@@ -10,23 +10,29 @@ admin:
   version: VERSION
   css:
     component:
-      css/caw_profile_helper.admin.css: {}
+      styles/dist/css/caw_profile_helper.admin.css: {}
   js:
     js/fields.admin.js: {}
 layouts.one_column:
   version: VERSION
   css:
     layout:
-      css/layouts/caw_layouts.css: {}
+      styles/dist/css/layouts/caw_layouts.css: {}
 layouts.two_column:
   version: VERSION
   css:
     layout:
-      css/layouts/caw_layouts.css: {}
-      css/layouts/two_column.css: {}
+      styles/dist/css/layouts/caw_layouts.css: {}
+      styles/dist/css/layouts/two_column.css: {}
 layouts.three_column:
   version: VERSION
   css:
     layout:
-      css/layouts/caw_layouts.css: {}
-      css/layouts/three_column.css: {}
+      styles/dist/css/layouts/caw_layouts.css: {}
+      styles/dist/css/layouts/three_column.css: {}
+
+patterns.card:
+  version: VERSION
+  css:
+    component:
+      styles/dist/css/components/patterns.card.css: {}

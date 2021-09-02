@@ -15,6 +15,13 @@ targetEntityType: paragraph
 bundle: stanford_faq
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_faq_description:
     weight: 1
     settings:
@@ -52,4 +59,3 @@ content:
     region: content
 hidden:
   created: true
-  status: true

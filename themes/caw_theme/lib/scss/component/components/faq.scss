@@ -6,19 +6,19 @@
 .ptype-stanford-faq {
 
   .expand-collapse-button {
-    float:right;
+    float: right;
     flex: 1;
     white-space: nowrap;
     margin-left: 20px;
 
-    &:after {
+    &::after {
       margin-left: 5px;
       content: '+';
       text-decoration: none;
     }
 
     &.collapse-all {
-      &:after {
+      &::after {
         content: '-';
       }
     }
@@ -38,7 +38,7 @@
 
     &:not(:last-child) {
       details {
-        border-bottom: none;
+        border-bottom: 0;
       }
     }
   }

@@ -1,1 +1,1 @@
-.caw-layout--three-column{grid-template-columns:1fr 1fr 1fr;margin:0 auto}.jumpstart-ui--one-column .caw-layout--three-column{width:calc(100% - 200px)}.caw-layout--three-column .layout__region .ds-entity--paragraph,.caw-layout--three-column .layout__region .paragraph{width:100%}
+.caw-layout--three-column{grid-template-columns:repeat(3,minmax(0,1fr));margin:0 auto}.jumpstart-ui--one-column .caw-layout--three-column{width:calc(100% - 200px)}.caw-layout--three-column .layout__region .ds-entity--paragraph,.caw-layout--three-column .layout__region .paragraph{width:100%}

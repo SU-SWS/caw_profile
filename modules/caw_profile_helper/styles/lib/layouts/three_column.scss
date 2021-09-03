@@ -1,5 +1,5 @@
 .caw-layout--three-column {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 auto;
 
   .jumpstart-ui--one-column & {

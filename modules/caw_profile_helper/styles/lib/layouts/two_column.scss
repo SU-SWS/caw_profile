@@ -1,5 +1,5 @@
 .caw-layout--two-column {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0 auto;
 
   .jumpstart-ui--one-column & {
@@ -15,10 +15,10 @@
 }
 
 .caw-two-column--33-67 {
-  grid-template-columns: 33% 67%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 }
 
 .caw-two-column--67-33 {
-  grid-template-columns: 67% 33%;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 }
 

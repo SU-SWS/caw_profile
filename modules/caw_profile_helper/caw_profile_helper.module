@@ -8,11 +8,13 @@
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\block\Entity\Block;
 use Drupal\caw_profile_helper\BookManager;
 use Drupal\node\NodeInterface;
+use Drupal\paragraphs\ParagraphInterface;
 use Drupal\pathauto\PathautoPatternInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -121,6 +123,20 @@ function caw_profile_helper_field_widget_form_alter(&$element, FormStateInterfac
 }
 
 /**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function caw_profile_helper_field_widget_fontawesome_icon_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $children = Element::children($element['settings']);
+  $children = array_filter($children, function ($child) {
+    return !in_array($child, ['style', 'size']);
+  });
+  // Hide all of the advanced options except the style and size options.
+  foreach ($children as $child) {
+    $element['settings'][$child]['#access'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_view().
  */
 function caw_profile_helper_node_view(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
@@ -157,6 +173,42 @@ function caw_profile_helper_library_info_alter(&$libraries, $extension) {
   if ($extension == 'book' && isset($libraries['drupal.book'])) {
     unset($libraries['drupal.book']['js']);
     $libraries['drupal.book']['dependencies'][] = 'caw_profile_helper/book.admin';
+  }
+  if ($extension == 'ui_patterns' && isset($libraries['card.card'])) {
+    $libraries['card.card']['dependencies'][] = 'caw_profile_helper/patterns.card';
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function caw_profile_helper_paragraph_view_alter(array &$build, ParagraphInterface $paragraph, EntityViewDisplayInterface $display) {
+  switch ($paragraph->bundle()) {
+    case 'stanford_card':
+      // If an uploaded media exist, do not display the icon.
+      if ($paragraph->get('su_card_media')->count()) {
+        unset($build['su_card_icon']);
+      }
+      // If no media exists but there is an icon, wrap the display in the
+      // modifier class.
+      elseif ($paragraph->get('su_card_icon')->count()) {
+        $build['#attributes']['class'][] = 'su-card--icon';
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_profile_helper_preprocess_ds_entity_view(&$variables) {
+  if (!empty($variables['attributes']['class'])) {
+    $position = array_search('su-card--icon', $variables['attributes']['class']);
+    // Remove the `su-card--icon` class because it's already passed down to the
+    // pattern.
+    if ($position !== FALSE) {
+      unset($variables['attributes']['class'][$position]);
+    }
   }
 }
 

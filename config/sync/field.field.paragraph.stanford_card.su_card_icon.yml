@@ -1,0 +1,21 @@
+uuid: 05bd4008-40c5-4301-b46e-99f8d1e07450
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.su_card_icon
+    - paragraphs.paragraphs_type.stanford_card
+  module:
+    - fontawesome
+id: paragraph.stanford_card.su_card_icon
+field_name: su_card_icon
+entity_type: paragraph
+bundle: stanford_card
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

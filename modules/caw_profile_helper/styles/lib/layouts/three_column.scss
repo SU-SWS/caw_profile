@@ -7,7 +7,7 @@
   }
 
   .layout__region {
-    .paragraph,
+    .paragraph[class*=ptype-],
     .ds-entity--paragraph {
       width: 100%;
     }

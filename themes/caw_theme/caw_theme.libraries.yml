@@ -1,13 +1,21 @@
 base:
   css:
     component:
-      dist/css/base.css: {}
+      dist/css/base.css: { }
+
 sweeteners.views:
   css:
     component:
-      dist/css/sweeteners.views.css: {}
+      dist/css/sweeteners.views.css: { }
 
 sweeteners.node:
   css:
     component:
-      dist/css/sweeteners.node.css: {}
+      dist/css/sweeteners.node.css: { }
+
+components.faq:
+  css:
+    component:
+      dist/css/faq.css: { }
+  js:
+    lib/js/components/faq.js: { }

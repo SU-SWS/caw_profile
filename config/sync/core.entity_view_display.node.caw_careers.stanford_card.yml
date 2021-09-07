@@ -63,10 +63,10 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: true
           'link class': ''
           wrapper: ''
           class: ''
-          link: false
 id: node.caw_careers.stanford_card
 targetEntityType: node
 bundle: caw_careers

@@ -258,3 +258,25 @@ function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginB
     }
   }
 }
+
+/**
+ * Implements hook_views_post_build().
+ */
+function caw_profile_helper_views_post_build(ViewExecutable $view) {
+  //  dpm($view);
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function caw_profile_helper_views_pre_render(ViewExecutable $view) {
+  if (_caw_profile_helper_is_editing_layout_paragraphs() && count($view->result) > 5) {
+    $original_count = count($view->result);
+    $view->result = array_slice($view->result, 0, 5);
+    \Drupal::messenger()
+      ->addWarning(t('Reduced preview of the view %view from %count to 5 for performance purposes.', [
+        '%view' => $view->getTitle(),
+        '%count' => $original_count,
+      ]));
+  }
+}

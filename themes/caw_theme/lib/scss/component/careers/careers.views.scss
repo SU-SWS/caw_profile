@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.view.caw-careers {
+  .exposed-filters,
+  header {
+    background: $su-color-foggy-light;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  header {
+    padding-top: 20px;
+
+    h2 {
+      max-width: 1500px;
+      width: calc(100% - 200px);
+      margin: 0 auto;
+    }
+  }
+
+  form {
+    max-width: 1500px;
+    width: calc(100% - 200px);
+    margin: 0 auto 40px;
+    padding-bottom: 20px;
+
+    @include grid-media('md'){
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-gap: 20px;
+      justify-content: center;
+      align-content: center;
+
+      > div {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+    }
+  }
+}

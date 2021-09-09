@@ -77,6 +77,9 @@ function caw_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] == 'caw_sweeteners') {
     $variables['#attached']['library'][] = 'caw_theme/sweeteners.views';
   }
+  if ($variables['id'] == 'caw_careers') {
+    $variables['#attached']['library'][] = 'caw_theme/careers.views';
+  }
 }
 
 /**

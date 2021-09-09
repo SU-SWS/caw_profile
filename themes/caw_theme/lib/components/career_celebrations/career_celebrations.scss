@@ -6,54 +6,14 @@
     margin-top: 20px;
   }
 
-  &--hero {
+  .caw-careers--card {
     background: $su-color-foggy-light;
     padding: 90px 0 70px;
   }
 
-  &--hero-container {
-    background: $su-color-white;
-    margin: 0 auto;
+  .caw-careers-card {
     max-width: 810px;
-    padding: 45px;
-
-    @include grid-media('sm') {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-      grid-gap: 30px;
-    }
-
-    picture,
-    img {
-      border-radius: 50%;
-    }
-  }
-
-  &--hero-left {
-
-  }
-
-  &--hero-right {
-
-  }
-
-  &--job-title {
-    margin-bottom: 20px;
-    font-size: 25px;
-  }
-
-  &--years-honored {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 40px;
-  }
-
-  &--years {
-
-  }
-
-  &--honored {
-
+    margin: 0 auto;
   }
 
   &--body {
@@ -64,5 +24,11 @@
     > .field {
       margin-bottom: 40px;
     }
+  }
+
+  .caw-careers-card--years-honored {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 40px;
   }
 }

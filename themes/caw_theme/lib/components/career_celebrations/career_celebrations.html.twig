@@ -1,32 +1,6 @@
 <div{{ attributes.addClass('caw-careers') }}>
-  <div class="caw-careers--hero">
-    <div class="caw-careers--hero-container">
-      <div class="caw-careers--hero-left">
-        {{ image }}
-      </div>
-      <div class="caw-careers--hero-right">
-        {{ title }}
-
-        {% if job_title %}
-          <div class="caw-careers--job-title">
-            {{ job_title }}
-          </div>
-        {% endif %}
-
-        <div class="caw-careers--years-honored">
-          {% if years %}
-            <div class="caw-careers--years">
-              {{ years }}
-            </div>
-          {% endif %}
-          {% if honored %}
-            <div class="caw-careers--honored">
-              {{ honored }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+  <div class="caw-careers--card">
+    {{ pattern('career_card', {image: image,title:title,job_title:job_title,years:years,honored:honored}) }}
   </div>
 
   <div class="caw-careers--body">

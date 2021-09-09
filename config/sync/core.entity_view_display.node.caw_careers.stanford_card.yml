@@ -41,21 +41,25 @@ third_party_settings:
       allowed_layouts: {  }
   ds:
     layout:
-      id: pattern_card
+      id: pattern_career_card
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
         pattern:
-          field_templates: only_content
-          variant: default
+          field_templates: default
     regions:
-      card_image:
+      image:
         - su_careers_image
-      card_super_headline:
+      title:
         - node_title
-      card_body:
+      job_title:
+        - su_careers_job
         - su_careers_department
+      years:
+        - su_careers_years
+      honored:
+        - su_careers_honored
     fields:
       node_title:
         plugin_id: node_title
@@ -65,7 +69,7 @@ third_party_settings:
         settings:
           link: true
           'link class': ''
-          wrapper: ''
+          wrapper: h2
           class: ''
 id: node.caw_careers.stanford_card
 targetEntityType: node
@@ -74,22 +78,47 @@ mode: stanford_card
 content:
   su_careers_department:
     type: entity_reference_label
-    weight: 2
-    region: card_body
+    weight: 3
+    region: job_title
     label: hidden
     settings:
       link: false
     third_party_settings:
       field_formatter_class:
         class: ''
+  su_careers_honored:
+    type: number_unformatted
+    weight: 5
+    region: honored
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   su_careers_image:
     type: media_responsive_image_formatter
     weight: 0
-    region: card_image
+    region: image
     label: hidden
     settings:
       view_mode: default
-      image_style: card_2_1
+      image_style: responsive_1_1
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+  su_careers_job:
+    type: string
+    weight: 2
+    region: job_title
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  su_careers_years:
+    type: entity_reference_label
+    weight: 4
+    region: years
+    label: above
+    settings:
       link: false
     third_party_settings:
       field_formatter_class:
@@ -101,10 +130,7 @@ hidden:
   su_careers_favorite_thing: true
   su_careers_fname: true
   su_careers_fun_fact: true
-  su_careers_honored: true
-  su_careers_job: true
   su_careers_legacy: true
   su_careers_lname: true
   su_careers_memory: true
   su_careers_proud_project: true
-  su_careers_years: true

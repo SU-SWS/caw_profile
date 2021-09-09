@@ -1,0 +1,30 @@
+<div{{ attributes.addClass('caw-careers-card su-card su-card--horizontal') }}>
+
+  <div class="caw-careers-card--left">
+    {{ image }}
+  </div>
+  <div class="caw-careers-card--right su-card__contents">
+    <div class="su-card__contents-wrapper">
+      {{ title }}
+
+      {% if job_title %}
+        <div class="caw-careers-card--job-title">
+          {{ job_title }}
+        </div>
+      {% endif %}
+
+      <div class="caw-careers-card--years-honored">
+        {% if years %}
+          <div class="caw-careers-card--years">
+            {{ years }}
+          </div>
+        {% endif %}
+        {% if honored %}
+          <div class="caw-careers-card--honored">
+            {{ honored }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

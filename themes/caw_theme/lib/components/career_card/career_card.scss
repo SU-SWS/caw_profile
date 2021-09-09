@@ -1,0 +1,18 @@
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.caw-careers-card {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  picture,
+  img {
+    border-radius: 50%;
+    width: 300px;
+  }
+
+
+  &--job-title {
+    margin: 20px 0;
+    font-size: 25px;
+  }
+}

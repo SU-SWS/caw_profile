@@ -98,7 +98,7 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 21
+          items_per_page: 20
           offset: 0
           id: 0
           total_pages: null
@@ -120,12 +120,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: flex-3-of-12
+          row_class: ''
           default_row_class: true
           uses_fields: false
           type: ul
           wrapper_class: ''
-          class: 'su-list-unstyled flex-container'
+          class: 'su-list-unstyled grid-container-2'
       row:
         type: 'entity:node'
         options:
@@ -270,7 +270,7 @@ display:
           exposed: true
           expose:
             operator_id: su_careers_department_target_id_op
-            label: Department
+            label: School/Unit
             description: ''
             use_operator: false
             operator: su_careers_department_target_id_op
@@ -383,7 +383,7 @@ display:
           exposed: true
           expose:
             operator_id: su_careers_honored_value_op
-            label: 'Honored Year'
+            label: 'Year Honored'
             description: ''
             use_operator: false
             operator: su_careers_honored_value_op
@@ -446,7 +446,20 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2>Filter by</h2>'
+            format: stanford_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }

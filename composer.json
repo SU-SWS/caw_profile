@@ -125,11 +125,6 @@
                 "drush.services.yml": "^9"
             }
         },
-        "patches": {
-            "drupal/layout_paragraphs": {
-                "https://www.drupal.org/project/layout_paragraphs/issues/3229555": "https://www.drupal.org/files/issues/2021-08-31/behavior_support-3229555-8.patch",
-                "https://www.drupal.org/project/layout_paragraphs/issues/3230954": "https://www.drupal.org/files/issues/2021-09-07/layout_paragraphs-3230954-8.patch"
-            }
-        }
+        "patches": {}
     }
 }

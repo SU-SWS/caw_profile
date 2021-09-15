@@ -12,7 +12,9 @@
 
 
   &--job-title {
-    margin: 20px 0;
-    font-size: 25px;
+    @include type-d; 
+
+    font-weight: $su-font-regular;
+    margin: 10px 0 20px;
   }
 }

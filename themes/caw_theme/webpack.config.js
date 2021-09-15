@@ -26,12 +26,11 @@ const npmPackage = 'node_modules/';
 const srcDir = path.resolve(__dirname, 'lib');
 const distDir = path.resolve(__dirname, 'dist');
 const srcSass = path.resolve(__dirname, process.env.npm_package_config_srcSass);
-const distSass = path.resolve(
-  __dirname,
-  process.env.npm_package_config_distSass
-);
+const distSass = path.resolve(__dirname, process.env.npm_package_config_distSass);
 const srcJS = path.resolve(__dirname, process.env.npm_package_config_srcJS);
 const distJS = path.resolve(__dirname, process.env.npm_package_config_distJS);
+const srcAssets = path.resolve(__dirname, process.env.npm_package_config_srcAssets);
+const distAssets = path.resolve(__dirname, process.env.npm_package_config_distAssets);
 const glob = require('glob')
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -143,8 +142,8 @@ var webpackConfig = {
                 loader: 'file-loader',
                 options: {
                   name: '[name].[ext]',
-                  publicPath: '../../assets/img',
-                  outputPath: '../../assets/img',
+                  publicPath: '../../../assets/png',
+                  outputPath: '../assets/png',
                 },
               },
             },

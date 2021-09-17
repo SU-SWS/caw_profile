@@ -19,12 +19,6 @@ source:
   ids:
     uuid:
       type: string
-  constants:
-    status: 1
-    type: caw_benefits
-    stanford_html: stanford_html
-    stanford_minimal_html: stanford_minimal_html
-    image_path: 'public://media/images/careers/'
   fields: {  }
 process:
   caw_benefits_dent_cleanings:

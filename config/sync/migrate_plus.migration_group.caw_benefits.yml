@@ -8,15 +8,15 @@ description: 'CAW Benefits Content'
 source_type: null
 module: null
 shared_configuration:
-  track_changes: true
-  urls: {  }
-  constants:
-    status: 1
-    type: caw_benefits
-    stanford_html: stanford_html
-    stanford_minimal_html: stanford_minimal_html
-    image_path: 'public://media/images/careers/'
   source:
+    track_changes: true
+    urls: {  }
+    constants:
+      status: 1
+      type: caw_benefits
+      stanford_html: stanford_html
+      stanford_minimal_html: stanford_minimal_html
+      image_path: 'public://media/images/careers/'
     fields:
       -
         name: accessServices

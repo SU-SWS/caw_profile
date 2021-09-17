@@ -235,6 +235,10 @@ shared_configuration:
         label: occupationalTherapy
         selector: occupationalTherapy
       -
+        name: offeredTo
+        label: offeredTo
+        selector: offeredTo
+      -
         name: officeCoPay
         label: officeCoPay
         selector: officeCoPay
@@ -413,9 +417,12 @@ shared_configuration:
   process:
     status: constants/status
     title: title
-    body/summary: overview
-    body/value: description
+    body/summary: description
+    body/value: overview
     su_benefit_type: benefitType
+    su_benefits_offered:
+      plugin: caw_benefits_offered
+      source: offeredTo
     caw_benefits_xray:
       -
         plugin: caw_benefits

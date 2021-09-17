@@ -19,103 +19,109 @@ source:
   ids:
     uuid:
       type: string
+  constants:
+    status: 1
+    type: caw_benefits
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    image_path: 'public://media/images/careers/'
   fields: {  }
 process:
   caw_benefits_dent_cleanings:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_cleanings
+      source: cleanings
   caw_benefits_dent_flouride:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_flouride
+      source: fluorideTreatments
   caw_benefits_dent_exam:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_exam
+      source: routineExams
   caw_benefits_dent_sealant:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_sealant
+      source: sealants
   caw_benefits_dent_ortho:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_ortho
+      source: orthodontia
   caw_benefits_dent_retainer:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_retainer
+      source: retainers
   caw_benefits_dent_anesthesia:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_anesthesia
+      source: anesthesia
   caw_benefits_dent_bridges:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_bridges
+      source: bridges
   caw_benefits_dent_crown:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_crown
+      source: crown
   caw_benefits_dent_denture:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_denture
+      source: dentures
   caw_benefits_dent_extraction:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_extraction
+      source: extractions
   caw_benefits_dent_filling:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_filling
+      source: fillings
   caw_benefits_dent_gingivectomy:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_gingivectomy
+      source: gingivectomy
   caw_benefits_dent_gold:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_gold
+      source: goldRestorations
   caw_benefits_dent_implant:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_implant
+      source: implants
   caw_benefits_dent_inlay:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_inlay
+      source: inlays
   caw_benefits_dent_onlay:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_onlay
+      source: onlays
   caw_benefits_dent_oral_surg:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_oral_surg
+      source: oralSurgery
   caw_benefits_dent_perio_surg:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_perio_surg
+      source: periodontalSurgery
   caw_benefits_dent_rx:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_rx
+      source: prescriptionDrugs
   caw_benefits_dent_root:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_root
+      source: rootCanals
   caw_benefits_dent_space:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_space
+      source: spaceMaintainers
   caw_benefits_dent_splint:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_splint
+      source: splinting
   caw_benefits_dent_tmj:
     -
       plugin: caw_benefits
-      source: caw_benefits_dent_tmj
+      source: tmj
 destination: null
 migration_dependencies: null

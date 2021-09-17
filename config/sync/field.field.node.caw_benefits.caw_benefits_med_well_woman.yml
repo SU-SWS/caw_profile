@@ -1,0 +1,19 @@
+uuid: 6f7a3123-9ef7-40dd-a24b-56d740a962c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_well_woman
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_well_woman
+field_name: caw_benefits_med_well_woman
+entity_type: node
+bundle: caw_benefits
+label: 'Well-woman visits'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

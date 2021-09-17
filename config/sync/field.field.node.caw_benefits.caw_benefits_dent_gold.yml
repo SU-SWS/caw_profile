@@ -1,0 +1,19 @@
+uuid: 7f88248b-23b2-4b69-8305-d98127e65966
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_dent_gold
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_dent_gold
+field_name: caw_benefits_dent_gold
+entity_type: node
+bundle: caw_benefits
+label: 'Gold restorations'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

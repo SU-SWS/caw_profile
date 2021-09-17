@@ -1,0 +1,21 @@
+uuid: 9e4cd2ec-5dc7-4423-9bf7-1ffb06bb7002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_benefits_offered
+    - node.type.caw_benefits
+  module:
+    - options
+id: node.caw_benefits.su_benefits_offered
+field_name: su_benefits_offered
+entity_type: node
+bundle: caw_benefits
+label: 'Offered To'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 34c53adc-525d-423a-a6d4-0622bc122e47
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_vasectomy
+field_name: caw_benefits_med_vasectomy
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: b7110dc1-60bc-40d4-92bb-e1a261b08df0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_birthing
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_birthing
+field_name: caw_benefits_med_birthing
+entity_type: node
+bundle: caw_benefits
+label: 'Birthing Centers'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

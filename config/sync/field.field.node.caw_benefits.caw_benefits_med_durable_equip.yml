@@ -1,0 +1,19 @@
+uuid: deb2d8b4-07a9-4366-95a1-9baf7ac159b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_durable_equip
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_durable_equip
+field_name: caw_benefits_med_durable_equip
+entity_type: node
+bundle: caw_benefits
+label: 'Durable Medical Equipment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,21 @@
+uuid: a7066482-19d3-4e9d-b2d4-4215e12e7736
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_benefit_type
+    - node.type.caw_benefits
+  module:
+    - options
+id: node.caw_benefits.su_benefit_type
+field_name: su_benefit_type
+entity_type: node
+bundle: caw_benefits
+label: 'Benefit Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

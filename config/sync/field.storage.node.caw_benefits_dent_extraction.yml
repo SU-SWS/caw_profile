@@ -1,0 +1,19 @@
+uuid: 8672237e-fd07-4f2b-a308-e7d25c2652d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_dent_extraction
+field_name: caw_benefits_dent_extraction
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

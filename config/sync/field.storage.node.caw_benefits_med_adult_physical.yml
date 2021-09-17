@@ -1,0 +1,19 @@
+uuid: d75bad28-b14b-40f0-9258-57f6913f230b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_adult_physical
+field_name: caw_benefits_med_adult_physical
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

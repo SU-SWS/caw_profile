@@ -1,0 +1,19 @@
+uuid: 6cec4a08-d89b-4a9e-be93-f11a1ae85cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_vision_lenses
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_vision_lenses
+field_name: caw_benefits_vision_lenses
+entity_type: node
+bundle: caw_benefits
+label: Lenses
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

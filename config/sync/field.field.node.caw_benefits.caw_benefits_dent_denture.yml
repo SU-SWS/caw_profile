@@ -1,0 +1,19 @@
+uuid: 0ab3da48-4add-4ed7-bf19-95aeea0cd623
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_dent_denture
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_dent_denture
+field_name: caw_benefits_dent_denture
+entity_type: node
+bundle: caw_benefits
+label: Dentures
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

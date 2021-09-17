@@ -1,0 +1,460 @@
+uuid: 6c4de8ba-b8c5-4118-bd48-ddefbed8e5e6
+langcode: en
+status: true
+dependencies: {  }
+id: caw_benefits
+label: Benefits
+description: 'CAW Benefits Content'
+source_type: null
+module: null
+shared_configuration:
+  track_changes: true
+  urls: {  }
+  constants:
+    status: 1
+    type: caw_benefits
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    image_path: 'public://media/images/careers/'
+  source:
+    fields:
+      -
+        name: accessServices
+        label: accessServices
+        selector: accessServices
+      -
+        name: acupuncture
+        label: acupuncture
+        selector: acupuncture
+      -
+        name: allergyTests
+        label: allergyTests
+        selector: allergyTests
+      -
+        name: allergyTreatment
+        label: allergyTreatment
+        selector: allergyTreatment
+      -
+        name: alternativeMedicine
+        label: alternativeMedicine
+        selector: alternativeMedicine
+      -
+        name: ambulanceCharges
+        label: ambulanceCharges
+        selector: ambulanceCharges
+      -
+        name: anesthesia
+        label: anesthesia
+        selector: anesthesia
+      -
+        name: annualMaximum
+        label: annualMaximum
+        selector: annualMaximum
+      -
+        name: autism
+        label: autism
+        selector: autism
+      -
+        name: babyFirstExam
+        label: babyFirstExam
+        selector: babyFirstExam
+      -
+        name: benefitType
+        label: benefitType
+        selector: benefitType
+      -
+        name: birthControlPills
+        label: birthControlPills
+        selector: birthControlPills
+      -
+        name: birthingCenters
+        label: birthingCenters
+        selector: birthingCenters
+      -
+        name: bridges
+        label: bridges
+        selector: bridges
+      -
+        name: careManagement
+        label: careManagement
+        selector: careManagement
+      -
+        name: chiropractors
+        label: chiropractors
+        selector: chiropractors
+      -
+        name: christianSciencePractitioners
+        label: christianSciencePractitioners
+        selector: christianSciencePractitioners
+      -
+        name: cleanings
+        label: cleanings
+        selector: cleanings
+      -
+        name: coinsurance
+        label: coinsurance
+        selector: coinsurance
+      -
+        name: cosmeticSurgery
+        label: cosmeticSurgery
+        selector: cosmeticSurgery
+      -
+        name: crown
+        label: crown
+        selector: crown
+      -
+        name: ctScans
+        label: ctScans
+        selector: ctScans
+      -
+        name: deductible
+        label: deductible
+        selector: deductible
+      -
+        name: dentalTreatment
+        label: dentalTreatment
+        selector: dentalTreatment
+      -
+        name: dentures
+        label: dentures
+        selector: dentures
+      -
+        name: description
+        label: description
+        selector: description
+      -
+        name: doctorDeliveryCharge
+        label: doctorDeliveryCharge
+        selector: doctorDeliveryCharge
+      -
+        name: durableMedicalEquipment
+        label: durableMedicalEquipment
+        selector: durableMedicalEquipment
+      -
+        name: emergencyRoom
+        label: emergencyRoom
+        selector: emergencyRoom
+      -
+        name: extractions
+        label: extractions
+        selector: extractions
+      -
+        name: fillings
+        label: fillings
+        selector: fillings
+      -
+        name: fluorideTreatments
+        label: fluorideTreatments
+        selector: fluorideTreatments
+      -
+        name: fullTimeContributionPerPayPeriod
+        label: fullTimeContributionPerPayPeriod
+        selector: fullTimeContributionPerPayPeriod
+      -
+        name: gettingBetter
+        label: gettingBetter
+        selector: gettingBetter
+      -
+        name: gingivectomy
+        label: gingivectomy
+        selector: gingivectomy
+      -
+        name: goldRestorations
+        label: goldRestorations
+        selector: goldRestorations
+      -
+        name: hearingCare
+        label: hearingCare
+        selector: hearingCare
+      -
+        name: homeHealthCare
+        label: homeHealthCare
+        selector: homeHealthCare
+      -
+        name: hospiceCare
+        label: hospiceCare
+        selector: hospiceCare
+      -
+        name: hospitalStay
+        label: hospitalStay
+        selector: hospitalStay
+      -
+        name: immunizations
+        label: immunizations
+        selector: immunizations
+      -
+        name: implants
+        label: implants
+        selector: implants
+      -
+        name: infertilityTreatment
+        label: infertilityTreatment
+        selector: infertilityTreatment
+      -
+        name: inlays
+        label: inlays
+        selector: inlays
+      -
+        name: laboratoryCharges
+        label: laboratoryCharges
+        selector: laboratoryCharges
+      -
+        name: lifetimeMaximum
+        label: lifetimeMaximum
+        selector: lifetimeMaximum
+      -
+        name: livingWithIllness
+        label: livingWithIllness
+        selector: livingWithIllness
+      -
+        name: mailOrderDrugprogram
+        label: mailOrderDrugprogram
+        selector: mailOrderDrugprogram
+      -
+        name: mammograms
+        label: mammograms
+        selector: mammograms
+      -
+        name: maternityHospitalStay
+        label: maternityHospitalStay
+        selector: maternityHospitalStay
+      -
+        name: mentalHealth
+        label: mentalHealth
+        selector: mentalHealth
+      -
+        name: midwives
+        label: midwives
+        selector: midwives
+      -
+        name: mri
+        label: mri
+        selector: mri
+      -
+        name: occupationalTherapy
+        label: occupationalTherapy
+        selector: occupationalTherapy
+      -
+        name: officeCoPay
+        label: officeCoPay
+        selector: officeCoPay
+      -
+        name: onlays
+        label: onlays
+        selector: onlays
+      -
+        name: oralSurgery
+        label: oralSurgery
+        selector: oralSurgery
+      -
+        name: organTransplants
+        label: organTransplants
+        selector: organTransplants
+      -
+        name: orthodontia
+        label: orthodontia
+        selector: orthodontia
+      -
+        name: outOfPocketMaximum
+        label: outOfPocketMaximum
+        selector: outOfPocketMaximum
+      -
+        name: overallAccreditionStatus
+        label: overallAccreditionStatus
+        selector: overallAccreditionStatus
+      -
+        name: overallLifetimeMaximum
+        label: overallLifetimeMaximum
+        selector: overallLifetimeMaximum
+      -
+        name: overview
+        label: overview
+        selector: overview
+      -
+        name: papSmears
+        label: papSmears
+        selector: papSmears
+      -
+        name: partTimeContributionPerPayPeriod
+        label: partTimeContributionPerPayPeriod
+        selector: partTimeContributionPerPayPeriod
+      -
+        name: periodontalSurgery
+        label: periodontalSurgery
+        selector: periodontalSurgery
+      -
+        name: pharmacy
+        label: pharmacy
+        selector: pharmacy
+      -
+        name: physicalExamsAdults
+        label: physicalExamsAdults
+        selector: physicalExamsAdults
+      -
+        name: physicalExamsChildren
+        label: physicalExamsChildren
+        selector: physicalExamsChildren
+      -
+        name: physicalTherapy
+        label: physicalTherapy
+        selector: physicalTherapy
+      -
+        name: planYear
+        label: planYear
+        selector: planYear
+      -
+        name: preAuthorizationRequirement
+        label: preAuthorizationRequirement
+        selector: preAuthorizationRequirement
+      -
+        name: pregnancyTermination
+        label: pregnancyTermination
+        selector: pregnancyTermination
+      -
+        name: prenatalVisits
+        label: prenatalVisits
+        selector: prenatalVisits
+      -
+        name: prescriptionDrugs
+        label: prescriptionDrugs
+        selector: prescriptionDrugs
+      -
+        name: psa
+        label: psa
+        selector: psa
+      -
+        name: qualifiedProviders
+        label: qualifiedProviders
+        selector: qualifiedProviders
+      -
+        name: retainers
+        label: retainers
+        selector: retainers
+      -
+        name: rootCanals
+        label: rootCanals
+        selector: rootCanals
+      -
+        name: routineExams
+        label: routineExams
+        selector: routineExams
+      -
+        name: sealants
+        label: sealants
+        selector: sealants
+      -
+        name: skilledNursing
+        label: skilledNursing
+        selector: skilledNursing
+      -
+        name: spaceMaintainers
+        label: spaceMaintainers
+        selector: spaceMaintainers
+      -
+        name: speechTherapy
+        label: speechTherapy
+        selector: speechTherapy
+      -
+        name: splinting
+        label: splinting
+        selector: splinting
+      -
+        name: stayingHealthy
+        label: stayingHealthy
+        selector: stayingHealthy
+      -
+        name: substanceAbuse
+        label: substanceAbuse
+        selector: substanceAbuse
+      -
+        name: surgeryFacilityCharges
+        label: surgeryFacilityCharges
+        selector: surgeryFacilityCharges
+      -
+        name: surgeryPhysicianServices
+        label: surgeryPhysicianServices
+        selector: surgeryPhysicianServices
+      -
+        name: title
+        label: title
+        selector: title
+      -
+        name: tmj
+        label: tmj
+        selector: tmj
+      -
+        name: tubalLigation
+        label: tubalLigation
+        selector: tubalLigation
+      -
+        name: urgentCare
+        label: urgentCare
+        selector: urgentCare
+      -
+        name: uuid
+        label: uuid
+        selector: uuid
+      -
+        name: vasectomy
+        label: vasectomy
+        selector: vasectomy
+      -
+        name: visionCare
+        label: visionCare
+        selector: visionCare
+      -
+        name: wellWomanVisits
+        label: wellWomanVisits
+        selector: wellWomanVisits
+      -
+        name: xRays
+        label: xRays
+        selector: xRays
+  process:
+    status: constants/status
+    title: title
+    body/summary: overview
+    body/value: description
+    su_benefit_type: benefitType
+    caw_benefits_xray:
+      -
+        plugin: caw_benefits
+        source: xRays
+    caw_benefits_coinsurance:
+      -
+        plugin: caw_benefits
+        source: coinsurance
+    caw_benefits_deductible:
+      -
+        plugin: caw_benefits
+        source: deductible
+    caw_benefits_fulltime_cost:
+      -
+        plugin: caw_benefits
+        source: fullTimeContributionPerPayPeriod
+    caw_benefits_parttime_cost:
+      -
+        plugin: caw_benefits
+        source: partTimeContributionPerPayPeriod
+    caw_benefits_annual_max:
+      -
+        plugin: caw_benefits
+        source: outOfPocketMaximum
+    caw_benefits_lifetime_max:
+      -
+        plugin: caw_benefits
+        source: overallLifetimeMaximum
+    su_benefits_year:
+      -
+        plugin: skip_on_empty
+        source: planYear
+        method: process
+      -
+        plugin: format_date
+        from_format: 'Y'
+        to_format: Y-01-01
+  destination:
+    plugin: 'entity:node'
+    default_bundle: 'caw_benefits'
+  migration_dependencies:
+    required: {  }

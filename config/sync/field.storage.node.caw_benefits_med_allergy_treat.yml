@@ -1,0 +1,19 @@
+uuid: fc30b25c-34c9-4f8a-adec-7cdd78f0a2bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_allergy_treat
+field_name: caw_benefits_med_allergy_treat
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: ab149d52-66d6-4632-a865-e6a3938cd485
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_nursing
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_nursing
+field_name: caw_benefits_med_nursing
+entity_type: node
+bundle: caw_benefits
+label: 'Skilled Nursing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

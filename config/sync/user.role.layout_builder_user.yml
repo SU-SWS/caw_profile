@@ -1,0 +1,9 @@
+uuid: 20bed69f-96d7-495a-9606-f519807896ed
+langcode: en
+status: true
+dependencies: {  }
+id: layout_builder_user
+label: 'LB User'
+weight: 1
+is_admin: null
+permissions: {  }

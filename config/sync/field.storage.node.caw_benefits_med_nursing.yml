@@ -1,0 +1,19 @@
+uuid: f64f4029-d6d8-4f8f-bb29-2699ae1bbfd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_nursing
+field_name: caw_benefits_med_nursing
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

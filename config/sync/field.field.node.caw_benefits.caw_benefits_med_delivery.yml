@@ -1,0 +1,19 @@
+uuid: 439b9269-ee8b-4215-9559-2abbb5c38db4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_delivery
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_delivery
+field_name: caw_benefits_med_delivery
+entity_type: node
+bundle: caw_benefits
+label: 'Doctor Delivery Charge'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

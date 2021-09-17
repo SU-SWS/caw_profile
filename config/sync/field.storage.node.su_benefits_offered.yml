@@ -1,0 +1,30 @@
+uuid: e6dfc9fd-cb33-4d3c-bf01-d7c6854a648c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.su_benefits_offered
+field_name: su_benefits_offered
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: active
+      label: 'Active Employees'
+    -
+      value: early_retirees
+      label: 'Early retirees under 65'
+    -
+      value: retirees
+      label: Retirees
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -25,11 +25,11 @@ class CawBenefitsProcess extends ProcessPluginBase {
     }
     $replacements = [
       '/>[ ]+?</' => '><',
-      '/<p.*?>/'  => '',
+      '/<p.*?>/' => '',
       '/<\/p>/' => PHP_EOL,
       '/\t/' => ' ',
     ];
-    $value = preg_replace(array_keys($replacements), $replacements, (string)$value);
+    $value = preg_replace(array_keys($replacements), $replacements, (string) $value);
     $value = preg_replace('/  +/', ' ', trim(strip_tags($value)));
     return $value;
   }

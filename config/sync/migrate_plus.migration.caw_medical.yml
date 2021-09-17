@@ -236,5 +236,5 @@ process:
       source: wellWomanVisits
 destination:
   plugin: 'entity:node'
-  default_bundle: 'caw_benefits'
+  default_bundle: caw_benefits
 migration_dependencies: null

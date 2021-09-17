@@ -419,6 +419,7 @@ shared_configuration:
     title: title
     body/summary: description
     body/value: overview
+    body/format: constants/stanford_html
     su_benefit_type: benefitType
     su_benefits_offered:
       plugin: caw_benefits_offered
@@ -462,6 +463,6 @@ shared_configuration:
         to_format: Y-01-01
   destination:
     plugin: 'entity:node'
-    default_bundle: 'caw_benefits'
+    default_bundle: caw_benefits
   migration_dependencies:
     required: {  }

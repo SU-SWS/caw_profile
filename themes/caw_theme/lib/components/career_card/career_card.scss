@@ -13,6 +13,8 @@
 
   &--job-title {
     @include type-d; 
+    @include responsive-spacing('margin', -1 null 2 null);
+
     @include margin(10px 0 20px);
 
     font-weight: $su-font-regular;

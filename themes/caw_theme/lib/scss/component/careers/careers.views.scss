@@ -28,8 +28,8 @@
     margin: 0 auto 40px;
     padding-bottom: 20px;
 
-    @include grid-media('md'){
-      display:grid;
+    @include grid-media('md') {
+      display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       grid-gap: 20px;
       justify-content: center;

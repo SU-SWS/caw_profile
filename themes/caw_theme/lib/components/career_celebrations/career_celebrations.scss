@@ -4,8 +4,7 @@
 .caw-careers {
   h1 {
     @include type-b;
-    @include margin(0);
-    
+    @include margin(0);    
   }
 
   .caw-careers--card {
@@ -18,9 +17,9 @@
     &::before {
       content: "";
       position: absolute;
-      background: $su-color-foggy-light url("../../assets/png/career-celebrations-banner--node.png") no-repeat center;  
+      background: $su-color-foggy-light url("../../assets/png/career-celebrations-banner--node.png") no-repeat center;
       background-size: cover;
-      opacity: .75;
+      opacity: 0.75;
       top: 0;
       right: 0;
       left: 0;
@@ -30,7 +29,7 @@
 
   .caw-careers-card {
     @include margin(0 auto);
-    
+
     max-width: 810px;
 
     &.su-card--horizontal {
@@ -38,15 +37,23 @@
 
       grid-template-columns: 1fr 2fr;
       grid-column-gap: 36px;
-      
+
       // To keep the card on top of the pseudo elment
       position: relative;
 
       img {
         @include grid-media-max('sm') {
+          @include margin(0 auto 50px);
+
           display: block;
+          max-width: 200px;
         }
       }
+
+      @include grid-media-max('sm') {
+        display: block;
+      }
+
     }
 
     .su-card__contents {
@@ -56,11 +63,14 @@
   }
 
   &--body {
-    @include margin(60px auto 0);
+    @include margin(0 auto);
+    @include responsive-spacing('margin-top', 6);
+    @include responsive-spacing('margin-bottom', 7);
     @include type-d;
 
     max-width: 810px;
     width: calc(100% - 40px);
+
 
     .label {
       font-size: 30px;

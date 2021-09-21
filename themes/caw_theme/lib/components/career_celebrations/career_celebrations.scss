@@ -4,7 +4,7 @@
 .caw-careers {
   h1 {
     @include type-b;
-    @include margin(0);    
+    @include margin(0);
   }
 
   .caw-careers--card {
@@ -70,7 +70,6 @@
 
     max-width: 810px;
     width: calc(100% - 40px);
-
 
     .label {
       font-size: 30px;

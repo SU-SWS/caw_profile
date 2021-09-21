@@ -1,0 +1,19 @@
+uuid: 11712d04-81d6-4092-9ecf-b191212ec1e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_deductible
+field_name: caw_benefits_deductible
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

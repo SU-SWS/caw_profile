@@ -1,0 +1,19 @@
+uuid: 22ca8ce0-ad0a-4a5f-b5ab-acd6494b02c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_acupuncture
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_acupuncture
+field_name: caw_benefits_med_acupuncture
+entity_type: node
+bundle: caw_benefits
+label: Acupuncture
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

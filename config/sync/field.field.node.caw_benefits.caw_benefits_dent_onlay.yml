@@ -1,0 +1,19 @@
+uuid: 7071b41e-8107-4613-bdff-eb11f3e3c228
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_dent_onlay
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_dent_onlay
+field_name: caw_benefits_dent_onlay
+entity_type: node
+bundle: caw_benefits
+label: Onlays
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

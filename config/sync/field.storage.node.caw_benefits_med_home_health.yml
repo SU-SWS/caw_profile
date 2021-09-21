@@ -1,0 +1,19 @@
+uuid: 89da5ff4-8d36-4a7e-84d4-ef392ddd16e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_home_health
+field_name: caw_benefits_med_home_health
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

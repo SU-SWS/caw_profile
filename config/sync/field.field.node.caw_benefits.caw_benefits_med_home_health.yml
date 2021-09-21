@@ -1,0 +1,19 @@
+uuid: 869ac374-4c0e-4c4e-a11f-6a01b116426a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_home_health
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_home_health
+field_name: caw_benefits_med_home_health
+entity_type: node
+bundle: caw_benefits
+label: 'Home Health Care'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,19 @@
+uuid: 3f19a8c4-f8ab-4ba1-9faa-1d72d01e9e5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_dent_ortho
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_dent_ortho
+field_name: caw_benefits_dent_ortho
+entity_type: node
+bundle: caw_benefits
+label: Orthodontia
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

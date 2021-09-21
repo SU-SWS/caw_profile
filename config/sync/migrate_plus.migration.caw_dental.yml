@@ -1,0 +1,121 @@
+uuid: b99cab50-b1d8-472c-812d-dc063155dc5d
+langcode: en
+status: true
+dependencies: {  }
+id: caw_dental
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: caw_benefits
+label: 'CAW Dental Benefits'
+source:
+  plugin: url
+  data_parser_plugin: simple_xml
+  data_fetcher_plugin: http
+  item_selector: /nodes/node
+  urls:
+    - 'https://cardinalatwork.stanford.edu/api/benefits/dental'
+  ids:
+    uuid:
+      type: string
+  fields: {  }
+process:
+  caw_benefits_dent_cleanings:
+    -
+      plugin: caw_benefits
+      source: cleanings
+  caw_benefits_dent_flouride:
+    -
+      plugin: caw_benefits
+      source: fluorideTreatments
+  caw_benefits_dent_exam:
+    -
+      plugin: caw_benefits
+      source: routineExams
+  caw_benefits_dent_sealant:
+    -
+      plugin: caw_benefits
+      source: sealants
+  caw_benefits_dent_ortho:
+    -
+      plugin: caw_benefits
+      source: orthodontia
+  caw_benefits_dent_retainer:
+    -
+      plugin: caw_benefits
+      source: retainers
+  caw_benefits_dent_anesthesia:
+    -
+      plugin: caw_benefits
+      source: anesthesia
+  caw_benefits_dent_bridges:
+    -
+      plugin: caw_benefits
+      source: bridges
+  caw_benefits_dent_crown:
+    -
+      plugin: caw_benefits
+      source: crown
+  caw_benefits_dent_denture:
+    -
+      plugin: caw_benefits
+      source: dentures
+  caw_benefits_dent_extraction:
+    -
+      plugin: caw_benefits
+      source: extractions
+  caw_benefits_dent_filling:
+    -
+      plugin: caw_benefits
+      source: fillings
+  caw_benefits_dent_gingivectomy:
+    -
+      plugin: caw_benefits
+      source: gingivectomy
+  caw_benefits_dent_gold:
+    -
+      plugin: caw_benefits
+      source: goldRestorations
+  caw_benefits_dent_implant:
+    -
+      plugin: caw_benefits
+      source: implants
+  caw_benefits_dent_inlay:
+    -
+      plugin: caw_benefits
+      source: inlays
+  caw_benefits_dent_onlay:
+    -
+      plugin: caw_benefits
+      source: onlays
+  caw_benefits_dent_oral_surg:
+    -
+      plugin: caw_benefits
+      source: oralSurgery
+  caw_benefits_dent_perio_surg:
+    -
+      plugin: caw_benefits
+      source: periodontalSurgery
+  caw_benefits_dent_rx:
+    -
+      plugin: caw_benefits
+      source: prescriptionDrugs
+  caw_benefits_dent_root:
+    -
+      plugin: caw_benefits
+      source: rootCanals
+  caw_benefits_dent_space:
+    -
+      plugin: caw_benefits
+      source: spaceMaintainers
+  caw_benefits_dent_splint:
+    -
+      plugin: caw_benefits
+      source: splinting
+  caw_benefits_dent_tmj:
+    -
+      plugin: caw_benefits
+      source: tmj
+destination: null
+migration_dependencies: null

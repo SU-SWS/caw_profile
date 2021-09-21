@@ -1,0 +1,19 @@
+uuid: 40fda72b-b7d8-491c-9bc3-30615cf42836
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_vision_intl
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_vision_intl
+field_name: caw_benefits_vision_intl
+entity_type: node
+bundle: caw_benefits
+label: 'Out of Country Access'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

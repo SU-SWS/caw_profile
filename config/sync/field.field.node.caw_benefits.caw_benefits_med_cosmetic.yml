@@ -1,0 +1,19 @@
+uuid: 547c7214-df38-4e85-a84e-ab1c0c4f040c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_cosmetic
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_cosmetic
+field_name: caw_benefits_med_cosmetic
+entity_type: node
+bundle: caw_benefits
+label: 'Cosmetic Surgery'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

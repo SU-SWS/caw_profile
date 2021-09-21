@@ -1,0 +1,21 @@
+uuid: 5d626b68-2239-4d96-87e0-08adc0635575
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_benefits_year
+    - node.type.caw_benefits
+  module:
+    - datetime
+id: node.caw_benefits.su_benefits_year
+field_name: su_benefits_year
+entity_type: node
+bundle: caw_benefits
+label: 'Plan Year'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

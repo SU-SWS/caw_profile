@@ -1,0 +1,19 @@
+uuid: 858e7710-0599-49e5-b092-a6182ef122b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_xray
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_xray
+field_name: caw_benefits_xray
+entity_type: node
+bundle: caw_benefits
+label: X-rays
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

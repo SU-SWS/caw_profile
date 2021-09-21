@@ -1,0 +1,241 @@
+uuid: 9e2bd421-c6d5-4d4b-aba6-71645b599402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_annual_max
+    - field.field.node.caw_benefits.caw_benefits_coinsurance
+    - field.field.node.caw_benefits.caw_benefits_deductible
+    - field.field.node.caw_benefits.caw_benefits_dent_anesthesia
+    - field.field.node.caw_benefits.caw_benefits_dent_bridges
+    - field.field.node.caw_benefits.caw_benefits_dent_cleanings
+    - field.field.node.caw_benefits.caw_benefits_dent_crown
+    - field.field.node.caw_benefits.caw_benefits_dent_denture
+    - field.field.node.caw_benefits.caw_benefits_dent_exam
+    - field.field.node.caw_benefits.caw_benefits_dent_extraction
+    - field.field.node.caw_benefits.caw_benefits_dent_filling
+    - field.field.node.caw_benefits.caw_benefits_dent_flouride
+    - field.field.node.caw_benefits.caw_benefits_dent_gingivectomy
+    - field.field.node.caw_benefits.caw_benefits_dent_gold
+    - field.field.node.caw_benefits.caw_benefits_dent_implant
+    - field.field.node.caw_benefits.caw_benefits_dent_inlay
+    - field.field.node.caw_benefits.caw_benefits_dent_onlay
+    - field.field.node.caw_benefits.caw_benefits_dent_oral_surg
+    - field.field.node.caw_benefits.caw_benefits_dent_ortho
+    - field.field.node.caw_benefits.caw_benefits_dent_perio_surg
+    - field.field.node.caw_benefits.caw_benefits_dent_retainer
+    - field.field.node.caw_benefits.caw_benefits_dent_root
+    - field.field.node.caw_benefits.caw_benefits_dent_rx
+    - field.field.node.caw_benefits.caw_benefits_dent_sealant
+    - field.field.node.caw_benefits.caw_benefits_dent_space
+    - field.field.node.caw_benefits.caw_benefits_dent_splint
+    - field.field.node.caw_benefits.caw_benefits_dent_tmj
+    - field.field.node.caw_benefits.caw_benefits_fulltime_cost
+    - field.field.node.caw_benefits.caw_benefits_lifetime_max
+    - field.field.node.caw_benefits.caw_benefits_med_abulance
+    - field.field.node.caw_benefits.caw_benefits_med_acupuncture
+    - field.field.node.caw_benefits.caw_benefits_med_adult_physical
+    - field.field.node.caw_benefits.caw_benefits_med_allergy_test
+    - field.field.node.caw_benefits.caw_benefits_med_allergy_treat
+    - field.field.node.caw_benefits.caw_benefits_med_alt_medicine
+    - field.field.node.caw_benefits.caw_benefits_med_autism
+    - field.field.node.caw_benefits.caw_benefits_med_baby_exam
+    - field.field.node.caw_benefits.caw_benefits_med_birth_control
+    - field.field.node.caw_benefits.caw_benefits_med_birthing
+    - field.field.node.caw_benefits.caw_benefits_med_care_mgmt
+    - field.field.node.caw_benefits.caw_benefits_med_child_psycial
+    - field.field.node.caw_benefits.caw_benefits_med_chiro
+    - field.field.node.caw_benefits.caw_benefits_med_christian_prac
+    - field.field.node.caw_benefits.caw_benefits_med_copay
+    - field.field.node.caw_benefits.caw_benefits_med_cosmetic
+    - field.field.node.caw_benefits.caw_benefits_med_ct_scan
+    - field.field.node.caw_benefits.caw_benefits_med_delivery
+    - field.field.node.caw_benefits.caw_benefits_med_dental
+    - field.field.node.caw_benefits.caw_benefits_med_durable_equip
+    - field.field.node.caw_benefits.caw_benefits_med_er
+    - field.field.node.caw_benefits.caw_benefits_med_hearing
+    - field.field.node.caw_benefits.caw_benefits_med_home_health
+    - field.field.node.caw_benefits.caw_benefits_med_hopsital_stay
+    - field.field.node.caw_benefits.caw_benefits_med_hospice
+    - field.field.node.caw_benefits.caw_benefits_med_immunizations
+    - field.field.node.caw_benefits.caw_benefits_med_infertility
+    - field.field.node.caw_benefits.caw_benefits_med_lab
+    - field.field.node.caw_benefits.caw_benefits_med_mail_rx
+    - field.field.node.caw_benefits.caw_benefits_med_mammograms
+    - field.field.node.caw_benefits.caw_benefits_med_maternity_stay
+    - field.field.node.caw_benefits.caw_benefits_med_mental_health
+    - field.field.node.caw_benefits.caw_benefits_med_midwives
+    - field.field.node.caw_benefits.caw_benefits_med_mri
+    - field.field.node.caw_benefits.caw_benefits_med_nursing
+    - field.field.node.caw_benefits.caw_benefits_med_occupational
+    - field.field.node.caw_benefits.caw_benefits_med_pap_smears
+    - field.field.node.caw_benefits.caw_benefits_med_pharmacy
+    - field.field.node.caw_benefits.caw_benefits_med_preauth_req
+    - field.field.node.caw_benefits.caw_benefits_med_preg_term
+    - field.field.node.caw_benefits.caw_benefits_med_prenatal
+    - field.field.node.caw_benefits.caw_benefits_med_psa
+    - field.field.node.caw_benefits.caw_benefits_med_pt
+    - field.field.node.caw_benefits.caw_benefits_med_speech
+    - field.field.node.caw_benefits.caw_benefits_med_substance
+    - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
+    - field.field.node.caw_benefits.caw_benefits_med_surgery_md
+    - field.field.node.caw_benefits.caw_benefits_med_transpants
+    - field.field.node.caw_benefits.caw_benefits_med_tubal
+    - field.field.node.caw_benefits.caw_benefits_med_urgent
+    - field.field.node.caw_benefits.caw_benefits_med_vasectomy
+    - field.field.node.caw_benefits.caw_benefits_med_vision
+    - field.field.node.caw_benefits.caw_benefits_med_well_woman
+    - field.field.node.caw_benefits.caw_benefits_parttime_cost
+    - field.field.node.caw_benefits.caw_benefits_vision_contacts
+    - field.field.node.caw_benefits.caw_benefits_vision_exam
+    - field.field.node.caw_benefits.caw_benefits_vision_extras
+    - field.field.node.caw_benefits.caw_benefits_vision_frames
+    - field.field.node.caw_benefits.caw_benefits_vision_intl
+    - field.field.node.caw_benefits.caw_benefits_vision_lenses
+    - field.field.node.caw_benefits.caw_benefits_vision_lowvis
+    - field.field.node.caw_benefits.caw_benefits_vision_urgent
+    - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.su_benefit_type
+    - field.field.node.caw_benefits.su_benefits_offered
+    - field.field.node.caw_benefits.su_benefits_year
+    - node.type.caw_benefits
+  module:
+    - datetime
+    - options
+    - text
+    - user
+id: node.caw_benefits.default
+targetEntityType: node
+bundle: caw_benefits
+mode: default
+content:
+  body:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  su_benefit_type:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  su_benefits_offered:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  su_benefits_year:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  caw_benefits_annual_max: true
+  caw_benefits_coinsurance: true
+  caw_benefits_deductible: true
+  caw_benefits_dent_anesthesia: true
+  caw_benefits_dent_bridges: true
+  caw_benefits_dent_cleanings: true
+  caw_benefits_dent_crown: true
+  caw_benefits_dent_denture: true
+  caw_benefits_dent_exam: true
+  caw_benefits_dent_extraction: true
+  caw_benefits_dent_filling: true
+  caw_benefits_dent_flouride: true
+  caw_benefits_dent_gingivectomy: true
+  caw_benefits_dent_gold: true
+  caw_benefits_dent_implant: true
+  caw_benefits_dent_inlay: true
+  caw_benefits_dent_onlay: true
+  caw_benefits_dent_oral_surg: true
+  caw_benefits_dent_ortho: true
+  caw_benefits_dent_perio_surg: true
+  caw_benefits_dent_retainer: true
+  caw_benefits_dent_root: true
+  caw_benefits_dent_rx: true
+  caw_benefits_dent_sealant: true
+  caw_benefits_dent_space: true
+  caw_benefits_dent_splint: true
+  caw_benefits_dent_tmj: true
+  caw_benefits_fulltime_cost: true
+  caw_benefits_lifetime_max: true
+  caw_benefits_med_abulance: true
+  caw_benefits_med_acupuncture: true
+  caw_benefits_med_adult_physical: true
+  caw_benefits_med_allergy_test: true
+  caw_benefits_med_allergy_treat: true
+  caw_benefits_med_alt_medicine: true
+  caw_benefits_med_autism: true
+  caw_benefits_med_baby_exam: true
+  caw_benefits_med_birth_control: true
+  caw_benefits_med_birthing: true
+  caw_benefits_med_care_mgmt: true
+  caw_benefits_med_child_psycial: true
+  caw_benefits_med_chiro: true
+  caw_benefits_med_christian_prac: true
+  caw_benefits_med_copay: true
+  caw_benefits_med_cosmetic: true
+  caw_benefits_med_ct_scan: true
+  caw_benefits_med_delivery: true
+  caw_benefits_med_dental: true
+  caw_benefits_med_durable_equip: true
+  caw_benefits_med_er: true
+  caw_benefits_med_hearing: true
+  caw_benefits_med_home_health: true
+  caw_benefits_med_hopsital_stay: true
+  caw_benefits_med_hospice: true
+  caw_benefits_med_immunizations: true
+  caw_benefits_med_infertility: true
+  caw_benefits_med_lab: true
+  caw_benefits_med_mail_rx: true
+  caw_benefits_med_mammograms: true
+  caw_benefits_med_maternity_stay: true
+  caw_benefits_med_mental_health: true
+  caw_benefits_med_midwives: true
+  caw_benefits_med_mri: true
+  caw_benefits_med_nursing: true
+  caw_benefits_med_occupational: true
+  caw_benefits_med_pap_smears: true
+  caw_benefits_med_pharmacy: true
+  caw_benefits_med_preauth_req: true
+  caw_benefits_med_preg_term: true
+  caw_benefits_med_prenatal: true
+  caw_benefits_med_psa: true
+  caw_benefits_med_pt: true
+  caw_benefits_med_speech: true
+  caw_benefits_med_substance: true
+  caw_benefits_med_surgery_facil: true
+  caw_benefits_med_surgery_md: true
+  caw_benefits_med_transpants: true
+  caw_benefits_med_tubal: true
+  caw_benefits_med_urgent: true
+  caw_benefits_med_vasectomy: true
+  caw_benefits_med_vision: true
+  caw_benefits_med_well_woman: true
+  caw_benefits_parttime_cost: true
+  caw_benefits_vision_contacts: true
+  caw_benefits_vision_exam: true
+  caw_benefits_vision_extras: true
+  caw_benefits_vision_frames: true
+  caw_benefits_vision_intl: true
+  caw_benefits_vision_lenses: true
+  caw_benefits_vision_lowvis: true
+  caw_benefits_vision_urgent: true
+  caw_benefits_xray: true
+  search_api_excerpt: true

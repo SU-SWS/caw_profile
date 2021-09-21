@@ -1,0 +1,19 @@
+uuid: fb4337b0-7635-4100-9644-62adea5949bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_dental
+field_name: caw_benefits_med_dental
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

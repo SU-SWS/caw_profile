@@ -1,0 +1,19 @@
+uuid: 6d67adf7-f879-4c5a-98f0-0773ad8144e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_dental
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_dental
+field_name: caw_benefits_med_dental
+entity_type: node
+bundle: caw_benefits
+label: 'Dental Treatment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

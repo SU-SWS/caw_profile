@@ -48,9 +48,13 @@
           display: block;
           max-width: 200px;
         }
+
+        @include grid-media-max('xs') {
+          display: block;
+        }
       }
 
-      @include grid-media-max('sm') {
+      @include grid-media-max('xs') {
         display: block;
       }
 

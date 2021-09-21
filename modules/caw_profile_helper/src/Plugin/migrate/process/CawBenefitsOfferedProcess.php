@@ -8,7 +8,7 @@ use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 
 /**
- * Provides a 'CawBenefitsProcess' migrate process plugin.
+ * Provides a 'CawBenefitsOfferedProcess' migrate process plugin.
  *
  * @MigrateProcessPlugin(
  *  id = "caw_benefits_offered"

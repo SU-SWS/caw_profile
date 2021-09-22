@@ -17,6 +17,7 @@
       padding-top: 20px;
 
       h2 {
+        @include type-c;
         max-width: 1500px;
         width: calc(100% - 200px);
         margin: 0 auto;
@@ -40,6 +41,32 @@
           display: grid;
           justify-content: center;
           align-content: center;
+        }
+
+        #edit-actions {
+          margin-top: 52px;
+          margin-bottom: 0;
+        }
+      }
+
+      label {
+      }
+
+      .chosen-container {
+        font-size: inherit;
+
+        .search-field {
+          width: 100%;
+        }
+      }
+
+      .chosen-container-multi {
+        .chosen-choices {
+          li.search-field {
+            input[type="text"] {
+              height: 44px;
+            }
+          }
         }
       }
     }

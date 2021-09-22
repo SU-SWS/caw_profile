@@ -70,7 +70,7 @@ display:
               title:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  placeholder_text: Name
                   collapsible: false
                   is_secondary: false
               su_careers_department_target_id:
@@ -92,7 +92,7 @@ display:
               su_careers_honored_value:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  placeholder_text: 'Year Honored'
                   collapsible: false
                   is_secondary: false
       pager:

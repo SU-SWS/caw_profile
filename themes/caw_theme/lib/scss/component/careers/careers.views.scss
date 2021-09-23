@@ -14,21 +14,26 @@
     }
 
     header {
-      padding-top: 20px;
 
       h2 {
         @include type-c;
+        @include responsive-spacing('padding', 2 null);
         max-width: 1500px;
         width: calc(100% - 200px);
         margin: 0 auto;
       }
     }
 
+    .exposed-filters{
+      @include responsive-spacing('margin', null null 5 null);
+    }
+
     form {
+      @include responsive-spacing('padding', null null 5 null);
+
       max-width: 1500px;
       width: calc(100% - 200px);
-      margin: 0 auto 40px;
-      padding-bottom: 20px;
+      margin: 0 auto;
 
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -40,11 +45,10 @@
           display: grid;
           justify-content: left;
           align-content: center;
-        }
+      }
 
-      #edit-actions {
-        margin-top: 52px;
-        margin-bottom: 0;
+      .form-submit {
+        margin: 0;
       }
 
       .chosen-container {
@@ -57,12 +61,22 @@
 
       .chosen-container-multi {
         .chosen-choices {
-          li.search-field {
+          .search-field {
             input[type="text"] {
               height: 44px;
             }
           }
         }
+      }
+
+      label:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
       }
     }
   }

@@ -24,7 +24,7 @@
       }
     }
 
-    .exposed-filters{
+    .exposed-filters {
       @include responsive-spacing('margin', null null 5 null);
     }
 
@@ -42,9 +42,9 @@
       align-content: center;
 
       > div {
-          display: grid;
-          justify-content: left;
-          align-content: center;
+        display: grid;
+        justify-content: left;
+        align-content: center;
       }
 
       .form-submit {

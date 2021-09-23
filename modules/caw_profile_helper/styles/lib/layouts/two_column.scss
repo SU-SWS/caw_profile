@@ -1,24 +1,48 @@
-.caw-layout--two-column {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0 auto;
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
 
-  .jumpstart-ui--one-column & {
-    width: calc(100% - 200px);
+.caw-layout--two-column {
+  margin: 0 20px;
+
+  @include grid-media('sm') {
+    margin: 0 30px;
   }
 
-  .layout__region {
-    .paragraph[class*=ptype-],
-    .ds-entity--paragraph {
-      width: 100%;
+  @include grid-media('md') {
+    margin: 0 50px;
+  }
+
+  @include grid-media('lg') {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+    padding: 0 80px;
+    margin: 0;
+
+    &.caw-two-column--33-67 {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+
+    &.caw-two-column--67-33 {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     }
   }
-}
 
-.caw-two-column--33-67 {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-}
+  @include grid-media('xl') {
+    padding: 0 100px;
+  }
 
-.caw-two-column--67-33 {
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-}
+  [class*="paragraph--type--"],
+  .ds-entity--paragraph {
+    margin-bottom: 10.8rem;
 
+    @include grid-media('lg') {
+      margin-bottom: 0;
+    }
+  }
+
+  .jumpstart-ui--two-column.centered-container & {
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -179,6 +179,47 @@ class WYSIWYGCest {
   }
 
   /**
+   * Wysiwyg tables can be edited.
+   *
+   * @group mikes
+   *
+   * @link https://www.drupal.org/project/drupal/issues/3065095
+   */
+  public function testWysiwygTables(FunctionalTester $I) {
+    $paragraph = $I->createEntity(['type' => 'stanford_wysiwyg'], 'paragraph');
+
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => 'Test WYSIWYG',
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+    $I->logInWithRole('site_manager');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->waitForElement('.lpb-controls a');
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Edit Text Area');
+    $I->wait(1);
+    $I->click('Table');
+    $I->waitForText('Table Properties');
+    $I->fillField('Rows', 5);
+    $I->fillField('Columns', 6);
+    $I->fillField('Caption', 'Table Caption');
+    $I->click('OK');
+    $I->click('Save', '.ui-dialog-buttonpane');
+
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save');
+    $I->canSee('Table Caption', 'table');
+    // Rows.
+    $I->canSeeNumberOfElements('.su-wysiwyg-text tr', 5);
+    // Columns.
+    $I->canSeeNumberOfElements('.su-wysiwyg-text tr:first-child td', 6);
+  }
+
+  /**
    * Get a node with a wysiwyg paragraph on it.
    *
    * @param \FunctionalTester $I

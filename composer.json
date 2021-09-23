@@ -125,6 +125,10 @@
                 "drush.services.yml": "^9"
             }
         },
-        "patches": {}
+        "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3065095": "https://git.drupalcode.org/project/drupal/-/merge_requests/863.diff"
+            }
+        }
     }
 }

@@ -260,13 +260,6 @@ function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginB
 }
 
 /**
- * Implements hook_views_post_build().
- */
-function caw_profile_helper_views_post_build(ViewExecutable $view) {
-  //  dpm($view);
-}
-
-/**
  * Implements hook_views_pre_render().
  */
 function caw_profile_helper_views_pre_render(ViewExecutable $view) {

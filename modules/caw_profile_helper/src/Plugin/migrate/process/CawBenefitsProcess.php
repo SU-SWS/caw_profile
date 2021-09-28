@@ -24,14 +24,16 @@ class CawBenefitsProcess extends ProcessPluginBase {
       throw new MigrateSkipProcessException('empty value');
     }
     $replacements = [
-      '/>[ ]+?</' => '><',
-      '/<p.*?>/' => '',
-      '/<\/p>/' => PHP_EOL,
-      '/\t/' => ' ',
+      "/\n[ \t]+/" => "\n",
+      "/\t/" => " ",
+      "/> +/" => ">",
+      "/>[ ]+?</" => "><",
+      "/<p.*?>/" => "",
+      "/<\/p>/" => PHP_EOL,
     ];
     $value = preg_replace(array_keys($replacements), $replacements, (string) $value);
     $value = preg_replace('/  +/', ' ', trim(strip_tags($value)));
-    return $value;
+    return htmlspecialchars_decode($value);
   }
 
 }

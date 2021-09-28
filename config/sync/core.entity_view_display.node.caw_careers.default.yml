@@ -52,6 +52,8 @@ third_party_settings:
         - su_careers_proud_project
         - su_careers_memory
         - su_careers_legacy
+      related:
+        - 'dynamic_block_field:node-caw_other_careers'
     fields:
       node_title:
         plugin_id: node_title
@@ -63,6 +65,11 @@ third_party_settings:
           wrapper: h1
           class: ''
           link: false
+      'dynamic_block_field:node-caw_other_careers':
+        plugin_id: 'dynamic_block_field:node-caw_other_careers'
+        weight: 12
+        label: hidden
+        formatter: default
 id: node.caw_careers.default
 targetEntityType: node
 bundle: caw_careers

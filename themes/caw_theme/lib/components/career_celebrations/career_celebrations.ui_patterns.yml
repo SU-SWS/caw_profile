@@ -25,6 +25,10 @@ career_celebrations:
       label: Body
       description: "The main body contents."
       preview: "<p>Lorem Ipsum</p>"
+    related:
+      type: text
+      label: Related Celebrations
+      preview: "Related Celebrations"
 
   use: "@caw-theme/career_celebrations/career_celebrations.html.twig"
   libraries:

@@ -12,6 +12,10 @@ sweeteners.node:
   css:
     component:
       dist/css/sweeteners.node.css: { }
+careers.views:
+  css:
+    component:
+      dist/css/careers.views.css: { }
 
 components.faq:
   css:

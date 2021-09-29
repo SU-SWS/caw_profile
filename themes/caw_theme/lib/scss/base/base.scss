@@ -29,3 +29,15 @@
     }
   }
 }
+
+@for $i from 2 through 4 {
+
+  .grid-container-#{$i} {
+    display: grid;
+    grid-gap: 30px;
+
+    @include grid-media('md') {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+}

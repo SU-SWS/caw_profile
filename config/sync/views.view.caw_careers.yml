@@ -70,7 +70,7 @@ display:
               title:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  placeholder_text: Name
                   collapsible: false
                   is_secondary: false
               su_careers_department_target_id:
@@ -92,13 +92,13 @@ display:
               su_careers_honored_value:
                 plugin_id: default
                 advanced:
-                  placeholder_text: ''
+                  placeholder_text: 'Year Honored'
                   collapsible: false
                   is_secondary: false
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 21
+          items_per_page: 20
           offset: 0
           id: 0
           total_pages: null
@@ -120,12 +120,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: flex-3-of-12
+          row_class: ''
           default_row_class: true
           uses_fields: false
           type: ul
           wrapper_class: ''
-          class: 'su-list-unstyled flex-container'
+          class: 'su-list-unstyled grid-container-2'
       row:
         type: 'entity:node'
         options:
@@ -270,7 +270,7 @@ display:
           exposed: true
           expose:
             operator_id: su_careers_department_target_id_op
-            label: Department
+            label: School/Unit
             description: ''
             use_operator: false
             operator: su_careers_department_target_id_op
@@ -383,7 +383,7 @@ display:
           exposed: true
           expose:
             operator_id: su_careers_honored_value_op
-            label: 'Honored Year'
+            label: 'Year Honored'
             description: ''
             use_operator: false
             operator: su_careers_honored_value_op
@@ -446,7 +446,20 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2>Filter by</h2>'
+            format: stanford_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -522,6 +535,164 @@ display:
         - url
         - url.query_args
         - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  other_celebrations:
+    display_plugin: block
+    id: other_celebrations
+    display_title: 'Other Celebrations'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 2
+          offset: 0
+      defaults:
+        pager: false
+        arguments: false
+        filters: false
+        filter_groups: false
+        header: false
+        sorts: false
+      arguments:
+        su_careers_honored_value:
+          id: su_careers_honored_value
+          table: node__su_careers_honored
+          field: su_careers_honored_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          plugin_id: numeric
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: true
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            caw_careers: caw_careers
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header: {  }
+      sorts:
+        su_careers_honored_value:
+          id: su_careers_honored_value
+          table: node__su_careers_honored
+          field: su_careers_honored_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: random
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

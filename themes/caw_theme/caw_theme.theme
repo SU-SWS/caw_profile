@@ -77,6 +77,9 @@ function caw_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] == 'caw_sweeteners') {
     $variables['#attached']['library'][] = 'caw_theme/sweeteners.views';
   }
+  if ($variables['id'] == 'caw_careers') {
+    $variables['#attached']['library'][] = 'caw_theme/careers.views';
+  }
 }
 
 /**
@@ -107,6 +110,14 @@ function caw_theme_preprocess_paragraph(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function caw_theme_preprocess_paragraph__stanford_faq(&$variables){
+function caw_theme_preprocess_paragraph__stanford_faq(&$variables) {
   $variables['#attached']['library'][] = 'caw_theme/components.faq';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_field(&$variables) {
+  $variables['attributes']['class'][] = 'field';
+  $variables['title_attributes']['class'][] = 'label';
 }

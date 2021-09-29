@@ -1,0 +1,30 @@
+career_card:
+  label: Career Card
+  description: "Collapsible accordion."
+  fields:
+    image:
+      type: image
+      label: "Image"
+      description: "Image"
+    title:
+      type: text
+      label: "Display Name/Title"
+      preview: "John Doe"
+    job_title:
+      type: text
+      label: "Job Title"
+      preview: ""
+    years:
+      type: text
+      label: "Years at Stanford"
+    honored:
+      type: text
+      label: "Year honored"
+
+  use: "@caw-theme/career_card/career_card.html.twig"
+  libraries:
+    - caw_theme.career_celebrations:
+        css:
+          component:
+            ../../../dist/css/components/career_card/career_card.css: { }
+

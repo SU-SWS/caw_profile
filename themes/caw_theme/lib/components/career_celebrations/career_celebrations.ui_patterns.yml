@@ -1,0 +1,39 @@
+career_celebrations:
+  label: Career Celebrations
+  description: "Collapsible accordion."
+  fields:
+    image:
+      type: image
+      label: "Image"
+      description: "Image"
+    title:
+      type: text
+      label: "Display Name/Title"
+      preview: "John Doe"
+    job_title:
+      type: text
+      label: "Job Title"
+      preview: ""
+    years:
+      type: text
+      label: "Years at Stanford"
+    honored:
+      type: text
+      label: "Year honored"
+    body:
+      type: text
+      label: Body
+      description: "The main body contents."
+      preview: "<p>Lorem Ipsum</p>"
+    related:
+      type: text
+      label: Related Celebrations
+      preview: "Related Celebrations"
+
+  use: "@caw-theme/career_celebrations/career_celebrations.html.twig"
+  libraries:
+    - caw_theme.career_celebrations:
+        css:
+          component:
+            ../../../dist/css/components/career_celebrations/career_celebrations.css: { }
+

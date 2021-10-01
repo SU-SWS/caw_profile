@@ -14,7 +14,7 @@ disabled_themes:
   seven: '0'
   caw_theme: '0'
   stanford_basic: '0'
-chosen_include: 2
+chosen_include: 1
 _core:
   default_config_hash: YWbqKPHA3djohSgnBRKhK0NUjnO1dL1XmIo3yBw3oFo
 max_shown_results: null

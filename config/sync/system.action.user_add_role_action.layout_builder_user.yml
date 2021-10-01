@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 id: user_add_role_action.layout_builder_user
-label: 'Add the LB User role to the selected user(s)'
+label: 'Add the Layout Builder User role to the selected user(s)'
 type: user
 plugin: user_add_role_action
 configuration:

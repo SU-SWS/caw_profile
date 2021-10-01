@@ -1,0 +1,38 @@
+.caw-benefits.list {
+  li {
+    border: 3px solid #EAEAEA;
+    border-radius: 5px;
+
+    > div:not(:first-child) {
+      padding: 20px;
+    }
+  }
+
+  .compare-selector {
+    background: #EAEAEA;
+  }
+
+  .selected {
+    border: 3px solid #4298B5;
+
+    .compare-selector {
+      background: #4298B5;
+    }
+  }
+
+  label {
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  input[type = "checkbox"] {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    clip-path: none;
+    float: right;
+  }
+}

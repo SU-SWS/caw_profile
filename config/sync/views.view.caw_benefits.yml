@@ -1,0 +1,2217 @@
+uuid: 1df03a3d-019f-4383-8936-582afad5c8bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.caw_benefits_annual_max
+    - field.storage.node.caw_benefits_coinsurance
+    - field.storage.node.caw_benefits_deductible
+    - field.storage.node.caw_benefits_dent_anesthesia
+    - field.storage.node.caw_benefits_dent_bridges
+    - field.storage.node.caw_benefits_dent_cleanings
+    - field.storage.node.caw_benefits_dent_crown
+    - field.storage.node.caw_benefits_dent_denture
+    - field.storage.node.caw_benefits_dent_exam
+    - field.storage.node.caw_benefits_dent_extraction
+    - field.storage.node.caw_benefits_dent_filling
+    - field.storage.node.caw_benefits_dent_flouride
+    - field.storage.node.caw_benefits_dent_gingivectomy
+    - field.storage.node.caw_benefits_dent_gold
+    - field.storage.node.caw_benefits_dent_implant
+    - field.storage.node.caw_benefits_dent_inlay
+    - field.storage.node.caw_benefits_dent_onlay
+    - field.storage.node.caw_benefits_dent_oral_surg
+    - field.storage.node.caw_benefits_dent_ortho
+    - field.storage.node.caw_benefits_dent_perio_surg
+    - field.storage.node.caw_benefits_dent_retainer
+    - field.storage.node.caw_benefits_dent_root
+    - field.storage.node.caw_benefits_dent_rx
+    - field.storage.node.caw_benefits_dent_sealant
+    - field.storage.node.caw_benefits_dent_space
+    - field.storage.node.caw_benefits_dent_splint
+    - field.storage.node.caw_benefits_dent_tmj
+    - field.storage.node.caw_benefits_fulltime_cost
+    - field.storage.node.caw_benefits_lifetime_max
+    - field.storage.node.caw_benefits_med_abulance
+    - field.storage.node.caw_benefits_med_acupuncture
+    - field.storage.node.caw_benefits_med_adult_physical
+    - field.storage.node.caw_benefits_med_allergy_test
+    - field.storage.node.caw_benefits_med_allergy_treat
+    - field.storage.node.caw_benefits_med_alt_medicine
+    - field.storage.node.caw_benefits_med_autism
+    - field.storage.node.caw_benefits_med_baby_exam
+    - field.storage.node.caw_benefits_med_birth_control
+    - field.storage.node.caw_benefits_med_birthing
+    - field.storage.node.caw_benefits_med_care_mgmt
+    - field.storage.node.caw_benefits_med_child_psycial
+    - field.storage.node.caw_benefits_med_chiro
+    - field.storage.node.caw_benefits_med_christian_prac
+    - field.storage.node.caw_benefits_med_copay
+    - field.storage.node.caw_benefits_med_cosmetic
+    - field.storage.node.caw_benefits_med_ct_scan
+    - field.storage.node.caw_benefits_med_delivery
+    - field.storage.node.caw_benefits_med_dental
+    - field.storage.node.caw_benefits_med_durable_equip
+    - field.storage.node.caw_benefits_med_er
+    - field.storage.node.caw_benefits_med_hearing
+    - field.storage.node.caw_benefits_med_home_health
+    - field.storage.node.caw_benefits_med_hopsital_stay
+    - field.storage.node.caw_benefits_med_hospice
+    - field.storage.node.caw_benefits_med_immunizations
+    - field.storage.node.caw_benefits_med_infertility
+    - field.storage.node.caw_benefits_med_lab
+    - field.storage.node.caw_benefits_med_mail_rx
+    - field.storage.node.caw_benefits_med_mammograms
+    - field.storage.node.caw_benefits_med_maternity_stay
+    - field.storage.node.caw_benefits_med_mental_health
+    - field.storage.node.caw_benefits_med_midwives
+    - field.storage.node.caw_benefits_med_mri
+    - field.storage.node.caw_benefits_med_nursing
+    - field.storage.node.caw_benefits_med_occupational
+    - field.storage.node.caw_benefits_med_pap_smears
+    - field.storage.node.caw_benefits_med_pharmacy
+    - field.storage.node.caw_benefits_med_preauth_req
+    - field.storage.node.caw_benefits_med_preg_term
+    - field.storage.node.caw_benefits_med_prenatal
+    - field.storage.node.caw_benefits_med_psa
+    - field.storage.node.caw_benefits_med_pt
+    - field.storage.node.caw_benefits_med_speech
+    - field.storage.node.caw_benefits_med_substance
+    - field.storage.node.caw_benefits_med_surgery_facil
+    - field.storage.node.caw_benefits_med_surgery_md
+    - field.storage.node.caw_benefits_med_transpants
+    - field.storage.node.caw_benefits_med_tubal
+    - field.storage.node.caw_benefits_med_urgent
+    - field.storage.node.caw_benefits_med_vasectomy
+    - field.storage.node.caw_benefits_med_vision
+    - field.storage.node.caw_benefits_med_well_woman
+    - field.storage.node.caw_benefits_parttime_cost
+    - field.storage.node.caw_benefits_vision_contacts
+    - field.storage.node.caw_benefits_vision_exam
+    - field.storage.node.caw_benefits_vision_extras
+    - field.storage.node.caw_benefits_vision_frames
+    - field.storage.node.caw_benefits_vision_intl
+    - field.storage.node.caw_benefits_vision_lenses
+    - field.storage.node.caw_benefits_vision_lowvis
+    - field.storage.node.caw_benefits_vision_urgent
+    - field.storage.node.caw_benefits_xray
+    - field.storage.node.su_benefit_type
+    - field.storage.node.su_benefits_offered
+    - field.storage.node.su_benefits_year
+    - node.type.caw_benefits
+  module:
+    - datetime
+    - node
+    - options
+    - smart_trim
+    - stanford_fields
+    - user
+    - views_flipped_table
+id: caw_benefits
+label: Benefits
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Default
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+          contextual_filters_or: false
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: none
+        options:
+          offset: 0
+      style:
+        type: flipped_table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: 1
+          sticky: 0
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+            caw_benefits_med_acupuncture: caw_benefits_med_acupuncture
+            caw_benefits_med_allergy_test: caw_benefits_med_allergy_test
+            caw_benefits_med_allergy_treat: caw_benefits_med_allergy_treat
+            caw_benefits_med_alt_medicine: caw_benefits_med_alt_medicine
+            caw_benefits_med_abulance: caw_benefits_med_abulance
+            caw_benefits_dent_anesthesia: caw_benefits_dent_anesthesia
+            caw_benefits_annual_max: caw_benefits_annual_max
+            caw_benefits_med_autism: caw_benefits_med_autism
+            caw_benefits_med_baby_exam: caw_benefits_med_baby_exam
+            su_benefit_type: su_benefit_type
+            caw_benefits_med_birth_control: caw_benefits_med_birth_control
+            caw_benefits_med_birthing: caw_benefits_med_birthing
+            caw_benefits_dent_bridges: caw_benefits_dent_bridges
+            caw_benefits_med_care_mgmt: caw_benefits_med_care_mgmt
+            caw_benefits_med_chiro: caw_benefits_med_chiro
+            caw_benefits_med_christian_prac: caw_benefits_med_christian_prac
+            caw_benefits_dent_cleanings: caw_benefits_dent_cleanings
+            caw_benefits_coinsurance: caw_benefits_coinsurance
+            caw_benefits_med_cosmetic: caw_benefits_med_cosmetic
+            caw_benefits_dent_crown: caw_benefits_dent_crown
+            caw_benefits_med_ct_scan: caw_benefits_med_ct_scan
+            caw_benefits_deductible: caw_benefits_deductible
+            caw_benefits_med_dental: caw_benefits_med_dental
+            caw_benefits_dent_denture: caw_benefits_dent_denture
+            caw_benefits_med_delivery: caw_benefits_med_delivery
+            caw_benefits_med_durable_equip: caw_benefits_med_durable_equip
+            caw_benefits_vision_contacts: caw_benefits_vision_contacts
+            caw_benefits_med_er: caw_benefits_med_er
+            caw_benefits_dent_extraction: caw_benefits_dent_extraction
+            caw_benefits_vision_extras: caw_benefits_vision_extras
+            caw_benefits_dent_filling: caw_benefits_dent_filling
+            caw_benefits_dent_flouride: caw_benefits_dent_flouride
+            caw_benefits_vision_frames: caw_benefits_vision_frames
+            caw_benefits_fulltime_cost: caw_benefits_fulltime_cost
+            caw_benefits_dent_gingivectomy: caw_benefits_dent_gingivectomy
+            caw_benefits_dent_gold: caw_benefits_dent_gold
+            caw_benefits_med_hearing: caw_benefits_med_hearing
+            caw_benefits_med_home_health: caw_benefits_med_home_health
+            caw_benefits_med_hospice: caw_benefits_med_hospice
+            caw_benefits_med_hopsital_stay: caw_benefits_med_hopsital_stay
+            caw_benefits_med_immunizations: caw_benefits_med_immunizations
+            caw_benefits_dent_implant: caw_benefits_dent_implant
+            caw_benefits_med_infertility: caw_benefits_med_infertility
+            caw_benefits_dent_inlay: caw_benefits_dent_inlay
+            caw_benefits_med_lab: caw_benefits_med_lab
+            caw_benefits_vision_lenses: caw_benefits_vision_lenses
+            caw_benefits_lifetime_max: caw_benefits_lifetime_max
+            caw_benefits_vision_lowvis: caw_benefits_vision_lowvis
+            caw_benefits_med_mri: caw_benefits_med_mri
+            caw_benefits_med_mail_rx: caw_benefits_med_mail_rx
+            caw_benefits_med_mammograms: caw_benefits_med_mammograms
+            caw_benefits_med_maternity_stay: caw_benefits_med_maternity_stay
+            caw_benefits_vision_urgent: caw_benefits_vision_urgent
+            caw_benefits_med_mental_health: caw_benefits_med_mental_health
+            caw_benefits_med_midwives: caw_benefits_med_midwives
+            caw_benefits_med_occupational: caw_benefits_med_occupational
+            su_benefits_offered: su_benefits_offered
+            delta: delta
+            caw_benefits_med_copay: caw_benefits_med_copay
+            caw_benefits_dent_onlay: caw_benefits_dent_onlay
+            caw_benefits_dent_oral_surg: caw_benefits_dent_oral_surg
+            caw_benefits_med_transpants: caw_benefits_med_transpants
+            caw_benefits_dent_ortho: caw_benefits_dent_ortho
+            caw_benefits_vision_intl: caw_benefits_vision_intl
+            caw_benefits_med_pap_smears: caw_benefits_med_pap_smears
+            caw_benefits_parttime_cost: caw_benefits_parttime_cost
+            caw_benefits_dent_perio_surg: caw_benefits_dent_perio_surg
+            caw_benefits_med_pharmacy: caw_benefits_med_pharmacy
+            caw_benefits_med_adult_physical: caw_benefits_med_adult_physical
+            caw_benefits_med_child_psycial: caw_benefits_med_child_psycial
+            caw_benefits_med_pt: caw_benefits_med_pt
+            su_benefits_year: su_benefits_year
+            caw_benefits_med_preauth_req: caw_benefits_med_preauth_req
+            caw_benefits_med_preg_term: caw_benefits_med_preg_term
+            caw_benefits_med_prenatal: caw_benefits_med_prenatal
+            caw_benefits_dent_rx: caw_benefits_dent_rx
+            caw_benefits_med_psa: caw_benefits_med_psa
+            caw_benefits_dent_retainer: caw_benefits_dent_retainer
+            caw_benefits_dent_root: caw_benefits_dent_root
+            caw_benefits_dent_exam: caw_benefits_dent_exam
+            caw_benefits_dent_sealant: caw_benefits_dent_sealant
+            caw_benefits_med_nursing: caw_benefits_med_nursing
+            caw_benefits_dent_space: caw_benefits_dent_space
+            caw_benefits_med_speech: caw_benefits_med_speech
+            caw_benefits_dent_splint: caw_benefits_dent_splint
+            caw_benefits_med_substance: caw_benefits_med_substance
+            caw_benefits_med_surgery_facil: caw_benefits_med_surgery_facil
+            caw_benefits_med_surgery_md: caw_benefits_med_surgery_md
+            caw_benefits_dent_tmj: caw_benefits_dent_tmj
+            caw_benefits_med_tubal: caw_benefits_med_tubal
+            caw_benefits_med_urgent: caw_benefits_med_urgent
+            caw_benefits_med_vasectomy: caw_benefits_med_vasectomy
+            caw_benefits_med_vision: caw_benefits_med_vision
+            caw_benefits_vision_exam: caw_benefits_vision_exam
+            caw_benefits_med_well_woman: caw_benefits_med_well_woman
+            caw_benefits_xray: caw_benefits_xray
+          info:
+            title:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            caw_benefits_med_acupuncture:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_allergy_test:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_allergy_treat:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_alt_medicine:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_abulance:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_anesthesia:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_annual_max:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_autism:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_baby_exam:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            su_benefit_type:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_birth_control:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_birthing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_bridges:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_care_mgmt:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_chiro:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_christian_prac:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_cleanings:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_coinsurance:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_cosmetic:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_crown:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_ct_scan:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_deductible:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_dental:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_denture:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_delivery:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_durable_equip:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_contacts:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_er:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_extraction:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_extras:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_filling:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_flouride:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_frames:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_fulltime_cost:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_gingivectomy:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_gold:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hearing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_home_health:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hospice:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hopsital_stay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_immunizations:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_implant:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_infertility:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_inlay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_lab:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_lenses:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_lifetime_max:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_lowvis:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_mri:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_mail_rx:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_mammograms:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_maternity_stay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_urgent:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_mental_health:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_midwives:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_occupational:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            su_benefits_offered:
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            delta:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_copay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_onlay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_oral_surg:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_transpants:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_ortho:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_intl:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_pap_smears:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_parttime_cost:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_perio_surg:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_pharmacy:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_adult_physical:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_child_psycial:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_pt:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            su_benefits_year:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_preauth_req:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_preg_term:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_prenatal:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_rx:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_psa:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_retainer:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_root:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_exam:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_sealant:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_nursing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_space:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_speech:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_splint:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_substance:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_surgery_facil:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_surgery_md:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_tmj:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_tubal:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_urgent:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_vasectomy:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_vision:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_vision_exam:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_well_woman:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_xray:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+          default: '-1'
+          empty_table: 0
+          flipped_table_header_first_field: 1
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        caw_benefits_med_acupuncture:
+          id: caw_benefits_med_acupuncture
+          table: node__caw_benefits_med_acupuncture
+          field: caw_benefits_med_acupuncture
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        caw_benefits_med_allergy_test:
+          id: caw_benefits_med_allergy_test
+          table: node__caw_benefits_med_allergy_test
+          field: caw_benefits_med_allergy_test
+          plugin_id: field
+        caw_benefits_med_allergy_treat:
+          id: caw_benefits_med_allergy_treat
+          table: node__caw_benefits_med_allergy_treat
+          field: caw_benefits_med_allergy_treat
+          plugin_id: field
+        caw_benefits_med_alt_medicine:
+          id: caw_benefits_med_alt_medicine
+          table: node__caw_benefits_med_alt_medicine
+          field: caw_benefits_med_alt_medicine
+          plugin_id: field
+        caw_benefits_med_abulance:
+          id: caw_benefits_med_abulance
+          table: node__caw_benefits_med_abulance
+          field: caw_benefits_med_abulance
+          plugin_id: field
+        caw_benefits_dent_anesthesia:
+          id: caw_benefits_dent_anesthesia
+          table: node__caw_benefits_dent_anesthesia
+          field: caw_benefits_dent_anesthesia
+          plugin_id: field
+        caw_benefits_annual_max:
+          id: caw_benefits_annual_max
+          table: node__caw_benefits_annual_max
+          field: caw_benefits_annual_max
+          plugin_id: field
+        caw_benefits_med_autism:
+          id: caw_benefits_med_autism
+          table: node__caw_benefits_med_autism
+          field: caw_benefits_med_autism
+          plugin_id: field
+        caw_benefits_med_baby_exam:
+          id: caw_benefits_med_baby_exam
+          table: node__caw_benefits_med_baby_exam
+          field: caw_benefits_med_baby_exam
+          plugin_id: field
+        su_benefit_type:
+          id: su_benefit_type
+          table: node__su_benefit_type
+          field: su_benefit_type
+          plugin_id: field
+        caw_benefits_med_birth_control:
+          id: caw_benefits_med_birth_control
+          table: node__caw_benefits_med_birth_control
+          field: caw_benefits_med_birth_control
+          plugin_id: field
+        caw_benefits_med_birthing:
+          id: caw_benefits_med_birthing
+          table: node__caw_benefits_med_birthing
+          field: caw_benefits_med_birthing
+          plugin_id: field
+        caw_benefits_dent_bridges:
+          id: caw_benefits_dent_bridges
+          table: node__caw_benefits_dent_bridges
+          field: caw_benefits_dent_bridges
+          plugin_id: field
+        caw_benefits_med_care_mgmt:
+          id: caw_benefits_med_care_mgmt
+          table: node__caw_benefits_med_care_mgmt
+          field: caw_benefits_med_care_mgmt
+          plugin_id: field
+        caw_benefits_med_chiro:
+          id: caw_benefits_med_chiro
+          table: node__caw_benefits_med_chiro
+          field: caw_benefits_med_chiro
+          plugin_id: field
+        caw_benefits_med_christian_prac:
+          id: caw_benefits_med_christian_prac
+          table: node__caw_benefits_med_christian_prac
+          field: caw_benefits_med_christian_prac
+          plugin_id: field
+        caw_benefits_dent_cleanings:
+          id: caw_benefits_dent_cleanings
+          table: node__caw_benefits_dent_cleanings
+          field: caw_benefits_dent_cleanings
+          plugin_id: field
+        caw_benefits_coinsurance:
+          id: caw_benefits_coinsurance
+          table: node__caw_benefits_coinsurance
+          field: caw_benefits_coinsurance
+          plugin_id: field
+        caw_benefits_med_cosmetic:
+          id: caw_benefits_med_cosmetic
+          table: node__caw_benefits_med_cosmetic
+          field: caw_benefits_med_cosmetic
+          plugin_id: field
+        caw_benefits_dent_crown:
+          id: caw_benefits_dent_crown
+          table: node__caw_benefits_dent_crown
+          field: caw_benefits_dent_crown
+          plugin_id: field
+        caw_benefits_med_ct_scan:
+          id: caw_benefits_med_ct_scan
+          table: node__caw_benefits_med_ct_scan
+          field: caw_benefits_med_ct_scan
+          plugin_id: field
+        caw_benefits_deductible:
+          id: caw_benefits_deductible
+          table: node__caw_benefits_deductible
+          field: caw_benefits_deductible
+          plugin_id: field
+        caw_benefits_med_dental:
+          id: caw_benefits_med_dental
+          table: node__caw_benefits_med_dental
+          field: caw_benefits_med_dental
+          plugin_id: field
+        caw_benefits_dent_denture:
+          id: caw_benefits_dent_denture
+          table: node__caw_benefits_dent_denture
+          field: caw_benefits_dent_denture
+          plugin_id: field
+        caw_benefits_med_delivery:
+          id: caw_benefits_med_delivery
+          table: node__caw_benefits_med_delivery
+          field: caw_benefits_med_delivery
+          plugin_id: field
+        caw_benefits_med_durable_equip:
+          id: caw_benefits_med_durable_equip
+          table: node__caw_benefits_med_durable_equip
+          field: caw_benefits_med_durable_equip
+          plugin_id: field
+        caw_benefits_vision_contacts:
+          id: caw_benefits_vision_contacts
+          table: node__caw_benefits_vision_contacts
+          field: caw_benefits_vision_contacts
+          plugin_id: field
+        caw_benefits_med_er:
+          id: caw_benefits_med_er
+          table: node__caw_benefits_med_er
+          field: caw_benefits_med_er
+          plugin_id: field
+        caw_benefits_dent_extraction:
+          id: caw_benefits_dent_extraction
+          table: node__caw_benefits_dent_extraction
+          field: caw_benefits_dent_extraction
+          plugin_id: field
+        caw_benefits_vision_extras:
+          id: caw_benefits_vision_extras
+          table: node__caw_benefits_vision_extras
+          field: caw_benefits_vision_extras
+          plugin_id: field
+        caw_benefits_dent_filling:
+          id: caw_benefits_dent_filling
+          table: node__caw_benefits_dent_filling
+          field: caw_benefits_dent_filling
+          plugin_id: field
+        caw_benefits_dent_flouride:
+          id: caw_benefits_dent_flouride
+          table: node__caw_benefits_dent_flouride
+          field: caw_benefits_dent_flouride
+          plugin_id: field
+        caw_benefits_vision_frames:
+          id: caw_benefits_vision_frames
+          table: node__caw_benefits_vision_frames
+          field: caw_benefits_vision_frames
+          plugin_id: field
+        caw_benefits_fulltime_cost:
+          id: caw_benefits_fulltime_cost
+          table: node__caw_benefits_fulltime_cost
+          field: caw_benefits_fulltime_cost
+          plugin_id: field
+        caw_benefits_dent_gingivectomy:
+          id: caw_benefits_dent_gingivectomy
+          table: node__caw_benefits_dent_gingivectomy
+          field: caw_benefits_dent_gingivectomy
+          plugin_id: field
+        caw_benefits_dent_gold:
+          id: caw_benefits_dent_gold
+          table: node__caw_benefits_dent_gold
+          field: caw_benefits_dent_gold
+          plugin_id: field
+        caw_benefits_med_hearing:
+          id: caw_benefits_med_hearing
+          table: node__caw_benefits_med_hearing
+          field: caw_benefits_med_hearing
+          plugin_id: field
+        caw_benefits_med_home_health:
+          id: caw_benefits_med_home_health
+          table: node__caw_benefits_med_home_health
+          field: caw_benefits_med_home_health
+          plugin_id: field
+        caw_benefits_med_hospice:
+          id: caw_benefits_med_hospice
+          table: node__caw_benefits_med_hospice
+          field: caw_benefits_med_hospice
+          plugin_id: field
+        caw_benefits_med_hopsital_stay:
+          id: caw_benefits_med_hopsital_stay
+          table: node__caw_benefits_med_hopsital_stay
+          field: caw_benefits_med_hopsital_stay
+          plugin_id: field
+        caw_benefits_med_immunizations:
+          id: caw_benefits_med_immunizations
+          table: node__caw_benefits_med_immunizations
+          field: caw_benefits_med_immunizations
+          plugin_id: field
+        caw_benefits_dent_implant:
+          id: caw_benefits_dent_implant
+          table: node__caw_benefits_dent_implant
+          field: caw_benefits_dent_implant
+          plugin_id: field
+        caw_benefits_med_infertility:
+          id: caw_benefits_med_infertility
+          table: node__caw_benefits_med_infertility
+          field: caw_benefits_med_infertility
+          plugin_id: field
+        caw_benefits_dent_inlay:
+          id: caw_benefits_dent_inlay
+          table: node__caw_benefits_dent_inlay
+          field: caw_benefits_dent_inlay
+          plugin_id: field
+        caw_benefits_med_lab:
+          id: caw_benefits_med_lab
+          table: node__caw_benefits_med_lab
+          field: caw_benefits_med_lab
+          plugin_id: field
+        caw_benefits_vision_lenses:
+          id: caw_benefits_vision_lenses
+          table: node__caw_benefits_vision_lenses
+          field: caw_benefits_vision_lenses
+          plugin_id: field
+        caw_benefits_lifetime_max:
+          id: caw_benefits_lifetime_max
+          table: node__caw_benefits_lifetime_max
+          field: caw_benefits_lifetime_max
+          plugin_id: field
+        caw_benefits_vision_lowvis:
+          id: caw_benefits_vision_lowvis
+          table: node__caw_benefits_vision_lowvis
+          field: caw_benefits_vision_lowvis
+          plugin_id: field
+        caw_benefits_med_mri:
+          id: caw_benefits_med_mri
+          table: node__caw_benefits_med_mri
+          field: caw_benefits_med_mri
+          plugin_id: field
+        caw_benefits_med_mail_rx:
+          id: caw_benefits_med_mail_rx
+          table: node__caw_benefits_med_mail_rx
+          field: caw_benefits_med_mail_rx
+          plugin_id: field
+        caw_benefits_med_mammograms:
+          id: caw_benefits_med_mammograms
+          table: node__caw_benefits_med_mammograms
+          field: caw_benefits_med_mammograms
+          plugin_id: field
+        caw_benefits_med_maternity_stay:
+          id: caw_benefits_med_maternity_stay
+          table: node__caw_benefits_med_maternity_stay
+          field: caw_benefits_med_maternity_stay
+          plugin_id: field
+        caw_benefits_vision_urgent:
+          id: caw_benefits_vision_urgent
+          table: node__caw_benefits_vision_urgent
+          field: caw_benefits_vision_urgent
+          plugin_id: field
+        caw_benefits_med_mental_health:
+          id: caw_benefits_med_mental_health
+          table: node__caw_benefits_med_mental_health
+          field: caw_benefits_med_mental_health
+          plugin_id: field
+        caw_benefits_med_midwives:
+          id: caw_benefits_med_midwives
+          table: node__caw_benefits_med_midwives
+          field: caw_benefits_med_midwives
+          plugin_id: field
+        caw_benefits_med_occupational:
+          id: caw_benefits_med_occupational
+          table: node__caw_benefits_med_occupational
+          field: caw_benefits_med_occupational
+          plugin_id: field
+        su_benefits_offered:
+          id: su_benefits_offered
+          table: node__su_benefits_offered
+          field: su_benefits_offered
+          plugin_id: field
+        caw_benefits_med_copay:
+          id: caw_benefits_med_copay
+          table: node__caw_benefits_med_copay
+          field: caw_benefits_med_copay
+          plugin_id: field
+        caw_benefits_dent_onlay:
+          id: caw_benefits_dent_onlay
+          table: node__caw_benefits_dent_onlay
+          field: caw_benefits_dent_onlay
+          plugin_id: field
+        caw_benefits_dent_oral_surg:
+          id: caw_benefits_dent_oral_surg
+          table: node__caw_benefits_dent_oral_surg
+          field: caw_benefits_dent_oral_surg
+          plugin_id: field
+        caw_benefits_med_transpants:
+          id: caw_benefits_med_transpants
+          table: node__caw_benefits_med_transpants
+          field: caw_benefits_med_transpants
+          plugin_id: field
+        caw_benefits_dent_ortho:
+          id: caw_benefits_dent_ortho
+          table: node__caw_benefits_dent_ortho
+          field: caw_benefits_dent_ortho
+          plugin_id: field
+        caw_benefits_vision_intl:
+          id: caw_benefits_vision_intl
+          table: node__caw_benefits_vision_intl
+          field: caw_benefits_vision_intl
+          plugin_id: field
+        caw_benefits_med_pap_smears:
+          id: caw_benefits_med_pap_smears
+          table: node__caw_benefits_med_pap_smears
+          field: caw_benefits_med_pap_smears
+          plugin_id: field
+        caw_benefits_parttime_cost:
+          id: caw_benefits_parttime_cost
+          table: node__caw_benefits_parttime_cost
+          field: caw_benefits_parttime_cost
+          plugin_id: field
+        caw_benefits_dent_perio_surg:
+          id: caw_benefits_dent_perio_surg
+          table: node__caw_benefits_dent_perio_surg
+          field: caw_benefits_dent_perio_surg
+          plugin_id: field
+        caw_benefits_med_pharmacy:
+          id: caw_benefits_med_pharmacy
+          table: node__caw_benefits_med_pharmacy
+          field: caw_benefits_med_pharmacy
+          plugin_id: field
+        caw_benefits_med_adult_physical:
+          id: caw_benefits_med_adult_physical
+          table: node__caw_benefits_med_adult_physical
+          field: caw_benefits_med_adult_physical
+          plugin_id: field
+        caw_benefits_med_child_psycial:
+          id: caw_benefits_med_child_psycial
+          table: node__caw_benefits_med_child_psycial
+          field: caw_benefits_med_child_psycial
+          plugin_id: field
+        caw_benefits_med_pt:
+          id: caw_benefits_med_pt
+          table: node__caw_benefits_med_pt
+          field: caw_benefits_med_pt
+          plugin_id: field
+        su_benefits_year:
+          id: su_benefits_year
+          table: node__su_benefits_year
+          field: su_benefits_year
+          plugin_id: field
+        caw_benefits_med_preauth_req:
+          id: caw_benefits_med_preauth_req
+          table: node__caw_benefits_med_preauth_req
+          field: caw_benefits_med_preauth_req
+          plugin_id: field
+        caw_benefits_med_preg_term:
+          id: caw_benefits_med_preg_term
+          table: node__caw_benefits_med_preg_term
+          field: caw_benefits_med_preg_term
+          plugin_id: field
+        caw_benefits_med_prenatal:
+          id: caw_benefits_med_prenatal
+          table: node__caw_benefits_med_prenatal
+          field: caw_benefits_med_prenatal
+          plugin_id: field
+        caw_benefits_dent_rx:
+          id: caw_benefits_dent_rx
+          table: node__caw_benefits_dent_rx
+          field: caw_benefits_dent_rx
+          plugin_id: field
+        caw_benefits_med_psa:
+          id: caw_benefits_med_psa
+          table: node__caw_benefits_med_psa
+          field: caw_benefits_med_psa
+          plugin_id: field
+        caw_benefits_dent_retainer:
+          id: caw_benefits_dent_retainer
+          table: node__caw_benefits_dent_retainer
+          field: caw_benefits_dent_retainer
+          plugin_id: field
+        caw_benefits_dent_root:
+          id: caw_benefits_dent_root
+          table: node__caw_benefits_dent_root
+          field: caw_benefits_dent_root
+          plugin_id: field
+        caw_benefits_dent_exam:
+          id: caw_benefits_dent_exam
+          table: node__caw_benefits_dent_exam
+          field: caw_benefits_dent_exam
+          plugin_id: field
+        caw_benefits_dent_sealant:
+          id: caw_benefits_dent_sealant
+          table: node__caw_benefits_dent_sealant
+          field: caw_benefits_dent_sealant
+          plugin_id: field
+        caw_benefits_med_nursing:
+          id: caw_benefits_med_nursing
+          table: node__caw_benefits_med_nursing
+          field: caw_benefits_med_nursing
+          plugin_id: field
+        caw_benefits_dent_space:
+          id: caw_benefits_dent_space
+          table: node__caw_benefits_dent_space
+          field: caw_benefits_dent_space
+          plugin_id: field
+        caw_benefits_med_speech:
+          id: caw_benefits_med_speech
+          table: node__caw_benefits_med_speech
+          field: caw_benefits_med_speech
+          plugin_id: field
+        caw_benefits_dent_splint:
+          id: caw_benefits_dent_splint
+          table: node__caw_benefits_dent_splint
+          field: caw_benefits_dent_splint
+          plugin_id: field
+        caw_benefits_med_substance:
+          id: caw_benefits_med_substance
+          table: node__caw_benefits_med_substance
+          field: caw_benefits_med_substance
+          plugin_id: field
+        caw_benefits_med_surgery_facil:
+          id: caw_benefits_med_surgery_facil
+          table: node__caw_benefits_med_surgery_facil
+          field: caw_benefits_med_surgery_facil
+          plugin_id: field
+        caw_benefits_med_surgery_md:
+          id: caw_benefits_med_surgery_md
+          table: node__caw_benefits_med_surgery_md
+          field: caw_benefits_med_surgery_md
+          plugin_id: field
+        caw_benefits_dent_tmj:
+          id: caw_benefits_dent_tmj
+          table: node__caw_benefits_dent_tmj
+          field: caw_benefits_dent_tmj
+          plugin_id: field
+        caw_benefits_med_tubal:
+          id: caw_benefits_med_tubal
+          table: node__caw_benefits_med_tubal
+          field: caw_benefits_med_tubal
+          plugin_id: field
+        caw_benefits_med_urgent:
+          id: caw_benefits_med_urgent
+          table: node__caw_benefits_med_urgent
+          field: caw_benefits_med_urgent
+          plugin_id: field
+        caw_benefits_med_vasectomy:
+          id: caw_benefits_med_vasectomy
+          table: node__caw_benefits_med_vasectomy
+          field: caw_benefits_med_vasectomy
+          plugin_id: field
+        caw_benefits_med_vision:
+          id: caw_benefits_med_vision
+          table: node__caw_benefits_med_vision
+          field: caw_benefits_med_vision
+          plugin_id: field
+        caw_benefits_vision_exam:
+          id: caw_benefits_vision_exam
+          table: node__caw_benefits_vision_exam
+          field: caw_benefits_vision_exam
+          plugin_id: field
+        caw_benefits_med_well_woman:
+          id: caw_benefits_med_well_woman
+          table: node__caw_benefits_med_well_woman
+          field: caw_benefits_med_well_woman
+          plugin_id: field
+        caw_benefits_xray:
+          id: caw_benefits_xray
+          table: node__caw_benefits_xray
+          field: caw_benefits_xray
+          plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            caw_benefits: caw_benefits
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: empty
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: true
+          not: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+      display_extenders: {  }
+      use_ajax: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.caw_benefits_annual_max'
+        - 'config:field.storage.node.caw_benefits_coinsurance'
+        - 'config:field.storage.node.caw_benefits_deductible'
+        - 'config:field.storage.node.caw_benefits_dent_anesthesia'
+        - 'config:field.storage.node.caw_benefits_dent_bridges'
+        - 'config:field.storage.node.caw_benefits_dent_cleanings'
+        - 'config:field.storage.node.caw_benefits_dent_crown'
+        - 'config:field.storage.node.caw_benefits_dent_denture'
+        - 'config:field.storage.node.caw_benefits_dent_exam'
+        - 'config:field.storage.node.caw_benefits_dent_extraction'
+        - 'config:field.storage.node.caw_benefits_dent_filling'
+        - 'config:field.storage.node.caw_benefits_dent_flouride'
+        - 'config:field.storage.node.caw_benefits_dent_gingivectomy'
+        - 'config:field.storage.node.caw_benefits_dent_gold'
+        - 'config:field.storage.node.caw_benefits_dent_implant'
+        - 'config:field.storage.node.caw_benefits_dent_inlay'
+        - 'config:field.storage.node.caw_benefits_dent_onlay'
+        - 'config:field.storage.node.caw_benefits_dent_oral_surg'
+        - 'config:field.storage.node.caw_benefits_dent_ortho'
+        - 'config:field.storage.node.caw_benefits_dent_perio_surg'
+        - 'config:field.storage.node.caw_benefits_dent_retainer'
+        - 'config:field.storage.node.caw_benefits_dent_root'
+        - 'config:field.storage.node.caw_benefits_dent_rx'
+        - 'config:field.storage.node.caw_benefits_dent_sealant'
+        - 'config:field.storage.node.caw_benefits_dent_space'
+        - 'config:field.storage.node.caw_benefits_dent_splint'
+        - 'config:field.storage.node.caw_benefits_dent_tmj'
+        - 'config:field.storage.node.caw_benefits_fulltime_cost'
+        - 'config:field.storage.node.caw_benefits_lifetime_max'
+        - 'config:field.storage.node.caw_benefits_med_abulance'
+        - 'config:field.storage.node.caw_benefits_med_acupuncture'
+        - 'config:field.storage.node.caw_benefits_med_adult_physical'
+        - 'config:field.storage.node.caw_benefits_med_allergy_test'
+        - 'config:field.storage.node.caw_benefits_med_allergy_treat'
+        - 'config:field.storage.node.caw_benefits_med_alt_medicine'
+        - 'config:field.storage.node.caw_benefits_med_autism'
+        - 'config:field.storage.node.caw_benefits_med_baby_exam'
+        - 'config:field.storage.node.caw_benefits_med_birth_control'
+        - 'config:field.storage.node.caw_benefits_med_birthing'
+        - 'config:field.storage.node.caw_benefits_med_care_mgmt'
+        - 'config:field.storage.node.caw_benefits_med_child_psycial'
+        - 'config:field.storage.node.caw_benefits_med_chiro'
+        - 'config:field.storage.node.caw_benefits_med_christian_prac'
+        - 'config:field.storage.node.caw_benefits_med_copay'
+        - 'config:field.storage.node.caw_benefits_med_cosmetic'
+        - 'config:field.storage.node.caw_benefits_med_ct_scan'
+        - 'config:field.storage.node.caw_benefits_med_delivery'
+        - 'config:field.storage.node.caw_benefits_med_dental'
+        - 'config:field.storage.node.caw_benefits_med_durable_equip'
+        - 'config:field.storage.node.caw_benefits_med_er'
+        - 'config:field.storage.node.caw_benefits_med_hearing'
+        - 'config:field.storage.node.caw_benefits_med_home_health'
+        - 'config:field.storage.node.caw_benefits_med_hopsital_stay'
+        - 'config:field.storage.node.caw_benefits_med_hospice'
+        - 'config:field.storage.node.caw_benefits_med_immunizations'
+        - 'config:field.storage.node.caw_benefits_med_infertility'
+        - 'config:field.storage.node.caw_benefits_med_lab'
+        - 'config:field.storage.node.caw_benefits_med_mail_rx'
+        - 'config:field.storage.node.caw_benefits_med_mammograms'
+        - 'config:field.storage.node.caw_benefits_med_maternity_stay'
+        - 'config:field.storage.node.caw_benefits_med_mental_health'
+        - 'config:field.storage.node.caw_benefits_med_midwives'
+        - 'config:field.storage.node.caw_benefits_med_mri'
+        - 'config:field.storage.node.caw_benefits_med_nursing'
+        - 'config:field.storage.node.caw_benefits_med_occupational'
+        - 'config:field.storage.node.caw_benefits_med_pap_smears'
+        - 'config:field.storage.node.caw_benefits_med_pharmacy'
+        - 'config:field.storage.node.caw_benefits_med_preauth_req'
+        - 'config:field.storage.node.caw_benefits_med_preg_term'
+        - 'config:field.storage.node.caw_benefits_med_prenatal'
+        - 'config:field.storage.node.caw_benefits_med_psa'
+        - 'config:field.storage.node.caw_benefits_med_pt'
+        - 'config:field.storage.node.caw_benefits_med_speech'
+        - 'config:field.storage.node.caw_benefits_med_substance'
+        - 'config:field.storage.node.caw_benefits_med_surgery_facil'
+        - 'config:field.storage.node.caw_benefits_med_surgery_md'
+        - 'config:field.storage.node.caw_benefits_med_transpants'
+        - 'config:field.storage.node.caw_benefits_med_tubal'
+        - 'config:field.storage.node.caw_benefits_med_urgent'
+        - 'config:field.storage.node.caw_benefits_med_vasectomy'
+        - 'config:field.storage.node.caw_benefits_med_vision'
+        - 'config:field.storage.node.caw_benefits_med_well_woman'
+        - 'config:field.storage.node.caw_benefits_parttime_cost'
+        - 'config:field.storage.node.caw_benefits_vision_contacts'
+        - 'config:field.storage.node.caw_benefits_vision_exam'
+        - 'config:field.storage.node.caw_benefits_vision_extras'
+        - 'config:field.storage.node.caw_benefits_vision_frames'
+        - 'config:field.storage.node.caw_benefits_vision_intl'
+        - 'config:field.storage.node.caw_benefits_vision_lenses'
+        - 'config:field.storage.node.caw_benefits_vision_lowvis'
+        - 'config:field.storage.node.caw_benefits_vision_urgent'
+        - 'config:field.storage.node.caw_benefits_xray'
+        - 'config:field.storage.node.su_benefit_type'
+        - 'config:field.storage.node.su_benefits_offered'
+        - 'config:field.storage.node.su_benefits_year'
+  comparison:
+    display_plugin: attachment
+    id: comparison
+    display_title: Comparison
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      footer: {  }
+      defaults:
+        footer: false
+      displays:
+        list: list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.caw_benefits_annual_max'
+        - 'config:field.storage.node.caw_benefits_coinsurance'
+        - 'config:field.storage.node.caw_benefits_deductible'
+        - 'config:field.storage.node.caw_benefits_dent_anesthesia'
+        - 'config:field.storage.node.caw_benefits_dent_bridges'
+        - 'config:field.storage.node.caw_benefits_dent_cleanings'
+        - 'config:field.storage.node.caw_benefits_dent_crown'
+        - 'config:field.storage.node.caw_benefits_dent_denture'
+        - 'config:field.storage.node.caw_benefits_dent_exam'
+        - 'config:field.storage.node.caw_benefits_dent_extraction'
+        - 'config:field.storage.node.caw_benefits_dent_filling'
+        - 'config:field.storage.node.caw_benefits_dent_flouride'
+        - 'config:field.storage.node.caw_benefits_dent_gingivectomy'
+        - 'config:field.storage.node.caw_benefits_dent_gold'
+        - 'config:field.storage.node.caw_benefits_dent_implant'
+        - 'config:field.storage.node.caw_benefits_dent_inlay'
+        - 'config:field.storage.node.caw_benefits_dent_onlay'
+        - 'config:field.storage.node.caw_benefits_dent_oral_surg'
+        - 'config:field.storage.node.caw_benefits_dent_ortho'
+        - 'config:field.storage.node.caw_benefits_dent_perio_surg'
+        - 'config:field.storage.node.caw_benefits_dent_retainer'
+        - 'config:field.storage.node.caw_benefits_dent_root'
+        - 'config:field.storage.node.caw_benefits_dent_rx'
+        - 'config:field.storage.node.caw_benefits_dent_sealant'
+        - 'config:field.storage.node.caw_benefits_dent_space'
+        - 'config:field.storage.node.caw_benefits_dent_splint'
+        - 'config:field.storage.node.caw_benefits_dent_tmj'
+        - 'config:field.storage.node.caw_benefits_fulltime_cost'
+        - 'config:field.storage.node.caw_benefits_lifetime_max'
+        - 'config:field.storage.node.caw_benefits_med_abulance'
+        - 'config:field.storage.node.caw_benefits_med_acupuncture'
+        - 'config:field.storage.node.caw_benefits_med_adult_physical'
+        - 'config:field.storage.node.caw_benefits_med_allergy_test'
+        - 'config:field.storage.node.caw_benefits_med_allergy_treat'
+        - 'config:field.storage.node.caw_benefits_med_alt_medicine'
+        - 'config:field.storage.node.caw_benefits_med_autism'
+        - 'config:field.storage.node.caw_benefits_med_baby_exam'
+        - 'config:field.storage.node.caw_benefits_med_birth_control'
+        - 'config:field.storage.node.caw_benefits_med_birthing'
+        - 'config:field.storage.node.caw_benefits_med_care_mgmt'
+        - 'config:field.storage.node.caw_benefits_med_child_psycial'
+        - 'config:field.storage.node.caw_benefits_med_chiro'
+        - 'config:field.storage.node.caw_benefits_med_christian_prac'
+        - 'config:field.storage.node.caw_benefits_med_copay'
+        - 'config:field.storage.node.caw_benefits_med_cosmetic'
+        - 'config:field.storage.node.caw_benefits_med_ct_scan'
+        - 'config:field.storage.node.caw_benefits_med_delivery'
+        - 'config:field.storage.node.caw_benefits_med_dental'
+        - 'config:field.storage.node.caw_benefits_med_durable_equip'
+        - 'config:field.storage.node.caw_benefits_med_er'
+        - 'config:field.storage.node.caw_benefits_med_hearing'
+        - 'config:field.storage.node.caw_benefits_med_home_health'
+        - 'config:field.storage.node.caw_benefits_med_hopsital_stay'
+        - 'config:field.storage.node.caw_benefits_med_hospice'
+        - 'config:field.storage.node.caw_benefits_med_immunizations'
+        - 'config:field.storage.node.caw_benefits_med_infertility'
+        - 'config:field.storage.node.caw_benefits_med_lab'
+        - 'config:field.storage.node.caw_benefits_med_mail_rx'
+        - 'config:field.storage.node.caw_benefits_med_mammograms'
+        - 'config:field.storage.node.caw_benefits_med_maternity_stay'
+        - 'config:field.storage.node.caw_benefits_med_mental_health'
+        - 'config:field.storage.node.caw_benefits_med_midwives'
+        - 'config:field.storage.node.caw_benefits_med_mri'
+        - 'config:field.storage.node.caw_benefits_med_nursing'
+        - 'config:field.storage.node.caw_benefits_med_occupational'
+        - 'config:field.storage.node.caw_benefits_med_pap_smears'
+        - 'config:field.storage.node.caw_benefits_med_pharmacy'
+        - 'config:field.storage.node.caw_benefits_med_preauth_req'
+        - 'config:field.storage.node.caw_benefits_med_preg_term'
+        - 'config:field.storage.node.caw_benefits_med_prenatal'
+        - 'config:field.storage.node.caw_benefits_med_psa'
+        - 'config:field.storage.node.caw_benefits_med_pt'
+        - 'config:field.storage.node.caw_benefits_med_speech'
+        - 'config:field.storage.node.caw_benefits_med_substance'
+        - 'config:field.storage.node.caw_benefits_med_surgery_facil'
+        - 'config:field.storage.node.caw_benefits_med_surgery_md'
+        - 'config:field.storage.node.caw_benefits_med_transpants'
+        - 'config:field.storage.node.caw_benefits_med_tubal'
+        - 'config:field.storage.node.caw_benefits_med_urgent'
+        - 'config:field.storage.node.caw_benefits_med_vasectomy'
+        - 'config:field.storage.node.caw_benefits_med_vision'
+        - 'config:field.storage.node.caw_benefits_med_well_woman'
+        - 'config:field.storage.node.caw_benefits_parttime_cost'
+        - 'config:field.storage.node.caw_benefits_vision_contacts'
+        - 'config:field.storage.node.caw_benefits_vision_exam'
+        - 'config:field.storage.node.caw_benefits_vision_extras'
+        - 'config:field.storage.node.caw_benefits_vision_frames'
+        - 'config:field.storage.node.caw_benefits_vision_intl'
+        - 'config:field.storage.node.caw_benefits_vision_lenses'
+        - 'config:field.storage.node.caw_benefits_vision_lowvis'
+        - 'config:field.storage.node.caw_benefits_vision_urgent'
+        - 'config:field.storage.node.caw_benefits_xray'
+        - 'config:field.storage.node.su_benefit_type'
+        - 'config:field.storage.node.su_benefits_offered'
+        - 'config:field.storage.node.su_benefits_year'
+  list:
+    display_plugin: block
+    id: list
+    display_title: List
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: html_list
+        options:
+          grouping:
+            -
+              field: su_benefit_type
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
+          type: ul
+          wrapper_class: ''
+          class: 'su-list-unstyled grid-container-2'
+      defaults:
+        style: false
+        row: false
+        fields: false
+        arguments: false
+        header: false
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: entity_title_heading
+          settings:
+            tag: h3
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        su_benefit_type:
+          id: su_benefit_type
+          table: node__su_benefit_type
+          field: su_benefit_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: 'Read More About {{ title }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Read more'
+          output_url_as_text: false
+          absolute: true
+          entity_type: node
+          plugin_id: entity_link
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ body }} {{ view_node }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: smart_trim
+          settings:
+            trim_length: 150
+            trim_type: chars
+            trim_suffix: ...
+            wrap_output: false
+            wrap_class: trimmed
+            more_link: false
+            more_text: More
+            more_class: more-link
+            summary_handler: ignore
+            trim_options:
+              text: true
+              trim_zero: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+      arguments: {  }
+      header:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'caw_benefits:comparison'
+          inherit_arguments: true
+          plugin_id: view
+      block_category: 'Benefits (Views)'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.su_benefit_type'

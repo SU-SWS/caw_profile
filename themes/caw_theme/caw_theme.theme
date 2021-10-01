@@ -35,9 +35,29 @@ function caw_theme_theme_suggestions_book_tree_alter(array &$suggestions, array 
  * Implements hook_theme_suggestions_alter().
  */
 function caw_theme_theme_suggestions_alter(&$suggestions, $variables, $hook) {
-  if ($hook == 'views_view') {
-    $suggestions[] = 'views_view__' . $variables['view']->id();
-    $suggestions[] = 'views_view__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  if (substr($hook, 0, 10) == 'views_view') {
+    $suggestions[] = $hook . '__' . $variables['view']->id();
+    $suggestions[] = $hook . '__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  }
+}
+
+function caw_theme_preprocess_views_view_fields(&$variables) {
+  if ($variables['view']->id() == 'caw_benefits' && $variables['view']->current_display == 'list') {
+    static $here = false;
+    if(!$here){
+      $here = true;
+//      dpm($variables);
+    }
+    $variables['attributes']['data-nid'] = $variables['row']->nid;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_views_view_list(&$variables) {
+  foreach($variables['rows'] as &$row){
+    $row['attributes']->setAttribute('data-nid', $row['content']['#row']->nid);
   }
 }
 
@@ -79,6 +99,9 @@ function caw_theme_preprocess_views_view(&$variables) {
   }
   if ($variables['id'] == 'caw_careers') {
     $variables['#attached']['library'][] = 'caw_theme/careers.views';
+  }
+  if ($variables['id'] == 'caw_benefits') {
+    $variables['#attached']['library'][] = 'caw_theme/benefits.views';
   }
 }
 

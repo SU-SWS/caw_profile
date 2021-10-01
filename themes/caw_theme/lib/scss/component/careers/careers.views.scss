@@ -105,15 +105,17 @@
         font-weight: $su-font-bold;
         padding-right: 5px;
       }
-m
+
       div {
         display: inline;
       }
     }
   }
-  
+
   .caw-careers-card--honored {
+
     .label-inline {
+
       div:nth-of-type(1) {
         float: left;
         font-weight: $su-font-regular;
@@ -128,16 +130,18 @@ m
 }
 
 // Styles for the other career celebrations on node bottom
-div.dynamic-block-fieldnode-caw-other-careers { 
-  > div {
-    &:nth-child(1) {
-      @include type-b;
-      @include responsive-spacing('margin', null null 4 null );
+div {
+  .dynamic-block-fieldnode-caw-other-careers {
+    > div {
+      &:nth-child(1) {
+        @include type-b;
+        @include responsive-spacing('margin', null null 4 null);
 
-      display: inline-block;
-      font-weight: $su-font-semi-bold;
-      text-align: center;
-      width: 100%;
+        display: inline-block;
+        font-weight: $su-font-semi-bold;
+        text-align: center;
+        width: 100%;
+      }
     }
   }
 }

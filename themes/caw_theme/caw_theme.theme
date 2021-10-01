@@ -41,13 +41,11 @@ function caw_theme_theme_suggestions_alter(&$suggestions, $variables, $hook) {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function caw_theme_preprocess_views_view_fields(&$variables) {
   if ($variables['view']->id() == 'caw_benefits' && $variables['view']->current_display == 'list') {
-    static $here = false;
-    if(!$here){
-      $here = true;
-//      dpm($variables);
-    }
     $variables['attributes']['data-nid'] = $variables['row']->nid;
   }
 }
@@ -56,8 +54,10 @@ function caw_theme_preprocess_views_view_fields(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function caw_theme_preprocess_views_view_list(&$variables) {
-  foreach($variables['rows'] as &$row){
-    $row['attributes']->setAttribute('data-nid', $row['content']['#row']->nid);
+  if ($variables['view']->id() == 'caw_benefits' && $variables['view']->current_display == 'list') {
+    foreach ($variables['rows'] as &$row) {
+      $row['attributes']->setAttribute('data-nid', $row['content']['#row']->nid);
+    }
   }
 }
 

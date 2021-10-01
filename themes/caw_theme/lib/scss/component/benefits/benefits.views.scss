@@ -1,7 +1,7 @@
 .caw-benefits {
   &.list {
     li {
-      border: 3px solid #EAEAEA;
+      border: 3px solid #eaeaea;
       border-radius: 5px;
 
       > div:not(:first-child) {
@@ -10,7 +10,7 @@
     }
 
     .compare-selector {
-      background: #EAEAEA;
+      background: #eaeaea;
 
       label {
         margin: 0;
@@ -36,10 +36,10 @@
     }
 
     .selected {
-      border: 3px solid #4298B5;
+      border: 3px solid #4298b5;
 
       .compare-selector {
-        background: #4298B5;
+        background: #4298b5;
         color: #fff;
       }
     }
@@ -57,7 +57,7 @@
   }
 
   &.comparison {
-
+    // Styles for the comparison attachment.
   }
 
 }

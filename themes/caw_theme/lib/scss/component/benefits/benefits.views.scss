@@ -1,38 +1,64 @@
-.caw-benefits.list {
-  li {
-    border: 3px solid #EAEAEA;
-    border-radius: 5px;
+.caw-benefits {
+  &.list {
+    li {
+      border: 3px solid #EAEAEA;
+      border-radius: 5px;
 
-    > div:not(:first-child) {
-      padding: 20px;
+      > div:not(:first-child) {
+        padding: 20px;
+      }
     }
-  }
-
-  .compare-selector {
-    background: #EAEAEA;
-  }
-
-  .selected {
-    border: 3px solid #4298B5;
 
     .compare-selector {
-      background: #4298B5;
+      background: #EAEAEA;
+
+      label {
+        margin: 0;
+        padding: 10px;
+        display: inline-block;
+        max-width: 100%;
+        width: 100%;
+        text-align: right;
+
+        span {
+          margin-right: 20px;
+          font-size: 27px;
+        }
+      }
+
+      input[type = "checkbox"] {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        clip-path: none;
+        float: right;
+      }
+    }
+
+    .selected {
+      border: 3px solid #4298B5;
+
+      .compare-selector {
+        background: #4298B5;
+        color: #fff;
+      }
+    }
+
+    .submit-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 20px;
+      justify-content: space-between;
+
+      a {
+        margin-left: 5px;
+      }
     }
   }
 
-  label {
-    margin: 0;
-    padding: 10px;
-    display: inline-block;
-    max-width: 100%;
-    width: 100%;
+  &.comparison {
+
   }
 
-  input[type = "checkbox"] {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    clip-path: none;
-    float: right;
-  }
 }
+

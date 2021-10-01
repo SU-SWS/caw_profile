@@ -23,7 +23,7 @@
         })
 
         const $submit = $('<input>').attr('type', 'submit').attr('value', 'Compare').click(() => {
-          const selectedItems = $.map($('input:checked'), checkbox => checkbox.value)
+          const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
 
           Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
             const view = drupalSettings.views.ajaxViews[domId];

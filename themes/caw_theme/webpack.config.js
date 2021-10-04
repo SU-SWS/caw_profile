@@ -48,7 +48,7 @@ const componentStyles = glob.sync('./lib/components/**/*.scss').reduce((acc, pat
 }, {});
 
 const styleSheets = glob.sync('./lib/scss/**/*.scss').reduce((acc, file) => {
-  if (file.indexOf('_') > 0) {
+  if (file.indexOf('/_') > 0) {
     return acc;
   }
   const entry =  path.basename(file).split('.').slice(0, -1).join('.');

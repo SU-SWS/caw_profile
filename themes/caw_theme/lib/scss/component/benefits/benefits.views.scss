@@ -1,6 +1,31 @@
+@charset 'UTF-8';
+@import 'decanter/core/src/scss/decanter-no-markup';
+
 .caw-benefits {
-  &.list {
+  &.filtering-list {
+
+    .rows {
+      background: $su-color-foggy-light;
+      padding-top: 150px;
+      position: relative;
+      top: -100px;
+
+      > * {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    }
+
+    header,
+    .exposed-filters {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
     li {
+      background: $su-color-white;
       border: 3px solid #eaeaea;
       border-radius: 5px;
 
@@ -49,15 +74,56 @@
       width: 100%;
       padding: 20px;
       justify-content: space-between;
+      position: relative;
+      z-index: 1;
 
       a {
         margin-left: 5px;
       }
     }
+
+    .exposed-filters {
+      padding: 40px;
+    }
+
+    form {
+      display: flex;
+      justify-content: space-between;
+
+      @include grid-media('md') {
+        > div {
+          width: 40%;
+
+          &:last-child {
+            width: 20%;
+          }
+        }
+      }
+
+      label {
+        width: 100%;
+      }
+
+      [data-drupal-selector="edit-reset"] {
+        padding: 0;
+        background: none;
+        color: $su-color-digital-blue;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      .form-actions {
+        margin: auto 0 5px;
+      }
+    }
   }
 
   &.comparison {
-    // Styles for the comparison attachment.
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+    background: $su-color-stone-light;
   }
 
 }

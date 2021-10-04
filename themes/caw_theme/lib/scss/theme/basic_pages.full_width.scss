@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.caw-layout--one-column {
+  .ptype-stanford-lists {
+    &.caw-benefits.filtering-list {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

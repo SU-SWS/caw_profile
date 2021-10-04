@@ -1,7 +1,8 @@
 (function ($, Drupal) {
   Drupal.behaviors.cawBenefits = {
     attach: function attach(context) {
-      $('.caw-benefits.list').once('comparison').find('ul').each((i, list) => {
+      $('.caw-benefits.filtering-list').once('comparison').find('ul').each((i, list) => {
+
         const $list = $(list);
         const $clearAll = $('<a>').attr('href', '#')
           .text('Clear All')
@@ -43,7 +44,7 @@
 
         const $submit = $('<input>').attr('type', 'submit').attr('value', 'Compare Selected Plans').click(() => {
           const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
-
+console.log(selectedItems);
           Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
             const view = drupalSettings.views.ajaxViews[domId];
             if (view.view_display_id === 'comparison') {

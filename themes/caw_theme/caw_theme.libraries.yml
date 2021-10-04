@@ -3,6 +3,11 @@ base:
     component:
       dist/css/base.css: { }
 
+basic_pages.full_width:
+  css:
+    theme:
+      dist/css/basic_pages.full_width.css: { }
+
 sweeteners.views:
   css:
     component:

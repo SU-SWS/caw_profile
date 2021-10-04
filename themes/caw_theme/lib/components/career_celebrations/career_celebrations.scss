@@ -92,13 +92,13 @@
     grid-gap: 126px;
   }
 
-  .caw-careers-card--years,
-  .caw-careers-card--honored {
-    .label {
-      @include type-e;
+  .other-celebrations {
+    .caw-careers-card--years-honored {
+      display: block;
     }
 
-    div {
+    .caw-careers-card--years,
+    .caw-careers-card--honored {
       @include type-d;
     }
   }

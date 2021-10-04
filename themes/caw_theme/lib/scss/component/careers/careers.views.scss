@@ -80,4 +80,81 @@
       }
     }
   }
+
+  h2 {
+    a {
+      color: $su-color-black;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $su-color-bright-blue; //#006cb8
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.caw-careers-grid-all,
+.other-celebrations {
+  .caw-careers-card--years {
+    .label-inline {
+      div:nth-of-type(2) {
+        float: left;
+        font-weight: $su-font-bold;
+        padding-right: 5px;
+      }
+
+      div {
+        display: inline;
+      }
+    }
+  }
+
+  .caw-careers-card--honored {
+
+    .label-inline {
+
+      div:nth-of-type(1) {
+        float: left;
+        font-weight: $su-font-regular;
+        padding-right: 5px;
+      }
+
+      div {
+        display: inline;
+      }
+    }
+  }
+}
+
+// Styles for the other career celebrations on node bottom
+div {
+  .dynamic-block-fieldnode-caw-other-careers {
+    > div {
+      &:nth-child(1) {
+        @include type-b;
+        @include responsive-spacing('margin', null null 4 null);
+
+        display: inline-block;
+        font-weight: $su-font-semi-bold;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.more-link {
+  @include responsive-spacing('margin', 5 null 9 null);
+
+  text-align: center;
+  width: 100%;
+
+  a {
+    @include button-primary;
+
+    color: $su-color-white;
+  }
 }

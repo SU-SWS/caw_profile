@@ -541,7 +541,7 @@ display:
   other_celebrations:
     display_plugin: block
     id: other_celebrations
-    display_title: 'Other Celebrations'
+    display_title: 'More Career Celebrations'
     position: 2
     display_options:
       display_extenders: {  }
@@ -558,6 +558,12 @@ display:
         filter_groups: false
         header: false
         sorts: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+        title: false
       arguments:
         su_careers_honored_value:
           id: su_careers_honored_value
@@ -687,6 +693,12 @@ display:
           expose:
             label: ''
           plugin_id: random
+      use_more: true
+      use_more_always: true
+      use_more_text: 'See all Celebrations'
+      link_display: custom_url
+      link_url: /career-celebrations
+      title: 'More Career Celebrations'
     cache_metadata:
       max-age: 0
       contexts:

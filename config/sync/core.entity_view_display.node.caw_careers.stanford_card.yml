@@ -90,7 +90,7 @@ content:
     type: number_unformatted
     weight: 5
     region: honored
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
   su_careers_image:
@@ -117,7 +117,7 @@ content:
     type: entity_reference_label
     weight: 4
     region: years
-    label: above
+    label: inline
     settings:
       link: false
     third_party_settings:

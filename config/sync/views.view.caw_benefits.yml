@@ -98,9 +98,9 @@ dependencies:
     - field.storage.node.caw_benefits_xray
     - field.storage.node.su_benefit_type
     - field.storage.node.su_benefits_offered
-    - field.storage.node.su_benefits_year
     - node.type.caw_benefits
   module:
+    - better_exposed_filters
     - datetime
     - node
     - options
@@ -139,15 +139,44 @@ display:
           query_tags: {  }
           contextual_filters_or: false
       exposed_form:
-        type: basic
+        type: bef
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: Search
+          reset_button: true
+          reset_button_label: 'Clear Filters'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: stanford_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              su_benefits_offered_value:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              su_benefit_type_value:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
       pager:
         type: none
         options:
@@ -997,6 +1026,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        caw_benefits_fulltime_cost:
+          id: caw_benefits_fulltime_cost
+          table: node__caw_benefits_fulltime_cost
+          field: caw_benefits_fulltime_cost
+          plugin_id: field
+        caw_benefits_parttime_cost:
+          id: caw_benefits_parttime_cost
+          table: node__caw_benefits_parttime_cost
+          field: caw_benefits_parttime_cost
+          plugin_id: field
         caw_benefits_med_acupuncture:
           id: caw_benefits_med_acupuncture
           table: node__caw_benefits_med_acupuncture
@@ -1219,11 +1258,6 @@ display:
           table: node__caw_benefits_vision_frames
           field: caw_benefits_vision_frames
           plugin_id: field
-        caw_benefits_fulltime_cost:
-          id: caw_benefits_fulltime_cost
-          table: node__caw_benefits_fulltime_cost
-          field: caw_benefits_fulltime_cost
-          plugin_id: field
         caw_benefits_dent_gingivectomy:
           id: caw_benefits_dent_gingivectomy
           table: node__caw_benefits_dent_gingivectomy
@@ -1374,11 +1408,6 @@ display:
           table: node__caw_benefits_med_pap_smears
           field: caw_benefits_med_pap_smears
           plugin_id: field
-        caw_benefits_parttime_cost:
-          id: caw_benefits_parttime_cost
-          table: node__caw_benefits_parttime_cost
-          field: caw_benefits_parttime_cost
-          plugin_id: field
         caw_benefits_dent_perio_surg:
           id: caw_benefits_dent_perio_surg
           table: node__caw_benefits_dent_perio_surg
@@ -1403,11 +1432,6 @@ display:
           id: caw_benefits_med_pt
           table: node__caw_benefits_med_pt
           field: caw_benefits_med_pt
-          plugin_id: field
-        su_benefits_year:
-          id: su_benefits_year
-          table: node__su_benefits_year
-          field: su_benefits_year
           plugin_id: field
         caw_benefits_med_preauth_req:
           id: caw_benefits_med_preauth_req
@@ -1717,7 +1741,6 @@ display:
         - 'config:field.storage.node.caw_benefits_xray'
         - 'config:field.storage.node.su_benefit_type'
         - 'config:field.storage.node.su_benefits_offered'
-        - 'config:field.storage.node.su_benefits_year'
   comparison:
     display_plugin: attachment
     id: comparison
@@ -1730,7 +1753,7 @@ display:
       defaults:
         footer: false
       displays:
-        list: list
+        filtering_list: filtering_list
       inherit_arguments: false
     cache_metadata:
       max-age: -1
@@ -1835,11 +1858,10 @@ display:
         - 'config:field.storage.node.caw_benefits_xray'
         - 'config:field.storage.node.su_benefit_type'
         - 'config:field.storage.node.su_benefits_offered'
-        - 'config:field.storage.node.su_benefits_year'
-  list:
-    display_plugin: block
-    id: list
-    display_title: List
+  filtering_list:
+    display_plugin: viewfield_block
+    id: filtering_list
+    display_title: 'Filtering List'
     position: 2
     display_options:
       display_extenders: {  }
@@ -2255,8 +2277,54 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: field
-      arguments: {  }
-      header: {  }
+      arguments:
+        su_benefits_year_value:
+          id: su_benefits_year_value
+          table: node__su_benefits_year
+          field: su_benefits_year_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: ignore
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: none
+            fail: ignore
+          validate_options: {  }
+          plugin_id: datetime
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: 0
+          tokenize: 0
+          content:
+            value: "<h2>Comparison Tool</h2>\r\n<p>This is a summary of benefits, not an official plan document. Benefits discussed here are governed by the plan contracts and policies, Stanford policies and applicable state and federal laws. If there is a conflict between the wording of this information and any policy, contract or law, the contracts, policies and applicable laws govern.</p>"
+            format: stanford_html
+          plugin_id: text
       block_category: 'Benefits (Views)'
       filters:
         status:

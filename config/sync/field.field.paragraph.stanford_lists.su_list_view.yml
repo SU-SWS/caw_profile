@@ -21,6 +21,7 @@ settings:
   force_default: false
   allowed_views:
     stanford_basic_pages: stanford_basic_pages
+    caw_benefits: caw_benefits
     caw_careers: caw_careers
     stanford_events: stanford_events
     stanford_news: stanford_news
@@ -46,6 +47,7 @@ settings:
     user_admin_people: '0'
   allowed_display_types:
     viewfield_block: viewfield_block
+    attachment: '0'
     block: '0'
     default: '0'
     page: '0'

@@ -126,17 +126,20 @@ function caw_theme_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $ptype = Html::cleanCssIdentifier("ptype-" . $paragraph->bundle());
   $variables['attributes']['class'][] = $ptype;
+}
 
-  switch ($paragraph->bundle()) {
-    case 'stanford_lists':
-      $classes = array_filter($paragraph->get('su_list_view')->get(0)->getValue(), function($value){
-        return $value && is_string($value);
-      });
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_paragraph__stanford_lists(&$variables) {
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $variables['paragraph'];
+  $classes = array_filter($paragraph->get('su_list_view')->get(0)->getValue(), function($value){
+    return $value && is_string($value);
+  });
 
-      foreach($classes as $class){
-        $variables['attributes']['class'][] = Html::cleanCssIdentifier($class);
-      }
-      break;
+  foreach($classes as $class){
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier($class);
   }
 }
 

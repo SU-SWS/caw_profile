@@ -234,6 +234,23 @@ function caw_profile_helper_ckeditor_plugin_info_alter(array &$plugins) {
 }
 
 /**
+ * Implements hook_views_pre_build().
+ */
+function caw_profile_helper_views_pre_build(ViewExecutable $view) {
+  if ($view->id() == 'caw_benefits' && $view->current_display == 'filtering_list') {
+    if (!empty($view->args[0]) && strlen($view->args[0]) == 4) {
+      $view->args[0] .= '-01-01';
+    }
+    else {
+      // Use the current year if argument is not provided, but use next year if
+      // it's currently November or December.
+      $year = date('m') >= 11 ? (int) date('Y') + 1 : (int) date('Y');
+      $view->args = ["$year-01-01"];
+    }
+  }
+}
+
+/**
  * Implements hook_views_query_alter().
  */
 function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {

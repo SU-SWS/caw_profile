@@ -290,3 +290,54 @@ function caw_profile_helper_views_pre_render(ViewExecutable $view) {
       ]));
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function caw_profile_helper_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $form_state->get('view');
+  if ($view->id() == 'caw_benefits' && $view->current_display == 'filtering_list') {
+    $form['available']['#chosen'] = FALSE;
+    $form['type']['#chosen'] = FALSE;
+
+    // Add some javascript settings to help know which options have which nodes
+    // associated to them.
+    $form['#attached']['drupalSettings']['cawBenefits'] = [
+      'available' => [],
+      'type' => [],
+    ];
+
+    foreach (array_keys($form['available']['#options']) as $available) {
+      $form['#attached']['drupalSettings']['cawBenefits']['available'][$available] = _caw_profile_helper_get_benefit_ids('su_benefits_offered', $available);
+    }
+    foreach (array_keys($form['type']['#options']) as $type) {
+      $form['#attached']['drupalSettings']['cawBenefits']['type'][$type] = _caw_profile_helper_get_benefit_ids('su_benefit_type', $type);
+    }
+  }
+}
+
+/**
+ * Get a list of node ids with the given field value.
+ *
+ * @param string $field
+ *   Field machine name.
+ * @param mixed $value
+ *   Field value.
+ *
+ * @return array
+ *   Array of entity ids.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _caw_profile_helper_get_benefit_ids($field, $value): array {
+  $nids = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->getQuery()
+    ->condition('status', 1)
+    ->condition('type', 'caw_benefits')
+    ->condition($field, $value)
+    ->execute();
+  return array_values($nids);
+}

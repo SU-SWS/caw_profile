@@ -24,13 +24,15 @@
       z-index: 1;
     }
 
-    li {
-      background: $su-color-white;
-      border: 3px solid #eaeaea;
-      border-radius: 5px;
+    .rows {
+      li {
+        background: $su-color-white;
+        border: 3px solid #eaeaea;
+        border-radius: 5px;
 
-      > div:not(:first-child) {
-        padding: 20px;
+        > div:not(:first-child) {
+          padding: 20px;
+        }
       }
     }
 

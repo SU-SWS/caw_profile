@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Node Edit Link hooks and alters.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\node_edit_link\Access\NodeEditLinkNodeAccessControlHandler;
+use Drupal\node_edit_link\Form\NodeEditLinkForm;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function node_edit_link_entity_type_alter(array &$entity_types) {
+  $entity_types['node']->setAccessClass(NodeEditLinkNodeAccessControlHandler::class);
+}
+
+/**
+ * Implements hook_entity_form_mode_alter().
+ */
+function node_edit_link_entity_form_mode_alter(&$form_mode, EntityInterface $entity) {
+  if (
+    $entity instanceof NodeInterface &&
+    \Drupal::service('node_edit_link.csrf')->checkAccess($entity)
+  ) {
+    $form_mode = 'edit_link';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  \Drupal::service('node_edit_link.csrf')->addFormElements($form, $form_state);
+}

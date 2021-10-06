@@ -1,0 +1,10 @@
+uuid: 3b3877c2-aa64-428d-b968-3aeb3f109b4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.edit_link
+label: 'Edit Link'
+targetEntityType: node
+cache: true

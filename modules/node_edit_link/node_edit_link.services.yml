@@ -1,0 +1,4 @@
+services:
+  node_edit_link.csrf:
+    class: Drupal\node_edit_link\Services\NodeCsrfToken
+    arguments: [ '@request_stack', '@csrf_token', '@cache.default','@plugin.manager.mail']

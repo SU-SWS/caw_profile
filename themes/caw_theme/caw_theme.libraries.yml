@@ -3,6 +3,11 @@ base:
     component:
       dist/css/base.css: { }
 
+basic_pages.full_width:
+  css:
+    theme:
+      dist/css/basic_pages.full_width.css: { }
+
 sweeteners.views:
   css:
     component:
@@ -23,3 +28,13 @@ components.faq:
       dist/css/faq.css: { }
   js:
     lib/js/components/faq.js: { }
+
+benefits.views:
+  css:
+    component:
+      dist/css/benefits.views.css: { }
+  js:
+    lib/js/benefits.views.js: { }
+  dependencies:
+    - core/jquery.ui
+    - core/drupalSettings

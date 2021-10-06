@@ -138,6 +138,7 @@ module:
   shs: 0
   simplesamlphp_auth: 0
   smart_date: 0
+  smart_trim: 0
   sophron: 0
   stanford_actions: 0
   stanford_basic_page_types: 0
@@ -184,6 +185,7 @@ module:
   views_bulk_edit: 0
   views_bulk_operations: 0
   views_contextual_filters_or: 0
+  views_flipped_table: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0

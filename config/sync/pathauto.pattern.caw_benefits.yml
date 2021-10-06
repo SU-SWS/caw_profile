@@ -1,0 +1,22 @@
+uuid: 227b40c1-d76d-41be-bc57-1fd6617e8873
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: caw_benefits
+label: Benefits
+type: 'canonical_entities:node'
+pattern: '/benefits/[node:su_benefit_type:value]/[node:title]'
+selection_criteria:
+  c1da4281-611e-4431-9467-8fcb454f3b2e:
+    id: node_type
+    bundles:
+      caw_benefits: caw_benefits
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c1da4281-611e-4431-9467-8fcb454f3b2e
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -35,9 +35,25 @@ function caw_theme_theme_suggestions_book_tree_alter(array &$suggestions, array 
  * Implements hook_theme_suggestions_alter().
  */
 function caw_theme_theme_suggestions_alter(&$suggestions, $variables, $hook) {
-  if ($hook == 'views_view') {
-    $suggestions[] = 'views_view__' . $variables['view']->id();
-    $suggestions[] = 'views_view__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  if (substr($hook, 0, 10) == 'views_view') {
+    $suggestions[] = $hook . '__' . $variables['view']->id();
+    $suggestions[] = $hook . '__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_views_view_list(&$variables) {
+  if (
+    $variables['view']->id() == 'caw_benefits' &&
+    $variables['view']->current_display == 'filtering_list'
+  ) {
+    // Wrap each row of the view with the data-nid attribute to be used for the
+    // javascript to attach onto.
+    foreach ($variables['rows'] as &$row) {
+      $row['attributes']->setAttribute('data-nid', $row['content']['#row']->nid);
+    }
   }
 }
 
@@ -80,6 +96,9 @@ function caw_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] == 'caw_careers') {
     $variables['#attached']['library'][] = 'caw_theme/careers.views';
   }
+  if ($variables['id'] == 'caw_benefits') {
+    $variables['#attached']['library'][] = 'caw_theme/benefits.views';
+  }
 }
 
 /**
@@ -93,6 +112,13 @@ function caw_theme_preprocess_node(&$variables) {
       case 'caw_sweetener':
         $variables['#attached']['library'][] = 'caw_theme/sweeteners.node';
         break;
+
+      case 'stanford_page':
+        $layout = $node->get('layout_selection')->getString();
+        if ($layout == 'stanford_basic_page_full') {
+          $variables['#attached']['library'][] = "caw_theme/basic_pages.full_width";
+        }
+        break;
     }
   }
 }
@@ -105,6 +131,26 @@ function caw_theme_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $ptype = Html::cleanCssIdentifier("ptype-" . $paragraph->bundle());
   $variables['attributes']['class'][] = $ptype;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_paragraph__stanford_lists(&$variables) {
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $variables['paragraph'];
+  $classes = [];
+  if ($value = $paragraph->get('su_list_view')->get(0)) {
+    // Reduce the data to just a flat array of strings.
+    $classes = array_filter($value->getValue(), function ($value) {
+      return $value && is_string($value);
+    });
+  }
+  // Wrap the paragraph with classes that indicate which view and display is
+  // used. This allows us to stretch the container when on a full width page.
+  foreach ($classes as $class) {
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier($class);
+  }
 }
 
 /**

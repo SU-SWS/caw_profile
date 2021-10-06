@@ -1,0 +1,132 @@
+@charset 'UTF-8';
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.caw-benefits {
+  &.filtering-list {
+
+    .rows {
+      background: $su-color-foggy-light;
+      padding-top: 150px;
+      position: relative;
+      top: -100px;
+
+      > * {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    }
+
+    header,
+    .exposed-filters {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rows {
+      li {
+        background: $su-color-white;
+        border: 3px solid #eaeaea;
+        border-radius: 5px;
+
+        > div:not(:first-child) {
+          padding: 20px;
+        }
+      }
+    }
+
+    .compare-selector {
+      background: #eaeaea;
+
+      label {
+        margin: 0;
+        padding: 10px;
+        display: inline-block;
+        max-width: 100%;
+        width: 100%;
+        text-align: right;
+
+        span {
+          margin-right: 20px;
+          font-size: 27px;
+        }
+      }
+
+      input[type="checkbox"] {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        clip-path: none;
+        float: right;
+      }
+    }
+
+    li.selected {
+      border: 3px solid #4298b5;
+
+      .compare-selector {
+        background: #4298b5;
+        color: #fff;
+      }
+    }
+
+    .submit-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 20px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+
+      a {
+        margin-left: 5px;
+      }
+    }
+
+    .exposed-filters {
+      padding: 40px;
+    }
+
+    form {
+      display: flex;
+      justify-content: space-between;
+
+      @include grid-media('md') {
+        > div {
+          width: 40%;
+
+          &:last-child {
+            width: 20%;
+          }
+        }
+      }
+
+      label {
+        width: 100%;
+      }
+
+      [data-drupal-selector="edit-reset"] {
+        padding: 0;
+        background: none;
+        color: $su-color-digital-blue;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      .form-actions {
+        margin: auto 0 5px;
+      }
+    }
+  }
+
+  &.comparison {
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+    background: $su-color-stone-light;
+  }
+
+}
+

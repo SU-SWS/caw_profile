@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: layout_builder_user
-label: 'LB User'
+label: 'Layout Builder User'
 weight: 1
 is_admin: null
 permissions: {  }

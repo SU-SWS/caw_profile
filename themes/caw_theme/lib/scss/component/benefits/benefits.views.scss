@@ -26,14 +26,39 @@
     }
 
     .rows {
+    
+      h2 {
+        @include responsive-spacing('margin', 5 null 4);
+      }
+
       li {
         background: $su-color-white;
-        border: 3px solid $su-color-black-10;
-        border-radius: 5px;
+        border: 5px solid $su-color-foggy-light;
+        border-radius: 10px;
+      }
 
-        > div:not(:first-child) {
-          padding: 20px;
+      // Card spacing
+      .views-field-title, 
+      .views-field-su-benefits-offered,
+      .views-field-body {
+        @include responsive-spacing('padding', null 3);
+      }
+
+      .views-field-title {
+        @include responsive-spacing('padding-top', 3);
+
+        h3 {
+          @include responsive-spacing('margin-bottom', 0);
         }
+      }
+
+      .views-field-body {
+        @include responsive-spacing('padding-bottom', 4);
+      }
+
+      .grid-container-2 {
+        grid-row-gap: 50px;
+        grid-column-gap: 45px;
       }
     }
 
@@ -41,16 +66,19 @@
       background: $su-color-black-10;
 
       label {
-        margin: 0;
-        padding: 10px;
-        display: inline-block;
-        max-width: 100%;
-        width: 100%;
-        text-align: right;
+        @include responsive-spacing('padding', 1);
 
-        span {
-          margin-right: 20px;
-          font-size: 27px;
+        display: inline-block;
+        margin: 0;
+        max-width: 100%;
+        text-align: right;
+        width: 100%;
+
+        .label {
+          @include responsive-spacing('margin-right', 0);
+          @include type-d;
+
+          color: #016895;
         }
       }
 
@@ -60,7 +88,61 @@
         position: relative;
         clip-path: none;
         float: right;
+
+        opacity: 0;
+        position: absolute; 
+
+        &::after {
+          content: '';
+          background: #fff;
+          border: 2px solid #4298B5;
+          display: inline-block;
+          vertical-align: middle;
+          width: 20px;
+          height: 20px;
+          padding: 2px;
+          margin-right: 10px;
+          text-align: center;
+        }
       }
+
+
+    
+      input[type="checkbox"], .label {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+        cursor: pointer;
+      }
+    
+      .label {
+        position: relative;
+      }
+    
+      .label:after + input[type="checkbox"]  {
+        content: '';
+        background: #fff;
+        border: 2px solid #4298B5;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        margin-right: 10px;
+        text-align: center;
+      }
+    
+      input[type="checkbox"]:checked + .label:after {
+        background: rebeccapurple;
+        box-shadow: inset 0px 0px 0px 4px #fff;
+      }
+    
+    
+      // .checkbox-custom:focus + .checkbox-custom-label {
+      //   outline: 1px solid #ddd; /* focus style */
+      // }
+    
+
     }
 
     li.selected {

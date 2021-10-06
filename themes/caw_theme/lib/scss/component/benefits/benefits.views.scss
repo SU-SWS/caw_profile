@@ -6,7 +6,8 @@
 
     .rows {
       background: $su-color-foggy-light;
-      padding-top: 150px;
+      // Moves the filter box to be offset.
+      padding-top: 190px; 
       position: relative;
       top: -100px;
 
@@ -27,7 +28,7 @@
     .rows {
       li {
         background: $su-color-white;
-        border: 3px solid #eaeaea;
+        border: 3px solid $su-color-black-10;
         border-radius: 5px;
 
         > div:not(:first-child) {
@@ -37,7 +38,7 @@
     }
 
     .compare-selector {
-      background: #eaeaea;
+      background: $su-color-black-10;
 
       label {
         margin: 0;
@@ -63,11 +64,11 @@
     }
 
     li.selected {
-      border: 3px solid #4298b5;
+      border: 3px solid $su-color-sky;
 
       .compare-selector {
-        background: #4298b5;
-        color: #fff;
+        background: $su-color-sky;
+        color: $su-color-white;
       }
     }
 
@@ -85,31 +86,43 @@
     }
 
     .exposed-filters {
+      @include responsive-spacing('padding', 3 5);
       padding: 40px;
+
+      h2 {
+        @include type-c;
+      }
     }
 
     form {
       display: flex;
       justify-content: space-between;
+      column-gap: 45px;
 
       @include grid-media('md') {
         > div {
           width: 40%;
 
           &:last-child {
-            width: 20%;
+            // width: 20%;
           }
         }
       }
 
       label {
+        margin-top: 0;
         width: 100%;
+      }
+
+      #edit-submit-caw-benefits {
+        @include responsive-spacing('margin-right', 3);
       }
 
       [data-drupal-selector="edit-reset"] {
         padding: 0;
         background: none;
         color: $su-color-digital-blue;
+        margin: 0;
       }
 
       select {

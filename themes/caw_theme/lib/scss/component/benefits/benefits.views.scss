@@ -98,42 +98,18 @@
         }
       }
 
-      // Need to be able to have a focus state. Currently doesn't.
       input[type="checkbox"] {
+        box-shadow: inset 0px 0px 0px 3px #4298B5;
         width: 30px;
         height: 30px;
         position: relative;
         clip-path: none;
         float: right;
 
-        opacity: 0;
-        position: absolute; 
-      }
-    
-      input[type="checkbox"],
-      .label {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 5px;
-        cursor: pointer;
-      }
-    
-      .label {
-        position: relative;
-
-        &::after {
-          content: '';
-          background: #fff;
-          border: 2px solid #4298B5;
-          display: inline-block;
-          vertical-align: middle;
-          width: 20px;
-          height: 20px;
-          padding: 2px;
-          margin-left: 18px;
-          text-align: center;
+        &:focus,
+        &:active {
+          box-shadow: inset 0px 0px 0px 5px #4298B5;
         }
-
       }
     }
 

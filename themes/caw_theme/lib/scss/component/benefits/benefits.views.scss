@@ -1,5 +1,6 @@
 @charset 'UTF-8';
 @import 'decanter/core/src/scss/decanter-no-markup';
+@import '../../base/base';
 
 .caw-benefits {
   &.filtering-list {
@@ -33,8 +34,8 @@
 
       li {
         background: $su-color-white;
-        border: 5px solid $su-color-foggy-light;
-        border-radius: 10px;
+        border: 3px solid $su-color-black-10;
+        border-radius: 5px;
       }
 
       // Card spacing
@@ -62,6 +63,21 @@
       }
     }
 
+    .selected {
+      .compare-selector {
+        label {
+          .label {
+            color: $su-color-white;
+
+            &::after {
+              background: $caw-color-sky-dark;
+              box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+          }
+        }
+      }
+    }
+
     .compare-selector {
       background: $su-color-black-10;
 
@@ -78,10 +94,11 @@
           @include responsive-spacing('margin-right', 0);
           @include type-d;
 
-          color: #016895;
+          color: $caw-color-sky-dark;
         }
       }
 
+      // Need to be able to have a focus state. Currently doesn't.
       input[type="checkbox"] {
         width: 30px;
         height: 30px;
@@ -92,10 +109,9 @@
         opacity: 0;
         position: absolute; 
       }
-
-
     
-      input[type="checkbox"], .label {
+      input[type="checkbox"],
+      .label {
         display: inline-block;
         vertical-align: middle;
         margin: 5px;
@@ -114,22 +130,11 @@
           width: 20px;
           height: 20px;
           padding: 2px;
-          margin-right: 10px;
+          margin-left: 18px;
           text-align: center;
         }
-      }
-    
-      .label:after + input[type="checkbox"]:checked {
-        background: rebeccapurple;
-        box-shadow: inset 0px 0px 0px 4px #fff;
-      }
-    
-    
-      // .checkbox-custom:focus + .label {
-      //   outline: 1px solid #ddd; /* focus style */
-      // }
-    
 
+      }
     }
 
     li.selected {
@@ -137,7 +142,6 @@
 
       .compare-selector {
         background: $su-color-sky;
-        color: $su-color-white;
       }
     }
 

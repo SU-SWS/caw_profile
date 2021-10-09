@@ -136,7 +136,6 @@
 
     .exposed-filters {
       @include responsive-spacing('padding', 3 5);
-      padding: 40px;
 
       h2 {
         @include type-c;
@@ -184,14 +183,32 @@
     }
   }
 
-  .filtering-list {
-    .views-element-container {
-      background: $su-color-stone-light;
-      border-top: 10px solid #FEC51D;
-      border-bottom: 10px solid #FEC51D;
-      padding-bottom: 100px;
+  .comparison-table--wrapper {
+    @include responsive-spacing('padding', 6 null);
+
+    background: $su-color-stone-light;
+    border-top: 10px solid $caw-color-illuminating-dark;
+    border-bottom: 10px solid $caw-color-illuminating-dark;
+    box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent; 
+
+    ~ header {
+      @include responsive-spacing('margin-top', 5);
     }
   }
+
+  .comparison-table--instruct {
+    @include type-e;
+
+    display: inline-block;
+    padding: 4px;
+    background: $caw-color-lime-light;
+    width: 100%;
+    font-weight: $su-font-semi-bold;
+    text-align: center;
+    box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent; 
+}
 
   &.comparison {
     max-height: calc(100vh - 500px);
@@ -201,6 +218,7 @@
     max-width: 1200px;
     margin: 0px auto;
     position: relative;
+
 
     table {
       background-color: $su-color-white;

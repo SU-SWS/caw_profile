@@ -20,6 +20,19 @@
         })
       };
 
+      // Wrapper for the coloring of the table.
+      $('.caw-benefits.comparison table')
+      .parents('div.views-element-container')
+      .eq(0)
+      .addClass('comparison-table--wrapper');
+
+      // Add bar above table
+      $("<span class='comparison-table--instruct'>You can scroll in the results box to see all the benefit categories avilable.</span>" )
+      .insertBefore('.caw-benefits.comparison table');
+
+      // Move summary to the top. right now it also gets the empty one.
+      $('.summary').prependTo('.comparison-table--wrapper .comparison');
+
       // Add change listener to disable options that don't have any results.
       $('.view.caw-benefits.filtering-list select[name="available"]')
         .once('select-benefits')

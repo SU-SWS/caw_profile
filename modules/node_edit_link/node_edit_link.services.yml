@@ -1,4 +1,8 @@
 services:
   node_edit_link.csrf:
     class: Drupal\node_edit_link\Services\NodeCsrfToken
-    arguments: [ '@request_stack', '@csrf_token', '@cache.default','@plugin.manager.mail']
+    arguments: [ '@request_stack', '@csrf_token', '@cache.default', '@plugin.manager.mail', '@current_user', '@email.validator' ]
+  node_edit_link.route_subscriber:
+    class: Drupal\node_edit_link\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

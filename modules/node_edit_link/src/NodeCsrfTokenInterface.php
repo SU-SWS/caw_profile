@@ -26,21 +26,25 @@ interface NodeCsrfTokenInterface {
    *
    * @param \Drupal\node\NodeInterface $node
    *   Node entity.
+   * @param string $mail
+   *   Email for the token.
    * @param int $expires
    *   Amount of time until the token expires.
    *
    * @return string
    *   Generated CSRF token.
    */
-  public function createCsrfToken(NodeInterface $node, $expires = 86400): string;
+  public function createCsrfToken(NodeInterface $node, string $mail, $expires = 86400): string;
 
   /**
    * Clear the CSRF token for the given node.
    *
    * @param \Drupal\node\NodeInterface $node
    *   Node entity.
+   * @param string $mail
+   *   Email hash string.
    */
-  public function clearCsrfToken(NodeInterface $node): void;
+  public function clearCsrfToken(NodeInterface $node, string $mail): void;
 
   /**
    * Add necessary form elements to the node form.

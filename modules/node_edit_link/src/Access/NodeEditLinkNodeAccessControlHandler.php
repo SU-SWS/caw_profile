@@ -29,8 +29,6 @@ class NodeEditLinkNodeAccessControlHandler extends NodeAccessControlHandler {
     /** @var \Drupal\node_edit_link\NodeCsrfTokenInterface $csrf_token */
     $csrf_token = \Drupal::service('node_edit_link.csrf');
     if ($csrf_token->checkAccess($entity)) {
-      $csrf_token->clearCsrfToken($entity);
-
       if (\Drupal::hasService('content_lock')) {
         \Drupal::service('content_lock')
           ->release($entity->id(), $entity->language());

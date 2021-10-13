@@ -92,7 +92,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     $session = $this->currentRequest->getSession();
     // If the user has already started the session for the current node, they
     // should have access to it, until they submit the form.
-    if ($session->get('node_edit_link') == $node->id()) {
+    if (!$node->isNew() && $session->get('node_edit_link') == $node->id()) {
       return TRUE;
     }
 
@@ -188,7 +188,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    *   Submitted form state.
    */
   public static function submitNodeForm(array $form, FormStateInterface $form_state) {
-    /** @var \Drupal\node_edit_link\Services\NodeCsrfTokenInterface $node_csrf_token */
+    /** @var \Drupal\node_edit_link\NodeCsrfTokenInterface $node_csrf_token */
     $node_csrf_token = $form_state->get('node_edit_link');
 
     /** @var \Drupal\node\NodeInterface $node */

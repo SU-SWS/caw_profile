@@ -140,9 +140,9 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
       $this->clearCsrfToken($form_state->getBuildInfo()['callback_object']->getEntity(), $mail);
       $form['revision_information']['#access'] = FALSE;
     }
-
-    $form_component = $form_state->get('form_display')
-      ->getComponent('node_edit_link');
+    /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
+    $form_display = $form_state->get('form_display');
+    $form_component = $form_display->getComponent('node_edit_link');
     // The form component isn't added to the node form, we can escape.
     if (empty($form_component)) {
       return;
@@ -160,6 +160,20 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
       '#type' => 'email',
       '#title' => $this->t('Email Address'),
       '#description' => $this->t('Send a one time edit link to the provided email address. Valid for 7 days'),
+    ];
+    $form['node_edit_link']['email_body'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Email Body'),
+      '#description' => $this->t('The one time login link will append to the bottom.'),
+      '#default_value' => 'Your assistance is requested to edit a piece of content on our site. Please view the link below to edit the content.',
+      '#states' => [
+        'visible' => [
+          ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
+        ],
+        'required' => [
+          ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
+        ]
+      ],
     ];
     $form['actions']['submit']['#submit'][] = [self::class, 'submitNodeForm'];
     $form_state->set('node_edit_link', $this);

@@ -195,6 +195,20 @@
     ~ header {
       @include responsive-spacing('margin-top', 5);
     }
+
+    > .summary {
+      @include responsive-spacing('margin-bottom', 5);
+      @include type-e;
+
+      width: 100%;
+      max-width: 1200px;
+      margin: 0px auto;
+      position: relative;
+
+      h2 {
+        @include type-d;
+      }
+    }
   }
 
   .comparison-table--instruct {

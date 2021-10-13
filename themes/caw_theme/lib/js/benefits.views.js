@@ -30,8 +30,17 @@
       $("<span class='comparison-table--instruct'>You can scroll in the results box to see all the benefit categories avilable.</span>" )
       .insertBefore('.caw-benefits.comparison table');
 
-      // Move summary to the top. right now it also gets the empty one.
-      $('.summary').prependTo('.comparison-table--wrapper .comparison');
+      // Move summary to the top.
+        $(".summary").filter(function() {
+            return ($(this).text().length > 0)
+        }).parent('div').addClass('not-empty');
+
+        $('.not-empty .summary')
+        .clone()
+        .prependTo('.comparison-table--wrapper')
+        .prepend('<h2>Comparing Results For</h2>');
+
+      // Copy the clear button and add the heading.
 
       // Add change listener to disable options that don't have any results.
       $('.view.caw-benefits.filtering-list select[name="available"]')

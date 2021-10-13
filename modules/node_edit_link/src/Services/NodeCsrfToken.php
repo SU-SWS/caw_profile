@@ -172,7 +172,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
         ],
         'required' => [
           ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
-        ]
+        ],
       ],
     ];
     $form['actions']['submit']['#submit'][] = [self::class, 'submitNodeForm'];

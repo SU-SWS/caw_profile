@@ -34,7 +34,7 @@ interface NodeCsrfTokenInterface {
    * @return string
    *   Generated CSRF token.
    */
-  public function createCsrfToken(NodeInterface $node, string $mail, $expires = 86400): string;
+  public function createCsrfToken(NodeInterface $node, string $mail, int $expires = 604800): string;
 
   /**
    * Clear the CSRF token for the given node.

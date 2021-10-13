@@ -7,6 +7,8 @@ use Drupal\Core\Access\CsrfTokenGenerator;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
@@ -19,6 +21,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class NodeCsrfToken implements NodeCsrfTokenInterface {
 
   use StringTranslationTrait;
+  use MessengerTrait;
 
   /**
    * Current request stack service.
@@ -92,7 +95,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   /**
    * {@inheritDoc}
    */
-  public function createCsrfToken(NodeInterface $node, $mail, $expires = 604800): string {
+  public function createCsrfToken(NodeInterface $node, $mail, int $expires = 604800): string {
     $token = $this->csrfToken->get(time() . $mail);
     // Create a token and save it in cache for reference later.
     $this->cache->set($this->getCid($node, $mail), ['csrf' => $token], time() + $expires, ['node_edit_link:' . $node->id()]);
@@ -178,7 +181,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
 
     // Display a message to the current admin and send out the email to the
     // provided email address.
-    \Drupal::messenger()->addStatus($this->t('One time edit link: %link', ['%link' => $url]));
+    self::messenger()->addStatus($this->t('One time edit link: %link', ['%link' => $url]));
     $this->mailManager->mail('system', $node->id(), $email, 'en', $params, NULL, TRUE);
   }
 

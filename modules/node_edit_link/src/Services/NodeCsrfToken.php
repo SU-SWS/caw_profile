@@ -124,7 +124,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   /**
    * {@inheritDoc}
    */
-  public function clearCsrfToken(NodeInterface $node, $mail): void {
+  public function clearCsrfToken(NodeInterface $node, string $mail): void {
     $this->cache->delete($this->getCid($node, $mail));
   }
 
@@ -174,7 +174,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    *   Submitted form state.
    */
   public static function submitNodeForm(array $form, FormStateInterface $form_state) {
-    /** @var NodeCsrfTokenInterface $node_csrf_token */
+    /** @var \Drupal\node_edit_link\Services\NodeCsrfTokenInterface $node_csrf_token */
     $node_csrf_token = $form_state->get('node_edit_link');
 
     /** @var \Drupal\node\NodeInterface $node */

@@ -21,7 +21,10 @@ class EventsSubscriber implements EventSubscriberInterface {
   }
 
   /**
+   * On a kernel request, check if the user is on the expected edit page.
+   *
    * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
+   *   Triggered event.
    */
   public function onKernelRequest(RequestEvent $event) {
     $node_edit_link = $event->getRequest()

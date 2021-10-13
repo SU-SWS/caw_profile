@@ -48,6 +48,7 @@ function node_edit_link_entity_extra_field_info() {
     ->getStorage('node_type')
     ->loadMultiple();
 
+  $extra = [];
   // Provide the pseudo field for any node form.
   foreach ($node_types as $bundle) {
     $extra['node'][$bundle->id()]['form']['node_edit_link'] = [

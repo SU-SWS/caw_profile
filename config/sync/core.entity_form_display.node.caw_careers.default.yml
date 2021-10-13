@@ -32,6 +32,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  node_edit_link:
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 5

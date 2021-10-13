@@ -15,7 +15,10 @@ use Drupal\Core\Access\AccessResult;
  * Implements hook_ENTITY_TYPE_access().
  */
 function node_edit_link_node_access(NodeInterface $node, $operation, AccountInterface $account) {
-  return AccessResult::allowedIf($operation == 'update' && \Drupal::service('node_edit_link.csrf')->checkAccess($node));
+  return AccessResult::allowedIf(
+    $operation == 'update' &&
+    \Drupal::service('node_edit_link.csrf')->checkAccess($node)
+  )->addCacheContexts(['url.query_args:edit-token']);
 }
 
 /**
@@ -31,8 +34,27 @@ function node_edit_link_entity_form_mode_alter(&$form_mode, EntityInterface $ent
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_BASE_FORM_ID_alter().
  */
 function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   \Drupal::service('node_edit_link.csrf')->addFormElements($form, $form_state);
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function node_edit_link_entity_extra_field_info() {
+  $node_types = \Drupal::entityTypeManager()
+    ->getStorage('node_type')
+    ->loadMultiple();
+
+  // Provide the pseudo field for any node form.
+  foreach ($node_types as $bundle) {
+    $extra['node'][$bundle->id()]['form']['node_edit_link'] = [
+      'label' => t('One-Time Edit Link'),
+      'weight' => 0,
+      'visible' => FALSE,
+    ];
+  }
+  return $extra;
 }

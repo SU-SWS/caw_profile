@@ -6,15 +6,16 @@
  */
 
 use Drupal\node\NodeInterface;
-use Drupal\node_edit_link\Access\NodeEditLinkNodeAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use \Drupal\Core\Access\AccessResult;
 
 /**
- * Implements hook_entity_type_alter().
+ * Implements hook_ENTITY_TYPE_access().
  */
-function node_edit_link_entity_type_alter(array &$entity_types) {
-  $entity_types['node']->setAccessClass(NodeEditLinkNodeAccessControlHandler::class);
+function node_edit_link_node_access(NodeInterface $node, $operation, AccountInterface $account) {
+  return AccessResult::allowedIf($operation == 'update' && \Drupal::service('node_edit_link.csrf')->checkAccess($node));
 }
 
 /**

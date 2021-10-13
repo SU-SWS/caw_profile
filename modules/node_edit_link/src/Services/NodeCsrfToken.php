@@ -3,7 +3,6 @@
 namespace Drupal\node_edit_link\Services;
 
 use Drupal\Component\Utility\EmailValidatorInterface;
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Access\CsrfTokenGenerator;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -80,12 +79,11 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    */
   public function checkAccess(NodeInterface $node): bool {
     $current_request_query = $this->currentRequest->query;
-    if (!$current_request_query->has('mail')) {
-      return FALSE;
-    }
-
-    $mail_hash = $current_request_query->get('mail');
-    if ($cache = $this->cache->get($this->getCid($node, $mail_hash))) {
+    $mail_hash = $current_request_query->get('mail', FALSE);
+    // The mail query parameter is used in conjunction with the node id to load
+    // the cache. Then the cached csrf token must match the token in the query
+    // to be allowed access to the node.
+    if ($mail_hash && $cache = $this->cache->get($this->getCid($node, $mail_hash))) {
       return $cache->data['csrf'] == $current_request_query->get('edit-token');
     }
     return FALSE;
@@ -96,6 +94,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    */
   public function createCsrfToken(NodeInterface $node, $mail, $expires = 604800): string {
     $token = $this->csrfToken->get(time() . $mail);
+    // Create a token and save it in cache for reference later.
     $this->cache->set($this->getCid($node, $mail), ['csrf' => $token], time() + $expires, ['node_edit_link:' . $node->id()]);
     return $token;
   }
@@ -111,6 +110,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    * {@inheritDoc}
    */
   public function addFormElements(array &$form, FormStateInterface $form_state): void {
+    $form['#attributes']['class'][] = 'centered-container';
     $form['node_edit_link'] = [
       '#type' => 'details',
       '#title' => $this->t('One-Time Edit Link'),
@@ -124,6 +124,13 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
       '#description' => $this->t('Send a one time edit link to the provided email address. Valid for 7 days'),
     ];
     $form['actions']['submit']['#submit'][] = [$this, 'submitNodeForm'];
+
+    if ($mail = $this->currentRequest->query->get('mail')) {
+      // Store the mail hash query into storage so that we can clear the cached
+      // token upon submitting.
+      $form_state->set('node_edit_link', $mail);
+      $form['revision_information']['#access'] = FALSE;
+    }
   }
 
   /**
@@ -137,15 +144,23 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    * @throws \Drupal\Core\Entity\EntityMalformedException
    */
   public function submitNodeForm(array $form, FormStateInterface $form_state) {
-    $email = $form_state->getValue(['node_edit_link', 'email']);
-    if (empty($email)) {
-      return;
-    }
-
     /** @var \Drupal\node\NodeForm $node_form */
     $node_form = $form_state->getBuildInfo()['callback_object'];
     /** @var \Drupal\node\NodeInterface $node */
     $node = $node_form->getEntity();
+    $email = $form_state->getValue(['node_edit_link', 'email']);
+
+    // First clear the current token that the user used.
+    if ($mail = $form_state->get('node_edit_link')) {
+      $this->clearCsrfToken($node, $mail);
+    }
+
+    if (empty($email)) {
+      return;
+    }
+
+    // Construct an absolute url to email to the user with the appropriate query
+    // parameters.
     $url = $node_form->getEntity()->toUrl('edit-form', [
       'query' => [
         'edit-token' => $this->createCsrfToken($node, $email),
@@ -155,20 +170,44 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     ])->toString();
 
     $params = [
-      'message' => 'This is a test attempt: ' . $url,
-      'subject' => $node->label(),
+      'context' => [
+        'message' => 'This is a test attempt: ' . $url,
+        'subject' => $node->label(),
+      ],
     ];
 
-    \Drupal::messenger()->addStatus($url);
-    $this->mailManager->mail('php', $node->id(), $email, 'en', $params, NULL, TRUE);
+    // Display a message to the current admin and send out the email to the
+    // provided email address.
+    \Drupal::messenger()->addStatus($this->t('One time edit link: %link', ['%link' => $url]));
+    $this->mailManager->mail('system', $node->id(), $email, 'en', $params, NULL, TRUE);
   }
 
-  protected function getCid(NodeInterface $node, $mail) {
+  /**
+   * Get a cache id string for the given node and email address.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   Node entity object.
+   * @param string $mail
+   *   The email address or the hashed email address.
+   *
+   * @return string
+   *   Cache ID string.
+   */
+  protected function getCid(NodeInterface $node, string $mail): string {
     $cid = 'node_edit_link:' . $node->id();
     return $this->emailValidator->isValid($mail) ? $cid . ':' . self::getEmailHash($mail) : "$cid:$mail";
   }
 
-  protected static function getEmailHash($mail) {
+  /**
+   * Hash an email address and return a substring of it.
+   *
+   * @param string $mail
+   *   Email address.
+   *
+   * @return string
+   *   Shortened hash of the email.
+   */
+  protected static function getEmailHash(string $mail): string {
     return substr(md5($mail), 0, 5);
   }
 

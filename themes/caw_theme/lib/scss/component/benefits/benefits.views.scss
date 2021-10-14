@@ -8,7 +8,7 @@
     .rows {
       background: $su-color-foggy-light;
       // Moves the filter box to be offset.
-      padding-top: 190px; 
+      padding-top: 190px;
       position: relative;
       top: -100px;
 
@@ -39,7 +39,7 @@
       }
 
       // Card spacing
-      .views-field-title, 
+      .views-field-title,
       .views-field-su-benefits-offered,
       .views-field-body {
         @include responsive-spacing('padding', null 3);
@@ -71,7 +71,7 @@
 
             &::after {
               background: $caw-color-sky-dark;
-              box-shadow: inset 0px 0px 0px 2px #fff;
+              box-shadow: inset 0 0 0 2px #fff;
             }
           }
         }
@@ -99,7 +99,7 @@
       }
 
       input[type="checkbox"] {
-        box-shadow: inset 0px 0px 0px 3px #4298B5;
+        box-shadow: inset 0 0 0 3px $caw-color-sky-light;
         width: 30px;
         height: 30px;
         position: relative;
@@ -108,7 +108,7 @@
 
         &:focus,
         &:active {
-          box-shadow: inset 0px 0px 0px 5px #4298B5;
+          box-shadow: inset 0 0 0 5px $caw-color-sky-light;
         }
       }
     }
@@ -150,10 +150,6 @@
       @include grid-media('md') {
         > div {
           width: 40%;
-
-          &:last-child {
-            // width: 20%;
-          }
         }
       }
 
@@ -162,7 +158,7 @@
         width: 100%;
       }
 
-      #edit-submit-caw-benefits {
+      [data-drupal-selector="edit-submit-caw-benefits"] {
         @include responsive-spacing('margin-right', 3);
       }
 
@@ -190,7 +186,7 @@
     border-top: 10px solid $caw-color-illuminating-dark;
     border-bottom: 10px solid $caw-color-illuminating-dark;
     box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
-    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent; 
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
 
     ~ header {
       @include responsive-spacing('margin-top', 5);
@@ -202,7 +198,7 @@
 
       width: 100%;
       max-width: 1200px;
-      margin: 0px auto;
+      margin: 0 auto;
       position: relative;
 
       h2 {
@@ -234,7 +230,7 @@
     font-weight: $su-font-semi-bold;
     text-align: center;
     box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
-    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent; 
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
 }
 
   &.comparison {
@@ -243,7 +239,7 @@
 
     width: 100%;
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
     position: relative;
 
 
@@ -259,7 +255,7 @@
         }
 
         tr {
-          border-top: none;
+          border-top: 0;
         }
       }
 
@@ -269,7 +265,7 @@
         th {
           @include responsive-spacing('padding-bottom', 4);
 
-          -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent; 
+          -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
           box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
 
         }
@@ -280,9 +276,7 @@
           border-left: 1px solid #d2d3d4;
         }
       }
- 
+
     }
   }
-
 }
-

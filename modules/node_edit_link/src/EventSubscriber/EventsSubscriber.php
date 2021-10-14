@@ -33,8 +33,8 @@ class EventsSubscriber implements EventSubscriberInterface {
       if ($node_edit_link) {
         $uri = $event->getRequest()->getRequestUri();
 
-        // If the user had ventured off the node edit form, clear out the session
-        // that they started when loading the form.
+        // If the user had ventured off the node edit form, clear out the
+        // session that they started when loading the form.
         if (strpos($uri, "/node/$node_edit_link/edit") === FALSE) {
           $session->clear();
         }

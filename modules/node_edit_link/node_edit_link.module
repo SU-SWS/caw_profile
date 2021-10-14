@@ -59,10 +59,12 @@ function node_edit_link_entity_extra_field_info() {
 function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['#attributes']['class'][] = 'centered-container';
 
-  if ($mail = \Drupal::requestStack()->getCurrentRequest()->query->get('mail')) {
+  if ($mail = \Drupal::requestStack()
+    ->getCurrentRequest()->query->get('mail')) {
     // Clear the access token since the user is now in the form. The session
     // has been started at this time, and so we no longer need the token.
-    \Drupal::service('node_edit_link.csrf')->clearCsrfToken($form_state->getBuildInfo()['callback_object']->getEntity(), $mail);
+    \Drupal::service('node_edit_link.csrf')
+      ->clearCsrfToken($form_state->getBuildInfo()['callback_object']->getEntity(), $mail);
     $form['revision_information']['#access'] = FALSE;
   }
   /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
@@ -78,7 +80,8 @@ function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_st
     '#title' => t('One-Time Edit Link'),
     '#group' => 'advanced',
     '#tree' => TRUE,
-    '#access' => \Drupal::currentUser()->hasPermission('send one time edit link'),
+    '#access' => \Drupal::currentUser()
+      ->hasPermission('send one time edit link'),
     '#weight' => $form_component['weight'],
   ];
   $form['node_edit_link']['email'] = [
@@ -111,7 +114,7 @@ function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_st
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   Submitted form state.
  */
-function _node_edit_link_node_form_submit(array $form, FormStateInterface $form_state){
+function _node_edit_link_node_form_submit(array $form, FormStateInterface $form_state) {
   /** @var \Drupal\node\NodeInterface $node */
   $node = $form_state->getBuildInfo()['callback_object']->getEntity();
 

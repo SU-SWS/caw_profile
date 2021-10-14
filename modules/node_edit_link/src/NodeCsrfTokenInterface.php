@@ -2,7 +2,6 @@
 
 namespace Drupal\node_edit_link;
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 
 /**

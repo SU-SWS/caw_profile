@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\Tests\node_edit_link\Kernel\EventSubscriber;
+namespace Drupal\Tests\node_edit_link\Kernel\Routing;
 
 use Drupal\KernelTests\KernelTestBase;
 
 /**
- * @coversDefaultClass \Drupal\node_edit_link\EventSubscriber\EventsSubscriber
+ * @coversDefaultClass \Drupal\node_edit_link\Routing\RouteSubscriber;
  */
 class RouteSubscriberTest extends KernelTestBase {
 

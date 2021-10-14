@@ -70,6 +70,18 @@
             .append($clearAll)
             .append($summary);
 
+          const $submit = $('<input>').attr('type', 'submit').attr('disabled', 'true').attr('value', 'Compare Selected Plans').click(() => {
+            const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
+
+            Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
+              const view = drupalSettings.views.ajaxViews[domId];
+              if (view.view_display_id === 'comparison') {
+                view.view_args = selectedItems.join('+');
+                $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
+              }
+            })
+          });
+
           $list.children('li').each((j, item) => {
             const $item = $(item);
             const $title = $('h3', $item).uniqueId()
@@ -85,6 +97,8 @@
                 const selectedItems = $.map($('input:checked', $list), () => $('h3', $item).text())
                 $info.find('.num-selected').text(selectedItems.length);
                 $summary.text(selectedItems.join(', '));
+
+                $submit.attr('disabled',null);
               });
 
             const $selectElement = $('<div>')
@@ -93,18 +107,6 @@
               .append($('<label>').html('<span class="label">Compare</span>').append($checkbox));
             $item.prepend($selectElement);
           })
-
-          const $submit = $('<input>').attr('type', 'submit').attr('value', 'Compare Selected Plans').click(() => {
-            const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
-
-            Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
-              const view = drupalSettings.views.ajaxViews[domId];
-              if (view.view_display_id === 'comparison') {
-                view.view_args = selectedItems.join('+');
-                $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
-              }
-            })
-          });
 
           const $submitWrapper = $('<div>').addClass('submit-wrapper').append($info).append($submit);
           $list.after($submitWrapper);

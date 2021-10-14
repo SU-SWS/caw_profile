@@ -47,13 +47,17 @@ interface NodeCsrfTokenInterface {
   public function clearCsrfToken(NodeInterface $node, string $mail): void;
 
   /**
-   * Add necessary form elements to the node form.
+   * Send out the email for the given node for one time editing.
    *
-   * @param array $form
-   *   Full node entity form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Current form state.
+   * @param \Drupal\node\NodeInterface $node
+   *   Node entity object.
+   * @param string $token
+   *   CSRF Token.
+   * @param string $mail
+   *   Send to Email address.
+   * @param string|null $message
+   *   Email body.
    */
-  public function addFormElements(array &$form, FormStateInterface $form_state): void;
+  public function sendEmail(NodeInterface $node, string $token, string $mail, ?string $message = NULL);
 
 }

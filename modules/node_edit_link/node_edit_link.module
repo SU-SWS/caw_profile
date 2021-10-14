@@ -34,13 +34,6 @@ function node_edit_link_entity_form_mode_alter(&$form_mode, EntityInterface $ent
 }
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter().
- */
-function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  \Drupal::service('node_edit_link.csrf')->addFormElements($form, $form_state);
-}
-
-/**
  * Implements hook_entity_extra_field_info().
  */
 function node_edit_link_entity_extra_field_info() {
@@ -58,4 +51,78 @@ function node_edit_link_entity_extra_field_info() {
     ];
   }
   return $extra;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function node_edit_link_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#attributes']['class'][] = 'centered-container';
+
+  if ($mail = \Drupal::requestStack()->getCurrentRequest()->query->get('mail')) {
+    // Clear the access token since the user is now in the form. The session
+    // has been started at this time, and so we no longer need the token.
+    \Drupal::service('node_edit_link.csrf')->clearCsrfToken($form_state->getBuildInfo()['callback_object']->getEntity(), $mail);
+    $form['revision_information']['#access'] = FALSE;
+  }
+  /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
+  $form_display = $form_state->get('form_display');
+  $form_component = $form_display->getComponent('node_edit_link');
+  // The form component isn't added to the node form, we can escape.
+  if (empty($form_component)) {
+    return;
+  }
+
+  $form['node_edit_link'] = [
+    '#type' => 'details',
+    '#title' => t('One-Time Edit Link'),
+    '#group' => 'advanced',
+    '#tree' => TRUE,
+    '#access' => \Drupal::currentUser()->hasPermission('send one time edit link'),
+    '#weight' => $form_component['weight'],
+  ];
+  $form['node_edit_link']['email'] = [
+    '#type' => 'email',
+    '#title' => t('Email Address'),
+    '#description' => t('Send a one time edit link to the provided email address. Valid for 7 days'),
+  ];
+  $form['node_edit_link']['email_body'] = [
+    '#type' => 'textarea',
+    '#title' => t('Email Body'),
+    '#description' => t('The one time login link will append to the bottom.'),
+    '#default_value' => 'Your assistance is requested to edit a piece of content on our site. Please view the link below to edit the content.',
+    '#states' => [
+      'visible' => [
+        ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
+      ],
+      'required' => [
+        ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
+      ],
+    ],
+  ];
+  $form['actions']['submit']['#submit'][] = '_node_edit_link_node_form_submit';
+}
+
+/**
+ * On node form submit, send out the email with one-time edit link.
+ *
+ * @param array $form
+ *   Submitted Form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Submitted form state.
+ *
+ * @throws \Drupal\Core\Entity\EntityMalformedException
+ */
+function _node_edit_link_node_form_submit(array $form, FormStateInterface $form_state){
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $form_state->getBuildInfo()['callback_object']->getEntity();
+
+  // Send out the email to the user.
+  if ($email = $form_state->getValue(['node_edit_link', 'email'])) {
+    /** @var \Drupal\node_edit_link\NodeCsrfTokenInterface $node_csrf_token */
+    $node_csrf_token = \Drupal::service('node_edit_link.csrf');
+
+    $email_body = $form_state->getValue(['node_edit_link', 'email_body']);
+    $node_csrf_token->sendEmail($node, $node_csrf_token->createCsrfToken($node, $email), $email, $email_body);
+  }
 }

@@ -5,8 +5,8 @@ namespace Drupal\node_edit_link\Services;
 use Drupal\Component\Utility\EmailValidatorInterface;
 use Drupal\Core\Access\CsrfTokenGenerator;
 use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class NodeCsrfToken implements NodeCsrfTokenInterface {
 
   use StringTranslationTrait;
+  use MessengerTrait;
 
   /**
    * Core session manager service.
@@ -131,91 +132,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   /**
    * {@inheritDoc}
    */
-  public function addFormElements(array &$form, FormStateInterface $form_state): void {
-    $form['#attributes']['class'][] = 'centered-container';
-
-    if ($mail = $this->currentRequest->query->get('mail')) {
-      // Clear the access token since the user is now in the form. The session
-      // has been started at this time, and so we no longer need the token.
-      $this->clearCsrfToken($form_state->getBuildInfo()['callback_object']->getEntity(), $mail);
-      $form['revision_information']['#access'] = FALSE;
-    }
-    /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display */
-    $form_display = $form_state->get('form_display');
-    $form_component = $form_display->getComponent('node_edit_link');
-    // The form component isn't added to the node form, we can escape.
-    if (empty($form_component)) {
-      return;
-    }
-
-    $form['node_edit_link'] = [
-      '#type' => 'details',
-      '#title' => $this->t('One-Time Edit Link'),
-      '#group' => 'advanced',
-      '#tree' => TRUE,
-      '#access' => $this->currentUser->hasPermission('send one time edit link'),
-      '#weight' => $form_component['weight'],
-    ];
-    $form['node_edit_link']['email'] = [
-      '#type' => 'email',
-      '#title' => $this->t('Email Address'),
-      '#description' => $this->t('Send a one time edit link to the provided email address. Valid for 7 days'),
-    ];
-    $form['node_edit_link']['email_body'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Email Body'),
-      '#description' => $this->t('The one time login link will append to the bottom.'),
-      '#default_value' => 'Your assistance is requested to edit a piece of content on our site. Please view the link below to edit the content.',
-      '#states' => [
-        'visible' => [
-          ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
-        ],
-        'required' => [
-          ':input[name="node_edit_link[email]"]' => ['filled' => TRUE],
-        ],
-      ],
-    ];
-    $form['actions']['submit']['#submit'][] = [self::class, 'submitNodeForm'];
-    $form_state->set('node_edit_link', $this);
-  }
-
-  /**
-   * Node form submit handler to send email with one time login link.
-   *
-   * @param array $form
-   *   Complete form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Submitted form state.
-   */
-  public static function submitNodeForm(array $form, FormStateInterface $form_state) {
-    /** @var \Drupal\node_edit_link\NodeCsrfTokenInterface $node_csrf_token */
-    $node_csrf_token = $form_state->get('node_edit_link');
-
-    /** @var \Drupal\node\NodeInterface $node */
-    $node = $form_state->getBuildInfo()['callback_object']->getEntity();
-
-    // Send out the email to the user.
-    if ($email = $form_state->getValue(['node_edit_link', 'email'])) {
-      $email_body = $form_state->getValue(['node_edit_link', 'email_body']);
-      self::sendEmail($node, $node_csrf_token->createCsrfToken($node, $email), $email, $email_body);
-    }
-  }
-
-  /**
-   * Send out the email for the given node for one time editing.
-   *
-   * @param \Drupal\node\NodeInterface $node
-   *   Node entity object.
-   * @param string $token
-   *   CSRF Token.
-   * @param string $mail
-   *   Send to Email address.
-   * @param string|null $message
-   *   Email body.
-   *
-   * @throws \Drupal\Core\Entity\EntityMalformedException
-   */
-  protected static function sendEmail(NodeInterface $node, string $token, string $mail, ?string $message = NULL) {
+  public function sendEmail(NodeInterface $node, string $token, string $mail, ?string $message = NULL) {
     // Construct an absolute url to email to the user with the appropriate query
     // parameters.
     $url = $node->toUrl('edit-form', [
@@ -224,20 +141,16 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     ])->toString();
 
     $params = [
-      'context' => [
-        'message' => $message,
-        'subject' => $node->label(),
-      ],
+      'context' => ['message' => $message, 'subject' => $node->label()],
     ];
-
-    $messenger = \Drupal::messenger();
 
     // Display a message to the current admin and send out the email to the
     // provided email address.
-    $messenger->addStatus(t('One time edit link: %link', ['%link' => $url]));
+    self::messenger()
+      ->addStatus($this->t('One time edit link: %link', ['%link' => $url]));
+
     try {
-      \Drupal::service('plugin.manager.mail')
-        ->mail('system', $node->id(), $mail, 'en', $params, NULL, TRUE);
+      $this->mailManager->mail('system', $node->id(), $mail, 'en', $params, NULL, TRUE);
     }
     catch (\Exception $e) {
       // Do nothing. If the email fails to send, a message is already provided

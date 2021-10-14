@@ -27,15 +27,17 @@ class EventsSubscriber implements EventSubscriberInterface {
    *   Triggered event.
    */
   public function onKernelRequest(RequestEvent $event) {
-    $node_edit_link = $event->getRequest()
-      ->getSession()
-      ->get('node_edit_link');
-    if ($node_edit_link) {
-      $uri = $event->getRequest()->getRequestUri();
-      // If the user had ventured off the node edit form, clear out the session
-      // that they started when loading the form.
-      if (strpos($uri, "/node/$node_edit_link/edit") === FALSE) {
-        $event->getRequest()->getSession()->clear();
+    if ($session = $event->getRequest()->getSession()) {
+      $node_edit_link = $session->get('node_edit_link');
+
+      if ($node_edit_link) {
+        $uri = $event->getRequest()->getRequestUri();
+
+        // If the user had ventured off the node edit form, clear out the session
+        // that they started when loading the form.
+        if (strpos($uri, "/node/$node_edit_link/edit") === FALSE) {
+          $session->clear();
+        }
       }
     }
   }

@@ -207,7 +207,20 @@
 
       h2 {
         @include type-d;
+
+        display: inline-block;
+        float: left;
       }
+
+      > a {
+        @include responsive-spacing('padding-left', 3);
+
+      }
+    }
+
+    .comparison-table-plan-names {
+      display: block;
+      clear: left;
     }
   }
 

@@ -37,8 +37,10 @@
 
         $('.not-empty .summary')
         .clone()
+        .wrapInner('<div class="comparison-table-plan-names"></div>')
         .prependTo('.comparison-table--wrapper')
-        .prepend('<h2>Comparing Results For</h2>');
+        .prepend('<h2>Comparing Results For</h2>')
+        .prepend('<a href="#">Clear All</a>');
 
       // Copy the clear button and add the heading.
 

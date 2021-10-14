@@ -31,10 +31,12 @@
       .insertBefore('.caw-benefits.comparison table');
 
       // Move summary to the top.
-        $(".summary").filter(function() {
+      // First add a class so know which one selected
+        $('.summary').filter(function() {
             return ($(this).text().length > 0)
         }).parent('div').addClass('not-empty');
 
+        // Move, clone and wrap to creat header.
         $('.not-empty .summary')
         .clone()
         .wrapInner('<div class="comparison-table-plan-names"></div>')
@@ -42,7 +44,6 @@
         .prepend('<h2>Comparing Results For</h2>')
         .prepend('<a href="#">Clear All</a>');
 
-      // Copy the clear button and add the heading.
 
       // Add change listener to disable options that don't have any results.
       $('.view.caw-benefits.filtering-list select[name="available"]')

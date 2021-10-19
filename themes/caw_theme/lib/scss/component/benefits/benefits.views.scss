@@ -192,7 +192,7 @@
       @include responsive-spacing('margin-top', 5);
     }
 
-    > .summary {
+    .summary {
       @include responsive-spacing('margin-bottom', 5);
       @include type-e;
 
@@ -220,10 +220,9 @@
     }
   }
 
-  .comparison-table--instruct {
+  caption {
     @include type-e;
 
-    display: inline-block;
     padding: 4px;
     background: $caw-color-lime-light;
     width: 100%;
@@ -231,7 +230,7 @@
     text-align: center;
     box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
     -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
-}
+  }
 
   &.comparison {
     max-height: calc(100vh - 500px);

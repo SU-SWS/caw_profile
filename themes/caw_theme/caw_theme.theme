@@ -119,6 +119,10 @@ function caw_theme_preprocess_node(&$variables) {
           $variables['#attached']['library'][] = "caw_theme/basic_pages.full_width";
         }
         break;
+
+      case 'caw_benefits':
+        $variables['#attached']['library'][] = "caw_theme/benefits.node";
+        break;  
     }
   }
 }

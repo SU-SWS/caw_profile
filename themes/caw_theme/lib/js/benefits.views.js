@@ -26,23 +26,19 @@
       .eq(0)
       .addClass('comparison-table--wrapper');
 
-      // Add bar above table
-      $("<span class='comparison-table--instruct'>You can scroll in the results box to see all the benefit categories avilable.</span>" )
-      .insertBefore('.caw-benefits.comparison table');
-
       // Move summary to the top.
       // First add a class so know which one selected
         $('.summary').filter(function() {
             return ($(this).text().length > 0)
         }).parent('div').addClass('not-empty');
 
-        // Move, clone and wrap to creat header.
-        $('.not-empty .summary')
-        .clone()
-        .wrapInner('<div class="comparison-table-plan-names"></div>')
-        .prependTo('.comparison-table--wrapper')
-        .prepend('<h2>Comparing Results For</h2>')
-        .prepend('<a href="#">Clear All</a>');
+         // Move, clone and wrap to create header.
+         $('.not-empty .summary')
+         .clone()
+         .wrapInner('<div class="comparison-table-plan-names"></div>')
+         .insertBefore('.comparison-table--wrapper .comparison')
+         .prepend('<h2>Comparing Results For</h2>')
+         .prepend('<a href="#">Clear All</a>');
 
 
       // Add change listener to disable options that don't have any results.
@@ -103,7 +99,7 @@
                 view.view_args = selectedItems.join('+');
                 $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
               }
-            })
+            })            
           });
 
           const $submitWrapper = $('<div>').addClass('submit-wrapper').append($info).append($submit);

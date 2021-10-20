@@ -20,27 +20,6 @@
         })
       };
 
-      // Wrapper for the coloring of the table.
-      $('.caw-benefits.comparison table')
-      .parents('div.views-element-container')
-      .eq(0)
-      .addClass('comparison-table--wrapper');
-
-      // Move summary to the top.
-      // First add a class so know which one selected
-        $('.summary').filter(function() {
-            return ($(this).text().length > 0)
-        }).parent('div').addClass('not-empty');
-
-         // Move, clone and wrap to create header.
-         $('.not-empty .summary')
-         .clone()
-         .wrapInner('<div class="comparison-table-plan-names"></div>')
-         .insertBefore('.comparison-table--wrapper .comparison')
-         .prepend('<h2>Comparing Results For</h2>')
-         .prepend('<a href="#">Clear All</a>');
-
-
       // Add change listener to disable options that don't have any results.
       $('.view.caw-benefits.filtering-list select[name="available"]')
         .once('select-benefits')
@@ -68,6 +47,16 @@
 
           const $submit = $('<input>').attr('type', 'submit').attr('disabled', 'true').attr('value', 'Compare Selected Plans').click(() => {
             const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
+
+            // Cloning and adding to the head of the table when plans selected.
+            const $headerInfoClear = $($clearAll).clone();
+            const $headerInfoSummary = $($summary).clone();
+            const $headerInfo = $('<div class="comparison-table-plan-names"></div>')
+            .html('<h2>Comparing Results For</h2>')
+            .append($headerInfoClear)
+            .append($headerInfoSummary);
+            $($headerInfo).insertBefore('.comparison-table--wrapper');
+            $('.comparison-table-plan-names,.comparison-table--wrapper').wrapAll('<div class="header-info-wrap"></div>');
 
             Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
               const view = drupalSettings.views.ajaxViews[domId];

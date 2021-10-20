@@ -179,8 +179,10 @@
     }
   }
 
-  .comparison-table--wrapper {
+  .header-info-wrap {
     @include responsive-spacing('padding', 6 null);
+    @include responsive-spacing('margin-bottom', 5);
+
 
     background: $su-color-stone-light;
     border-top: 10px solid $caw-color-illuminating-dark;
@@ -188,18 +190,18 @@
     box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
     -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
 
-    ~ header {
-      @include responsive-spacing('margin-top', 5);
-    }
-
-    .summary {
-      @include responsive-spacing('margin-bottom', 5);
-      @include type-e;
-
+    .comparison-table-plan-names {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
+
+      .summary {
+        @include responsive-spacing('margin-bottom', 5);
+        @include type-e;
+
+        clear: left;
+      }
 
       h2 {
         @include type-d;
@@ -210,13 +212,7 @@
 
       > a {
         @include responsive-spacing('padding-left', 3);
-
       }
-    }
-
-    .comparison-table-plan-names {
-      display: block;
-      clear: left;
     }
   }
 

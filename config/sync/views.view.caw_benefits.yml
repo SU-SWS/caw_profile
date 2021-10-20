@@ -1622,6 +1622,7 @@ display:
           plugin_id: node_nid
       display_extenders: {  }
       use_ajax: true
+      css_class: filtering-list-view
     cache_metadata:
       max-age: -1
       contexts:
@@ -1736,9 +1737,11 @@ display:
       footer: {  }
       defaults:
         footer: false
+        css_class: false
       displays:
         filtering_list: filtering_list
       inherit_arguments: false
+      css_class: comparison-table--wrapper
     cache_metadata:
       max-age: -1
       contexts:

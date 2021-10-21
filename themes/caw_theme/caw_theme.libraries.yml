@@ -38,3 +38,8 @@ benefits.views:
   dependencies:
     - core/jquery.ui
     - core/drupalSettings
+
+benefits.node:
+  css:
+    component:
+      dist/css/benefits.node.css: { }

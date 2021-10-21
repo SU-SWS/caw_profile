@@ -102,9 +102,97 @@ dependencies:
     - node.type.caw_benefits
   module:
     - datetime
+    - layout_builder
+    - layout_discovery
+    - layout_library
     - options
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          dad17f20-b41b-46d4-b6a7-0a1d5cf68c97:
+            uuid: dad17f20-b41b-46d4-b6a7-0a1d5cf68c97
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:caw_benefits:links'
+            additional: {  }
+            weight: 0
+          f985690d-3c13-4327-9703-c5c8e3fc5f80:
+            uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:caw_benefits:su_benefit_type'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 1
+          1d197a64-275c-42ab-9936-9e336b4b0818:
+            uuid: 1d197a64-275c-42ab-9936-9e336b4b0818
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:caw_benefits:su_benefits_year'
+              formatter:
+                label: above
+                settings:
+                  format_type: medium
+                  timezone_override: ''
+                third_party_settings: {  }
+                type: datetime_default
+            additional: {  }
+            weight: 2
+          624a925c-ea58-4874-97d9-be05c7399dca:
+            uuid: 624a925c-ea58-4874-97d9-be05c7399dca
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:caw_benefits:su_benefits_offered'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 3
+          fa430736-0ac4-48fa-9261-9077d289d53e:
+            uuid: fa430736-0ac4-48fa-9261-9077d289d53e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:caw_benefits:body'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 4
+        third_party_settings: {  }
+  layout_library:
+    enable: false
 id: node.caw_benefits.default
 targetEntityType: node
 bundle: caw_benefits

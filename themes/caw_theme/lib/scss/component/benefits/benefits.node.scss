@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+@import 'decanter/core/src/scss/decanter-no-markup';
+@import '../../base/base';
+
+.benefits {
+  .node {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: calc(100% - 200px);
+  }
+}

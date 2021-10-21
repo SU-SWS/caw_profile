@@ -1,12 +1,14 @@
 @charset 'UTF-8';
 @import 'decanter/core/src/scss/decanter-no-markup';
+@import '../../base/base';
 
 .caw-benefits {
   &.filtering-list {
 
     .rows {
       background: $su-color-foggy-light;
-      padding-top: 150px;
+      // Moves the filter box to be offset.
+      padding-top: 190px;
       position: relative;
       top: -100px;
 
@@ -25,49 +27,97 @@
     }
 
     .rows {
+
+      h2 {
+        @include responsive-spacing('margin', 5 null 4);
+      }
+
       li {
         background: $su-color-white;
-        border: 3px solid #eaeaea;
+        border: 3px solid $su-color-black-10;
         border-radius: 5px;
+      }
 
-        > div:not(:first-child) {
-          padding: 20px;
+      // Card spacing
+      .views-field-title,
+      .views-field-su-benefits-offered,
+      .views-field-body {
+        @include responsive-spacing('padding', null 3);
+      }
+
+      .views-field-title {
+        @include responsive-spacing('padding-top', 3);
+
+        h3 {
+          @include responsive-spacing('margin-bottom', 0);
+        }
+      }
+
+      .views-field-body {
+        @include responsive-spacing('padding-bottom', 4);
+      }
+
+      .grid-container-2 {
+        grid-row-gap: 50px;
+        grid-column-gap: 45px;
+      }
+    }
+
+    .selected {
+      .compare-selector {
+        label {
+          .label {
+            color: $su-color-white;
+
+            &::after {
+              background: $caw-color-sky-dark;
+              box-shadow: inset 0 0 0 2px #fff;
+            }
+          }
         }
       }
     }
 
     .compare-selector {
-      background: #eaeaea;
+      background: $su-color-black-10;
 
       label {
-        margin: 0;
-        padding: 10px;
-        display: inline-block;
-        max-width: 100%;
-        width: 100%;
-        text-align: right;
+        @include responsive-spacing('padding', 1);
 
-        span {
-          margin-right: 20px;
-          font-size: 27px;
+        display: inline-block;
+        margin: 0;
+        max-width: 100%;
+        text-align: right;
+        width: 100%;
+
+        .label {
+          @include responsive-spacing('margin-right', 0);
+          @include type-d;
+
+          color: $caw-color-sky-dark;
         }
       }
 
       input[type="checkbox"] {
+        box-shadow: inset 0 0 0 3px $caw-color-sky-light;
         width: 30px;
         height: 30px;
         position: relative;
         clip-path: none;
         float: right;
+
+        &:focus,
+        &:active {
+          box-shadow: inset 0 0 0 5px $caw-color-sky-light;
+        }
       }
     }
 
     li.selected {
-      border: 3px solid #4298b5;
+      border: 3px solid $su-color-sky;
 
       .compare-selector {
-        background: #4298b5;
-        color: #fff;
+        background: $su-color-sky;
       }
     }
 
@@ -85,31 +135,38 @@
     }
 
     .exposed-filters {
-      padding: 40px;
+      @include responsive-spacing('padding', 3 5);
+
+      h2 {
+        @include type-c;
+      }
     }
 
     form {
       display: flex;
       justify-content: space-between;
+      column-gap: 45px;
 
       @include grid-media('md') {
         > div {
           width: 40%;
-
-          &:last-child {
-            width: 20%;
-          }
         }
       }
 
       label {
+        margin-top: 0;
         width: 100%;
+      }
+
+      [data-drupal-selector="edit-submit-caw-benefits"] {
+        @include responsive-spacing('margin-right', 3);
       }
 
       [data-drupal-selector="edit-reset"] {
         padding: 0;
         background: none;
         color: $su-color-digital-blue;
+        margin: 0;
       }
 
       select {
@@ -122,11 +179,99 @@
     }
   }
 
-  &.comparison {
-    max-height: calc(100vh - 50px);
-    overflow-y: scroll;
+  .header-info-wrap {
+    @include responsive-spacing('padding', 6 null);
+    @include responsive-spacing('margin-bottom', 5);
+
+
     background: $su-color-stone-light;
+    border-top: 10px solid $caw-color-illuminating-dark;
+    border-bottom: 10px solid $caw-color-illuminating-dark;
+    box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+
+    .comparison-table-plan-names {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+
+      .summary {
+        @include responsive-spacing('margin-bottom', 5);
+        @include type-e;
+
+        clear: left;
+      }
+
+      h2 {
+        @include type-d;
+
+        display: inline-block;
+        float: left;
+      }
+
+      > a {
+        @include responsive-spacing('padding-left', 3);
+      }
+    }
   }
 
-}
+  caption {
+    @include type-e;
 
+    padding: 4px;
+    background: $caw-color-lime-light;
+    width: 100%;
+    font-weight: $su-font-semi-bold;
+    text-align: center;
+    box-shadow: 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+    -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+  }
+
+  &.comparison {
+    max-height: calc(100vh - 500px);
+    overflow-y: scroll;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+
+    table {
+      background-color: $su-color-white;
+      max-width: 1200px;
+
+      tbody,
+      thead {
+        tr,
+        td {
+          padding: 1.5rem 1.5rem 3.5rem;
+        }
+
+        tr {
+          border-top: 0;
+        }
+      }
+
+      thead {
+        background: #eaedee;
+
+        th {
+          @include responsive-spacing('padding-bottom', 4);
+
+          -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+          box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+
+        }
+      }
+
+      tr {
+        > td {
+          border-left: 1px solid #d2d3d4;
+        }
+      }
+
+    }
+  }
+}

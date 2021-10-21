@@ -189,11 +189,13 @@ display:
           default_row_class: true
           override: 1
           sticky: 0
-          caption: ''
+          caption: 'You can scroll in the results box to see all the benefit categories available.'
           summary: ''
           description: ''
           columns:
             title: title
+            caw_benefits_fulltime_cost: caw_benefits_fulltime_cost
+            caw_benefits_parttime_cost: caw_benefits_parttime_cost
             caw_benefits_med_acupuncture: caw_benefits_med_acupuncture
             caw_benefits_med_allergy_test: caw_benefits_med_allergy_test
             caw_benefits_med_allergy_treat: caw_benefits_med_allergy_treat
@@ -227,7 +229,6 @@ display:
             caw_benefits_dent_filling: caw_benefits_dent_filling
             caw_benefits_dent_flouride: caw_benefits_dent_flouride
             caw_benefits_vision_frames: caw_benefits_vision_frames
-            caw_benefits_fulltime_cost: caw_benefits_fulltime_cost
             caw_benefits_dent_gingivectomy: caw_benefits_dent_gingivectomy
             caw_benefits_dent_gold: caw_benefits_dent_gold
             caw_benefits_med_hearing: caw_benefits_med_hearing
@@ -251,7 +252,6 @@ display:
             caw_benefits_med_midwives: caw_benefits_med_midwives
             caw_benefits_med_occupational: caw_benefits_med_occupational
             su_benefits_offered: su_benefits_offered
-            delta: delta
             caw_benefits_med_copay: caw_benefits_med_copay
             caw_benefits_dent_onlay: caw_benefits_dent_onlay
             caw_benefits_dent_oral_surg: caw_benefits_dent_oral_surg
@@ -259,13 +259,11 @@ display:
             caw_benefits_dent_ortho: caw_benefits_dent_ortho
             caw_benefits_vision_intl: caw_benefits_vision_intl
             caw_benefits_med_pap_smears: caw_benefits_med_pap_smears
-            caw_benefits_parttime_cost: caw_benefits_parttime_cost
             caw_benefits_dent_perio_surg: caw_benefits_dent_perio_surg
             caw_benefits_med_pharmacy: caw_benefits_med_pharmacy
             caw_benefits_med_adult_physical: caw_benefits_med_adult_physical
             caw_benefits_med_child_psycial: caw_benefits_med_child_psycial
             caw_benefits_med_pt: caw_benefits_med_pt
-            su_benefits_year: su_benefits_year
             caw_benefits_med_preauth_req: caw_benefits_med_preauth_req
             caw_benefits_med_preg_term: caw_benefits_med_preg_term
             caw_benefits_med_prenatal: caw_benefits_med_prenatal
@@ -297,6 +295,20 @@ display:
               align: ''
               separator: ''
               empty_column: 0
+              responsive: ''
+            caw_benefits_fulltime_cost:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_parttime_cost:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
               responsive: ''
             caw_benefits_med_acupuncture:
               sortable: 0
@@ -529,13 +541,6 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            caw_benefits_fulltime_cost:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
             caw_benefits_dent_gingivectomy:
               sortable: 0
               default_sort_order: asc
@@ -695,13 +700,6 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            delta:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
             caw_benefits_med_copay:
               sortable: 0
               default_sort_order: asc
@@ -751,13 +749,6 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            caw_benefits_parttime_cost:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
             caw_benefits_dent_perio_surg:
               sortable: 0
               default_sort_order: asc
@@ -787,13 +778,6 @@ display:
               empty_column: 1
               responsive: ''
             caw_benefits_med_pt:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            su_benefits_year:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -1638,6 +1622,7 @@ display:
           plugin_id: node_nid
       display_extenders: {  }
       use_ajax: true
+      css_class: filtering-list-view
     cache_metadata:
       max-age: -1
       contexts:
@@ -1752,9 +1737,11 @@ display:
       footer: {  }
       defaults:
         footer: false
+        css_class: false
       displays:
         filtering_list: filtering_list
       inherit_arguments: false
+      css_class: comparison-table--wrapper
     cache_metadata:
       max-age: -1
       contexts:

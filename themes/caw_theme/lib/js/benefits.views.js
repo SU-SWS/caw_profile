@@ -25,9 +25,9 @@
         .once('select-benefits')
         .on('change', e => disableSelectOptions(e.currentTarget))
         .each((i, select) => disableSelectOptions(select));
+      const $view = $('.view.caw-benefits.filtering-list');
 
-      $('.view.caw-benefits.filtering-list')
-        .once('here')
+      $view.once('here')
         .find('.rows ul')
         .each((i, list) => {
           const $list = $(list);
@@ -45,27 +45,35 @@
             .append($clearAll)
             .append($summary);
 
-          const $submit = $('<input>').attr('type', 'submit').attr('disabled', 'true').attr('value', 'Compare Selected Plans').click(() => {
-            const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
+          const $submit = $('<input>')
+            .attr('type', 'submit')
+            .attr('disabled', 'true')
+            .attr('value', 'Compare Selected Plans')
+            .click(() => {
+              const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
 
-            // Cloning and adding to the head of the table when plans selected.
-            const $headerInfoClear = $($clearAll).clone();
-            const $headerInfoSummary = $($summary).clone();
-            const $headerInfo = $('<div class="comparison-table-plan-names"></div>')
-            .html('<h2>Comparing Results For</h2>')
-            .append($headerInfoClear)
-            .append($headerInfoSummary);
-            $($headerInfo).insertBefore('.comparison-table--wrapper');
-            $('.comparison-table-plan-names,.comparison-table--wrapper').wrapAll('<div class="header-info-wrap"></div>');
+              // Cloning and adding to the head of the table when plans
+              // selected.
+              const $headerInfoClear = $($clearAll).clone();
+              $headerInfoClear.click(() => location.reload())
 
-            Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
-              const view = drupalSettings.views.ajaxViews[domId];
-              if (view.view_display_id === 'comparison') {
-                view.view_args = selectedItems.join('+');
-                $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
-              }
-            })
-          });
+              const $headerInfoSummary = $($summary).clone();
+              const $headerInfo = $('<div class="comparison-table-plan-names"></div>')
+                .html('<h2>Comparing Results For</h2>')
+                .append($headerInfoClear)
+                .append($headerInfoSummary);
+
+              $($headerInfo).insertBefore('.comparison-table--wrapper');
+              $('.comparison-table-plan-names,.comparison-table--wrapper').wrapAll('<div class="header-info-wrap"></div>');
+
+              Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
+                const view = drupalSettings.views.ajaxViews[domId];
+                if (view.view_display_id === 'comparison') {
+                  view.view_args = selectedItems.join('+');
+                  $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
+                }
+              })
+            });
 
           $list.children('li').each((j, item) => {
             const $item = $(item);
@@ -83,7 +91,24 @@
                 $info.find('.num-selected').text(selectedItems.length);
                 $summary.text(selectedItems.join(', '));
 
-                $submit.attr('disabled',null);
+                $submit.attr('disabled', null);
+
+                if ($('input:checked', $list).length === 0) {
+                  $view.find('input[type="checkbox"]').each((i, input) => {
+                    $(input).attr('disabled', null);
+                    $(input).closest('li').removeClass('disabled');
+                  });
+                }
+                else {
+                  $view.find('input[type="checkbox"]').each((i, input) => {
+                    $(input).attr('disabled', 'true')
+                    $(input).closest('li').addClass('disabled');
+                  });
+                  $list.find('input[type="checkbox"]').each((i, input) => {
+                    $(input).attr('disabled', null)
+                    $(input).closest('li').removeClass('disabled');
+                  });
+                }
               });
 
             const $selectElement = $('<div>')

@@ -11,9 +11,11 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: {  }
 migration_group: default
-label: 'Stanford Publications Importer'
+label: 'Publications Importer (experimental)'
 source:
   plugin: csv
+  csv_help:
+    - '<strong>CAUTION:</strong> Be sure to visit our <a href="https://userguide.sites.stanford.edu/tour/publications/importer">user-guide</a> to learn more about working with this CSV template.'
   path: /tmp/foo.csv
   ids:
     - id
@@ -29,33 +31,45 @@ source:
       label: ID
       selector: id
     -
-      name: title
-      label: Title
-      selector: title
-    -
-      name: topics
-      label: 'Topic Terms'
-      selector: topics
-    -
-      name: ctaUrl
-      label: 'CTA Button URL'
-      selector: ctaUrl
-    -
-      name: ctaTitle
-      label: 'CTA Button Title'
-      selector: ctaTitle
-    -
-      name: body
-      label: 'Text Body'
-      selector: body
-    -
       name: citationType
       label: 'Citation Type'
       selector: citationType
     -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: subtitle
+      label: Subtitle
+      selector: subtitle
+    -
       name: authors
       label: Author(s)
       selector: authors
+    -
+      name: pubPlace
+      label: 'Publication Place'
+      selector: pubPlace
+    -
+      name: publisher
+      label: Publisher
+      selector: publisher
+    -
+      name: volume
+      label: Volume
+      selector: volume
+    -
+      name: issue
+      label: Issue
+      selector: issue
+    -
+      name: edition
+      label: Edition
+      selector: edition
+    -
+      name: page
+      label: Page(s)
+      selector: page
     -
       name: month
       label: Month
@@ -73,38 +87,6 @@ source:
       label: DOI
       selector: doi
     -
-      name: edition
-      label: Edition
-      selector: edition
-    -
-      name: genre
-      label: Genre
-      selector: genre
-    -
-      name: issue
-      label: Issue
-      selector: issue
-    -
-      name: page
-      label: Page(s)
-      selector: page
-    -
-      name: pubPlace
-      label: 'Publication Place'
-      selector: pubPlace
-    -
-      name: publisher
-      label: Publisher
-      selector: publisher
-    -
-      name: subtitle
-      label: Subtitle
-      selector: subtitle
-    -
-      name: volume
-      label: Volume
-      selector: volume
-    -
       name: url
       label: 'External Source URL'
       selector: url
@@ -112,7 +94,31 @@ source:
       name: image
       label: 'Image URL'
       selector: image
+    -
+      name: topics
+      label: 'Topic Terms'
+      selector: topics
+    -
+      name: body
+      label: 'Text Body'
+      selector: body
+    -
+      name: ctaUrl
+      label: 'CTA Button URL'
+      selector: ctaUrl
+    -
+      name: ctaTitle
+      label: 'CTA Button Title'
+      selector: ctaTitle
+    -
+      name: genre
+      label: Genre
+      selector: genre
 process:
+  skip:
+    plugin: skip_on_empty
+    method: row
+    source: id
   title: title
   status:
     plugin: default_value
@@ -197,14 +203,30 @@ process:
       delimiter: '|'
     -
       plugin: name_field
-  su_publication_citation:
+  citation_type:
     -
       plugin: skip_on_empty
       source: citationType
       method: process
     -
+      plugin: str_replace
+      case_insensitive: true
+      search:
+        - 'Article Newspaper/Magazine'
+        - Book
+        - 'Journal Article'
+        - Other
+        - Thesis
+      replace:
+        - su_article_newspaper
+        - su_book
+        - su_article_journal
+        - su_other
+        - su_thesis
+  su_publication_citation:
+    -
       plugin: gate
-      use_as_key: citationType
+      use_as_key: '@citation_type'
       key_direction: unlock
       valid_keys:
         - su_article_newspaper
@@ -222,7 +244,7 @@ process:
       ignore_case: true
       values:
         title: title
-        type: citationType
+        type: '@citation_type'
         su_day: day
         su_month: month
         su_year: year

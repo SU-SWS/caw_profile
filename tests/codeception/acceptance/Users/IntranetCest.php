@@ -5,7 +5,7 @@
  *
  * @group users
  */
-class IntranetCest {
+abstract class IntranetCest {
 
   /**
    * Save the state before the tests and reset after the tests.
@@ -113,19 +113,12 @@ class IntranetCest {
         'format' => 'stanford_html',
       ]],
     ], 'paragraph');
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $text_area->id(),
-        'target_revision_id' => $text_area->getRevisionId(),
-      ],
-    ], 'paragraph_row');
     $node = $I->createEntity([
       'title' => 'Forest Gump',
       'type' => 'stanford_page',
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'target_revision_id' => $row->getRevisionId(),
+        'target_id' => $text_area->id(),
+        'target_revision_id' => $text_area->getRevisionId(),
       ],
     ]);
     $I->runDrush('sapi-i');

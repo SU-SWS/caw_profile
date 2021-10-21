@@ -113,11 +113,24 @@
       }
     }
 
-    li.selected {
-      border: 3px solid $su-color-sky;
+    li {
+      &.selected {
+        border: 3px solid $su-color-sky;
 
-      .compare-selector {
-        background: $su-color-sky;
+        .compare-selector {
+          background: $su-color-sky;
+        }
+      }
+
+      &.disabled {
+
+        .label {
+          color: #979694;
+        }
+
+        input[type="checkbox"] {
+          box-shadow: inset 0 0 0 15px #979694;
+        }
       }
     }
 

@@ -493,8 +493,8 @@ third_party_settings:
               id: layout_builder_block
               label: Basics
               provider: layout_builder_block
-              label_display: visible
-              text: '<h1>Basics</h1>'
+              label_display: '0'
+              text: "<h2>Basics</h2>\r\n"
               format: stanford_html
               context_mapping: {  }
             additional: {  }

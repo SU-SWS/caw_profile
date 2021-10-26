@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group content
  */
-class SubsiteCest {
+abstract class SubsiteCest {
 
   /**
    * Subsite content should have expected menus and paths.

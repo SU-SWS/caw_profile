@@ -35,7 +35,10 @@
         class: 'comparison-table-plan-names',
         html: '<h2>Comparing Results For</h2>'
       }).hide()
-        .append($('<a>', {text: 'Clear All'}).click(() => location.reload()))
+        .append($('<a>', {
+          text: 'Clear All',
+          href: '#'
+        }).click(() => location.reload()))
         .append($headerSummary);
 
       $('.attachment-before', $view).once('header-info').prepend($headerInfo);
@@ -75,7 +78,6 @@
             $headerInfo.show();
             $headerSummary.text($summary.text());
             $('.attachment-before', $view).addClass('header-info-wrap');
-            // $('.comparison-table-plan-names, .comparison-table--wrapper').once('comparison-wrapper').wrapAll('<div class="header-info-wrap"></div>');
 
             Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
               const view = drupalSettings.views.ajaxViews[domId];
@@ -133,6 +135,17 @@
           const $submitWrapper = $('<div>').addClass('submit-wrapper').append($info).append($submit);
           $list.after($submitWrapper);
         })
+
+
+      $('table', context).find('.group-header').each((i, tableCell) => {
+        const headerText = $(tableCell).text().trim();
+        const colspan = $(tableCell).closest('tr').find('td, th').length;
+        const $groupHeader = $('<th>', {
+          colspan: colspan,
+          text: headerText
+        });
+        $(tableCell).closest('tr').addClass('group-header').empty().append($groupHeader);
+      })
     }
   };
 })(jQuery, Drupal, drupalSettings);

@@ -254,6 +254,7 @@
     table {
       background-color: $su-color-white;
       max-width: 1200px;
+      margin: 0;
 
       tbody,
       thead {
@@ -283,6 +284,15 @@
         > td {
           border-left: 1px solid #d2d3d4;
         }
+      }
+
+      .group-header th {
+        @include type-d;
+
+        text-align: center;
+        color: $su-color-cardinal-red-dark;
+        background: $su-color-black-10;
+        font-weight: $su-font-semi-bold;
       }
 
     }

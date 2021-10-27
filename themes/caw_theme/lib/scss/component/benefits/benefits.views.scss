@@ -241,10 +241,10 @@
     -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
   }
 
-  &.comparison {
+  .header-info-wrap .comparison {
     max-height: calc(100vh - 500px);
+    min-height: min(200px);
     overflow-y: scroll;
-
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;

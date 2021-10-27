@@ -19,18 +19,35 @@
           }
         })
       };
+      const $view = $('.view.caw-benefits.filtering-list');
 
       // Add change listener to disable options that don't have any results.
-      $('.view.caw-benefits.filtering-list select[name="available"]')
+      $('select[name="available"]', $view)
         .once('select-benefits')
         .on('change', e => disableSelectOptions(e.currentTarget))
         .each((i, select) => disableSelectOptions(select));
-      const $view = $('.view.caw-benefits.filtering-list');
 
-      $view.once('here')
+      // The header is the comparison summary, but the actual text inside the
+      // $headerSummary is updated on click, so set this variable for easier
+      // display manipulation in the click handler.
+      const $headerSummary = $('<div>', {class: 'summary'});
+      const $headerInfo = $('<div>', {
+        class: 'comparison-table-plan-names',
+        html: '<h2>Comparing Results For</h2>'
+      }).hide()
+        .append($('<a>', {text: 'Clear All'}).click(() => location.reload()))
+        .append($headerSummary);
+
+      $('.attachment-before', $view).once('header-info').prepend($headerInfo);
+
+      // Go through each list and add necessary markup and click handlers.
+      $view.once('comparison-list')
         .find('.rows ul')
         .each((i, list) => {
+
           const $list = $(list);
+
+          // A button to uncheck all the inputs.
           const $clearAll = $('<a>').attr('href', '#')
             .text('Clear All')
             .click(e => {
@@ -39,42 +56,37 @@
                 $(input).click();
               })
             });
-          const $summary = $('<div>').addClass('summary');
+
+          const $summary = $('<div>', {class: 'summary'})
+
           const $info = $('<div>')
             .html('<strong><span class="num-selected">0</span> plans selected</strong>')
             .append($clearAll)
             .append($summary);
 
-          const $submit = $('<input>')
-            .attr('type', 'submit')
-            .attr('disabled', 'true')
-            .attr('value', 'Compare Selected Plans')
-            .click(() => {
-              const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
+          // The Compare submit button that triggers the views ajax to fire.
+          const $submit = $('<input>', {
+            type: 'submit',
+            disabled: true,
+            value: Drupal.t('Compare Selected Plans')
+          }).click(() => {
+            // Get the id values from the checked input boxes.
+            const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
+            $headerInfo.show();
+            $headerSummary.text($summary.text());
+            $('.attachment-before', $view).addClass('header-info-wrap');
+            // $('.comparison-table-plan-names, .comparison-table--wrapper').once('comparison-wrapper').wrapAll('<div class="header-info-wrap"></div>');
 
-              // Cloning and adding to the head of the table when plans
-              // selected.
-              const $headerInfoClear = $($clearAll).clone();
-              $headerInfoClear.click(() => location.reload())
+            Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
+              const view = drupalSettings.views.ajaxViews[domId];
+              if (view.view_display_id === 'comparison') {
+                view.view_args = selectedItems.join('+');
+                $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
+              }
+            })
+          });
 
-              const $headerInfoSummary = $($summary).clone();
-              const $headerInfo = $('<div class="comparison-table-plan-names"></div>')
-                .html('<h2>Comparing Results For</h2>')
-                .append($headerInfoClear)
-                .append($headerInfoSummary);
-
-              $($headerInfo).insertBefore('.comparison-table--wrapper');
-              $('.comparison-table-plan-names,.comparison-table--wrapper').wrapAll('<div class="header-info-wrap"></div>');
-
-              Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
-                const view = drupalSettings.views.ajaxViews[domId];
-                if (view.view_display_id === 'comparison') {
-                  view.view_args = selectedItems.join('+');
-                  $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
-                }
-              })
-            });
-
+          // Add the input checkboxes to each view result.
           $list.children('li').each((j, item) => {
             const $item = $(item);
             const $title = $('h3', $item).uniqueId()

@@ -30,10 +30,10 @@ career_celebrations:
       label: Related Celebrations
       preview: "Related Celebrations"
 
-  use: "@caw-theme/career_celebrations/career_celebrations.html.twig"
+  use: "@caw-profile-helper/career_celebrations/career_celebrations.html.twig"
   libraries:
-    - caw_theme.career_celebrations:
+    - caw_profile_helper.career_celebrations:
         css:
           component:
-            ../../../dist/css/components/career_celebrations/career_celebrations.css: { }
+            ../../../styles/dist/css/components/pattersn.career_celebrations.css: { }
 

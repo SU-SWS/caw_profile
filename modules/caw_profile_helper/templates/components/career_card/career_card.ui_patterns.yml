@@ -21,10 +21,10 @@ career_card:
       type: text
       label: "Year honored"
 
-  use: "@caw-theme/career_card/career_card.html.twig"
+  use: "@caw-profile-helper/career_card/career_card.html.twig"
   libraries:
-    - caw_theme.career_celebrations:
+    - caw_profile_helper.career_celebrations:
         css:
           component:
-            ../../../dist/css/components/career_card/career_card.css: { }
+            ../../../styles/dist/css/components/patterns.career_card.css: { }
 

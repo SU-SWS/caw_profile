@@ -6,3 +6,7 @@ package: 'Cardinal at Work'
 dependencies:
   - drupal:book
   - drupal:node
+
+components:
+  namespaces:
+    caw-profile-helper: templates/components

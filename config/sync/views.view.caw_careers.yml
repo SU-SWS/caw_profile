@@ -527,6 +527,44 @@ display:
       block_category: 'Career Celebrations (Views)'
       allow:
         items_per_page: 0
+      arguments:
+        su_careers_honored_value:
+          id: su_careers_honored_value
+          table: node__su_careers_honored
+          field: su_careers_honored_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: 0
+            title: All
+          title_enable: 0
+          title: ''
+          default_argument_type: fixed
+          default_argument_options:
+            argument: '2021'
+          default_argument_skip_url: 0
+          summary_options:
+            base_path: ''
+            count: '1'
+            items_per_page: '25'
+            override: 0
+          summary:
+            sort_order: asc
+            number_of_records: '0'
+            format: default_summary
+          specify_validation: 0
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: 0
+          not: 0
+          plugin_id: numeric
+      defaults:
+        arguments: false
     cache_metadata:
       max-age: -1
       contexts:

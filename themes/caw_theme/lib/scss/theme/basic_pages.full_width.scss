@@ -3,7 +3,8 @@
 
 .caw-layout--one-column {
   .ptype-stanford-lists {
-    &.caw-benefits {
+    &.caw-benefits,
+    &.caw-sweeteners {
       max-width: 100%;
       width: 100%;
     }

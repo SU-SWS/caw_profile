@@ -40,7 +40,11 @@
   {{ title }}
   {{ title_suffix }}
 
-  {{ attachment_before }}
+  {% if attachment_before %}
+    <div class="attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
 
   {% if header %}
     <header>

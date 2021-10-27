@@ -89,9 +89,7 @@ dependencies:
     - field.storage.node.caw_benefits_parttime_cost
     - field.storage.node.caw_benefits_vision_contacts
     - field.storage.node.caw_benefits_vision_exam
-    - field.storage.node.caw_benefits_vision_extras
     - field.storage.node.caw_benefits_vision_frames
-    - field.storage.node.caw_benefits_vision_intl
     - field.storage.node.caw_benefits_vision_lenses
     - field.storage.node.caw_benefits_vision_lowvis
     - field.storage.node.caw_benefits_vision_urgent
@@ -106,6 +104,7 @@ dependencies:
     - options
     - smart_trim
     - stanford_fields
+    - text
     - user
     - views_flipped_table
 id: caw_benefits
@@ -1010,6 +1009,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         caw_benefits_fulltime_cost:
           id: caw_benefits_fulltime_cost
           table: node__caw_benefits_fulltime_cost
@@ -1019,6 +1080,91 @@ display:
           id: caw_benefits_parttime_cost
           table: node__caw_benefits_parttime_cost
           field: caw_benefits_parttime_cost
+          plugin_id: field
+        caw_benefits_med_preauth_req:
+          id: caw_benefits_med_preauth_req
+          table: node__caw_benefits_med_preauth_req
+          field: caw_benefits_med_preauth_req
+          plugin_id: field
+        caw_benefits_med_care_mgmt:
+          id: caw_benefits_med_care_mgmt
+          table: node__caw_benefits_med_care_mgmt
+          field: caw_benefits_med_care_mgmt
+          plugin_id: field
+        caw_benefits_deductible:
+          id: caw_benefits_deductible
+          table: node__caw_benefits_deductible
+          field: caw_benefits_deductible
+          plugin_id: field
+        caw_benefits_med_copay:
+          id: caw_benefits_med_copay
+          table: node__caw_benefits_med_copay
+          field: caw_benefits_med_copay
+          plugin_id: field
+        caw_benefits_coinsurance:
+          id: caw_benefits_coinsurance
+          table: node__caw_benefits_coinsurance
+          field: caw_benefits_coinsurance
+          plugin_id: field
+        caw_benefits_annual_max:
+          id: caw_benefits_annual_max
+          table: node__caw_benefits_annual_max
+          field: caw_benefits_annual_max
+          plugin_id: field
+        caw_benefits_lifetime_max:
+          id: caw_benefits_lifetime_max
+          table: node__caw_benefits_lifetime_max
+          field: caw_benefits_lifetime_max
+          plugin_id: field
+        caw_benefits_med_maternity_stay:
+          id: caw_benefits_med_maternity_stay
+          table: node__caw_benefits_med_maternity_stay
+          field: caw_benefits_med_maternity_stay
+          plugin_id: field
+        caw_benefits_med_baby_exam:
+          id: caw_benefits_med_baby_exam
+          table: node__caw_benefits_med_baby_exam
+          field: caw_benefits_med_baby_exam
+          plugin_id: field
+        caw_benefits_med_birthing:
+          id: caw_benefits_med_birthing
+          table: node__caw_benefits_med_birthing
+          field: caw_benefits_med_birthing
+          plugin_id: field
+        caw_benefits_med_midwives:
+          id: caw_benefits_med_midwives
+          table: node__caw_benefits_med_midwives
+          field: caw_benefits_med_midwives
+          plugin_id: field
+        caw_benefits_med_prenatal:
+          id: caw_benefits_med_prenatal
+          table: node__caw_benefits_med_prenatal
+          field: caw_benefits_med_prenatal
+          plugin_id: field
+        caw_benefits_med_delivery:
+          id: caw_benefits_med_delivery
+          table: node__caw_benefits_med_delivery
+          field: caw_benefits_med_delivery
+          plugin_id: field
+        caw_benefits_med_preg_term:
+          id: caw_benefits_med_preg_term
+          table: node__caw_benefits_med_preg_term
+          field: caw_benefits_med_preg_term
+          plugin_id: field
+        caw_benefits_med_mental_health:
+          id: caw_benefits_med_mental_health
+          table: node__caw_benefits_med_mental_health
+          field: caw_benefits_med_mental_health
+          plugin_id: field
+        caw_benefits_med_autism:
+          id: caw_benefits_med_autism
+          table: node__caw_benefits_med_autism
+          field: caw_benefits_med_autism
+          plugin_id: field
+        caw_benefits_med_substance:
+          id: caw_benefits_med_substance
+          table: node__caw_benefits_med_substance
+          field: caw_benefits_med_substance
           plugin_id: field
         caw_benefits_med_acupuncture:
           id: caw_benefits_med_acupuncture
@@ -1102,50 +1248,10 @@ display:
           table: node__caw_benefits_med_abulance
           field: caw_benefits_med_abulance
           plugin_id: field
-        caw_benefits_dent_anesthesia:
-          id: caw_benefits_dent_anesthesia
-          table: node__caw_benefits_dent_anesthesia
-          field: caw_benefits_dent_anesthesia
-          plugin_id: field
-        caw_benefits_annual_max:
-          id: caw_benefits_annual_max
-          table: node__caw_benefits_annual_max
-          field: caw_benefits_annual_max
-          plugin_id: field
-        caw_benefits_med_autism:
-          id: caw_benefits_med_autism
-          table: node__caw_benefits_med_autism
-          field: caw_benefits_med_autism
-          plugin_id: field
-        caw_benefits_med_baby_exam:
-          id: caw_benefits_med_baby_exam
-          table: node__caw_benefits_med_baby_exam
-          field: caw_benefits_med_baby_exam
-          plugin_id: field
-        su_benefit_type:
-          id: su_benefit_type
-          table: node__su_benefit_type
-          field: su_benefit_type
-          plugin_id: field
-        caw_benefits_med_birth_control:
-          id: caw_benefits_med_birth_control
-          table: node__caw_benefits_med_birth_control
-          field: caw_benefits_med_birth_control
-          plugin_id: field
-        caw_benefits_med_birthing:
-          id: caw_benefits_med_birthing
-          table: node__caw_benefits_med_birthing
-          field: caw_benefits_med_birthing
-          plugin_id: field
-        caw_benefits_dent_bridges:
-          id: caw_benefits_dent_bridges
-          table: node__caw_benefits_dent_bridges
-          field: caw_benefits_dent_bridges
-          plugin_id: field
-        caw_benefits_med_care_mgmt:
-          id: caw_benefits_med_care_mgmt
-          table: node__caw_benefits_med_care_mgmt
-          field: caw_benefits_med_care_mgmt
+        caw_benefits_med_ct_scan:
+          id: caw_benefits_med_ct_scan
+          table: node__caw_benefits_med_ct_scan
+          field: caw_benefits_med_ct_scan
           plugin_id: field
         caw_benefits_med_chiro:
           id: caw_benefits_med_chiro
@@ -1157,100 +1263,25 @@ display:
           table: node__caw_benefits_med_christian_prac
           field: caw_benefits_med_christian_prac
           plugin_id: field
-        caw_benefits_dent_cleanings:
-          id: caw_benefits_dent_cleanings
-          table: node__caw_benefits_dent_cleanings
-          field: caw_benefits_dent_cleanings
-          plugin_id: field
-        caw_benefits_coinsurance:
-          id: caw_benefits_coinsurance
-          table: node__caw_benefits_coinsurance
-          field: caw_benefits_coinsurance
-          plugin_id: field
         caw_benefits_med_cosmetic:
           id: caw_benefits_med_cosmetic
           table: node__caw_benefits_med_cosmetic
           field: caw_benefits_med_cosmetic
-          plugin_id: field
-        caw_benefits_dent_crown:
-          id: caw_benefits_dent_crown
-          table: node__caw_benefits_dent_crown
-          field: caw_benefits_dent_crown
-          plugin_id: field
-        caw_benefits_med_ct_scan:
-          id: caw_benefits_med_ct_scan
-          table: node__caw_benefits_med_ct_scan
-          field: caw_benefits_med_ct_scan
-          plugin_id: field
-        caw_benefits_deductible:
-          id: caw_benefits_deductible
-          table: node__caw_benefits_deductible
-          field: caw_benefits_deductible
           plugin_id: field
         caw_benefits_med_dental:
           id: caw_benefits_med_dental
           table: node__caw_benefits_med_dental
           field: caw_benefits_med_dental
           plugin_id: field
-        caw_benefits_dent_denture:
-          id: caw_benefits_dent_denture
-          table: node__caw_benefits_dent_denture
-          field: caw_benefits_dent_denture
-          plugin_id: field
-        caw_benefits_med_delivery:
-          id: caw_benefits_med_delivery
-          table: node__caw_benefits_med_delivery
-          field: caw_benefits_med_delivery
-          plugin_id: field
-        caw_benefits_med_durable_equip:
-          id: caw_benefits_med_durable_equip
-          table: node__caw_benefits_med_durable_equip
-          field: caw_benefits_med_durable_equip
-          plugin_id: field
-        caw_benefits_vision_contacts:
-          id: caw_benefits_vision_contacts
-          table: node__caw_benefits_vision_contacts
-          field: caw_benefits_vision_contacts
-          plugin_id: field
         caw_benefits_med_er:
           id: caw_benefits_med_er
           table: node__caw_benefits_med_er
           field: caw_benefits_med_er
           plugin_id: field
-        caw_benefits_dent_extraction:
-          id: caw_benefits_dent_extraction
-          table: node__caw_benefits_dent_extraction
-          field: caw_benefits_dent_extraction
-          plugin_id: field
-        caw_benefits_vision_extras:
-          id: caw_benefits_vision_extras
-          table: node__caw_benefits_vision_extras
-          field: caw_benefits_vision_extras
-          plugin_id: field
-        caw_benefits_dent_filling:
-          id: caw_benefits_dent_filling
-          table: node__caw_benefits_dent_filling
-          field: caw_benefits_dent_filling
-          plugin_id: field
-        caw_benefits_dent_flouride:
-          id: caw_benefits_dent_flouride
-          table: node__caw_benefits_dent_flouride
-          field: caw_benefits_dent_flouride
-          plugin_id: field
-        caw_benefits_vision_frames:
-          id: caw_benefits_vision_frames
-          table: node__caw_benefits_vision_frames
-          field: caw_benefits_vision_frames
-          plugin_id: field
-        caw_benefits_dent_gingivectomy:
-          id: caw_benefits_dent_gingivectomy
-          table: node__caw_benefits_dent_gingivectomy
-          field: caw_benefits_dent_gingivectomy
-          plugin_id: field
-        caw_benefits_dent_gold:
-          id: caw_benefits_dent_gold
-          table: node__caw_benefits_dent_gold
-          field: caw_benefits_dent_gold
+        caw_benefits_med_urgent:
+          id: caw_benefits_med_urgent
+          table: node__caw_benefits_med_urgent
+          field: caw_benefits_med_urgent
           plugin_id: field
         caw_benefits_med_hearing:
           id: caw_benefits_med_hearing
@@ -1272,135 +1303,90 @@ display:
           table: node__caw_benefits_med_hopsital_stay
           field: caw_benefits_med_hopsital_stay
           plugin_id: field
-        caw_benefits_med_immunizations:
-          id: caw_benefits_med_immunizations
-          table: node__caw_benefits_med_immunizations
-          field: caw_benefits_med_immunizations
-          plugin_id: field
-        caw_benefits_dent_implant:
-          id: caw_benefits_dent_implant
-          table: node__caw_benefits_dent_implant
-          field: caw_benefits_dent_implant
-          plugin_id: field
         caw_benefits_med_infertility:
           id: caw_benefits_med_infertility
           table: node__caw_benefits_med_infertility
           field: caw_benefits_med_infertility
-          plugin_id: field
-        caw_benefits_dent_inlay:
-          id: caw_benefits_dent_inlay
-          table: node__caw_benefits_dent_inlay
-          field: caw_benefits_dent_inlay
           plugin_id: field
         caw_benefits_med_lab:
           id: caw_benefits_med_lab
           table: node__caw_benefits_med_lab
           field: caw_benefits_med_lab
           plugin_id: field
-        caw_benefits_vision_lenses:
-          id: caw_benefits_vision_lenses
-          table: node__caw_benefits_vision_lenses
-          field: caw_benefits_vision_lenses
-          plugin_id: field
-        caw_benefits_lifetime_max:
-          id: caw_benefits_lifetime_max
-          table: node__caw_benefits_lifetime_max
-          field: caw_benefits_lifetime_max
-          plugin_id: field
-        caw_benefits_vision_lowvis:
-          id: caw_benefits_vision_lowvis
-          table: node__caw_benefits_vision_lowvis
-          field: caw_benefits_vision_lowvis
-          plugin_id: field
         caw_benefits_med_mri:
           id: caw_benefits_med_mri
           table: node__caw_benefits_med_mri
           field: caw_benefits_med_mri
           plugin_id: field
-        caw_benefits_med_mail_rx:
-          id: caw_benefits_med_mail_rx
-          table: node__caw_benefits_med_mail_rx
-          field: caw_benefits_med_mail_rx
-          plugin_id: field
-        caw_benefits_med_mammograms:
-          id: caw_benefits_med_mammograms
-          table: node__caw_benefits_med_mammograms
-          field: caw_benefits_med_mammograms
-          plugin_id: field
-        caw_benefits_med_maternity_stay:
-          id: caw_benefits_med_maternity_stay
-          table: node__caw_benefits_med_maternity_stay
-          field: caw_benefits_med_maternity_stay
-          plugin_id: field
-        caw_benefits_vision_urgent:
-          id: caw_benefits_vision_urgent
-          table: node__caw_benefits_vision_urgent
-          field: caw_benefits_vision_urgent
-          plugin_id: field
-        caw_benefits_med_mental_health:
-          id: caw_benefits_med_mental_health
-          table: node__caw_benefits_med_mental_health
-          field: caw_benefits_med_mental_health
-          plugin_id: field
-        caw_benefits_med_midwives:
-          id: caw_benefits_med_midwives
-          table: node__caw_benefits_med_midwives
-          field: caw_benefits_med_midwives
+        caw_benefits_med_durable_equip:
+          id: caw_benefits_med_durable_equip
+          table: node__caw_benefits_med_durable_equip
+          field: caw_benefits_med_durable_equip
           plugin_id: field
         caw_benefits_med_occupational:
           id: caw_benefits_med_occupational
           table: node__caw_benefits_med_occupational
           field: caw_benefits_med_occupational
           plugin_id: field
-        su_benefits_offered:
-          id: su_benefits_offered
-          table: node__su_benefits_offered
-          field: su_benefits_offered
-          plugin_id: field
-        caw_benefits_med_copay:
-          id: caw_benefits_med_copay
-          table: node__caw_benefits_med_copay
-          field: caw_benefits_med_copay
-          plugin_id: field
-        caw_benefits_dent_onlay:
-          id: caw_benefits_dent_onlay
-          table: node__caw_benefits_dent_onlay
-          field: caw_benefits_dent_onlay
-          plugin_id: field
-        caw_benefits_dent_oral_surg:
-          id: caw_benefits_dent_oral_surg
-          table: node__caw_benefits_dent_oral_surg
-          field: caw_benefits_dent_oral_surg
-          plugin_id: field
         caw_benefits_med_transpants:
           id: caw_benefits_med_transpants
           table: node__caw_benefits_med_transpants
           field: caw_benefits_med_transpants
           plugin_id: field
-        caw_benefits_dent_ortho:
-          id: caw_benefits_dent_ortho
-          table: node__caw_benefits_dent_ortho
-          field: caw_benefits_dent_ortho
+        caw_benefits_med_nursing:
+          id: caw_benefits_med_nursing
+          table: node__caw_benefits_med_nursing
+          field: caw_benefits_med_nursing
           plugin_id: field
-        caw_benefits_vision_intl:
-          id: caw_benefits_vision_intl
-          table: node__caw_benefits_vision_intl
-          field: caw_benefits_vision_intl
+        caw_benefits_med_pt:
+          id: caw_benefits_med_pt
+          table: node__caw_benefits_med_pt
+          field: caw_benefits_med_pt
           plugin_id: field
-        caw_benefits_med_pap_smears:
-          id: caw_benefits_med_pap_smears
-          table: node__caw_benefits_med_pap_smears
-          field: caw_benefits_med_pap_smears
+        caw_benefits_med_surgery_md:
+          id: caw_benefits_med_surgery_md
+          table: node__caw_benefits_med_surgery_md
+          field: caw_benefits_med_surgery_md
           plugin_id: field
-        caw_benefits_dent_perio_surg:
-          id: caw_benefits_dent_perio_surg
-          table: node__caw_benefits_dent_perio_surg
-          field: caw_benefits_dent_perio_surg
+        caw_benefits_med_surgery_facil:
+          id: caw_benefits_med_surgery_facil
+          table: node__caw_benefits_med_surgery_facil
+          field: caw_benefits_med_surgery_facil
+          plugin_id: field
+        caw_benefits_med_speech:
+          id: caw_benefits_med_speech
+          table: node__caw_benefits_med_speech
+          field: caw_benefits_med_speech
+          plugin_id: field
+        caw_benefits_med_tubal:
+          id: caw_benefits_med_tubal
+          table: node__caw_benefits_med_tubal
+          field: caw_benefits_med_tubal
+          plugin_id: field
+        caw_benefits_med_vasectomy:
+          id: caw_benefits_med_vasectomy
+          table: node__caw_benefits_med_vasectomy
+          field: caw_benefits_med_vasectomy
+          plugin_id: field
+        caw_benefits_xray:
+          id: caw_benefits_xray
+          table: node__caw_benefits_xray
+          field: caw_benefits_xray
           plugin_id: field
         caw_benefits_med_pharmacy:
           id: caw_benefits_med_pharmacy
           table: node__caw_benefits_med_pharmacy
           field: caw_benefits_med_pharmacy
+          plugin_id: field
+        caw_benefits_med_mail_rx:
+          id: caw_benefits_med_mail_rx
+          table: node__caw_benefits_med_mail_rx
+          field: caw_benefits_med_mail_rx
+          plugin_id: field
+        caw_benefits_med_birth_control:
+          id: caw_benefits_med_birth_control
+          table: node__caw_benefits_med_birth_control
+          field: caw_benefits_med_birth_control
           plugin_id: field
         caw_benefits_med_adult_physical:
           id: caw_benefits_med_adult_physical
@@ -1412,45 +1398,45 @@ display:
           table: node__caw_benefits_med_child_psycial
           field: caw_benefits_med_child_psycial
           plugin_id: field
-        caw_benefits_med_pt:
-          id: caw_benefits_med_pt
-          table: node__caw_benefits_med_pt
-          field: caw_benefits_med_pt
+        caw_benefits_med_pap_smears:
+          id: caw_benefits_med_pap_smears
+          table: node__caw_benefits_med_pap_smears
+          field: caw_benefits_med_pap_smears
           plugin_id: field
-        caw_benefits_med_preauth_req:
-          id: caw_benefits_med_preauth_req
-          table: node__caw_benefits_med_preauth_req
-          field: caw_benefits_med_preauth_req
+        caw_benefits_med_mammograms:
+          id: caw_benefits_med_mammograms
+          table: node__caw_benefits_med_mammograms
+          field: caw_benefits_med_mammograms
           plugin_id: field
-        caw_benefits_med_preg_term:
-          id: caw_benefits_med_preg_term
-          table: node__caw_benefits_med_preg_term
-          field: caw_benefits_med_preg_term
-          plugin_id: field
-        caw_benefits_med_prenatal:
-          id: caw_benefits_med_prenatal
-          table: node__caw_benefits_med_prenatal
-          field: caw_benefits_med_prenatal
-          plugin_id: field
-        caw_benefits_dent_rx:
-          id: caw_benefits_dent_rx
-          table: node__caw_benefits_dent_rx
-          field: caw_benefits_dent_rx
+        caw_benefits_med_immunizations:
+          id: caw_benefits_med_immunizations
+          table: node__caw_benefits_med_immunizations
+          field: caw_benefits_med_immunizations
           plugin_id: field
         caw_benefits_med_psa:
           id: caw_benefits_med_psa
           table: node__caw_benefits_med_psa
           field: caw_benefits_med_psa
           plugin_id: field
-        caw_benefits_dent_retainer:
-          id: caw_benefits_dent_retainer
-          table: node__caw_benefits_dent_retainer
-          field: caw_benefits_dent_retainer
+        caw_benefits_med_well_woman:
+          id: caw_benefits_med_well_woman
+          table: node__caw_benefits_med_well_woman
+          field: caw_benefits_med_well_woman
           plugin_id: field
-        caw_benefits_dent_root:
-          id: caw_benefits_dent_root
-          table: node__caw_benefits_dent_root
-          field: caw_benefits_dent_root
+        caw_benefits_med_vision:
+          id: caw_benefits_med_vision
+          table: node__caw_benefits_med_vision
+          field: caw_benefits_med_vision
+          plugin_id: field
+        caw_benefits_dent_cleanings:
+          id: caw_benefits_dent_cleanings
+          table: node__caw_benefits_dent_cleanings
+          field: caw_benefits_dent_cleanings
+          plugin_id: field
+        caw_benefits_dent_flouride:
+          id: caw_benefits_dent_flouride
+          table: node__caw_benefits_dent_flouride
+          field: caw_benefits_dent_flouride
           plugin_id: field
         caw_benefits_dent_exam:
           id: caw_benefits_dent_exam
@@ -1462,80 +1448,135 @@ display:
           table: node__caw_benefits_dent_sealant
           field: caw_benefits_dent_sealant
           plugin_id: field
-        caw_benefits_med_nursing:
-          id: caw_benefits_med_nursing
-          table: node__caw_benefits_med_nursing
-          field: caw_benefits_med_nursing
+        caw_benefits_dent_ortho:
+          id: caw_benefits_dent_ortho
+          table: node__caw_benefits_dent_ortho
+          field: caw_benefits_dent_ortho
+          plugin_id: field
+        caw_benefits_dent_retainer:
+          id: caw_benefits_dent_retainer
+          table: node__caw_benefits_dent_retainer
+          field: caw_benefits_dent_retainer
+          plugin_id: field
+        caw_benefits_dent_anesthesia:
+          id: caw_benefits_dent_anesthesia
+          table: node__caw_benefits_dent_anesthesia
+          field: caw_benefits_dent_anesthesia
+          plugin_id: field
+        caw_benefits_dent_bridges:
+          id: caw_benefits_dent_bridges
+          table: node__caw_benefits_dent_bridges
+          field: caw_benefits_dent_bridges
+          plugin_id: field
+        caw_benefits_dent_crown:
+          id: caw_benefits_dent_crown
+          table: node__caw_benefits_dent_crown
+          field: caw_benefits_dent_crown
+          plugin_id: field
+        caw_benefits_dent_denture:
+          id: caw_benefits_dent_denture
+          table: node__caw_benefits_dent_denture
+          field: caw_benefits_dent_denture
+          plugin_id: field
+        caw_benefits_dent_extraction:
+          id: caw_benefits_dent_extraction
+          table: node__caw_benefits_dent_extraction
+          field: caw_benefits_dent_extraction
+          plugin_id: field
+        caw_benefits_dent_filling:
+          id: caw_benefits_dent_filling
+          table: node__caw_benefits_dent_filling
+          field: caw_benefits_dent_filling
+          plugin_id: field
+        caw_benefits_dent_gingivectomy:
+          id: caw_benefits_dent_gingivectomy
+          table: node__caw_benefits_dent_gingivectomy
+          field: caw_benefits_dent_gingivectomy
+          plugin_id: field
+        caw_benefits_dent_gold:
+          id: caw_benefits_dent_gold
+          table: node__caw_benefits_dent_gold
+          field: caw_benefits_dent_gold
+          plugin_id: field
+        caw_benefits_dent_implant:
+          id: caw_benefits_dent_implant
+          table: node__caw_benefits_dent_implant
+          field: caw_benefits_dent_implant
+          plugin_id: field
+        caw_benefits_dent_inlay:
+          id: caw_benefits_dent_inlay
+          table: node__caw_benefits_dent_inlay
+          field: caw_benefits_dent_inlay
+          plugin_id: field
+        caw_benefits_dent_onlay:
+          id: caw_benefits_dent_onlay
+          table: node__caw_benefits_dent_onlay
+          field: caw_benefits_dent_onlay
+          plugin_id: field
+        caw_benefits_dent_oral_surg:
+          id: caw_benefits_dent_oral_surg
+          table: node__caw_benefits_dent_oral_surg
+          field: caw_benefits_dent_oral_surg
+          plugin_id: field
+        caw_benefits_dent_perio_surg:
+          id: caw_benefits_dent_perio_surg
+          table: node__caw_benefits_dent_perio_surg
+          field: caw_benefits_dent_perio_surg
+          plugin_id: field
+        caw_benefits_dent_rx:
+          id: caw_benefits_dent_rx
+          table: node__caw_benefits_dent_rx
+          field: caw_benefits_dent_rx
+          plugin_id: field
+        caw_benefits_dent_root:
+          id: caw_benefits_dent_root
+          table: node__caw_benefits_dent_root
+          field: caw_benefits_dent_root
           plugin_id: field
         caw_benefits_dent_space:
           id: caw_benefits_dent_space
           table: node__caw_benefits_dent_space
           field: caw_benefits_dent_space
           plugin_id: field
-        caw_benefits_med_speech:
-          id: caw_benefits_med_speech
-          table: node__caw_benefits_med_speech
-          field: caw_benefits_med_speech
-          plugin_id: field
         caw_benefits_dent_splint:
           id: caw_benefits_dent_splint
           table: node__caw_benefits_dent_splint
           field: caw_benefits_dent_splint
-          plugin_id: field
-        caw_benefits_med_substance:
-          id: caw_benefits_med_substance
-          table: node__caw_benefits_med_substance
-          field: caw_benefits_med_substance
-          plugin_id: field
-        caw_benefits_med_surgery_facil:
-          id: caw_benefits_med_surgery_facil
-          table: node__caw_benefits_med_surgery_facil
-          field: caw_benefits_med_surgery_facil
-          plugin_id: field
-        caw_benefits_med_surgery_md:
-          id: caw_benefits_med_surgery_md
-          table: node__caw_benefits_med_surgery_md
-          field: caw_benefits_med_surgery_md
           plugin_id: field
         caw_benefits_dent_tmj:
           id: caw_benefits_dent_tmj
           table: node__caw_benefits_dent_tmj
           field: caw_benefits_dent_tmj
           plugin_id: field
-        caw_benefits_med_tubal:
-          id: caw_benefits_med_tubal
-          table: node__caw_benefits_med_tubal
-          field: caw_benefits_med_tubal
-          plugin_id: field
-        caw_benefits_med_urgent:
-          id: caw_benefits_med_urgent
-          table: node__caw_benefits_med_urgent
-          field: caw_benefits_med_urgent
-          plugin_id: field
-        caw_benefits_med_vasectomy:
-          id: caw_benefits_med_vasectomy
-          table: node__caw_benefits_med_vasectomy
-          field: caw_benefits_med_vasectomy
-          plugin_id: field
-        caw_benefits_med_vision:
-          id: caw_benefits_med_vision
-          table: node__caw_benefits_med_vision
-          field: caw_benefits_med_vision
-          plugin_id: field
         caw_benefits_vision_exam:
           id: caw_benefits_vision_exam
           table: node__caw_benefits_vision_exam
           field: caw_benefits_vision_exam
           plugin_id: field
-        caw_benefits_med_well_woman:
-          id: caw_benefits_med_well_woman
-          table: node__caw_benefits_med_well_woman
-          field: caw_benefits_med_well_woman
+        caw_benefits_vision_contacts:
+          id: caw_benefits_vision_contacts
+          table: node__caw_benefits_vision_contacts
+          field: caw_benefits_vision_contacts
           plugin_id: field
-        caw_benefits_xray:
-          id: caw_benefits_xray
-          table: node__caw_benefits_xray
-          field: caw_benefits_xray
+        caw_benefits_vision_frames:
+          id: caw_benefits_vision_frames
+          table: node__caw_benefits_vision_frames
+          field: caw_benefits_vision_frames
+          plugin_id: field
+        caw_benefits_vision_lenses:
+          id: caw_benefits_vision_lenses
+          table: node__caw_benefits_vision_lenses
+          field: caw_benefits_vision_lenses
+          plugin_id: field
+        caw_benefits_vision_lowvis:
+          id: caw_benefits_vision_lowvis
+          table: node__caw_benefits_vision_lowvis
+          field: caw_benefits_vision_lowvis
+          plugin_id: field
+        caw_benefits_vision_urgent:
+          id: caw_benefits_vision_urgent
+          table: node__caw_benefits_vision_urgent
+          field: caw_benefits_vision_urgent
           plugin_id: field
       filters:
         status:
@@ -1632,6 +1673,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.caw_benefits_annual_max'
         - 'config:field.storage.node.caw_benefits_coinsurance'
         - 'config:field.storage.node.caw_benefits_deductible'
@@ -1717,15 +1759,11 @@ display:
         - 'config:field.storage.node.caw_benefits_parttime_cost'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
-        - 'config:field.storage.node.caw_benefits_vision_extras'
         - 'config:field.storage.node.caw_benefits_vision_frames'
-        - 'config:field.storage.node.caw_benefits_vision_intl'
         - 'config:field.storage.node.caw_benefits_vision_lenses'
         - 'config:field.storage.node.caw_benefits_vision_lowvis'
         - 'config:field.storage.node.caw_benefits_vision_urgent'
         - 'config:field.storage.node.caw_benefits_xray'
-        - 'config:field.storage.node.su_benefit_type'
-        - 'config:field.storage.node.su_benefits_offered'
   comparison:
     display_plugin: attachment
     id: comparison
@@ -1751,6 +1789,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.caw_benefits_annual_max'
         - 'config:field.storage.node.caw_benefits_coinsurance'
         - 'config:field.storage.node.caw_benefits_deductible'
@@ -1836,15 +1875,11 @@ display:
         - 'config:field.storage.node.caw_benefits_parttime_cost'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
-        - 'config:field.storage.node.caw_benefits_vision_extras'
         - 'config:field.storage.node.caw_benefits_vision_frames'
-        - 'config:field.storage.node.caw_benefits_vision_intl'
         - 'config:field.storage.node.caw_benefits_vision_lenses'
         - 'config:field.storage.node.caw_benefits_vision_lowvis'
         - 'config:field.storage.node.caw_benefits_vision_urgent'
         - 'config:field.storage.node.caw_benefits_xray'
-        - 'config:field.storage.node.su_benefit_type'
-        - 'config:field.storage.node.su_benefits_offered'
   filtering_list:
     display_plugin: viewfield_block
     id: filtering_list

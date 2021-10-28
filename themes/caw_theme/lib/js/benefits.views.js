@@ -76,7 +76,12 @@
             // Get the id values from the checked input boxes.
             const selectedItems = $.map($('input:checked', $list), checkbox => checkbox.value)
             $headerInfo.show();
-            $headerSummary.text($summary.text());
+            const $availableSelect = $('select[name="available"]', $view);
+            const $available = $(`option[value="${$availableSelect.val()}"]`, $availableSelect).text();
+            const $type = $('h2', $list.closest('.rows')).text() + ' ' + Drupal.t('Plans');
+
+            $headerSummary.html(`${$available}, ${$type}:` +'<br/>' + $summary.text());
+
             $('.attachment-before', $view).addClass('header-info-wrap');
 
             Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {

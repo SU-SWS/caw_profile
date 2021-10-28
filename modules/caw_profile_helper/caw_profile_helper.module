@@ -257,6 +257,10 @@ function caw_profile_helper_views_pre_build(ViewExecutable $view) {
  * Implements hook_views_query_alter().
  */
 function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if (_caw_profile_helper_is_editing_layout_paragraphs()) {
+    $query->setLimit(5);
+  }
+
   // Only modify the queries for media related views.
   if (!in_array($view->id(), ['media_library', 'media'])) {
     return;
@@ -280,24 +284,9 @@ function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginB
 }
 
 /**
- * Implements hook_views_pre_render().
- */
-function caw_profile_helper_views_pre_render(ViewExecutable $view) {
-  if (_caw_profile_helper_is_editing_layout_paragraphs() && count($view->result) > 5) {
-    $original_count = count($view->result);
-    $view->result = array_slice($view->result, 0, 5);
-    \Drupal::messenger()
-      ->addWarning(t('Reduced preview of the view %view from %count to 5 for performance purposes.', [
-        '%view' => $view->getTitle(),
-        '%count' => $original_count,
-      ]));
-  }
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
-function caw_profile_helper_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function caw_profile_helper_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\views\ViewExecutable $view */
   $view = $form_state->get('view');
   if ($view->id() == 'caw_benefits' && $view->current_display == 'filtering_list') {

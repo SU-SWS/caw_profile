@@ -8,11 +8,11 @@ dependencies:
     - taxonomy.vocabulary.careers_departments
     - taxonomy.vocabulary.careers_years
   module:
-    - better_exposed_filters
     - node
     - stanford_fields
     - taxonomy
     - user
+    - views_autocomplete_filters
     - views_infinite_scroll
 id: caw_careers
 label: 'Career Celebrations'
@@ -45,7 +45,7 @@ display:
           query_tags: {  }
           contextual_filters_or: false
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -54,47 +54,6 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: stanford_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            filter:
-              title:
-                plugin_id: default
-                advanced:
-                  placeholder_text: Name
-                  collapsible: false
-                  is_secondary: false
-              su_careers_department_target_id:
-                plugin_id: default
-                advanced:
-                  sort_options: true
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              su_careers_years_target_id:
-                plugin_id: default
-                advanced:
-                  sort_options: true
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              su_careers_honored_value:
-                plugin_id: default
-                advanced:
-                  placeholder_text: 'Year Honored'
-                  collapsible: false
-                  is_secondary: false
       pager:
         type: infinite_scroll
         options:
@@ -241,7 +200,15 @@ display:
               site_editor: '0'
               site_builder: '0'
               site_developer: '0'
+              layout_builder_user: '0'
             placeholder: ''
+            autocomplete_filter: 1
+            autocomplete_min_chars: '2'
+            autocomplete_items: '10'
+            autocomplete_field: title
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 1
           is_grouped: false
           group_info:
             label: ''
@@ -565,6 +532,21 @@ display:
           plugin_id: numeric
       defaults:
         arguments: false
+        empty: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: 0
+          content:
+            value: '<p>No results for your search criteria. Please try again.</p>'
+            format: stanford_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

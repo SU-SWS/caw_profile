@@ -21,6 +21,8 @@ careers.views:
   css:
     component:
       dist/css/careers.views.css: { }
+  js:
+    lib/js/careers.views.js: { }
 
 components.faq:
   css:

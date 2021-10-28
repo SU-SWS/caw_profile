@@ -8,9 +8,6 @@
     .exposed-filters,
     header {
       background: $su-color-foggy-light;
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
     }
 
     header {
@@ -62,29 +59,19 @@
           }
         }
       }
-
-      label:not(:focus):not(:active) {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-      }
     }
-  }
 
-  h2 {
-    a {
-      color: $su-color-black;
-      text-decoration: none;
+    h2 {
+      a {
+        color: $su-color-black;
+        text-decoration: none;
 
-      &:hover,
-      &:focus,
-      &:active {
-        color: $su-color-bright-blue; //#006cb8
-        text-decoration: underline;
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-bright-blue; //#006cb8
+          text-decoration: underline;
+        }
       }
     }
   }

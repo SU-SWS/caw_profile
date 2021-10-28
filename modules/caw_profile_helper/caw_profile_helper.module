@@ -254,12 +254,18 @@ function caw_profile_helper_views_pre_build(ViewExecutable $view) {
 }
 
 /**
+ * Implements hook_views_pre_execute().
+ */
+function caw_profile_helper_views_pre_execute(ViewExecutable $view) {
+  if (_caw_profile_helper_is_editing_layout_paragraphs()) {
+    $view->query->setLimit(5);
+  }
+}
+
+/**
  * Implements hook_views_query_alter().
  */
 function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if (_caw_profile_helper_is_editing_layout_paragraphs()) {
-    $query->setLimit(5);
-  }
 
   // Only modify the queries for media related views.
   if (!in_array($view->id(), ['media_library', 'media'])) {
@@ -306,6 +312,9 @@ function caw_profile_helper_form_views_exposed_form_alter(&$form, FormStateInter
     foreach (array_keys($form['type']['#options']) as $type) {
       $form['#attached']['drupalSettings']['cawBenefits']['type'][$type] = _caw_profile_helper_get_benefit_ids('su_benefit_type', $type);
     }
+  }
+  if ($view->id() == 'caw_careers') {
+    $form['honored']['#access'] = empty($view->args);
   }
 }
 

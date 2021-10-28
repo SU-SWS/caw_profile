@@ -172,3 +172,18 @@ function _caw_profile_helper_adjust_layout_builder(NodeInterface $node) {
     }
   }
 }
+
+/**
+ * Set the image for career celebrations with no image.
+ */
+function caw_profile_helper_update_9003() {
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $node_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'caw_careers')
+    ->condition('su_careers_image', NULL, 'IS NULL')
+    ->execute();
+  foreach ($nids as $nid) {
+    $node_storage->load($nid)->set('su_careers_image', '21')->save();
+  }
+}

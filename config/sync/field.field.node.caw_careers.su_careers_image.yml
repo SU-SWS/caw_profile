@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.su_careers_image
     - media.type.image
     - node.type.caw_careers
+  content:
+    - 'media:image:a4660e7f-d4bf-4a28-8030-9dc8576b1c9a'
 id: node.caw_careers.su_careers_image
 field_name: su_careers_image
 entity_type: node
@@ -14,7 +16,10 @@ label: Image
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    weight: 0
+    target_uuid: a4660e7f-d4bf-4a28-8030-9dc8576b1c9a
 default_value_callback: ''
 settings:
   handler: 'default:media'

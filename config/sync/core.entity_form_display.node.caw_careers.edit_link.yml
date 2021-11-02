@@ -1,0 +1,109 @@
+uuid: 50a2ceff-743a-4189-a60d-1be8c43395d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.edit_link
+    - field.field.node.caw_careers.su_careers_components
+    - field.field.node.caw_careers.su_careers_department
+    - field.field.node.caw_careers.su_careers_favorite_thing
+    - field.field.node.caw_careers.su_careers_fname
+    - field.field.node.caw_careers.su_careers_fun_fact
+    - field.field.node.caw_careers.su_careers_honored
+    - field.field.node.caw_careers.su_careers_image
+    - field.field.node.caw_careers.su_careers_job
+    - field.field.node.caw_careers.su_careers_legacy
+    - field.field.node.caw_careers.su_careers_lname
+    - field.field.node.caw_careers.su_careers_memory
+    - field.field.node.caw_careers.su_careers_proud_project
+    - field.field.node.caw_careers.su_careers_years
+    - node.type.caw_careers
+id: node.caw_careers.edit_link
+targetEntityType: node
+bundle: caw_careers
+mode: edit_link
+content:
+  su_careers_department:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  su_careers_favorite_thing:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  su_careers_fname:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  su_careers_fun_fact:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  su_careers_job:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  su_careers_legacy:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  su_careers_lname:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  su_careers_memory:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  su_careers_proud_project:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  node_edit_link: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  su_careers_components: true
+  su_careers_honored: true
+  su_careers_image: true
+  su_careers_years: true
+  title: true
+  uid: true
+  url_redirects: true

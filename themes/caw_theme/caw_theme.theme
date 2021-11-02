@@ -122,7 +122,7 @@ function caw_theme_preprocess_node(&$variables) {
 
       case 'caw_benefits':
         $variables['#attached']['library'][] = "caw_theme/benefits.node";
-        break;  
+        break;
     }
   }
 }
@@ -170,4 +170,13 @@ function caw_theme_preprocess_paragraph__stanford_faq(&$variables) {
 function caw_theme_preprocess_field(&$variables) {
   $variables['attributes']['class'][] = 'field';
   $variables['title_attributes']['class'][] = 'label';
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function caw_theme_preprocess(&$variables, $hook) {
+  if (str_replace('-', '_', $hook) == 'pattern_news_list') {
+    $variables['#attached']['library'][] = 'caw_theme/components.news_list';
+  }
 }

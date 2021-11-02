@@ -31,6 +31,11 @@ components.faq:
   js:
     lib/js/components/faq.js: { }
 
+components.news_list:
+  css:
+    component:
+      dist/css/news-list.css: { }
+
 benefits.views:
   css:
     component:

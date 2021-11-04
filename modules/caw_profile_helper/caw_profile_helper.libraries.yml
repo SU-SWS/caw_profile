@@ -1,3 +1,8 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      styles/dist/css/caw_profile.global.css: {}
 book.admin:
   version: VERSION
   js:
@@ -13,6 +18,8 @@ admin:
       styles/dist/css/caw_profile_helper.admin.css: {}
   js:
     js/fields.admin.js: {}
+  dependencies:
+    - caw_profile_helper/global
 layouts.one_column:
   version: VERSION
   css:

@@ -114,6 +114,7 @@ function _caw_profile_helper_is_editing_layout_paragraphs() {
  * Implements hook_page_attachments().
  */
 function caw_profile_helper_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'caw_profile_helper/global';
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $attachments['#attached']['library'][] = 'caw_profile_helper/admin';
   }

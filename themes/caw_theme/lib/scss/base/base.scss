@@ -5,6 +5,21 @@
 @import 'menu/book';
 @import 'colors';
 
+@mixin equal-heights {
+  > *,
+  .su-card {
+    height: 100%;
+
+    .su-card__contents {
+      @include modular-spacing('padding', null 0 null 0);
+
+      a {
+        @include modular-typography(0);
+      }
+    }
+  }
+}
+
 // positive decanter multipliers
 .flex-container {
   @for $i from 1 through 9 {
@@ -26,6 +41,48 @@
     // Left
     &.su-margin-left-#{$i} {
       @include modular-spacing('margin', null null null $i);
+    }
+  }
+
+  .flex-equal-sm {
+    @include grid-media-max('sm') {
+      width: 100%;
+    }
+
+    @include grid-media('sm') {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 0;
+
+      @include equal-heights;
+    }
+  }
+
+  .flex-equal-md {
+    @include grid-media-max('md') {
+      width: 100%;
+    }
+
+    @include grid-media('md') {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 0;
+
+      @include equal-heights;
+    }
+  }
+
+  .flex-equal-sm {
+    @include grid-media-max('lg') {
+      width: 100%;
+    }
+
+    @include grid-media('lg') {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 0;
+
+      @include equal-heights;
     }
   }
 }

@@ -259,7 +259,7 @@ function caw_profile_helper_views_pre_build(ViewExecutable $view) {
 function caw_profile_helper_views_pre_execute(ViewExecutable $view) {
   if (_caw_profile_helper_is_editing_layout_paragraphs()) {
     $current_limit = $view->query->getLimit();
-    if ($current_limit <= 0 && $current_limit > 5) {
+    if ($current_limit <= 0 || $current_limit > 5) {
       $view->query->setLimit(5);
     }
   }

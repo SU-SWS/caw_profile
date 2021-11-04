@@ -8,3 +8,13 @@
     }
   }
 }
+
+.caw-layout--two-column,
+.caw-layout--three-column {
+  .su-news-list__header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "date"
+      "headline";
+  }
+}

@@ -1,1 +1,1 @@
-.caw-layout--one-column .ptype-stanford-lists:not([data-react-columns="12"]) .su-news-list img,.caw-layout--one-column .ptype-stanford-lists:not([data-react-columns="12"]) .su-news-list picture{display:block}
+.caw-layout--one-column .ptype-stanford-lists:not([data-react-columns="12"]) .su-news-list img,.caw-layout--one-column .ptype-stanford-lists:not([data-react-columns="12"]) .su-news-list picture{display:block}.caw-layout--three-column .su-news-list__header,.caw-layout--two-column .su-news-list__header{grid-template-columns:1fr;grid-template-areas:"date" "headline"}

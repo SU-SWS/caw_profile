@@ -26,34 +26,7 @@ dependencies:
     - link
     - stanford_media
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      whitelisted_blocks:
-        'Chaos Tools': {  }
-        'Config Pages': {  }
-        Menus:
-          - 'menu_block:main'
-          - 'menu_block:news-topics'
-        'SimpleSAMLphp Authentication': {  }
-        System:
-          - system_messages_block
-        core:
-          - page_title_block
-      blacklisted_blocks: {  }
-      allowed_layouts:
-        - jumpstart_ui_one_column
-        - jumpstart_ui_two_column
-        - jumpstart_ui_three_column
-        - stanford_news_byline
-        - ds_reset
-      restricted_categories: {  }
-  layout_library:
-    enable: false
+third_party_settings: {  }
 id: node.stanford_news.search_indexing
 targetEntityType: node
 bundle: stanford_news

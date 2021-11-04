@@ -93,7 +93,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     $session = $this->currentRequest->getSession();
     // If the user has already started the session for the current node, they
     // should have access to it, until they submit the form.
-    if (!$node->isNew() && $session->get('node_edit_link') == $node->id()) {
+    if (!$node->isNew() && $session && $session->get('node_edit_link') == $node->id()) {
       return TRUE;
     }
 

@@ -40,25 +40,7 @@ dependencies:
     - link
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      whitelisted_blocks: {  }
-      blacklisted_blocks: {  }
-      allowed_layouts:
-        - jumpstart_ui_one_column
-        - jumpstart_ui_two_column
-        - jumpstart_ui_three_column
-        - stanford_person_header
-        - stanford_person_body
-        - ds_reset
-      restricted_categories: {  }
-  layout_library:
-    enable: false
+third_party_settings: {  }
 id: node.stanford_person.search_indexing
 targetEntityType: node
 bundle: stanford_person

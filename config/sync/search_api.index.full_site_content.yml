@@ -29,6 +29,9 @@ field_settings:
         anonymous: anonymous
       view_mode:
         'entity:node':
+          caw_benefits: search_indexing
+          caw_careers: search_indexing
+          caw_sweetener: search_indexing
           stanford_event: search_indexing
           stanford_event_series: search_indexing
           stanford_news: search_indexing
@@ -49,14 +52,6 @@ field_settings:
     type: boolean
     indexed_locked: true
     type_locked: true
-    dependencies:
-      module:
-        - node
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: string
     dependencies:
       module:
         - node
@@ -99,7 +94,6 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-      - title
     title: true
     alt: true
     tags:
@@ -115,7 +109,6 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-      - title
     ignorable: '[''¿¡!?,.:;]'
     ignorable_classes:
       - Pc

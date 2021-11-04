@@ -9,7 +9,7 @@ book.admin:
 admin:
   version: VERSION
   css:
-    component:
+    theme:
       styles/dist/css/caw_profile_helper.admin.css: {}
   js:
     js/fields.admin.js: {}
@@ -34,5 +34,5 @@ layouts.three_column:
 patterns.card:
   version: VERSION
   css:
-    component:
+    theme:
       styles/dist/css/components/patterns.card.css: {}

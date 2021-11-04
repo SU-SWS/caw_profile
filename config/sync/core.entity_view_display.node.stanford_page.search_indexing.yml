@@ -19,7 +19,6 @@ dependencies:
     - layout_builder_restrictions
     - layout_library
     - user
-third_party_settings: {  }
 id: node.stanford_page.search_indexing
 targetEntityType: node
 bundle: stanford_page

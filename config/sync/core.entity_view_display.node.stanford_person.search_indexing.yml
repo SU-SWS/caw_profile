@@ -40,7 +40,6 @@ dependencies:
     - link
     - text
     - user
-third_party_settings: {  }
 id: node.stanford_person.search_indexing
 targetEntityType: node
 bundle: stanford_person

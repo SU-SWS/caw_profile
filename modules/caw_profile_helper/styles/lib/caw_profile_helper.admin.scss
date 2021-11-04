@@ -5,6 +5,10 @@
 
 @import 'decanter/core/src/scss/core/flex-grid';
 
+h1.page-title {
+  margin: 0;
+}
+
 .js-lpb-component {
   min-height: 40px;
   width: calc(100% - 100px);

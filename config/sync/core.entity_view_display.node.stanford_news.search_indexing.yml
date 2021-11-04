@@ -26,7 +26,6 @@ dependencies:
     - link
     - stanford_media
     - user
-third_party_settings: {  }
 id: node.stanford_news.search_indexing
 targetEntityType: node
 bundle: stanford_news

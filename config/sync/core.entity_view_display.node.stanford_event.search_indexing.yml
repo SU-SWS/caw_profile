@@ -34,7 +34,6 @@ dependencies:
     - smart_date
     - text
     - user
-third_party_settings: {  }
 id: node.stanford_event.search_indexing
 targetEntityType: node
 bundle: stanford_event

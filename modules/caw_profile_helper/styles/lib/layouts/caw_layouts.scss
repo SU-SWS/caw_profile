@@ -85,3 +85,24 @@
     }
   }
 }
+
+.ptype-stanford-lists:not([data-react-columns="12"]) {
+  .views-view-grid {
+    .views-col {
+      flex: 0 0 100%;
+
+      .caw-layout--one-column & {
+        @include grid-media('lg') {
+          flex-grow: 1;
+          flex-basis: 0;
+          min-width: 0;
+          margin-right: 30px;
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

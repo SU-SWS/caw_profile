@@ -21,7 +21,6 @@ dependencies:
     - layout_builder_restrictions
     - layout_library
     - user
-third_party_settings: {  }
 id: node.stanford_event_series.search_indexing
 targetEntityType: node
 bundle: stanford_event_series

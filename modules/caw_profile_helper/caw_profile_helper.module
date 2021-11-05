@@ -231,13 +231,15 @@ function caw_profile_helper_preprocess_ds_entity_view(&$variables) {
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_state->getFormObject()->getEntity()->bundle() != 'stanford_page') {
+  if ($form_state->getFormObject()->getEntity()->bundle() != 'stanford_page' || empty($form['book'])) {
     return;
   }
   $form['book']['#title'] = t('Subsite Outline');
   $form['book']['bid']['#title'] = t('Subsite');
   $form['book']['bid']['#description'] = t('Your page will be a part of the selected subsite');
-  $form['book']['bid']['#options']['new'] = t('- Create a new Subsite -');
+  if (isset($form['book']['bid']['#options']['new'])) {
+    $form['book']['bid']['#options']['new'] = t('- Create a new Subsite -');
+  }
   $form['book']['pid']['#description'] = t('The parent page in the subsite. The maximum depth for a subsite and all child pages is 9. Some pages in the selected subsite may not be available as parents if selecting them would exceed this limit.');
 }
 

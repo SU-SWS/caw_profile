@@ -5,8 +5,10 @@
  * caw_profile_helper.install
  */
 
+use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\NodeInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Adjust field settings for layout paragraphs.
@@ -185,5 +187,77 @@ function caw_profile_helper_update_9003() {
     ->execute();
   foreach ($nids as $nid) {
     $node_storage->load($nid)->set('su_careers_image', '21')->save();
+  }
+}
+
+/**
+ * Move menu items to subsite.
+ */
+function caw_profile_helper_update_9004() {
+  $parameters = new MenuTreeParameters();
+  /** @var \Drupal\Core\Menu\MenuLinkTree $link_tree_service */
+  $link_tree_service = \Drupal::service('menu.link_tree');
+  $tree = $link_tree_service->load('main', $parameters);
+  foreach ($tree as $element) {
+    // Find the manager toolkit, and move all menu items under it into the
+    // subsite.
+    if ($element->link->getTitle() == 'Manager Toolkit') {
+      $route_parameters = $element->link->getRouteParameters();
+      // Move the subtree first, then delete the entire subtree.
+      caw_profile_helper_move_subtree($element->subtree, [$route_parameters['node']]);
+      caw_profile_helper_delete_subtree($element->subtree);
+      return;
+    }
+  }
+}
+
+/**
+ * Move menu tree elements to subsite.
+ *
+ * @param \Drupal\Core\Menu\MenuLinkTreeElement[] $subtree
+ *   Array of menu tree items.
+ * @param array $parents
+ *   Array of parent ids.
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function caw_profile_helper_move_subtree(array $subtree, array $parents = []) {
+  foreach ($subtree as $element) {
+    $route_parameters = $element->link->getRouteParameters();
+    // Only move menu items that are node links.
+    if (!isset($route_parameters['node'])) {
+      continue;
+    }
+    /** @var Drupal\node\NodeInterface $node */
+    $node = Node::load($route_parameters['node']);
+    $path = $parents;
+    $path[] = $node->id();
+
+    $node->book = [
+      'nid' => $node->id(),
+      'has_children' => 0,
+      'original_bid' => 0,
+      'parent_depth_limit' => 9 - count($parents),
+      'pid' => end($parents),
+      'weight' => $element->link->getWeight(),
+      'bid' => reset($parents),
+    ];;
+    $node->save();
+    caw_profile_helper_move_subtree($element->subtree, $path);
+  }
+}
+
+/**
+ * Delete all menu items in the subtree.
+ *
+ * @param \Drupal\Core\Menu\MenuLinkTreeElement[] $subtree
+ *   Array of menu tree items.
+ */
+function caw_profile_helper_delete_subtree(array $subtree) {
+  foreach ($subtree as $element) {
+    // Recursively go down to the deepest subtree first before starting to
+    // delete menu items.
+    caw_profile_helper_delete_subtree($element->subtree);
+    $element->link->deleteLink();
   }
 }

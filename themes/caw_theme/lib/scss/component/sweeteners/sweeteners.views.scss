@@ -181,12 +181,16 @@
 
     // chosen.css overrides
     li {
-      &.search-field input[type="text"] {
-        font-size: 1.1em;
-        width: 100% !important;
+      &.search-field {
+        input[type="text"] {
+          font-size: 1.1em;
+        }
       }
-      .search-choice span {
-        font-size: 1.1em;
+
+      .search-choice {
+        span {
+          font-size: 1.1em;
+        }
       }
     }
 

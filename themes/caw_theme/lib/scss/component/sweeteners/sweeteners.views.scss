@@ -137,6 +137,69 @@
     }
   }
 
+  &.side-by-side {
+    padding: 0 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    @include grid-media('lg') {
+      display: grid;
+      grid-gap: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+      "header header header header"
+      "side main main main";
+    }
+
+
+    > * {
+      grid-area: main;
+    }
+
+    > header {
+      grid-area: header;
+    }
+
+    > .exposed-filters {
+      grid-area: side;
+
+      .exposed-filter-header-wrapper {
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    form > *:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .button {
+      margin: 10px 10px 10px 0;
+    }
+
+    // chosen.css overrides
+    li {
+      &.search-field {
+        input[type="text"] {
+          font-size: 1.1em;
+        }
+      }
+
+      .search-choice {
+        span {
+          font-size: 1.1em;
+        }
+      }
+    }
+
+    h2 {
+      @include type-c;
+      margin-bottom: 0;
+    }
+  }
+
   a {
     @include modular-typography(2);
     color: $su-color-digital-red;
@@ -149,6 +212,21 @@
   .stanford-component-block {
     margin: 0;
     padding: 0;
+  }
+}
+
+input[id^="edit-reset"] {
+  background-color: transparent;
+  color: $su-color-digital-blue;
+  padding: 0;
+  text-decoration: underline;
+
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: $su-color-black;
   }
 }
 

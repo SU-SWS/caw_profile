@@ -218,39 +218,6 @@ display:
             caw_benefits_med_mental_health: caw_benefits_med_mental_health
             caw_benefits_med_autism: caw_benefits_med_autism
             caw_benefits_med_substance: caw_benefits_med_substance
-            views_conditional_field_2: views_conditional_field_2
-            caw_benefits_med_acupuncture: caw_benefits_med_acupuncture
-            caw_benefits_med_allergy_test: caw_benefits_med_allergy_test
-            caw_benefits_med_allergy_treat: caw_benefits_med_allergy_treat
-            caw_benefits_med_alt_medicine: caw_benefits_med_alt_medicine
-            caw_benefits_med_abulance: caw_benefits_med_abulance
-            caw_benefits_med_ct_scan: caw_benefits_med_ct_scan
-            caw_benefits_med_chiro: caw_benefits_med_chiro
-            caw_benefits_med_christian_prac: caw_benefits_med_christian_prac
-            caw_benefits_med_cosmetic: caw_benefits_med_cosmetic
-            caw_benefits_med_dental: caw_benefits_med_dental
-            views_conditional_field_3: views_conditional_field_3
-            caw_benefits_med_er: caw_benefits_med_er
-            caw_benefits_med_urgent: caw_benefits_med_urgent
-            caw_benefits_med_hearing: caw_benefits_med_hearing
-            caw_benefits_med_home_health: caw_benefits_med_home_health
-            caw_benefits_med_hospice: caw_benefits_med_hospice
-            caw_benefits_med_hopsital_stay: caw_benefits_med_hopsital_stay
-            caw_benefits_med_infertility: caw_benefits_med_infertility
-            caw_benefits_med_lab: caw_benefits_med_lab
-            caw_benefits_med_mri: caw_benefits_med_mri
-            caw_benefits_med_durable_equip: caw_benefits_med_durable_equip
-            views_conditional_field_4: views_conditional_field_4
-            caw_benefits_med_occupational: caw_benefits_med_occupational
-            caw_benefits_med_transpants: caw_benefits_med_transpants
-            caw_benefits_med_nursing: caw_benefits_med_nursing
-            caw_benefits_med_pt: caw_benefits_med_pt
-            caw_benefits_med_surgery_md: caw_benefits_med_surgery_md
-            caw_benefits_med_surgery_facil: caw_benefits_med_surgery_facil
-            caw_benefits_med_speech: caw_benefits_med_speech
-            caw_benefits_med_tubal: caw_benefits_med_tubal
-            caw_benefits_med_vasectomy: caw_benefits_med_vasectomy
-            caw_benefits_xray: caw_benefits_xray
             views_conditional_field_5: views_conditional_field_5
             caw_benefits_med_pharmacy: caw_benefits_med_pharmacy
             caw_benefits_med_mail_rx: caw_benefits_med_mail_rx
@@ -264,38 +231,71 @@ display:
             caw_benefits_med_psa: caw_benefits_med_psa
             caw_benefits_med_well_woman: caw_benefits_med_well_woman
             caw_benefits_med_vision: caw_benefits_med_vision
+            views_conditional_field_7: views_conditional_field_7
             caw_benefits_dent_cleanings: caw_benefits_dent_cleanings
             caw_benefits_dent_flouride: caw_benefits_dent_flouride
             caw_benefits_dent_exam: caw_benefits_dent_exam
             caw_benefits_dent_sealant: caw_benefits_dent_sealant
+            views_conditional_field_8: views_conditional_field_8
             caw_benefits_dent_ortho: caw_benefits_dent_ortho
             caw_benefits_dent_retainer: caw_benefits_dent_retainer
-            caw_benefits_dent_anesthesia: caw_benefits_dent_anesthesia
-            caw_benefits_dent_bridges: caw_benefits_dent_bridges
-            caw_benefits_dent_crown: caw_benefits_dent_crown
-            caw_benefits_dent_denture: caw_benefits_dent_denture
-            caw_benefits_dent_extraction: caw_benefits_dent_extraction
-            caw_benefits_dent_filling: caw_benefits_dent_filling
-            caw_benefits_dent_gingivectomy: caw_benefits_dent_gingivectomy
-            caw_benefits_dent_gold: caw_benefits_dent_gold
-            caw_benefits_dent_implant: caw_benefits_dent_implant
-            caw_benefits_dent_inlay: caw_benefits_dent_inlay
-            caw_benefits_dent_onlay: caw_benefits_dent_onlay
-            caw_benefits_dent_oral_surg: caw_benefits_dent_oral_surg
-            caw_benefits_dent_perio_surg: caw_benefits_dent_perio_surg
             caw_benefits_dent_rx: caw_benefits_dent_rx
             caw_benefits_dent_root: caw_benefits_dent_root
-            caw_benefits_dent_space: caw_benefits_dent_space
-            caw_benefits_dent_splint: caw_benefits_dent_splint
-            caw_benefits_dent_tmj: caw_benefits_dent_tmj
             caw_benefits_vision_exam: caw_benefits_vision_exam
             caw_benefits_vision_contacts: caw_benefits_vision_contacts
             caw_benefits_vision_frames: caw_benefits_vision_frames
             caw_benefits_vision_lenses: caw_benefits_vision_lenses
             caw_benefits_vision_lowvis: caw_benefits_vision_lowvis
             caw_benefits_vision_urgent: caw_benefits_vision_urgent
-            views_conditional_field_7: views_conditional_field_7
-            views_conditional_field_8: views_conditional_field_8
+            views_conditional_field_2: views_conditional_field_2
+            caw_benefits_dent_anesthesia: caw_benefits_dent_anesthesia
+            caw_benefits_dent_bridges: caw_benefits_dent_bridges
+            caw_benefits_dent_crown: caw_benefits_dent_crown
+            caw_benefits_dent_denture: caw_benefits_dent_denture
+            caw_benefits_med_acupuncture: caw_benefits_med_acupuncture
+            caw_benefits_med_allergy_test: caw_benefits_med_allergy_test
+            caw_benefits_med_allergy_treat: caw_benefits_med_allergy_treat
+            caw_benefits_med_alt_medicine: caw_benefits_med_alt_medicine
+            caw_benefits_med_abulance: caw_benefits_med_abulance
+            caw_benefits_med_ct_scan: caw_benefits_med_ct_scan
+            caw_benefits_med_chiro: caw_benefits_med_chiro
+            caw_benefits_med_christian_prac: caw_benefits_med_christian_prac
+            caw_benefits_med_cosmetic: caw_benefits_med_cosmetic
+            caw_benefits_med_dental: caw_benefits_med_dental
+            views_conditional_field_3: views_conditional_field_3
+            caw_benefits_dent_extraction: caw_benefits_dent_extraction
+            caw_benefits_dent_filling: caw_benefits_dent_filling
+            caw_benefits_dent_gingivectomy: caw_benefits_dent_gingivectomy
+            caw_benefits_dent_gold: caw_benefits_dent_gold
+            caw_benefits_dent_implant: caw_benefits_dent_implant
+            caw_benefits_dent_inlay: caw_benefits_dent_inlay
+            caw_benefits_med_er: caw_benefits_med_er
+            caw_benefits_med_urgent: caw_benefits_med_urgent
+            caw_benefits_med_hearing: caw_benefits_med_hearing
+            caw_benefits_med_home_health: caw_benefits_med_home_health
+            caw_benefits_med_hospice: caw_benefits_med_hospice
+            caw_benefits_med_hopsital_stay: caw_benefits_med_hopsital_stay
+            caw_benefits_med_infertility: caw_benefits_med_infertility
+            caw_benefits_med_lab: caw_benefits_med_lab
+            caw_benefits_med_mri: caw_benefits_med_mri
+            caw_benefits_med_durable_equip: caw_benefits_med_durable_equip
+            views_conditional_field_4: views_conditional_field_4
+            caw_benefits_dent_onlay: caw_benefits_dent_onlay
+            caw_benefits_dent_oral_surg: caw_benefits_dent_oral_surg
+            caw_benefits_dent_perio_surg: caw_benefits_dent_perio_surg
+            caw_benefits_dent_space: caw_benefits_dent_space
+            caw_benefits_dent_splint: caw_benefits_dent_splint
+            caw_benefits_dent_tmj: caw_benefits_dent_tmj
+            caw_benefits_med_occupational: caw_benefits_med_occupational
+            caw_benefits_med_transpants: caw_benefits_med_transpants
+            caw_benefits_med_nursing: caw_benefits_med_nursing
+            caw_benefits_med_pt: caw_benefits_med_pt
+            caw_benefits_med_surgery_md: caw_benefits_med_surgery_md
+            caw_benefits_med_surgery_facil: caw_benefits_med_surgery_facil
+            caw_benefits_med_speech: caw_benefits_med_speech
+            caw_benefits_med_tubal: caw_benefits_med_tubal
+            caw_benefits_med_vasectomy: caw_benefits_med_vasectomy
+            caw_benefits_xray: caw_benefits_xray
           info:
             su_benefit_type:
               sortable: 0
@@ -466,231 +466,6 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            views_conditional_field_2:
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_acupuncture:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_allergy_test:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_allergy_treat:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_alt_medicine:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_abulance:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_ct_scan:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_chiro:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_christian_prac:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_cosmetic:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_dental:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            views_conditional_field_3:
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_er:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_urgent:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_hearing:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_home_health:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_hospice:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_hopsital_stay:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_infertility:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_lab:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_mri:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_durable_equip:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            views_conditional_field_4:
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_occupational:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_transpants:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_nursing:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_pt:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_surgery_md:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_surgery_facil:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_speech:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_tubal:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_med_vasectomy:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_xray:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
             views_conditional_field_5:
               align: ''
               separator: ''
@@ -778,6 +553,11 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
+            views_conditional_field_7:
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
             caw_benefits_dent_cleanings:
               sortable: 0
               default_sort_order: asc
@@ -806,6 +586,11 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
+            views_conditional_field_8:
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
             caw_benefits_dent_ortho:
               sortable: 0
               default_sort_order: asc
@@ -820,97 +605,6 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            caw_benefits_dent_anesthesia:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_bridges:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_crown:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_denture:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_extraction:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_filling:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_gingivectomy:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_gold:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_implant:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_inlay:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_onlay:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_oral_surg:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_perio_surg:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
             caw_benefits_dent_rx:
               sortable: 0
               default_sort_order: asc
@@ -919,27 +613,6 @@ display:
               empty_column: 1
               responsive: ''
             caw_benefits_dent_root:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_space:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_splint:
-              sortable: 0
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: 1
-              responsive: ''
-            caw_benefits_dent_tmj:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -988,12 +661,339 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            views_conditional_field_7:
+            views_conditional_field_2:
               align: ''
               separator: ''
               empty_column: 1
               responsive: ''
-            views_conditional_field_8:
+            caw_benefits_dent_anesthesia:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_bridges:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_crown:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_denture:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_acupuncture:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_allergy_test:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_allergy_treat:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_alt_medicine:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_abulance:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_ct_scan:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_chiro:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_christian_prac:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_cosmetic:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_dental:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            views_conditional_field_3:
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_extraction:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_filling:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_gingivectomy:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_gold:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_implant:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_inlay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_er:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_urgent:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hearing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_home_health:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hospice:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_hopsital_stay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_infertility:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_lab:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_mri:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_durable_equip:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            views_conditional_field_4:
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_onlay:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_oral_surg:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_perio_surg:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_space:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_splint:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_dent_tmj:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_occupational:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_transpants:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_nursing:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_pt:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_surgery_md:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_surgery_facil:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_speech:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_tubal:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_vasectomy:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_xray:
+              sortable: 0
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: 1
@@ -3006,20 +3006,7 @@ display:
             fail: ignore
           validate_options: {  }
           plugin_id: datetime
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: 0
-          tokenize: 0
-          content:
-            value: "<h2>Comparison Tool</h2>\r\n<p>This is a summary of benefits, not an official plan document. Benefits discussed here are governed by the plan contracts and policies, Stanford policies and applicable state and federal laws. If there is a conflict between the wording of this information and any policy, contract or law, the contracts, policies and applicable laws govern.</p>"
-            format: stanford_html
-          plugin_id: text
+      header: {  }
       block_category: 'Benefits (Views)'
       filters:
         status:

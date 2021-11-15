@@ -151,6 +151,12 @@
         });
         $(tableCell).closest('tr').addClass('group-header').empty().append($groupHeader);
       })
+
+      // Uncheck all options if the users hits the back button or refreshes.
+      $(window).bind("pageshow", function() {
+        $('input[type="checkbox"]:checked').click();
+      });
     }
   };
 })(jQuery, Drupal, drupalSettings);
+

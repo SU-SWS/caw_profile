@@ -567,55 +567,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  teaser_list:
-    display_plugin: viewfield_block
-    id: teaser_list
-    display_title: 'Teaser List'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      block_category: 'Sweeteners (Views)'
-      display_description: ''
-      defaults:
-        css_class: true
-        style: false
-        row: false
-        footer: false
-        header: false
-        empty: false
-        pager: false
-        arguments: false
-      style:
-        type: html_list
-        options:
-          row_class: 'flex-equal-md su-margin-bottom-2'
-          default_row_class: 1
-          uses_fields: 0
-          type: ul
-          wrapper_class: item-list
-          class: 'flex-container su-list-unstyled'
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: stanford_card
-      footer: {  }
-      header: {  }
-      empty: {  }
-      pager:
-        type: some
-        options:
-          items_per_page: '4'
-          offset: '0'
-      arguments: {  }
-    cache_metadata:
-      max-age: 0
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
   side_by_side:
     display_plugin: viewfield_block
     id: side_by_side
@@ -872,6 +823,55 @@ display:
         - 'languages:language_interface'
         - url
         - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  teaser_list:
+    display_plugin: viewfield_block
+    id: teaser_list
+    display_title: 'Teaser List'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      block_category: 'Sweeteners (Views)'
+      display_description: ''
+      defaults:
+        css_class: true
+        style: false
+        row: false
+        footer: false
+        header: false
+        empty: false
+        pager: false
+        arguments: false
+      style:
+        type: html_list
+        options:
+          row_class: 'flex-equal-md su-margin-bottom-2'
+          default_row_class: 1
+          uses_fields: 0
+          type: ul
+          wrapper_class: item-list
+          class: 'flex-container su-list-unstyled'
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: stanford_card
+      footer: {  }
+      header: {  }
+      empty: {  }
+      pager:
+        type: some
+        options:
+          items_per_page: '4'
+          offset: '0'
+      arguments: {  }
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

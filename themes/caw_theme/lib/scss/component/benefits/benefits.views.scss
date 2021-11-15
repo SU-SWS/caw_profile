@@ -256,6 +256,10 @@
       max-width: 1200px;
       margin: 0;
 
+      td, th {
+        vertical-align: top;
+      }
+
       tbody,
       thead {
         tr,
@@ -270,6 +274,8 @@
 
       thead {
         background: #eaedee;
+        position: sticky;
+        top: 0;
 
         th {
           @include responsive-spacing('padding-bottom', 4);

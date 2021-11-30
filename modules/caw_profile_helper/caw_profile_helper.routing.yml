@@ -1,0 +1,8 @@
+
+caw_profile_helper.job_description_redirect:
+  path: '/job-description-library'
+  defaults:
+    _controller: '\Drupal\caw_profile_helper\Controller\JobDescriptionRedirectController::view'
+    _title: 'Job Description'
+  requirements:
+    _user_is_logged_in: 'true'

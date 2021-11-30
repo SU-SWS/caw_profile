@@ -232,6 +232,8 @@ function caw_profile_helper_preprocess_ds_entity_view(&$variables) {
  */
 function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_state->getFormObject()->getEntity()->bundle() != 'stanford_page' || empty($form['book'])) {
+    // Don't allow any other content to be added to subsites.
+    unset($form['book']);
     return;
   }
   $form['book']['#title'] = t('Subsite Outline');

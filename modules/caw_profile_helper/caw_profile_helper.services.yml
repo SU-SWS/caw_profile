@@ -6,3 +6,7 @@ services:
     class: Drupal\caw_profile_helper\Config\BookConfigOverridder
     tags:
       - {name: config.factory.override, priority: 5}
+  book.route_subscriber:
+    class: Drupal\caw_profile_helper\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

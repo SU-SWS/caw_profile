@@ -144,6 +144,7 @@ permissions:
   - 'revert stanford_page revisions'
   - 'revert stanford_person revisions'
   - 'revert stanford_publication revisions'
+  - 'send one time edit link'
   - 'update media'
   - 'use advanced search'
   - 'use text format stanford_limited_html'

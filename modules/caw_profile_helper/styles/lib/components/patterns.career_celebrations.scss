@@ -62,7 +62,7 @@
 
     .su-card__contents {
       justify-self: normal;
-      align-self: end;
+      align-self: center;
     }
   }
 
@@ -89,17 +89,14 @@
   .caw-careers-card--years-honored {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 126px;
+    grid-gap: 20px;
+    padding-top: 20px;
   }
 
   .other-celebrations {
-    .caw-careers-card--years-honored {
-      display: block;
-    }
-
     .caw-careers-card--years,
     .caw-careers-card--honored {
-      @include type-d;
+      @include type-e;
     }
   }
 }

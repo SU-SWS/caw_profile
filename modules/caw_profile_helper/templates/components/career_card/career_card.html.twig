@@ -2,18 +2,8 @@
 
   <div class="caw-careers-card--left">
     {{ image }}
-  </div>
-  <div class="caw-careers-card--right su-card__contents">
-    <div class="su-card__contents-wrapper">
-      {{ title }}
 
-      {% if job_title %}
-        <div class="caw-careers-card--job-title">
-          {{ job_title }}
-        </div>
-      {% endif %}
-
-      <div class="caw-careers-card--years-honored">
+    <div class="caw-careers-card--years-honored">
         {% if years %}
           <div class="caw-careers-card--years">
             {{ years }}
@@ -25,6 +15,17 @@
           </div>
         {% endif %}
       </div>
+  </div>
+
+  <div class="caw-careers-card--right su-card__contents">
+    <div class="su-card__contents-wrapper">
+      {{ title }}
+
+      {% if job_title %}
+        <div class="caw-careers-card--job-title">
+          {{ job_title }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>

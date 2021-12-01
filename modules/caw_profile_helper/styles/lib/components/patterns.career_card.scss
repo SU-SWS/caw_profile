@@ -7,7 +7,7 @@
   picture,
   img {
     border-radius: 50%;
-    width: 250px;
+    width: 225px;
   }
 
 
@@ -19,4 +19,12 @@
 
     font-weight: $su-font-regular;
   }
+
+  .caw-careers-card--years-honored {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    padding-top: 20px;
+  }
+
 }

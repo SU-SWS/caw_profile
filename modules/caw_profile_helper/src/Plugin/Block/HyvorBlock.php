@@ -107,7 +107,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
           'drupalSettings' => [
             'caw_profile_helper' => [
               'hyvor' => [
-                'id' =>  Settings::get('hyvor_talk_id'),
+                'id' => Settings::get('hyvor_talk_id'),
                 'config' => [
                   'url' => FALSE,
                   'id' => $node->id(),
@@ -156,6 +156,5 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
       'email' => $user->getEmail(),
     ];
   }
-
 
 }

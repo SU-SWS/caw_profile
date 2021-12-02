@@ -32,11 +32,27 @@
 
     max-width: 810px;
 
+    .caw-careers-card--left {
+      grid-area: image;
+    }
+
+    .caw-careers-card--right {
+      grid-area: details;
+    }
+
+    .caw-careers-card--years-honored {
+      grid-area: honored;
+    }
+
     &.su-card--horizontal {
       @include responsive-spacing('padding', 3 3 4 3);
 
-      grid-template-columns: 1fr 2fr;
-      grid-column-gap: 36px;
+      grid-template-columns: 1fr .01% 2fr;
+      grid-template-rows: auto;
+      grid-row-gap: 20px;
+      grid-template-areas:
+        "image . details"
+        "honored honored honored";
 
       // To keep the card on top of the pseudo elment
       position: relative;
@@ -88,9 +104,8 @@
 
   .caw-careers-card--years-honored {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: inherit;
     grid-gap: 20px;
-    padding-top: 20px;
   }
 
   .other-celebrations {

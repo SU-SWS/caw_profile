@@ -41,21 +41,21 @@
   }
 
   .su-card--horizontal:not(.su-card--link) {
-    grid-template-columns: 1fr .01% 2fr;
+    grid-template-columns: 1fr 0.01% 2fr;
     grid-template-rows: auto;
     grid-row-gap: 20px;
     grid-template-areas:
-      "image . details"
-      "honored honored honored";
-
+    "image . details"
+    "honored honored honored";
   }
+
   .su-card--horizontal {
-    grid-template-columns: 1fr .01% 2fr;
+    grid-template-columns: 1fr 0.01% 2fr;
     grid-template-rows: auto;
     grid-row-gap: 20px;
-    grid-template-areas: 
-      "image . details"
-      "honored honored honored";
+    grid-template-areas:
+    "image . details"
+    "honored honored honored";
 
     // stacking the image when less than lg size.
     &.caw-careers-card {

@@ -47,12 +47,12 @@
     &.su-card--horizontal {
       @include responsive-spacing('padding', 3 3 4 3);
 
-      grid-template-columns: 1fr .01% 2fr;
+      grid-template-columns: 1fr 0.01% 2fr;
       grid-template-rows: auto;
       grid-row-gap: 20px;
       grid-template-areas:
-        "image . details"
-        "honored honored honored";
+      "image . details"
+      "honored honored honored";
 
       // To keep the card on top of the pseudo elment
       position: relative;

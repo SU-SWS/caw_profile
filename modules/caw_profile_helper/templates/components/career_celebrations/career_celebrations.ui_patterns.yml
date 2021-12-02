@@ -35,5 +35,5 @@ career_celebrations:
     - caw_profile_helper.career_celebrations:
         css:
           component:
-            ../../../styles/dist/css/components/pattersn.career_celebrations.css: { }
+            ../../../styles/dist/css/components/patterns.career_celebrations.css: { }
 

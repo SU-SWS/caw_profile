@@ -77,40 +77,7 @@
   }
 }
 
-.caw-careers-grid-all,
-.other-celebrations {
-  .caw-careers-card--years {
-    .label-inline {
-      div:nth-of-type(2) {
-        float: left;
-        font-weight: $su-font-bold;
-        padding-right: 5px;
-      }
-
-      div {
-        display: inline;
-      }
-    }
-  }
-
-  .caw-careers-card--honored {
-
-    .label-inline {
-
-      div:nth-of-type(1) {
-        float: left;
-        font-weight: $su-font-regular;
-        padding-right: 5px;
-      }
-
-      div {
-        display: inline;
-      }
-    }
-  }
-}
-
-// Styles for the other career celebrations on node bottom
+// // Styles for the other career celebrations on node bottom
 div {
   .dynamic-block-fieldnode-caw-other-careers {
     > div {

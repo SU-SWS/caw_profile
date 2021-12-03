@@ -3,6 +3,10 @@ global:
   css:
     theme:
       styles/dist/css/caw_profile.global.css: {}
+hyvor:
+  version: VERSION
+  js:
+    js/hyvor.js: {}
 book.admin:
   version: VERSION
   js:

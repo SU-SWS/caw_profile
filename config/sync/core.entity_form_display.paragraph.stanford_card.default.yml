@@ -34,8 +34,6 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   su_card_header:
     weight: 3
     settings:
@@ -56,28 +54,22 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   su_card_link_display:
     weight: 6
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   su_card_media:
     type: media_library_widget
     weight: 0
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
   su_card_super_header:
     weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true

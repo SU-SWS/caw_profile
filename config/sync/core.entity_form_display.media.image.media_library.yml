@@ -20,6 +20,8 @@ mode: media_library
 content:
   field_media_image:
     type: image_focal_point
+    weight: 26
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail

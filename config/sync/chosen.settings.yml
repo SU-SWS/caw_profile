@@ -7,6 +7,8 @@ jquery_selector: 'select:not([name*="su_list_view"])'
 search_contains: false
 disable_search: false
 allow_single_deselect: false
+disabled_themes: {  }
+chosen_include: 2
 placeholder_text_multiple: 'Choose some options'
 placeholder_text_single: 'Choose an option'
 no_results_text: 'No results match'

@@ -88,12 +88,6 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     $current_url = Url::fromRoute($this->routeMatch->getRouteName(), $this->routeMatch->getRawParameters()
       ->all(), ['absolute' => TRUE])->toString();
-
-    $login_url = Url::fromRoute('simplesamlphp_auth.saml_login', [], [
-      'absolute' => TRUE,
-      'query' => ['ReturnTo' => $current_url],
-    ])->toString();
-
     $build = [
       'div' => [
         '#type' => 'html_tag',
@@ -114,8 +108,8 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
                   'sso' => [
                     'hash' => $hash,
                     'userData' => $encodedUserData,
-                    'loginURL' => $login_url,
-                    'signupURL' => $login_url,
+                    'loginURL' => self::getLoginUrl($current_url),
+                    'signupURL' => self::getLoginUrl($current_url),
                   ],
                 ],
               ],
@@ -131,7 +125,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritDoc}
    */
   public function getCacheContexts() {
-    return Cache::mergeContexts(parent::getCacheContexts(), ['user']);
+    return Cache::mergeContexts(parent::getCacheContexts(), ['user', 'url.path', 'url.query_args']);
   }
 
   /**
@@ -155,6 +149,30 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
       'name' => $user->getDisplayName(),
       'email' => $user->getEmail(),
     ];
+  }
+
+  /**
+   * Get the url for log in depending on SAML.
+   *
+   * @param string $current_url
+   *   Current path the user is on.
+   *
+   * @return \Drupal\Core\GeneratedUrl|string
+   */
+  protected static function getLoginUrl($current_url) {
+    $url = Url::fromRoute('user.login', [], [
+      'absolute' => TRUE,
+      'query' => ['destination' => $current_url],
+    ]);
+
+    if (\Drupal::moduleHandler()->moduleExists('simplesamlphp_auth')) {
+      $url = Url::fromRoute('simplesamlphp_auth.saml_login', [], [
+        'absolute' => TRUE,
+        'query' => ['ReturnTo' => $current_url],
+      ]);
+    }
+
+    return $url->toString();
   }
 
 }

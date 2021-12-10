@@ -12,6 +12,7 @@ dependencies:
     - media
     - taxonomy
     - user
+    - views_autocomplete_filters
 id: media
 label: Media
 module: views
@@ -509,6 +510,134 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: true
+        su_gallery_image:
+          id: su_gallery_image
+          table: media__su_gallery_image
+          field: su_gallery_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Gallery Image Alt'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_media_image:
+          id: field_media_image
+          table: media__field_media_image
+          field: field_media_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Image Alt'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: full
         options:
@@ -568,135 +697,15 @@ display:
           group_type: group
           admin_label: ''
           entity_type: media
-          plugin_id: entity_operations
-        su_gallery_image:
-          id: su_gallery_image
-          table: media__su_gallery_image
-          field: su_gallery_image
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Gallery Image Alt'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_media_image:
-          id: field_media_image
-          table: media__field_media_image
-          field: field_media_image
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Image Alt'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: created
+          exposed: false
+          granularity: second
+      arguments: {  }
       filters:
         combine:
           id: combine
@@ -705,9 +714,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: media
-          entity_field: name
-          plugin_id: string
+          plugin_id: combine
           operator: contains
           value: ''
           group: 1
@@ -753,7 +760,6 @@ display:
             name: name
             su_gallery_image: su_gallery_image
             field_media_image: field_media_image
-          plugin_id: combine
         bundle:
           id: bundle
           table: media_field_data
@@ -927,9 +933,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
         su_media_category_target_id:
           id: su_media_category_target_id
           table: media__su_media_category
@@ -937,6 +940,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: taxonomy_index_tid
           operator: or
           value: {  }
           group: 1
@@ -979,36 +983,92 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: shs
-          limit: true
           vid: media
+          type: shs
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: taxonomy_index_tid
-      sorts:
-        created:
-          id: created
-          table: media_field_data
-          field: created
-          order: DESC
-          entity_type: media
-          entity_field: created
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-      title: Media
-      header: {  }
-      footer: {  }
-      display_extenders: {  }
       filter_groups:
         operator: AND
         groups:
           1: AND
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            name: name
+            bundle: bundle
+            changed: changed
+            uid: uid
+            status: status
+            thumbnail__target_id: thumbnail__target_id
+          default: changed
+          info:
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            bundle:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            changed:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            uid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            thumbnail__target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: true
+          caption: ''
+          description: ''
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: 0
       contexts:

@@ -24,18 +24,15 @@ layout:
           provider: layout_builder
           context_mapping:
             entity: layout_builder.entity
+            view_mode: view_mode
           formatter:
-            label: hidden
             type: layout_paragraphs
+            label: hidden
             settings:
               view_mode: default
             third_party_settings:
               field_formatter_class:
                 class: ''
-          context_mapping:
-            entity: layout_builder.entity
-            view_mode: view_mode
-        additional: {  }
         weight: 0
         additional: {  }
     third_party_settings: {  }
@@ -84,17 +81,13 @@ layout:
             entity: layout_builder.entity
             view_mode: view_mode
           formatter:
-            label: hidden
             type: layout_paragraphs
+            label: hidden
             settings:
               view_mode: default
             third_party_settings:
               field_formatter_class:
                 class: ''
-          context_mapping:
-            entity: layout_builder.entity
-            view_mode: view_mode
-        additional: {  }
         weight: -6
         additional: {  }
       dae81a37-1839-4bc3-86fc-3e4f7fda4183:

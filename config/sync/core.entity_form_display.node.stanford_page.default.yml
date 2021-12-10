@@ -115,12 +115,13 @@ content:
     third_party_settings: {  }
   su_page_components:
     type: layout_paragraphs
+    weight: 10
+    region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 1
       empty_message: 'No Content'
-    weight: 10
     third_party_settings: {  }
   su_page_description:
     type: string_textfield
@@ -162,3 +163,4 @@ content:
     third_party_settings: {  }
 hidden:
   layout_builder__layout: true
+  node_edit_link: true

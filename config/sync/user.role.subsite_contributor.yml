@@ -1,7 +1,9 @@
 uuid: e9f478d3-65e2-4435-95d6-f0abd9080a6c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - book
 id: subsite_contributor
 label: 'Subsite Contributor'
 weight: 3

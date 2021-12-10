@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.stanford_limited_html
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
     - media.type.image
     - media.type.video
+    - node.type.caw_careers
+    - node.type.caw_sweetener
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -15,7 +18,12 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_publication
     - taxonomy.vocabulary.basic_page_types
+    - taxonomy.vocabulary.careers_departments
+    - taxonomy.vocabulary.careers_years
+    - taxonomy.vocabulary.caw_sweet_available
+    - taxonomy.vocabulary.caw_sweet_type
     - taxonomy.vocabulary.event_audience
+    - taxonomy.vocabulary.media
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
@@ -23,11 +31,12 @@ dependencies:
   module:
     - content_lock
     - dropzonejs
-    - editoria11y
     - field_permissions
+    - filter
     - media
     - menu_admin_per_menu
     - node
+    - node_edit_link
     - paragraphs
     - path
     - stanford_publication
@@ -36,7 +45,6 @@ dependencies:
     - toolbar
     - ui_patterns_library
     - view_unpublished
-    - views_bulk_edit
 id: site_editor
 label: 'Site Editor'
 weight: -2
@@ -177,7 +185,6 @@ permissions:
   - 'revert stanford_publication revisions'
   - 'send one time edit link'
   - 'update media'
-  - 'use advanced search'
   - 'use text format stanford_limited_html'
   - 'view all media revisions'
   - 'view all revisions'

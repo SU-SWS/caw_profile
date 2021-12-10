@@ -55,9 +55,8 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-            context_mapping: {  }
-          additional: {  }
           weight: 2
+          additional: {  }
         535c57e1-3c85-4315-bd32-3f8277b218d4:
           uuid: 535c57e1-3c85-4315-bd32-3f8277b218d4
           region: main
@@ -70,8 +69,8 @@ variant_settings:
             info: ''
             view_mode: full
             context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
         343a76ca-856e-461b-b36c-021c34293235:
           uuid: 343a76ca-856e-461b-b36c-021c34293235
           region: main
@@ -83,8 +82,6 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-            context_mapping: {  }
-          additional: {  }
           weight: 1
           additional: {  }
       third_party_settings: {  }

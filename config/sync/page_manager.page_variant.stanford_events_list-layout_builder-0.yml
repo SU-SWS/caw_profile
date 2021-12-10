@@ -57,9 +57,8 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-            context_mapping: {  }
-          additional: {  }
           weight: 1
+          additional: {  }
         fd920af1-1c2d-48d7-bf4c-c841d55e374c:
           uuid: fd920af1-1c2d-48d7-bf4c-c841d55e374c
           region: main

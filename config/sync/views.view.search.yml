@@ -94,8 +94,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         rendered_item:
           id: rendered_item
           table: search_api_index_full_site_content
@@ -103,6 +101,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api
           label: ''
           exclude: true
           alter:
@@ -148,7 +147,6 @@ display:
           use_highlighting: true
           multi_type: separator
           multi_separator: ', '
-          plugin_id: search_api
         search_api_excerpt:
           id: search_api_excerpt
           table: search_api_index_full_site_content
@@ -271,6 +269,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -300,7 +299,6 @@ display:
               site_builder: '0'
               site_developer: '0'
               layout_builder_user: '0'
-            placeholder: 'Search This Site'
             expose_fields: false
             placeholder: 'Search This Site'
             searched_fields_id: search_api_fulltext_searched_fields

@@ -9,11 +9,14 @@ dependencies:
     - core.entity_view_display.node.stanford_page.default
     - core.entity_view_display.node.stanford_person.default
     - core.entity_view_display.node.stanford_publication.default
+    - filter.format.stanford_limited_html
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
     - media.type.image
     - media.type.video
+    - node.type.caw_careers
+    - node.type.caw_sweetener
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -21,7 +24,12 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_publication
     - taxonomy.vocabulary.basic_page_types
+    - taxonomy.vocabulary.careers_departments
+    - taxonomy.vocabulary.careers_years
+    - taxonomy.vocabulary.caw_sweet_available
+    - taxonomy.vocabulary.caw_sweet_type
     - taxonomy.vocabulary.event_audience
+    - taxonomy.vocabulary.media
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
@@ -30,6 +38,8 @@ dependencies:
     - block
     - block_content
     - block_content_permissions
+    - book
+    - caw_profile
     - config_pages
     - content_lock
     - crop
@@ -41,12 +51,14 @@ dependencies:
     - field_permissions
     - field_ui
     - file
+    - filter
     - image
     - layout_builder
     - media
     - menu_admin_per_menu
     - metatag
     - node
+    - node_edit_link
     - page_manager
     - paragraphs
     - path
@@ -56,14 +68,12 @@ dependencies:
     - role_delegation
     - shortcut
     - stanford_media
-    - stanford_profile
     - stanford_publication
     - system
     - taxonomy
     - toolbar
     - ui_patterns_library
     - view_unpublished
-    - views_bulk_edit
     - views_ui
 id: site_builder
 label: 'Site Builder'
@@ -302,7 +312,6 @@ permissions:
   - 'update any media'
   - 'update any stanford_component_block block content'
   - 'update media'
-  - 'use advanced search'
   - 'use text format stanford_limited_html'
   - 'view all media revisions'
   - 'view all revisions'

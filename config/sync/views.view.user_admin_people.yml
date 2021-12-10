@@ -5,6 +5,7 @@ dependencies:
   module:
     - role_delegation
     - user
+    - views_autocomplete_filters
 id: user_admin_people
 label: Users
 module: user

@@ -121,17 +121,13 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                label: hidden
                 type: layout_paragraphs
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -9
             additional: {  }
           c40ac234-fff7-4c9d-8a34-03fb9d335617:
@@ -144,14 +140,16 @@ third_party_settings:
               provider: jumpstart_ui
               context_mapping: {  }
             weight: -10
+            additional: {  }
           21f2f599-071a-4bc0-bcd7-2434b5be05cd:
             uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
             region: left
             configuration:
               id: subsite_menu_block
               label: 'Subsite Menu block'
-              provider: caw_profile_helper
               label_display: '0'
+              provider: caw_profile_helper
+              context_mapping: {  }
               block_mode: 'book pages'
               follow: null
               follow_parent: null
@@ -163,9 +161,8 @@ third_party_settings:
               suggestion: null
               label_type: null
               label_link: null
-              context_mapping: {  }
-            additional: {  }
             weight: 2
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true

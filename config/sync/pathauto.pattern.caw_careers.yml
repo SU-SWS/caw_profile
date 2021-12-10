@@ -11,12 +11,12 @@ pattern: '/career-celebrations/[node:title]'
 selection_criteria:
   241bb606-36d7-4855-a9bf-05d01d81837a:
     id: node_type
-    bundles:
-      caw_careers: caw_careers
     negate: false
+    uuid: 241bb606-36d7-4855-a9bf-05d01d81837a
     context_mapping:
       node: node
-    uuid: 241bb606-36d7-4855-a9bf-05d01d81837a
+    bundles:
+      caw_careers: caw_careers
 selection_logic: and
 weight: -5
 relationships: {  }

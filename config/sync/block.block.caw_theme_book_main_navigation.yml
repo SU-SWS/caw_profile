@@ -15,7 +15,7 @@ plugin: book_navigation
 settings:
   id: book_navigation
   label: 'Book navigation'
-  provider: book
   label_display: '0'
+  provider: book
   block_mode: 'book pages'
 visibility: {  }

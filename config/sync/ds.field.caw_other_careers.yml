@@ -1,11 +1,11 @@
 id: caw_other_careers
 label: 'Other Career Celebrations'
 ui_limit: caw_careers|default
-properties:
-  block: 'views_block:caw_careers-other_celebrations'
-  use_block_title: false
-  add_block_wrappers: false
 type: block
 type_label: 'Block field'
 entities:
   node: node
+properties:
+  block: 'views_block:caw_careers-other_celebrations'
+  use_block_title: false
+  add_block_wrappers: false

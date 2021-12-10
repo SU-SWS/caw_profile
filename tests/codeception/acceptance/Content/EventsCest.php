@@ -252,7 +252,7 @@ class EventsCest {
 
     $I->assertNotEquals($cloned_date_time, $original_date_time);
     $diff = $cloned_date_time - $original_date_time;
-    $I->assertGreaterThanOrEqual(1, (int) round($diff / (60 * 60 * 24 * 30.5)) / 3);
+    $I->assertEquals(6, round($diff / (60 * 60 * 24 * 30.5)));
   }
 
   /**

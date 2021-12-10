@@ -25,13 +25,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 1
     target_bundles:
       stanford_entity: stanford_entity
       stanford_lists: stanford_lists
       stanford_person_cta: stanford_person_cta
       stanford_schedule: stanford_schedule
       stanford_spacer: stanford_spacer
+    negate: 1
     target_bundles_drag_drop:
       stanford_banner:
         weight: 11
@@ -40,26 +40,26 @@ settings:
         weight: 12
         enabled: false
       stanford_entity:
-        enabled: true
         weight: 13
+        enabled: true
       stanford_gallery:
         weight: 14
         enabled: false
       stanford_lists:
-        enabled: true
         weight: 15
+        enabled: true
       stanford_media_caption:
         weight: 16
         enabled: false
       stanford_person_cta:
-        enabled: true
         weight: 17
+        enabled: true
       stanford_schedule:
-        enabled: true
         weight: 18
-      stanford_spacer:
         enabled: true
+      stanford_spacer:
         weight: 19
+        enabled: true
       stanford_wysiwyg:
         weight: 20
         enabled: false

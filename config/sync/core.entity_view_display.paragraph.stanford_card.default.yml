@@ -67,15 +67,17 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: card_headline
   su_card_icon:
-    weight: 5
+    type: fontawesome_icon_formatter
     label: hidden
     settings:
       layers: false
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: fontawesome_icon_formatter
+    weight: 5
     region: card_image
   su_card_link:
     type: link

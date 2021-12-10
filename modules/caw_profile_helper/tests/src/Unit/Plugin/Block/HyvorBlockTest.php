@@ -6,6 +6,7 @@ use Drupal\caw_profile_helper\Plugin\Block\HyvorBlock;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\UrlGenerator;
 use Drupal\Core\Session\AccountInterface;
@@ -36,12 +37,15 @@ class HyvorBlockTest extends UnitTestCase {
     $route_match = $this->createMock(RouteMatchInterface::class);
     $route_match->method('getRawParameters')->willReturn(new ParameterBag());
     $url_generator = $this->createMock(UrlGenerator::class);
+    $module_handler = $this->createMock(ModuleHandlerInterface::class);
+    $module_handler->method('moduleExists')->willReturn(TRUE);
 
     $container = new ContainerBuilder();
     $container->set('current_user', $account);
     $container->set('entity_type.manager', $entity_type_manager);
     $container->set('current_route_match', $route_match);
     $container->set('url_generator', $url_generator);
+    $container->set('module_handler', $module_handler);
 
     $block = HyvorBlock::create($container, [], '', ['provider' => 'caw_profile_helper']);
     $this->assertEmpty($block->build());

@@ -113,17 +113,17 @@ third_party_settings:
         - group_medical
         - group_dental
         - group_vision
+      label: Benefits
+      region: content
       parent_name: ''
       weight: 18
       format_type: tabs
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
         direction: horizontal
         width_breakpoint: 640
-      label: Benefits
     group_medical:
       children:
         - caw_benefits_med_preauth_req
@@ -179,18 +179,18 @@ third_party_settings:
         - caw_benefits_med_immunizations
         - caw_benefits_med_psa
         - caw_benefits_med_well_woman
+      label: Medical
+      region: content
       parent_name: group_benefits
       weight: 22
       format_type: tab
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
-        description: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Medical
     group_dental:
       children:
         - caw_benefits_dent_cleanings
@@ -217,18 +217,18 @@ third_party_settings:
         - caw_benefits_dent_space
         - caw_benefits_dent_splint
         - caw_benefits_dent_tmj
+      label: Dental
+      region: content
       parent_name: group_benefits
       weight: 23
       format_type: tab
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
-        description: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Dental
     group_vision:
       children:
         - caw_benefits_vision_exam
@@ -239,18 +239,18 @@ third_party_settings:
         - caw_benefits_vision_extras
         - caw_benefits_vision_urgent
         - caw_benefits_vision_intl
+      label: Vision
+      region: content
       parent_name: group_benefits
       weight: 24
       format_type: tab
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
-        description: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Vision
     group_common:
       children:
         - body
@@ -261,630 +261,630 @@ third_party_settings:
         - caw_benefits_annual_max
         - caw_benefits_lifetime_max
         - caw_benefits_xray
+      label: Common
+      region: content
       parent_name: group_benefits
       weight: 20
       format_type: tab
-      region: content
       format_settings:
+        classes: ''
         show_empty_fields: false
         id: ''
-        classes: ''
-        description: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Common
 id: node.caw_benefits.default
 targetEntityType: node
 bundle: caw_benefits
 mode: default
 content:
   body:
+    type: text_textarea_with_summary
     weight: 132
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
   caw_benefits_annual_max:
+    type: string_textarea
     weight: 137
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_coinsurance:
+    type: string_textarea
     weight: 136
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_deductible:
+    type: string_textarea
     weight: 135
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_dent_anesthesia:
+    type: string_textarea
     weight: 92
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_bridges:
+    type: string_textarea
     weight: 93
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_cleanings:
+    type: string_textarea
     weight: 86
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_crown:
+    type: string_textarea
     weight: 94
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_denture:
+    type: string_textarea
     weight: 95
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_exam:
+    type: string_textarea
     weight: 88
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_extraction:
+    type: string_textarea
     weight: 96
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_filling:
+    type: string_textarea
     weight: 97
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_flouride:
+    type: string_textarea
     weight: 87
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_gingivectomy:
+    type: string_textarea
     weight: 98
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_gold:
+    type: string_textarea
     weight: 99
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_implant:
+    type: string_textarea
     weight: 100
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_inlay:
+    type: string_textarea
     weight: 101
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_onlay:
+    type: string_textarea
     weight: 102
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_oral_surg:
+    type: string_textarea
     weight: 103
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_ortho:
+    type: string_textarea
     weight: 90
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_perio_surg:
+    type: string_textarea
     weight: 118
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_periodontal_surg:
     weight: 104
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   caw_benefits_dent_retainer:
+    type: string_textarea
     weight: 91
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_root:
+    type: string_textarea
     weight: 120
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_rx:
+    type: string_textarea
     weight: 119
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_sealant:
+    type: string_textarea
     weight: 89
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_space:
+    type: string_textarea
     weight: 121
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_splint:
+    type: string_textarea
     weight: 122
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_dent_tmj:
+    type: string_textarea
     weight: 123
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_fulltime_cost:
+    type: string_textarea
     weight: 133
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_lifetime_max:
+    type: string_textarea
     weight: 138
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_abulance:
+    type: string_textarea
     weight: 28
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_acupuncture:
+    type: string_textarea
     weight: 24
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_adult_physical:
+    type: string_textarea
     weight: 56
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_allergy_test:
+    type: string_textarea
     weight: 25
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_allergy_treat:
+    type: string_textarea
     weight: 26
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_alt_medicine:
+    type: string_textarea
     weight: 27
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_autism:
+    type: string_textarea
     weight: 22
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_baby_exam:
+    type: string_textarea
     weight: 15
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_birth_control:
+    type: string_textarea
     weight: 55
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_birthing:
+    type: string_textarea
     weight: 16
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_care_mgmt:
+    type: string_textarea
     weight: 12
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_child_psycial:
+    type: string_textarea
     weight: 57
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_chiro:
+    type: string_textarea
     weight: 30
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_christian_prac:
+    type: string_textarea
     weight: 31
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_copay:
+    type: string_textarea
     weight: 13
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_cosmetic:
+    type: string_textarea
     weight: 32
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_ct_scan:
+    type: string_textarea
     weight: 29
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_delivery:
+    type: string_textarea
     weight: 19
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_dental:
+    type: string_textarea
     weight: 33
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_durable_equip:
+    type: string_textarea
     weight: 43
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_er:
+    type: string_textarea
     weight: 34
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_hearing:
+    type: string_textarea
     weight: 36
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_home_health:
+    type: string_textarea
     weight: 37
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_hopsital_stay:
+    type: string_textarea
     weight: 39
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_hospice:
+    type: string_textarea
     weight: 38
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_immunizations:
+    type: string_textarea
     weight: 61
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_infertility:
+    type: string_textarea
     weight: 40
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_lab:
+    type: string_textarea
     weight: 41
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_mail_rx:
+    type: string_textarea
     weight: 54
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_mammograms:
+    type: string_textarea
     weight: 59
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_maternity_stay:
+    type: string_textarea
     weight: 14
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_mental_health:
+    type: string_textarea
     weight: 21
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_midwives:
+    type: string_textarea
     weight: 17
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_mri:
+    type: string_textarea
     weight: 42
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_nursing:
+    type: string_textarea
     weight: 48
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_occupational:
+    type: string_textarea
     weight: 44
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_pap_smears:
+    type: string_textarea
     weight: 58
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_pharmacy:
+    type: string_textarea
     weight: 53
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_preauth_req:
+    type: string_textarea
     weight: 11
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_preg_term:
+    type: string_textarea
     weight: 20
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_prenatal:
+    type: string_textarea
     weight: 18
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_psa:
+    type: string_textarea
     weight: 62
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_pt:
+    type: string_textarea
     weight: 47
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_speech:
+    type: string_textarea
     weight: 49
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_substance:
+    type: string_textarea
     weight: 23
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_surgery_facil:
     type: string_textarea
     weight: 60
@@ -895,145 +895,145 @@ content:
     third_party_settings: {  }
   caw_benefits_med_surgery_facility:
     weight: 71
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   caw_benefits_med_surgery_md:
+    type: string_textarea
     weight: 46
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_transpants:
+    type: string_textarea
     weight: 45
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_tubal:
+    type: string_textarea
     weight: 50
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_urgent:
+    type: string_textarea
     weight: 35
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_med_vasectomy:
+    type: string_textarea
     weight: 51
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_vision:
+    type: string_textarea
     weight: 52
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_med_well_woman:
+    type: string_textarea
     weight: 63
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_parttime_cost:
+    type: string_textarea
     weight: 134
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   caw_benefits_vision_contacts:
+    type: string_textarea
     weight: 127
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_exam:
+    type: string_textarea
     weight: 124
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_extras:
+    type: string_textarea
     weight: 129
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_frames:
+    type: string_textarea
     weight: 126
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_intl:
+    type: string_textarea
     weight: 131
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_lenses:
+    type: string_textarea
     weight: 125
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_lowvis:
+    type: string_textarea
     weight: 128
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_vision_urgent:
+    type: string_textarea
     weight: 130
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    region: content
-    type: string_textarea
   caw_benefits_xray:
+    type: string_textarea
     weight: 139
+    region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   created:
     type: datetime_timestamp
     weight: 99
@@ -1048,48 +1048,48 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 99
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 99
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 99
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   su_benefit_type:
+    type: options_select
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   su_benefits_offered:
+    type: options_select
     weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   su_benefits_year:
+    type: datetime_year_only
     weight: 3
+    region: content
     settings:
+      increment: 15
       date_order: YMD
       time_type: none
-      increment: 15
       start: 2020
       end: 2031
     third_party_settings: {  }
-    type: datetime_year_only
-    region: content
   title:
     type: string_textfield
     weight: 0
@@ -1101,16 +1101,17 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 99
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   url_redirects:
     weight: 99
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  node_edit_link: true

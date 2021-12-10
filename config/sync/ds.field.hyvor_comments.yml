@@ -1,11 +1,11 @@
 id: hyvor_comments
 label: 'Hyvor Comments'
 ui_limit: '*|*'
-properties:
-  block: hyvor
-  use_block_title: false
-  add_block_wrappers: false
 type: block
 type_label: 'Block field'
 entities:
   node: node
+properties:
+  block: hyvor
+  use_block_title: false
+  add_block_wrappers: false

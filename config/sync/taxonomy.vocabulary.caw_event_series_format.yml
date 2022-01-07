@@ -1,0 +1,8 @@
+uuid: 83675434-89f5-4c49-a6b6-51b343c1d4aa
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Series Format'
+vid: caw_event_series_format
+description: ''
+weight: 0

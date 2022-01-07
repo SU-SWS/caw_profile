@@ -1,0 +1,8 @@
+uuid: 26f30c25-c958-4b8a-ad89-b3dcab6deb19
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Page Resource Type'
+vid: caw_page_type
+description: ''
+weight: 0

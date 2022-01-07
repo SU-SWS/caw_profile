@@ -1,0 +1,29 @@
+uuid: 48a82c1c-b6c4-4b8c-b52e-f9d8b47037e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_page_resource_type
+    - node.type.stanford_page
+    - taxonomy.vocabulary.caw_page_type
+id: node.stanford_page.caw_page_resource_type
+field_name: caw_page_resource_type
+entity_type: node
+bundle: stanford_page
+label: 'Resource Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      caw_page_type: caw_page_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 2304313c-93fe-48ae-9bda-45f7caef4ac5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.caw_page_resource_role
+field_name: caw_page_resource_role
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

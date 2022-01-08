@@ -1,0 +1,29 @@
+uuid: 0597ef01-b71e-4182-939a-4e31993e1f38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_event_series_format
+    - node.type.stanford_event_series
+    - taxonomy.vocabulary.caw_event_series_format
+id: node.stanford_event_series.caw_event_series_format
+field_name: caw_event_series_format
+entity_type: node
+bundle: stanford_event_series
+label: Format
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      caw_event_series_format: caw_event_series_format
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

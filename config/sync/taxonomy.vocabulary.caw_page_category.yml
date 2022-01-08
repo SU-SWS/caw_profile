@@ -1,0 +1,8 @@
+uuid: 41643336-3d88-4359-8be1-1420efb7c927
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Page Resource Category'
+vid: caw_page_category
+description: ''
+weight: 0

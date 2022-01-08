@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_page.caw_page_resource_category
+    - field.field.node.stanford_page.caw_page_resource_role
+    - field.field.node.stanford_page.caw_page_resource_type
     - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
@@ -26,6 +29,9 @@ third_party_settings:
         - su_page_image
         - su_page_description
         - su_basic_page_type
+        - caw_page_resource_type
+        - caw_page_resource_category
+        - caw_page_resource_role
       label: 'Page Metadata'
       region: content
       parent_name: ''
@@ -43,6 +49,24 @@ targetEntityType: node
 bundle: stanford_page
 mode: default
 content:
+  caw_page_resource_category:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  caw_page_resource_role:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  caw_page_resource_type:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 2

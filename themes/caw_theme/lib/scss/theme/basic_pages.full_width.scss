@@ -5,9 +5,15 @@
   .ptype-stanford-lists {
     &.caw-benefits,
     &.caw-sweeteners,
-    &.caw-careers {
+    &.caw-careers,
+    &.caw-basic-pages,
+    &.caw-event-series {
       max-width: 100%;
       width: 100%;
+
+      .views-row {
+        @include centered-column;
+      }
     }
   }
 

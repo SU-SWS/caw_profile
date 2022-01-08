@@ -3,6 +3,11 @@ base:
     component:
       dist/css/base.css: { }
 
+views:
+  css:
+    component:
+      dist/css/caw_views.css: { }
+
 basic_pages.full_width:
   css:
     theme:

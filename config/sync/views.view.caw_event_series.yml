@@ -442,7 +442,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2>Sorry, no event series content available.</h2>'
+            value: '<div class="centered-container"><p>No results available for your search. Please try again.</p></div>'
             format: stanford_html
           tokenize: false
       sorts:

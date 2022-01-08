@@ -414,7 +414,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<p>No results available for your search. Please try again.</p>'
+            value: '<div class="centered-container"><p>No results available for your search. Please try again.</p></div>'
             format: stanford_html
           tokenize: false
       sorts:

@@ -26,6 +26,11 @@ dependencies:
     - taxonomy.vocabulary.basic_page_types
     - taxonomy.vocabulary.careers_departments
     - taxonomy.vocabulary.careers_years
+    - taxonomy.vocabulary.caw_event_series_competencies
+    - taxonomy.vocabulary.caw_event_series_format
+    - taxonomy.vocabulary.caw_page_category
+    - taxonomy.vocabulary.caw_page_role
+    - taxonomy.vocabulary.caw_page_type
     - taxonomy.vocabulary.caw_sweet_available
     - taxonomy.vocabulary.caw_sweet_type
     - taxonomy.vocabulary.event_audience
@@ -185,6 +190,11 @@ permissions:
   - 'create terms in basic_page_types'
   - 'create terms in careers_departments'
   - 'create terms in careers_years'
+  - 'create terms in caw_event_series_competencies'
+  - 'create terms in caw_event_series_format'
+  - 'create terms in caw_page_category'
+  - 'create terms in caw_page_role'
+  - 'create terms in caw_page_type'
   - 'create terms in caw_sweet_available'
   - 'create terms in caw_sweet_type'
   - 'create terms in event_audience'
@@ -238,6 +248,11 @@ permissions:
   - 'delete terms in basic_page_types'
   - 'delete terms in careers_departments'
   - 'delete terms in careers_years'
+  - 'delete terms in caw_event_series_competencies'
+  - 'delete terms in caw_event_series_format'
+  - 'delete terms in caw_page_category'
+  - 'delete terms in caw_page_role'
+  - 'delete terms in caw_page_type'
   - 'delete terms in caw_sweet_available'
   - 'delete terms in caw_sweet_type'
   - 'delete terms in event_audience'
@@ -288,6 +303,11 @@ permissions:
   - 'edit terms in basic_page_types'
   - 'edit terms in careers_departments'
   - 'edit terms in careers_years'
+  - 'edit terms in caw_event_series_competencies'
+  - 'edit terms in caw_event_series_format'
+  - 'edit terms in caw_page_category'
+  - 'edit terms in caw_page_role'
+  - 'edit terms in caw_page_type'
   - 'edit terms in caw_sweet_available'
   - 'edit terms in caw_sweet_type'
   - 'edit terms in event_audience'

@@ -6,7 +6,7 @@ id: stanford_events_past
 label: 'Events - Past'
 description: 'Past events'
 use_admin_theme: false
-path: /events/past
+path: /engage/events/past
 access_logic: and
 access_conditions: {  }
 parameters: {  }

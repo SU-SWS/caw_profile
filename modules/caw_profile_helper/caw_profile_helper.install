@@ -261,3 +261,39 @@ function caw_profile_helper_delete_subtree(array $subtree) {
     $element->link->deleteLink();
   }
 }
+
+/**
+ * Re-save events and news items to reset the paths.
+ */
+function caw_profile_helper_update_9006(&$sandbox) {
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  if (empty($sandbox)) {
+    $sandbox['todo'] = $node_storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', 'stanford_event')
+      ->execute();
+    $news_ids = $node_storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', 'stanford_news')
+      ->execute();
+    $sandbox['todo'] = array_merge($sandbox['todo'], $news_ids);
+    $sandbox['total'] = count($sandbox['todo']);
+    $sandbox['#finished'] = 0;
+  }
+
+  $node_ids = array_splice($sandbox['todo'], 0, 20);
+  foreach ($node_storage->loadMultiple($node_ids) as $node) {
+    $node->save();
+  }
+  $sandbox['#finished'] = 1 - (count($sandbox['todo']) / $sandbox['total']);
+}
+
+/**
+ * Delete all existing redirects.
+ */
+function caw_profile_helper_update_9007() {
+  $storage = \Drupal::entityTypeManager()->getStorage('redirect');
+  foreach ($storage->loadMultiple() as $entity) {
+    $entity->delete();
+  }
+}

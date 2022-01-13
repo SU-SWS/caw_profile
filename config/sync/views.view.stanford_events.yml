@@ -650,13 +650,13 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          contextual_filters_or: false
           query_tags: {  }
+          contextual_filters_or: false
       relationships: {  }
       css_class: stanford-events-list-page
       use_ajax: true
       link_display: custom_url
-      link_url: /events
+      link_url: /engage/events
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -4556,7 +4556,7 @@ display:
       use_more_always: true
       use_more_text: 'All Upcoming Events'
       link_display: custom_url
-      link_url: /events
+      link_url: /engage/events
       display_extenders: {  }
       block_category: 'Events Lists (Views)'
       block_hide_empty: true
@@ -6299,7 +6299,7 @@ display:
             format: stanford_html
           plugin_id: text
       link_display: custom_url
-      link_url: /events/past
+      link_url: /engage/events/past
     cache_metadata:
       max-age: -1
       contexts:

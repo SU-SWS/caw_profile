@@ -13,7 +13,7 @@ class EventsCest {
   public function testListIntro(AcceptanceTester $I) {
     $intro_text = Factory::create()->text();
     $I->logInWithRole('site_manager');
-    $I->amOnPage('/events');
+    $I->amOnPage('/engage/events');
     $I->click('Edit Block Content Above');
     $I->click('Add Text Area');
     $I->fillField('Body', $intro_text);
@@ -49,7 +49,7 @@ class EventsCest {
     if (is_string($values)) {
       $values = explode("\n", $values);
     }
-    $I->assertContains("/events*", $values);
+    $I->assertContains("/engage/events*", $values);
   }
 
   /**

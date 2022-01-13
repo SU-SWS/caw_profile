@@ -43,9 +43,9 @@ source:
       label: Progress
       selector: Progress
     -
-      name: 'Duration'
-      label: 'Duration'
-      selector: 'Duration'
+      name: Duration
+      label: Duration
+      selector: Duration
     -
       name: Finished
       label: Finished

@@ -270,13 +270,8 @@ function caw_profile_helper_update_9006(&$sandbox) {
   if (empty($sandbox)) {
     $sandbox['todo'] = $node_storage->getQuery()
       ->accessCheck(FALSE)
-      ->condition('type', 'stanford_event')
+      ->condition('type', ['stanford_event', 'stanford_news'], 'IN')
       ->execute();
-    $news_ids = $node_storage->getQuery()
-      ->accessCheck(FALSE)
-      ->condition('type', 'stanford_news')
-      ->execute();
-    $sandbox['todo'] = array_merge($sandbox['todo'], $news_ids);
     $sandbox['total'] = count($sandbox['todo']);
     $sandbox['#finished'] = 0;
   }
@@ -289,9 +284,23 @@ function caw_profile_helper_update_9006(&$sandbox) {
 }
 
 /**
- * Delete all existing redirects.
+ * Re-save all taxonomy terms for news and events.
  */
 function caw_profile_helper_update_9007() {
+  $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $tids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('vid', ['stanford_event_types', 'stanford_news_topics'], 'IN')
+    ->execute();
+  foreach ($storage->loadMultiple($tids) as $term) {
+    $term->save();
+  }
+}
+
+/**
+ * Delete all existing redirects.
+ */
+function caw_profile_helper_update_9008() {
   $storage = \Drupal::entityTypeManager()->getStorage('redirect');
   foreach ($storage->loadMultiple() as $entity) {
     $entity->delete();

@@ -1,0 +1,8 @@
+uuid: 6389dfd1-fd36-46fa-b2e3-a3086793f10f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Category'
+vid: caw_event_category
+description: ''
+weight: 0

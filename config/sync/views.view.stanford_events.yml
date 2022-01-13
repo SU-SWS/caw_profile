@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.su_event_subheadline
     - field.storage.node.su_event_type
     - node.type.stanford_event
+    - taxonomy.vocabulary.caw_event_category
     - taxonomy.vocabulary.stanford_event_types
   module:
     - address
@@ -514,7 +515,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -2117,6 +2118,8 @@ display:
         style: false
         row: false
         arguments: false
+        filters: false
+        filter_groups: false
       style:
         type: default
         options:
@@ -2315,6 +2318,139 @@ display:
           use_taxonomy_term_path: false
           entity_type: node
           plugin_id: taxonomy_index_name_depth
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            stanford_event: stanford_event
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        su_event_date_time_end_value:
+          id: su_event_date_time_end_value
+          table: node__su_event_date_time
+          field: su_event_date_time_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        caw_event_category_target_id:
+          id: caw_event_category_target_id
+          table: node__caw_event_category
+          field: caw_event_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: '1'
+          exposed: true
+          expose:
+            operator_id: caw_event_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: 0
+            operator: caw_event_category_target_id_op
+            operator_limit_selection: 0
+            operator_list: {  }
+            identifier: category
+            required: 0
+            remember: 0
+            multiple: 1
+            remember_roles:
+              authenticated: authenticated
+              administrator: 0
+              anonymous: 0
+              stanford_faculty: 0
+              stanford_staff: 0
+              stanford_student: 0
+              contributor: 0
+              site_manager: 0
+              site_editor: 0
+              site_builder: 0
+              site_developer: 0
+              layout_builder_user: 0
+              caw_reviewer: 0
+              subsite_contributor: 0
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: caw_event_category
+          hierarchy: 0
+          error_message: 1
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -2322,6 +2458,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -3652,6 +3789,139 @@ display:
           add_table: false
           require_value: false
           reduce_duplicates: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            stanford_event: stanford_event
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        su_event_date_time_end_value:
+          id: su_event_date_time_end_value
+          table: node__su_event_date_time
+          field: su_event_date_time_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        caw_event_category_target_id:
+          id: caw_event_category_target_id
+          table: node__caw_event_category
+          field: caw_event_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: caw_event_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: caw_event_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: category
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+              layout_builder_user: '0'
+              caw_reviewer: '0'
+              subsite_contributor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: caw_event_category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -3814,6 +4084,8 @@ display:
         row: false
         fields: false
         arguments: false
+        filters: false
+        filter_groups: false
       display_description: 'List - All Items'
       display_extenders: {  }
       block_description: 'List Page'
@@ -3826,6 +4098,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

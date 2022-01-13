@@ -4,10 +4,6 @@
 @import 'decanter/core/src/scss/decanter-no-markup';
 
 .view {
-  .exposed-filters,
-  header {
-    background: $su-color-foggy-light;
-  }
 
   header {
 
@@ -22,6 +18,7 @@
 
   .exposed-filters {
     @include responsive-spacing('margin', null null 5 null);
+    background: $su-color-foggy-light;
   }
 
   form {

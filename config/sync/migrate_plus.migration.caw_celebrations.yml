@@ -1,17 +1,17 @@
-uuid: 03042d23-1088-42b7-8f4f-1395dbfbb74a
+uuid: de0441fd-18cc-4baa-852b-3e2e69f0003d
 langcode: en
 status: true
 dependencies:
   module:
     - migrate_source_csv
     - stanford_migrate
-id: caw_careers
+id: caw_celebrations
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: {  }
 migration_group: default
-label: 'Career Celebrations Importer'
+label: 'Career Celebrations'
 source:
   plugin: csv
   path: /tmp/foo.csv
@@ -20,23 +20,22 @@ source:
   constants:
     status: 1
     basic_html: stanford_html
-    minimal_html: stanford_minimal_html
   fields:
     -
       name: StartDate
-      label: 'Start Date'
+      label: StartDate
       selector: StartDate
     -
       name: EndDate
-      label: 'End Date'
+      label: EndDate
       selector: EndDate
     -
       name: Status
-      label: 'Response Type'
+      label: Status
       selector: Status
     -
       name: IPAddress
-      label: 'IP Address'
+      label: IPAddress
       selector: IPAddress
     -
       name: Progress
@@ -52,43 +51,43 @@ source:
       selector: Finished
     -
       name: RecordedDate
-      label: 'Recorded Date'
+      label: RecordedDate
       selector: RecordedDate
     -
       name: ResponseId
-      label: 'Response ID'
+      label: ResponseId
       selector: ResponseId
     -
       name: RecipientLastName
-      label: 'Recipient Last Name'
+      label: RecipientLastName
       selector: RecipientLastName
     -
       name: RecipientFirstName
-      label: 'Recipient First Name'
+      label: RecipientFirstName
       selector: RecipientFirstName
     -
       name: RecipientEmail
-      label: 'Recipient Email'
+      label: RecipientEmail
       selector: RecipientEmail
     -
       name: ExternalReference
-      label: 'External Data Reference'
+      label: ExternalReference
       selector: ExternalReference
     -
       name: LocationLatitude
-      label: 'Location Latitude'
+      label: LocationLatitude
       selector: LocationLatitude
     -
       name: LocationLongitude
-      label: 'Location Longitude'
+      label: LocationLongitude
       selector: LocationLongitude
     -
       name: DistributionChannel
-      label: 'Distribution Channel'
+      label: DistributionChannel
       selector: DistributionChannel
     -
       name: UserLanguage
-      label: 'User Language'
+      label: UserLanguage
       selector: UserLanguage
     -
       name: Q3_21
@@ -173,16 +172,15 @@ process:
     source: ResponseId
   status:
     plugin: default_value
-    source: published
-    default_value: 1
-  su_careers_fname: Q3_21
-  su_careers_lname: Q3_22
+    default_value: 0
   title:
     plugin: concat
     source:
       - Q3_21
       - Q3_22
     delimiter: ' '
+  su_careers_fname: Q3_21
+  su_careers_lname: Q3_22
   su_careers_honored:
     -
       plugin: callback
@@ -191,12 +189,11 @@ process:
       plugin: format_date
       from_format: U
       to_format: 'Y'
-  su_careers_job: job
   su_careers_department:
     -
       plugin: skip_on_empty
-      method: process
       source: Q59
+      method: process
     -
       plugin: entity_generate
       entity_type: taxonomy_term

@@ -19,7 +19,7 @@ default:
       value: main
   link:
     -
-      uri: 'internal:/news'
+      uri: 'internal:/engage/news'
       title: ''
       options: {  }
   external:

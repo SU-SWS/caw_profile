@@ -5,6 +5,10 @@
 
 .view {
   &.caw-careers {
+    header {
+      background: $su-color-foggy-light;
+    }
+
     h2 {
       a {
         color: $su-color-black;

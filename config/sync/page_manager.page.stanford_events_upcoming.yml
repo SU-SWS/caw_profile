@@ -6,7 +6,7 @@ id: stanford_events_upcoming
 label: 'Upcoming Events'
 description: 'For lists of upcoming event content. '
 use_admin_theme: false
-path: /events
+path: /engage/events
 access_logic: and
 access_conditions: {  }
 parameters: {  }

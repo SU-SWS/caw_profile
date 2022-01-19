@@ -97,10 +97,12 @@
           $list.children('li').each((j, item) => {
             const $item = $(item);
             const $title = $('h3', $item).uniqueId()
+            const $label = $('<span>', {class: 'label', text: 'Compare'});
+            $label.uniqueId();
 
             const $checkbox = $('<input>')
               .attr('type', 'checkbox')
-              .attr('aria-labelledby', $title.attr('id'))
+              .attr('aria-labelledby', $label.attr('id') + ' ' +  $title.attr('id'))
               .attr('value', $item.attr('data-nid'))
               .on('change', () => {
                 $item.toggleClass('selected', $checkbox.is(':checked'));
@@ -133,7 +135,7 @@
             const $selectElement = $('<div>')
               .addClass('compare-selector')
               .addClass('clearfix')
-              .append($('<label>').html('<span class="label">Compare</span>').append($checkbox));
+              .append($('<label>').append($label).append($checkbox));
             $item.prepend($selectElement);
           })
 
@@ -147,9 +149,26 @@
         const colspan = $(tableCell).closest('tr').find('td, th').length;
         const $groupHeader = $('<th>', {
           colspan: colspan,
-          text: headerText
+          text: headerText,
+          scope: 'colgroup'
         });
+        $groupHeader.uniqueId();
         $(tableCell).closest('tr').addClass('group-header').empty().append($groupHeader);
+      })
+
+      $('table', context).once('header-ids').each((i, table) => {
+        const $topHeaders = $('thead th', table)
+        $topHeaders.uniqueId();
+        $('tbody td', table).each((j, tableCell) => {
+          const $tableCell = $(tableCell);
+          const position = $(tableCell).prevAll().length;
+          $tableCell.attr('headers', $tableCell.attr('headers') + ' ' + $($topHeaders[position]).attr('id'));
+        })
+
+        $('tr.group-header', table).each((j, headerRow) => {
+          const $cell = $(headerRow).nextUntil('.group-header').find('td');
+          $cell.attr('headers', $cell.attr('headers') + ' ' + $(headerRow).find('th').attr('id'));
+        });
       })
 
       // Uncheck all options if the users hits the back button or refreshes.

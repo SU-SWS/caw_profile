@@ -190,6 +190,23 @@
         margin: auto 0 5px;
       }
     }
+
+    .selected-items li {
+      display: inline;
+      margin-right: 5px;
+      background: none;
+      border: 0;
+      border-radius: 0;
+
+      &:after {
+        content: ',';
+        display: inline-block;
+      }
+
+      &:last-child:after {
+        content: '';
+      }
+    }
   }
 
   .header-info-wrap {

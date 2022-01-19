@@ -80,7 +80,7 @@
             const $available = $(`option[value="${$availableSelect.val()}"]`, $availableSelect).text();
             const $type = $('h2', $list.closest('.rows')).text() + ' ' + Drupal.t('Plans');
 
-            $headerSummary.html(`${$available}, ${$type}:` +'<br/>' + $summary.text());
+            $headerSummary.html(`${$available}, ${$type}:` +'<br/>' + $summary.html());
 
             $('.attachment-before', $view).addClass('header-info-wrap');
 
@@ -108,9 +108,13 @@
                 $item.toggleClass('selected', $checkbox.is(':checked'));
                 $checkbox.parent().find('.label').text($checkbox.is(':checked') ? 'Selected' : 'Compare')
 
-                const selectedItems = $.map($('input:checked', $list), () => $('h3', $item).text())
+                const selectedItems = $.map($('input:checked', $list), a => $('h3', $(a).closest('li')).text())
                 $info.find('.num-selected').text(selectedItems.length);
-                $summary.text(selectedItems.join(', '));
+
+                const $ul = $('<ul>', { class: 'selected-items su-list-unstyled' }).append(
+                  selectedItems.map(item => $("<li>").text(item))
+                );
+                $summary.html($ul);
 
                 $submit.attr('disabled', null);
 

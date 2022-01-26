@@ -35,6 +35,7 @@ variant_settings:
             wrapper: h1
           weight: 0
           additional: {  }
+          third_party_settings: {  }
       third_party_settings: {  }
     -
       layout_id: jumpstart_ui_two_column
@@ -57,6 +58,7 @@ variant_settings:
             items_per_page: none
           weight: 3
           additional: {  }
+          third_party_settings: {  }
         535c57e1-3c85-4315-bd32-3f8277b218d4:
           uuid: 535c57e1-3c85-4315-bd32-3f8277b218d4
           region: main
@@ -71,6 +73,7 @@ variant_settings:
             context_mapping: {  }
           weight: 1
           additional: {  }
+          third_party_settings: {  }
         343a76ca-856e-461b-b36c-021c34293235:
           uuid: 343a76ca-856e-461b-b36c-021c34293235
           region: main
@@ -84,6 +87,7 @@ variant_settings:
             items_per_page: none
           weight: 2
           additional: {  }
+          third_party_settings: {  }
         a56e9016-bc81-4177-b000-87ad578b644f:
           uuid: a56e9016-bc81-4177-b000-87ad578b644f
           region: main
@@ -95,6 +99,7 @@ variant_settings:
             context_mapping: {  }
           weight: 0
           additional: {  }
+          third_party_settings: {  }
         53506498-1526-4cfd-8bf2-2d84357535dd:
           uuid: 53506498-1526-4cfd-8bf2-2d84357535dd
           region: left
@@ -109,6 +114,7 @@ variant_settings:
             expand_all_items: false
           weight: 1
           additional: {  }
+          third_party_settings: {  }
       third_party_settings: {  }
 page: stanford_events_upcoming
 selection_criteria: {  }

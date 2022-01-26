@@ -96,6 +96,7 @@ permissions:
   - 'update media'
   - 'use text format stanford_limited_html'
   - 'view all revisions'
+  - 'view any unpublished caw_benefits content'
   - 'view any unpublished caw_careers content'
   - 'view any unpublished caw_sweetener content'
   - 'view any unpublished stanford_event content'

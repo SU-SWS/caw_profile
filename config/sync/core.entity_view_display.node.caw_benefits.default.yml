@@ -144,6 +144,7 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -180,6 +181,7 @@ third_party_settings:
                     class: ''
             weight: 10
             additional: {  }
+            third_party_settings: {  }
           3c730a1e-c814-4918-a8d4-b5d98d33da08:
             uuid: 3c730a1e-c814-4918-a8d4-b5d98d33da08
             region: main
@@ -206,6 +208,7 @@ third_party_settings:
                     class: ''
             weight: 9
             additional: {  }
+            third_party_settings: {  }
           340d847f-2b67-4bdd-8ef3-2303c2f414f5:
             uuid: 340d847f-2b67-4bdd-8ef3-2303c2f414f5
             region: main
@@ -232,6 +235,7 @@ third_party_settings:
                     class: ''
             weight: 6
             additional: {  }
+            third_party_settings: {  }
           7ee4a153-b9b3-4821-b181-eb43c7034617:
             uuid: 7ee4a153-b9b3-4821-b181-eb43c7034617
             region: main
@@ -258,6 +262,7 @@ third_party_settings:
                     class: ''
             weight: 8
             additional: {  }
+            third_party_settings: {  }
           183904c8-38c8-4e07-98dd-c51ee7c9ab0a:
             uuid: 183904c8-38c8-4e07-98dd-c51ee7c9ab0a
             region: main
@@ -284,6 +289,7 @@ third_party_settings:
                     class: ''
             weight: 11
             additional: {  }
+            third_party_settings: {  }
           b2e612e2-f2e2-4ef7-9695-1c596f526aca:
             uuid: b2e612e2-f2e2-4ef7-9695-1c596f526aca
             region: main
@@ -310,6 +316,7 @@ third_party_settings:
                     class: ''
             weight: 12
             additional: {  }
+            third_party_settings: {  }
           f985690d-3c13-4327-9703-c5c8e3fc5f80:
             uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
             region: main
@@ -330,6 +337,7 @@ third_party_settings:
                     class: caw-benefits-basics
             weight: 13
             additional: {  }
+            third_party_settings: {  }
           1d197a64-275c-42ab-9936-9e336b4b0818:
             uuid: 1d197a64-275c-42ab-9936-9e336b4b0818
             region: main
@@ -352,6 +360,7 @@ third_party_settings:
                     class: caw-benefits-basics
             weight: 5
             additional: {  }
+            third_party_settings: {  }
           624a925c-ea58-4874-97d9-be05c7399dca:
             uuid: 624a925c-ea58-4874-97d9-be05c7399dca
             region: main
@@ -372,6 +381,7 @@ third_party_settings:
                     class: caw-benefits-basics
             weight: 7
             additional: {  }
+            third_party_settings: {  }
           b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0:
             uuid: b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0
             region: main
@@ -398,6 +408,7 @@ third_party_settings:
                     class: ''
             weight: 14
             additional: {  }
+            third_party_settings: {  }
           b40c3957-ccf8-451a-9aa6-7876a8741ca2:
             uuid: b40c3957-ccf8-451a-9aa6-7876a8741ca2
             region: main
@@ -424,6 +435,7 @@ third_party_settings:
                     class: ''
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           dad17f20-b41b-46d4-b6a7-0a1d5cf68c97:
             uuid: dad17f20-b41b-46d4-b6a7-0a1d5cf68c97
             region: main
@@ -434,6 +446,7 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           f1e7d387-89f7-4ffd-8d37-b58292c66381:
             uuid: f1e7d387-89f7-4ffd-8d37-b58292c66381
             region: main
@@ -460,6 +473,7 @@ third_party_settings:
                     class: ''
             weight: 2
             additional: {  }
+            third_party_settings: {  }
           73ebf651-a547-4d9e-aadc-643864b67366:
             uuid: 73ebf651-a547-4d9e-aadc-643864b67366
             region: main
@@ -486,6 +500,7 @@ third_party_settings:
                     class: ''
             weight: 3
             additional: {  }
+            third_party_settings: {  }
           1b44c392-24a1-4022-aec3-478a54adfa01:
             uuid: 1b44c392-24a1-4022-aec3-478a54adfa01
             region: main
@@ -499,6 +514,7 @@ third_party_settings:
               format: stanford_html
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -535,6 +551,7 @@ third_party_settings:
                     class: ''
             weight: 28
             additional: {  }
+            third_party_settings: {  }
           9e71cab9-de36-4426-b6e9-19f78c02a1ec:
             uuid: 9e71cab9-de36-4426-b6e9-19f78c02a1ec
             region: main
@@ -561,6 +578,7 @@ third_party_settings:
                     class: ''
             weight: 6
             additional: {  }
+            third_party_settings: {  }
           7b296bc7-0f24-462d-a638-00064453f3b4:
             uuid: 7b296bc7-0f24-462d-a638-00064453f3b4
             region: main
@@ -587,6 +605,7 @@ third_party_settings:
                     class: ''
             weight: 7
             additional: {  }
+            third_party_settings: {  }
           f53f84e9-0623-4d80-bf67-02234d86f2d9:
             uuid: f53f84e9-0623-4d80-bf67-02234d86f2d9
             region: main
@@ -613,6 +632,7 @@ third_party_settings:
                     class: ''
             weight: 8
             additional: {  }
+            third_party_settings: {  }
           c62f9c83-5ef1-440f-b653-5c0b6acc45b4:
             uuid: c62f9c83-5ef1-440f-b653-5c0b6acc45b4
             region: main
@@ -639,6 +659,7 @@ third_party_settings:
                     class: ''
             weight: 9
             additional: {  }
+            third_party_settings: {  }
           f60d162b-2737-43fc-9c2d-50cbc4a04708:
             uuid: f60d162b-2737-43fc-9c2d-50cbc4a04708
             region: main
@@ -665,6 +686,7 @@ third_party_settings:
                     class: ''
             weight: 10
             additional: {  }
+            third_party_settings: {  }
           8a3c1e48-3ff8-47df-8c5c-6f28430eac63:
             uuid: 8a3c1e48-3ff8-47df-8c5c-6f28430eac63
             region: main
@@ -691,6 +713,7 @@ third_party_settings:
                     class: ''
             weight: 11
             additional: {  }
+            third_party_settings: {  }
           06e987c4-9093-4693-9894-b70a4bfe0f42:
             uuid: 06e987c4-9093-4693-9894-b70a4bfe0f42
             region: main
@@ -717,6 +740,7 @@ third_party_settings:
                     class: ''
             weight: 12
             additional: {  }
+            third_party_settings: {  }
           e7b613e3-a0d3-43ab-9017-453a9cabb8ad:
             uuid: e7b613e3-a0d3-43ab-9017-453a9cabb8ad
             region: main
@@ -743,6 +767,7 @@ third_party_settings:
                     class: ''
             weight: 13
             additional: {  }
+            third_party_settings: {  }
           e161f3d4-4188-4136-8cb7-86167c29cafc:
             uuid: e161f3d4-4188-4136-8cb7-86167c29cafc
             region: main
@@ -769,6 +794,7 @@ third_party_settings:
                     class: ''
             weight: 14
             additional: {  }
+            third_party_settings: {  }
           cd385e7b-bd8d-482b-8aa1-e40cbb0715e2:
             uuid: cd385e7b-bd8d-482b-8aa1-e40cbb0715e2
             region: main
@@ -795,6 +821,7 @@ third_party_settings:
                     class: ''
             weight: 15
             additional: {  }
+            third_party_settings: {  }
           1c29dcda-3e9b-499c-9951-1626ed633a32:
             uuid: 1c29dcda-3e9b-499c-9951-1626ed633a32
             region: main
@@ -821,6 +848,7 @@ third_party_settings:
                     class: ''
             weight: 16
             additional: {  }
+            third_party_settings: {  }
           e9214fb0-af65-4479-abd8-08f23d055d15:
             uuid: e9214fb0-af65-4479-abd8-08f23d055d15
             region: main
@@ -847,6 +875,7 @@ third_party_settings:
                     class: ''
             weight: 17
             additional: {  }
+            third_party_settings: {  }
           64bc2a2e-d388-4986-8a95-5d2c8458e37c:
             uuid: 64bc2a2e-d388-4986-8a95-5d2c8458e37c
             region: main
@@ -873,6 +902,7 @@ third_party_settings:
                     class: ''
             weight: 18
             additional: {  }
+            third_party_settings: {  }
           ce640c5e-14ea-487c-86c9-6e2d684c0a26:
             uuid: ce640c5e-14ea-487c-86c9-6e2d684c0a26
             region: main
@@ -899,6 +929,7 @@ third_party_settings:
                     class: ''
             weight: 19
             additional: {  }
+            third_party_settings: {  }
           426a8db8-0a3a-4a09-9883-551bf4cceba1:
             uuid: 426a8db8-0a3a-4a09-9883-551bf4cceba1
             region: main
@@ -925,6 +956,7 @@ third_party_settings:
                     class: ''
             weight: 20
             additional: {  }
+            third_party_settings: {  }
           dd5530af-e25e-4da9-9914-a797eb8df882:
             uuid: dd5530af-e25e-4da9-9914-a797eb8df882
             region: main
@@ -951,6 +983,7 @@ third_party_settings:
                     class: ''
             weight: 21
             additional: {  }
+            third_party_settings: {  }
           9f85623c-b58b-4209-9420-09ba82c6d475:
             uuid: 9f85623c-b58b-4209-9420-09ba82c6d475
             region: main
@@ -977,6 +1010,7 @@ third_party_settings:
                     class: ''
             weight: 22
             additional: {  }
+            third_party_settings: {  }
           cafcec4c-892f-4b1d-a059-9792cb1b652e:
             uuid: cafcec4c-892f-4b1d-a059-9792cb1b652e
             region: main
@@ -1003,6 +1037,7 @@ third_party_settings:
                     class: ''
             weight: 23
             additional: {  }
+            third_party_settings: {  }
           c59a7a5e-4567-401b-bacc-29d0aaa4aa3e:
             uuid: c59a7a5e-4567-401b-bacc-29d0aaa4aa3e
             region: main
@@ -1029,6 +1064,7 @@ third_party_settings:
                     class: ''
             weight: 24
             additional: {  }
+            third_party_settings: {  }
           363e675a-c7e6-4c23-a951-50288d752edf:
             uuid: 363e675a-c7e6-4c23-a951-50288d752edf
             region: main
@@ -1055,6 +1091,7 @@ third_party_settings:
                     class: ''
             weight: 25
             additional: {  }
+            third_party_settings: {  }
           f1384060-f2ae-476b-899a-81d3a618960c:
             uuid: f1384060-f2ae-476b-899a-81d3a618960c
             region: main
@@ -1081,6 +1118,7 @@ third_party_settings:
                     class: ''
             weight: 26
             additional: {  }
+            third_party_settings: {  }
           2ebede73-bb90-4626-ab4d-be50b1499a1b:
             uuid: 2ebede73-bb90-4626-ab4d-be50b1499a1b
             region: main
@@ -1107,6 +1145,7 @@ third_party_settings:
                     class: ''
             weight: 27
             additional: {  }
+            third_party_settings: {  }
           fbc98b71-abdd-4b85-b1f4-071c731ea739:
             uuid: fbc98b71-abdd-4b85-b1f4-071c731ea739
             region: main
@@ -1133,6 +1172,7 @@ third_party_settings:
                     class: ''
             weight: 29
             additional: {  }
+            third_party_settings: {  }
           0b4501a2-979a-4b0b-91da-c3eb36d4f78d:
             uuid: 0b4501a2-979a-4b0b-91da-c3eb36d4f78d
             region: main
@@ -1159,6 +1199,7 @@ third_party_settings:
                     class: ''
             weight: 30
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -1195,6 +1236,7 @@ third_party_settings:
                     class: ''
             weight: 26
             additional: {  }
+            third_party_settings: {  }
           3f85ec91-9969-49d3-af2c-7dce79b6efe9:
             uuid: 3f85ec91-9969-49d3-af2c-7dce79b6efe9
             region: main
@@ -1221,6 +1263,7 @@ third_party_settings:
                     class: ''
             weight: 27
             additional: {  }
+            third_party_settings: {  }
           c2f9e2f9-dc65-457f-9e46-e0e49ff687cb:
             uuid: c2f9e2f9-dc65-457f-9e46-e0e49ff687cb
             region: main
@@ -1247,6 +1290,7 @@ third_party_settings:
                     class: ''
             weight: 29
             additional: {  }
+            third_party_settings: {  }
           a3d9a9f6-1388-4413-812a-8632b917100a:
             uuid: a3d9a9f6-1388-4413-812a-8632b917100a
             region: main
@@ -1273,6 +1317,7 @@ third_party_settings:
                     class: ''
             weight: 30
             additional: {  }
+            third_party_settings: {  }
           31bf62bb-350b-4aec-b087-f9ed1a7ca4f6:
             uuid: 31bf62bb-350b-4aec-b087-f9ed1a7ca4f6
             region: main
@@ -1299,6 +1344,7 @@ third_party_settings:
                     class: ''
             weight: 69
             additional: {  }
+            third_party_settings: {  }
           191101d5-0474-4053-b009-e6a8ea811129:
             uuid: 191101d5-0474-4053-b009-e6a8ea811129
             region: main
@@ -1325,6 +1371,7 @@ third_party_settings:
                     class: ''
             weight: 16
             additional: {  }
+            third_party_settings: {  }
           1bcf191c-5fb5-4799-94e6-46281a5e3923:
             uuid: 1bcf191c-5fb5-4799-94e6-46281a5e3923
             region: main
@@ -1351,6 +1398,7 @@ third_party_settings:
                     class: ''
             weight: 17
             additional: {  }
+            third_party_settings: {  }
           97547eb8-a973-4fd8-8ab4-be743be89d34:
             uuid: 97547eb8-a973-4fd8-8ab4-be743be89d34
             region: main
@@ -1377,6 +1425,7 @@ third_party_settings:
                     class: ''
             weight: 18
             additional: {  }
+            third_party_settings: {  }
           f32732b9-269c-4edf-bfe2-5789c2ece2bc:
             uuid: f32732b9-269c-4edf-bfe2-5789c2ece2bc
             region: main
@@ -1403,6 +1452,7 @@ third_party_settings:
                     class: ''
             weight: 19
             additional: {  }
+            third_party_settings: {  }
           0aae5012-d5da-47ff-bb12-8fc64a39244a:
             uuid: 0aae5012-d5da-47ff-bb12-8fc64a39244a
             region: main
@@ -1429,6 +1479,7 @@ third_party_settings:
                     class: ''
             weight: 20
             additional: {  }
+            third_party_settings: {  }
           7646c9f3-6e48-49d2-8d8c-0fd223e559a2:
             uuid: 7646c9f3-6e48-49d2-8d8c-0fd223e559a2
             region: main
@@ -1455,6 +1506,7 @@ third_party_settings:
                     class: ''
             weight: 21
             additional: {  }
+            third_party_settings: {  }
           83dc72ed-2d74-47e2-8897-19aab19abd71:
             uuid: 83dc72ed-2d74-47e2-8897-19aab19abd71
             region: main
@@ -1481,6 +1533,7 @@ third_party_settings:
                     class: ''
             weight: 22
             additional: {  }
+            third_party_settings: {  }
           5b1f32b0-7b66-46ea-8931-04f89380eeee:
             uuid: 5b1f32b0-7b66-46ea-8931-04f89380eeee
             region: main
@@ -1507,6 +1560,7 @@ third_party_settings:
                     class: ''
             weight: 23
             additional: {  }
+            third_party_settings: {  }
           c68226c6-7b60-40ee-82b4-1413521c1b2d:
             uuid: c68226c6-7b60-40ee-82b4-1413521c1b2d
             region: main
@@ -1533,6 +1587,7 @@ third_party_settings:
                     class: ''
             weight: 24
             additional: {  }
+            third_party_settings: {  }
           6828d097-9b2c-44d2-99c1-344d1c345a6a:
             uuid: 6828d097-9b2c-44d2-99c1-344d1c345a6a
             region: main
@@ -1559,6 +1614,7 @@ third_party_settings:
                     class: ''
             weight: 25
             additional: {  }
+            third_party_settings: {  }
           25f8b1c5-b41f-4fab-ae41-61a653a0468e:
             uuid: 25f8b1c5-b41f-4fab-ae41-61a653a0468e
             region: main
@@ -1585,6 +1641,7 @@ third_party_settings:
                     class: ''
             weight: 28
             additional: {  }
+            third_party_settings: {  }
           074b72f0-d7f3-458f-b610-498c66d9fa7a:
             uuid: 074b72f0-d7f3-458f-b610-498c66d9fa7a
             region: main
@@ -1611,6 +1668,7 @@ third_party_settings:
                     class: ''
             weight: 31
             additional: {  }
+            third_party_settings: {  }
           996457f0-456b-4ec5-aa13-d111036897b4:
             uuid: 996457f0-456b-4ec5-aa13-d111036897b4
             region: main
@@ -1637,6 +1695,7 @@ third_party_settings:
                     class: ''
             weight: 32
             additional: {  }
+            third_party_settings: {  }
           fe1a929d-1e23-4862-b8f8-5d42087d2b87:
             uuid: fe1a929d-1e23-4862-b8f8-5d42087d2b87
             region: main
@@ -1663,6 +1722,7 @@ third_party_settings:
                     class: ''
             weight: 33
             additional: {  }
+            third_party_settings: {  }
           db7cd6db-8971-4536-88f2-b4f52c914d62:
             uuid: db7cd6db-8971-4536-88f2-b4f52c914d62
             region: main
@@ -1689,6 +1749,7 @@ third_party_settings:
                     class: ''
             weight: 34
             additional: {  }
+            third_party_settings: {  }
           a183cdc8-4717-4571-bb89-1a2a696d81a4:
             uuid: a183cdc8-4717-4571-bb89-1a2a696d81a4
             region: main
@@ -1715,6 +1776,7 @@ third_party_settings:
                     class: ''
             weight: 35
             additional: {  }
+            third_party_settings: {  }
           8f38cda0-1252-4160-9dbe-2d9bd9754238:
             uuid: 8f38cda0-1252-4160-9dbe-2d9bd9754238
             region: main
@@ -1741,6 +1803,7 @@ third_party_settings:
                     class: ''
             weight: 36
             additional: {  }
+            third_party_settings: {  }
           648a5e38-608b-4605-a7f5-22bbe9a0fd68:
             uuid: 648a5e38-608b-4605-a7f5-22bbe9a0fd68
             region: main
@@ -1767,6 +1830,7 @@ third_party_settings:
                     class: ''
             weight: 37
             additional: {  }
+            third_party_settings: {  }
           d7d12342-8ee7-46e3-9523-1983ef66d2e7:
             uuid: d7d12342-8ee7-46e3-9523-1983ef66d2e7
             region: main
@@ -1793,6 +1857,7 @@ third_party_settings:
                     class: ''
             weight: 38
             additional: {  }
+            third_party_settings: {  }
           29e43d7d-7530-4871-a004-dcbee7ffe2a6:
             uuid: 29e43d7d-7530-4871-a004-dcbee7ffe2a6
             region: main
@@ -1819,6 +1884,7 @@ third_party_settings:
                     class: ''
             weight: 39
             additional: {  }
+            third_party_settings: {  }
           b7c564c7-5941-4dc1-8ee9-59d3579f2f08:
             uuid: b7c564c7-5941-4dc1-8ee9-59d3579f2f08
             region: main
@@ -1845,6 +1911,7 @@ third_party_settings:
                     class: ''
             weight: 40
             additional: {  }
+            third_party_settings: {  }
           c09e2053-c12b-4780-9d21-e7c5ad6e7fe4:
             uuid: c09e2053-c12b-4780-9d21-e7c5ad6e7fe4
             region: main
@@ -1871,6 +1938,7 @@ third_party_settings:
                     class: ''
             weight: 41
             additional: {  }
+            third_party_settings: {  }
           94adaa5e-8c92-447b-8daf-34723a01263b:
             uuid: 94adaa5e-8c92-447b-8daf-34723a01263b
             region: main
@@ -1897,6 +1965,7 @@ third_party_settings:
                     class: ''
             weight: 42
             additional: {  }
+            third_party_settings: {  }
           c0f6dd40-d543-4454-841f-172cbcb3c3a2:
             uuid: c0f6dd40-d543-4454-841f-172cbcb3c3a2
             region: main
@@ -1923,6 +1992,7 @@ third_party_settings:
                     class: ''
             weight: 43
             additional: {  }
+            third_party_settings: {  }
           38c67278-0690-43df-9a58-0329c061b5e5:
             uuid: 38c67278-0690-43df-9a58-0329c061b5e5
             region: main
@@ -1949,6 +2019,7 @@ third_party_settings:
                     class: ''
             weight: 44
             additional: {  }
+            third_party_settings: {  }
           a06c0bcc-699c-465e-84a6-8b2e82040e2a:
             uuid: a06c0bcc-699c-465e-84a6-8b2e82040e2a
             region: main
@@ -1975,6 +2046,7 @@ third_party_settings:
                     class: ''
             weight: 45
             additional: {  }
+            third_party_settings: {  }
           70ff1e68-ecd8-447b-842a-2db1d34b0bc6:
             uuid: 70ff1e68-ecd8-447b-842a-2db1d34b0bc6
             region: main
@@ -2001,6 +2073,7 @@ third_party_settings:
                     class: ''
             weight: 46
             additional: {  }
+            third_party_settings: {  }
           75dcd007-ea73-4e34-bd83-505e81451f56:
             uuid: 75dcd007-ea73-4e34-bd83-505e81451f56
             region: main
@@ -2027,6 +2100,7 @@ third_party_settings:
                     class: ''
             weight: 47
             additional: {  }
+            third_party_settings: {  }
           a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14:
             uuid: a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14
             region: main
@@ -2053,6 +2127,7 @@ third_party_settings:
                     class: ''
             weight: 48
             additional: {  }
+            third_party_settings: {  }
           c8ad1988-517d-4980-8534-a6fa08da8334:
             uuid: c8ad1988-517d-4980-8534-a6fa08da8334
             region: main
@@ -2079,6 +2154,7 @@ third_party_settings:
                     class: ''
             weight: 49
             additional: {  }
+            third_party_settings: {  }
           8679c4fd-eca0-4bcb-9915-41671b5d26f8:
             uuid: 8679c4fd-eca0-4bcb-9915-41671b5d26f8
             region: main
@@ -2105,6 +2181,7 @@ third_party_settings:
                     class: ''
             weight: 50
             additional: {  }
+            third_party_settings: {  }
           ade2f6a8-9f05-46a4-a72b-1f107f5b85c6:
             uuid: ade2f6a8-9f05-46a4-a72b-1f107f5b85c6
             region: main
@@ -2131,6 +2208,7 @@ third_party_settings:
                     class: ''
             weight: 51
             additional: {  }
+            third_party_settings: {  }
           11678003-5392-4589-98e6-44e19dd77c0b:
             uuid: 11678003-5392-4589-98e6-44e19dd77c0b
             region: main
@@ -2157,6 +2235,7 @@ third_party_settings:
                     class: ''
             weight: 52
             additional: {  }
+            third_party_settings: {  }
           0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5:
             uuid: 0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5
             region: main
@@ -2183,6 +2262,7 @@ third_party_settings:
                     class: ''
             weight: 53
             additional: {  }
+            third_party_settings: {  }
           4c50effd-379b-4663-bfd1-c85daa0f0d66:
             uuid: 4c50effd-379b-4663-bfd1-c85daa0f0d66
             region: main
@@ -2209,6 +2289,7 @@ third_party_settings:
                     class: ''
             weight: 54
             additional: {  }
+            third_party_settings: {  }
           ff1b635b-1e50-47bb-8bae-dae02aefab00:
             uuid: ff1b635b-1e50-47bb-8bae-dae02aefab00
             region: main
@@ -2235,6 +2316,7 @@ third_party_settings:
                     class: ''
             weight: 55
             additional: {  }
+            third_party_settings: {  }
           5a411258-3684-4583-b5f3-4b424b9f6fb0:
             uuid: 5a411258-3684-4583-b5f3-4b424b9f6fb0
             region: main
@@ -2261,6 +2343,7 @@ third_party_settings:
                     class: ''
             weight: 56
             additional: {  }
+            third_party_settings: {  }
           fbe77b34-aecb-4640-832c-942a8af70ba2:
             uuid: fbe77b34-aecb-4640-832c-942a8af70ba2
             region: main
@@ -2287,6 +2370,7 @@ third_party_settings:
                     class: ''
             weight: 57
             additional: {  }
+            third_party_settings: {  }
           9616a5d0-8a5b-4f5c-9f23-945eadb06de4:
             uuid: 9616a5d0-8a5b-4f5c-9f23-945eadb06de4
             region: main
@@ -2313,6 +2397,7 @@ third_party_settings:
                     class: ''
             weight: 58
             additional: {  }
+            third_party_settings: {  }
           da4c2b37-4ad8-4316-86d9-2dc47f207607:
             uuid: da4c2b37-4ad8-4316-86d9-2dc47f207607
             region: main
@@ -2339,6 +2424,7 @@ third_party_settings:
                     class: ''
             weight: 59
             additional: {  }
+            third_party_settings: {  }
           2c9bc1ab-d4b8-4191-8222-5fafbee71749:
             uuid: 2c9bc1ab-d4b8-4191-8222-5fafbee71749
             region: main
@@ -2365,6 +2451,7 @@ third_party_settings:
                     class: ''
             weight: 60
             additional: {  }
+            third_party_settings: {  }
           deabb1c9-c14e-4383-a641-ad76f05a6a97:
             uuid: deabb1c9-c14e-4383-a641-ad76f05a6a97
             region: main
@@ -2391,6 +2478,7 @@ third_party_settings:
                     class: ''
             weight: 61
             additional: {  }
+            third_party_settings: {  }
           af92e4d1-0ed1-4d9b-b24c-6e425ffe0875:
             uuid: af92e4d1-0ed1-4d9b-b24c-6e425ffe0875
             region: main
@@ -2417,6 +2505,7 @@ third_party_settings:
                     class: ''
             weight: 62
             additional: {  }
+            third_party_settings: {  }
           e9854641-f71f-491f-bda2-c9a85f4e1341:
             uuid: e9854641-f71f-491f-bda2-c9a85f4e1341
             region: main
@@ -2443,6 +2532,7 @@ third_party_settings:
                     class: ''
             weight: 63
             additional: {  }
+            third_party_settings: {  }
           39dffa38-6db3-4817-b2d8-eaa7e9d36569:
             uuid: 39dffa38-6db3-4817-b2d8-eaa7e9d36569
             region: main
@@ -2469,6 +2559,7 @@ third_party_settings:
                     class: ''
             weight: 64
             additional: {  }
+            third_party_settings: {  }
           68fb4d8c-8889-443e-8a64-1b771a7957eb:
             uuid: 68fb4d8c-8889-443e-8a64-1b771a7957eb
             region: main
@@ -2495,6 +2586,7 @@ third_party_settings:
                     class: ''
             weight: 65
             additional: {  }
+            third_party_settings: {  }
           f2ec1a74-d9f9-4c25-8df4-6b0e5569c090:
             uuid: f2ec1a74-d9f9-4c25-8df4-6b0e5569c090
             region: main
@@ -2521,6 +2613,7 @@ third_party_settings:
                     class: ''
             weight: 66
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -2557,6 +2650,7 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
+            third_party_settings: {  }
           bbd65df4-74ec-4424-a024-af2d48319687:
             uuid: bbd65df4-74ec-4424-a024-af2d48319687
             region: main
@@ -2583,6 +2677,7 @@ third_party_settings:
                     class: ''
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           d6ed6a87-faf0-4453-81a1-e22d2374479a:
             uuid: d6ed6a87-faf0-4453-81a1-e22d2374479a
             region: main
@@ -2609,6 +2704,7 @@ third_party_settings:
                     class: ''
             weight: 2
             additional: {  }
+            third_party_settings: {  }
           e3c69aa9-37f0-4453-b148-b7fc34ce3568:
             uuid: e3c69aa9-37f0-4453-b148-b7fc34ce3568
             region: main
@@ -2635,6 +2731,7 @@ third_party_settings:
                     class: ''
             weight: 3
             additional: {  }
+            third_party_settings: {  }
           286f4544-c18d-41bd-8901-561796d7230c:
             uuid: 286f4544-c18d-41bd-8901-561796d7230c
             region: main
@@ -2661,6 +2758,7 @@ third_party_settings:
                     class: ''
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           0b554423-806b-43ec-bfe4-e8a060bbc83d:
             uuid: 0b554423-806b-43ec-bfe4-e8a060bbc83d
             region: main
@@ -2687,6 +2785,7 @@ third_party_settings:
                     class: ''
             weight: 5
             additional: {  }
+            third_party_settings: {  }
           e846a79f-7f01-49ca-bfc7-640727ae180f:
             uuid: e846a79f-7f01-49ca-bfc7-640727ae180f
             region: main
@@ -2713,6 +2812,7 @@ third_party_settings:
                     class: ''
             weight: 6
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

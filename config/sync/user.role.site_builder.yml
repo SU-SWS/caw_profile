@@ -335,6 +335,7 @@ permissions:
   - 'use text format stanford_limited_html'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any unpublished caw_benefits content'
   - 'view any unpublished caw_careers content'
   - 'view any unpublished caw_sweetener content'
   - 'view any unpublished content'

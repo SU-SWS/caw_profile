@@ -62,6 +62,7 @@ third_party_settings:
               context_mapping: {  }
             weight: -10
             additional: {  }
+            third_party_settings: {  }
           9c246a83-54f9-4f93-a975-e9bdc0259f82:
             uuid: 9c246a83-54f9-4f93-a975-e9bdc0259f82
             region: main
@@ -83,6 +84,7 @@ third_party_settings:
                     class: 'su-event-headline flex-10-of-12'
             weight: -8
             additional: {  }
+            third_party_settings: {  }
           2d7ecccf-4511-455e-ae69-f2b24a376a43:
             uuid: 2d7ecccf-4511-455e-ae69-f2b24a376a43
             region: main
@@ -104,6 +106,7 @@ third_party_settings:
                     class: 'su-event-subheadline flex-9-of-12'
             weight: -7
             additional: {  }
+            third_party_settings: {  }
           ff876f05-89b3-49c8-9bae-516ac86b4e79:
             uuid: ff876f05-89b3-49c8-9bae-516ac86b4e79
             region: main
@@ -125,6 +128,7 @@ third_party_settings:
                     class: 'su-event-dek flex-7-of-12'
             weight: -6
             additional: {  }
+            third_party_settings: {  }
           625d8b06-94fb-4027-bec0-f39e16810c8a:
             uuid: 625d8b06-94fb-4027-bec0-f39e16810c8a
             region: main
@@ -148,6 +152,7 @@ third_party_settings:
                     ds_limit: ''
             weight: -5
             additional: {  }
+            third_party_settings: {  }
           229e196d-4f22-4f5a-b265-added1838d5d:
             uuid: 229e196d-4f22-4f5a-b265-added1838d5d
             region: main
@@ -169,6 +174,7 @@ third_party_settings:
                     class: su-event-type
             weight: -9
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: stanford_events_body
@@ -206,6 +212,7 @@ third_party_settings:
                     class: su-event-date
             weight: 3
             additional: {  }
+            third_party_settings: {  }
           9a605e2a-8dbd-44ec-83ac-fdd47b7a8cf0:
             uuid: 9a605e2a-8dbd-44ec-83ac-fdd47b7a8cf0
             region: main
@@ -236,6 +243,7 @@ third_party_settings:
                     class: su-event-time
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           1ce04bbe-b3fd-4040-9011-46a80cb0bea1:
             uuid: 1ce04bbe-b3fd-4040-9011-46a80cb0bea1
             region: main
@@ -256,6 +264,7 @@ third_party_settings:
                     class: su-event-location
             weight: 6
             additional: {  }
+            third_party_settings: {  }
           0ff08dc5-db6c-413e-b440-8bcabf2911b3:
             uuid: 0ff08dc5-db6c-413e-b440-8bcabf2911b3
             region: main
@@ -281,6 +290,7 @@ third_party_settings:
                     class: su-event-map
             weight: 8
             additional: {  }
+            third_party_settings: {  }
           6b731bfb-4a54-43e3-afa5-f60099657490:
             uuid: 6b731bfb-4a54-43e3-afa5-f60099657490
             region: right
@@ -302,6 +312,7 @@ third_party_settings:
                     class: su-event-telephone
             weight: 2
             additional: {  }
+            third_party_settings: {  }
           9f9648ba-9864-40fb-a66f-c94fd87bc32d:
             uuid: 9f9648ba-9864-40fb-a66f-c94fd87bc32d
             region: right
@@ -325,6 +336,7 @@ third_party_settings:
                     ds_limit: ''
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           be4ceb41-1f4b-40f8-be69-c6714369f7bf:
             uuid: be4ceb41-1f4b-40f8-be69-c6714369f7bf
             region: right
@@ -345,6 +357,7 @@ third_party_settings:
                     class: su-event-email
             weight: 3
             additional: {  }
+            third_party_settings: {  }
           c4f8811e-dd0e-44ae-b65d-b0f82cf894df:
             uuid: c4f8811e-dd0e-44ae-b65d-b0f82cf894df
             region: main
@@ -358,6 +371,7 @@ third_party_settings:
               wrapper: h2
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           72ffb956-3705-4638-a22a-22c5ce31e291:
             uuid: 72ffb956-3705-4638-a22a-22c5ce31e291
             region: main
@@ -379,6 +393,7 @@ third_party_settings:
                     class: su-event-alt-location
             weight: 7
             additional: {  }
+            third_party_settings: {  }
           2c0a8fa6-3605-4f9e-8fb3-8ee46faf4350:
             uuid: 2c0a8fa6-3605-4f9e-8fb3-8ee46faf4350
             region: cta
@@ -404,6 +419,7 @@ third_party_settings:
                     class: 'su-event-cta su-button'
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -437,6 +453,7 @@ third_party_settings:
                     ds_limit: ''
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           7a80c779-6c87-49fd-94e0-68ae37fa1cd4:
             uuid: 7a80c779-6c87-49fd-94e0-68ae37fa1cd4
             region: main
@@ -457,6 +474,7 @@ third_party_settings:
                     class: su-event-body
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -488,6 +506,7 @@ third_party_settings:
                     class: su-event-type-bottom
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           5bff4484-cf7e-4513-881c-86ec5239e101:
             uuid: 5bff4484-cf7e-4513-881c-86ec5239e101
             region: main
@@ -501,6 +520,7 @@ third_party_settings:
               items_per_page: none
             weight: 2
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -524,6 +544,7 @@ third_party_settings:
               items_per_page: none
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

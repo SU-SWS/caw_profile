@@ -35,6 +35,7 @@ variant_settings:
             wrapper: h1
           weight: 0
           additional: {  }
+          third_party_settings: {  }
       third_party_settings: {  }
     -
       layout_id: jumpstart_ui_two_column
@@ -55,6 +56,7 @@ variant_settings:
             context_mapping: {  }
           weight: 2
           additional: {  }
+          third_party_settings: {  }
         e2f2b7c9-dcfa-457c-8752-2db48ccb108d:
           uuid: e2f2b7c9-dcfa-457c-8752-2db48ccb108d
           region: main
@@ -68,6 +70,7 @@ variant_settings:
             items_per_page: '20'
           weight: 5
           additional: {  }
+          third_party_settings: {  }
         92d34c88-16dd-4ffc-994e-ffa358a88002:
           uuid: 92d34c88-16dd-4ffc-994e-ffa358a88002
           region: main
@@ -82,6 +85,7 @@ variant_settings:
             context_mapping: {  }
           weight: 3
           additional: {  }
+          third_party_settings: {  }
         7a2c8639-c149-459e-af92-29b9e48b582d:
           uuid: 7a2c8639-c149-459e-af92-29b9e48b582d
           region: main
@@ -95,6 +99,7 @@ variant_settings:
             items_per_page: none
           weight: 4
           additional: {  }
+          third_party_settings: {  }
         187de883-334d-4b87-bb05-fd1008996663:
           uuid: 187de883-334d-4b87-bb05-fd1008996663
           region: left
@@ -109,6 +114,7 @@ variant_settings:
             expand_all_items: false
           weight: 1
           additional: {  }
+          third_party_settings: {  }
       third_party_settings: {  }
     -
       layout_id: jumpstart_ui_one_column
@@ -130,6 +136,7 @@ variant_settings:
             form_action: ''
           weight: 0
           additional: {  }
+          third_party_settings: {  }
       third_party_settings: {  }
 page: stanford_news_list
 selection_criteria: {  }

@@ -15,6 +15,13 @@
       margin-left: 5px;
       content: '+';
       text-decoration: none;
+      background: none;
+      color: $su-color-digital-red;
+    }
+
+    &:hover::after{
+      color: $su-color-black;
+      text-underline: none;
     }
 
     &.collapse-all {

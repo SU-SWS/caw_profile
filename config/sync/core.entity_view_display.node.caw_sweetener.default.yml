@@ -58,7 +58,6 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
-            third_party_settings: {  }
           71d0aed3-d86b-4cb0-bc47-329fc9516d89:
             uuid: 71d0aed3-d86b-4cb0-bc47-329fc9516d89
             region: left
@@ -82,7 +81,6 @@ third_party_settings:
                     class: ''
             weight: 2
             additional: {  }
-            third_party_settings: {  }
           66ffd9ce-2aa6-44f5-b743-3893c16da757:
             uuid: 66ffd9ce-2aa6-44f5-b743-3893c16da757
             region: left
@@ -104,7 +102,6 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
-            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -136,7 +133,6 @@ third_party_settings:
                     class: su-margin-bottom-3
             weight: 1
             additional: {  }
-            third_party_settings: {  }
           1d1640a0-b40a-4389-aa3c-0a09db17140f:
             uuid: 1d1640a0-b40a-4389-aa3c-0a09db17140f
             region: main
@@ -163,7 +159,6 @@ third_party_settings:
                     class: su-margin-bottom-3
             weight: 2
             additional: {  }
-            third_party_settings: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -187,7 +182,6 @@ third_party_settings:
               items_per_page: none
             weight: 2
             additional: {  }
-            third_party_settings: {  }
           ebccf176-8faa-40f8-81bb-94f73cba2a99:
             uuid: ebccf176-8faa-40f8-81bb-94f73cba2a99
             region: main
@@ -201,7 +195,6 @@ third_party_settings:
               format: stanford_html
             weight: 3
             additional: {  }
-            third_party_settings: {  }
           7def151f-2a7a-47b3-8463-c55f1e914700:
             uuid: 7def151f-2a7a-47b3-8463-c55f1e914700
             region: main
@@ -216,7 +209,6 @@ third_party_settings:
               context_mapping: {  }
             weight: 0
             additional: {  }
-            third_party_settings: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

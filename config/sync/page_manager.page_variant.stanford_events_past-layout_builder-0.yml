@@ -35,7 +35,6 @@ variant_settings:
             wrapper: h1
           weight: 0
           additional: {  }
-          third_party_settings: {  }
       third_party_settings: {  }
     -
       layout_id: jumpstart_ui_one_column
@@ -58,7 +57,6 @@ variant_settings:
             items_per_page: none
           weight: 1
           additional: {  }
-          third_party_settings: {  }
         6963d6b3-e3f1-48ae-9e7f-4b90a22c453e:
           uuid: 6963d6b3-e3f1-48ae-9e7f-4b90a22c453e
           region: main
@@ -70,7 +68,6 @@ variant_settings:
             context_mapping: {  }
           weight: 0
           additional: {  }
-          third_party_settings: {  }
       third_party_settings: {  }
 page: stanford_events_past
 selection_criteria: {  }

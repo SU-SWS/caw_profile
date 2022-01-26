@@ -7,6 +7,8 @@ dependencies:
     - node.type.caw_sweetener
     - taxonomy.vocabulary.caw_sweet_available
     - taxonomy.vocabulary.caw_sweet_type
+  content:
+    - 'block_content:stanford_component_block:f365713e-ac4b-4001-9494-538e98b632b3'
   module:
     - better_exposed_filters
     - node
@@ -535,12 +537,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: flex-4-of-12
+          row_class: ''
           default_row_class: true
           uses_fields: false
           type: ul
-          wrapper_class: item-list
-          class: 'flex-container su-list-unstyled'
+          wrapper_class: ''
+          class: '.grid-container-3 su-list-unstyled'
       row:
         type: 'entity:node'
         options:

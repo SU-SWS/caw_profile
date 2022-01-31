@@ -7,7 +7,7 @@ dependencies:
 id: caw_sweeteners
 label: Sweeteners
 type: 'canonical_entities:node'
-pattern: 'sweeteners/[node:title]'
+pattern: 'benefits-rewards/sweeteners/[node:title]'
 selection_criteria:
   8d872ef7-72f2-4463-8067-154e8d51670d:
     id: node_type

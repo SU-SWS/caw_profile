@@ -176,6 +176,20 @@ function caw_profile_helper_pathauto_pattern_alter(PathautoPatternInterface $pat
       $pattern->setPattern('/[node:book:parents:join-path]/[node:title]');
     }
   }
+  if ($context['module'] == 'node' && $context['bundle'] == 'stanford_event_series') {
+    /** @var NodeInterface $node */
+    $node = $context['data']['node'];
+    if ($node->get('su_event_series_type')->count()) {
+      $tid = $node->get('su_event_series_type')->getString();
+      /** @var \Drupal\taxonomy\TermInterface $term */
+      $term = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->load($tid);
+      if ($term && $term->label() == 'Course Catalog') {
+        $pattern->setPattern('learning-stanford/professional-development/course-catalog/[node:title]');
+      }
+    }
+  }
 }
 
 /**

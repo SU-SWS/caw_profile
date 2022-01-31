@@ -306,3 +306,23 @@ function caw_profile_helper_update_9008() {
     $entity->delete();
   }
 }
+
+/**
+ * Re-save Sweeteners & event series to update the aliases.
+ */
+function caw_profile_helper_update_9009() {
+  $pathauto_storage = \Drupal::entityTypeManager()
+    ->getStorage('pathauto_pattern');
+  /** @var \Drupal\pathauto\PathautoPatternInterface $pattern */
+  $pattern = $pathauto_storage->load('caw_sweeteners');
+  $pattern->setPattern('benefits-rewards/sweeteners/[node:title]')->save();
+
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $node_ids = $node_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', ['caw_sweetener', 'stanford_event_series'], 'IN')
+    ->execute();
+  foreach ($node_storage->loadMultiple($node_ids) as $node) {
+    $node->save();
+  }
+}

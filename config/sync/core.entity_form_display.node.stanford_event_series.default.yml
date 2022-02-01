@@ -17,6 +17,7 @@ dependencies:
   module:
     - field_group
     - paragraphs
+    - path
     - stanford_intranet
 third_party_settings:
   field_group:
@@ -81,13 +82,19 @@ mode: default
 content:
   caw_event_series_competencies:
     type: options_select
-    weight: 27
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   caw_event_series_format:
     type: options_select
-    weight: 26
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -163,12 +170,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   layout_builder__layout: true
   node_edit_link: true
-  path: true
   promote: true
   sticky: true
   uid: true
-  url_redirects: true

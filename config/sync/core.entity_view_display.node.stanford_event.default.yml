@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.base_field_override.node.stanford_event.title
     - field.field.node.stanford_event.body
+    - field.field.node.stanford_event.caw_event_category
     - field.field.node.stanford_event.layout_builder__layout
     - field.field.node.stanford_event.stanford_intranet__access
     - field.field.node.stanford_event.su_event_alt_loc
@@ -467,27 +468,6 @@ third_party_settings:
           centered: centered-container
           columns: flex-10-of-12
         components:
-          d64439dc-f59e-4822-aba0-cdca5a9dc331:
-            uuid: d64439dc-f59e-4822-aba0-cdca5a9dc331
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_event:su_event_type'
-              label: 'Related Topics'
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-event-type-bottom
-            weight: 4
-            additional: {  }
           5bff4484-cf7e-4513-881c-86ec5239e101:
             uuid: 5bff4484-cf7e-4513-881c-86ec5239e101
             region: main

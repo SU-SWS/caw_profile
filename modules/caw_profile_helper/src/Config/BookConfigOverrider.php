@@ -14,6 +14,7 @@ use Drupal\Core\Config\StorageInterface;
  */
 class BookConfigOverridder implements ConfigFactoryOverrideInterface {
 
+
   /**
    * {@inheritDoc}
    */
@@ -41,7 +42,12 @@ class BookConfigOverridder implements ConfigFactoryOverrideInterface {
    */
   public function getCacheableMetadata($name) {
     $metadata = new CacheableMetadata();
-    $metadata->addCacheContexts(['route']);
+    $metadata->addCacheContexts(['route', 'url.path']);
+    $route_match = \Drupal::routeMatch();
+    if ($route_match->getRouteName() == 'entity.node.canonical') {
+      $node = $route_match->getParameter('node');
+      $metadata->addCacheTags($node->getCacheTags());
+    }
     return $metadata;
   }
 

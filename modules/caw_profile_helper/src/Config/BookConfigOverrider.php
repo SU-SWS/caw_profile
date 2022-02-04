@@ -9,7 +9,7 @@ use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
- * Class BookConfigOverridder.
+ * Class BookConfigOverrider.
  *
  * @package Drupal\caw_profile_helper\Config
  */
@@ -29,7 +29,7 @@ class BookConfigOverrider implements ConfigFactoryOverrideInterface {
    *   Route Match service.
    */
   public function __construct(RouteMatchInterface $route_match) {
-    $this->routeMatch=$route_match;
+    $this->routeMatch = $route_match;
   }
 
   /**

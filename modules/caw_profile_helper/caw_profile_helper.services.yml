@@ -3,7 +3,8 @@ services:
     class: Drupal\caw_profile_helper\BookManager
     arguments: ['@entity_type.manager', '@string_translation', '@config.factory', '@book.outline_storage', '@renderer', '@language_manager', '@entity.repository']
   book.config_overrider:
-    class: Drupal\caw_profile_helper\Config\BookConfigOverridder
+    class: Drupal\caw_profile_helper\Config\BookConfigOverrider
+    arguments: ['@current_route_match']
     tags:
       - {name: config.factory.override, priority: 5}
   book.route_subscriber:

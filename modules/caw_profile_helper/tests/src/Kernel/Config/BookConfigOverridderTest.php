@@ -10,7 +10,7 @@ use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
  * Class BookConfigOverridderTest.
  *
  * @group caw_profile
- * @coversDefaultClass \Drupal\caw_profile_helper\Config\BookConfigOverridder
+ * @coversDefaultClass \Drupal\caw_profile_helper\Config\BookConfigOverrider
  */
 class BookConfigOverridderTest extends CawProfileHelperKernelTestBase {
 

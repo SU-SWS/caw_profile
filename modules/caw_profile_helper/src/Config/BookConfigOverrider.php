@@ -6,14 +6,31 @@ use Drupal\caw_profile_helper\BookManager;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryOverrideInterface;
 use Drupal\Core\Config\StorageInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Class BookConfigOverridder.
  *
  * @package Drupal\caw_profile_helper\Config
  */
-class BookConfigOverridder implements ConfigFactoryOverrideInterface {
+class BookConfigOverrider implements ConfigFactoryOverrideInterface {
 
+  /**
+   * Route Match service.
+   *
+   * @var \Drupal\Core\Routing\RouteMatchInterface
+   */
+  protected $routeMatch;
+
+  /**
+   * Config overrider service.
+   *
+   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+   *   Route Match service.
+   */
+  public function __construct(RouteMatchInterface $route_match) {
+    $this->routeMatch=$route_match;
+  }
 
   /**
    * {@inheritDoc}
@@ -43,9 +60,8 @@ class BookConfigOverridder implements ConfigFactoryOverrideInterface {
   public function getCacheableMetadata($name) {
     $metadata = new CacheableMetadata();
     $metadata->addCacheContexts(['route', 'url.path']);
-    $route_match = \Drupal::routeMatch();
-    if ($route_match->getRouteName() == 'entity.node.canonical') {
-      $node = $route_match->getParameter('node');
+    if ($this->routeMatch->getRouteName() == 'entity.node.canonical') {
+      $node = $this->routeMatch->getParameter('node');
       $metadata->addCacheTags($node->getCacheTags());
     }
     return $metadata;

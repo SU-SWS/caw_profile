@@ -1,6 +1,6 @@
 name: 'Cardinal at Work Profile'
 description: 'CAW Website Profile'
-version: 8.x-2.0
+version: 8.x-2.1
 type: profile
 project: Cardinal at Work
 core_version_requirement: ^9
@@ -150,6 +150,7 @@ default_content:
     - 433e17b4-e705-4448-9467-93a03222e3f7
     - 48d41139-6cd4-47e8-9cad-17dfc3fb2819
     - 6fec2907-db67-4d42-bb09-9bee305a2580
+    - 84d7eaff-e426-446f-a462-c06e48f7e11a
     - 88431155-a285-4dab-b3e3-84aefdc63338
     - 9c1c62fd-f7cc-42c7-b073-4ea66546fa88
     - ba513d3b-0d26-4079-91ce-eb31c5798ed8
@@ -164,6 +165,7 @@ default_content:
     - 381f792e-24b4-4c50-b5cc-69c13702f93a
     - 39cadd28-7a7e-4648-868d-d5e4f0a69bf7
     - 3b196c11-47c7-40a2-acbd-d48369e31669
+    - 434972e6-21fb-41a7-b741-97a322b2910f
     - 5d11d1f1-9844-424c-b5ea-523e7d1ada38
     - 5e2a5f6b-fa5f-42c1-a189-a2c16ec406b5
     - 66286339-4f00-4994-8c0d-921b519ea4e4
@@ -180,35 +182,13 @@ default_content:
     - c2c22d8b-eb7c-4804-9332-4ec2aff3391a
     - e635159f-4b50-4016-bbf6-41113adbff65
   node:
+    - ce9cb7ca-6c59-4eea-9934-0a33057a7ff2
     - 4b8018dc-49a6-4018-9c54-e8c3e462beee
     - 6d51339d-ff67-498d-98e9-d8228d36fd51
     - 72f0069b-f1ec-4122-af73-6aa841faea90
     - bc484600-a21a-4497-b9f7-f928474b511c
     - d21d84f0-22e7-4596-82cb-9209841a3276
     - e18a741f-7d86-492a-a02f-7ca73989ca13
-  paragraph:
-    - 8f7b2d0f-f883-43c8-9782-5e8b88fd98dc
-    - 9df33d0d-239e-4b51-9d97-8703187629b4
-    - 35b55d09-f3e6-4134-87c1-4a8ea132940f
-    - 79c98714-281a-450d-b574-2971426b1f3e
-    - 9954cc81-919b-4498-9151-bf930831fca7
-    - b7abb133-a21b-4a1a-a13c-f630aad2ce7e
-    - bf52b16d-03ef-41dc-b906-4a3a88c2e9ce
-    - c77c8f62-721c-475d-bd5f-ba5ddce96836
-    - cffc69b9-51a3-4e0e-a1b3-864202e42e6c
-    - d800e9c3-5a54-4241-983e-87c42f31b557
-    - fbbaaecc-80fc-494a-8bce-83638d1d668d
-  paragraph_row:
-    - 0427d80b-1f0a-43e1-b902-03d7df3d8523
-    - 27047c34-f161-45d4-ab65-c7d7c0e98765
-    - 4a607606-12f6-482c-8cd7-a57d64aeff6b
-    - 71b78295-dfd1-4eb3-8d20-2013d5b64f69
-    - 8f739f14-a899-4880-9c11-5929f0d4ddde
-    - 95514879-c3d0-44cc-a8bd-987f547fa1a8
-    - a9a54e9d-e433-408f-be3d-141d3cb3aad6
-    - b9027856-bb49-4c3b-9367-87a4e3731421
-    - ec2d0801-e418-4bec-a1f9-064c349148d7
-    - ed135145-45ed-4955-a1b6-1141bc869568
   shortcut:
     - 14f046ae-3f83-4a89-b967-5ee2965bf7e5
     - ca67a0aa-0cf1-4334-ac1e-be6372afecc5

@@ -1,0 +1,19 @@
+uuid: 3211f37e-5629-4471-b347-43bf90aa5f12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_christian_prac
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_christian_prac
+field_name: caw_benefits_med_christian_prac
+entity_type: node
+bundle: caw_benefits
+label: 'Christian Science Practitioners'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

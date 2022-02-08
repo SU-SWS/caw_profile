@@ -5,11 +5,6 @@
  * caw_profile.install
  */
 
-use Drupal\Core\Site\Settings;
-use Drupal\Core\Config\FileStorage;
-use Drupal\react_paragraphs\Entity\ParagraphRow;
-use Drupal\paragraphs\Entity\Paragraph;
-
 /**
  * Implements hook_removed_post_updates().
  */
@@ -22,7 +17,7 @@ function caw_profile_removed_post_updates() {
 }
 
 /**
- * Send out notification message about events and person importer.
+ * Disable the core search module.
  */
 function caw_profile_post_update_8014() {
   \Drupal::service('module_installer')->install(['stanford_notifications']);

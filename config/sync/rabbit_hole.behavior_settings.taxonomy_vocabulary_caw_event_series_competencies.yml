@@ -1,0 +1,14 @@
+uuid: 90f3400d-e38a-4b63-8892-56fc9de5cabf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.caw_event_series_competencies
+id: taxonomy_vocabulary_caw_event_series_competencies
+entity_type_id: taxonomy_vocabulary
+entity_id: caw_event_series_competencies
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

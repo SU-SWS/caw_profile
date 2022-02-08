@@ -1,0 +1,83 @@
+uuid: 25bb0377-a795-42a3-987d-ef19b24b4461
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stanford_card
+    - field.field.node.caw_sweetener.su_sweet_avail
+    - field.field.node.caw_sweetener.su_sweet_components
+    - field.field.node.caw_sweetener.su_sweet_image
+    - field.field.node.caw_sweetener.su_sweet_info
+    - field.field.node.caw_sweetener.su_sweet_type
+    - node.type.caw_sweetener
+  module:
+    - ds
+    - field_formatter_class
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - stanford_media
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+    regions:
+      card_image:
+        - su_sweet_image
+      card_super_headline:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          'link class': su-link--action
+          wrapper: ''
+          class: ''
+id: node.caw_sweetener.stanford_card
+targetEntityType: node
+bundle: caw_sweetener
+mode: stanford_card
+content:
+  su_sweet_image:
+    type: media_responsive_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: card_2_1
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: card_image
+hidden:
+  links: true
+  search_api_excerpt: true
+  su_sweet_avail: true
+  su_sweet_components: true
+  su_sweet_info: true
+  su_sweet_type: true

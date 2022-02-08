@@ -1,0 +1,19 @@
+uuid: 4c5d6706-e682-4ee9-a721-e8dbdc52e8bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_vision_intl
+field_name: caw_benefits_vision_intl
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

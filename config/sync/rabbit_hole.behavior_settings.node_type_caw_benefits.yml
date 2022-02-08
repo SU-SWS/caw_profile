@@ -1,0 +1,14 @@
+uuid: d8b02169-33e7-45d8-bac1-f79fb74858f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.caw_benefits
+id: node_type_caw_benefits
+entity_type_id: node_type
+entity_id: caw_benefits
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

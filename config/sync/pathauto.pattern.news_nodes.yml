@@ -7,16 +7,16 @@ dependencies:
 id: news_nodes
 label: 'News Nodes'
 type: 'canonical_entities:node'
-pattern: 'news/[node:title]'
+pattern: 'engage/news/[node:su_news_topics:0:entity:name]/[node:title]'
 selection_criteria:
-  7a7d05be-0ed3-47a8-a375-bc151a7ee92d:
+  b5eca1b9-55f1-4af5-bbac-a0f3cc014869:
     id: node_type
-    bundles:
-      stanford_news: stanford_news
     negate: false
+    uuid: b5eca1b9-55f1-4af5-bbac-a0f3cc014869
     context_mapping:
       node: node
-    uuid: 7a7d05be-0ed3-47a8-a375-bc151a7ee92d
+    bundles:
+      stanford_news: stanford_news
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -1,0 +1,2852 @@
+uuid: 9e2bd421-c6d5-4d4b-aba6-71645b599402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_annual_max
+    - field.field.node.caw_benefits.caw_benefits_coinsurance
+    - field.field.node.caw_benefits.caw_benefits_deductible
+    - field.field.node.caw_benefits.caw_benefits_dent_anesthesia
+    - field.field.node.caw_benefits.caw_benefits_dent_bridges
+    - field.field.node.caw_benefits.caw_benefits_dent_cleanings
+    - field.field.node.caw_benefits.caw_benefits_dent_crown
+    - field.field.node.caw_benefits.caw_benefits_dent_denture
+    - field.field.node.caw_benefits.caw_benefits_dent_exam
+    - field.field.node.caw_benefits.caw_benefits_dent_extraction
+    - field.field.node.caw_benefits.caw_benefits_dent_filling
+    - field.field.node.caw_benefits.caw_benefits_dent_flouride
+    - field.field.node.caw_benefits.caw_benefits_dent_gingivectomy
+    - field.field.node.caw_benefits.caw_benefits_dent_gold
+    - field.field.node.caw_benefits.caw_benefits_dent_implant
+    - field.field.node.caw_benefits.caw_benefits_dent_inlay
+    - field.field.node.caw_benefits.caw_benefits_dent_onlay
+    - field.field.node.caw_benefits.caw_benefits_dent_oral_surg
+    - field.field.node.caw_benefits.caw_benefits_dent_ortho
+    - field.field.node.caw_benefits.caw_benefits_dent_perio_surg
+    - field.field.node.caw_benefits.caw_benefits_dent_retainer
+    - field.field.node.caw_benefits.caw_benefits_dent_root
+    - field.field.node.caw_benefits.caw_benefits_dent_rx
+    - field.field.node.caw_benefits.caw_benefits_dent_sealant
+    - field.field.node.caw_benefits.caw_benefits_dent_space
+    - field.field.node.caw_benefits.caw_benefits_dent_splint
+    - field.field.node.caw_benefits.caw_benefits_dent_tmj
+    - field.field.node.caw_benefits.caw_benefits_fulltime_cost
+    - field.field.node.caw_benefits.caw_benefits_lifetime_max
+    - field.field.node.caw_benefits.caw_benefits_med_abulance
+    - field.field.node.caw_benefits.caw_benefits_med_acupuncture
+    - field.field.node.caw_benefits.caw_benefits_med_adult_physical
+    - field.field.node.caw_benefits.caw_benefits_med_allergy_test
+    - field.field.node.caw_benefits.caw_benefits_med_allergy_treat
+    - field.field.node.caw_benefits.caw_benefits_med_alt_medicine
+    - field.field.node.caw_benefits.caw_benefits_med_autism
+    - field.field.node.caw_benefits.caw_benefits_med_baby_exam
+    - field.field.node.caw_benefits.caw_benefits_med_birth_control
+    - field.field.node.caw_benefits.caw_benefits_med_birthing
+    - field.field.node.caw_benefits.caw_benefits_med_care_mgmt
+    - field.field.node.caw_benefits.caw_benefits_med_child_psycial
+    - field.field.node.caw_benefits.caw_benefits_med_chiro
+    - field.field.node.caw_benefits.caw_benefits_med_christian_prac
+    - field.field.node.caw_benefits.caw_benefits_med_copay
+    - field.field.node.caw_benefits.caw_benefits_med_cosmetic
+    - field.field.node.caw_benefits.caw_benefits_med_ct_scan
+    - field.field.node.caw_benefits.caw_benefits_med_delivery
+    - field.field.node.caw_benefits.caw_benefits_med_dental
+    - field.field.node.caw_benefits.caw_benefits_med_durable_equip
+    - field.field.node.caw_benefits.caw_benefits_med_er
+    - field.field.node.caw_benefits.caw_benefits_med_hearing
+    - field.field.node.caw_benefits.caw_benefits_med_home_health
+    - field.field.node.caw_benefits.caw_benefits_med_hopsital_stay
+    - field.field.node.caw_benefits.caw_benefits_med_hospice
+    - field.field.node.caw_benefits.caw_benefits_med_immunizations
+    - field.field.node.caw_benefits.caw_benefits_med_infertility
+    - field.field.node.caw_benefits.caw_benefits_med_lab
+    - field.field.node.caw_benefits.caw_benefits_med_mail_rx
+    - field.field.node.caw_benefits.caw_benefits_med_mammograms
+    - field.field.node.caw_benefits.caw_benefits_med_maternity_stay
+    - field.field.node.caw_benefits.caw_benefits_med_mental_health
+    - field.field.node.caw_benefits.caw_benefits_med_midwives
+    - field.field.node.caw_benefits.caw_benefits_med_mri
+    - field.field.node.caw_benefits.caw_benefits_med_nursing
+    - field.field.node.caw_benefits.caw_benefits_med_occupational
+    - field.field.node.caw_benefits.caw_benefits_med_pap_smears
+    - field.field.node.caw_benefits.caw_benefits_med_pharmacy
+    - field.field.node.caw_benefits.caw_benefits_med_preauth_req
+    - field.field.node.caw_benefits.caw_benefits_med_preg_term
+    - field.field.node.caw_benefits.caw_benefits_med_prenatal
+    - field.field.node.caw_benefits.caw_benefits_med_psa
+    - field.field.node.caw_benefits.caw_benefits_med_pt
+    - field.field.node.caw_benefits.caw_benefits_med_speech
+    - field.field.node.caw_benefits.caw_benefits_med_substance
+    - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
+    - field.field.node.caw_benefits.caw_benefits_med_surgery_md
+    - field.field.node.caw_benefits.caw_benefits_med_transpants
+    - field.field.node.caw_benefits.caw_benefits_med_tubal
+    - field.field.node.caw_benefits.caw_benefits_med_urgent
+    - field.field.node.caw_benefits.caw_benefits_med_vasectomy
+    - field.field.node.caw_benefits.caw_benefits_med_vision
+    - field.field.node.caw_benefits.caw_benefits_med_well_woman
+    - field.field.node.caw_benefits.caw_benefits_parttime_cost
+    - field.field.node.caw_benefits.caw_benefits_vision_contacts
+    - field.field.node.caw_benefits.caw_benefits_vision_exam
+    - field.field.node.caw_benefits.caw_benefits_vision_extras
+    - field.field.node.caw_benefits.caw_benefits_vision_frames
+    - field.field.node.caw_benefits.caw_benefits_vision_intl
+    - field.field.node.caw_benefits.caw_benefits_vision_lenses
+    - field.field.node.caw_benefits.caw_benefits_vision_lowvis
+    - field.field.node.caw_benefits.caw_benefits_vision_urgent
+    - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.su_benefit_type
+    - field.field.node.caw_benefits.su_benefits_offered
+    - field.field.node.caw_benefits.su_benefits_year
+    - node.type.caw_benefits
+  module:
+    - datetime
+    - jumpstart_ui
+    - layout_builder
+    - layout_builder_block
+    - layout_library
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: defaults
+        layout_settings:
+          label: Title
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: flex-12-of-12
+        components:
+          2d750099-7fb4-494d-b19d-1c92242660f8:
+            uuid: 2d750099-7fb4-494d-b19d-1c92242660f8
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: above
+                settings:
+                  tag: h1
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: defaults
+        layout_settings:
+          label: Basics
+          context_mapping: {  }
+          extra_classes: caw-benefits-basics
+          centered: centered-container
+          columns: flex-10-of-12
+        components:
+          3f9a97ae-3d99-46e4-92c5-bc93695eeb94:
+            uuid: 3f9a97ae-3d99-46e4-92c5-bc93695eeb94
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_coinsurance'
+              label: Coinsurance
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 10
+            additional: {  }
+          3c730a1e-c814-4918-a8d4-b5d98d33da08:
+            uuid: 3c730a1e-c814-4918-a8d4-b5d98d33da08
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:body'
+              label: Body/Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 9
+            additional: {  }
+          340d847f-2b67-4bdd-8ef3-2303c2f414f5:
+            uuid: 340d847f-2b67-4bdd-8ef3-2303c2f414f5
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_preauth_req'
+              label: 'Pre-Authorization Requirement'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 6
+            additional: {  }
+          7ee4a153-b9b3-4821-b181-eb43c7034617:
+            uuid: 7ee4a153-b9b3-4821-b181-eb43c7034617
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_care_mgmt'
+              label: 'Care Management'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 8
+            additional: {  }
+          183904c8-38c8-4e07-98dd-c51ee7c9ab0a:
+            uuid: 183904c8-38c8-4e07-98dd-c51ee7c9ab0a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_copay'
+              label: 'Office co-pay'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 11
+            additional: {  }
+          b2e612e2-f2e2-4ef7-9695-1c596f526aca:
+            uuid: b2e612e2-f2e2-4ef7-9695-1c596f526aca
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_deductible'
+              label: Deductible
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 12
+            additional: {  }
+          f985690d-3c13-4327-9703-c5c8e3fc5f80:
+            uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_benefit_type'
+              label: 'Benefit Type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: caw-benefits-basics
+            weight: 13
+            additional: {  }
+          1d197a64-275c-42ab-9936-9e336b4b0818:
+            uuid: 1d197a64-275c-42ab-9936-9e336b4b0818
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_benefits_year'
+              label: 'Plan Year'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_custom
+                label: above
+                settings:
+                  timezone_override: ''
+                  date_format: 'Y'
+                third_party_settings:
+                  field_formatter_class:
+                    class: caw-benefits-basics
+            weight: 5
+            additional: {  }
+          624a925c-ea58-4874-97d9-be05c7399dca:
+            uuid: 624a925c-ea58-4874-97d9-be05c7399dca
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_benefits_offered'
+              label: 'Offered To'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: caw-benefits-basics
+            weight: 7
+            additional: {  }
+          b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0:
+            uuid: b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_annual_max'
+              label: 'Annual maximum'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 14
+            additional: {  }
+          b40c3957-ccf8-451a-9aa6-7876a8741ca2:
+            uuid: b40c3957-ccf8-451a-9aa6-7876a8741ca2
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_lifetime_max'
+              label: 'Lifetime maximum'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 4
+            additional: {  }
+          dad17f20-b41b-46d4-b6a7-0a1d5cf68c97:
+            uuid: dad17f20-b41b-46d4-b6a7-0a1d5cf68c97
+            region: main
+            configuration:
+              id: 'extra_field_block:node:caw_benefits:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          f1e7d387-89f7-4ffd-8d37-b58292c66381:
+            uuid: f1e7d387-89f7-4ffd-8d37-b58292c66381
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_fulltime_cost'
+              label: 'Full-Time Employee * Contribution Per Pay Period'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 2
+            additional: {  }
+          73ebf651-a547-4d9e-aadc-643864b67366:
+            uuid: 73ebf651-a547-4d9e-aadc-643864b67366
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_parttime_cost'
+              label: 'Part-Time Employee * Contribution Per Pay Period'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: caw-benefits-basics
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional: {  }
+          1b44c392-24a1-4022-aec3-478a54adfa01:
+            uuid: 1b44c392-24a1-4022-aec3-478a54adfa01
+            region: main
+            configuration:
+              id: layout_builder_block
+              label: Basics
+              label_display: '0'
+              provider: layout_builder_block
+              context_mapping: {  }
+              text: "<h2>Basics</h2>\r\n"
+              format: stanford_html
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: defaults
+        layout_settings:
+          label: Dental
+          context_mapping: {  }
+          extra_classes: caw-benefits-dental
+          centered: centered-container
+          columns: flex-10-of-12
+        components:
+          b8b76758-cee1-4d57-a46b-00bce68ae174:
+            uuid: b8b76758-cee1-4d57-a46b-00bce68ae174
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_space'
+              label: 'Space maintainers'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 28
+            additional: {  }
+          9e71cab9-de36-4426-b6e9-19f78c02a1ec:
+            uuid: 9e71cab9-de36-4426-b6e9-19f78c02a1ec
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_cleanings'
+              label: Cleanings
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 6
+            additional: {  }
+          7b296bc7-0f24-462d-a638-00064453f3b4:
+            uuid: 7b296bc7-0f24-462d-a638-00064453f3b4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_flouride'
+              label: 'Fluoride treatments'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 7
+            additional: {  }
+          f53f84e9-0623-4d80-bf67-02234d86f2d9:
+            uuid: f53f84e9-0623-4d80-bf67-02234d86f2d9
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_exam'
+              label: 'Routine exams'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 8
+            additional: {  }
+          c62f9c83-5ef1-440f-b653-5c0b6acc45b4:
+            uuid: c62f9c83-5ef1-440f-b653-5c0b6acc45b4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_sealant'
+              label: Sealants
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 9
+            additional: {  }
+          f60d162b-2737-43fc-9c2d-50cbc4a04708:
+            uuid: f60d162b-2737-43fc-9c2d-50cbc4a04708
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_xray'
+              label: X-rays
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 10
+            additional: {  }
+          8a3c1e48-3ff8-47df-8c5c-6f28430eac63:
+            uuid: 8a3c1e48-3ff8-47df-8c5c-6f28430eac63
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_ortho'
+              label: Orthodontia
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 11
+            additional: {  }
+          06e987c4-9093-4693-9894-b70a4bfe0f42:
+            uuid: 06e987c4-9093-4693-9894-b70a4bfe0f42
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_retainer'
+              label: Retainers
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 12
+            additional: {  }
+          e7b613e3-a0d3-43ab-9017-453a9cabb8ad:
+            uuid: e7b613e3-a0d3-43ab-9017-453a9cabb8ad
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_anesthesia'
+              label: Anesthesia
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 13
+            additional: {  }
+          e161f3d4-4188-4136-8cb7-86167c29cafc:
+            uuid: e161f3d4-4188-4136-8cb7-86167c29cafc
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_bridges'
+              label: Bridges
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 14
+            additional: {  }
+          cd385e7b-bd8d-482b-8aa1-e40cbb0715e2:
+            uuid: cd385e7b-bd8d-482b-8aa1-e40cbb0715e2
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_crown'
+              label: Crown
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 15
+            additional: {  }
+          1c29dcda-3e9b-499c-9951-1626ed633a32:
+            uuid: 1c29dcda-3e9b-499c-9951-1626ed633a32
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_denture'
+              label: Dentures
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 16
+            additional: {  }
+          e9214fb0-af65-4479-abd8-08f23d055d15:
+            uuid: e9214fb0-af65-4479-abd8-08f23d055d15
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_extraction'
+              label: Extractions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 17
+            additional: {  }
+          64bc2a2e-d388-4986-8a95-5d2c8458e37c:
+            uuid: 64bc2a2e-d388-4986-8a95-5d2c8458e37c
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_filling'
+              label: Fillings
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 18
+            additional: {  }
+          ce640c5e-14ea-487c-86c9-6e2d684c0a26:
+            uuid: ce640c5e-14ea-487c-86c9-6e2d684c0a26
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_gingivectomy'
+              label: Gingivectomy
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 19
+            additional: {  }
+          426a8db8-0a3a-4a09-9883-551bf4cceba1:
+            uuid: 426a8db8-0a3a-4a09-9883-551bf4cceba1
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_gold'
+              label: 'Gold restorations'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 20
+            additional: {  }
+          dd5530af-e25e-4da9-9914-a797eb8df882:
+            uuid: dd5530af-e25e-4da9-9914-a797eb8df882
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_implant'
+              label: Implants
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 21
+            additional: {  }
+          9f85623c-b58b-4209-9420-09ba82c6d475:
+            uuid: 9f85623c-b58b-4209-9420-09ba82c6d475
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_inlay'
+              label: Inlays
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 22
+            additional: {  }
+          cafcec4c-892f-4b1d-a059-9792cb1b652e:
+            uuid: cafcec4c-892f-4b1d-a059-9792cb1b652e
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_onlay'
+              label: Onlays
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 23
+            additional: {  }
+          c59a7a5e-4567-401b-bacc-29d0aaa4aa3e:
+            uuid: c59a7a5e-4567-401b-bacc-29d0aaa4aa3e
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_oral_surg'
+              label: 'Oral surgery'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 24
+            additional: {  }
+          363e675a-c7e6-4c23-a951-50288d752edf:
+            uuid: 363e675a-c7e6-4c23-a951-50288d752edf
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_perio_surg'
+              label: 'Periodontal surgery'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 25
+            additional: {  }
+          f1384060-f2ae-476b-899a-81d3a618960c:
+            uuid: f1384060-f2ae-476b-899a-81d3a618960c
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_rx'
+              label: 'Prescription drugs'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 26
+            additional: {  }
+          2ebede73-bb90-4626-ab4d-be50b1499a1b:
+            uuid: 2ebede73-bb90-4626-ab4d-be50b1499a1b
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_root'
+              label: 'Root canals'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 27
+            additional: {  }
+          fbc98b71-abdd-4b85-b1f4-071c731ea739:
+            uuid: fbc98b71-abdd-4b85-b1f4-071c731ea739
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_splint'
+              label: Splinting
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 29
+            additional: {  }
+          0b4501a2-979a-4b0b-91da-c3eb36d4f78d:
+            uuid: 0b4501a2-979a-4b0b-91da-c3eb36d4f78d
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_tmj'
+              label: 'TMJ (Temporomandibular joint syndrome)'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 30
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          label: Medical
+          context_mapping: {  }
+          extra_classes: caw-benefits-medical
+          centered: centered-container
+          columns: flex-10-of-12
+        components:
+          2df1a434-1ca0-4104-b62e-e13cc5d2ff09:
+            uuid: 2df1a434-1ca0-4104-b62e-e13cc5d2ff09
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_acupuncture'
+              label: Acupuncture
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 26
+            additional: {  }
+          3f85ec91-9969-49d3-af2c-7dce79b6efe9:
+            uuid: 3f85ec91-9969-49d3-af2c-7dce79b6efe9
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_allergy_test'
+              label: 'Allergy Tests'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 27
+            additional: {  }
+          c2f9e2f9-dc65-457f-9e46-e0e49ff687cb:
+            uuid: c2f9e2f9-dc65-457f-9e46-e0e49ff687cb
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_alt_medicine'
+              label: 'Alternative Medicine'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 29
+            additional: {  }
+          a3d9a9f6-1388-4413-812a-8632b917100a:
+            uuid: a3d9a9f6-1388-4413-812a-8632b917100a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_abulance'
+              label: 'Ambulance charges'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 30
+            additional: {  }
+          31bf62bb-350b-4aec-b087-f9ed1a7ca4f6:
+            uuid: 31bf62bb-350b-4aec-b087-f9ed1a7ca4f6
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_extras'
+              label: Extras
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 69
+            additional: {  }
+          191101d5-0474-4053-b009-e6a8ea811129:
+            uuid: 191101d5-0474-4053-b009-e6a8ea811129
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_maternity_stay'
+              label: 'Maternity Hospital Stay'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 16
+            additional: {  }
+          1bcf191c-5fb5-4799-94e6-46281a5e3923:
+            uuid: 1bcf191c-5fb5-4799-94e6-46281a5e3923
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_baby_exam'
+              label: 'Baby''s First Exam'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 17
+            additional: {  }
+          97547eb8-a973-4fd8-8ab4-be743be89d34:
+            uuid: 97547eb8-a973-4fd8-8ab4-be743be89d34
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_birthing'
+              label: 'Birthing Centers'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 18
+            additional: {  }
+          f32732b9-269c-4edf-bfe2-5789c2ece2bc:
+            uuid: f32732b9-269c-4edf-bfe2-5789c2ece2bc
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_midwives'
+              label: Midwives
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 19
+            additional: {  }
+          0aae5012-d5da-47ff-bb12-8fc64a39244a:
+            uuid: 0aae5012-d5da-47ff-bb12-8fc64a39244a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_prenatal'
+              label: 'Prenatal Visits'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 20
+            additional: {  }
+          7646c9f3-6e48-49d2-8d8c-0fd223e559a2:
+            uuid: 7646c9f3-6e48-49d2-8d8c-0fd223e559a2
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_delivery'
+              label: 'Doctor Delivery Charge'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 21
+            additional: {  }
+          83dc72ed-2d74-47e2-8897-19aab19abd71:
+            uuid: 83dc72ed-2d74-47e2-8897-19aab19abd71
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_preg_term'
+              label: 'Pregnancy Termination'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 22
+            additional: {  }
+          5b1f32b0-7b66-46ea-8931-04f89380eeee:
+            uuid: 5b1f32b0-7b66-46ea-8931-04f89380eeee
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_mental_health'
+              label: 'Mental Health'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 23
+            additional: {  }
+          c68226c6-7b60-40ee-82b4-1413521c1b2d:
+            uuid: c68226c6-7b60-40ee-82b4-1413521c1b2d
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_autism'
+              label: Autism
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 24
+            additional: {  }
+          6828d097-9b2c-44d2-99c1-344d1c345a6a:
+            uuid: 6828d097-9b2c-44d2-99c1-344d1c345a6a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_substance'
+              label: 'Substance Abuse'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 25
+            additional: {  }
+          25f8b1c5-b41f-4fab-ae41-61a653a0468e:
+            uuid: 25f8b1c5-b41f-4fab-ae41-61a653a0468e
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_allergy_treat'
+              label: 'Allergy Treatment'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 28
+            additional: {  }
+          074b72f0-d7f3-458f-b610-498c66d9fa7a:
+            uuid: 074b72f0-d7f3-458f-b610-498c66d9fa7a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_ct_scan'
+              label: 'CT Scans'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 31
+            additional: {  }
+          996457f0-456b-4ec5-aa13-d111036897b4:
+            uuid: 996457f0-456b-4ec5-aa13-d111036897b4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_chiro'
+              label: Chiropractors
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 32
+            additional: {  }
+          fe1a929d-1e23-4862-b8f8-5d42087d2b87:
+            uuid: fe1a929d-1e23-4862-b8f8-5d42087d2b87
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_christian_prac'
+              label: 'Christian Science Practitioners'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 33
+            additional: {  }
+          db7cd6db-8971-4536-88f2-b4f52c914d62:
+            uuid: db7cd6db-8971-4536-88f2-b4f52c914d62
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_cosmetic'
+              label: 'Cosmetic Surgery'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 34
+            additional: {  }
+          a183cdc8-4717-4571-bb89-1a2a696d81a4:
+            uuid: a183cdc8-4717-4571-bb89-1a2a696d81a4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_dental'
+              label: 'Dental Treatment'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 35
+            additional: {  }
+          8f38cda0-1252-4160-9dbe-2d9bd9754238:
+            uuid: 8f38cda0-1252-4160-9dbe-2d9bd9754238
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_er'
+              label: 'Emergency Room'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 36
+            additional: {  }
+          648a5e38-608b-4605-a7f5-22bbe9a0fd68:
+            uuid: 648a5e38-608b-4605-a7f5-22bbe9a0fd68
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_urgent'
+              label: 'Urgent Care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 37
+            additional: {  }
+          d7d12342-8ee7-46e3-9523-1983ef66d2e7:
+            uuid: d7d12342-8ee7-46e3-9523-1983ef66d2e7
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_hearing'
+              label: 'Hearing Care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 38
+            additional: {  }
+          29e43d7d-7530-4871-a004-dcbee7ffe2a6:
+            uuid: 29e43d7d-7530-4871-a004-dcbee7ffe2a6
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_home_health'
+              label: 'Home Health Care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 39
+            additional: {  }
+          b7c564c7-5941-4dc1-8ee9-59d3579f2f08:
+            uuid: b7c564c7-5941-4dc1-8ee9-59d3579f2f08
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_hospice'
+              label: 'Hospice Care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 40
+            additional: {  }
+          c09e2053-c12b-4780-9d21-e7c5ad6e7fe4:
+            uuid: c09e2053-c12b-4780-9d21-e7c5ad6e7fe4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_hopsital_stay'
+              label: 'Hospital Stay'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 41
+            additional: {  }
+          94adaa5e-8c92-447b-8daf-34723a01263b:
+            uuid: 94adaa5e-8c92-447b-8daf-34723a01263b
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_infertility'
+              label: 'Infertility Treatment'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 42
+            additional: {  }
+          c0f6dd40-d543-4454-841f-172cbcb3c3a2:
+            uuid: c0f6dd40-d543-4454-841f-172cbcb3c3a2
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_lab'
+              label: 'Laboratory Charges'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 43
+            additional: {  }
+          38c67278-0690-43df-9a58-0329c061b5e5:
+            uuid: 38c67278-0690-43df-9a58-0329c061b5e5
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_mri'
+              label: 'Magnetic resonance imaging - MRI'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 44
+            additional: {  }
+          a06c0bcc-699c-465e-84a6-8b2e82040e2a:
+            uuid: a06c0bcc-699c-465e-84a6-8b2e82040e2a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_durable_equip'
+              label: 'Durable Medical Equipment'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 45
+            additional: {  }
+          70ff1e68-ecd8-447b-842a-2db1d34b0bc6:
+            uuid: 70ff1e68-ecd8-447b-842a-2db1d34b0bc6
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_occupational'
+              label: 'Occupational Therapy'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 46
+            additional: {  }
+          75dcd007-ea73-4e34-bd83-505e81451f56:
+            uuid: 75dcd007-ea73-4e34-bd83-505e81451f56
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_transpants'
+              label: 'Organ Transplants'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 47
+            additional: {  }
+          a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14:
+            uuid: a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_nursing'
+              label: 'Skilled Nursing'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 48
+            additional: {  }
+          c8ad1988-517d-4980-8534-a6fa08da8334:
+            uuid: c8ad1988-517d-4980-8534-a6fa08da8334
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_pt'
+              label: 'Physical Therapy'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 49
+            additional: {  }
+          8679c4fd-eca0-4bcb-9915-41671b5d26f8:
+            uuid: 8679c4fd-eca0-4bcb-9915-41671b5d26f8
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_surgery_md'
+              label: 'Surgery : Physician Services'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 50
+            additional: {  }
+          ade2f6a8-9f05-46a4-a72b-1f107f5b85c6:
+            uuid: ade2f6a8-9f05-46a4-a72b-1f107f5b85c6
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_surgery_facil'
+              label: 'Surgery : Facility Charges'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 51
+            additional: {  }
+          11678003-5392-4589-98e6-44e19dd77c0b:
+            uuid: 11678003-5392-4589-98e6-44e19dd77c0b
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_speech'
+              label: 'Speech Therapy'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 52
+            additional: {  }
+          0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5:
+            uuid: 0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_tubal'
+              label: 'Tubal Ligation'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 53
+            additional: {  }
+          4c50effd-379b-4663-bfd1-c85daa0f0d66:
+            uuid: 4c50effd-379b-4663-bfd1-c85daa0f0d66
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_vasectomy'
+              label: Vasectomy
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 54
+            additional: {  }
+          ff1b635b-1e50-47bb-8bae-dae02aefab00:
+            uuid: ff1b635b-1e50-47bb-8bae-dae02aefab00
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_xray'
+              label: X-rays
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 55
+            additional: {  }
+          5a411258-3684-4583-b5f3-4b424b9f6fb0:
+            uuid: 5a411258-3684-4583-b5f3-4b424b9f6fb0
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_pharmacy'
+              label: 'Pharmacy (Retail)'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 56
+            additional: {  }
+          fbe77b34-aecb-4640-832c-942a8af70ba2:
+            uuid: fbe77b34-aecb-4640-832c-942a8af70ba2
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_mail_rx'
+              label: 'Mail order drug program'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 57
+            additional: {  }
+          9616a5d0-8a5b-4f5c-9f23-945eadb06de4:
+            uuid: 9616a5d0-8a5b-4f5c-9f23-945eadb06de4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_birth_control'
+              label: 'Birth Control Pills'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 58
+            additional: {  }
+          da4c2b37-4ad8-4316-86d9-2dc47f207607:
+            uuid: da4c2b37-4ad8-4316-86d9-2dc47f207607
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_adult_physical'
+              label: 'Physical exams for adults'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 59
+            additional: {  }
+          2c9bc1ab-d4b8-4191-8222-5fafbee71749:
+            uuid: 2c9bc1ab-d4b8-4191-8222-5fafbee71749
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_child_psycial'
+              label: 'Physical exams for children'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 60
+            additional: {  }
+          deabb1c9-c14e-4383-a641-ad76f05a6a97:
+            uuid: deabb1c9-c14e-4383-a641-ad76f05a6a97
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_pap_smears'
+              label: 'Pap smears'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 61
+            additional: {  }
+          af92e4d1-0ed1-4d9b-b24c-6e425ffe0875:
+            uuid: af92e4d1-0ed1-4d9b-b24c-6e425ffe0875
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_mammograms'
+              label: Mammograms
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 62
+            additional: {  }
+          e9854641-f71f-491f-bda2-c9a85f4e1341:
+            uuid: e9854641-f71f-491f-bda2-c9a85f4e1341
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_immunizations'
+              label: Immunizations
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 63
+            additional: {  }
+          39dffa38-6db3-4817-b2d8-eaa7e9d36569:
+            uuid: 39dffa38-6db3-4817-b2d8-eaa7e9d36569
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_psa'
+              label: 'Prostate Specific Antigen test - PSA'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 64
+            additional: {  }
+          68fb4d8c-8889-443e-8a64-1b771a7957eb:
+            uuid: 68fb4d8c-8889-443e-8a64-1b771a7957eb
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_well_woman'
+              label: 'Well-woman visits'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 65
+            additional: {  }
+          f2ec1a74-d9f9-4c25-8df4-6b0e5569c090:
+            uuid: f2ec1a74-d9f9-4c25-8df4-6b0e5569c090
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_vision'
+              label: 'Vision care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 66
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: defaults
+        layout_settings:
+          label: Vision
+          context_mapping: {  }
+          extra_classes: caw-benefits-Vision
+          centered: centered-container
+          columns: flex-10-of-12
+        components:
+          21eaac31-ed02-4ccd-ac9f-651048f749fc:
+            uuid: 21eaac31-ed02-4ccd-ac9f-651048f749fc
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_exam'
+              label: 'Vision Exam'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional: {  }
+          bbd65df4-74ec-4424-a024-af2d48319687:
+            uuid: bbd65df4-74ec-4424-a024-af2d48319687
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_lenses'
+              label: Lenses
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 1
+            additional: {  }
+          d6ed6a87-faf0-4453-81a1-e22d2374479a:
+            uuid: d6ed6a87-faf0-4453-81a1-e22d2374479a
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_frames'
+              label: Frames
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 2
+            additional: {  }
+          e3c69aa9-37f0-4453-b148-b7fc34ce3568:
+            uuid: e3c69aa9-37f0-4453-b148-b7fc34ce3568
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_contacts'
+              label: 'Elective Contact Lenses'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional: {  }
+          286f4544-c18d-41bd-8901-561796d7230c:
+            uuid: 286f4544-c18d-41bd-8901-561796d7230c
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_lowvis'
+              label: 'Low-Vision Services'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 4
+            additional: {  }
+          0b554423-806b-43ec-bfe4-e8a060bbc83d:
+            uuid: 0b554423-806b-43ec-bfe4-e8a060bbc83d
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_urgent'
+              label: 'Medical & Urgent Eye Care'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 5
+            additional: {  }
+          e846a79f-7f01-49ca-bfc7-640727ae180f:
+            uuid: e846a79f-7f01-49ca-bfc7-640727ae180f
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_vision_intl'
+              label: 'Out of Country Access'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 6
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.caw_benefits.default
+targetEntityType: node
+bundle: caw_benefits
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  su_benefit_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  su_benefits_offered:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  su_benefits_year:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+hidden:
+  caw_benefits_annual_max: true
+  caw_benefits_coinsurance: true
+  caw_benefits_deductible: true
+  caw_benefits_dent_anesthesia: true
+  caw_benefits_dent_bridges: true
+  caw_benefits_dent_cleanings: true
+  caw_benefits_dent_crown: true
+  caw_benefits_dent_denture: true
+  caw_benefits_dent_exam: true
+  caw_benefits_dent_extraction: true
+  caw_benefits_dent_filling: true
+  caw_benefits_dent_flouride: true
+  caw_benefits_dent_gingivectomy: true
+  caw_benefits_dent_gold: true
+  caw_benefits_dent_implant: true
+  caw_benefits_dent_inlay: true
+  caw_benefits_dent_onlay: true
+  caw_benefits_dent_oral_surg: true
+  caw_benefits_dent_ortho: true
+  caw_benefits_dent_perio_surg: true
+  caw_benefits_dent_retainer: true
+  caw_benefits_dent_root: true
+  caw_benefits_dent_rx: true
+  caw_benefits_dent_sealant: true
+  caw_benefits_dent_space: true
+  caw_benefits_dent_splint: true
+  caw_benefits_dent_tmj: true
+  caw_benefits_fulltime_cost: true
+  caw_benefits_lifetime_max: true
+  caw_benefits_med_abulance: true
+  caw_benefits_med_acupuncture: true
+  caw_benefits_med_adult_physical: true
+  caw_benefits_med_allergy_test: true
+  caw_benefits_med_allergy_treat: true
+  caw_benefits_med_alt_medicine: true
+  caw_benefits_med_autism: true
+  caw_benefits_med_baby_exam: true
+  caw_benefits_med_birth_control: true
+  caw_benefits_med_birthing: true
+  caw_benefits_med_care_mgmt: true
+  caw_benefits_med_child_psycial: true
+  caw_benefits_med_chiro: true
+  caw_benefits_med_christian_prac: true
+  caw_benefits_med_copay: true
+  caw_benefits_med_cosmetic: true
+  caw_benefits_med_ct_scan: true
+  caw_benefits_med_delivery: true
+  caw_benefits_med_dental: true
+  caw_benefits_med_durable_equip: true
+  caw_benefits_med_er: true
+  caw_benefits_med_hearing: true
+  caw_benefits_med_home_health: true
+  caw_benefits_med_hopsital_stay: true
+  caw_benefits_med_hospice: true
+  caw_benefits_med_immunizations: true
+  caw_benefits_med_infertility: true
+  caw_benefits_med_lab: true
+  caw_benefits_med_mail_rx: true
+  caw_benefits_med_mammograms: true
+  caw_benefits_med_maternity_stay: true
+  caw_benefits_med_mental_health: true
+  caw_benefits_med_midwives: true
+  caw_benefits_med_mri: true
+  caw_benefits_med_nursing: true
+  caw_benefits_med_occupational: true
+  caw_benefits_med_pap_smears: true
+  caw_benefits_med_pharmacy: true
+  caw_benefits_med_preauth_req: true
+  caw_benefits_med_preg_term: true
+  caw_benefits_med_prenatal: true
+  caw_benefits_med_psa: true
+  caw_benefits_med_pt: true
+  caw_benefits_med_speech: true
+  caw_benefits_med_substance: true
+  caw_benefits_med_surgery_facil: true
+  caw_benefits_med_surgery_md: true
+  caw_benefits_med_transpants: true
+  caw_benefits_med_tubal: true
+  caw_benefits_med_urgent: true
+  caw_benefits_med_vasectomy: true
+  caw_benefits_med_vision: true
+  caw_benefits_med_well_woman: true
+  caw_benefits_parttime_cost: true
+  caw_benefits_vision_contacts: true
+  caw_benefits_vision_exam: true
+  caw_benefits_vision_extras: true
+  caw_benefits_vision_frames: true
+  caw_benefits_vision_intl: true
+  caw_benefits_vision_lenses: true
+  caw_benefits_vision_lowvis: true
+  caw_benefits_vision_urgent: true
+  caw_benefits_xray: true
+  search_api_excerpt: true

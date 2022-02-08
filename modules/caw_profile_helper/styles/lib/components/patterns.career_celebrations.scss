@@ -1,0 +1,117 @@
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.caw-careers {
+  h1 {
+    @include type-b;
+    @include margin(0);
+  }
+
+  .caw-careers--card {
+    @include padding(90px 0 70px);
+
+    // To keep the background image positioned correctly
+    position: relative;
+
+    // Put the background image in a pseudo elment to get the opacity on image.
+    &::before {
+      content: "";
+      position: absolute;
+      background: $su-color-foggy-light url("../assets/png/career-celebrations-banner--node.png") no-repeat center;
+      background-size: cover;
+      opacity: 0.75;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .caw-careers-card {
+    @include margin(0 auto);
+
+    max-width: 810px;
+
+    .caw-careers-card--left {
+      grid-area: image;
+    }
+
+    .caw-careers-card--right {
+      grid-area: details;
+    }
+
+    .caw-careers-card--years-honored {
+      grid-area: honored;
+    }
+
+    &.su-card--horizontal {
+      @include responsive-spacing('padding', 3 3 4 3);
+
+      grid-template-columns: 1fr 0.01% 2fr;
+      grid-template-rows: auto;
+      grid-row-gap: 20px;
+      grid-template-areas:
+      "image . details"
+      "honored honored honored";
+
+      // To keep the card on top of the pseudo elment
+      position: relative;
+
+      img {
+        @include grid-media-max('sm') {
+          @include margin(0 auto 50px);
+
+          display: block;
+          max-width: 200px;
+        }
+
+        @include grid-media-max('xs') {
+          display: block;
+        }
+      }
+
+      @include grid-media-max('xs') {
+        display: block;
+      }
+
+    }
+
+    .su-card__contents {
+      justify-self: normal;
+      align-self: center;
+    }
+  }
+
+  &--body {
+    @include margin(0 auto);
+    @include responsive-spacing('margin-top', 6);
+    @include responsive-spacing('margin-bottom', 7);
+    @include type-d;
+
+    max-width: 810px;
+    width: calc(100% - 40px);
+
+    .label {
+      font-size: 30px;
+    }
+
+    > .field {
+      @include margin(0 0 40px 0);
+
+      margin-bottom: 40px;
+    }
+  }
+
+  .caw-careers-card--years-honored {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-gap: 20px;
+  }
+
+  .other-celebrations {
+    .caw-careers-card--years,
+    .caw-careers-card--honored {
+      @include type-e;
+    }
+  }
+}

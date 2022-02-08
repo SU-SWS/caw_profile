@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.view.caw-sweeteners {
+  &.grid-all {
+    .caw-sweeteners-header {
+      @include modular-spacing(margin-bottom, 5);
+      @include box-shadow;
+      background: $su-color-foggy-light;
+
+      .centered-container {
+        @include modular-spacing(padding-top, 4);
+        @include modular-spacing(padding-bottom, 3);
+      }
+    }
+
+    header {
+      // TO DO: Replace with Sweetener block class/id
+      > div:first-of-type {
+        @include modular-spacing(padding-bottom, 5);
+      }
+
+      > div:last-of-type {
+        h2 {
+          margin: 0;
+          @include modular-spacing(margin-top, 2);
+          @include modular-spacing(padding-bottom, 1);
+        }
+      }
+
+      .paragraph-item {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    form,
+    header > div:last-of-type {
+      @include flex-column(10);
+      margin: 0 auto;
+    }
+
+    // Filter styles
+    form {
+      @include modular-spacing(padding-top, 0);
+      display: block;
+
+      .form-composite {
+        @include modular-typography(0);
+
+        .form--inline {
+          .form-item {
+            @include modular-spacing(margin-bottom, 1);
+            float: none;
+          }
+        }
+      }
+
+      @include grid-media-min('lg') {
+        display: block;
+
+        .form-composite {
+          .form--inline {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(5, 1fr);
+            column-gap: 10rem;
+          }
+        }
+
+        .form-composite:last-of-type {
+          .form--inline {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 1fr);
+          }
+        }
+      }
+
+      @include grid-media-min('xl') {
+        display: grid;
+        column-gap: 10rem;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+      "category people"
+      "button button";
+
+        .form-composite {
+          grid-area: category;
+        }
+
+        .form-composite:last-of-type {
+          grid-area: people;
+        }
+
+        .form-actions {
+          grid-area: button;
+        }
+      }
+
+      // Filter buttons
+      .form-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #edit-reset,
+        [id*='edit-reset'] {
+          padding: 0;
+          background: transparent;
+          color: $su-color-digital-blue;
+          text-decoration: underline;
+
+          &:hover,
+          &:focus,
+          &:focus-visible {
+            background: transparent;
+            color: $su-color-black;
+            text-decoration: underline;
+            box-shadow: none;
+            outline: -webkit-focus-ring-color auto 1px;
+            outline-offset: 1px;
+          }
+        }
+      }
+    }
+
+    // Result list styles
+    .su-list-unstyled {
+      @include modular-spacing(margin-bottom, 6);
+      @include centered-column;
+      grid-row-gap: 5rem;
+      row-gap: 5rem;
+    }
+  }
+
+  &.side-by-side {
+    padding: 0 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    @include grid-media('lg') {
+      display: grid;
+      grid-gap: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+      "header header header header"
+      "side main main main";
+    }
+
+
+    > * {
+      grid-area: main;
+    }
+
+    > header {
+      grid-area: header;
+    }
+
+    > .exposed-filters {
+      grid-area: side;
+
+      .exposed-filter-header-wrapper {
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    form > *:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .button {
+      margin: 10px 10px 10px 0;
+    }
+
+    // chosen.css overrides
+    li {
+      &.search-field {
+        input[type="text"] {
+          font-size: 1.1em;
+        }
+      }
+
+      .search-choice {
+        span {
+          font-size: 1.1em;
+        }
+      }
+    }
+
+    h2 {
+      @include type-c;
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    @include modular-typography(2);
+    color: $su-color-digital-red;
+
+    &::after {
+      background: $su-color-digital-red;
+    }
+  }
+
+  .stanford-component-block {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+input[id^="edit-reset"] {
+  background-color: transparent;
+  color: $su-color-digital-blue;
+  padding: 0;
+  text-decoration: underline;
+
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: $su-color-black;
+  }
+}
+
+.views-block.caw-sweeteners-related {
+  h2 {
+    text-align: center;
+  }
+}

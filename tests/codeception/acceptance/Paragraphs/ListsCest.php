@@ -452,9 +452,9 @@ class ListsCest {
       'arguments' => 'Basic-Page-Test-Term',
     ]);
 
-
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($type_term->label());
+    $I->canSee($basic_page_entity->label());
+    $I->cantSee($type_term->label());
   }
 
   /**
@@ -480,20 +480,13 @@ class ListsCest {
       ],
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $faker->text(30),
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'entity' => $row,
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
       ],
     ]);
 

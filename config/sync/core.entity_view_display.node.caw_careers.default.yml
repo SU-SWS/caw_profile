@@ -1,0 +1,179 @@
+uuid: b9bb39a9-1e91-4820-9193-74ef629cf97d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.caw_careers.su_careers_components
+    - field.field.node.caw_careers.su_careers_department
+    - field.field.node.caw_careers.su_careers_favorite_thing
+    - field.field.node.caw_careers.su_careers_fname
+    - field.field.node.caw_careers.su_careers_fun_fact
+    - field.field.node.caw_careers.su_careers_honored
+    - field.field.node.caw_careers.su_careers_image
+    - field.field.node.caw_careers.su_careers_job
+    - field.field.node.caw_careers.su_careers_legacy
+    - field.field.node.caw_careers.su_careers_lname
+    - field.field.node.caw_careers.su_careers_memory
+    - field.field.node.caw_careers.su_careers_proud_project
+    - field.field.node.caw_careers.su_careers_years
+    - node.type.caw_careers
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_formatter_class
+    - stanford_media
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_career_celebrations
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      image:
+        - su_careers_image
+      title:
+        - node_title
+      job_title:
+        - su_careers_job
+        - su_careers_department
+      years:
+        - su_careers_years
+      honored:
+        - su_careers_honored
+      body:
+        - su_careers_components
+        - su_careers_fun_fact
+        - su_careers_favorite_thing
+        - su_careers_proud_project
+        - su_careers_memory
+        - su_careers_legacy
+        - 'dynamic_block_field:node-hyvor_comments'
+      related:
+        - 'dynamic_block_field:node-caw_other_careers'
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+      'dynamic_block_field:node-caw_other_careers':
+        plugin_id: 'dynamic_block_field:node-caw_other_careers'
+        weight: 12
+        label: above
+        formatter: default
+      'dynamic_block_field:node-hyvor_comments':
+        plugin_id: 'dynamic_block_field:node-hyvor_comments'
+        weight: 12
+        label: hidden
+        formatter: default
+id: node.caw_careers.default
+targetEntityType: node
+bundle: caw_careers
+mode: default
+content:
+  su_careers_components:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: body
+  su_careers_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: job_title
+  su_careers_favorite_thing:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: body
+  su_careers_fun_fact:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: body
+  su_careers_honored:
+    type: number_unformatted
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: honored
+  su_careers_image:
+    type: media_responsive_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: responsive_1_1
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: image
+  su_careers_job:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: job_title
+  su_careers_legacy:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: body
+  su_careers_memory:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: body
+  su_careers_proud_project:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: body
+  su_careers_years:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: years
+hidden:
+  links: true
+  search_api_excerpt: true
+  su_careers_fname: true
+  su_careers_lname: true

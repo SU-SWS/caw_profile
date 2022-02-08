@@ -1,0 +1,30 @@
+uuid: 648a3483-3da4-4015-b9d3-386451f5d263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.caw_benefits
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    stanford_html: '0'
+    stanford_limited_html: '0'
+    stanford_minimal_html: '0'
+    plain_text: '0'
+id: node.caw_benefits.body
+field_name: body
+entity_type: node
+bundle: caw_benefits
+label: Body/Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

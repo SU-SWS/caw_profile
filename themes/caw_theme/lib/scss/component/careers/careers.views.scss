@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.view {
+  &.caw-careers {
+    header {
+      background: $su-color-foggy-light;
+    }
+
+    h2 {
+      a {
+        color: $su-color-black;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-bright-blue; //#006cb8
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// // Styles for the other career celebrations on node bottom
+div {
+  .dynamic-block-fieldnode-caw-other-careers {
+    > div {
+      &:nth-child(1) {
+        @include type-b;
+        @include responsive-spacing('margin', null null 4 null);
+
+        display: inline-block;
+        font-weight: $su-font-semi-bold;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.more-link {
+  @include responsive-spacing('margin', 5 null 9 null);
+
+  text-align: center;
+  width: 100%;
+
+  a {
+    @include button-primary;
+
+    color: $su-color-white;
+  }
+}

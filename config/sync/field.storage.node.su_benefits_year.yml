@@ -1,0 +1,20 @@
+uuid: e0c6b975-0c21-40ad-9a45-22cabd98137d
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.su_benefits_year
+field_name: su_benefits_year
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

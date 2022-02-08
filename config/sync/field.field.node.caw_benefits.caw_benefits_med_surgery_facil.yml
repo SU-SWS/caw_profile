@@ -1,0 +1,19 @@
+uuid: f1851793-27ea-49fa-a2d7-00f9ae255434
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_surgery_facil
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_surgery_facil
+field_name: caw_benefits_med_surgery_facil
+entity_type: node
+bundle: caw_benefits
+label: 'Surgery : Facility Charges'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,19 @@
+uuid: 89b0a9c3-e4f4-431f-a618-84a2e8a1770d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_careers_fname
+    - node.type.caw_careers
+id: node.caw_careers.su_careers_fname
+field_name: su_careers_fname
+entity_type: node
+bundle: caw_careers
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 553dd7bf-093e-4083-a89d-a7992144fe5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_psa
+field_name: caw_benefits_med_psa
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

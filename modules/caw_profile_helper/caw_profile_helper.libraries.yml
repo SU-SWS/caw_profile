@@ -1,0 +1,49 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      styles/dist/css/caw_profile.global.css: {}
+hyvor:
+  version: VERSION
+  js:
+    js/hyvor.js: {}
+book.admin:
+  version: VERSION
+  js:
+    js/book.admin.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.form
+admin:
+  version: VERSION
+  css:
+    theme:
+      styles/dist/css/caw_profile_helper.admin.css: {}
+  js:
+    js/fields.admin.js: {}
+  dependencies:
+    - caw_profile_helper/global
+layouts.one_column:
+  version: VERSION
+  css:
+    layout:
+      styles/dist/css/layouts/caw_layouts.css: {}
+layouts.two_column:
+  version: VERSION
+  css:
+    layout:
+      styles/dist/css/layouts/caw_layouts.css: {}
+      styles/dist/css/layouts/two_column.css: {}
+layouts.three_column:
+  version: VERSION
+  css:
+    layout:
+      styles/dist/css/layouts/caw_layouts.css: {}
+      styles/dist/css/layouts/three_column.css: {}
+
+patterns.card:
+  version: VERSION
+  css:
+    theme:
+      styles/dist/css/components/patterns.card.css: {}

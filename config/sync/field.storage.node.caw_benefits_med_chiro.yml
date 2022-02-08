@@ -1,0 +1,19 @@
+uuid: 1a9fd644-05f8-41a3-85e1-7d0924f5dfff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_chiro
+field_name: caw_benefits_med_chiro
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

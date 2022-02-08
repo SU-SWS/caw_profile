@@ -1,0 +1,19 @@
+uuid: d60b6c84-499c-4676-8e21-14219b1c8a17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_annual_max
+field_name: caw_benefits_annual_max
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

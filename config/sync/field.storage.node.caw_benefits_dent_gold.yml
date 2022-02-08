@@ -1,0 +1,19 @@
+uuid: a4b98579-5f20-44c8-bd0f-2464339ec9d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_dent_gold
+field_name: caw_benefits_dent_gold
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

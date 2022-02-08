@@ -1,0 +1,19 @@
+uuid: 0e24831f-04bd-4368-ad8f-d217f1639f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_dent_extraction
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_dent_extraction
+field_name: caw_benefits_dent_extraction
+entity_type: node
+bundle: caw_benefits
+label: Extractions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,8 @@
+uuid: 75f67824-59a5-47a7-b94b-190c40b3079b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Series Competencies'
+vid: caw_event_series_competencies
+description: ''
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 865499ca-d728-47f1-8f29-6c8800bd2398
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Page Resource Role'
+vid: caw_page_role
+description: ''
+weight: 0

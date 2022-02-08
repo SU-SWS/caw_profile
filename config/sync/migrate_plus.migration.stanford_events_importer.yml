@@ -113,7 +113,11 @@ process:
   su_event_alt_loc: location
   su_event_map_link/uri: map_link
   su_event_map_link/title: constants/map_title
-  su_event_source/uri: link
+  su_event_source/uri:
+    plugin: str_replace
+    source: link
+    search: events.stanford.edu
+    replace: events-legacy.stanford.edu
   su_event_date_time/value:
     -
       plugin: format_date
@@ -174,4 +178,22 @@ process:
       ignore_case: true
 destination:
   plugin: 'entity:node'
+  overwrite_properties:
+    - status
+    - type
+    - title
+    - body/value
+    - body/format
+    - su_event_email
+    - su_event_telephone
+    - su_event_sponsor
+    - su_event_alt_loc
+    - su_event_map_link/uri
+    - su_event_map_link/title
+    - su_event_source/uri
+    - su_event_date_time/value
+    - su_event_date_time/end_value
+    - su_event_date_time/duration
+    - su_event_date_time/timezone
+    - su_event_audience
 migration_dependencies: {  }

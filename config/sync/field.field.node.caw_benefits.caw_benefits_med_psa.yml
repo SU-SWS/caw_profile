@@ -1,0 +1,19 @@
+uuid: c952d6f4-263d-49fb-a2d8-7906a9215999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_psa
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_psa
+field_name: caw_benefits_med_psa
+entity_type: node
+bundle: caw_benefits
+label: 'Prostate Specific Antigen test - PSA'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

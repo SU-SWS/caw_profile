@@ -1,0 +1,225 @@
+uuid: de0441fd-18cc-4baa-852b-3e2e69f0003d
+langcode: en
+status: true
+dependencies:
+  module:
+    - migrate_source_csv
+    - stanford_migrate
+id: caw_celebrations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: default
+label: 'Career Celebrations'
+source:
+  plugin: csv
+  path: /tmp/foo.csv
+  ids:
+    - ResponseId
+  constants:
+    status: 1
+    basic_html: stanford_html
+  fields:
+    -
+      name: StartDate
+      label: StartDate
+      selector: StartDate
+    -
+      name: EndDate
+      label: EndDate
+      selector: EndDate
+    -
+      name: Status
+      label: Status
+      selector: Status
+    -
+      name: IPAddress
+      label: IPAddress
+      selector: IPAddress
+    -
+      name: Progress
+      label: Progress
+      selector: Progress
+    -
+      name: Duration
+      label: Duration
+      selector: Duration
+    -
+      name: Finished
+      label: Finished
+      selector: Finished
+    -
+      name: RecordedDate
+      label: RecordedDate
+      selector: RecordedDate
+    -
+      name: ResponseId
+      label: ResponseId
+      selector: ResponseId
+    -
+      name: RecipientLastName
+      label: RecipientLastName
+      selector: RecipientLastName
+    -
+      name: RecipientFirstName
+      label: RecipientFirstName
+      selector: RecipientFirstName
+    -
+      name: RecipientEmail
+      label: RecipientEmail
+      selector: RecipientEmail
+    -
+      name: ExternalReference
+      label: ExternalReference
+      selector: ExternalReference
+    -
+      name: LocationLatitude
+      label: LocationLatitude
+      selector: LocationLatitude
+    -
+      name: LocationLongitude
+      label: LocationLongitude
+      selector: LocationLongitude
+    -
+      name: DistributionChannel
+      label: DistributionChannel
+      selector: DistributionChannel
+    -
+      name: UserLanguage
+      label: UserLanguage
+      selector: UserLanguage
+    -
+      name: Q3_21
+      label: Q3_21
+      selector: Q3_21
+    -
+      name: Q3_22
+      label: Q3_22
+      selector: Q3_22
+    -
+      name: Q58
+      label: Q58
+      selector: Q58
+    -
+      name: Q59
+      label: Q59
+      selector: Q59
+    -
+      name: Q22
+      label: Q22
+      selector: Q22
+    -
+      name: Q27
+      label: Q27
+      selector: Q27
+    -
+      name: Q28
+      label: Q28
+      selector: Q28
+    -
+      name: Q48
+      label: Q48
+      selector: Q48
+    -
+      name: Q49
+      label: Q49
+      selector: Q49
+    -
+      name: Q51
+      label: Q51
+      selector: Q51
+    -
+      name: Q30_Id
+      label: Q30_Id
+      selector: Q30_Id
+    -
+      name: Q30_Name
+      label: Q30_Name
+      selector: Q30_Name
+    -
+      name: Q30_Size
+      label: Q30_Size
+      selector: Q30_Size
+    -
+      name: Q30_Type
+      label: Q30_Type
+      selector: Q30_Type
+    -
+      name: Q33_Id
+      label: Q33_Id
+      selector: Q33_Id
+    -
+      name: Q33_Name
+      label: Q33_Name
+      selector: Q33_Name
+    -
+      name: Q33_Size
+      label: Q33_Size
+      selector: Q33_Size
+    -
+      name: Q33_Type
+      label: Q33_Type
+      selector: Q33_Type
+    -
+      name: Q44
+      label: Q44
+      selector: Q44
+process:
+  skip:
+    plugin: skip_on_empty
+    method: row
+    source: ResponseId
+  status:
+    plugin: default_value
+    default_value: 0
+  title:
+    plugin: concat
+    source:
+      - Q3_21
+      - Q3_22
+    delimiter: ' '
+  su_careers_fname: Q3_21
+  su_careers_lname: Q3_22
+  su_careers_honored:
+    -
+      plugin: callback
+      callable: _stanford_migrate_get_time
+    -
+      plugin: format_date
+      from_format: U
+      to_format: 'Y'
+  su_careers_department:
+    -
+      plugin: skip_on_empty
+      source: Q59
+      method: process
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: careers_departments
+      value_key: name
+      ignore_case: true
+  su_careers_legacy: Q28
+  su_careers_proud_project: Q27
+  su_careers_fun_fact: Q49
+  su_careers_memory: Q48
+  su_careers_favorite_thing: Q22
+  su_careers_years:
+    -
+      plugin: skip_on_empty
+      source: Q58
+      method: process
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: careers_years
+      value_key: name
+      ignore_case: true
+destination:
+  plugin: 'entity:node'
+  default_bundle: caw_careers
+migration_dependencies:
+  required: {  }

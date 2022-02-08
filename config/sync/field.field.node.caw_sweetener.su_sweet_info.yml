@@ -1,0 +1,23 @@
+uuid: 12803c2a-12b6-4721-a23d-7df5937ed5fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_sweet_info
+    - node.type.caw_sweetener
+  module:
+    - link
+id: node.caw_sweetener.su_sweet_info
+field_name: su_sweet_info
+entity_type: node
+bundle: caw_sweetener
+label: 'More Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

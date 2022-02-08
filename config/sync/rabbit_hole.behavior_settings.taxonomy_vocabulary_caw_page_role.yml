@@ -1,0 +1,14 @@
+uuid: 5ffede56-a5ed-4d6d-9653-553c39e89290
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.caw_page_role
+id: taxonomy_vocabulary_caw_page_role
+entity_type_id: taxonomy_vocabulary
+entity_id: caw_page_role
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

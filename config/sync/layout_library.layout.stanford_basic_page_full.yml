@@ -20,19 +20,21 @@ layout:
         configuration:
           id: 'field_block:node:stanford_page:su_page_banner'
           label: Banner
-          provider: layout_builder
           label_display: '0'
-          formatter:
-            label: hidden
-            type: entity_reference_revisions_entity_view
-            settings:
-              view_mode: default
-            third_party_settings: {  }
+          provider: layout_builder
           context_mapping:
             entity: layout_builder.entity
-        additional: {  }
+            view_mode: view_mode
+          formatter:
+            type: layout_paragraphs
+            label: hidden
+            settings:
+              view_mode: default
+            third_party_settings:
+              field_formatter_class:
+                class: ''
         weight: 0
-        third_party_settings: {  }
+        additional: {  }
     third_party_settings: {  }
   -
     layout_id: jumpstart_ui_one_column
@@ -47,19 +49,18 @@ layout:
         configuration:
           id: 'field_block:node:stanford_page:title'
           label: Title
-          provider: layout_builder
           label_display: '0'
+          provider: layout_builder
+          context_mapping:
+            entity: layout_builder.entity
           formatter:
-            label: hidden
             type: entity_title_heading
+            label: hidden
             settings:
               tag: h1
             third_party_settings: {  }
-          context_mapping:
-            entity: layout_builder.entity
-        additional: {  }
         weight: 0
-        third_party_settings: {  }
+        additional: {  }
     third_party_settings: {  }
   -
     layout_id: jumpstart_ui_one_column
@@ -74,32 +75,30 @@ layout:
         configuration:
           id: 'field_block:node:stanford_page:su_page_components'
           label: Components
-          provider: layout_builder
           label_display: '0'
-          formatter:
-            label: hidden
-            type: entity_reference_revisions_entity_view
-            settings:
-              view_mode: default
-            third_party_settings:
-              ds:
-                ds_limit: ''
+          provider: layout_builder
           context_mapping:
             entity: layout_builder.entity
             view_mode: view_mode
-        additional: {  }
+          formatter:
+            type: layout_paragraphs
+            label: hidden
+            settings:
+              view_mode: default
+            third_party_settings:
+              field_formatter_class:
+                class: ''
         weight: -6
-        third_party_settings: {  }
+        additional: {  }
       dae81a37-1839-4bc3-86fc-3e4f7fda4183:
         uuid: dae81a37-1839-4bc3-86fc-3e4f7fda4183
         region: main
         configuration:
           id: jumpstart_ui_skipnav_main_anchor
           label: 'Main content anchor target'
-          provider: jumpstart_ui
           label_display: '0'
+          provider: jumpstart_ui
           context_mapping: {  }
-        additional: {  }
         weight: -10
-        third_party_settings: {  }
+        additional: {  }
     third_party_settings: {  }

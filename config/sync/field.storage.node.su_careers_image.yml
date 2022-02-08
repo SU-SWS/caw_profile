@@ -1,0 +1,20 @@
+uuid: f099442a-c40a-4c3e-a5f3-eb2e4d561b91
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.su_careers_image
+field_name: su_careers_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

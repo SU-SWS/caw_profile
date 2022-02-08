@@ -1,0 +1,19 @@
+uuid: 016d295d-a637-47f2-ab1c-21f7578dc5d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_lifetime_max
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_lifetime_max
+field_name: caw_benefits_lifetime_max
+entity_type: node
+bundle: caw_benefits
+label: 'Lifetime maximum'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

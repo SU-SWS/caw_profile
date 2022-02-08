@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.stanford_card.su_card_body
     - field.field.paragraph.stanford_card.su_card_header
+    - field.field.paragraph.stanford_card.su_card_icon
     - field.field.paragraph.stanford_card.su_card_link
     - field.field.paragraph.stanford_card.su_card_link_display
     - field.field.paragraph.stanford_card.su_card_media
@@ -12,6 +13,8 @@ dependencies:
     - paragraphs.paragraphs_type.stanford_card
   module:
     - ds
+    - field_formatter_class
+    - fontawesome
     - link
     - stanford_media
     - text
@@ -29,6 +32,7 @@ third_party_settings:
     regions:
       card_image:
         - su_card_media
+        - su_card_icon
       card_super_headline:
         - su_card_super_header
       card_headline:
@@ -52,23 +56,31 @@ mode: default
 content:
   su_card_body:
     type: text_default
-    weight: 3
-    region: card_body
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: card_body
   su_card_header:
     type: string
-    weight: 2
-    region: card_headline
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: card_headline
+  su_card_icon:
+    type: fontawesome_icon_formatter
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: card_image
   su_card_link:
     type: link
-    weight: 4
-    region: card_link
     label: hidden
     settings:
       trim_length: null
@@ -77,24 +89,26 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
+    weight: 4
+    region: card_link
   su_card_media:
     type: media_responsive_image_formatter
-    weight: 0
-    region: card_image
     label: hidden
     settings:
       view_mode: default
-      image_style: card_2_1
       link: false
+      image_style: card_2_1
     third_party_settings: {  }
+    weight: 0
+    region: card_image
   su_card_super_header:
     type: string
-    weight: 1
-    region: card_super_headline
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 1
+    region: card_super_headline
 hidden:
   search_api_excerpt: true
   su_card_link_display: true

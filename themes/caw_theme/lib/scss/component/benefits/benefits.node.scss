@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+@import 'decanter/core/src/scss/decanter-no-markup';
+@import '../../base/base';
+
+.benefits {
+  @include responsive-spacing('margin-bottom', 7);
+
+}
+
+.caw-benefits {
+  @include responsive-spacing('margin-bottom', 2);
+}
+
+.caw-benefits {
+  @include type-d;
+
+  &.title {
+    @include responsive-spacing('margin-top', 6)
+  }
+
+  h2 {
+    @include type-c;
+  }
+
+  .label {
+    @include type-e;
+
+  }
+}

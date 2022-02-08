@@ -1,0 +1,12 @@
+uuid: 94209288-7430-4aab-92ed-418c807b542f
+langcode: en
+status: true
+dependencies:
+  module:
+    - view_unpublished
+id: caw_reviewer
+label: 'Unpublished Content Reviewer'
+weight: 2
+is_admin: null
+permissions:
+  - 'view any unpublished content'

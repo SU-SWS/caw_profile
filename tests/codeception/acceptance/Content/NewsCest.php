@@ -13,7 +13,7 @@ class NewsCest {
   public function testListIntro(AcceptanceTester $I) {
     $intro_text = Factory::create()->text();
     $I->logInWithRole('site_manager');
-    $I->amOnPage('/news');
+    $I->amOnPage('/engage/news');
     $I->click('Edit Block Content Above');
     $I->click('Add Text Area');
     $I->fillField('Body', $intro_text);
@@ -30,11 +30,11 @@ class NewsCest {
     $I->see("Sample: Smith Conference");
     $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
     $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
-    $I->amOnPage("/news/sample-smith-conference");
+    $I->amOnPage("/engage/news/announcements/sample-smith-conference");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/news/sample-runners-15-feet-new-6-feet-social-distancing");
+    $I->amOnPage("/engage/news/announcements/sample-runners-15-feet-new-6-feet-social-distancing");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
+    $I->amOnPage("/engage/news/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
     $I->see("This page is currently unpublished and not visible to the public.");
     $I->see("News", ".su-multi-menu");
   }
@@ -52,10 +52,10 @@ class NewsCest {
    * Test that the view pages exist.
    */
   public function testViewPagesExist(AcceptanceTester $I) {
-    $I->amOnPage("/news");
+    $I->amOnPage("/engage/news");
     $I->see("No results found");
     $I->seeLink('Faculty');
-    $I->click("a[href='/news/staff']");
+    $I->click("a[href='/engage/news/staff']");
     $I->canSeeResponseCodeIs(200);
     $I->see("No results found");
     $I->see("Topics Menu");
@@ -74,14 +74,14 @@ class NewsCest {
 
     // Redirect as anon.
     $I->runDrush('cr');
-    $I->amOnPage('/news');
-    $I->click(".su-news-list__item a:first-of-type");
+    $I->amOnPage('/engage/news');
+    $I->click(".su-news-article a:first-of-type");
     $I->seeCurrentUrlEquals('/');
 
     // See content as admin.
     $I->logInWithRole('administrator');
-    $I->amOnPage('/news/google');
-    $I->canSeeInCurrentUrl("/news/google");
+    $I->amOnPage('/engage/news/google');
+    $I->canSeeInCurrentUrl("/engage/news/google");
   }
 
   /**
@@ -104,7 +104,7 @@ class NewsCest {
       'title' => 'Test News 3',
     ]);
 
-    $I->amOnPage("/news/test-news-2");
+    $I->amOnPage("/engage/news/test-news-2");
     $I->canSeeNumberOfElements(".stanford-news--cards .su-card", 2);
     $I->see("Test News 1");
     $I->see("Test News 3");
@@ -138,20 +138,6 @@ class NewsCest {
   }
 
   /**
-   * Special characters should stay.
-   */
-  public function testSpecialCharacters(AcceptanceTester $I) {
-    $faker = Factory::create();
-    $I->logInWithRole('contributor');
-    $I->amOnPage('/node/add/stanford_person');
-    $I->fillField('First Name', 'Foo');
-    $I->fillField('Last Name', 'Bar-Baz & Foo');
-    $I->fillField('Short Title', $faker->text);
-    $I->click('Save');
-    $I->canSee('Foo Bar-Baz & Foo', 'h1');
-  }
-
-  /**
    * Published checkbox should be hidden on term edit pages.
    */
   public function testTermPublishing(AcceptanceTester $I) {
@@ -160,7 +146,7 @@ class NewsCest {
       'vid' => 'stanford_news_topics',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
   }
 

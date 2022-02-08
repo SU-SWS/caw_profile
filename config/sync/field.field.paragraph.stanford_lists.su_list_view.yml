@@ -21,10 +21,15 @@ settings:
   force_default: false
   allowed_views:
     stanford_basic_pages: stanford_basic_pages
+    caw_benefits: caw_benefits
+    caw_careers: caw_careers
+    caw_basic_pages: caw_basic_pages
+    caw_event_series: caw_event_series
     stanford_events: stanford_events
     stanford_news: stanford_news
     stanford_person: stanford_person
     stanford_publications: stanford_publications
+    caw_sweeteners: caw_sweeteners
     su_block_edit_links: '0'
     content: '0'
     block_content: '0'
@@ -41,8 +46,10 @@ settings:
     publication_terms: '0'
     redirect: '0'
     search: '0'
+    user_admin_people: '0'
   allowed_display_types:
     viewfield_block: viewfield_block
+    attachment: '0'
     block: '0'
     default: '0'
     page: '0'

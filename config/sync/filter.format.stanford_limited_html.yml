@@ -1,0 +1,33 @@
+uuid: dc0e02a2-fa0e-45f7-977a-ce7656afaa55
+langcode: en
+status: true
+dependencies:
+  module:
+    - linkit
+    - media
+name: 'Limited HTML'
+format: stanford_limited_html
+weight: 0
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <div> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title class="su-button su-button--big su-button--secondary su-link--action"> <ul type class=""> <ol start type class=""> <li class="">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

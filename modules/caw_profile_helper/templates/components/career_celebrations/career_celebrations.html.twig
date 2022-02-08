@@ -1,0 +1,15 @@
+<div{{ attributes.addClass('caw-careers') }}>
+  <div class="caw-careers--card">
+    {{ pattern('career_card', {image: image,title:title,job_title:job_title,years:years,honored:honored}) }}
+  </div>
+
+  <div class="caw-careers--body">
+    {{ body }}
+  </div>
+
+  <div class="centered-container">
+    <div class="su-margin-bottom-3">
+      {{ related }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+uuid: bf397ad7-9e3e-416e-9ce1-03f4c04f34ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_sweet_avail
+    - node.type.caw_sweetener
+    - taxonomy.vocabulary.caw_sweet_available
+id: node.caw_sweetener.su_sweet_avail
+field_name: su_sweet_avail
+entity_type: node
+bundle: caw_sweetener
+label: 'Available To'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      caw_sweet_available: caw_sweet_available
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: caw_sweet_available
+field_type: entity_reference

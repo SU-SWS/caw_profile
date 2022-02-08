@@ -1,0 +1,31 @@
+uuid: bb369e8d-7fc5-468b-a966-73c2f7b476f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - response_code_condition
+    - system
+  theme:
+    - caw_theme
+id: caw_theme_pagetitle
+theme: caw_theme
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/node/*\r\n/engage/news*\r\n/people*\r\n/engage/events*\r\n/event-series*\r\n/publications*"
+  response_code:
+    id: response_code
+    negate: true
+    context_mapping: {  }
+    response_codes: "404\r\n403"

@@ -1,0 +1,30 @@
+uuid: d3625a84-d926-454b-986a-5e4f44dce969
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.su_benefit_type
+field_name: su_benefit_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: medical
+      label: Medical
+    -
+      value: dental
+      label: Dental
+    -
+      value: vision
+      label: Vision
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

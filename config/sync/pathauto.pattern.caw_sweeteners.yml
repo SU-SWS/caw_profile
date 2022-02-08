@@ -1,0 +1,22 @@
+uuid: 11becd90-92ab-4d85-9931-c7009a988eb6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: caw_sweeteners
+label: Sweeteners
+type: 'canonical_entities:node'
+pattern: 'benefits-rewards/sweeteners/[node:title]'
+selection_criteria:
+  8d872ef7-72f2-4463-8067-154e8d51670d:
+    id: node_type
+    negate: false
+    uuid: 8d872ef7-72f2-4463-8067-154e8d51670d
+    context_mapping:
+      node: node
+    bundles:
+      caw_sweetener: caw_sweetener
+selection_logic: and
+weight: -5
+relationships: {  }

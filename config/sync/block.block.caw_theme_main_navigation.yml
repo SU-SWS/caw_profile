@@ -1,0 +1,25 @@
+uuid: 8c49696e-786d-4487-9c6a-89ef8a6f1de0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - caw_theme
+id: caw_theme_main_navigation
+theme: caw_theme
+region: menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

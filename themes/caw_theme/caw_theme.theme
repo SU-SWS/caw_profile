@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * caw_theme.theme
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\caw_profile_helper\BookManager;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'caw_theme_search') {
+    $suggestions[] = 'block__stanford_basic_search';
+  }
+  if ($variables['elements']['#plugin_id'] == 'system_branding_block' && BookManager::getSubsiteNode()) {
+    $suggestions[] = 'block__subsite__system_branding_block';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function caw_theme_theme_suggestions_book_tree_alter(array &$suggestions, array $variables, $hook) {
+  if (!empty($variables['attributes']['data-main-nav']) && $variables['attributes']['data-main-nav']) {
+    $suggestions[] = $hook . '__main_menu';
+    return;
+  }
+  $suggestions[] = $hook . '__secondary_nav';
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function caw_theme_theme_suggestions_alter(&$suggestions, $variables, $hook) {
+  if (substr($hook, 0, 10) == 'views_view') {
+    $suggestions[] = $hook . '__' . $variables['view']->id();
+    $suggestions[] = $hook . '__' . $variables['view']->id() . '__' . $variables['view']->current_display;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_views_view_list(&$variables) {
+  if (
+    $variables['view']->id() == 'caw_benefits' &&
+    $variables['view']->current_display == 'filtering_list'
+  ) {
+    // Wrap each row of the view with the data-nid attribute to be used for the
+    // javascript to attach onto.
+    foreach ($variables['rows'] as &$row) {
+      $row['attributes']->setAttribute('data-nid', $row['content']['#row']->nid);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_block__book_navigation(&$variables) {
+  if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'caw_theme_book_main_navigation') {
+    $variables['content']['#attributes']['data-main-nav'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_book_tree(&$variables) {
+  if (theme_get_setting('nav_dropdown_enabled', 'stanford_basic')) {
+    $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    if ($subsite = BookManager::getSubsiteNode()) {
+      $variables['subsite_link'] = $subsite->toUrl()->toString();
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_views_view(&$variables) {
+  $variables['#attached']['library'][] = 'caw_theme/views';
+  if ($variables['id'] == 'caw_sweeteners') {
+    $variables['#attached']['library'][] = 'caw_theme/sweeteners.views';
+  }
+  if ($variables['id'] == 'caw_careers') {
+    $variables['#attached']['library'][] = 'caw_theme/careers.views';
+  }
+  if ($variables['id'] == 'caw_benefits') {
+    $variables['#attached']['library'][] = 'caw_theme/benefits.views';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_node(&$variables) {
+  if ($variables['page'] ?? FALSE) {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $variables['node'];
+    switch ($node->bundle()) {
+      case 'caw_sweetener':
+        $variables['#attached']['library'][] = 'caw_theme/sweeteners.node';
+        break;
+
+      case 'stanford_page':
+        $layout = $node->get('layout_selection')->getString();
+        if ($layout == 'stanford_basic_page_full') {
+          $variables['#attached']['library'][] = "caw_theme/basic_pages.full_width";
+        }
+        break;
+
+      case 'caw_benefits':
+        $variables['#attached']['library'][] = "caw_theme/benefits.node";
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_paragraph__stanford_lists(&$variables) {
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  $paragraph = $variables['paragraph'];
+  $classes = [];
+  if ($value = $paragraph->get('su_list_view')->get(0)) {
+    // Reduce the data to just a flat array of strings.
+    $classes = array_filter($value->getValue(), function ($value) {
+      return $value && is_string($value);
+    });
+  }
+  // Wrap the paragraph with classes that indicate which view and display is
+  // used. This allows us to stretch the container when on a full width page.
+  foreach ($classes as $class) {
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier($class);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_paragraph__stanford_faq(&$variables) {
+  $variables['#attached']['library'][] = 'caw_theme/components.faq';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function caw_theme_preprocess_field(&$variables) {
+  $variables['attributes']['class'][] = 'field';
+  $variables['title_attributes']['class'][] = 'label';
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function caw_theme_preprocess(&$variables, $hook) {
+  if (str_replace('-', '_', $hook) == 'pattern_news_list') {
+    $variables['#attached']['library'][] = 'caw_theme/components.news_list';
+  }
+}

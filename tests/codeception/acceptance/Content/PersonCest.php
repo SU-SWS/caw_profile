@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory;
+
 /**
  * Test the news functionality.
  */
@@ -103,6 +105,20 @@ class PersonCest {
   }
 
   /**
+   * Special characters should stay.
+   */
+  public function testSpecialCharacters(AcceptanceTester $I) {
+    $faker = Factory::create();
+    $I->logInWithRole('contributor');
+    $I->amOnPage('/node/add/stanford_person');
+    $I->fillField('First Name', 'Foo');
+    $I->fillField('Last Name', 'Bar-Baz & Foo');
+    $I->fillField('Short Title', $faker->text);
+    $I->click('Save');
+    $I->canSee('Foo Bar-Baz & Foo', 'h1');
+  }
+
+  /**
    * D8CORE-2613: Taxonomy menu items don't respect the UI.
    */
   public function testD8Core2613Terms(AcceptanceTester $I) {
@@ -151,7 +167,7 @@ class PersonCest {
       'vid' => 'stanford_person_types',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
   }
 
@@ -171,6 +187,7 @@ class PersonCest {
       'su_person_type_group' => $foo->id(),
     ]);
     $I->logInWithRole('administrator');
+    drupal_flush_all_caches();
     $I->amOnPage('/people/foo');
     $I->canSee($node->label());
     $node->setUnpublished()->save();

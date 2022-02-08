@@ -1,0 +1,19 @@
+uuid: 4453a28f-b79f-40d9-a64b-8fdb138515d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_christian_prac
+field_name: caw_benefits_med_christian_prac
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

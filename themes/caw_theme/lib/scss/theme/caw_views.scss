@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+.view {
+
+  header {
+
+    h2 {
+      @include type-c;
+      @include responsive-spacing('padding', 2 null);
+      max-width: 1500px;
+      width: calc(100% - 200px);
+      margin: 0 auto;
+    }
+  }
+
+  .exposed-filters {
+    @include responsive-spacing('margin', null null 5 null);
+    background: $su-color-foggy-light;
+  }
+
+  form {
+    @include responsive-spacing('padding', null null 5 null);
+
+    max-width: 1500px;
+    width: calc(100% - 200px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-content: left;
+    align-content: center;
+
+    .form-submit {
+      margin: 0;
+    }
+
+    .chosen-container {
+      font-size: inherit;
+
+      .search-field {
+        width: 100%;
+      }
+    }
+
+    .chosen-container-multi {
+      .chosen-choices {
+        .search-field {
+          input[type="text"] {
+            height: 44px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.more-link {
+  @include responsive-spacing('margin', 5 null 9 null);
+
+  text-align: center;
+  width: 100%;
+
+  a {
+    @include button-primary;
+
+    color: $su-color-white;
+  }
+}

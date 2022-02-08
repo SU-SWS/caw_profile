@@ -1,0 +1,7 @@
+name: 'Node Edit Link'
+type: module
+description: 'Provides a one time use link for node editing'
+core_version_requirement: ^8.8 || ^9
+package: 'Cardinal at Work'
+dependencies:
+  - drupal:node

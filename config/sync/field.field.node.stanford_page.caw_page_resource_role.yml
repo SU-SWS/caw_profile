@@ -1,0 +1,29 @@
+uuid: cb54d941-d038-4ad1-89a1-87705bfa17c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_page_resource_role
+    - node.type.stanford_page
+    - taxonomy.vocabulary.caw_page_role
+id: node.stanford_page.caw_page_resource_role
+field_name: caw_page_resource_role
+entity_type: node
+bundle: stanford_page
+label: 'Resource Role'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      caw_page_role: caw_page_role
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

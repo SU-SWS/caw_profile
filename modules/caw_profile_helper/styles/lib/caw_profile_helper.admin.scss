@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+// Import Decanter Library:
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+@import 'decanter/core/src/scss/core/flex-grid';
+
+h1.page-title {
+  margin: 0;
+}
+
+.js-lpb-component {
+  min-height: 40px;
+  width: calc(100% - 100px);
+  max-width: 980px;
+  margin: 0 auto;
+
+  &.lpb-layout {
+    outline: 1px solid blue;
+  }
+
+  .caw-layout--two-column &,
+  .caw-layout--three-column &,
+  &[data-type="stanford_banner"],
+  &[data-type="layout"] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  p {
+    font-size: 18px !important;
+  }
+
+  ul,
+  ol,
+  li {
+    font-size: 18px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
+
+  h3 {
+    font-size: 26px !important;
+    line-height: 31px !important;
+  }
+
+  h4 {
+    font-size: 23px !important;
+    line-height: 28px !important;
+  }
+
+  .jumpstart-accordion {
+    summary:after {
+      font-size: 18px;
+    }
+  }
+
+  .su-media__caption {
+    max-width: 100%;
+  }
+}
+
+.lpb-layout {
+  padding: 20px 0;
+}
+
+.js-lpb-region {
+  outline: 1px dotted rgba(0, 0, 255, 0.5)
+}
+
+.lpb-component-list__group--content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.lpb-component-list__item {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.lpb-component-list__item img {
+  max-height: 50px;
+  display: block;
+  margin: 0 auto;
+}

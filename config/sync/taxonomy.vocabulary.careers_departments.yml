@@ -1,0 +1,8 @@
+uuid: 15d3bcea-707c-40c6-9a74-d622f95154c0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Career Celebrations Departments'
+vid: careers_departments
+description: ''
+weight: 0

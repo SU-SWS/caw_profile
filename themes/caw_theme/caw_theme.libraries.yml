@@ -1,0 +1,57 @@
+base:
+  css:
+    component:
+      dist/css/base.css: { }
+
+views:
+  css:
+    component:
+      dist/css/caw_views.css: { }
+
+basic_pages.full_width:
+  css:
+    theme:
+      dist/css/basic_pages.full_width.css: { }
+
+sweeteners.views:
+  css:
+    component:
+      dist/css/sweeteners.views.css: { }
+
+sweeteners.node:
+  css:
+    component:
+      dist/css/sweeteners.node.css: { }
+careers.views:
+  css:
+    component:
+      dist/css/careers.views.css: { }
+  js:
+    lib/js/careers.views.js: { }
+
+components.faq:
+  css:
+    component:
+      dist/css/faq.css: { }
+  js:
+    lib/js/components/faq.js: { }
+
+components.news_list:
+  css:
+    component:
+      dist/css/news-list.css: { }
+
+benefits.views:
+  css:
+    component:
+      dist/css/benefits.views.css: { }
+  js:
+    lib/js/benefits.views.js: { }
+  dependencies:
+    - core/jquery.ui
+    - core/drupalSettings
+
+benefits.node:
+  css:
+    component:
+      dist/css/benefits.node.css: { }

@@ -82,6 +82,7 @@ dependencies:
     - redirect
     - responsive_image
     - role_delegation
+    - scheduler
     - seckit
     - shortcut
     - stanford_media
@@ -383,6 +384,7 @@ permissions:
   - 'revert stanford_page revisions'
   - 'revert stanford_person revisions'
   - 'revert stanford_publication revisions'
+  - 'schedule publishing of nodes'
   - 'select account cancellation method'
   - 'send one time edit link'
   - 'switch shortcut sets'

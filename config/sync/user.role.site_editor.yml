@@ -46,6 +46,7 @@ dependencies:
     - node_edit_link
     - paragraphs
     - path
+    - scheduler
     - stanford_publication
     - system
     - taxonomy
@@ -231,6 +232,7 @@ permissions:
   - 'view caw_sweetener revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view scheduled content'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'

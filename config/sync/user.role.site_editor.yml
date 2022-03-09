@@ -213,6 +213,7 @@ permissions:
   - 'revert stanford_page revisions'
   - 'revert stanford_person revisions'
   - 'revert stanford_publication revisions'
+  - 'schedule publishing of nodes'
   - 'send one time edit link'
   - 'update media'
   - 'use text format stanford_limited_html'

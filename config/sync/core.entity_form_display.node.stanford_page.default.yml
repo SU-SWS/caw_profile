@@ -199,3 +199,4 @@ content:
 hidden:
   layout_builder__layout: true
   node_edit_link: true
+  unpublish_on: true

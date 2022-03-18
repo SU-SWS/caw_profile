@@ -202,6 +202,7 @@ module:
   views_bulk_operations: 0
   views_conditional: 0
   views_contextual_filters_or: 0
+  views_custom_cache_tag: 0
   views_flipped_table: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
@@ -227,4 +228,5 @@ theme:
   stanford_basic: 0
   stable9: 0
   caw_theme: 0
+  minimally_branded_subtheme: 0
 profile: caw_profile

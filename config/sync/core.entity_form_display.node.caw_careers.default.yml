@@ -21,6 +21,7 @@ dependencies:
     - media_library
     - paragraphs
     - path
+    - scheduler
 id: node.caw_careers.default
 targetEntityType: node
 bundle: caw_careers
@@ -197,15 +198,10 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
     weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  unpublish_on: true

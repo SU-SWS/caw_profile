@@ -21,6 +21,7 @@ dependencies:
     - media_library
     - paragraphs
     - path
+    - scheduler
     - stanford_intranet
 third_party_settings:
   field_group:

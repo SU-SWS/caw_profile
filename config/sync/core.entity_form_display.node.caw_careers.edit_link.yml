@@ -18,6 +18,8 @@ dependencies:
     - field.field.node.caw_careers.su_careers_proud_project
     - field.field.node.caw_careers.su_careers_years
     - node.type.caw_careers
+  module:
+    - scheduler
 id: node.caw_careers.edit_link
 targetEntityType: node
 bundle: caw_careers
@@ -99,12 +101,6 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   node_edit_link: true
@@ -118,4 +114,5 @@ hidden:
   su_careers_years: true
   title: true
   uid: true
+  unpublish_on: true
   url_redirects: true

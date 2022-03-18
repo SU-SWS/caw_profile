@@ -103,6 +103,7 @@ dependencies:
   module:
     - field_group
     - path
+    - scheduler
     - stanford_fields
     - text
 third_party_settings:
@@ -1053,6 +1054,12 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 99
@@ -1115,3 +1122,4 @@ content:
     third_party_settings: {  }
 hidden:
   node_edit_link: true
+  unpublish_on: true

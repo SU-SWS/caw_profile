@@ -60,9 +60,10 @@ class BookConfigOverrider implements ConfigFactoryOverrideInterface {
   public function getCacheableMetadata($name) {
     $metadata = new CacheableMetadata();
     $metadata->addCacheContexts(['route', 'url.path']);
-    if ($this->routeMatch->getRouteName() == 'entity.node.canonical') {
-      $node = $this->routeMatch->getParameter('node');
-      $metadata->addCacheTags($node->getCacheTags());
+    if ($name == 'system.site') {
+      if ($subsite_node = BookManager::getSubsiteNode()) {
+        $metadata->addCacheTags($subsite_node->getCacheTags());
+      }
     }
     return $metadata;
   }

@@ -56,7 +56,9 @@ class BookManager extends Manager {
    */
   public function bookTreeAllData($bid, $link = NULL, $max_depth = NULL) {
     $this->loadAllData = TRUE;
-    return parent::bookTreeAllData($bid, $link, $max_depth);
+    $data = parent::bookTreeAllData($bid, $link, $max_depth);
+    $this->loadAllData = FALSE;
+    return $data;
   }
 
 

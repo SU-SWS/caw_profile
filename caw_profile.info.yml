@@ -1,6 +1,6 @@
 name: 'Cardinal at Work Profile'
 description: 'CAW Website Profile'
-version: 8.x-3.1-dev
+version: 8.x-3.1
 type: profile
 project: Cardinal at Work
 core_version_requirement: ^9

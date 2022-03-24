@@ -1,5 +1,14 @@
 # Cardinal at Work Profile
 
+
+8.x-3.1
+--------------------------------------------------------------------------------
+_Release Date: 2022-03-24_
+
+- Adjusted subsite caches
+- D8CORE-5172: Updated references to localist and events-legacy urls
+- DO not require lockup option select, prevent requiring lockup fields
+
 8.x-3.0
 --------------------------------------------------------------------------------
 _Release Date: 2022-03-18_

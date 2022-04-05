@@ -683,7 +683,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: 'Grid - All Items'
-      block_description: 'List Page'
+      block_description: ''
       block_hide_empty: false
       block_category: 'Events Lists (Views)'
       fields:
@@ -2553,7 +2553,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: 'List - All Items'
-      block_description: 'List Page'
+      block_description: ''
       block_hide_empty: false
       block_category: 'Events Lists (Views)'
       fields:
@@ -4143,7 +4143,7 @@ display:
         - 'config:field.storage.node.su_event_type'
   list_page_filtered:
     id: list_page_filtered
-    display_title: 'List Page - Filtered'
+    display_title: 'Taxonomy Term Page List'
     display_plugin: block
     position: 3
     display_options:
@@ -5419,14 +5419,15 @@ display:
           empty_zero: false
           hide_alter_empty: true
       arguments:
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
+        term_node_tid_depth:
+          id: term_node_tid_depth
+          table: node_field_data
+          field: term_node_tid_depth
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
+          entity_type: node
+          plugin_id: taxonomy_index_tid_depth
           default_action: default
           exception:
             value: all
@@ -5437,10 +5438,9 @@ display:
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
-            node: true
-            limit: true
-            vids:
-              stanford_event_types: stanford_event_types
+            node: false
+            limit: false
+            vids: {  }
             anyall: ','
           default_argument_skip_url: false
           summary_options:
@@ -5819,7 +5819,7 @@ display:
         filter_groups: false
       display_description: 'List - All Items'
       display_extenders: {  }
-      block_description: 'List Page'
+      block_description: ''
       block_category: 'Events Lists (Views)'
       block_hide_empty: false
     cache_metadata:
@@ -6585,7 +6585,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: 'Past Events List'
-      block_description: 'Past Events List Page'
+      block_description: ''
       block_hide_empty: false
       block_category: 'Events Lists (Views)'
       fields:

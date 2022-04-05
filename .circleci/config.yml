@@ -94,8 +94,6 @@ jobs:
     <<: *code_coverage
   run-back-to-dev:
     <<: *back_to_dev
-  run-d8-codeception:
-    <<: *d8_codeception
   run-d9-codeception:
     <<: *d9_codeception
   run-merge-upstream:
@@ -116,9 +114,10 @@ workflows:
                 - /.*/
   tests:
     jobs:
-      - run-coverage
-#      - run-d8-codeception
-      - run-d9-codeception
+      - run-coverage:
+          context: github-auth
+      - run-d9-codeception:
+          context: github-auth
   # Re-test every sunday in case this code becomes stale.
   sundays:
     jobs:

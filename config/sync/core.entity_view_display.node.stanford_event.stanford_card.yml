@@ -196,7 +196,7 @@ content:
     type: link
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: true
       url_plain: true
       rel: '0'
@@ -238,3 +238,4 @@ hidden:
   su_event_schedule: true
   su_event_sponsor: true
   su_event_telephone: true
+  su_shared_tags: true

@@ -4,11 +4,14 @@ use Faker\Factory;
 
 /**
  * Class ListsCest.
+ *
+ * @group paragraphs
  */
 class ListsCest {
 
   /**
-   * Allow all paragraph types by using state.
+   * Shared tags on each content type are identical.
+   * @group newtest
    */
   public function _before() {
     \Drupal::state()->set('caw_profile_allow_all_paragraphs', TRUE);
@@ -241,7 +244,7 @@ class ListsCest {
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     // Use a child term but the argument is the parent term to verify children
     // are included in the results.
-    $child_type = $this->createTaxonomyTerm($I, 'stanford_event_types', null, $event_type->id());
+    $child_type = $this->createTaxonomyTerm($I, 'stanford_event_types', NULL, $event_type->id());
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
     $event = $I->createEntity([
@@ -505,13 +508,17 @@ class ListsCest {
    * @return \Drupal\taxonomy\TermInterface
    *   Generated taxonomy term.
    */
-  protected function createTaxonomyTerm(AcceptanceTester $I, string $vid, ?string $name = NULL, ?int $parent_id = null) {
+  protected function createTaxonomyTerm(AcceptanceTester $I, string $vid, ?string $name = NULL, ?int $parent_id = NULL) {
     if (!$name) {
       $name = Factory::create()->text(15);
     }
 
     $name = trim(preg_replace('/[\W]/', '-', $name), '-');
-    return $I->createEntity(['vid' => $vid, 'name' => $name, 'parent' => $parent_id], 'taxonomy_term');
+    return $I->createEntity([
+      'vid' => $vid,
+      'name' => $name,
+      'parent' => $parent_id,
+    ], 'taxonomy_term');
   }
 
 }

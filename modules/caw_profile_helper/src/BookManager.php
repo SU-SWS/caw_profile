@@ -61,12 +61,16 @@ class BookManager extends Manager {
     return $data;
   }
 
-
   /**
-   * {@inheritdoc}
+   * {@inheritDoc}
+   *
+   * Override Core's book method to display the entire book tree.
    */
-  public function getActiveTrailIds($bid, $link) {
-    return $this->loadAllData ? NULL : parent::getActiveTrailIds($bid, $link);
+  protected function bookTreeBuild($bid, array $parameters = []) {
+    if ($this->loadAllData) {
+      unset($parameters['expanded']);
+    }
+    return parent::bookTreeBuild($bid, $parameters);
   }
 
 }

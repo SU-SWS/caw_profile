@@ -781,7 +781,7 @@ display:
           field: term_node_taxonomy_name_depth
           relationship: none
           group_type: group
-          admin_label: 'Taxonomy Name: Audience or Type'
+          admin_label: 'Taxonomy Name: Audience, Type, or Category'
           default_action: ignore
           exception:
             value: all
@@ -795,9 +795,9 @@ display:
           default_argument_skip_url: 0
           summary_options:
             base_path: ''
-            count: '1'
-            items_per_page: '25'
+            count: 1
             override: 0
+            items_per_page: '25'
           summary:
             sort_order: asc
             number_of_records: '0'
@@ -1900,7 +1900,7 @@ display:
           field: term_node_taxonomy_name_depth
           relationship: none
           group_type: group
-          admin_label: 'Taxonomy Name: Audience or Type'
+          admin_label: 'Taxonomy Name: Audience, Type, or Category'
           default_action: ignore
           exception:
             value: all
@@ -1914,9 +1914,9 @@ display:
           default_argument_skip_url: 0
           summary_options:
             base_path: ''
-            count: '1'
-            items_per_page: '25'
+            count: 1
             override: 0
+            items_per_page: '25'
           summary:
             sort_order: asc
             number_of_records: '0'
@@ -1928,6 +1928,7 @@ display:
           validate_options: {  }
           depth: '1'
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
           break_phrase: 1

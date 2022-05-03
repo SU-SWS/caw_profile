@@ -187,4 +187,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  node_edit_link: true
   su_course_id: true

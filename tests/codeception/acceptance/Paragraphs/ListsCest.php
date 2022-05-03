@@ -53,6 +53,45 @@ class ListsCest {
   }
 
   /**
+   * Event lists should display with categories.
+   *
+   * @group caw
+   */
+  public function testCawEventCategory(AcceptanceTester $I) {
+    $term = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'caw_event_category',
+    ], 'taxonomy_term');
+    $first_event = $I->createEntity([
+      'type' => 'stanford_event',
+      'title' => $this->faker->words(3, TRUE),
+      'su_event_date_time' => [
+        'value' => time() + (60 * 60 * 24),
+        'end_value' => time() + (60 * 60 * 24 * 7),
+      ],
+    ]);
+    $event = $I->createEntity([
+      'type' => 'stanford_event',
+      'title' => $this->faker->words(3, TRUE),
+      'caw_event_category' => $term->id(),
+      'su_event_date_time' => [
+        'value' => time() + (60 * 60 * 24),
+        'end_value' => time() + (60 * 60 * 24 * 7),
+      ],
+    ]);
+    $node = $this->getNodeWithList($I, [
+      'target_id' => 'stanford_events',
+      'display_id' => 'list_page',
+      'items_to_display' => 100,
+      'arguments' => str_replace(' ', '-', $term->label()),
+    ]);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($event->label());
+    $I->cantSee($first_event->label());
+    $I->canSeeNumberOfElements('.su-event-list-item', 1);
+  }
+
+  /**
    * When using the list paragraph and view arguments, it should filter results.
    */
   public function testListParagraphNewsFiltersNoFilter(AcceptanceTester $I) {
@@ -151,11 +190,26 @@ class ListsCest {
   public function testListParagraphEvents(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
 
-    $type = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'stanford_event_types'], 'taxonomy_term');
-    $audience = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'event_audience'], 'taxonomy_term');
-    $group = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'stanford_event_groups'], 'taxonomy_term');
-    $subject = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'stanford_event_subject'], 'taxonomy_term');
-    $keyword = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'stanford_event_keywords'], 'taxonomy_term');
+    $type = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'stanford_event_types',
+    ], 'taxonomy_term');
+    $audience = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'event_audience',
+    ], 'taxonomy_term');
+    $group = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'stanford_event_groups',
+    ], 'taxonomy_term');
+    $subject = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'stanford_event_subject',
+    ], 'taxonomy_term');
+    $keyword = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'stanford_event_keywords',
+    ], 'taxonomy_term');
 
     $event = $I->createEntity([
       'type' => 'stanford_event',
@@ -207,7 +261,7 @@ class ListsCest {
       'target_id' => 'stanford_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
-      'arguments' => "''/" . str_replace(' ', '-',$group->label()),
+      'arguments' => "''/" . str_replace(' ', '-', $group->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($event->label());
@@ -216,7 +270,7 @@ class ListsCest {
       'target_id' => 'stanford_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
-      'arguments' => "''/''/" .str_replace(' ', '-', $subject->label()),
+      'arguments' => "''/''/" . str_replace(' ', '-', $subject->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($event->label());
@@ -225,17 +279,20 @@ class ListsCest {
       'target_id' => 'stanford_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
-      'arguments' => "''/''/''/" . str_replace(' ', '-',$keyword->label()),
+      'arguments' => "''/''/''/" . str_replace(' ', '-', $keyword->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($event->label());
 
-    $type = $I->createEntity(['name' => $this->faker->words(3, TRUE), 'vid' => 'stanford_event_types'], 'taxonomy_term');
+    $type = $I->createEntity([
+      'name' => $this->faker->words(3, TRUE),
+      'vid' => 'stanford_event_types',
+    ], 'taxonomy_term');
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
-      'arguments' => str_replace(' ', '-',$type->label()),
+      'arguments' => str_replace(' ', '-', $type->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($event->label());
@@ -535,7 +592,7 @@ class ListsCest {
       'title' => $this->faker->text(15),
       'su_basic_page_type' => $type_term->id(),
       'su_page_description' => $this->faker->text,
-      'layout_selection' => 'stanford_basic_page_full'
+      'layout_selection' => 'stanford_basic_page_full',
     ]);
     $I->amOnPage($layout_changed_page->toUrl('edit-form')->toString());
     $I->click('Save');

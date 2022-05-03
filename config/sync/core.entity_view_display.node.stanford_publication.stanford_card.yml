@@ -61,13 +61,13 @@ content:
     label: hidden
     settings:
       link: true
-      class: ''
+      class: su-list-unstyled
       list_type: ul
     third_party_settings:
       field_formatter_class:
         class: ''
       ds:
-        ds_limit: ''
+        ds_limit: '3'
     weight: 2
     region: card_body
 hidden:

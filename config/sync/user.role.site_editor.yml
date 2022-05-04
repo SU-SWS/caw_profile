@@ -35,6 +35,7 @@ dependencies:
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
     - taxonomy.vocabulary.stanford_publication_topics
+    - taxonomy.vocabulary.su_shared_tags
   module:
     - content_lock
     - dropzonejs
@@ -81,6 +82,7 @@ permissions:
   - 'create google_form media'
   - 'create image media'
   - 'create media'
+  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
@@ -105,6 +107,7 @@ permissions:
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
   - 'create terms in stanford_publication_topics'
+  - 'create terms in su_shared_tags'
   - 'create url aliases'
   - 'create video media'
   - 'delete any caw_careers content'
@@ -129,6 +132,7 @@ permissions:
   - 'delete own file media'
   - 'delete own google_form media'
   - 'delete own image media'
+  - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
   - 'delete own stanford_gallery_images media'
@@ -137,6 +141,7 @@ permissions:
   - 'delete own stanford_person content'
   - 'delete own stanford_publication content'
   - 'delete own video media'
+  - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
   - 'delete stanford_event_series revisions'
   - 'delete stanford_news revisions'
@@ -160,6 +165,7 @@ permissions:
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
   - 'delete terms in stanford_publication_topics'
+  - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
   - 'edit any caw_careers content'
   - 'edit any caw_sweetener content'
@@ -180,6 +186,7 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
+  - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
   - 'edit own stanford_gallery_images media'
@@ -223,6 +230,7 @@ permissions:
   - 'view any unpublished caw_careers content'
   - 'view any unpublished caw_sweetener content'
   - 'view any unpublished content'
+  - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'
@@ -234,6 +242,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view scheduled content'
+  - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'

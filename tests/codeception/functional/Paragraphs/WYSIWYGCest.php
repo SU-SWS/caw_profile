@@ -181,8 +181,6 @@ class WYSIWYGCest {
   /**
    * Wysiwyg tables can be edited.
    *
-   * @group mikes
-   *
    * @link https://www.drupal.org/project/drupal/issues/3065095
    */
   public function testWysiwygTables(FunctionalTester $I) {

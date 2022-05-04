@@ -12,14 +12,12 @@ dependencies:
     - field.field.node.stanford_event_series.su_event_series_subheadline
     - field.field.node.stanford_event_series.su_event_series_type
     - field.field.node.stanford_event_series.su_event_series_weight
+    - field.field.node.stanford_event_series.su_shared_tags
     - node.type.stanford_event_series
   module:
     - ds
     - entity_reference_revisions
     - field_formatter_class
-    - layout_builder
-    - layout_builder_restrictions
-    - layout_library
     - user
 id: node.stanford_event_series.search_indexing
 targetEntityType: node
@@ -82,3 +80,4 @@ hidden:
   search_api_excerpt: true
   stanford_intranet__access: true
   su_event_series_weight: true
+  su_shared_tags: true

@@ -37,6 +37,7 @@ settings:
     stanford_events_schedule: '0'
     stanford_event_series: '0'
     stanford_event_terms_utility: '0'
+    files: '0'
     locked_content: '0'
     media: '0'
     media_library: '0'

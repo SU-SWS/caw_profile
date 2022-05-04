@@ -96,23 +96,20 @@ function caw_profile_helper_preprocess(&$variables, $hook) {
   // Manipulate the render array for the entity view so that we can pick it up
   // in the later hook on the pattern.
   if ($hook == 'ds_entity_view') {
-    if (!empty($variables['content']['controls'])) {
-      $variables['content']['#context']['layout_paragraphs'] = [
-        'controls' => $variables['content']['controls'],
-        'insert_before' => $variables['content']['insert_before'],
-        'insert_after' => $variables['content']['insert_after'],
-      ];
-    }
+    // Between this hook and the pattern hook, the id attribute changes somehow,
+    // so store the attributes into the context so that we can grab them later
+    // and apply them to the wrapper.
+    $variables['content']['#context']['lpBuilder'] = $variables['attributes'];
+    unset($variables['attributes']);
   }
 
   if (strpos($hook, 'pattern_') === 0 && !empty($variables['context'])) {
+
     // Grab the layout paragraphs parts from the context that we saved above,
     // and put them into a variable for use in the patterns_use_wrapper_admin
-    // template. Also move the normal attributes to a wrapper so that the
-    // layout paragraph attributes will be added to the wrapper around the
-    // layout paragraph controls/insert buttons.
-    $variables['layout_paragraphs'] = $variables['context']->getProperty('layout_paragraphs');
-    $variables['wrapper_attributes'] = $variables['attributes'];
+    // template. Also remove the normal attributes to a wrapper so that they
+    // don't somehow get passed down into the pattern and cause chaos.
+    $variables['wrapper_attributes'] = new Attribute($variables['context']->getProperty('lpBuilder'));
     $variables['attributes'] = new Attribute();
   }
 }

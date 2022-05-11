@@ -1,5 +1,20 @@
 # Cardinal at Work Profile
 
+
+8.x-4.2
+--------------------------------------------------------------------------------
+_Release Date: 2022-05-10_
+
+- Enabled aggregation for duplicates in course view
+
+8.x-4.1
+--------------------------------------------------------------------------------
+_Release Date: 2022-05-10_
+
+- D8CORE-2331: Updated help on media caption field text (#542)
+- Allow admins to change the home page via site settings (#540)
+- D8CORE-5833: Fix for courses view to respect chosen limit in card grid list paragraph (#539)
+
 8.x-4.0
 --------------------------------------------------------------------------------
 _Release Date: 2022-05-03_

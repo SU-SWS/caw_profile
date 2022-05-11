@@ -1,19 +1,17 @@
 # Cardinal at Work Profile
 
-
-8.x-4.2
---------------------------------------------------------------------------------
-_Release Date: 2022-05-10_
-
-- Enabled aggregation for duplicates in course view
-
 8.x-4.1
 --------------------------------------------------------------------------------
-_Release Date: 2022-05-10_
+_Release Date: 2022-05-11_
 
+- Updates from stanford_profile (#78)
+- fixed tests
+- Enabled aggregation for duplicates in course view
+- Added courses department importer for long name population
 - D8CORE-2331: Updated help on media caption field text (#542)
 - Allow admins to change the home page via site settings (#540)
 - D8CORE-5833: Fix for courses view to respect chosen limit in card grid list paragraph (#539)
+- Updated layout builder logic
 
 8.x-4.0
 --------------------------------------------------------------------------------
@@ -45,7 +43,6 @@ _Release Date: 2022-05-03_
 - Dont trim the url on even cards
 - Updated link_title_formatter module
 - Updated domain_301_redirect version
-
 
 8.x-3.2
 --------------------------------------------------------------------------------

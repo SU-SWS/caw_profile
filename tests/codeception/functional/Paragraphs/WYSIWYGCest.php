@@ -89,7 +89,7 @@ class WYSIWYGCest {
     $I->waitForElementVisible('.dropzone');
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
-    $I->waitForText('Alternative text');
+    $I->waitForText('Decorative Image');
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
 

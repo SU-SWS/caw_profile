@@ -42,10 +42,11 @@ class EntityReferenceCest {
 
   /**
    * Publications can be referenced in teaser paragraph.
+   *
+   * @group aria-label
    */
   public function testPublicationTeasers(FunctionalTester $I) {
-    $faker = Factory::create();
-    $publication_title = $faker->text(20);
+    $publication_title = $this->faker->text(20);
     $I->logInWithRole('site_manager');
     $I->amOnPage('node/add/stanford_publication');
     $I->fillField('Title', $publication_title);
@@ -70,6 +71,9 @@ class EntityReferenceCest {
     $I->canSee('has been updated');
     $I->canSee($publication_title, 'h2');
     $I->canSee('Journal Article');
+
+    $aria_label = $I->grabAttributeFrom("a[href='{$this->fieldValues['uri']}']", 'aria-label');
+    $I->assertEquals($this->fieldValues['aria-label'], $aria_label, sprintf('Attribute aria-label `%s` does not match expected value `%s`', $aria_label, $this->fieldValues['aria-label']));
   }
 
   /**
@@ -81,21 +85,33 @@ class EntityReferenceCest {
    * @return bool|\Drupal\node\NodeInterface
    */
   protected function getNodeWithReferenceParagraph(FunctionalTester $I) {
-    $faker = Factory::create();
+    $this->fieldValues = [
+      'headliner' => $this->faker->words(3, TRUE),
+      'description' => $this->faker->words(3, TRUE),
+      'uri' => $this->faker->url,
+      'title' => $this->faker->words(3, TRUE),
+      'aria-label' => $this->faker->words(5, TRUE),
+    ];
 
     $paragraph = $I->createEntity([
       'type' => 'stanford_entity',
-      'su_list_headline' => 'Headliner',
-      'su_list_description' => [
+      'su_entity_headline' => $this->fieldValues['headliner'],
+      'su_entity_description' => [
         'format' => 'stanford_html',
-        'value' => '<p>Lorem Ipsum</p>',
+        'value' => $this->fieldValues['description'],
       ],
-      'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
+      'su_entity_button' => [
+        'uri' => $this->fieldValues['uri'],
+        'title' => $this->fieldValues['title'],
+        'options' => [
+          'attributes' => ['aria-label' => $this->fieldValues['aria-label']],
+        ],
+      ],
     ], 'paragraph');
 
     return $I->createEntity([
       'type' => 'stanford_page',
-      'title' => $faker->text(30),
+      'title' => $this->faker->text(30),
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,

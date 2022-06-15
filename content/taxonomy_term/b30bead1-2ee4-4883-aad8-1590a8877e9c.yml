@@ -22,7 +22,7 @@ default:
       value: true
   path:
     -
-      alias: /news/announcement
+      alias: /engage/news/announcement
       langcode: en
       pathauto: 1
   rh_action:

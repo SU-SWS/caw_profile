@@ -26,6 +26,6 @@ default:
       value: true
   path:
     -
-      alias: /events/lecture-reading
+      alias: /engage/events/lecture-reading
       langcode: en
       pathauto: 1

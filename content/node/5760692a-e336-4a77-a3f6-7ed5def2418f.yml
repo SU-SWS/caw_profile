@@ -35,7 +35,7 @@ default:
       value: true
   path:
     -
-      alias: /news/sample-runners-15-feet-new-6-feet-social-distancing
+      alias: /engage/news/sample-runners-15-feet-new-6-feet-social-distancing
       langcode: en
       pathauto: 1
   rh_action:

@@ -5136,7 +5136,7 @@ display:
       use_more_always: true
       use_more_text: 'All Upcoming Events'
       link_display: custom_url
-      link_url: /events
+      link_url: /engage/events
       display_extenders: {  }
       block_category: 'Events Lists (Views)'
       block_hide_empty: true

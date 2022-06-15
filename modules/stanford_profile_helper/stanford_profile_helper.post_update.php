@@ -217,7 +217,7 @@ function stanford_profile_helper_post_update_9000() {
   $pages = [
     '8ba98fcf-d390-4014-92de-c77a59b30f3b' => [
       'type' => 'stanford_event',
-      'path' => '/events',
+      'path' => '/engage/events',
       'block' => 'f7125c85-197d-4ba2-9f6f-1126bbda0466',
     ],
     '0b83d1e9-688a-4475-9673-a4c385f26247' => [

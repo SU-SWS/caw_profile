@@ -33,9 +33,9 @@ default:
       value: true
   path:
     -
-      alias: /events
+      alias: /engage/events
       langcode: en
-      pathauto: 1
+      pathauto: 0
   rh_action:
     -
       value: bundle_default

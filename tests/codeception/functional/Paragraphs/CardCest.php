@@ -34,7 +34,7 @@ class CardCest {
     $I->click('Save');
 
     $I->canSee('Icon Cards', 'h1');
-    $I->canSeeElement('.fontawesome-icon svg.fa-drupal');
+    $I->canSeeElement('.fontawesome-icon .fa-drupal');
     $I->canSeeElement('.su-card--icon');
 
     $I->click('Edit', '.tabs');

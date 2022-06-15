@@ -44,13 +44,24 @@ class EventsCest {
 
     $I->logInWithRole('site_manager');
     $I->amOnPage('/engage/events');
-    $I->click('Edit Block Content Above');
-    $I->click('Add Text Area');
-    $I->fillField('Body', $intro_text);
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee('No events at this time');
+
+    $term = $I->createEntity([
+      'vid' => 'stanford_event_types',
+      'name' => $this->faker->words(2, TRUE),
+    ], 'taxonomy_term');
+    $I->amOnPage($term->toUrl()->toString());
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee('No events at this time');
+
+    $event = $this->createEventNode($I);
+    $event->set('su_event_type', $term->id())->save();
+    $I->amOnPage($event->toUrl('edit-form')->toString());
     $I->click('Save');
     $I->canSee($event->label(), 'h1');
 
-    $I->amOnPage('/events');
+    $I->amOnPage('/engage/events');
     $I->canSee($event->label());
     $I->cantSee('No events at this time');
 
@@ -67,7 +78,7 @@ class EventsCest {
     $I->amOnPage($event->toUrl('delete-form')->toString());
     $I->click('Delete');
 
-    $I->amOnPage('/events');
+    $I->amOnPage('/engage/events');
     $I->cantSee($event->label());
     $I->cantSee('No events at this time');
     $I->canSee($message);

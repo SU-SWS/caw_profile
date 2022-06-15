@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Cache\Cache;
 use Faker\Factory;
 
 /**
@@ -11,7 +12,6 @@ class NewsCest {
    * News list intro block is at the top of the page.
    */
   public function testListIntro(AcceptanceTester $I) {
-    $intro_text = Factory::create()->text();
     $I->logInWithRole('site_manager');
     $I->amOnPage('/engage/news');
     $I->click('Edit Block Content Above');
@@ -45,7 +45,7 @@ class NewsCest {
   public function testVocabularyTermsExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage("/admin/structure/taxonomy/manage/stanford_news_topics/overview");
-    $I->canSeeNumberOfElements(".term-id", 6);
+    $I->canSeeNumberOfElements("input.term-id", 2);
   }
 
   /**
@@ -58,7 +58,7 @@ class NewsCest {
     $I->click("a[href='/engage/news/staff']");
     $I->canSeeResponseCodeIs(200);
     $I->see("No results found");
-    $I->see("Topics Menu");
+    $I->see("News Topics");
   }
 
   /**

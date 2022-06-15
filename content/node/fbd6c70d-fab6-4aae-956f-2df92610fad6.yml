@@ -35,7 +35,7 @@ default:
       value: true
   path:
     -
-      alias: /news/sample-smith-conference
+      alias: /engage/news/sample-smith-conference
       langcode: en
       pathauto: 1
   rh_action:

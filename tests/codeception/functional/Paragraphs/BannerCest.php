@@ -47,7 +47,7 @@ class BannerCest {
       'su_banner_body' => $field_values['body'],
     ], 'paragraph');
 
-    $node_title = $faker->text(30);
+    $node_title = $this->faker->text(30);
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,

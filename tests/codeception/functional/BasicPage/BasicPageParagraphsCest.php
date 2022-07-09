@@ -8,14 +8,35 @@ use Faker\Factory;
 class BasicPageParagraphsCest {
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Test the card component data is displayed correctly.
    */
   public function testCardParagraph(FunctionalTester $I) {
+    $card_values =[
+      'superhead' => $this->faker->words(3, true),
+      'headline' => $this->faker->words(3, true),
+      'uri' => $this->faker->url,
+      'title' => $this->faker->words(3, true),
+    ];
+
     $paragraph = $I->createEntity(['type' => 'stanford_card'], 'paragraph');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
-      'title' => 'Test Cards',
+      'title' => $this->faker->words(3, true),
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,

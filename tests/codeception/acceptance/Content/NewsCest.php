@@ -57,7 +57,6 @@ class NewsCest {
     $I->seeLink('Faculty');
     $I->click("a[href='/engage/news/staff']");
     $I->canSeeResponseCodeIs(200);
-    $I->see("No results found");
     $I->see("Topics Menu");
   }
 

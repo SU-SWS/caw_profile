@@ -8,6 +8,20 @@ use Faker\Factory;
 class EntityReferenceCest {
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Allow all paragraph types by using state.
    */
   public function _before() {
@@ -44,8 +58,7 @@ class EntityReferenceCest {
    * Publications can be referenced in teaser paragraph.
    */
   public function testPublicationTeasers(FunctionalTester $I) {
-    $faker = Factory::create();
-    $publication_title = $faker->text(20);
+    $publication_title = $this->faker->text(20);
     $I->logInWithRole('site_manager');
     $I->amOnPage('node/add/stanford_publication');
     $I->fillField('Title', $publication_title);
@@ -81,21 +94,29 @@ class EntityReferenceCest {
    * @return bool|\Drupal\node\NodeInterface
    */
   protected function getNodeWithReferenceParagraph(FunctionalTester $I) {
-    $faker = Factory::create();
+    $this->fieldValues = [
+      'headliner' => $this->faker->words(3, TRUE),
+      'description' => $this->faker->words(3, TRUE),
+      'uri' => $this->faker->url,
+      'title' => $this->faker->words(3, TRUE),
+    ];
 
     $paragraph = $I->createEntity([
       'type' => 'stanford_entity',
-      'su_list_headline' => 'Headliner',
-      'su_list_description' => [
+      'su_entity_headline' => $this->fieldValues['headliner'],
+      'su_entity_description' => [
         'format' => 'stanford_html',
-        'value' => '<p>Lorem Ipsum</p>',
+        'value' => $this->fieldValues['description'],
       ],
-      'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
+      'su_entity_button' => [
+        'uri' => $this->fieldValues['uri'],
+        'title' => $this->fieldValues['title'],
+      ],
     ], 'paragraph');
 
     return $I->createEntity([
       'type' => 'stanford_page',
-      'title' => $faker->text(30),
+      'title' => $this->faker->text(30),
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,

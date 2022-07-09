@@ -35,6 +35,7 @@ class FAQCest {
     $I->waitForElement('[name="su_faq_questions[1][subform][su_accordion_title][0][value]"]');
     $I->fillField('Title/Question', 'What do you call a fake noodle?');
     $I->click('Source', '.field--name-su-faq-questions');
+    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
     $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'An impasta');
 
     $I->click('Save', '.ui-dialog-buttonpane');

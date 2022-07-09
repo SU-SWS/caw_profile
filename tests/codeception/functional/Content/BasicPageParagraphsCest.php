@@ -32,7 +32,6 @@ class BasicPageParagraphsCest {
       'headline' => $this->faker->words(3, true),
       'uri' => $this->faker->url,
       'title' => $this->faker->words(3, true),
-      'aria-label' => $this->faker->words(5, true),
     ];
 
     $paragraph = $I->createEntity(['type' => 'stanford_card'], 'paragraph');
@@ -50,17 +49,18 @@ class BasicPageParagraphsCest {
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
     $I->waitForText('Superhead');
-    $I->fillField('Superhead', 'Superhead text');
-    $I->fillField('Headline', 'Headline');
-    $I->fillField('URL', '/about');
-    $I->fillField('Link text', 'Google Link');
+    $I->fillField('Superhead', $card_values['superhead']);
+    $I->fillField('Headline', $card_values['headline']);
+    $I->fillField('URL', $card_values['uri']);
+    $I->fillField('Link text', $card_values['title']);
+
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
 
     $I->click('Save', '#edit-actions');
-    $I->canSee('Superhead text');
-    $I->canSee('Headline', 'h2');
-    $I->canSeeLink('Google Link', '/about');
+    $I->canSee($card_values['superhead']);
+    $I->canSee($card_values['headline']);
+    $I->canSeeLink($card_values['title'], $card_values['uri']);
   }
 
   /**
@@ -97,7 +97,7 @@ class BasicPageParagraphsCest {
     $I->click('Edit', '.lpb-controls');
 
     $I->waitForText('Superhead');
-    $I->fillField('Superhead', $faker->text(10));
+    $I->fillField('Superhead', $this->faker->text(10));
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
 

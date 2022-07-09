@@ -1,7 +1,6 @@
 <?php
 
 use Faker\Factory;
-use Drupal\Core\Cache\Cache;
 
 /**
  * Class ListsCest.
@@ -37,7 +36,8 @@ class ListsCest {
   public function testListParagraphNews(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
     $I->amOnPage('/node/add/stanford_news');
-    $I->fillField('Headline', 'Foo Bar News');
+    $title = $this->faker->words(3, TRUE);
+    $I->fillField('Headline', $title);
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
@@ -50,7 +50,7 @@ class ListsCest {
     $I->canSee('Headliner');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee('Foo Bar News');
+    $I->canSee($title);
   }
 
   /**
@@ -145,7 +145,6 @@ class ListsCest {
       'items_to_display' => 100,
       'arguments' => $random_term->label(),
     ]);
-
 
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($news->label());

@@ -67,7 +67,6 @@ class BasicPageParagraphsCest {
    * The user should be able to see all revisions of a node.
    */
   public function testViewRevisions(FunctionalTester $I) {
-    $faker = Factory::create();
     $paragraph = $I->createEntity([
       'type' => 'stanford_card',
       'su_card_super_header' => 'Foo Bar',
@@ -75,7 +74,7 @@ class BasicPageParagraphsCest {
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
-      'title' => $faker->text(30),
+      'title' => $this->faker->text(30),
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,
@@ -87,7 +86,7 @@ class BasicPageParagraphsCest {
     $I->canSeeNumberOfElements('.diff-revisions tbody tr', 1);
 
     $I->amOnPage("/node/{$node->id()}/edit");
-    $I->fillField('Title', $faker->text(15));
+    $I->fillField('Title', $this->faker->text(15));
     $I->click('Save');
     $I->amOnPage("/node/{$node->id()}/revisions");
     $I->canSeeNumberOfElements('.diff-revisions tbody tr', 2);

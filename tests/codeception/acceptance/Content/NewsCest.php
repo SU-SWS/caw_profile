@@ -1,12 +1,25 @@
 <?php
 
-use Drupal\Core\Cache\Cache;
 use Faker\Factory;
 
 /**
  * Test the news functionality.
  */
 class NewsCest {
+
+  /**
+   * Faker.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test Constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
 
   /**
    * News list intro block is at the top of the page.
@@ -32,6 +45,7 @@ class NewsCest {
     $I->see("This page is currently unpublished and not visible to the public.");
     $I->amOnPage("/engage/news/announcement/sample-stanford-researchers-find-misfiring-jittery-neurons");
     $I->see("This page is currently unpublished and not visible to the public.");
+
     $I->see("News", ".su-multi-menu");
   }
 
@@ -41,7 +55,7 @@ class NewsCest {
   public function testVocabularyTermsExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage("/admin/structure/taxonomy/manage/stanford_news_topics/overview");
-    $I->canSeeNumberOfElements("input.term-id", 2);
+    $I->canSeeNumberOfElements("input.term-id", [2, 99]);
   }
 
   /**
@@ -53,7 +67,6 @@ class NewsCest {
     $I->seeLink('Announcement');
     $I->click("a[href='/engage/news/announcement']");
     $I->canSeeResponseCodeIs(200);
-    $I->see("No results found");
     $I->see("News Topics");
   }
 
@@ -62,9 +75,9 @@ class NewsCest {
    */
   public function testExternalSourceArticle(AcceptanceTester $I) {
 
-    $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Google',
+      'title' => $this->faker->words(3, TRUE),
       'su_news_source' => "http://google.com/",
     ]);
 
@@ -87,17 +100,17 @@ class NewsCest {
   public function testMoreNewsView(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
 
-    $I->createEntity([
+    $first_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 1',
+      'title' => $this->faker->words(3, TRUE),
     ]);
-    $I->createEntity([
+    $second_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 2',
+      'title' => $this->faker->words(3, TRUE),
     ]);
-    $I->createEntity([
+    $third_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 3',
+      'title' => $this->faker->words(3, TRUE),
     ]);
 
     $I->amOnPage("/engage/news/test-news-2");
@@ -140,7 +153,7 @@ class NewsCest {
     $I->logInWithRole('site_manager');
     $term = $I->createEntity([
       'vid' => 'stanford_news_topics',
-      'name' => 'Foo',
+      'name' => $this->faker->word,
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');

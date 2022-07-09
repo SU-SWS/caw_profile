@@ -26,7 +26,7 @@ class NewsCest {
    */
   public function testListIntro(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
-    $I->amOnPage('/engage/news');
+    $I->amOnPage('/news');
     $I->canSeeResponseCodeIs(200);
   }
 
@@ -39,11 +39,14 @@ class NewsCest {
     $I->see("Sample: Smith Conference");
     $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
     $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
-    $I->amOnPage("/engage/news/blog/sample-smith-conference");
+
+    $I->amOnPage("/news/sample-smith-conference");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/engage/news/announcement/sample-runners-15-feet-new-6-feet-social-distancing");
+
+    $I->amOnPage("/news/sample-runners-15-feet-new-6-feet-social-distancing");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/engage/news/announcement/sample-stanford-researchers-find-misfiring-jittery-neurons");
+
+    $I->amOnPage("/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
     $I->see("This page is currently unpublished and not visible to the public.");
 
     $I->see("News", ".su-multi-menu");
@@ -62,10 +65,9 @@ class NewsCest {
    * Test that the view pages exist.
    */
   public function testViewPagesExist(AcceptanceTester $I) {
-    $I->amOnPage("/engage/news");
-    $I->see("No results found");
+    $I->amOnPage("/news");
     $I->seeLink('Announcement');
-    $I->click("a[href='/engage/news/announcement']");
+    $I->click("a[href='/news/announcement']");
     $I->canSeeResponseCodeIs(200);
     $I->see("News Topics");
   }
@@ -82,15 +84,13 @@ class NewsCest {
     ]);
 
     // Redirect as anon.
-    $I->runDrush('cr');
-    $I->amOnPage('/engage/news');
-    $I->click(".su-news-article a:first-of-type");
+    $I->amOnPage($node->toUrl()->toString());
     $I->seeCurrentUrlEquals('/');
 
     // See content as admin.
     $I->logInWithRole('administrator');
-    $I->amOnPage('/engage/news/google');
-    $I->canSeeInCurrentUrl("/engage/news/google");
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSeeInCurrentUrl($node->toUrl()->toString());
   }
 
   /**
@@ -113,10 +113,8 @@ class NewsCest {
       'title' => $this->faker->words(3, TRUE),
     ]);
 
-    $I->amOnPage("/engage/news/test-news-2");
-    $I->canSeeNumberOfElements(".stanford-news--cards .su-card", 2);
-    $I->see("Test News 1");
-    $I->see("Test News 3");
+    $I->amOnPage($second_news->toUrl()->toString());
+    $I->canSeeNumberOfElements(".stanford-news--cards .su-card", [2, 3]);
   }
 
   /**

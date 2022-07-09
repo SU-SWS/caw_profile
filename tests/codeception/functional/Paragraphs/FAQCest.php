@@ -29,6 +29,7 @@ class FAQCest {
     $I->fillField('Title/Question', 'Did you hear about the guy who invented the knock-knock joke?');
     $I->scrollTo('input[value="Add Accordion"]');
     $I->click('Source', '.field--name-su-faq-questions');
+    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
     $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'He won the “no-bell” prize.');
 
     $I->click('Add Accordion');

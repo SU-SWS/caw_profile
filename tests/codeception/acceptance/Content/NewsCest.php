@@ -26,7 +26,7 @@ class NewsCest {
    */
   public function testListIntro(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
-    $I->amOnPage('/news');
+    $I->amOnPage('/engage/news');
     $I->canSeeResponseCodeIs(200);
   }
 
@@ -35,21 +35,21 @@ class NewsCest {
    */
   public function testDefaultContentExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
-    $I->amOnPage("/admin/content");
-    $I->see("Sample: Smith Conference");
-    $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
-    $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
+    $I->amOnPage('/admin/content');
+    $I->see('Sample: Smith Conference');
+    $I->see('Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?');
+    $I->see('Sample: Stanford researchers find that misfiring from jittery neurons');
 
-    $I->amOnPage("/news/sample-smith-conference");
-    $I->see("This page is currently unpublished and not visible to the public.");
+    $I->amOnPage('/engage/news/sample-smith-conference');
+    $I->see('This page is currently unpublished and not visible to the public.');
 
-    $I->amOnPage("/news/sample-runners-15-feet-new-6-feet-social-distancing");
-    $I->see("This page is currently unpublished and not visible to the public.");
+    $I->amOnPage('/engage/news/sample-runners-15-feet-new-6-feet-social-distancing');
+    $I->see('This page is currently unpublished and not visible to the public.');
 
-    $I->amOnPage("/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
-    $I->see("This page is currently unpublished and not visible to the public.");
+    $I->amOnPage('/engage/news/sample-stanford-researchers-find-misfiring-jittery-neurons');
+    $I->see('This page is currently unpublished and not visible to the public.');
 
-    $I->see("News", ".su-multi-menu");
+    $I->see('News', '.su-multi-menu');
   }
 
   /**
@@ -57,19 +57,19 @@ class NewsCest {
    */
   public function testVocabularyTermsExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
-    $I->amOnPage("/admin/structure/taxonomy/manage/stanford_news_topics/overview");
-    $I->canSeeNumberOfElements("input.term-id", [2, 99]);
+    $I->amOnPage('/admin/structure/taxonomy/manage/stanford_news_topics/overview');
+    $I->canSeeNumberOfElements('input.term-id', [2, 99]);
   }
 
   /**
    * Test that the view pages exist.
    */
   public function testViewPagesExist(AcceptanceTester $I) {
-    $I->amOnPage("/news");
+    $I->amOnPage('/engage/news');
     $I->seeLink('Announcement');
-    $I->click("a[href='/news/announcement']");
+    $I->click("a[href='/engage/news/announcement']");
     $I->canSeeResponseCodeIs(200);
-    $I->see("News Topics");
+    $I->see('News Topics');
   }
 
   /**
@@ -80,7 +80,7 @@ class NewsCest {
     $node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
-      'su_news_source' => "http://google.com/",
+      'su_news_source' => 'http://google.com/',
     ]);
 
     // Redirect as anon.
@@ -114,7 +114,7 @@ class NewsCest {
     ]);
 
     $I->amOnPage($second_news->toUrl()->toString());
-    $I->canSeeNumberOfElements(".stanford-news--cards .su-card", [2, 3]);
+    $I->canSeeNumberOfElements('.stanford-news--cards .su-card', [2, 3]);
   }
 
   /**
@@ -125,22 +125,22 @@ class NewsCest {
 
     // Revision Delete is enabled.
     $I->amOnPage('/admin/structure/types/manage/stanford_news');
-    $I->seeCheckboxIsChecked("#edit-node-revision-delete-track");
-    $I->seeCheckboxIsChecked("#edit-options-revision");
-    $I->seeInField("#edit-minimum-revisions-to-keep", 5);
+    $I->seeCheckboxIsChecked('#edit-node-revision-delete-track');
+    $I->seeCheckboxIsChecked('#edit-options-revision');
+    $I->seeInField('#edit-minimum-revisions-to-keep', 5);
 
     // XML Sitemap.
-    $I->amOnPage("/admin/config/search/xmlsitemap/settings");
-    $I->see("News");
-    $I->amOnPage("/admin/config/search/xmlsitemap/settings/node/stanford_news");
-    $I->selectOption("#edit-xmlsitemap-status", 1);
+    $I->amOnPage('/admin/config/search/xmlsitemap/settings');
+    $I->see('News');
+    $I->amOnPage('/admin/config/search/xmlsitemap/settings/node/stanford_news');
+    $I->selectOption('#edit-xmlsitemap-status', 1);
 
     // Metatags.
-    $I->amOnPage("/admin/config/search/metatag/page_variant__stanford_news_list-layout_builder-0");
+    $I->amOnPage('/admin/config/search/metatag/page_variant__stanford_news_list-layout_builder-0');
     $I->canSeeResponseCodeIs(200);
-    $I->amOnPage("/admin/config/search/metatag/page_variant__stanford_news_list_terms-layout_builder-0");
+    $I->amOnPage('/admin/config/search/metatag/page_variant__stanford_news_list_terms-layout_builder-0');
     $I->canSeeResponseCodeIs(200);
-    $I->amOnPage("/admin/config/search/metatag/node__stanford_news");
+    $I->amOnPage('/admin/config/search/metatag/node__stanford_news');
     $I->canSeeResponseCodeIs(200);
   }
 

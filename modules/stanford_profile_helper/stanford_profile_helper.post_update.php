@@ -222,7 +222,7 @@ function stanford_profile_helper_post_update_9000() {
     ],
     '0b83d1e9-688a-4475-9673-a4c385f26247' => [
       'type' => 'stanford_news',
-      'path' => '/news',
+      'path' => '/engage/news',
       'block' => '5168834f-3271-4951-bd95-e75340ca5522',
     ],
     '673a8fb8-39ac-49df-94c2-ed8d04db16a7' => [

@@ -40,7 +40,7 @@ class NewsCest {
     $I->see('Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?');
     $I->see('Sample: Stanford researchers find that misfiring from jittery neurons');
 
-    $I->amOnPage('/engage/news/sample-smith-conference');
+    $I->amOnPage('/engage/news/blog/sample-smith-conference');
     $I->see('This page is currently unpublished and not visible to the public.');
 
     $I->amOnPage('/engage/news/sample-runners-15-feet-new-6-feet-social-distancing');

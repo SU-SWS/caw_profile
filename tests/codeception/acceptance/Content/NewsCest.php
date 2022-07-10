@@ -43,10 +43,10 @@ class NewsCest {
     $I->amOnPage('/engage/news/blog/sample-smith-conference');
     $I->see('This page is currently unpublished and not visible to the public.');
 
-    $I->amOnPage('/engage/news/sample-runners-15-feet-new-6-feet-social-distancing');
+    $I->amOnPage('/engage/news/announcement/sample-runners-15-feet-new-6-feet-social-distancing');
     $I->see('This page is currently unpublished and not visible to the public.');
 
-    $I->amOnPage('/engage/news/sample-stanford-researchers-find-misfiring-jittery-neurons');
+    $I->amOnPage('/engage/news/announcement/sample-stanford-researchers-find-misfiring-jittery-neurons');
     $I->see('This page is currently unpublished and not visible to the public.');
 
     $I->see('News', '.su-multi-menu');

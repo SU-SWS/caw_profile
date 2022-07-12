@@ -8,7 +8,19 @@ use Faker\Factory;
 class MediaPermissionsCest {
 
   /**
-   * Test admin perms.
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test Constructor
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
+   * Test admin perms
    */
   public function testAdminPerms(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
@@ -19,7 +31,7 @@ class MediaPermissionsCest {
   }
 
   /**
-   * Test site manager perms.
+   * Test site manager perms
    */
   public function testSiteManagerPerms(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
@@ -42,7 +54,7 @@ class MediaPermissionsCest {
   }
 
   /**
-   * Test site editor perms.
+   * Test site editor perms
    */
   public function testSiteEditorPerms(AcceptanceTester $I) {
     $I->logInWithRole('site_editor');
@@ -58,7 +70,7 @@ class MediaPermissionsCest {
   }
 
   /**
-   * Test contributor perms.
+   * Test contributor perms
    */
   public function testContributorPerms(AcceptanceTester $I) {
     $I->logInWithRole('contributor');

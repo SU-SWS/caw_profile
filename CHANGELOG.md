@@ -2,6 +2,16 @@
 
 8.x-4.3
 --------------------------------------------------------------------------------
+_Release Date: 2022-07-15_
+
+- D8CORE-1835: Added abbr buttons to ckeditor (#550)
+- D8CORE-4780 Changed search page button text to "Search"
+- D8CORE-5862: Removed obsolete checkbox from theme settings (#575)
+- D8CORE-6000: Added additional html elements to embeddables allow list (#584)
+
+
+8.x-4.3
+--------------------------------------------------------------------------------
 _Release Date: 2022-07-08_
 
 - Updated config from search_api module

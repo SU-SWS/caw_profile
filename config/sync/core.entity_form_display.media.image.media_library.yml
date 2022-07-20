@@ -40,7 +40,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  name: true
   path: true
   publish_on: true
   status: true

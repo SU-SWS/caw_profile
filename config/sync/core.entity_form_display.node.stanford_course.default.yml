@@ -50,6 +50,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
     weight: 13
@@ -59,6 +66,13 @@ content:
   status:
     type: boolean_checkbox
     weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
     region: content
     settings:
       display_label: true

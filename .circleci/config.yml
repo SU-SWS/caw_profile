@@ -14,22 +14,6 @@ defaults: &defaults
         MYSQL_ALLOW_EMPTY_PASSWORD: 1
   working_directory: /var/www/html
 
-#Jobs
-#code_coverage: &code_coverage
-#  <<: *defaults
-#  steps:
-#    - checkout:
-#        path: /var/www/test
-#    - run:
-#        name: Run PHP Unit Coverage Tests
-#        command: |
-#          composer global require su-sws/stanford-caravan:dev-8.x-2.x
-#          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=/var/www/test --with-coverage
-#    - store_test_results:
-#        path: /var/www/html/artifacts/phpunit
-#    - store_artifacts:
-#        path: /var/www/html/artifacts/phpunit/coverage
-
 back_to_dev: &back_to_dev
   <<: *defaults
   steps:
@@ -69,15 +53,13 @@ merge_upstream: &merge_upstream
           git pull https://github.com/SU-SWS/stanford_profile.git main -X ours --no-edit
           if [[ $(git diff origin/${CIRCLE_BRANCH} --name-only) ]]; then
             DATE=`date +%Y-%m-%d`
-            git checkout -b ${DATE}
-            git push origin ${DATE}
-            hub pull-request --base=${CIRCLE_BRANCH} --message="Updates from stanford_profile" --assign=pookmish
+            git checkout -b ${DATE}-${CIRCLE_BRANCH}
+            git push origin ${DATE}-${CIRCLE_BRANCH}
+            gh pr create -B ${CIRCLE_BRANCH} -b "Updates from stanford_profile" -a pookmish -f
           fi
 
-# Declare all of the jobs we should run.
+# Declare all the jobs we should run.
 jobs:
-#  run-coverage:
-#    <<: *code_coverage
   run-back-to-dev:
     <<: *back_to_dev
   run-d9-codeception:

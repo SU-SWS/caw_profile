@@ -31,7 +31,7 @@ third_party_settings:
         layout_settings:
           label: ''
           context_mapping: {  }
-          extra_classes: su-margin-bottom-3
+          extra_classes: 'su-margin-bottom-3 su-margin-top-6'
           centered: centered-container
           orientation: equal
         components:
@@ -216,9 +216,9 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      restricted_categories: {  }
       blacklisted_blocks: {  }
       whitelisted_blocks: {  }
-      restricted_categories: {  }
 id: node.caw_sweetener.default
 targetEntityType: node
 bundle: caw_sweetener

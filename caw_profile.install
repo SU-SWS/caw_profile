@@ -14,3 +14,11 @@ function caw_profile_update_8002() {
   $state->set('caw_profile.404_page', '/node/2');
   $state->set('caw_profile.front_page', '/node/1');
 }
+
+/**
+ * Rerun pathauto update hook.
+ */
+function caw_profile_update_8003() {
+  module_load_install('pathauto');
+  pathauto_update_8108();
+}

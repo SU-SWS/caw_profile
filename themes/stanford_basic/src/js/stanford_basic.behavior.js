@@ -10,8 +10,8 @@
 export default {
 
   // Attach Drupal Behavior.
-  attach(context, settings, once) {
-    (function ($) {
+  attach(context, settings) {
+    (function ($, once) {
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
       var $mc = $('#main-content', context).length;
@@ -90,7 +90,7 @@ export default {
         }
       });
 
-    })(jQuery);
+    })(jQuery, once);
   },
 
   // Detach Example.

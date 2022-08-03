@@ -48,8 +48,9 @@ benefits.views:
   js:
     lib/js/benefits.views.js: { }
   dependencies:
-    - core/jquery.ui
     - core/drupalSettings
+    - core/once
+    - core/jquery
 
 benefits.node:
   css:

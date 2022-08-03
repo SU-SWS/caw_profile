@@ -88,10 +88,6 @@ class SystemSiteConfigCest {
     $I->click('Save');
     $I->canSee('Site Settings has been');
 
-    \Drupal::configFactory()->reset('system.site');
-    $setting = \Drupal::config('system.site')->get('page.front');
-    $path = '/node/' . $node->id();
-    $I->assertEquals($path, $setting);
     $I->amOnPage('/');
     $I->canSeeResponseCodeIs(200);
     $I->canSee($text);

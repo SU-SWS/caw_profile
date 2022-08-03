@@ -1,11 +1,1 @@
-.su-sweet-avail li {
-  display: inline-block; }
-  .su-sweet-avail li::after {
-    content: ', ';
-    padding-right: 5px; }
-  .su-sweet-avail li:last-child::after {
-    content: '';
-    padding-right: 0; }
-
-
-/*# sourceMappingURL=sweeteners.node.css.map*/
+.su-sweet-avail li{display:inline-block}.su-sweet-avail li:after{content:", ";padding-right:5px}.su-sweet-avail li:last-child:after{content:"";padding-right:0}

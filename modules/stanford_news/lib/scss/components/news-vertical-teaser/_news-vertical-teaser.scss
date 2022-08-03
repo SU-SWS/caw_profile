@@ -220,3 +220,43 @@ article {
 .stanford-news-terms--results-for {
   @include modular-spacing('margin-bottom', 3);
 }
+
+.news-whole-card-link {
+  img, h2 {
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  }
+
+  &:hover {
+    img, h2 {
+      transform: scale(1.03);
+    }
+  }
+
+  a {
+    position: relative;
+    z-index: 10;
+  }
+
+  .su-news-vertical-teaser__link {
+    position: absolute;
+    font-size: 0;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
+
+    &:focus,
+    &:active {
+      background: transparent;
+      box-shadow: 0 0 3px #53565a,0 0 7px #53565a;
+    }
+
+    &:after {
+      mask: none;
+      color: transparent;
+      background: none !important;
+    }
+  }
+}

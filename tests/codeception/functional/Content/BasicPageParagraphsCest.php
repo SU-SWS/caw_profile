@@ -23,8 +23,6 @@ class BasicPageParagraphsCest {
 
   /**
    * Test the card component data is displayed correctly.
-   *
-   * @group aria-label
    */
   public function testCardParagraph(FunctionalTester $I) {
     $card_values =[

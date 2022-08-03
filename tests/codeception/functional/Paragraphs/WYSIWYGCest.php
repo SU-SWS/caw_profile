@@ -93,9 +93,9 @@ class WYSIWYGCest {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('contributor');
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForElementVisible('.cke_inner');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.cke_button__table');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -113,11 +113,16 @@ class WYSIWYGCest {
     $I->waitForText('Add Link');
     $url = $this->faker->url;
     $I->fillField('[name="attributes[href]"]', $url);
+    $I->waitForText('This URL will be used as is');
+    $I->clickWithLeftButton('.linkit-result-line--title');
+
+    $I->waitForJS('jQuery("#editor-link-dialog-form").closest(".ui-dialog").find(".ui-dialog-buttonpane").addClass("foobar"); return true;');
+
+    $I->click('Save', '.foobar');
+    $I->waitForElementNotVisible('#editor-link-dialog-form');
+
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
-
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
     $I->click('Save');
     $I->canSeeLink($url);
 

@@ -61,6 +61,7 @@ class HeroPatternBehavior extends ParagraphsBehaviorBase {
       '#options' => [
         'left' => $this->t('Left'),
         'right' => $this->t('Right'),
+        'center' => $this->t('Centered with no background')
       ],
     ];
     return $form;

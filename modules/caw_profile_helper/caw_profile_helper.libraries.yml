@@ -47,3 +47,8 @@ patterns.card:
   css:
     theme:
       styles/dist/css/components/patterns.card.css: {}
+patterns.hero:
+  version: VERSION
+  css:
+    theme:
+      styles/dist/css/components/patterns.hero.css: {}

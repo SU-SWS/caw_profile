@@ -17,6 +17,9 @@ settings:
     -
       value: action
       label: 'Action Link'
+    -
+      value: card
+      label: 'Whole Card'
   allowed_values_function: ''
 module: options
 locked: false

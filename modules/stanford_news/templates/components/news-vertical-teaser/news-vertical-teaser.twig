@@ -36,25 +36,35 @@
   {% set news_url_attributes = create_attribute() -%}
 {%- endif -%}
 
+{% set news_url_attributes = news_url_attributes.addClass('su-news-vertical-teaser__link') %}
+
 {% set news_url = news_url|render|striptags("<drupal-render-placeholder>")|trim %}
+{% if news_url %}
+  {%- set classes = classes|merge(['news-whole-card-link']) -%}
+{% endif %}
 
 <article{{ attributes.addClass(classes) }}>
-  {%- if news_url is not empty -%}
-    <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
+  {%- if news_url -%}
+    <a {{ news_url_attributes }} href="{{ news_url }}"> {{- news_vertical_teaser_headline|render|striptags|trim -}}</a>
   {%- endif -%}
   <figure class="su-media su-media--image su-card__media">
     <div class="su-media__wrapper">
       {{- news_vertical_teaser_image -}}
     </div>
   </figure>
+
   <div class="su-news-header">
-    <h2 class="su-link su-card__link {{ news_url_link_type }}">
-      {{- news_vertical_teaser_headline -}}
-    </h2>
+    {% if news_url %}
+      <h2 aria-hidden="true">
+        {{- news_vertical_teaser_headline|render|striptags -}}
+      </h2>
+    {% else %}
+      <h2 class="su-link su-card__link {{ news_url_link_type }}">
+        {{- news_vertical_teaser_headline -}}
+      </h2>
+    {% endif %}
   </div>
-  {%- if news_url is not empty -%}
-    </a>
-  {%- endif -%}
+
   <div class="su-card__contents">
     <div class="news-vertical-teaser__topics">{{ news_topics }}</div>
   </div>

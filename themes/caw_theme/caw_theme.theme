@@ -171,3 +171,16 @@ function caw_theme_preprocess(&$variables, $hook) {
     $variables['#attached']['library'][] = 'caw_theme/components.news_list';
   }
 }
+
+/**
+ * Implements hook_prepreprocess_HOOK().
+ */
+function caw_theme_preprocess_pattern_card(&$variables) {
+  $entity = $variables['context']->getProperty('entity');
+  if ($entity instanceof \Drupal\Core\Entity\ContentEntityInterface && $entity->hasField('su_card_link_display')) {
+    $link_display = $entity->get('su_card_link_display')->getString();
+    if ($link_display == 'card') {
+      $variables['attributes']->addClass('stretch-link');
+    }
+  }
+}

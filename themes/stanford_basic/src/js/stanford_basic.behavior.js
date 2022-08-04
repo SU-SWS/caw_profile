@@ -67,8 +67,8 @@ export default {
       })
 
       /**
-      * Hide show back to top links.
-      */
+       * Hide show back to top links.
+       */
       function backToTop() {
         if ($(window).scrollTop() >= ($(window).height() * 3)) {
           $('#back-to-top').fadeIn();

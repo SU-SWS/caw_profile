@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory;
+
 /**
  * Test for custom block types.
  *
@@ -8,17 +10,30 @@
 class CustomBlockCest {
 
   /**
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test Constructor
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Site managers should be able to edit custom blocks.
    */
   public function testCustomBlockAccess(AcceptanceTester $I) {
     $block = $I->createEntity([
       'type' => 'stanford_component_block',
-      'info' => 'Custom Block Test',
+      'info' => $this->faker->words(3, true),
     ], 'block_content');
     $I->logInWithRole('site_manager');
     $I->amOnPage($block->toUrl()->toString());
     $I->fillField('Block description', 'Foo Bar');
     $I->click('Save');
+    $I->canSee('has been updated');
   }
 
 }

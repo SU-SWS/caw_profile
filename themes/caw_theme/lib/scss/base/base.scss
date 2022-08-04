@@ -4,3 +4,54 @@
 @import 'decanter/core/src/scss/decanter-no-markup';
 @import 'menu/book';
 @import 'colors';
+
+.stretch-link {
+  .media {
+    overflow: hidden;
+  }
+
+  img,
+  .fontawesome-icon {
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.03);
+    }
+
+    .fontawesome-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    position: relative;
+    z-index: 10;
+  }
+
+  div.su-card__button {
+    a {
+      position: absolute;
+      font-size: 0;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 5;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+      }
+
+      &:after {
+        mask: none;
+        color: transparent;
+        background: none !important;
+      }
+    }
+  }
+}

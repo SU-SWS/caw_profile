@@ -28,6 +28,14 @@ content:
       preview_link: false
       offsets: '50,50'
     third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   su_media_category:
     type: options_shs
     weight: 1
@@ -40,7 +48,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  name: true
   path: true
   publish_on: true
   status: true

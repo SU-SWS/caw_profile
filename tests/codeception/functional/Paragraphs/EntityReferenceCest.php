@@ -15,17 +15,17 @@ class EntityReferenceCest {
   protected $faker;
 
   /**
+   * Keyed array of field values.
+   *
+   * @var array
+   */
+  protected $fieldValues = [];
+
+  /**
    * Test constructor.
    */
   public function __construct() {
     $this->faker = Factory::create();
-  }
-
-  /**
-   * Allow all paragraph types by using state.
-   */
-  public function _before() {
-    \Drupal::state()->set('caw_profile_allow_all_paragraphs', TRUE);
   }
 
   /**
@@ -69,8 +69,12 @@ class EntityReferenceCest {
     $I->canSee($publication_title, 'h1');
 
     $node = $this->getNodeWithReferenceParagraph($I);
-    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($this->fieldValues['headliner']);
+    $I->canSee($this->fieldValues['description']);
+    $I->canSeeLink($this->fieldValues['title'], $this->fieldValues['uri']);
 
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
 
@@ -111,6 +115,7 @@ class EntityReferenceCest {
       'su_entity_button' => [
         'uri' => $this->fieldValues['uri'],
         'title' => $this->fieldValues['title'],
+        'options' => [],
       ],
     ], 'paragraph');
 

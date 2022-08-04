@@ -212,6 +212,9 @@ function caw_profile_helper_library_info_alter(&$libraries, $extension) {
   if ($extension == 'ui_patterns' && isset($libraries['card.card'])) {
     $libraries['card.card']['dependencies'][] = 'caw_profile_helper/patterns.card';
   }
+  if ($extension == 'ui_patterns' && isset($libraries['hero.hero'])) {
+    $libraries['hero.hero']['dependencies'][] = 'caw_profile_helper/patterns.hero';
+  }
 }
 
 /**

@@ -1,14 +1,20 @@
-(function ($, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   Drupal.behaviors.cawBenefits = {
-    attach: function attach(context) {
+    attach: function attach(context, settings) {
+
+      const $table = $('table', context)
+      if ($(context).hasClass('comparison-table--wrapper') && $table.length > 0) {
+        $table.attr('tabindex', '0').focus();
+        $table.blur(() => {$table.attr('tabindex', -1)});
+      }
 
       const disableSelectOptions = available => {
         const $available = $(available);
         const $type = $('.view.caw-benefits.filtering-list select[name="type"]');
 
-        const availableIds = drupalSettings.cawBenefits.available[$available.val()];
+        const availableIds = settings.cawBenefits.available[$available.val()];
         $('option', $type).each((j, option) => {
-          const typeIds = drupalSettings.cawBenefits.type[$(option).attr('value')];
+          const typeIds = settings.cawBenefits.type[$(option).attr('value')];
           const intersectionIds = availableIds.filter(value => typeIds.includes(value));
 
           if (intersectionIds.length === 0 && $(option).attr('value') !== 'All') {
@@ -22,8 +28,7 @@
       const $view = $('.view.caw-benefits.filtering-list');
 
       // Add change listener to disable options that don't have any results.
-      $('select[name="available"]', $view)
-        .once('select-benefits')
+      $(once('select-benefits', 'select[name="available"]', $view.get(0)))
         .on('change', e => disableSelectOptions(e.currentTarget))
         .each((i, select) => disableSelectOptions(select));
 
@@ -33,6 +38,7 @@
       const $headerSummary = $('<div>', {class: 'summary'});
       const $headerInfo = $('<div>', {
         class: 'comparison-table-plan-names',
+        'aria-live': 'polite',
         html: '<h2>Comparing Results For</h2>'
       }).hide()
         .append($('<a>', {
@@ -41,11 +47,10 @@
         }).click(() => location.reload()))
         .append($headerSummary);
 
-      $('.attachment-before', $view).once('header-info').prepend($headerInfo);
+      $(once('header-info', '.attachment-before', $view.get(0))).prepend($headerInfo);
 
       // Go through each list and add necessary markup and click handlers.
-      $view.once('comparison-list')
-        .find('.rows ul')
+      $(once('comparison-list', $view.get(0))).find('.rows ul')
         .each((i, list) => {
 
           const $list = $(list);
@@ -60,7 +65,7 @@
               })
             });
 
-          const $summary = $('<div>', {class: 'summary'})
+          const $summary = $('<div>', {class: 'summary', 'aria-live': 'polite', 'aria-atomic': 'true'});
 
           const $info = $('<div>')
             .html('<strong><span class="num-selected">0</span> plans selected</strong>')
@@ -84,8 +89,8 @@
 
             $('.attachment-before', $view).addClass('header-info-wrap');
 
-            Object.keys(drupalSettings.views.ajaxViews).forEach(domId => {
-              const view = drupalSettings.views.ajaxViews[domId];
+            Object.keys(settings.views.ajaxViews).forEach(domId => {
+              const view = settings.views.ajaxViews[domId];
               if (view.view_display_id === 'comparison') {
                 view.view_args = selectedItems.join('+');
                 $(`.js-view-dom-id-${view.view_dom_id}`).triggerHandler('RefreshView');
@@ -96,9 +101,17 @@
           // Add the input checkboxes to each view result.
           $list.children('li').each((j, item) => {
             const $item = $(item);
-            const $title = $('h3', $item).uniqueId()
+
+            const $title = $('h3', $item).each((i, elem) => {
+              $(elem).attr('id', 'comparison-item-title-' + Math.random().toString(36).substr(2, 9));
+            });
+
+
             const $label = $('<span>', {class: 'label', text: 'Compare'});
-            $label.uniqueId();
+            $label.each((i, elem) => {
+              $(elem).attr('id', 'comparison-item-label-' + Math.random().toString(36).substr(2, 9));
+            });
+
 
             const $checkbox = $('<input>')
               .attr('type', 'checkbox')
@@ -134,6 +147,8 @@
                     $(input).closest('li').removeClass('disabled');
                   });
                 }
+
+                $checkbox.focus();
               });
 
             const $selectElement = $('<div>')
@@ -156,13 +171,20 @@
           text: headerText,
           scope: 'colgroup'
         });
-        $groupHeader.uniqueId();
+        $groupHeader.each((i, elem) => {
+          $(elem).attr('id', 'group-header-' + Math.random().toString(36).substr(2, 9));
+        });
+
         $(tableCell).closest('tr').addClass('group-header').empty().append($groupHeader);
       })
 
-      $('table', context).once('header-ids').each((i, table) => {
+      $(once('header-ids', 'table', context)).each((i, table) => {
         const $topHeaders = $('thead th', table)
-        $topHeaders.uniqueId();
+
+        $topHeaders.each((i, elem) => {
+          $(elem).attr('id', 'top-header-' + Math.random().toString(36).substr(2, 9));
+        });
+
         $('tbody td', table).each((j, tableCell) => {
           const $tableCell = $(tableCell);
           const position = $(tableCell).prevAll().length;
@@ -181,5 +203,5 @@
       });
     }
   };
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal, once);
 

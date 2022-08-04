@@ -26,7 +26,7 @@ content:
     third_party_settings: {  }
   su_list_button:
     type: link_default
-    weight: 3
+    weight: 4
     region: content
     settings:
       placeholder_url: ''

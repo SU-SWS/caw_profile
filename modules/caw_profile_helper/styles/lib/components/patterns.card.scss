@@ -8,3 +8,34 @@
     font-size: 80px;
   }
 }
+
+.js-lpb-component .su-card {
+  background-color: transparent;
+}
+
+.su-card,
+.js-lpb-component {
+  &.bg-b1050e,
+  &.bg-4d4f53 {
+    color: #fff;
+
+    a {
+      color: #fff;
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &.bg-b1050e {
+    background: #b1050e;
+  }
+
+  &.bg-4d4f53 {
+    background: #4d4f53;
+  }
+
+  &.bg-f4f4f4 {
+    background: #f4f4f4;
+  }
+}

@@ -29,12 +29,14 @@ class FAQCest {
     $I->fillField('Title/Question', 'Did you hear about the guy who invented the knock-knock joke?');
     $I->scrollTo('input[value="Add Accordion"]');
     $I->click('Source', '.field--name-su-faq-questions');
+    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
     $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'He won the “no-bell” prize.');
 
     $I->click('Add Accordion');
     $I->waitForElement('[name="su_faq_questions[1][subform][su_accordion_title][0][value]"]');
     $I->fillField('Title/Question', 'What do you call a fake noodle?');
     $I->click('Source', '.field--name-su-faq-questions');
+    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
     $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'An impasta');
 
     $I->click('Save', '.ui-dialog-buttonpane');

@@ -36,7 +36,8 @@ class ListsCest {
   public function testListParagraphNews(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
     $I->amOnPage('/node/add/stanford_news');
-    $I->fillField('Headline', 'Foo Bar News');
+    $title = $this->faker->words(3, TRUE);
+    $I->fillField('Headline', $title);
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
@@ -49,7 +50,7 @@ class ListsCest {
     $I->canSee('Headliner');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee('Foo Bar News');
+    $I->canSee($title);
   }
 
   /**
@@ -145,7 +146,6 @@ class ListsCest {
       'arguments' => $random_term->label(),
     ]);
 
-
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($news->label());
   }
@@ -183,9 +183,120 @@ class ListsCest {
   }
 
   /**
-   * Event items should display in the list paragraph.
+   * No results message and hiding should work.
    *
-   * @group newtest
+   * @group D8CORE-4858
+   */
+  public function testEmptyResultsListEvents(AcceptanceTester $I) {
+    // Start with no events.
+    $nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties(['type' => 'stanford_event']);
+    foreach ($nodes as $node) {
+      $node->delete();
+    }
+    $message = $this->faker->sentence;
+    $headline_text = $this->faker->words(3, TRUE);
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_view' => [
+        'target_id' => 'stanford_events',
+        'display_id' => 'list_page',
+        'items_to_display' => 100,
+      ],
+      'su_list_headline' => $headline_text,
+      'su_list_description' => [
+        'format' => 'stanford_html',
+        'value' => '<p>Lorem Ipsum</p>',
+      ],
+      'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
+    ], 'paragraph');
+
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($headline_text);
+    $I->cantSee($message);
+
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_view' => [
+        'target_id' => 'stanford_events',
+        'display_id' => 'list_page',
+        'items_to_display' => 100,
+      ],
+      'su_list_headline' => $headline_text,
+      'su_list_description' => [
+        'format' => 'stanford_html',
+        'value' => '<p>Lorem Ipsum</p>',
+      ],
+      'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
+    ], 'paragraph');
+    $paragraph->setBehaviorSettings('list_paragraph', ['empty_message' => $message]);
+    $paragraph->save();
+
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+
+    $I->amOnPage('/');
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($headline_text);
+    $I->canSee($message);
+
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_view' => [
+        'target_id' => 'stanford_events',
+        'display_id' => 'list_page',
+        'items_to_display' => 100,
+      ],
+      'su_list_headline' => $headline_text,
+      'su_list_description' => [
+        'format' => 'stanford_html',
+        'value' => '<p>Lorem Ipsum</p>',
+      ],
+      'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
+    ], 'paragraph');
+    $paragraph->setBehaviorSettings('list_paragraph', [
+      'empty_message' => $message,
+      'hide_empty' => TRUE,
+    ]);
+    $paragraph->save();
+
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+
+    $I->amOnPage('/');
+    $I->amOnPage($node->toUrl()->toString());
+    $I->cantSee($headline_text);
+    $I->cantSee($message);
+  }
+
+  /**
+   * Event items should display in the list paragraph.
    */
   public function testListParagraphEvents(AcceptanceTester $I) {
     $I->logInWithRole('contributor');

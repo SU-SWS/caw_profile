@@ -222,6 +222,16 @@ article {
 }
 
 .news-whole-card-link {
+  position:relative;
+
+  h2 {
+    @include type-c;
+
+    color: $su-color-black;
+    display: inline-block;
+    font-weight: $su-font-bold;
+  }
+
   img, h2 {
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   }
@@ -229,6 +239,10 @@ article {
   &:hover {
     img, h2 {
       transform: scale(1.03);
+    }
+
+    h2 {
+      text-decoration: underline;
     }
   }
 

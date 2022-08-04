@@ -10,14 +10,20 @@
     overflow: hidden;
   }
 
+  h2,
   img,
   .fontawesome-icon {
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   }
 
   &:hover {
-    img {
+    img,
+    h2 {
       transform: scale(1.03);
+    }
+
+    h2 {
+      text-decoration: underline;
     }
 
     .fontawesome-icon {

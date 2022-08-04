@@ -109,7 +109,7 @@ function caw_profile_helper_preprocess(&$variables, $hook) {
     // and put them into a variable for use in the patterns_use_wrapper_admin
     // template. Also remove the normal attributes to a wrapper so that they
     // don't somehow get passed down into the pattern and cause chaos.
-    $variables['wrapper_attributes'] = new Attribute($variables['context']->getProperty('lpBuilder'));
+    $variables['wrapper_attributes'] = new Attribute($variables['context']->getProperty('lpBuilder') ?? []);
     $variables['attributes'] = new Attribute();
   }
 }

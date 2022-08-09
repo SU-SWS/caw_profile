@@ -22,6 +22,13 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Cache\Cache;
 
 /**
+ * Implements hook_paragraphs_behavior_info_alter().
+ */
+function caw_profile_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['hero_pattern']['class'] = '\Drupal\caw_profile_helper\Plugin\paragraphs\Behavior\CawHeroBehavior';
+}
+
+/**
  * Implements hook_contextual_links_alter().
  */
 function caw_profile_helper_contextual_links_alter(array &$links, $group, array $route_parameters) {

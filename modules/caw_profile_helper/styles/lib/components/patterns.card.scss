@@ -17,25 +17,44 @@
 .js-lpb-component {
   &.bg-b1050e,
   &.bg-4d4f53 {
-    color: #fff;
+    color: $su-color-white;
 
     a {
-      color: #fff;
+      color: $su-color-white;
+
       &:after {
-        background-color: #fff;
+        background-color: $su-color-white;
       }
     }
   }
 
   &.bg-b1050e {
     background: #b1050e;
+
+    .su-button {
+      background: #fff;
+      color: $su-color-cardinal-red-dark;
+
+      &:after {
+        content: '';
+        mask: none;
+        height: 0;
+        width: 0;
+      }
+    }
+
+    &.stretch-link {
+      .su-button {
+        background: transparent;
+      }
+    }
   }
 
   &.bg-4d4f53 {
-    background: #4d4f53;
+    background: $su-color-cool-grey;
   }
 
   &.bg-f4f4f4 {
-    background: #f4f4f4;
+    background: $su-color-foggy-light;
   }
 }

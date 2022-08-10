@@ -1,10 +1,19 @@
 # Cardinal at Work Profile
 
-9.0.1
+9.1.1
 --------------------------------------------------------------------------------
-_Release Date: 2022-08-04_
+_Release Date: 2022-08-10_
 
-- Corrected some styles to fix regression styles.
+- Fixed some styles for stretched link cards and colors.
+
+9.1.0
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-09_
+
+- CAWD9-136 Corrected hero behavior for composer autoload issue
+- Updated field validation for google analytics and allow multiple property ids (#600)
+- Modify json api endpionts and add nextjs consumer support (#599)
+
 
 9.0.0
 --------------------------------------------------------------------------------

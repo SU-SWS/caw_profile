@@ -6,6 +6,13 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+9.1.2
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-15_
+
+- D8CORE-6219 Adjust help text and remove aria label help text
+- D8CORE-6168 Default to 12 column widths on paragraph row items
+
 9.1.1
 --------------------------------------------------------------------------------
 _Release Date: 2022-08-10_

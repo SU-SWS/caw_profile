@@ -6,7 +6,7 @@ defaults: &defaults
   docker:
     - image: pookmish/drupal8ci:php8
     - image: selenium/standalone-chrome:latest
-    - image: circleci/mysql:5.7
+    - image: cimg/mysql:5.7
       environment:
         MYSQL_DATABASE: drupal
         MYSQL_USER: drupal

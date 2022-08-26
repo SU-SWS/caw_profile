@@ -12,6 +12,7 @@ defaults: &defaults
         MYSQL_USER: drupal
         MYSQL_PASSWORD: drupal
         MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      command: ['--max-allowed-packet=67108864']
   working_directory: /var/www/html
 
 back_to_dev: &back_to_dev

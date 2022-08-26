@@ -16,7 +16,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: drupal
         ports:
           - 33306:3306
-        options: '--max-allowed-packet=67108864 --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
+        options: '--max_allowed_packet=67108864 --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
     steps:
       - uses: actions/checkout@v3
         with:

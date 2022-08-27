@@ -8,7 +8,7 @@ jobs:
       image: pookmish/drupal8ci:php8
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql
         env:
           MYSQL_DATABASE: drupal
           MYSQL_USER: drupal
@@ -16,7 +16,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: drupal
         ports:
           - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: '--health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -45,7 +45,7 @@ jobs:
       image: pookmish/drupal8ci:php8
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql
         env:
           MYSQL_DATABASE: drupal
           MYSQL_USER: drupal
@@ -53,7 +53,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: drupal
         ports:
           - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: '--health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
     steps:
       - uses: actions/checkout@v3
         with:

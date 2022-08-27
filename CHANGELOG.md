@@ -1,10 +1,32 @@
 # Cardinal at Work Profile
 
+9.1.3
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-26_
+
+- D8CORE-6219 Adjust help text and remove aria label help text
+- D8CORE-6168 Default to 12 column widths on paragraph row items
+- Fixed courses field widget with view query parameter
+- allow rowspan and colspan to table headers
+
 9.1.2
 --------------------------------------------------------------------------------
 _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
+
+9.1.3
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-22_
+
+- Fixed courses field widget with view query parameter.
+
+9.1.2
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-15_
+
+- D8CORE-6219 Adjust help text and remove aria label help text
+- D8CORE-6168 Default to 12 column widths on paragraph row items
 
 9.1.1
 --------------------------------------------------------------------------------

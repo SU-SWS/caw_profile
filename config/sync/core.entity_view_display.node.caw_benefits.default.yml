@@ -1460,7 +1460,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_med_preg_term'
-              label: 'Pregnancy Termination'
+              label: 'Reproductive Health'
               label_display: '0'
               provider: layout_builder
               context_mapping:

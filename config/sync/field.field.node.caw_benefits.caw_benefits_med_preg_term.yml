@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_med_preg_term
 field_name: caw_benefits_med_preg_term
 entity_type: node
 bundle: caw_benefits
-label: 'Pregnancy Termination'
+label: 'Reproductive Health'
 description: ''
 required: false
 translatable: true

@@ -887,6 +887,8 @@ display:
               site_developer: '0'
               layout_builder_user: '0'
               decoupled_site_users: '0'
+              caw_reviewer: '0'
+              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -903,10 +905,10 @@ display:
           reduce_duplicates: false
           vid: media
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
-          depth: 0
+          depth: 10
       filter_groups:
         operator: AND
         groups:

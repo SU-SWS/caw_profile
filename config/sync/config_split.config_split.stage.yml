@@ -6,6 +6,8 @@ id: stage
 label: 'Staging Environment'
 description: ''
 weight: 0
+stackable: false
+storage: folder
 folder: ../config/envs/stage
 module:
   acquia_purge: 0
@@ -18,7 +20,5 @@ module:
   purge_tokens: 0
   stage_file_proxy: 0
 theme: {  }
-blacklist: {  }
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: false
+complete_list: {  }
+partial_list: {  }

@@ -200,10 +200,12 @@ module:
   syslog: 0
   system: 0
   taxonomy: 0
+  taxonomy_entity_index: 0
   taxonomy_menu: 0
   telephone: 0
   text: 0
   token: 0
+  token_or: 0
   toolbar: 0
   transliterate_filenames: 0
   ui_patterns: 0

@@ -326,3 +326,18 @@ function caw_profile_helper_update_9009() {
     $node->save();
   }
 }
+
+/**
+ * Replace cardinal red with Lagunita color.
+ */
+function caw_profile_helper_update_9010() {
+  $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $ids = $paragraph_storage->getQuery()
+    ->condition('behavior_settings', '%b1050e%', 'LIKE')
+    ->execute();
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  foreach ($paragraph_storage->loadMultiple($ids) as $paragraph) {
+    $paragraph->setBehaviorSettings('card_color', ['bg_color' => '006b81']);
+    $paragraph->save();
+  }
+}

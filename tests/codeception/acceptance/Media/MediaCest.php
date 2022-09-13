@@ -238,16 +238,16 @@ class MediaCest {
     $file = $I->createEntity(['uri' => $image_path], 'file');
 
     $unrelated_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
 
     $parent_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
     $child_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
       'parent' => $parent_term->id(),
     ], 'taxonomy_term');

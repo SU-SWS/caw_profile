@@ -166,6 +166,8 @@ class WYSIWYGCest {
 
   /**
    * Test media category taxonomy field.
+   *
+   * @group testmedia
    */
   public function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
@@ -176,16 +178,16 @@ class WYSIWYGCest {
     $file = $I->createEntity(['uri' => $image_path], 'file');
 
     $unrelated_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
 
     $parent_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
     $child_term = $I->createEntity([
-      'vid' => 'media_tags',
+      'vid' => 'media',
       'name' => $this->faker->word,
       'parent' => $parent_term->id(),
     ], 'taxonomy_term');
@@ -200,11 +202,13 @@ class WYSIWYGCest {
     $I->logInWithRole('site_manager');
     $I->amOnPage($node->toUrl('edit-form')->toString());
 
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
+    $I->wait(1);
     $I->wait(1);
     $I->click('Insert from Media Library');
     $I->waitForElementVisible('.dropzone');

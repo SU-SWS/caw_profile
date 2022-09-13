@@ -166,8 +166,6 @@ class WYSIWYGCest {
 
   /**
    * Test media category taxonomy field.
-   *
-   * @group testmedia
    */
   public function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
@@ -209,26 +207,25 @@ class WYSIWYGCest {
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->wait(1);
     $I->click('Insert from Media Library');
     $I->waitForElementVisible('.dropzone');
 
-    $I->selectOption('Category', $unrelated_term->label());
+    $I->selectOption('.views-exposed-form [name="category"]', $unrelated_term->label());
     $I->click('Apply filters');
     $I->waitForAjaxToFinish();
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', $parent_term->label());
+    $I->selectOption('.views-exposed-form [name="category"]', $parent_term->label());
     $I->click('Apply filters');
     $I->waitForAjaxToFinish();
     $I->canSee($media->label());
 
-    $I->selectOption('Category', $unrelated_term->label());
+    $I->selectOption('.views-exposed-form [name="category"]', $unrelated_term->label());
     $I->click('Apply filters');
     $I->waitForAjaxToFinish();
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', '-'. $child_term->label());
+    $I->selectOption('.views-exposed-form [name="category"]', '-'. $child_term->label());
     $I->click('Apply filters');
     $I->waitForAjaxToFinish();
     $I->canSee($media->label());

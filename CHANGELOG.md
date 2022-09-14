@@ -1,5 +1,21 @@
 # Cardinal at Work Profile
 
+9.1.4
+--------------------------------------------------------------------------------
+_Release Date: 2022-09-14_
+
+- CAWD9-138 Replaced cardinal red with lagunita background color (#109)
+- D8CORE-6244: fixing float with a clear (#614)
+- D8CORE-4363: Show images in cards at all breakpoint (#610)
+- D8CORE-6235 Fix "Save and Import" on importer forms. (#613)
+- D8CORE-6058 Adjust, improve, and add metatags for content (#608)
+- D8CORE-6217 Allow configuring maximum main menu depth (#611)
+- D8CORE-5825 Add taxonomy field to media types for categorization (#609)
+- D8CORE-6245: fix to the transparent localist event link (#612)
+- D8CORE-6224 Added localist bookmark url for importer (#607)
+- D8CORE-5955: Added journal publisher field, updated publisher label. (#602)
+- D8CORE-5656 D8CORE-6215 D8CORE-6048 Adjustments to people node form and views (#606
+
 9.1.3
 --------------------------------------------------------------------------------
 _Release Date: 2022-08-26_

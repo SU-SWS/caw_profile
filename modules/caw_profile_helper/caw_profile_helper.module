@@ -212,6 +212,10 @@ function caw_profile_helper_block_access(BlockInterface $block, $operation, Acco
  * Implements hook_library_info_alter().
  */
 function caw_profile_helper_library_info_alter(&$libraries, $extension) {
+  // Disable confirm leave library during testing.
+  if ($extension == 'confirm_leave' && getenv('CI')) {
+    unset($libraries['confirm-leave']);
+  }
   if ($extension == 'book' && isset($libraries['drupal.book'])) {
     unset($libraries['drupal.book']['js']);
     $libraries['drupal.book']['dependencies'][] = 'caw_profile_helper/book.admin';

@@ -15,6 +15,11 @@
 
 .su-card,
 .js-lpb-component {
+  &.bg-006b81 {
+    background: #006b81;
+  }
+
+  &.bg-006b81,
   &.bg-b1050e,
   &.bg-4d4f53 {
     color: $su-color-white;

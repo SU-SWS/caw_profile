@@ -37,7 +37,7 @@ class CardColorBehavior extends ParagraphsBehaviorBase {
       '#type' => 'select',
       '#title' => t('Background Color'),
       '#options' => [
-        'b1050e' => $this->t('Cardinal Red'),
+        '006b81' => $this->t('Lagunita: Dark'),
         '4d4f53' => $this->t('Cool Grey'),
         'f4f4f4' => $this->t('Light Fog'),
       ],

@@ -10,8 +10,10 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.caw_benefits
     - node.type.caw_careers
     - node.type.caw_sweetener
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -74,6 +76,7 @@ permissions:
   - 'administer stanford-event-types menu items'
   - 'administer stanford-person-type menu items'
   - 'break content lock'
+  - 'create caw_benefits content'
   - 'create caw_careers content'
   - 'create caw_sweetener content'
   - 'create embeddable media'
@@ -110,22 +113,26 @@ permissions:
   - 'create terms in su_shared_tags'
   - 'create url aliases'
   - 'create video media'
+  - 'delete any caw_benefits content'
   - 'delete any caw_careers content'
   - 'delete any caw_sweetener content'
   - 'delete any embeddable media'
   - 'delete any google_form media'
+  - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
   - 'delete any stanford_news content'
   - 'delete any stanford_page content'
   - 'delete any stanford_person content'
   - 'delete any stanford_publication content'
+  - 'delete caw_benefits revisions'
   - 'delete caw_careers revisions'
   - 'delete caw_sweetener revisions'
   - 'delete citation entities'
   - 'delete citation entities'
   - 'delete media'
   - 'delete media'
+  - 'delete own caw_benefits content'
   - 'delete own caw_careers content'
   - 'delete own caw_sweetener content'
   - 'delete own embeddable media'
@@ -167,6 +174,7 @@ permissions:
   - 'delete terms in stanford_publication_topics'
   - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
+  - 'edit any caw_benefits content'
   - 'edit any caw_careers content'
   - 'edit any caw_sweetener content'
   - 'edit any embeddable media'
@@ -179,6 +187,7 @@ permissions:
   - 'edit any stanford_publication content'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
+  - 'edit own caw_benefits content'
   - 'edit own caw_careers content'
   - 'edit own caw_sweetener content'
   - 'edit own embeddable media'
@@ -212,6 +221,7 @@ permissions:
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'
   - 'edit terms in stanford_publication_topics'
+  - 'revert caw_benefits revisions'
   - 'revert caw_careers revisions'
   - 'revert caw_sweetener revisions'
   - 'revert stanford_event revisions'
@@ -237,6 +247,7 @@ permissions:
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_publication content'
+  - 'view caw_benefits revisions'
   - 'view caw_careers revisions'
   - 'view caw_sweetener revisions'
   - 'view own unpublished content'

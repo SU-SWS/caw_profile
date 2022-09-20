@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: active
-      label: 'Active Employees'
+      label: Employees
     -
       value: early_retirees
-      label: 'Early retirees under 65'
+      label: 'Non-Medicare Retirees'
     -
       value: retirees
-      label: Retirees
+      label: 'Medicare Retirees'
   allowed_values_function: ''
 module: options
 locked: false

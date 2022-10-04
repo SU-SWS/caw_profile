@@ -38,7 +38,11 @@
       // $headerSummary is updated on click, so set this variable for easier
       // display manipulation in the click handler.
       const $headerSummary = $('<div>', {class: 'summary'});
-      const $headerAriaLive = $('<div>', {class: 'visually-hidden', 'aria-live':'polite', 'aria-atomic':true});
+      const $headerAriaLive = $('<div>', {
+        class: 'visually-hidden',
+        'aria-live': 'polite',
+        'aria-atomic': true
+      });
       const $headerInfo = $('<div>', {
         class: 'comparison-table-plan-names',
         html: '<h2>Comparing Results For</h2>'
@@ -119,7 +123,7 @@
 
             const $checkbox = $('<input>')
               .attr('type', 'checkbox')
-              .attr('aria-labelledby', $label.attr('id') + ' ' +  $title.attr('id'))
+              .attr('aria-labelledby', $label.attr('id') + ' ' + $title.attr('id'))
               .attr('value', $item.attr('data-nid'))
               .on('change', () => {
                 $item.toggleClass('selected', $checkbox.is(':checked'));
@@ -128,7 +132,7 @@
                 const selectedItems = $.map($('input:checked', $list), a => $('h3', $(a).closest('li')).text())
                 $info.find('.num-selected').text(selectedItems.length);
 
-                const $ul = $('<ul>', { class: 'selected-items su-list-unstyled' }).append(
+                const $ul = $('<ul>', {class: 'selected-items su-list-unstyled'}).append(
                   selectedItems.map(item => $("<li>").text(item))
                 );
                 $summary.html($ul);
@@ -166,8 +170,8 @@
           $list.after($submitWrapper);
         })
 
-
-      $('table', context).find('.group-header').each((i, tableCell) => {
+      // Change the group headers into table header cells.
+      $('table .group-header', context).each((i, tableCell) => {
         const headerText = $(tableCell).text().trim();
         const colspan = $(tableCell).closest('tr').find('td, th').length;
         const $groupHeader = $('<th>', {
@@ -182,27 +186,38 @@
         $(tableCell).closest('tr').addClass('group-header').empty().append($groupHeader);
       })
 
-      $(once('header-ids', 'table', context)).each((i, table) => {
+      $(once('table-header-ids', 'table', context)).each((i, table) => {
+        // Clear out the header attribute to allow us to manually set them.
+        $('td', table).removeAttr('headers');
+
         const $topHeaders = $('thead th', table)
 
+        // Set id attributes for the very top most headers.
         $topHeaders.each((i, elem) => {
           $(elem).attr('id', 'top-header-' + Math.random().toString(36).substr(2, 9));
         });
 
-        $('tbody td', table).each((j, tableCell) => {
-          const $tableCell = $(tableCell);
-          const position = $(tableCell).prevAll().length;
-          $tableCell.attr('headers', $tableCell.attr('headers') + ' ' + $($topHeaders[position]).attr('id'));
+        // Go through each row and set the header attributes to match the
+        // first cell and top header id attributes.
+        $('tbody tr', table).not('.group-header').each((j, row) => {
+          const rowId = $('th', row).attr('id');
+
+          $('td', row).each((k, cell) => {
+            const headerId = $($topHeaders[k + 1]).attr('id');
+            $(cell).attr('headers', `${rowId} ${headerId}`);
+          });
         })
 
+        // Add the group header into the attribute.
         $('tr.group-header', table).each((j, headerRow) => {
-          const $cell = $(headerRow).nextUntil('.group-header').find('td');
-          $cell.attr('headers', $cell.attr('headers') + ' ' + $(headerRow).find('th').attr('id'));
+          $(headerRow).nextUntil('.group-header').find('td').each((j, cell) => {
+            $(cell).attr('headers', $(cell).attr('headers') + ' ' + $(headerRow).find('th').attr('id'));
+          });
         });
       })
 
       // Uncheck all options if the users hits the back button or refreshes.
-      $(window).bind("pageshow", function() {
+      $(window).bind("pageshow", function () {
         $('input[type="checkbox"]:checked').click();
       });
     }

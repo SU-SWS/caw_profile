@@ -4,8 +4,10 @@
 
       const $table = $('table', context)
       if ($(context).hasClass('comparison-table--wrapper') && $table.length > 0) {
-        $table.attr('tabindex', '0').focus();
-        $table.blur(() => {$table.attr('tabindex', -1)});
+        $(context).attr('role', 'region')
+          .attr('aria-label', 'Comparison Chart')
+          .attr('tabindex', '0')
+          .focus();
       }
 
       const disableSelectOptions = available => {

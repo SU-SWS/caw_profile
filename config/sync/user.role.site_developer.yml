@@ -16,8 +16,10 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.caw_benefits
     - node.type.caw_careers
     - node.type.caw_sweetener
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -217,6 +219,7 @@ permissions:
   - 'configure editable stanford_publication node layout overrides'
   - 'configure layout builder restrictions'
   - 'create and edit custom blocks'
+  - 'create caw_benefits content'
   - 'create caw_careers content'
   - 'create caw_sweetener content'
   - 'create embeddable media'
@@ -226,6 +229,7 @@ permissions:
   - 'create image media'
   - 'create media'
   - 'create stanford_component_block block content'
+  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
@@ -255,6 +259,7 @@ permissions:
   - 'create video media'
   - 'customize shortcut links'
   - 'delete all revisions'
+  - 'delete any caw_benefits content'
   - 'delete any caw_careers content'
   - 'delete any caw_sweetener content'
   - 'delete any embeddable media'
@@ -263,6 +268,7 @@ permissions:
   - 'delete any image media'
   - 'delete any media'
   - 'delete any stanford_component_block block content'
+  - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
   - 'delete any stanford_gallery_images media'
@@ -271,12 +277,14 @@ permissions:
   - 'delete any stanford_person content'
   - 'delete any stanford_publication content'
   - 'delete any video media'
+  - 'delete caw_benefits revisions'
   - 'delete caw_careers revisions'
   - 'delete caw_sweetener revisions'
   - 'delete citation entities'
   - 'delete config_pages entity'
   - 'delete media'
   - 'delete orphan revisions'
+  - 'delete own caw_benefits content'
   - 'delete own caw_careers content'
   - 'delete own caw_sweetener content'
   - 'delete own embeddable media'
@@ -318,6 +326,7 @@ permissions:
   - 'delete terms in stanford_publication_topics'
   - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
+  - 'edit any caw_benefits content'
   - 'edit any caw_careers content'
   - 'edit any caw_sweetener content'
   - 'edit any embeddable media'
@@ -339,6 +348,7 @@ permissions:
   - 'edit field default media'
   - 'edit field_media_embeddable_code'
   - 'edit lockup_settings config page entity'
+  - 'edit own caw_benefits content'
   - 'edit own caw_careers content'
   - 'edit own caw_sweetener content'
   - 'edit own embeddable media'
@@ -386,8 +396,10 @@ permissions:
   - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
   - 'revert all revisions'
+  - 'revert caw_benefits revisions'
   - 'revert caw_careers revisions'
   - 'revert caw_sweetener revisions'
+  - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
   - 'revert stanford_event_series revisions'
   - 'revert stanford_news revisions'
@@ -415,6 +427,7 @@ permissions:
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_publication content'
+  - 'view caw_benefits revisions'
   - 'view caw_careers revisions'
   - 'view caw_sweetener revisions'
   - 'view config_pages entity'
@@ -424,6 +437,7 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view restricted block content'
+  - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'

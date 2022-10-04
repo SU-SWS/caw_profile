@@ -1,5 +1,15 @@
 # Cardinal at Work Profile
 
+9.1.5
+--------------------------------------------------------------------------------
+_Release Date: 2022-10-04_
+
+- Updated modules, config and patches
+- CAWD9-141 Properly set the comparison tool header attributes
+- CAWD9-140 Simplify aria live regions
+- CAWD9-139 Adjust attributes for the comparison table
+- Renamed benefits offering labels
+
 9.1.4
 --------------------------------------------------------------------------------
 _Release Date: 2022-09-14_

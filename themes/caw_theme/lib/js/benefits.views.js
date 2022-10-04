@@ -38,16 +38,17 @@
       // $headerSummary is updated on click, so set this variable for easier
       // display manipulation in the click handler.
       const $headerSummary = $('<div>', {class: 'summary'});
+      const $headerAriaLive = $('<div>', {class: 'visually-hidden', 'aria-live':'polite', 'aria-atomic':true});
       const $headerInfo = $('<div>', {
         class: 'comparison-table-plan-names',
-        'aria-live': 'polite',
         html: '<h2>Comparing Results For</h2>'
       }).hide()
         .append($('<a>', {
           text: 'Clear All',
           href: '#'
         }).click(() => location.reload()))
-        .append($headerSummary);
+        .append($headerSummary)
+        .append($headerAriaLive);
 
       $(once('header-info', '.attachment-before', $view.get(0))).prepend($headerInfo);
 
@@ -67,10 +68,10 @@
               })
             });
 
-          const $summary = $('<div>', {class: 'summary', 'aria-live': 'polite', 'aria-atomic': 'true'});
+          const $summary = $('<div>', {class: 'summary'});
 
           const $info = $('<div>')
-            .html('<strong><span class="num-selected">0</span> plans selected</strong>')
+            .html('<strong aria-live="polite" aria-atomic="true"><span class="num-selected">0</span> plans selected</strong>')
             .append($clearAll)
             .append($summary);
 
@@ -87,7 +88,8 @@
             const $available = $(`option[value="${$availableSelect.val()}"]`, $availableSelect).text();
             const $type = $('h2', $list.closest('.rows')).text() + ' ' + Drupal.t('Plans');
 
-            $headerSummary.html(`${$available}, ${$type}:` +'<br/>' + $summary.html());
+            $headerAriaLive.text('Comparing ' + $info.find('.num-selected').text() + ' Plans');
+            $headerSummary.html(`${$available}, ${$type}:` + '<br/>' + $summary.html());
 
             $('.attachment-before', $view).addClass('header-info-wrap');
 

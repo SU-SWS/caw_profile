@@ -9,6 +9,7 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.caw_benefits
     - node.type.caw_careers
     - node.type.caw_sweetener
     - node.type.stanford_course
@@ -46,6 +47,7 @@ permissions:
   - 'add citation entities'
   - 'administer main menu items'
   - 'break content lock'
+  - 'create caw_benefits content'
   - 'create caw_careers content'
   - 'create caw_sweetener content'
   - 'create file media'
@@ -63,6 +65,7 @@ permissions:
   - 'create video media'
   - 'delete citation entities'
   - 'delete media'
+  - 'delete own caw_benefits content'
   - 'delete own caw_careers content'
   - 'delete own caw_sweetener content'
   - 'delete own file media'
@@ -78,8 +81,10 @@ permissions:
   - 'delete own stanford_publication content'
   - 'delete own video media'
   - 'dropzone upload files'
+  - 'edit any caw_benefits content'
   - 'edit any caw_careers content'
   - 'edit any caw_sweetener content'
+  - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
   - 'edit any stanford_gallery_images media'
@@ -89,6 +94,7 @@ permissions:
   - 'edit any stanford_publication content'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
+  - 'edit own caw_benefits content'
   - 'edit own caw_careers content'
   - 'edit own caw_sweetener content'
   - 'edit own file media'
@@ -116,6 +122,7 @@ permissions:
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_publication content'
+  - 'view caw_benefits revisions'
   - 'view caw_careers revisions'
   - 'view caw_sweetener revisions'
   - 'view own unpublished content'

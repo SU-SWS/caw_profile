@@ -175,6 +175,7 @@ hidden:
   caw_benefits_med_mail_rx: true
   caw_benefits_med_mammograms: true
   caw_benefits_med_maternity_stay: true
+  caw_benefits_med_meals: true
   caw_benefits_med_mental_health: true
   caw_benefits_med_midwives: true
   caw_benefits_med_mri: true
@@ -192,6 +193,7 @@ hidden:
   caw_benefits_med_surgery_facil: true
   caw_benefits_med_surgery_md: true
   caw_benefits_med_transpants: true
+  caw_benefits_med_transport: true
   caw_benefits_med_tubal: true
   caw_benefits_med_urgent: true
   caw_benefits_med_vasectomy: true

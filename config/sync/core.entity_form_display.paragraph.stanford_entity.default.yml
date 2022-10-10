@@ -25,7 +25,7 @@ content:
     third_party_settings: {  }
   su_entity_button:
     type: link_default
-    weight: 4
+    weight: 3
     region: content
     settings:
       placeholder_url: ''

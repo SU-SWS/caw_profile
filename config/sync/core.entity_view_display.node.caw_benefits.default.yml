@@ -64,6 +64,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_mail_rx
     - field.field.node.caw_benefits.caw_benefits_med_mammograms
     - field.field.node.caw_benefits.caw_benefits_med_maternity_stay
+    - field.field.node.caw_benefits.caw_benefits_med_meals
     - field.field.node.caw_benefits.caw_benefits_med_mental_health
     - field.field.node.caw_benefits.caw_benefits_med_midwives
     - field.field.node.caw_benefits.caw_benefits_med_mri
@@ -81,6 +82,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
     - field.field.node.caw_benefits.caw_benefits_med_surgery_md
     - field.field.node.caw_benefits.caw_benefits_med_transpants
+    - field.field.node.caw_benefits.caw_benefits_med_transport
     - field.field.node.caw_benefits.caw_benefits_med_tubal
     - field.field.node.caw_benefits.caw_benefits_med_urgent
     - field.field.node.caw_benefits.caw_benefits_med_vasectomy
@@ -2521,6 +2523,58 @@ third_party_settings:
                     class: ''
             weight: 66
             additional: {  }
+          3af5f97f-6ed3-4ba7-954f-b31df5f8fb91:
+            uuid: 3af5f97f-6ed3-4ba7-954f-b31df5f8fb91
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_meals'
+              label: Meals
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 70
+            additional: {  }
+          21a8e032-8510-4c14-8a3e-32d80cd52e40:
+            uuid: 21a8e032-8510-4c14-8a3e-32d80cd52e40
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_transport'
+              label: Transportation
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 71
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -2817,6 +2871,7 @@ hidden:
   caw_benefits_med_mail_rx: true
   caw_benefits_med_mammograms: true
   caw_benefits_med_maternity_stay: true
+  caw_benefits_med_meals: true
   caw_benefits_med_mental_health: true
   caw_benefits_med_midwives: true
   caw_benefits_med_mri: true
@@ -2834,6 +2889,7 @@ hidden:
   caw_benefits_med_surgery_facil: true
   caw_benefits_med_surgery_md: true
   caw_benefits_med_transpants: true
+  caw_benefits_med_transport: true
   caw_benefits_med_tubal: true
   caw_benefits_med_urgent: true
   caw_benefits_med_vasectomy: true

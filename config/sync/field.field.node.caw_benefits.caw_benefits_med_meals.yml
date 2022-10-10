@@ -1,18 +1,18 @@
-uuid: c8930ea0-a8ab-4ed3-bb57-76cd6d22545b
+uuid: 6ff9892f-8bfa-4a19-a876-0dd8c1bbdab9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.caw_benefits_med_preg_term
+    - field.storage.node.caw_benefits_med_meals
     - node.type.caw_benefits
-id: node.caw_benefits.caw_benefits_med_preg_term
-field_name: caw_benefits_med_preg_term
+id: node.caw_benefits.caw_benefits_med_meals
+field_name: caw_benefits_med_meals
 entity_type: node
 bundle: caw_benefits
-label: 'Reproductive Health'
+label: Meals
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

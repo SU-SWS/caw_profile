@@ -182,6 +182,8 @@ third_party_settings:
         - caw_benefits_med_immunizations
         - caw_benefits_med_psa
         - caw_benefits_med_well_woman
+        - caw_benefits_med_meals
+        - caw_benefits_med_transport
       label: Medical
       region: content
       parent_name: group_benefits
@@ -220,8 +222,6 @@ third_party_settings:
         - caw_benefits_dent_space
         - caw_benefits_dent_splint
         - caw_benefits_dent_tmj
-        - caw_benefits_med_meals
-        - caw_benefits_med_transport
       label: Dental
       region: content
       parent_name: group_benefits
@@ -780,10 +780,10 @@ content:
     third_party_settings: {  }
   caw_benefits_med_meals:
     type: string_textarea
-    weight: 110
+    weight: 64
     region: content
     settings:
-      rows: 5
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_mental_health:
@@ -929,10 +929,10 @@ content:
     third_party_settings: {  }
   caw_benefits_med_transport:
     type: string_textarea
-    weight: 111
+    weight: 65
     region: content
     settings:
-      rows: 5
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_tubal:

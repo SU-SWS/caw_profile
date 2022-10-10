@@ -1,5 +1,12 @@
 # Cardinal at Work Profile
 
+9.1.6
+--------------------------------------------------------------------------------
+_Release Date: 2022-10-10_
+
+- Added meals and transportation medical benefits fields (#113)
+- Added fast 404 module
+
 9.1.5
 --------------------------------------------------------------------------------
 _Release Date: 2022-10-04_

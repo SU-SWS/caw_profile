@@ -1,0 +1,19 @@
+uuid: d9668837-f82f-4e75-9352-a6e46870a4eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_benefits_med_transport
+field_name: caw_benefits_med_transport
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

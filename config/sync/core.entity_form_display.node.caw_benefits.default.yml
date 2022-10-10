@@ -64,6 +64,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_mail_rx
     - field.field.node.caw_benefits.caw_benefits_med_mammograms
     - field.field.node.caw_benefits.caw_benefits_med_maternity_stay
+    - field.field.node.caw_benefits.caw_benefits_med_meals
     - field.field.node.caw_benefits.caw_benefits_med_mental_health
     - field.field.node.caw_benefits.caw_benefits_med_midwives
     - field.field.node.caw_benefits.caw_benefits_med_mri
@@ -81,6 +82,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
     - field.field.node.caw_benefits.caw_benefits_med_surgery_md
     - field.field.node.caw_benefits.caw_benefits_med_transpants
+    - field.field.node.caw_benefits.caw_benefits_med_transport
     - field.field.node.caw_benefits.caw_benefits_med_tubal
     - field.field.node.caw_benefits.caw_benefits_med_urgent
     - field.field.node.caw_benefits.caw_benefits_med_vasectomy
@@ -180,6 +182,8 @@ third_party_settings:
         - caw_benefits_med_immunizations
         - caw_benefits_med_psa
         - caw_benefits_med_well_woman
+        - caw_benefits_med_meals
+        - caw_benefits_med_transport
       label: Medical
       region: content
       parent_name: group_benefits
@@ -443,7 +447,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_perio_surg:
     type: string_textarea
-    weight: 118
+    weight: 104
     region: content
     settings:
       rows: 1
@@ -464,7 +468,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_root:
     type: string_textarea
-    weight: 120
+    weight: 106
     region: content
     settings:
       rows: 1
@@ -472,7 +476,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_rx:
     type: string_textarea
-    weight: 119
+    weight: 105
     region: content
     settings:
       rows: 1
@@ -488,7 +492,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_space:
     type: string_textarea
-    weight: 121
+    weight: 107
     region: content
     settings:
       rows: 1
@@ -496,7 +500,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_splint:
     type: string_textarea
-    weight: 122
+    weight: 108
     region: content
     settings:
       rows: 1
@@ -504,7 +508,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_tmj:
     type: string_textarea
-    weight: 123
+    weight: 109
     region: content
     settings:
       rows: 1
@@ -774,6 +778,14 @@ content:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
+  caw_benefits_med_meals:
+    type: string_textarea
+    weight: 64
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
   caw_benefits_med_mental_health:
     type: string_textarea
     weight: 21
@@ -910,6 +922,14 @@ content:
   caw_benefits_med_transpants:
     type: string_textarea
     weight: 45
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+  caw_benefits_med_transport:
+    type: string_textarea
+    weight: 65
     region: content
     settings:
       rows: 1

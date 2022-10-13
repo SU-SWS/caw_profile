@@ -134,6 +134,7 @@
         "drupal/display_field_copy": "^2.0",
         "drupal/domain_301_redirect": "^2.0",
         "drupal/ds": "^3.3",
+        "drupal/eck": "^1.0@beta",
         "drupal/editoria11y": "^1.0",
         "drupal/element_class_formatter": "^1.1",
         "drupal/encrypt": "^3.0",
@@ -184,6 +185,7 @@
         "drupal/path_redirect_import": "^1.0@beta",
         "drupal/pathauto": "^1.6",
         "drupal/pdb": "^1.0@alpha",
+        "drupal/printable": "^2.1",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/real_aes": "^2.4",
         "drupal/redirect": "^1.0-beta1",
@@ -222,7 +224,7 @@
         "su-sws/nobots": "^8.2",
         "su-sws/react_paragraphs": "^8.2",
         "su-sws/stanford_actions": "^8.2",
-        "su-sws/stanford_fields": "^8.1",
+        "su-sws/stanford_fields": "8.x-dev",
         "su-sws/stanford_media": "^8.3",
         "su-sws/stanford_migrate": "^8.3",
         "su-sws/stanford_ssp": "^8.2"
@@ -263,7 +265,8 @@
             "Drupal\\Tests\\stanford_profile_drush\\": "modules/stanford_profile_drush/tests/src",
             "Drupal\\Tests\\stanford_profile_helper\\": "modules/stanford_profile_helper/tests/src",
             "Drupal\\Tests\\stanford_publication\\": "modules/stanford_publication/tests/src",
-            "Drupal\\Tests\\stanford_text_editor\\": "modules/stanford_text_editor/tests/src"
+            "Drupal\\Tests\\stanford_text_editor\\": "modules/stanford_text_editor/tests/src",
+            "Drupal\\stanford_policy\\": "modules/stanford_policy/src"
         }
     },
     "extra": {

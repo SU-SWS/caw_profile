@@ -61,9 +61,11 @@ function stanford_basic_preprocess_node(&$variables) {
 function stanford_basic_preprocess_breadcrumb(&$variables) {
   $request = \Drupal::request();
   $route_match = \Drupal::routeMatch();
-  $page_title = \Drupal::service('title_resolver')
-    ->getTitle($request, $route_match->getRouteObject());
-  $variables['breadcrumb'][] = ['text' => $page_title];
+  if ($route_object = $route_match->getRouteObject()) {
+    $page_title = \Drupal::service('title_resolver')
+      ->getTitle($request, $route_object);
+    $variables['breadcrumb'][] = ['text' => $page_title];
+  }
 }
 
 /**
@@ -182,6 +184,9 @@ function stanford_basic_preprocess_views_view(&$variables) {
   $variables['attributes']['class'][] = Html::cleanCssIdentifier('view');
   $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['id']);
   $variables['attributes']['class'][] = Html::cleanCssIdentifier($variables['display_id']);
+  if ($variables['id'] == 'change_logs' && $variables['display_id'] == 'policy_changes') {
+    $variables['#attached']['library'][] = 'stanford_basic/content.stanford_policy';
+  }
 }
 
 /**

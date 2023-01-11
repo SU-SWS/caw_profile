@@ -305,6 +305,7 @@ permissions:
   - 'import stanford_localist_importer migration'
   - 'import stanford_publications migration'
   - 'import su_stanford_person migration'
+  - 'mark as hidden in editoria11y'
   - 'rabbit hole bypass node'
   - 'revert caw_benefits revisions'
   - 'revert caw_careers revisions'

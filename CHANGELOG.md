@@ -48,6 +48,12 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+9.2.5
+--------------------------------------------------------------------------------
+- Replace log entity type and remove ECK (#656)
+- Enabled empty_fields module
+- DEVOPS-000: SMRT quotes R dumb (#655)
+
 9.2.4
 --------------------------------------------------------------------------------
 _Release Date: 2022-12-13_

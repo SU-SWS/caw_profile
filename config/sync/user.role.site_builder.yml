@@ -8,6 +8,7 @@ dependencies:
     - core.entity_view_display.node.stanford_news.default
     - core.entity_view_display.node.stanford_page.default
     - core.entity_view_display.node.stanford_person.default
+    - core.entity_view_display.node.stanford_policy.default
     - core.entity_view_display.node.stanford_publication.default
     - filter.format.stanford_limited_html
     - media.type.embeddable
@@ -55,7 +56,6 @@ dependencies:
     - crop
     - dropzonejs
     - ds
-    - eck
     - editoria11y
     - entity_reference_revisions
     - entity_usage
@@ -73,6 +73,7 @@ dependencies:
     - page_manager
     - paragraphs
     - path
+    - pathauto
     - rabbit_hole
     - redirect
     - responsive_image
@@ -169,7 +170,6 @@ permissions:
   - 'bypass embed field validation'
   - 'bypass node access'
   - 'cancel account'
-  - 'change own username'
   - 'choose layout for node stanford_page'
   - 'configure all stanford_page node layout overrides'
   - 'configure any layout'
@@ -178,6 +178,7 @@ permissions:
   - 'configure editable stanford_news node layout overrides'
   - 'configure editable stanford_page node layout overrides'
   - 'configure editable stanford_person node layout overrides'
+  - 'configure editable stanford_policy node layout overrides'
   - 'configure editable stanford_publication node layout overrides'
   - 'create and edit custom blocks'
   - 'create caw_benefits content'
@@ -188,7 +189,6 @@ permissions:
   - 'create file media'
   - 'create google_form media'
   - 'create image media'
-  - 'create log entities'
   - 'create media'
   - 'create stanford_component_block block content'
   - 'create stanford_course content'
@@ -227,7 +227,6 @@ permissions:
   - 'delete any file media'
   - 'delete any google_form media'
   - 'delete any image media'
-  - 'delete any log entities'
   - 'delete any media'
   - 'delete any stanford_component_block block content'
   - 'delete any stanford_course content'
@@ -252,7 +251,6 @@ permissions:
   - 'delete own file media'
   - 'delete own google_form media'
   - 'delete own image media'
-  - 'delete own log entities'
   - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
@@ -262,6 +260,7 @@ permissions:
   - 'delete own stanford_person content'
   - 'delete own stanford_publication content'
   - 'delete own video media'
+  - 'delete policy log'
   - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
   - 'delete stanford_event_series revisions'
@@ -295,7 +294,6 @@ permissions:
   - 'edit any file media'
   - 'edit any google_form media'
   - 'edit any image media'
-  - 'edit any log entities'
   - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
@@ -318,7 +316,6 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
-  - 'edit own log entities'
   - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
@@ -328,6 +325,7 @@ permissions:
   - 'edit own stanford_person content'
   - 'edit own stanford_publication content'
   - 'edit own video media'
+  - 'edit policy log'
   - 'edit stanford_basic_site_settings config page entity'
   - 'edit stanford_courses_importer config page entity'
   - 'edit stanford_events_importer config page entity'
@@ -354,6 +352,8 @@ permissions:
   - 'edit terms in stanford_publication_topics'
   - 'edit terms in su_shared_tags'
   - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
+  - 'notify of path changes'
   - 'rabbit hole administer taxonomy_term'
   - 'rabbit hole bypass node'
   - 'revert caw_benefits revisions'
@@ -386,6 +386,7 @@ permissions:
   - 'view any unpublished stanford_news content'
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
+  - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
   - 'view caw_benefits revisions'
   - 'view caw_careers revisions'
@@ -394,7 +395,6 @@ permissions:
   - 'view editoria11y checker'
   - 'view field_media_embeddable_code'
   - 'view own field_media_embeddable_code'
-  - 'view own log entities'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view restricted block content'

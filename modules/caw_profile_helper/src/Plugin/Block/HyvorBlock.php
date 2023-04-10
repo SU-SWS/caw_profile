@@ -75,13 +75,14 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
   public function build() {
     /** @var \Drupal\node\NodeInterface $node */
     $node = $this->routeMatch->getParameter('node');
-    if (!($node instanceof NodeInterface)) {
+    $hyvor_key = Settings::get('hyvor_talk_private_key');
+
+    if (!($node instanceof NodeInterface) || !$hyvor_key) {
       return [];
     }
 
     // Encrypt the user's data.
     // @link https://talk.hyvor.com/docs/sso-stateless
-    $hyvor_key = Settings::get('hyvor_talk_private_key');
     $user_data = $this->getUserData();
     $encodedUserData = base64_encode(json_encode($user_data));
     $hash = hash_hmac('sha1', $encodedUserData, $hyvor_key);

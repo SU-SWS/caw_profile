@@ -256,8 +256,6 @@ class PersonCest {
 
   /**
    * Unpublished profiles should not display in the list.
-   *
-   * @group tester
    */
   public function testPublishedStatus(AcceptanceTester $I) {
     $term = $I->createEntity([

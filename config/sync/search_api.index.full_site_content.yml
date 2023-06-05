@@ -34,7 +34,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        - anonymous
+        - administrator
       view_mode:
         'entity:node':
           caw_benefits: search_indexing

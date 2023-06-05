@@ -34,6 +34,13 @@ default:
       alias: /resources
       langcode: en
       pathauto: 1
+  field_menulink:
+    -
+      menu_name: main
+      title: Resources
+      description: ''
+      parent: ''
+      weight: -47
   su_page_components:
     -
       entity:
@@ -52,7 +59,10 @@ default:
               value: 1566947570
           behavior_settings:
             -
-              value: {  }
+              value:
+                layout_paragraphs:
+                  parent_uuid: c7e33d37-7dfd-492a-a497-3aac731e8040
+                  region: main
           revision_translation_affected:
             -
               value: true

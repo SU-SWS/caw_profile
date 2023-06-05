@@ -52,7 +52,13 @@ default:
               value: 1566506311
           behavior_settings:
             -
-              value: {  }
+              value:
+                layout_paragraphs:
+                  layout: layout_paragraphs_1_column
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
           revision_translation_affected:
             -
               value: true

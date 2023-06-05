@@ -10,13 +10,26 @@ use Faker\Factory;
 class GalleryCest {
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Create a basic page with a gallery and check the colorbox actions.
    */
   public function testGallery(FunctionalTester $I) {
     $faker = Factory::create();
     $title = $faker->text(20);
     $I->logInWithRole('contributor');
-    $I->amOnPage('/node/add/stanford_page');
 
     // Create the node.
     $I->fillField('Title', $title);
@@ -34,6 +47,13 @@ class GalleryCest {
     $I->click('Add media', '#su_gallery_images-media-library-wrapper');
     $I->waitForText('Drop files here to upload them');
 
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('No media items are selected');
+    $I->wait(1);
+    $I->click('Add media', '.field--name-su-gallery-images');
+    $I->waitForText('Drop files here');
+    $I->wait(1);
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->dropFileInDropzone(__DIR__ . '/wordmark.jpg');
     $I->click('Upload and Continue');
@@ -53,8 +73,8 @@ class GalleryCest {
     $I->click('Save');
 
     // On the node page.
-    $I->canSee($title, 'h1');
-    $I->canSeeNumberOfElements('.paragraph-item img', 2);
+    $I->canSee($node->label(), 'h1');
+    $I->canSeeNumberOfElements('.stanford-gallery-images img', 2);
     $I->canSeeNumberOfElements('.colorbox', 2);
     $I->click('a.colorbox');
     $I->waitForElementVisible('#cboxLoadedContent');
@@ -66,6 +86,20 @@ class GalleryCest {
     $I->waitForText('Image 2');
     $second_image_src = $I->grabAttributeFrom('#cboxContent img', 'src');
     $I->assertNotEquals($first_image_src, $second_image_src);
+  }
+
+  protected function getNode(FunctionalTester $I){
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_gallery',
+    ], 'paragraph');
+    return $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
   }
 
 }

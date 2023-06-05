@@ -34,6 +34,13 @@ default:
       alias: /research
       langcode: en
       pathauto: 1
+  field_menulink:
+    -
+      menu_name: main
+      title: Research
+      description: ''
+      parent: ''
+      weight: -48
   su_page_components:
     -
       entity:
@@ -52,7 +59,10 @@ default:
               value: 1566947552
           behavior_settings:
             -
-              value: {  }
+              value:
+                layout_paragraphs:
+                  parent_uuid: 61706423-ae4c-470b-a2d9-032d38292a89
+                  region: main
           revision_translation_affected:
             -
               value: true

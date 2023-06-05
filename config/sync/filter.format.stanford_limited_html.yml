@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - linkit
-    - media
+    - responsive_tables_filter
 name: 'Limited HTML'
 format: stanford_limited_html
 weight: 0
@@ -21,7 +21,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <div> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title class="su-button su-button--big su-button--secondary su-link--action"> <ul type class=""> <ol start type class=""> <li class="">'
+      allowed_html: '<br> <p> <a class="su-button su-button--big su-button--secondary su-link--action" hreflang title href data-entity-type data-entity-uuid data-entity-substitution> <div> <cite> <dd> <blockquote cite> <ul type class> <ol type class start> <li class> <strong> <em> <code>'
       filter_html_help: true
       filter_html_nofollow: false
   linkit:
@@ -31,3 +31,11 @@ filters:
     weight: 0
     settings:
       title: true
+  filter_responsive_tables_filter:
+    id: filter_responsive_tables_filter
+    provider: responsive_tables_filter
+    status: false
+    weight: 0
+    settings:
+      tablesaw_type: stack
+      tablesaw_persist: '1'

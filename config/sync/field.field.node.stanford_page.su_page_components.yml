@@ -36,9 +36,6 @@ settings:
       stanford_banner:
         weight: 13
         enabled: false
-      stanford_banner:
-        weight: 14
-        enabled: true
       stanford_card:
         weight: 14
         enabled: false

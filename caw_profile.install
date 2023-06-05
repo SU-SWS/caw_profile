@@ -5,6 +5,8 @@
  * caw_profile.install
  */
 
+use Drupal\Core\Menu\MenuTreeParameters;
+
 /**
  * Save the system pages from the original config values into state.
  */
@@ -21,4 +23,143 @@ function caw_profile_update_8002() {
 function caw_profile_update_8003() {
   module_load_install('pathauto');
   pathauto_update_8108();
+}
+
+
+/**
+ * Install menu_link module and configure the field.
+ */
+function caw_profile_update_9101() {
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  \Drupal::service('module_installer')->install(['menu_link']);
+  $entity_type_manager->getStorage('field_storage_config')
+    ->create([
+      'uuid' => '963caf4a-7a55-4ed6-961d-765ea7594192',
+      'field_name' => 'field_menulink',
+      'type' => 'menu_link',
+      'entity_type' => 'node',
+      'cardinality' => 1,
+    ])->save();
+  $field_config_storage = $entity_type_manager->getStorage('field_config');
+  $bundles = [
+    'stanford_page',
+    'stanford_event_series',
+    'stanford_person',
+    'stanford_policy',
+  ];
+  foreach ($bundles as $bundle) {
+    $field_config_storage->create([
+      'entity_type' => 'node',
+      'field_name' => 'field_menulink',
+      'bundle' => $bundle,
+      'label' => 'Menu Link',
+    ])->save();
+  }
+  $menu_items = $entity_type_manager->getStorage('menu_link_content')
+    ->loadByProperties(['menu_name' => 'main']);
+
+  // Re-save all menu items to update their link uris.
+  // @see \Drupal\caw_profile_helper\EventSubscriber\EntityEventSubscriber::preSaveMenuLinkContent()
+  foreach ($menu_items as $menu_item) {
+    $menu_item->save();
+  }
+  drupal_flush_all_caches();
+}
+
+/**
+ * Update menu links on nodes for the updated version of menu_link_weight.
+ */
+function caw_profile_update_9102() {
+  // Instantiate the path alias path processor because it doesn't get added in
+  // this update hook.
+  \Drupal::service('path_processor_manager')
+    ->addOutbound(\Drupal::service('path_alias.path_processor'), 300);
+
+  /** @var \Drupal\Core\Menu\MenuLinkTree $menu_link_tree */
+  $menu_link_tree = \Drupal::service('menu.link_tree');
+  $parameters = new MenuTreeParameters();
+
+  $menu = $menu_link_tree->load('main', $parameters);
+  _caw_profile_fix_menu($menu);
+}
+
+/**
+ * Update menu links on nodes for the updated version of menu_link_weight.
+ *
+ * @param array $menu_items
+ *   Menu items.
+ * @param string|null $parent
+ *   Parent menu id.
+ */
+function _caw_profile_fix_menu(array $menu_items = [], string $parent = NULL): void {
+  $node_storage = \Drupal::entityTypeManager()
+    ->getStorage('node');
+  /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
+  $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+  foreach ($menu_items as $id => $menu_item) {
+    /** @var \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent $link */
+    $link = $menu_item->link;
+    $url = $link->getUrlObject();
+
+    try {
+      if (
+        $url->isRouted() &&
+        $url->getRouteName() == 'entity.node.canonical'
+      ) {
+        $node_id = $link->getUrlObject()->getRouteParameters()['node'] ?? NULL;
+        /** @var \Drupal\node\NodeInterface $node */
+        $node = $node_storage->load($node_id);
+        if (!$node->get('field_menulink')->isEmpty()) {
+          throw new \Exception('Menu link already exists on node ' . $node->label());
+        }
+
+        $menu_field_data = [
+          'menu_name' => $link->getMenuName(),
+          'title' => $link->getTitle(),
+          'description' => $link->getDescription(),
+          'parent' => $parent,
+          'weight' => $link->getweight(),
+          'expanded' => $link->isExpanded(),
+        ];
+        $node->set('field_menulink', $menu_field_data)->save();
+        $new_parent = 'menu_link_field:node_field_menulink_' . $node->uuid() . '_und';
+
+        if ($menu_item->subtree) {
+          _caw_profile_fix_menu($menu_item->subtree, $new_parent);
+        }
+
+        if (!$link->isEnabled()) {
+          \Drupal::database()
+            ->update('menu_tree')
+            ->fields(['enabled' => 0])
+            ->condition('id', $new_parent)
+            ->execute();
+        }
+
+        $link->deleteLink();
+        continue;
+      }
+    }
+    catch (\Throwable $e) {
+      \Drupal::logger('caw_profile')
+        ->error('Unable to update link %title. Error: %error', [
+          '%title' => $link->getTitle(),
+          '%error' => $e->getMessage(),
+        ]);
+    }
+
+    if ($parent) {
+      $link->updateLink(['parent' => $parent], TRUE);
+
+      // Saving the link above, updates the entity, but it doesn't update the
+      // menu tree. So we need to update the menu tree manually.
+      $menu_link_manager->updateDefinition($link->getPluginId(), $link->getPluginDefinition(), FALSE);
+    }
+
+    if ($menu_item->subtree) {
+      _caw_profile_fix_menu($menu_item->subtree, $id);
+    }
+  }
 }

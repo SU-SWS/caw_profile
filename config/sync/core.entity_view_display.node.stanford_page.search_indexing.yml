@@ -54,6 +54,7 @@ hidden:
   caw_page_resource_category: true
   caw_page_resource_role: true
   caw_page_resource_type: true
+  field_menulink: true
   layout_builder__layout: true
   layout_selection: true
   links: true

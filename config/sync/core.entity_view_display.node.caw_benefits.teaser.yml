@@ -192,8 +192,10 @@ hidden:
   caw_benefits_med_substance: true
   caw_benefits_med_surgery_facil: true
   caw_benefits_med_surgery_md: true
+  caw_benefits_med_trans: true
   caw_benefits_med_transpants: true
   caw_benefits_med_transport: true
+  caw_benefits_med_travel: true
   caw_benefits_med_tubal: true
   caw_benefits_med_urgent: true
   caw_benefits_med_vasectomy: true

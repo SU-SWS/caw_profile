@@ -25,11 +25,29 @@ function caw_profile_update_8003() {
   pathauto_update_8108();
 }
 
+/**
+ * Install Claro theme and uninstall Seven.
+ */
+function caw_profile_update_9103() {
+  /** @var \Drupal\Core\Extension\ThemeInstallerInterface $theme_installer */
+  $theme_installer = \Drupal::service('theme_installer');
+  $theme_installer->install(['claro', 'stanford_profile_admin']);
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('admin', 'stanford_profile_admin')
+    ->save();
+  try {
+    $theme_installer->uninstall(['seven']);
+  }
+  catch (\Exception $e) {
+    // Theme was already uninstalled.
+  }
+}
 
 /**
  * Install menu_link module and configure the field.
  */
-function caw_profile_update_9101() {
+function caw_profile_update_9001() {
   $entity_type_manager = \Drupal::entityTypeManager();
 
   \Drupal::service('module_installer')->install(['menu_link']);

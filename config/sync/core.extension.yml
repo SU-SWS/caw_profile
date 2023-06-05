@@ -137,7 +137,6 @@ module:
   oembed_providers: 0
   options: 0
   page_cache: 0
-  page_cache_query_ignore: 0
   page_manager: 0
   page_manager_ui: 0
   paragraphs_edit: 0
@@ -183,7 +182,6 @@ module:
   stanford_fields: 0
   stanford_image_styles: 0
   stanford_intranet: 0
-  stanford_layout_paragraphs: 0
   stanford_media: 0
   stanford_migrate: 0
   stanford_news: 0

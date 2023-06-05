@@ -13,8 +13,5 @@ icon_default: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAAD2e2D
 description: ''
 behavior_plugins:
   layout_paragraphs:
-    enabled: true
-    available_layouts:
-      layout_paragraphs_1_column: '1 Column'
-      layout_paragraphs_2_column: '2 Column'
-      layout_paragraphs_3_column: '3 Column'
+    enabled: false
+    available_layouts: {  }

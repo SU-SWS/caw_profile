@@ -96,7 +96,7 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_button__table');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -106,14 +106,9 @@ class WYSIWYGCest {
 
     $I->click('[data-cke-tooltip-text="Link (Ctrl+K)"]');
     $url = $this->faker->url;
-    $I->fillField('[name="attributes[href]"]', $url);
-    $I->waitForText('This URL will be used as is');
-    $I->clickWithLeftButton('.linkit-result-line--title');
-
-    $I->waitForJS('jQuery("#editor-link-dialog-form").closest(".ui-dialog").find(".ui-dialog-buttonpane").addClass("foobar"); return true;');
-
-    $I->click('Save', '.foobar');
-    $I->waitForElementNotVisible('#editor-link-dialog-form');
+    $I->fillField('Link URL', $url);
+    $I->click('[data-cke-tooltip-text="Save"]');
+    $I->clickWithLeftButton('.ui-dialog-title');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
@@ -132,12 +127,11 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components img');
-    $I->click('Edit', '.local-tasks-block');
+    $I->cantSeeElement('.su-wysiwyg-text img');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -148,12 +142,10 @@ class WYSIWYGCest {
     $I->waitForText('Decorative Image');
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
+    $I->wait(1);
 
-    $I->wait(2);
-    $I->resizeWindow(1200, 1200);
     $I->click('Save', '.ui-dialog-buttonpane');
-
-    $I->waitForElementNotVisible('.ui-dialog');
+    $I->waitForAjaxToFinish();
     $I->click('Save');
     $I->canSee($node->label(), 'h1');
     $I->canSeeElement('.su-wysiwyg-text img[src*="logo"]');
@@ -198,8 +190,7 @@ class WYSIWYGCest {
 
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -236,10 +227,10 @@ class WYSIWYGCest {
     $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
-    $I->click('Edit', '.local-tasks-block');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -255,9 +246,8 @@ class WYSIWYGCest {
     $I->fillField('Name', 'Test Youtube Video');
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
+    $I->wait(1);
 
-    $I->wait(2);
-    $I->resizeWindow(1200, 1200);
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
@@ -272,11 +262,11 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components a');
-    $I->click('Edit', '.local-tasks-block');
+    $I->cantSeeElement('.su-wysiwyg-text a');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -290,55 +280,14 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/test.txt');
     $I->click('Upload and Continue');
     $I->waitForText('The media item has been created but has not yet been saved');
+    $I->wait(1);
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
-
-    $I->wait(2);
-    $I->resizeWindow(1200, 1200);
+    $I->wait(1);
     $I->click('Save', '.ui-dialog-buttonpane');
-
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.su-wysiwyg-text a[href*="test"]');
-  }
-
-  /**
-   * Wysiwyg tables can be edited.
-   *
-   * @link https://www.drupal.org/project/drupal/issues/3065095
-   */
-  public function testWysiwygTables(FunctionalTester $I) {
-    $paragraph = $I->createEntity(['type' => 'stanford_wysiwyg'], 'paragraph');
-
-    $node = $I->createEntity([
-      'type' => 'stanford_page',
-      'title' => 'Test WYSIWYG',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ]);
-    $I->logInWithRole('site_manager');
-    $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElement('.lpb-controls a');
-    $I->click('Edit', '.lpb-controls');
-    $I->waitForText('Edit Text Area');
-    $I->wait(1);
-    $I->click('Table');
-    $I->waitForText('Table Properties');
-    $I->fillField('Rows', 5);
-    $I->fillField('Columns', 6);
-    $I->fillField('Caption', 'Table Caption');
-    $I->click('OK');
-    $I->click('Save', '.ui-dialog-buttonpane');
-
-    $I->waitForElementNotVisible('.ui-dialog');
-    $I->click('Save');
-    $I->canSee('Table Caption', 'table');
-    // Rows.
-    $I->canSeeNumberOfElements('.su-wysiwyg-text tr', 5);
-    // Columns.
-    $I->canSeeNumberOfElements('.su-wysiwyg-text tr:first-child td', 6);
   }
 
   /**

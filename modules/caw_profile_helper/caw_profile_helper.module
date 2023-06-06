@@ -11,7 +11,6 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Template\Attribute;
 use Drupal\block\BlockInterface;
 use Drupal\caw_profile_helper\BookManager;
 use Drupal\node\NodeInterface;
@@ -61,7 +60,6 @@ function caw_profile_helper_local_tasks_alter(&$local_tasks) {
     $local_tasks['entity.node.book_outline_form']['title'] = t('Subsite Outline');
   }
 }
-
 
 /**
  * Implements hook_page_attachments().

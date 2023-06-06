@@ -1,25 +1,22 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\EventSubscriber;
+namespace Drupal\Tests\caw_profile\Kernel\EventSubscriber;
 
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\core_event_dispatcher\Event\Entity\EntityPresaveEvent;
 use Drupal\default_content\Event\ImportEvent;
-use Drupal\field\Entity\FieldConfig;
-use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\stanford_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
+use Drupal\caw_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 
 /**
  * Class EventSubscriberTest.
  *
  * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+ * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -43,7 +40,7 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+   * @var \Drupal\caw_profile\EventSubscriber\EventSubscriber
    */
   protected $eventSubscriber;
 

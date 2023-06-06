@@ -27,25 +27,10 @@ class GalleryCest {
    * Create a basic page with a gallery and check the colorbox actions.
    */
   public function testGallery(FunctionalTester $I) {
-    $faker = Factory::create();
-    $title = $faker->text(20);
     $I->logInWithRole('contributor');
 
-    // Create the node.
-    $I->fillField('Title', $title);
-    $I->click('Add section');
-    $I->waitForText('Choose a layout');
-    $I->click('Save', '.ui-dialog-buttonpane');
-    $I->waitForElementNotVisible('.ui-dialog');
-    $I->moveMouseOver('.js-lpb-region', 10, 10);
-    $I->click('Choose component');
-    $I->waitForText('Choose a component');
-    $I->click('Image Gallery');
-    $I->waitForText('No media items are selected');
-
-    $I->wait(1);
-    $I->click('Add media', '#su_gallery_images-media-library-wrapper');
-    $I->waitForText('Drop files here to upload them');
+    $node = $this->getNode($I);
+    $I->amOnPage($node->toUrl('edit-form')->toString());
 
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
@@ -63,11 +48,12 @@ class GalleryCest {
     $I->fillField('media[0][fields][su_gallery_image][0][alt]', 'Logo');
     $I->clickWithLeftButton('input[name="media[1][fields][su_gallery_image][0][alt]"]');
     $I->fillField('media[1][fields][su_gallery_image][0][alt]', 'Wordmark');
+
+    $I->wait(1);
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
 
-    $I->waitForElementNotVisible('.media-library-widget-modal');
-    $I->waitForElement('.media-library-item__preview img');
-
+    $I->waitForElementNotVisible('#drupal-modal');
+    $I->waitForAjaxToFinish();
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');

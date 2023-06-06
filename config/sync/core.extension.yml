@@ -84,6 +84,7 @@ module:
   inline_form_errors: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
+  jquery_ui_draggable: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
   jsonapi: 0
@@ -136,7 +137,6 @@ module:
   oembed_providers: 0
   options: 0
   page_cache: 0
-  page_cache_query_ignore: 0
   page_manager: 0
   page_manager_ui: 0
   paragraphs_edit: 0
@@ -248,9 +248,9 @@ module:
   caw_profile: 1000
 theme:
   stable: 0
-  seven: 0
+  claro: 0
+  stanford_profile_admin: 0
   stanford_basic: 0
   stable9: 0
   caw_theme: 0
-  minimally_branded_subtheme: 0
 profile: caw_profile

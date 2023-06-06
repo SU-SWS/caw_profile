@@ -1,1 +1,55 @@
-.caw-careers-card{grid-template-columns:repeat(2,minmax(0,1fr))}.caw-careers-card img,.caw-careers-card picture{border-radius:50%;width:225px}.caw-careers-card--job-title{font-size:1.25em;letter-spacing:-.01em;margin:10px 0 20px;font-weight:400}@media only screen and (min-width:768px){.caw-careers-card--job-title{margin-top:1.2rem;margin-bottom:3.6rem}}@media only screen and (min-width:1500px){.caw-careers-card--job-title{margin-top:1.3rem;margin-bottom:3.8rem}}.caw-careers-card .caw-careers-card--years-honored{display:grid;grid-template-columns:inherit;grid-gap:20px}.grid-container-2 .caw-careers-card--left{grid-area:image}.grid-container-2 .caw-careers-card--right{grid-area:details}.grid-container-2 .caw-careers-card--years-honored{grid-area:honored}.grid-container-2 .su-card--horizontal,.grid-container-2 .su-card--horizontal:not(.su-card--link){grid-template-columns:1fr .01% 2fr;grid-template-rows:auto;grid-row-gap:20px;grid-template-areas:"image . details" "honored honored honored"}@media (max-width:1199px){.grid-container-2 .su-card--horizontal.caw-careers-card{grid-template-areas:"image image image" "details details details" "honored honored honored"}}.caw-careers .grid-all .centered-container+.centered-container{padding-top:45px}
+.caw-careers-card {
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .caw-careers-card picture,
+  .caw-careers-card img {
+    border-radius: 50%;
+    width: 225px; }
+  .caw-careers-card--job-title {
+    font-size: 1.25em;
+    letter-spacing: -0.01em;
+    margin-top: 1.1rem;
+    margin-bottom: 3rem;
+    margin: 10px 0 20px;
+    font-weight: 400; }
+    @media only screen and (min-width: 768px) {
+      .caw-careers-card--job-title {
+        margin-top: 1.2rem;
+        margin-bottom: 3.6rem; } }
+    @media only screen and (min-width: 1500px) {
+      .caw-careers-card--job-title {
+        margin-top: 1.3rem;
+        margin-bottom: 3.8rem; } }
+  .caw-careers-card .caw-careers-card--years-honored {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-gap: 20px; }
+
+.grid-container-2 .caw-careers-card--left {
+  grid-area: image; }
+
+.grid-container-2 .caw-careers-card--right {
+  grid-area: details; }
+
+.grid-container-2 .caw-careers-card--years-honored {
+  grid-area: honored; }
+
+.grid-container-2 .su-card--horizontal:not(.su-card--link) {
+  grid-template-columns: 1fr 0.01% 2fr;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  grid-template-areas: "image . details" "honored honored honored"; }
+
+.grid-container-2 .su-card--horizontal {
+  grid-template-columns: 1fr 0.01% 2fr;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  grid-template-areas: "image . details" "honored honored honored"; }
+  @media (max-width: 1199px) {
+    .grid-container-2 .su-card--horizontal.caw-careers-card {
+      grid-template-areas: "image image image" "details details details" "honored honored honored"; } }
+
+.caw-careers .grid-all .centered-container + .centered-container {
+  padding-top: 45px; }
+
+
+/*# sourceMappingURL=patterns.career_card.css.map*/

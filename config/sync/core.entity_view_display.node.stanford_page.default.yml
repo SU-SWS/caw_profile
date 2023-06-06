@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_page.caw_page_resource_category
+    - field.field.node.stanford_page.caw_page_resource_role
+    - field.field.node.stanford_page.caw_page_resource_type
+    - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
@@ -16,7 +20,6 @@ dependencies:
     - node.type.stanford_page
     - system.menu.main
   module:
-    - caw_profile_helper
     - entity_reference_revisions
     - jumpstart_ui
     - layout_builder
@@ -111,23 +114,12 @@ third_party_settings:
               expand: true
             weight: 0
             additional: {  }
-          c40ac234-fff7-4c9d-8a34-03fb9d335617:
-            uuid: c40ac234-fff7-4c9d-8a34-03fb9d335617
-            region: main
-            configuration:
-              id: jumpstart_ui_skipnav_main_anchor
-              label: 'Main content anchor target'
-              label_display: '0'
-              provider: jumpstart_ui
-              context_mapping: {  }
-            weight: -10
-            additional: {  }
-          3dabcba4-136e-4433-8604-9eb0a0b74439:
-            uuid: 3dabcba4-136e-4433-8604-9eb0a0b74439
+          9ec5b37b-33a4-4aca-b787-7f0584234d1a:
+            uuid: 9ec5b37b-33a4-4aca-b787-7f0584234d1a
             region: main
             configuration:
               id: 'field_block:node:stanford_page:su_page_components'
-              label: Components
+              label: Paragraphs
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -139,6 +131,8 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings:
+                  empty_fields:
+                    handler: ''
                   field_formatter_class:
                     class: ''
             weight: -9
@@ -153,28 +147,6 @@ third_party_settings:
               provider: jumpstart_ui
               context_mapping: {  }
             weight: -10
-            additional: {  }
-          21f2f599-071a-4bc0-bcd7-2434b5be05cd:
-            uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
-            region: left
-            configuration:
-              id: subsite_menu_block
-              label: 'Subsite Menu block'
-              label_display: '0'
-              provider: caw_profile_helper
-              context_mapping: {  }
-              block_mode: 'book pages'
-              follow: null
-              follow_parent: null
-              level: null
-              depth: null
-              expand_all_items: false
-              parent: null
-              render_parent: null
-              suggestion: null
-              label_type: null
-              label_link: null
-            weight: 2
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -320,13 +292,13 @@ content:
     region: first
   su_page_components:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
-    region: main
+    weight: 3
+    region: content
   su_page_description:
     type: string
     label: above
@@ -348,6 +320,7 @@ hidden:
   caw_page_resource_category: true
   caw_page_resource_role: true
   caw_page_resource_type: true
+  field_menulink: true
   layout_builder__layout: true
   layout_selection: true
   search_api_excerpt: true

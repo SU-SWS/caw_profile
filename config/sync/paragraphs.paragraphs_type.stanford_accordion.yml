@@ -4,6 +4,8 @@ status: true
 dependencies:
   content:
     - 'file:file:6279f842-9038-4621-bc56-e471b999572d'
+  module:
+    - layout_paragraphs
 id: stanford_accordion
 label: Accordion
 icon_uuid: 6279f842-9038-4621-bc56-e471b999572d

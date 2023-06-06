@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.su_page_components
     - node.type.stanford_page
+    - paragraphs.paragraphs_type.stanford_layout
     - paragraphs.paragraphs_type.stanford_person_cta
     - paragraphs.paragraphs_type.stanford_schedule
   module:
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       stanford_person_cta: stanford_person_cta
       stanford_schedule: stanford_schedule
+      stanford_layout: stanford_layout
     negate: 1
     target_bundles_drag_drop:
       layout:
@@ -36,18 +38,21 @@ settings:
       stanford_banner:
         weight: 13
         enabled: false
-      stanford_banner:
-        weight: 14
-        enabled: true
       stanford_card:
         weight: 14
         enabled: false
       stanford_entity:
         weight: 15
         enabled: false
+      stanford_faq:
+        weight: 20
+        enabled: false
       stanford_gallery:
         weight: 16
         enabled: false
+      stanford_layout:
+        weight: 22
+        enabled: true
       stanford_lists:
         weight: 17
         enabled: false

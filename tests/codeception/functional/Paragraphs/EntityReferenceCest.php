@@ -42,12 +42,12 @@ class EntityReferenceCest {
     $node = $this->getNodeWithReferenceParagraph($I);
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
+
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
 
     $I->waitForText('Content Item(s)');
-    $I->fillField('su_entity_item[0][target_id]', 'Foo Bar News');
-
+    $I->fillField('[name="su_entity_item[0][target_id]"]', $news->label() . ' (' .$news->id(). ')');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
@@ -84,7 +84,7 @@ class EntityReferenceCest {
     $I->click('Edit', '.lpb-controls');
 
     $I->waitForText('Content Item(s)');
-    $I->fillField('su_entity_item[0][target_id]', $publication_title);
+    $I->fillField('[name="su_entity_item[0][target_id]"]', $publication->label() . ' (' .$publication->id(). ')');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');

@@ -10,6 +10,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\UrlGenerator;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Site\Settings;
 use Drupal\node\NodeInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\user\UserInterface;
@@ -39,6 +40,8 @@ class HyvorBlockTest extends UnitTestCase {
     $url_generator = $this->createMock(UrlGenerator::class);
     $module_handler = $this->createMock(ModuleHandlerInterface::class);
     $module_handler->method('moduleExists')->willReturn(TRUE);
+
+    new Settings(['hyvor_talk_private_key' => 'foobar']);
 
     $container = new ContainerBuilder();
     $container->set('current_user', $account);

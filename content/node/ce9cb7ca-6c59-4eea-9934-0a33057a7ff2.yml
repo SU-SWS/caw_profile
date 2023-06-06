@@ -4,10 +4,12 @@ _meta:
   uuid: ce9cb7ca-6c59-4eea-9934-0a33057a7ff2
   bundle: stanford_page
   default_langcode: en
+  depends:
+    53e82f6a-7932-4bdc-91ee-12e2ba18bef9: user
 default:
   revision_uid:
     -
-      target_id: 1
+      entity: 53e82f6a-7932-4bdc-91ee-12e2ba18bef9
   status:
     -
       value: true
@@ -43,6 +45,14 @@ default:
   rh_redirect_fallback_action:
     -
       value: bundle_default
+  field_menulink:
+    -
+      menu_name: ''
+      title: ''
+      description: ''
+      parent: ''
+      weight: -50
+      expanded: 1
   layout_builder__layout:
     -
       section:
@@ -166,8 +176,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 7ae1336b-4404-4762-a499-70289133b9f7
-          bundle: stanford_layout
+          uuid: a7f364e4-46cb-42b0-9c7f-3ad3f56c35ee
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -175,12 +185,12 @@ default:
               value: true
           created:
             -
-              value: 1671144889
+              value: 1686075157
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: caw_one_column
                   config:
                     label: ''
                   parent_uuid: null
@@ -193,7 +203,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 9939d5e0-a261-4f99-b08a-9ba5b43908c1
+          uuid: 47df8cb2-3392-4a24-b229-5ddf7c393394
           bundle: stanford_lists
           default_langcode: en
         default:
@@ -202,13 +212,14 @@ default:
               value: true
           created:
             -
-              value: 1614211983
+              value: 1686075164
           behavior_settings:
             -
               value:
+                list_paragraph: {  }
                 layout_paragraphs:
-                  parent_uuid: 7ae1336b-4404-4762-a499-70289133b9f7
-                  region: main
+                  parent_uuid: a7f364e4-46cb-42b0-9c7f-3ad3f56c35ee
+                  region: first
           revision_translation_affected:
             -
               value: true

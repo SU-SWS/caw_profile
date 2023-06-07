@@ -50,6 +50,8 @@ class HyvorBlockTest extends UnitTestCase {
     $container->set('url_generator', $url_generator);
     $container->set('module_handler', $module_handler);
 
+    new Settings(['hyvor_talk_private_key' => 'foobar']);
+
     $block = HyvorBlock::create($container, [], '', ['provider' => 'caw_profile_helper']);
     $this->assertEmpty($block->build());
     $node = $this->createMock(NodeInterface::class);

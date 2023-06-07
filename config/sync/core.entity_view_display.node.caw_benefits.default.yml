@@ -81,8 +81,10 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_substance
     - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
     - field.field.node.caw_benefits.caw_benefits_med_surgery_md
+    - field.field.node.caw_benefits.caw_benefits_med_trans
     - field.field.node.caw_benefits.caw_benefits_med_transpants
     - field.field.node.caw_benefits.caw_benefits_med_transport
+    - field.field.node.caw_benefits.caw_benefits_med_travel
     - field.field.node.caw_benefits.caw_benefits_med_tubal
     - field.field.node.caw_benefits.caw_benefits_med_urgent
     - field.field.node.caw_benefits.caw_benefits_med_vasectomy
@@ -2575,6 +2577,62 @@ third_party_settings:
                     class: ''
             weight: 71
             additional: {  }
+          2214e1b4-3614-48c4-8678-d9fd2b7373c0:
+            uuid: 2214e1b4-3614-48c4-8678-d9fd2b7373c0
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_trans'
+              label: 'Transgender Services'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 72
+            additional: {  }
+          121a3b74-cb2d-4285-941d-c3686feeb94c:
+            uuid: 121a3b74-cb2d-4285-941d-c3686feeb94c
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_travel'
+              label: 'Travel and Lodging'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 73
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -2888,8 +2946,10 @@ hidden:
   caw_benefits_med_substance: true
   caw_benefits_med_surgery_facil: true
   caw_benefits_med_surgery_md: true
+  caw_benefits_med_trans: true
   caw_benefits_med_transpants: true
   caw_benefits_med_transport: true
+  caw_benefits_med_travel: true
   caw_benefits_med_tubal: true
   caw_benefits_med_urgent: true
   caw_benefits_med_vasectomy: true

@@ -1,8 +1,14 @@
 # Cardinal at Work Profile
 
+9.2.1
+--------------------------------------------------------------------------------
+_Release Date: 2023-06-07
+
+- Updated display settings due to update hook in smart_trim module
+
 9.2.0
 --------------------------------------------------------------------------------
-_Release Date: 2022-10-10_
+_Release Date: 2023-06-06_
 
 - CAWD9-143 Added 2 fields to medical benefits (#118)
 - Fix config and dependencies' (#119)

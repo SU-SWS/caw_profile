@@ -21,8 +21,7 @@ function caw_profile_update_8002() {
  * Rerun pathauto update hook.
  */
 function caw_profile_update_8003() {
-  module_load_install('pathauto');
-  pathauto_update_8108();
+  // Removed.
 }
 
 /**

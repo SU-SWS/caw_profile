@@ -354,6 +354,7 @@ function _caw_profile_helper_get_benefit_ids($field, $value): array {
   $nids = \Drupal::entityTypeManager()
     ->getStorage('node')
     ->getQuery()
+    ->accessCheck(TRUE)
     ->condition('status', 1)
     ->condition('type', 'caw_benefits')
     ->condition($field, $value)

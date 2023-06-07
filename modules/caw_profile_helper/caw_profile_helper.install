@@ -335,6 +335,7 @@ function caw_profile_helper_update_9010() {
 
   $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
   $ids = $paragraph_storage->getQuery()
+    ->accessCheck(FALSE)
     ->condition('behavior_settings', '%b1050e%', 'LIKE')
     ->execute();
   /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */

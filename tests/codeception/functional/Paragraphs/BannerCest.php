@@ -28,12 +28,12 @@ class BannerCest {
    * The banner paragraph should display its fields.
    */
   public function testBannerBehaviors(FunctionalTester $I) {
-    $field_values =[
-      'sup_header' => $this->faker->words(3, true),
-      'header' => $this->faker->words(3, true),
-      'body' => $this->faker->words(3, true),
+    $field_values = [
+      'sup_header' => $this->faker->words(3, TRUE),
+      'header' => $this->faker->words(3, TRUE),
+      'body' => $this->faker->words(3, TRUE),
       'uri' => $this->faker->url,
-      'title' => $this->faker->words(3, true),
+      'title' => $this->faker->words(3, TRUE),
     ];
 
     $paragraph = $I->createEntity([

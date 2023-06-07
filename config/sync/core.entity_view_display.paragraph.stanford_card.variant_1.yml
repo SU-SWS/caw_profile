@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.stanford_card.su_card_header
     - field.field.paragraph.stanford_card.su_card_icon
     - field.field.paragraph.stanford_card.su_card_link
-    - field.field.paragraph.stanford_card.su_card_link_display
     - field.field.paragraph.stanford_card.su_card_media
     - field.field.paragraph.stanford_card.su_card_super_header
     - paragraphs.paragraphs_type.stanford_card
@@ -104,4 +103,3 @@ content:
 hidden:
   search_api_excerpt: true
   su_card_icon: true
-  su_card_link_display: true

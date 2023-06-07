@@ -20,7 +20,6 @@ dependencies:
     - link
     - metatag
     - path
-    - scheduler
     - shs
     - text
 _core:
@@ -185,12 +184,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 14
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
     weight: 11
     region: content
@@ -199,3 +192,4 @@ content:
 hidden:
   node_edit_link: true
   su_course_id: true
+  unpublish_on: true

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.su_page_components
     - node.type.stanford_page
+    - paragraphs.paragraphs_type.stanford_layout
     - paragraphs.paragraphs_type.stanford_person_cta
     - paragraphs.paragraphs_type.stanford_schedule
   module:
@@ -13,10 +14,10 @@ id: node.stanford_page.su_page_components
 field_name: su_page_components
 entity_type: node
 bundle: stanford_page
-label: Paragraphs
+label: Components
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       stanford_person_cta: stanford_person_cta
       stanford_schedule: stanford_schedule
+      stanford_layout: stanford_layout
     negate: 1
     target_bundles_drag_drop:
       layout:
@@ -42,9 +44,15 @@ settings:
       stanford_entity:
         weight: 15
         enabled: false
+      stanford_faq:
+        weight: 20
+        enabled: false
       stanford_gallery:
         weight: 16
         enabled: false
+      stanford_layout:
+        weight: 22
+        enabled: true
       stanford_lists:
         weight: 17
         enabled: false

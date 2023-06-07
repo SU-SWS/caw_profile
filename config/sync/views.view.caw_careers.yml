@@ -762,7 +762,7 @@ display:
       use_more_always: true
       use_more_text: 'See all Celebrations'
       link_display: custom_url
-      link_url: /career-celebrations
+      link_url: /working-stanford/recognition/service-recognition/stanford-celebrates-you/annual-recognition
       header: {  }
       display_extenders: {  }
     cache_metadata:

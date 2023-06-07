@@ -52,6 +52,7 @@ var webpackConfig = {
     "base":          path.resolve(__dirname, srcJS,   "base.js"),
     "behaviors":     path.resolve(__dirname, srcJS,   "behaviors.js"),
     "ckeditor":      path.resolve(__dirname, srcSass, "ckeditor.scss"),
+    "ckeditor5":      path.resolve(__dirname, srcSass, "ckeditor5.scss"),
     "components":    path.resolve(__dirname, srcSass, "components/index.scss"),
     "layout":        path.resolve(__dirname, srcSass, "layout/index.scss"),
     "print":         path.resolve(__dirname, srcSass, "print/index.scss"),
@@ -59,6 +60,7 @@ var webpackConfig = {
     "state":         path.resolve(__dirname, srcSass, "state/index.scss"),
     "theme":         path.resolve(__dirname, srcSass, "theme/index.scss"),
     "user_login":    path.resolve(__dirname, srcSass, "admin/user_login.scss"),
+    "content/policy":path.resolve(__dirname, srcSass, "content/policy/index.scss"),
   },
   // Where put build?
   output: {

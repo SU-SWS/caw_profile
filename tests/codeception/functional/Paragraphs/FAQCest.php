@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory;
+
 /**
  * Test the FAQ component
  *
@@ -8,12 +10,31 @@
 class FAQCest {
 
   /**
+   * @var \Faker\Generator
+   *   Faker generator.
+   */
+  protected $faker;
+
+  /**
+   * Test Constructor
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * FAQ lists should display with a button.
+   *
+   * @group testme
    */
   public function testFaq(FunctionalTester $I) {
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->words(3, TRUE),
+    ]);
     $I->logInWithRole('contributor');
-    $I->amOnPage('/node/add/stanford_page');
-    $I->fillField('Title', 'FAQs');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+
     $I->click('Add section');
     $I->waitForText('Choose a layout');
     $I->click('Save', '.ui-dialog-buttonset');
@@ -29,21 +50,21 @@ class FAQCest {
     $I->fillField('Title/Question', 'Did you hear about the guy who invented the knock-knock joke?');
     $I->scrollTo('input[value="Add Accordion"]');
     $I->click('Source', '.field--name-su-faq-questions');
-    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
-    $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'He won the “no-bell” prize.');
+    $I->waitForElementVisible('.field--name-su-accordion-body .ck-source-editing-area textarea');
+    $I->fillField('.field--name-su-accordion-body .ck-source-editing-area textarea', 'He won the “no-bell” prize.');
 
     $I->click('Add Accordion');
     $I->waitForElement('[name="su_faq_questions[1][subform][su_accordion_title][0][value]"]');
     $I->fillField('Title/Question', 'What do you call a fake noodle?');
     $I->click('Source', '.field--name-su-faq-questions');
-    $I->waitForElementVisible('.field--name-su-accordion-body textarea.cke_source');
-    $I->fillField('.field--name-su-accordion-body textarea.cke_source', 'An impasta');
+    $I->waitForElementVisible('.field--name-su-accordion-body .ck-source-editing-area textarea');
+    $I->fillField('.field--name-su-accordion-body .ck-source-editing-area textarea', 'An impasta');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
 
-    $I->canSee('FAQs', 'h1');
+    $I->canSee($node->label(), 'h1');
     $I->canSee('FAQ Headliner', 'h2');
     $I->canSee('the knock-knock joke', 'details');
     $I->canSee('Expand All', 'button');

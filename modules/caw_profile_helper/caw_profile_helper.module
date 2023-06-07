@@ -11,7 +11,6 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Template\Attribute;
 use Drupal\block\BlockInterface;
 use Drupal\caw_profile_helper\BookManager;
 use Drupal\node\NodeInterface;
@@ -63,77 +62,6 @@ function caw_profile_helper_local_tasks_alter(&$local_tasks) {
 }
 
 /**
- * Implements hook_theme().
- */
-function caw_profile_helper_theme($existing, $type, $theme, $path) {
-  // Duplicate the patterns_use_wrapper theme so we can modify it to work with
-  // layout paragraphs.
-  return ['patterns_use_wrapper_admin' => ['variables' => ['use' => NULL]]];
-}
-
-/**
- * Implements hook_theme_suggestions_alter().
- */
-function caw_profile_helper_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
-  if (
-    strpos($hook, 'pattern_') === 0 &&
-    strpos($hook, 'pattern_view') === FALSE &&
-    _caw_profile_helper_is_editing_layout_paragraphs()
-  ) {
-    // Add the theme suggestion when we're editing layout builder components.
-    $suggestions[] = 'patterns_use_wrapper_admin';
-  }
-}
-
-/**
- * Implements hook_preprocess().
- */
-function caw_profile_helper_preprocess(&$variables, $hook) {
-  // If not editing LP page, we don't want to do anything.
-  if (!_caw_profile_helper_is_editing_layout_paragraphs()) {
-    return;
-  }
-
-  // Remove any contextual links on the media/paragraphs/other entities when
-  // editing the layout paragraphs page.
-  if (!empty($variables['elements']['#entity_type'])) {
-    unset($variables['title_suffix']['contextual_links']);
-  }
-
-  // Manipulate the render array for the entity view so that we can pick it up
-  // in the later hook on the pattern.
-  if ($hook == 'ds_entity_view') {
-    // Between this hook and the pattern hook, the id attribute changes somehow,
-    // so store the attributes into the context so that we can grab them later
-    // and apply them to the wrapper.
-    $variables['content']['#context']['lpBuilder'] = $variables['attributes'];
-    unset($variables['attributes']);
-  }
-
-  if (strpos($hook, 'pattern_') === 0 && !empty($variables['context'])) {
-
-    // Grab the layout paragraphs parts from the context that we saved above,
-    // and put them into a variable for use in the patterns_use_wrapper_admin
-    // template. Also remove the normal attributes to a wrapper so that they
-    // don't somehow get passed down into the pattern and cause chaos.
-    $variables['wrapper_attributes'] = new Attribute($variables['context']->getProperty('lpBuilder') ?? []);
-    $variables['attributes'] = new Attribute();
-  }
-}
-
-/**
- * Is the user currently on editing the layout paragraphs?
- *
- * @return bool
- *   True if the route matches known routes for LP.
- */
-function _caw_profile_helper_is_editing_layout_paragraphs() {
-  $layout_paragraphs_routes = ['entity.node.edit_form'];
-  $route_name = \Drupal::routeMatch()->getRouteName();
-  return in_array($route_name, $layout_paragraphs_routes) || strpos($route_name, 'layout_paragraphs.') === 0;
-}
-
-/**
  * Implements hook_page_attachments().
  */
 function caw_profile_helper_page_attachments(array &$attachments) {
@@ -158,7 +86,7 @@ function caw_profile_helper_field_widget_fontawesome_icon_widget_form_alter(&$el
   $children = array_filter($children, function ($child) {
     return !in_array($child, ['style', 'size']);
   });
-  // Hide all of the advanced options except the style and size options.
+  // Hide all the advanced options except the style and size options.
   foreach ($children as $child) {
     $element['settings'][$child]['#access'] = FALSE;
   }
@@ -324,13 +252,6 @@ function _caw_profile_helper_subsite_save(&$form, FormStateInterface $form_state
 }
 
 /**
- * Implements hook_ckeditor_plugin_info_alter().
- */
-function caw_profile_helper_ckeditor_plugin_info_alter(array &$plugins) {
-  unset($plugins['fixed_toolbar']);
-}
-
-/**
  * Implements hook_views_pre_build().
  */
 function caw_profile_helper_views_pre_build(ViewExecutable $view) {
@@ -351,7 +272,7 @@ function caw_profile_helper_views_pre_build(ViewExecutable $view) {
  * Implements hook_views_pre_execute().
  */
 function caw_profile_helper_views_pre_execute(ViewExecutable $view) {
-  if (_caw_profile_helper_is_editing_layout_paragraphs()) {
+  if (_stanford_layout_paragraphs_is_editing_layout_paragraphs()) {
     $current_limit = $view->query->getLimit();
     if ($current_limit <= 0 || $current_limit > 5) {
       $view->query->setLimit(5);
@@ -433,6 +354,7 @@ function _caw_profile_helper_get_benefit_ids($field, $value): array {
   $nids = \Drupal::entityTypeManager()
     ->getStorage('node')
     ->getQuery()
+    ->accessCheck(TRUE)
     ->condition('status', 1)
     ->condition('type', 'caw_benefits')
     ->condition($field, $value)

@@ -18,9 +18,11 @@ dependencies:
     - field.field.node.stanford_page.su_shared_tags
     - node.type.stanford_page
   module:
+    - change_labels
     - field_group
     - layout_paragraphs
     - media_library
+    - menu_link
     - metatag
     - paragraphs
     - path
@@ -41,7 +43,7 @@ third_party_settings:
       label: 'Page Metadata'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 10
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -79,15 +81,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_menulink:
+    type: menu_link_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   layout_selection:
     type: options_select
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -100,24 +108,24 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   stanford_intranet__access:
     type: entity_access
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -141,7 +149,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 31
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -149,7 +157,7 @@ content:
     third_party_settings: {  }
   su_page_banner:
     type: paragraphs
-    weight: 8
+    weight: 6
     region: content
     settings:
       title: Paragraph
@@ -220,7 +228,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

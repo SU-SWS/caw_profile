@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_alt_loc
     - field.field.node.stanford_event.su_event_audience
     - field.field.node.stanford_event.su_event_components
+    - field.field.node.stanford_event.su_event_contact_info
     - field.field.node.stanford_event.su_event_cta
     - field.field.node.stanford_event.su_event_date_time
     - field.field.node.stanford_event.su_event_dek
@@ -30,7 +31,9 @@ dependencies:
     - node.type.stanford_event
   module:
     - address
+    - change_labels
     - field_group
+    - layout_paragraphs
     - link
     - metatag
     - paragraphs
@@ -81,6 +84,7 @@ third_party_settings:
         - su_event_map_link
         - su_event_email
         - su_event_telephone
+        - su_event_contact_info
         - su_event_audience
         - su_event_cta
       label: 'Event Details'
@@ -116,7 +120,7 @@ third_party_settings:
       label: Taxonomy
       region: content
       parent_name: ''
-      weight: 13
+      weight: 11
       format_type: details
       format_settings:
         classes: ''
@@ -148,12 +152,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 9
+    weight: 52
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 8
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -180,32 +184,33 @@ content:
     third_party_settings: {  }
   su_event_audience:
     type: options_buttons
-    weight: 28
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
   su_event_components:
-    type: paragraphs
+    type: layout_paragraphs
     weight: 3
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: '0'
-        duplicate: duplicate
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
+  su_event_contact_info:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   su_event_cta:
     type: link_default
-    weight: 29
+    weight: 30
     region: content
     settings:
       placeholder_url: ''
@@ -348,7 +353,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 30
+    weight: 12
     region: content
     settings:
       sidebar: true

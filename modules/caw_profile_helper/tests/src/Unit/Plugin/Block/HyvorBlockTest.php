@@ -10,6 +10,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\UrlGenerator;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Site\Settings;
 use Drupal\node\NodeInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\user\UserInterface;
@@ -40,12 +41,16 @@ class HyvorBlockTest extends UnitTestCase {
     $module_handler = $this->createMock(ModuleHandlerInterface::class);
     $module_handler->method('moduleExists')->willReturn(TRUE);
 
+    new Settings(['hyvor_talk_private_key' => 'foobar']);
+
     $container = new ContainerBuilder();
     $container->set('current_user', $account);
     $container->set('entity_type.manager', $entity_type_manager);
     $container->set('current_route_match', $route_match);
     $container->set('url_generator', $url_generator);
     $container->set('module_handler', $module_handler);
+
+    new Settings(['hyvor_talk_private_key' => 'foobar']);
 
     $block = HyvorBlock::create($container, [], '', ['provider' => 'caw_profile_helper']);
     $this->assertEmpty($block->build());

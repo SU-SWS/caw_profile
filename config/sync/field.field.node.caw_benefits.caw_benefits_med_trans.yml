@@ -1,0 +1,19 @@
+uuid: 35068c0d-fb9b-48e4-94c5-5f6722c28919
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_med_trans
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_med_trans
+field_name: caw_benefits_med_trans
+entity_type: node
+bundle: caw_benefits
+label: 'Transgender Services'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

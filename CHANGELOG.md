@@ -1,5 +1,93 @@
 # Cardinal at Work Profile
 
+9.2.0
+--------------------------------------------------------------------------------
+_Release Date: 2022-10-10_
+
+- CAWD9-143 Added 2 fields to medical benefits (#118)
+- Fix config and dependencies' (#119)
+- try catch the theme uninstall
+- Fix policy typo (#662)
+- D8CORE-2622, D8CORE-4494 | Move brand bar and skip-links into header landmark banner (#665)
+- D8CORE-6654 | Update stanford_basic package-lock (#667)
+- Restored jsonapi path data to correct typescript issues
+- adjusted jsonapi for config pages
+- Updated page cache query ignore settings for jsonapi views
+- Enabled view jsonapi endpoint
+- Added tiny base64 blur image to json api data
+- Updated json api extras config
+- D8CORE-6336: changing hover on print icon for policy CT (#661)
+- Fixed JsonAPI endpoints for stanford page
+- Updated jsonapi endpoints (#664)
+- Fixed bug in menu update hook for duplicate links
+- Removed path alias changes
+- Added path process manager in update hook
+- Removed unused ckeditor libraries/modules
+- Simplified and correct menu link upgrade path
+- Fix tests (#660)
+- Added patch for menu_link to add expanded option
+- Migrate everything to layout paragraphs and upgrade all modules/themes (#654)
+- Changed the "See more celebrations" link url
+- Updated permissions
+- Cleanup eck dependency
+- Fixup composer version
+- Updated permissions to allow site managers create media taxonomy
+- Replace log entity type and remove ECK (#656)
+- Uninstalled autoservices
+- Fix repo with latest config/composer (#117)
+- Enabled empty_fields module
+- DEVOPS-000: SMRT quotes R dumb (#655)
+- added codeCoverageIgnoreEnd
+- Exported configs after db updates
+- Fixed related policies display
+- Added missing drupal/jsonapi_hypermedia module
+- hotfix-12-03-2022 (#651)
+- excise memcache (#650)
+- Removed patches that were moved to drupal-patches
+- Updated configs after scheduler module update
+- update editoria11y and smart_trim modules (#648)
+- D8CORE-6370: Moved the authority field. (#647)
+- Improved tests for configuration ignore
+- Fix preprocess_breadcrumbs to prevent failure with drush
+- Add and enable memcache for dev, stage, and prod (#645)
+- D8CORE-2932 and D8CORE-6357: Fixed extra spacing on people list items. (#641)
+- D8CORE-6348: adding summary into the related policy cards (#640)
+- D8CORE-6345: Display policy change log title in the lists (#642)
+- Fixed the path to the masking image for circle image style
+- Added and configured "Page Cache Query Ignore" module
+- D8CORE-6347 Show body summary and add help text
+- D8CORE-6346 Reorder form fields and add help text
+- Added and adjusted printable view mode for policies
+- Prepend "Canceled" to canceled events
+- D8CORE-6237: Corrected courses migration (#638)
+- D8CORE-6330: moved the back and forward button for mobile (#636)
+- Moved modules into consolidated repo location for stanford_profile_helper (#637)
+- Added update hook to make deployment smoother
+- D8CORE-6329: unique ids for prev/next buttons (#635)
+- D8CORE-6327: fix to the policy related cards for mobile (#634)
+- D8CORE-6323: adding styling for change log block anywhere (#633)
+- Updated Test steps (#116)
+- D8CORE-6325 Set the active item on book side navigation (#632)
+- D8CORE-3498: Added additional contact information field for events (#631)
+- D8CORE-6304: layout and style set up for Policy (#628)
+- D8CORE-6251: Added a toggle in the theme to turn off the external links (#623)
+- D8CORE-6304: adding the logo for the print function on policy (#625)
+- Added Fast 404 module (#630)
+- D8CORE-6315 Remove duplicate "All" publication menu link
+- Apply chosen to related policy field
+- D8CORE-6312 Fix node title not reflecting the changes (#629)
+- D8CORE-5250 Add "Last Updated" to search results items (#619)
+- Modify directory permissions when copying the file during install (#626)
+- Added view to display policy child pages (#624)
+- Revert composer.json (#622)
+- D8CORE-6288 Policy content type (#617)
+- Removed deprecation warnings
+- D8CORE-6247 Add "Code" to WYSIWYG Style dropdown
+- D8CORE-6242 D8CORE-4977 D8CORE-6055 Improve people lists and add pronoun field (#615)
+- Disable confirm-leave js on CI environments
+- Removed token_or patch (#618)
+
+
 9.1.6
 --------------------------------------------------------------------------------
 _Release Date: 2022-10-10_
@@ -47,6 +135,85 @@ _Release Date: 2022-08-26_
 _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
+
+9.2.5
+--------------------------------------------------------------------------------
+- Replace log entity type and remove ECK (#656)
+- Enabled empty_fields module
+- DEVOPS-000: SMRT quotes R dumb (#655)
+
+9.2.4
+--------------------------------------------------------------------------------
+_Release Date: 2022-12-13_
+- Added missing drupal/jsonapi_hypermedia module
+- Fixed related policies display
+
+9.2.3
+--------------------------------------------------------------------------------
+_Release Date: 2022-12-03_
+- Hotfix. Fixup composer.json
+
+9.2.2
+--------------------------------------------------------------------------------
+_Release Date: 2022-12-02_
+- Hotfix. Remove memcache
+
+9.2.1
+--------------------------------------------------------------------------------
+_Release Date: 2022-11-30_
+- D8CORE-6424 Hide legacy importer fields on importer form
+- D8CORE-6338 updated help text on policy changelog fields
+- D8CORE-6422 Allow news to hide social share icons
+- D8CORE-6370: Moved the authority field. (#647)
+- Improved tests for configuration ignore
+- Fix preprocess_breadcrumbs to prevent failure with drush
+- Add and enable memcache for dev, stage, and prod (#645) (remove?)
+- D8CORE-2932 and D8CORE-6357: Fixed extra spacing on people list items. (#641)
+- D8CORE-6348: adding summary into the related policy cards (#640)
+- D8CORE-6345: Display policy change log title in the lists (#642)
+- Added and configured "Page Cache Query Ignore" module
+
+9.2.0
+--------------------------------------------------------------------------------
+_Release Date: 2022-10-25_
+
+- D8CORE-6347 Show body summary and add help text
+- D8CORE-6346 Reorder form fields and add help text
+- Added and adjusted printable view mode for policies
+- Prepend "Canceled" to canceled events
+- D8CORE-6237: Corrected courses migration (#638)
+- D8CORE-6330: moved the back and forward button for mobile (#636)
+- Moved modules into consolidated repo location for stanford_profile_helper (#637)
+- Added update hook to make deployment smoother
+- D8CORE-6329: unique ids for prev/next buttons (#635)
+- D8CORE-6327: fix to the policy related cards for mobile (#634)
+- D8CORE-6323: adding styling for change log block anywhere (#633)
+- D8CORE-6325 Set the active item on book side navigation (#632)
+- D8CORE-3498: Added additional contact information field for events (#631)
+- D8CORE-6304: layout and style set up for Policy (#628)
+- D8CORE-6251: Added a toggle in the theme to turn off the external links (#623)
+- D8CORE-6304: adding the logo for the print function on policy (#625)
+- Added Fast 404 module (#630)
+- D8CORE-6315 Remove duplicate "All" publication menu link
+- Apply chosen to related policy field
+- D8CORE-6312 Fix node title not reflecting the changes (#629)
+- D8CORE-5250 Add "Last Updated" to search results items (#619)
+- Modify directory permissions when copying the file during install (#626)
+- Added view to display policy child pages (#624)
+- D8CORE-6288 Policy content type (#617)
+- D8CORE-6247 Add "Code" to WYSIWYG Style dropdown
+- D8CORE-6242 D8CORE-4977 D8CORE-6055 Improve people lists and add pronoun field (#615)
+- Disable confirm-leave js on CI environments
+- D8CORE-6244: fixing float with a  clear (#614)
+- D8CORE-4363: Sjpw images in cards at all breakpoint (#610)
+- D8CORE-6235 Fix "Save and Import" on importer forms. (#613)
+- D8CORE-6058 Adjust, improve, and add metatags for content (#608)
+- D8CORE-6217 Allow configuring maximum main menu depth (#611)
+- D8CORE-5825 Add taxonomy field to media types for categorization (#609)
+- D8CORE-6245: fix to the transparent localist event link (#612)
+- D8CORE-6224 Added localist bookmark url for importer (#607)
+- D8CORE-5955: Added journal publisher field, updated publisher label. (#602)
+- D8CORE-5656 D8CORE-6215 D8CORE-6048 Adjustments to people node form and views (#606)
 
 9.1.3
 --------------------------------------------------------------------------------

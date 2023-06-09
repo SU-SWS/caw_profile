@@ -344,3 +344,10 @@ function caw_profile_helper_update_9010() {
     $paragraph->save();
   }
 }
+
+/**
+ * Enable Stanford Layout Paragraphs.
+ */
+function caw_profile_helper_update_9011() {
+  \Drupal::service('module_installer')->install(['stanford_layout_paragraphs']);
+}

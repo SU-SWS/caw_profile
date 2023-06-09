@@ -7,11 +7,9 @@ dependencies:
 id: node.caw_benefits_med_travel
 field_name: caw_benefits_med_travel
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 255
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1

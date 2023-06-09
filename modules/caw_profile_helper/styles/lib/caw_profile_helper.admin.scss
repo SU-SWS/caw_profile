@@ -73,16 +73,19 @@ h1.page-title {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin-top: 20px;
-}
 
-.lpb-component-list__item {
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-  padding: 5px 0;
-}
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+  }
 
-.lpb-component-list__item img {
-  max-height: 50px;
-  display: block;
-  margin: 0 auto;
+  img {
+    display: block;
+    width: 50px;
+    max-width: 50px;
+  }
 }

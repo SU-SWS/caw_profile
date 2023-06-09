@@ -114,6 +114,7 @@ function _caw_profile_fix_menu(array $menu_items = [], string $parent = NULL): v
     ->getStorage('node');
   /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
   $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+  $database = \Drupal::database();
 
   foreach ($menu_items as $id => $menu_item) {
     /** @var \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent $link */
@@ -140,16 +141,27 @@ function _caw_profile_fix_menu(array $menu_items = [], string $parent = NULL): v
           'weight' => $link->getweight(),
           'expanded' => $link->isExpanded(),
         ];
+
+        $changed_time = $node->getChangedTime();
         $node->set('field_menulink', $menu_field_data)->save();
         $new_parent = 'menu_link_field:node_field_menulink_' . $node->uuid() . '_und';
+
+        // Reset the changed time to the value before this process.
+        $database->update('node_field_data')
+          ->fields(['changed' => $changed_time])
+          ->condition('nid', $node->id())
+          ->execute();
+        $database->update('node_field_revision')
+          ->fields(['changed' => $changed_time])
+          ->condition('vid', $node->getRevisionId())
+          ->execute();
 
         if ($menu_item->subtree) {
           _caw_profile_fix_menu($menu_item->subtree, $new_parent);
         }
 
         if (!$link->isEnabled()) {
-          \Drupal::database()
-            ->update('menu_tree')
+          $database->update('menu_tree')
             ->fields(['enabled' => 0])
             ->condition('id', $new_parent)
             ->execute();

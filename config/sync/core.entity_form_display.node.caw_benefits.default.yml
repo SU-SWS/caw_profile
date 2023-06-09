@@ -924,11 +924,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_trans:
-    type: string_textfield
-    weight: 56
+    type: string_textarea
+    weight: 109
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_transpants:
@@ -948,11 +948,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_travel:
-    type: string_textfield
-    weight: 57
+    type: string_textarea
+    weight: 109
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_med_tubal:

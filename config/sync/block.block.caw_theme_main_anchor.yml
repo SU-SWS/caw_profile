@@ -1,0 +1,25 @@
+uuid: a229c6a5-e85f-4299-b400-d32688b863b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - jumpstart_ui
+    - system
+  theme:
+    - caw_theme
+id: caw_theme_main_anchor
+theme: caw_theme
+region: content
+weight: -10
+provider: null
+plugin: jumpstart_ui_skipnav_main_anchor
+settings:
+  id: jumpstart_ui_skipnav_main_anchor
+  label: 'Main content anchor target'
+  label_display: '0'
+  provider: jumpstart_ui
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

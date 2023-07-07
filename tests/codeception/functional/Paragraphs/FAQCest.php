@@ -24,8 +24,6 @@ class FAQCest {
 
   /**
    * FAQ lists should display with a button.
-   *
-   * @group testme
    */
   public function testFaq(FunctionalTester $I) {
     $node = $I->createEntity([
@@ -36,13 +34,13 @@ class FAQCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
 
     $I->click('Add section');
-    $I->waitForText('Choose a layout');
+    $I->waitForText('Create new Layout');
     $I->click('Save', '.ui-dialog-buttonset');
 
     $I->waitForElement('.lpb-btn--add');
     $I->moveMouseOver('.js-lpb-region', 10, 10);
     $I->click('Choose component');
-    $I->waitForText('Choose a component');
+    $I->waitForText('Choose a paragraph');
     $I->click('FAQ - Accordion List');
     $I->waitForText('Create new FAQ - Accordion List');
 

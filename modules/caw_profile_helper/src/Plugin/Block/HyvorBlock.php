@@ -83,9 +83,9 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     // Encrypt the user's data.
     // @link https://talk.hyvor.com/docs/sso-stateless
-    $user_data = $this->getUserData();
-    $encodedUserData = base64_encode(json_encode($user_data));
-    $hash = hash_hmac('sha1', $encodedUserData, $hyvor_key);
+    $userData = $this->getUserData();
+    $encodedUserData = $userData ? base64_encode(json_encode($userData)) : "";
+    $hash = $userData ? hash_hmac('sha256', $encodedUserData, $hyvor_key): "";
 
     $current_url = Url::fromRoute($this->routeMatch->getRouteName(), $this->routeMatch->getRawParameters()
       ->all(), ['absolute' => TRUE])->toString();

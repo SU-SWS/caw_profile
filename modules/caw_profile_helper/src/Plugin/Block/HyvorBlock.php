@@ -83,40 +83,25 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
     // Encrypt the user's data.
     // @link https://talk.hyvor.com/docs/sso-stateless
-    $user_data = $this->getUserData();
-    $encodedUserData = base64_encode(json_encode($user_data));
-    $hash = hash_hmac('sha1', $encodedUserData, $hyvor_key);
+    $userData = $this->getUserData();
+    $encodedUserData = $userData ? base64_encode(json_encode($userData)) : "";
+    $hash = $userData ? hash_hmac('sha256', $encodedUserData, $hyvor_key) : "";
 
     $current_url = Url::fromRoute($this->routeMatch->getRouteName(), $this->routeMatch->getRawParameters()
       ->all(), ['absolute' => TRUE])->toString();
     $build = [
       'div' => [
         '#type' => 'html_tag',
-        '#tag' => 'div',
+        '#tag' => 'hyvor-talk-comments',
         '#value' => '',
         '#attributes' => [
-          'id' => 'hyvor-talk-view',
+          'website-id' => Settings::get('hyvor_talk_id'),
+          'page-id' => $node->id(),
+          'login-url' => self::getLoginUrl($current_url),
+          'sso-user' => $encodedUserData,
+          'sso-hash' => $hash,
         ],
-        '#attached' => [
-          'library' => 'caw_profile_helper/hyvor',
-          'drupalSettings' => [
-            'caw_profile_helper' => [
-              'hyvor' => [
-                'id' => Settings::get('hyvor_talk_id'),
-                'config' => [
-                  'url' => FALSE,
-                  'id' => $node->id(),
-                  'sso' => [
-                    'hash' => $hash,
-                    'userData' => $encodedUserData,
-                    'loginURL' => self::getLoginUrl($current_url),
-                    'signupURL' => self::getLoginUrl($current_url),
-                  ],
-                ],
-              ],
-            ],
-          ],
-        ],
+        '#attached' => ['library' => 'caw_profile_helper/hyvor'],
       ],
     ];
     return $build;
@@ -146,6 +131,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $user = $this->entityTypeManager->getStorage('user')
       ->load($this->currentUser->id());
     return [
+      'timestamp' => time(),
       'id' => $this->currentUser->getAccountName(),
       'name' => $user->getDisplayName(),
       'email' => $user->getEmail(),

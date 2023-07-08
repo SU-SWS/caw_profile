@@ -25,6 +25,7 @@ use Drupal\Core\Cache\Cache;
  */
 function caw_profile_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
   $paragraphs_behavior['hero_pattern']['class'] = '\Drupal\caw_profile_helper\Plugin\paragraphs\Behavior\CawHeroBehavior';
+  $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\caw_profile_helper\Plugin\paragraphs\Behavior\CawCardBehavior';
 }
 
 /**

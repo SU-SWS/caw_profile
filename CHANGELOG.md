@@ -7,9 +7,15 @@ _Release Date: 2023-07-10_
 - Updated Hyvor
 - Fixed "Whole Card Link" behavior in cards.
 
+9.2.2
+--------------------------------------------------------------------------------
+_Release Date: 2023-06-07_
+
+- Retain "Changed" date when updating nodes in update hook.
+
 9.2.1
 --------------------------------------------------------------------------------
-_Release Date: 2023-06-07
+_Release Date: 2023-06-07_
 
 - Updated display settings due to update hook in smart_trim module
 

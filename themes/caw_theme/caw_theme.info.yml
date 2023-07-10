@@ -2,7 +2,7 @@ name: Cardinal at Work
 type: theme
 description: 'Cardinal at Work theme based on Stanford Basic'
 package: Cardinal Service
-version: 9.2.1
+version: 9.2.2
 core_version_requirement: ^9 || ^10
 base theme: stanford_basic
 

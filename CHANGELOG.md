@@ -142,6 +142,12 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+10.0.1
+--------------------------------------------------------------------------------
+- add ptype classes just in case
+- Remove unwanted paragraph types on publication field
+- Add new layout paragraphs styles class
+
 10.0.0
 --------------------------------------------------------------------------------
 

@@ -4,9 +4,15 @@ global:
     theme:
       styles/dist/css/caw_profile.global.css: {}
 hyvor:
-  version: VERSION
+  remote: https://talk.hyvor.com/embed/embed.js
+  version: 3.0
+  license:
+    name: MIT
+    url: https://talk.hyvor.com/docs/terms
+    gpl-compatible: true
   js:
-    js/hyvor.js: {}
+    https://talk.hyvor.com/embed/embed.js: { type: external, minified: true, attributes: {async: true, type: module} }
+
 book.admin:
   version: VERSION
   js:

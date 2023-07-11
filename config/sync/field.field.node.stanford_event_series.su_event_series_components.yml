@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.storage.node.su_event_series_components
     - node.type.stanford_event_series
+    - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_entity
     - paragraphs.paragraphs_type.stanford_gallery
-    - paragraphs.paragraphs_type.stanford_layout
     - paragraphs.paragraphs_type.stanford_lists
     - paragraphs.paragraphs_type.stanford_media_caption
     - paragraphs.paragraphs_type.stanford_spacer
@@ -37,10 +37,13 @@ settings:
       stanford_wysiwyg: stanford_wysiwyg
       stanford_entity: stanford_entity
       stanford_gallery: stanford_gallery
+      layout: layout
       stanford_lists: stanford_lists
-      stanford_layout: stanford_layout
     negate: 0
     target_bundles_drag_drop:
+      layout:
+        weight: 15
+        enabled: true
       stanford_accordion:
         weight: 12
         enabled: false
@@ -53,12 +56,15 @@ settings:
       stanford_entity:
         weight: 13
         enabled: true
+      stanford_faq:
+        weight: 20
+        enabled: false
       stanford_gallery:
         weight: 14
         enabled: true
       stanford_layout:
         weight: 18
-        enabled: true
+        enabled: false
       stanford_lists:
         weight: 15
         enabled: true

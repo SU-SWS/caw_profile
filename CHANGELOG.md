@@ -1,5 +1,18 @@
 # Cardinal at Work Profile
 
+9.2.5
+--------------------------------------------------------------------------------
+_Release Date: 2023-07-26_
+
+- Add system check test (#691)
+- Update decoupled menu to recognize "Expanded" menu setting
+- D8CORE-6816 Restored permissions to run importers for site managers
+- Add missing chosen library
+- Updated google tag settings
+- Updated email link
+- Removed unused modules
+- updated flat taxonomy module
+
 9.2.4
 --------------------------------------------------------------------------------
 _Release Date: 2023-07-11_

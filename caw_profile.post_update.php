@@ -187,3 +187,17 @@ function caw_profile_post_update_8202() {
     ])->save();
   }
 }
+
+/**
+ * Update field storage definitions.
+ */
+function caw_profile_post_update_update_field_defs() {
+  $um = \Drupal::entityDefinitionUpdateManager();
+  foreach ($um->getChangeList() as $entity_type => $changes) {
+    if (isset($changes['field_storage_definitions'])) {
+      foreach ($changes['field_storage_definitions'] as $field_name => $status) {
+        $um->updateFieldStorageDefinition($um->getFieldStorageDefinition($field_name, $entity_type));
+      }
+    }
+  }
+}

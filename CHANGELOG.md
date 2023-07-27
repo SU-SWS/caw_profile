@@ -155,6 +155,22 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+10.0.4
+-------------------------------------------------------------------------------
+- Update hook to update field storage definitions.
+
+10.0.3
+-------------------------------------------------------------------------------
+- Update decoupled menu to recognize "Expanded" menu setting
+- D8CORE-6816 Restored permissions to run importers for site managers
+- Add missing chosen library
+- Updated google tag settings
+
+10.0.2
+-------------------------------------------------------------------------------
+- Added to the update hook to handle layout builder menu blocks when updating menu links.
+- Added user json api endpoint.
+
 10.0.1
 --------------------------------------------------------------------------------
 - add ptype classes just in case

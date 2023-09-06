@@ -1,5 +1,14 @@
 # Cardinal at Work Profile
 
+9.2.6
+--------------------------------------------------------------------------------
+_Release Date: 2023-08-24_
+
+- D8CORE-6786: Updating to the new font through a Decanter update (#695)
+- Added and configured Oembed lazyload for video media
+- D8CORE-4495 | Update past events text on node view
+- Updated publication importer for layout paragraphs instead of react paragraphs
+
 9.2.5
 --------------------------------------------------------------------------------
 _Release Date: 2023-07-26_

@@ -54,7 +54,7 @@ default:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: caw_one_column
                   config:
                     label: ''
                   parent_uuid: null

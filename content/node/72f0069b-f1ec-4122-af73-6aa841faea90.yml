@@ -104,10 +104,7 @@ default:
               value: 1566940599
           behavior_settings:
             -
-              value:
-                layout_paragraphs:
-                  parent_uuid: null
-                  region: null
+              value: { }
           revision_translation_affected:
             -
               value: true

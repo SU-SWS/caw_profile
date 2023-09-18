@@ -93,6 +93,7 @@ class EventsCest {
     $I->canSee($message);
 
     $I->amOnPage($term->toUrl()->toString());
+    $I->canSee($term->label(), 'h1');
     $I->cantSee($event->label());
     $I->cantSee('No events at this time');
     $I->canSee($message);

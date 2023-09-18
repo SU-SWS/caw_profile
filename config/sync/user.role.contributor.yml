@@ -6,6 +6,7 @@ dependencies:
     - filter.format.stanford_html
     - filter.format.stanford_limited_html
     - filter.format.stanford_minimal_html
+    - media.type.embeddable
     - media.type.file
     - media.type.google_form
     - media.type.image
@@ -29,7 +30,6 @@ dependencies:
     - editoria11y
     - filter
     - media
-    - menu_admin_per_menu
     - node
     - paragraphs
     - pathauto
@@ -53,7 +53,6 @@ permissions:
   - 'access user profiles'
   - 'add citation entities'
   - 'add content to books'
-  - 'administer main menu items'
   - 'break content lock'
   - 'create caw_benefits content'
   - 'create caw_careers content'
@@ -63,14 +62,11 @@ permissions:
   - 'create image media'
   - 'create media'
   - 'create policy log'
-  - 'create stanford_course content'
   - 'create stanford_event content'
-  - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
   - 'create stanford_news content'
   - 'create stanford_page content'
   - 'create stanford_person content'
-  - 'create stanford_policy content'
   - 'create stanford_publication content'
   - 'create video media'
   - 'delete citation entities'
@@ -104,6 +100,7 @@ permissions:
   - 'edit any stanford_person content'
   - 'edit any stanford_policy content'
   - 'edit any stanford_publication content'
+  - 'edit any video media'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
   - 'edit own caw_benefits content'
@@ -127,6 +124,7 @@ permissions:
   - 'mark as ok in editoria11y'
   - 'notify of path changes'
   - 'schedule publishing of nodes'
+  - 'update any media'
   - 'update media'
   - 'use text format stanford_html'
   - 'use text format stanford_limited_html'

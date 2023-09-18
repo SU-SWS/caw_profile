@@ -201,6 +201,7 @@ permissions:
   - 'edit any stanford_person content'
   - 'edit any stanford_policy content'
   - 'edit any stanford_publication content'
+  - 'edit any video media'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
   - 'edit own caw_benefits content'

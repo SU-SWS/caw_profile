@@ -49,7 +49,7 @@ default:
       title: News
       description: News
       parent: ''
-      weight: -46
+      weight: -47
       expanded: 0
   layout_builder__layout:
     -
@@ -174,8 +174,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 251bde6a-fb54-459c-bfe8-a612830e0f34
-          bundle: stanford_layout
+          uuid: 2d463708-e40e-441f-8608-c657d3151371
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -183,22 +183,25 @@ default:
               value: true
           created:
             -
-              value: 1694548749
+              value: 1695142986
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: caw_one_column
                   config:
                     label: ''
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 51c92bed-e670-4de0-a35f-e2d85585559f
+          uuid: 7867af06-7f81-4c4d-9c81-392a091f93df
           bundle: stanford_lists
           default_langcode: en
         default:
@@ -207,14 +210,17 @@ default:
               value: true
           created:
             -
-              value: 1694548757
+              value: 1695142994
           behavior_settings:
             -
               value:
                 list_paragraph: {  }
                 layout_paragraphs:
-                  parent_uuid: 251bde6a-fb54-459c-bfe8-a612830e0f34
-                  region: main
+                  parent_uuid: 2d463708-e40e-441f-8608-c657d3151371
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
           su_list_view:
             -
               target_id: stanford_news

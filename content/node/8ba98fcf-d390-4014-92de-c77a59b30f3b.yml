@@ -26,9 +26,6 @@ default:
   sticky:
     -
       value: false
-  revision_translation_affected:
-    -
-      value: true
   path:
     -
       alias: /engage/events
@@ -166,8 +163,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: baa69328-f537-441e-8ad5-fe66a3ba944d
-          bundle: stanford_layout
+          uuid: 18173157-9be4-4283-8757-e32a2c913e7f
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -180,7 +177,7 @@ default:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: caw_one_column
                   config:
                     label: ''
                   parent_uuid: null
@@ -190,7 +187,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 522c2a2d-52c5-4ada-b886-eac9779ecb91
+          uuid: 43342865-cd73-4cd2-bede-65092469e4dc
           bundle: stanford_lists
           default_langcode: en
         default:
@@ -206,8 +203,8 @@ default:
                 list_paragraph:
                   empty_message: 'No events at this time.'
                 layout_paragraphs:
-                  parent_uuid: baa69328-f537-441e-8ad5-fe66a3ba944d
-                  region: main
+                  parent_uuid: 18173157-9be4-4283-8757-e32a2c913e7f
+                  region: first
           revision_translation_affected:
             -
               value: true

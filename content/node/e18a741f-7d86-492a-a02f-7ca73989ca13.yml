@@ -60,10 +60,7 @@ default:
               value: 1566947552
           behavior_settings:
             -
-              value:
-                layout_paragraphs:
-                  parent_uuid: 61706423-ae4c-470b-a2d9-032d38292a89
-                  region: main
+              value: { }
           revision_translation_affected:
             -
               value: true

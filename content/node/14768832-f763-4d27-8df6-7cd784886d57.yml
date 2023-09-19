@@ -188,7 +188,7 @@ default:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: caw_one_column
                   config:
                     label: ''
                   parent_uuid: null
@@ -214,7 +214,7 @@ default:
                 list_paragraph: {  }
                 layout_paragraphs:
                   parent_uuid: 57582f54-3af7-45d0-a930-8977f8b05be8
-                  region: main
+                  region: first
           su_list_view:
             -
               target_id: stanford_courses

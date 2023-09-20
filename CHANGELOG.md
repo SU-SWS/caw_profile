@@ -183,6 +183,13 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+10.1.2
+-------------------------------------------------------------------------------
+
+10.1.1
+-------------------------------------------------------------------------------
+- Update samlauth settings when a role is created or deleted
+
 10.1.0
 -------------------------------------------------------------------------------
 - Use components field instead of layout builder for list pages (#709)

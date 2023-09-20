@@ -20,7 +20,10 @@ drupal_login_roles:
   site_builder: '0'
   site_developer: '0'
   layout_builder_user: '0'
+  su_site_embedder: '0'
   decoupled_site_users: '0'
+  caw_reviewer: '0'
+  subsite_contributor: '0'
 sp_entity_id: ''
 sp_name_id_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
 sp_x509_certificate: ''
@@ -49,7 +52,10 @@ map_users_roles:
   site_builder: site_builder
   site_developer: site_developer
   layout_builder_user: layout_builder_user
+  su_site_embedder: su_site_embedder
   decoupled_site_users: decoupled_site_users
+  caw_reviewer: caw_reviewer
+  subsite_contributor: subsite_contributor
 create_users: true
 sync_name: false
 sync_mail: false

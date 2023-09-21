@@ -91,6 +91,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_vision
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
+    - field.field.node.caw_benefits.caw_benefits_perks
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
     - field.field.node.caw_benefits.caw_benefits_vision_extras
@@ -188,6 +189,7 @@ third_party_settings:
         - caw_benefits_med_transport
         - caw_benefits_med_trans
         - caw_benefits_med_travel
+        - caw_benefits_perks
       label: Medical
       region: content
       parent_name: group_benefits
@@ -925,7 +927,7 @@ content:
     third_party_settings: {  }
   caw_benefits_med_trans:
     type: string_textarea
-    weight: 109
+    weight: 56
     region: content
     settings:
       rows: 1
@@ -949,7 +951,7 @@ content:
     third_party_settings: {  }
   caw_benefits_med_travel:
     type: string_textarea
-    weight: 109
+    weight: 57
     region: content
     settings:
       rows: 1
@@ -1002,6 +1004,21 @@ content:
     settings:
       rows: 1
       placeholder: ''
+    third_party_settings: {  }
+  caw_benefits_perks:
+    type: string_textarea
+    weight: 58
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
+  caw_benefits_pers:
+    weight: 140
+    region: content
+    settings: {  }
     third_party_settings: {  }
   caw_benefits_vision_contacts:
     type: string_textarea

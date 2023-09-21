@@ -80,13 +80,16 @@ dependencies:
     - field.storage.node.caw_benefits_med_substance
     - field.storage.node.caw_benefits_med_surgery_facil
     - field.storage.node.caw_benefits_med_surgery_md
+    - field.storage.node.caw_benefits_med_trans
     - field.storage.node.caw_benefits_med_transpants
+    - field.storage.node.caw_benefits_med_travel
     - field.storage.node.caw_benefits_med_tubal
     - field.storage.node.caw_benefits_med_urgent
     - field.storage.node.caw_benefits_med_vasectomy
     - field.storage.node.caw_benefits_med_vision
     - field.storage.node.caw_benefits_med_well_woman
     - field.storage.node.caw_benefits_parttime_cost
+    - field.storage.node.caw_benefits_perks
     - field.storage.node.caw_benefits_vision_contacts
     - field.storage.node.caw_benefits_vision_exam
     - field.storage.node.caw_benefits_vision_frames
@@ -1353,6 +1356,130 @@ display:
           table: node__caw_benefits_med_tubal
           field: caw_benefits_med_tubal
           plugin_id: field
+        caw_benefits_med_trans:
+          id: caw_benefits_med_trans
+          table: node__caw_benefits_med_trans
+          field: caw_benefits_med_trans
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Transgender Services'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        caw_benefits_med_travel:
+          id: caw_benefits_med_travel
+          table: node__caw_benefits_med_travel
+          field: caw_benefits_med_travel
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Travel and Lodging'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         caw_benefits_med_vasectomy:
           id: caw_benefits_med_vasectomy
           table: node__caw_benefits_med_vasectomy
@@ -1363,6 +1490,68 @@ display:
           table: node__caw_benefits_xray
           field: caw_benefits_xray
           plugin_id: field
+        caw_benefits_perks:
+          id: caw_benefits_perks
+          table: node__caw_benefits_perks
+          field: caw_benefits_perks
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Benefit Perks'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: none
         options:
@@ -2422,13 +2611,16 @@ display:
         - 'config:field.storage.node.caw_benefits_med_substance'
         - 'config:field.storage.node.caw_benefits_med_surgery_facil'
         - 'config:field.storage.node.caw_benefits_med_surgery_md'
+        - 'config:field.storage.node.caw_benefits_med_trans'
         - 'config:field.storage.node.caw_benefits_med_transpants'
+        - 'config:field.storage.node.caw_benefits_med_travel'
         - 'config:field.storage.node.caw_benefits_med_tubal'
         - 'config:field.storage.node.caw_benefits_med_urgent'
         - 'config:field.storage.node.caw_benefits_med_vasectomy'
         - 'config:field.storage.node.caw_benefits_med_vision'
         - 'config:field.storage.node.caw_benefits_med_well_woman'
         - 'config:field.storage.node.caw_benefits_parttime_cost'
+        - 'config:field.storage.node.caw_benefits_perks'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
         - 'config:field.storage.node.caw_benefits_vision_frames'
@@ -2539,13 +2731,16 @@ display:
         - 'config:field.storage.node.caw_benefits_med_substance'
         - 'config:field.storage.node.caw_benefits_med_surgery_facil'
         - 'config:field.storage.node.caw_benefits_med_surgery_md'
+        - 'config:field.storage.node.caw_benefits_med_trans'
         - 'config:field.storage.node.caw_benefits_med_transpants'
+        - 'config:field.storage.node.caw_benefits_med_travel'
         - 'config:field.storage.node.caw_benefits_med_tubal'
         - 'config:field.storage.node.caw_benefits_med_urgent'
         - 'config:field.storage.node.caw_benefits_med_vasectomy'
         - 'config:field.storage.node.caw_benefits_med_vision'
         - 'config:field.storage.node.caw_benefits_med_well_woman'
         - 'config:field.storage.node.caw_benefits_parttime_cost'
+        - 'config:field.storage.node.caw_benefits_perks'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
         - 'config:field.storage.node.caw_benefits_vision_frames'

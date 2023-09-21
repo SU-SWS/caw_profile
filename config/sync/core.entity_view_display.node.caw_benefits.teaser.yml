@@ -202,6 +202,7 @@ hidden:
   caw_benefits_med_vision: true
   caw_benefits_med_well_woman: true
   caw_benefits_parttime_cost: true
+  caw_benefits_perks: true
   caw_benefits_vision_contacts: true
   caw_benefits_vision_exam: true
   caw_benefits_vision_extras: true

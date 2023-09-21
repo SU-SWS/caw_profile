@@ -6,7 +6,6 @@ dependencies:
     - filter.format.stanford_html
     - filter.format.stanford_limited_html
     - filter.format.stanford_minimal_html
-    - media.type.embeddable
     - media.type.file
     - media.type.google_form
     - media.type.image

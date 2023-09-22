@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
+    - field.field.node.stanford_page.caw_page_resource_category
+    - field.field.node.stanford_page.caw_page_resource_role
+    - field.field.node.stanford_page.caw_page_resource_type
     - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection

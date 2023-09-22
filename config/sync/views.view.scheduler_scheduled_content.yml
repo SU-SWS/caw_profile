@@ -8,6 +8,7 @@ dependencies:
     - node
     - smart_date
     - user
+    - views_autocomplete_filters
   enforced:
     module:
       - scheduler

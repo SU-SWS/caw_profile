@@ -9,7 +9,7 @@ id: node.caw_careers.su_careers_proud_project
 field_name: su_careers_proud_project
 entity_type: node
 bundle: caw_careers
-label: 'Tell us briefly about an event, project, program or initiative you were involved with at Stanford that you''re most proud of.'
+label: "Tell us briefly about an event, project, program or initiative you were involved with at Stanford that you're most proud of."
 description: ''
 required: false
 translatable: false

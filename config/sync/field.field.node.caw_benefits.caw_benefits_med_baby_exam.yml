@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_med_baby_exam
 field_name: caw_benefits_med_baby_exam
 entity_type: node
 bundle: caw_benefits
-label: 'Baby''s First Exam'
+label: "Baby's First Exam"
 description: ''
 required: false
 translatable: true

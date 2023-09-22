@@ -122,11 +122,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: Title
-          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: flex-12-of-12
+          label: Title
+          context_mapping: {  }
         components:
           2d750099-7fb4-494d-b19d-1c92242660f8:
             uuid: 2d750099-7fb4-494d-b19d-1c92242660f8
@@ -153,11 +153,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: Basics
-          context_mapping: {  }
           extra_classes: caw-benefits-basics
           centered: centered-container
           columns: flex-10-of-12
+          label: Basics
+          context_mapping: {  }
         components:
           3f9a97ae-3d99-46e4-92c5-bc93695eeb94:
             uuid: 3f9a97ae-3d99-46e4-92c5-bc93695eeb94
@@ -509,11 +509,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: Dental
-          context_mapping: {  }
           extra_classes: caw-benefits-dental
           centered: centered-container
           columns: flex-10-of-12
+          label: Dental
+          context_mapping: {  }
         components:
           b8b76758-cee1-4d57-a46b-00bce68ae174:
             uuid: b8b76758-cee1-4d57-a46b-00bce68ae174
@@ -1169,11 +1169,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          label: Medical
-          context_mapping: {  }
           extra_classes: caw-benefits-medical
           centered: centered-container
           columns: flex-10-of-12
+          label: Medical
+          context_mapping: {  }
         components:
           2df1a434-1ca0-4104-b62e-e13cc5d2ff09:
             uuid: 2df1a434-1ca0-4104-b62e-e13cc5d2ff09
@@ -1336,7 +1336,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_med_baby_exam'
-              label: 'Baby''s First Exam'
+              label: "Baby's First Exam"
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -2667,11 +2667,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: Vision
-          context_mapping: {  }
           extra_classes: caw-benefits-Vision
           centered: centered-container
           columns: flex-10-of-12
+          label: Vision
+          context_mapping: {  }
         components:
           21eaac31-ed02-4ccd-ac9f-651048f749fc:
             uuid: 21eaac31-ed02-4ccd-ac9f-651048f749fc

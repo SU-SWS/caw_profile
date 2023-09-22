@@ -19,7 +19,7 @@ class SubsiteMenuBlockTest extends CawProfileHelperKernelTestBase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp(): void {
+  public function setUp(): void {
     parent::setUp();
     $top_page = Node::create([
       'type' => 'page',

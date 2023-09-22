@@ -201,3 +201,49 @@ function caw_profile_post_update_update_field_defs() {
     }
   }
 }
+
+/**
+ * Migrate data from layout_builder_block to custom_markup_block.
+ */
+function caw_profile_post_update_layout_builder_block() {
+  if (!\Drupal::moduleHandler()->moduleExists('custom_markup_block')) {
+    \Drupal::service('module_installer')->install(['custom_markup_block']);
+  }
+  $node_storage = \Drupal::entityTypeManager()
+    ->getStorage('node');
+
+  $nids = $node_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('layout_builder__layout', '%layout_builder_block%', 'LIKE')
+    ->execute();
+
+  \Drupal::logger('caw_profile')
+    ->info('Updating %s nodes with custom layout blocks.', ['%s' => count($nids)]);
+
+  foreach ($node_storage->loadMultiple($nids) as $node) {
+    /** @var \Drupal\layout_builder\Field\LayoutSectionItemList $layout_items */
+    $layout_items = $node->get('layout_builder__layout');
+    foreach ($layout_items->getSections() as $section) {
+      foreach ($section->getComponents() as $component) {
+        $config = $component->get('configuration');
+
+        if ($config['provider'] == 'layout_builder_block') {
+          $new_config = [
+            'id' => 'custom_markup',
+            'label' => $config['label'],
+            'label_display' => $config['label_display'],
+            'provider' => 'custom_markup_block',
+            'markup' => [
+              'value' => $config['text'],
+              'format' => $config['format'],
+            ],
+            'context_mapping' => [],
+          ];
+          $component->setConfiguration($new_config);
+        }
+      }
+    }
+
+    $node->save();
+  }
+}

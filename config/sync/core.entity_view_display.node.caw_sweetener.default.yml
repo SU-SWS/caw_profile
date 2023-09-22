@@ -10,13 +10,10 @@ dependencies:
     - field.field.node.caw_sweetener.su_sweet_type
     - node.type.caw_sweetener
     - views.view.caw_sweeteners
-  content:
-    - 'block_content:stanford_component_block:f365713e-ac4b-4001-9494-538e98b632b3'
   module:
-    - block_content
+    - custom_markup_block
     - jumpstart_ui
     - layout_builder
-    - layout_builder_block
     - layout_builder_restrictions
     - layout_library
     - user
@@ -182,19 +179,6 @@ third_party_settings:
               items_per_page: none
             weight: 2
             additional: {  }
-          ebccf176-8faa-40f8-81bb-94f73cba2a99:
-            uuid: ebccf176-8faa-40f8-81bb-94f73cba2a99
-            region: main
-            configuration:
-              id: layout_builder_block
-              label: Disclosures
-              label_display: '0'
-              provider: layout_builder_block
-              context_mapping: {  }
-              text: "<div class=\"flex-container su-margin-top-3 su-margin-bottom-3\">\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Favorites &amp; Feedback</h2>\r\n\r\n<p class=\"text-align-center\">Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email hrcommunications@stanford.edu.</p>\r\n</div>\r\n\r\n<div class=\"flex-md-6-of-12\">\r\n<h2 class=\"text-align-center\">Note to Vendors</h2>\r\n\r\n<p class=\"text-align-center\">As a policy, we do not promote discounts by external vendors; please see details in our <a href=\"/cardinal-at-work-faq/external-organizations\">FAQ for External Organizations</a>.</p>\r\n</div>\r\n</div>\r\n"
-              format: stanford_html
-            weight: 3
-            additional: {  }
           7def151f-2a7a-47b3-8463-c55f1e914700:
             uuid: 7def151f-2a7a-47b3-8463-c55f1e914700
             region: main
@@ -208,6 +192,20 @@ third_party_settings:
               view_mode: full
               context_mapping: {  }
             weight: 0
+            additional: {  }
+          47935898-6176-4122-a99e-ab3227e71d37:
+            uuid: 47935898-6176-4122-a99e-ab3227e71d37
+            region: main
+            configuration:
+              id: custom_markup
+              label: Disclosures
+              label_display: '0'
+              provider: custom_markup_block
+              context_mapping: {  }
+              markup:
+                value: '<div class="flex-container su-margin-top-3 su-margin-bottom-3"><div class="flex-md-6-of-12"><h2 class="text-align-center">Favorites &amp; Feedback</h2><p class="text-align-center">Have something to add? Send us new sweetener ideas or share feedback. Need to contact the team about Sweeteners? Email hrcommunications@stanford.edu.</p></div><div class="flex-md-6-of-12"><h2 class="text-align-center">Note to Vendors</h2><p class="text-align-center">As a policy, we do not promote discounts by external vendors; please see details in our <a href="/cardinal-at-work-faq/external-organizations">FAQ for External Organizations</a>.</p></div></div>'
+                format: stanford_html
+            weight: 4
             additional: {  }
         third_party_settings: {  }
   layout_library:

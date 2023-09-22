@@ -6,6 +6,7 @@ use Faker\Factory;
  * Test the FAQ component
  *
  * @group paragraphs
+ * @group faq
  */
 class FAQCest {
 

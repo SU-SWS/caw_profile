@@ -35,6 +35,9 @@ components.faq:
       dist/css/faq.css: { }
   js:
     lib/js/components/faq.js: { }
+  dependencies:
+    - core/jquery
+    - core/once
 
 components.news_list:
   css:

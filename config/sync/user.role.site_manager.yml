@@ -49,6 +49,7 @@ dependencies:
     - taxonomy.vocabulary.su_shared_tags
   module:
     - block
+    - block_content
     - block_content_permissions
     - book
     - caw_profile
@@ -86,6 +87,7 @@ weight: -3
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access media overview'
@@ -95,6 +97,8 @@ permissions:
   - 'access user profiles'
   - 'add citation entities'
   - 'add content to books'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer blocks'
   - 'administer book outlines'
   - 'administer citation entities'

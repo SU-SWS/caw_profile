@@ -123,7 +123,7 @@ processor_settings:
     all_fields: false
     fields:
       - rendered_item
-    ignorable: '[''¿¡!?,.:;]'
+    ignorable: "['¿¡!?,.:;]"
     ignorable_classes:
       - Pc
       - Pd

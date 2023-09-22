@@ -65,6 +65,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_mail_rx
     - field.field.node.caw_benefits.caw_benefits_med_mammograms
     - field.field.node.caw_benefits.caw_benefits_med_maternity_stay
+    - field.field.node.caw_benefits.caw_benefits_med_meals
     - field.field.node.caw_benefits.caw_benefits_med_mental_health
     - field.field.node.caw_benefits.caw_benefits_med_midwives
     - field.field.node.caw_benefits.caw_benefits_med_mri
@@ -81,13 +82,17 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_substance
     - field.field.node.caw_benefits.caw_benefits_med_surgery_facil
     - field.field.node.caw_benefits.caw_benefits_med_surgery_md
+    - field.field.node.caw_benefits.caw_benefits_med_trans
     - field.field.node.caw_benefits.caw_benefits_med_transpants
+    - field.field.node.caw_benefits.caw_benefits_med_transport
+    - field.field.node.caw_benefits.caw_benefits_med_travel
     - field.field.node.caw_benefits.caw_benefits_med_tubal
     - field.field.node.caw_benefits.caw_benefits_med_urgent
     - field.field.node.caw_benefits.caw_benefits_med_vasectomy
     - field.field.node.caw_benefits.caw_benefits_med_vision
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
+    - field.field.node.caw_benefits.caw_benefits_perks
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
     - field.field.node.caw_benefits.caw_benefits_vision_extras

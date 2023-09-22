@@ -6,6 +6,7 @@ use Faker\Factory;
  * Class CareerCelebrationsCest.
  *
  * @group content
+ * @group career-celebrations
  */
 class CareerCelebrationsCest {
 
@@ -41,7 +42,7 @@ class CareerCelebrationsCest {
     $I->fillField('First Name', $first_name);
     $I->fillField('Last Name', $last_name);
     $I->selectOption('Department', $department->label());
-    $I->selectOption('Years at Stanford', $years->label());
+    $I->selectOption('Years at Stanford', (string) $years->label());
     $I->fillField('Honored', date('Y'));
     $I->fillField('su_careers_proud_project[0][value]', $this->faker->paragraph);
     $I->fillField('su_careers_favorite_thing[0][value]', $this->faker->paragraph);

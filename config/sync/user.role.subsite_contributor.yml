@@ -4,9 +4,11 @@ status: true
 dependencies:
   module:
     - book
+    - file
 id: subsite_contributor
 label: 'Subsite Contributor'
 weight: 3
 is_admin: null
 permissions:
   - 'add content to books'
+  - 'delete own files'

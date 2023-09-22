@@ -106,10 +106,10 @@ dependencies:
     - field.field.node.caw_benefits.su_benefits_year
     - node.type.caw_benefits
   module:
+    - custom_markup_block
     - datetime
     - jumpstart_ui
     - layout_builder
-    - layout_builder_block
     - layout_library
     - options
     - text
@@ -183,7 +183,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 10
+            weight: 11
             additional: {  }
           3c730a1e-c814-4918-a8d4-b5d98d33da08:
             uuid: 3c730a1e-c814-4918-a8d4-b5d98d33da08
@@ -209,7 +209,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 9
+            weight: 10
             additional: {  }
           340d847f-2b67-4bdd-8ef3-2303c2f414f5:
             uuid: 340d847f-2b67-4bdd-8ef3-2303c2f414f5
@@ -235,7 +235,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 6
+            weight: 7
             additional: {  }
           7ee4a153-b9b3-4821-b181-eb43c7034617:
             uuid: 7ee4a153-b9b3-4821-b181-eb43c7034617
@@ -261,7 +261,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 8
+            weight: 9
             additional: {  }
           183904c8-38c8-4e07-98dd-c51ee7c9ab0a:
             uuid: 183904c8-38c8-4e07-98dd-c51ee7c9ab0a
@@ -287,7 +287,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 11
+            weight: 12
             additional: {  }
           b2e612e2-f2e2-4ef7-9695-1c596f526aca:
             uuid: b2e612e2-f2e2-4ef7-9695-1c596f526aca
@@ -313,7 +313,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 12
+            weight: 13
             additional: {  }
           f985690d-3c13-4327-9703-c5c8e3fc5f80:
             uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
@@ -333,7 +333,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: caw-benefits-basics
-            weight: 13
+            weight: 14
             additional: {  }
           1d197a64-275c-42ab-9936-9e336b4b0818:
             uuid: 1d197a64-275c-42ab-9936-9e336b4b0818
@@ -355,7 +355,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: caw-benefits-basics
-            weight: 5
+            weight: 6
             additional: {  }
           624a925c-ea58-4874-97d9-be05c7399dca:
             uuid: 624a925c-ea58-4874-97d9-be05c7399dca
@@ -375,7 +375,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: caw-benefits-basics
-            weight: 7
+            weight: 8
             additional: {  }
           b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0:
             uuid: b17ab4f7-bd70-47a2-ab66-f2fe2ea6b8e0
@@ -401,7 +401,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 14
+            weight: 15
             additional: {  }
           b40c3957-ccf8-451a-9aa6-7876a8741ca2:
             uuid: b40c3957-ccf8-451a-9aa6-7876a8741ca2
@@ -427,7 +427,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 4
+            weight: 5
             additional: {  }
           dad17f20-b41b-46d4-b6a7-0a1d5cf68c97:
             uuid: dad17f20-b41b-46d4-b6a7-0a1d5cf68c97
@@ -437,7 +437,7 @@ third_party_settings:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-            weight: 1
+            weight: 2
             additional: {  }
           f1e7d387-89f7-4ffd-8d37-b58292c66381:
             uuid: f1e7d387-89f7-4ffd-8d37-b58292c66381
@@ -463,7 +463,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 2
+            weight: 3
             additional: {  }
           73ebf651-a547-4d9e-aadc-643864b67366:
             uuid: 73ebf651-a547-4d9e-aadc-643864b67366
@@ -489,20 +489,21 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 3
+            weight: 4
             additional: {  }
-          1b44c392-24a1-4022-aec3-478a54adfa01:
-            uuid: 1b44c392-24a1-4022-aec3-478a54adfa01
+          70d9da6a-093e-42ea-b86b-d3c5a0eb9886:
+            uuid: 70d9da6a-093e-42ea-b86b-d3c5a0eb9886
             region: main
             configuration:
-              id: layout_builder_block
+              id: custom_markup
               label: Basics
               label_display: '0'
-              provider: layout_builder_block
+              provider: custom_markup_block
               context_mapping: {  }
-              text: "<h2>Basics</h2>\r\n"
-              format: stanford_html
-            weight: 0
+              markup:
+                value: '<h2>Basics</h2>'
+                format: stanford_html
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -

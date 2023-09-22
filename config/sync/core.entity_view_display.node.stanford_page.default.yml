@@ -3,17 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_page.caw_page_resource_category
+    - field.field.node.stanford_page.caw_page_resource_role
+    - field.field.node.stanford_page.caw_page_resource_type
+    - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
+    - field.field.node.stanford_page.su_metatags
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
     - field.field.node.stanford_page.su_page_description
     - field.field.node.stanford_page.su_page_image
+    - field.field.node.stanford_page.su_shared_tags
     - node.type.stanford_page
     - system.menu.main
   module:
+    - caw_profile_helper
     - entity_reference_revisions
     - jumpstart_ui
     - layout_builder
@@ -170,9 +177,15 @@ third_party_settings:
   layout_builder_restrictions:
     allowed_block_categories:
       - 'Basic Page Type Lists (Views)'
+      - 'Benefits (Views)'
+      - Book
+      - CAW
+      - 'Career Celebrations (Views)'
+      - 'Changelog (Views)'
       - 'Chaos Tools'
       - 'Config Pages'
       - 'Content fields'
+      - 'Custom Blocks'
       - 'Custom block types'
       - 'Custom blocks'
       - Devel
@@ -182,18 +195,23 @@ third_party_settings:
       - Help
       - 'Inline blocks'
       - 'Jumpstart UI'
+      - 'Layout Builder Block'
       - 'Lists (Views)'
       - Menus
       - 'News Lists (Views)'
       - 'PDB React'
       - 'People Lists (Views)'
+      - 'Policy (Views)'
+      - Printable
       - 'Publication (Views)'
       - React
-      - 'SimpleSAMLphp Authentication'
       - 'Stanford News'
       - 'Stanford Profile Helper'
-      - 'Stanford SimpleSAML PHP'
+      - 'Stanford SAML Authentication'
+      - 'Sweeteners (Views)'
       - System
+      - 'Taxonomy Terms (Views)'
+      - User
       - Views
       - core
     entity_view_mode_restriction:
@@ -240,38 +258,50 @@ third_party_settings:
           - 'field_block:user:user:name'
           - 'field_block:user:user:preferred_admin_langcode'
           - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
           - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
           - 'extra_field_block:user:user:search_api_excerpt'
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
       allowlisted_blocks:
+        'Custom Blocks':
+          - custom_markup
         Menus:
-          - 'system_menu_block:stanford-event-types'
           - 'menu_block:stanford-event-types'
+          - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
+          - 'system_menu_block:stanford-publication-topics'
           - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
         core:
           - page_title_block
       restricted_categories:
+        - 'Benefits (Views)'
+        - Book
+        - CAW
+        - 'Career Celebrations (Views)'
+        - 'Changelog (Views)'
         - 'Chaos Tools'
         - 'Config Pages'
         - Forms
         - Help
+        - 'Layout Builder Block'
         - 'Lists (Views)'
+        - 'Policy (Views)'
+        - Printable
         - React
-        - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
+        - 'Stanford SAML Authentication'
+        - 'Sweeteners (Views)'
+        - 'Taxonomy Terms (Views)'
+        - User
         - Views
 id: node.stanford_page.default
 targetEntityType: node

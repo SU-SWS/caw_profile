@@ -38,6 +38,7 @@ module:
   cshs: 0
   ctools: 0
   ctools_views: 0
+  custom_markup_block: 0
   datetime: 0
   datetime_range: 0
   decoupled_router: 0
@@ -101,7 +102,6 @@ module:
   jumpstart_ui: 0
   key: 0
   layout_builder: 0
-  layout_builder_block: 0
   layout_builder_modal: 0
   layout_builder_restrictions: 0
   layout_discovery: 0

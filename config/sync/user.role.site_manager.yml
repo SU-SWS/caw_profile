@@ -58,6 +58,7 @@ dependencies:
     - dropzonejs
     - editoria11y
     - field_permissions
+    - file
     - filter
     - layout_builder
     - media
@@ -194,6 +195,7 @@ permissions:
   - 'delete own caw_sweetener content'
   - 'delete own embeddable media'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own stanford_course content'

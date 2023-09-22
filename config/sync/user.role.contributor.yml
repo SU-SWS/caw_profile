@@ -27,6 +27,7 @@ dependencies:
     - content_lock
     - dropzonejs
     - editoria11y
+    - file
     - filter
     - media
     - node
@@ -74,6 +75,7 @@ permissions:
   - 'delete own caw_careers content'
   - 'delete own caw_sweetener content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own stanford_course content'

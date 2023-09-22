@@ -98,6 +98,7 @@ weight: -1
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access config_pages overview'
   - 'access content overview'
   - 'access entity usage statistics'
@@ -113,6 +114,8 @@ permissions:
   - 'admin classes'
   - 'admin display suite'
   - 'admin fields'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
@@ -253,6 +256,7 @@ permissions:
   - 'delete own caw_sweetener content'
   - 'delete own embeddable media'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own stanford_course content'

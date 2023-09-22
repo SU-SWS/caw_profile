@@ -129,13 +129,13 @@ class NewsCest {
     $I->amOnPage('/admin/structure/types/manage/stanford_news');
     $I->seeCheckboxIsChecked('#edit-node-revision-delete-track');
     $I->seeCheckboxIsChecked('#edit-options-revision');
-    $I->seeInField('#edit-minimum-revisions-to-keep', 5);
+    $I->seeInField('#edit-minimum-revisions-to-keep', '5');
 
     // XML Sitemap.
     $I->amOnPage('/admin/config/search/xmlsitemap/settings');
     $I->see('News');
     $I->amOnPage('/admin/config/search/xmlsitemap/settings/node/stanford_news');
-    $I->selectOption('#edit-xmlsitemap-status', 1);
+    $I->selectOption('#edit-xmlsitemap-status', '1');
 
     // Metatags.
     $I->amOnPage('/admin/config/search/metatag/node__stanford_news');

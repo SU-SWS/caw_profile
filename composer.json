@@ -96,7 +96,6 @@
         "drupal/jsonapi_search_api": "^1.0@RC",
         "drupal/jsonapi_views": "^1.1",
         "drupal/key": "^1.15",
-        "drupal/layout_builder_block": "^1.0",
         "drupal/layout_builder_modal": "^1.0",
         "drupal/layout_builder_restrictions": "^2.2",
         "drupal/layout_library": "^1.0-beta1",

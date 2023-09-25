@@ -165,6 +165,7 @@ class PersonCest {
       'parent' => ['target_id' => $term1->id()],
     ], 'taxonomy_term');
 
+    drupal_flush_all_caches();
     $I->amOnPage($term3->toUrl()->toString());
     $I->canSeeLink($term1->label());
     $I->canSeeLink($term2->label());

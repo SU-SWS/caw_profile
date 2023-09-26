@@ -177,6 +177,7 @@ class PersonCest {
     $I->click('Save');
     $I->amOnPage('/user/logout');
 
+    drupal_flush_all_caches();
     $I->amOnPage('/people');
     $I->canSeeLink($term3->label());
 
@@ -186,6 +187,7 @@ class PersonCest {
     $I->click('Save');
     $I->amOnPage('/user/logout');
 
+    drupal_flush_all_caches();
     $I->amOnPage('/people');
     $I->cantSeeLink($term3->label());
 
@@ -230,6 +232,7 @@ class PersonCest {
       ],
     ]);
 
+    drupal_flush_all_caches();
     $I->amOnPage($great_grandchild->toUrl()->toString());
     $I->canSee($node->label());
     $I->amOnPage($grandchild->toUrl()->toString());

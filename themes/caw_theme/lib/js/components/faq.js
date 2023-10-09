@@ -1,7 +1,7 @@
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   Drupal.behaviors.cawFaq = {
     attach: function attach(context) {
-      $('.ptype-stanford-faq', context).once('faq-expand-all').each((index, faq) => {
+      $(once('faq-expand-all', '.paragraph-item.ptype-stanford-faq', context)).each((index, faq) => {
         const $details = $('details', faq);
         if ($details.length < 2) {
           return;
@@ -35,4 +35,4 @@
       })
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

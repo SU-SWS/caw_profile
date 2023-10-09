@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
-    - file
-    - user
-    - views_autocomplete_filters
-    - views_bulk_operations
+    0: file
+    1: user
+    3: views_bulk_operations
 id: files
 label: Files
 module: file

@@ -12,7 +12,6 @@ dependencies:
     - media_library
     - taxonomy_entity_index
     - user
-    - views_autocomplete_filters
   enforced:
     module:
       - media_library

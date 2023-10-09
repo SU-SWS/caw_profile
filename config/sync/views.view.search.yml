@@ -6,7 +6,6 @@ dependencies:
     - search_api.index.full_site_content
   module:
     - search_api
-    - views_autocomplete_filters
 id: search
 label: Search
 module: views

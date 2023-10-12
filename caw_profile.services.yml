@@ -4,7 +4,7 @@ services:
     parent: default_plugin_manager
   caw_profile.event_subscriber:
     class: '\Drupal\caw_profile\EventSubscriber\EventSubscriber'
-    arguments: ['@file_system', '@logger.factory']
+    arguments: ['@file_system', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }
   caw_profile.config_overrider:

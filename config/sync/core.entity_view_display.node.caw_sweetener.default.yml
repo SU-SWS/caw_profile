@@ -29,11 +29,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_two_column
         layout_settings:
+          label: ''
+          context_mapping: {  }
           extra_classes: 'su-margin-bottom-3 su-margin-top-6'
           centered: centered-container
           orientation: equal
-          label: ''
-          context_mapping: {  }
         components:
           b92ff1ad-67a9-4d46-85c3-43de5ae73623:
             uuid: b92ff1ad-67a9-4d46-85c3-43de5ae73623
@@ -106,11 +106,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: ''
+          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: flex-8-of-12
-          label: ''
-          context_mapping: {  }
         components:
           2469a9b5-bb47-4a78-b277-22aeb7a30638:
             uuid: 2469a9b5-bb47-4a78-b277-22aeb7a30638
@@ -163,11 +163,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: ''
+          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: flex-10-of-12
-          label: ''
-          context_mapping: {  }
         components:
           c0d8700c-b748-4731-8246-10b989df8296:
             uuid: c0d8700c-b748-4731-8246-10b989df8296

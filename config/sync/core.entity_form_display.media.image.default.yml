@@ -40,8 +40,8 @@ content:
     weight: 2
     region: content
     settings:
-      save_lineage: false
       force_deepest: false
+      save_lineage: false
       parent: ''
       level_labels: ''
       hierarchy_depth: 0

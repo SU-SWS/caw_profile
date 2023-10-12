@@ -37,7 +37,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   su_media_category:
-    type: options_shs
+    type: cshs
     weight: 1
     region: content
     settings:

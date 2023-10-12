@@ -138,7 +138,7 @@ content:
       display_label: true
     third_party_settings: {  }
   su_basic_page_type:
-    type: options_shs
+    type: cshs
     weight: 6
     region: content
     settings:
@@ -205,7 +205,7 @@ content:
       media_types: {  }
     third_party_settings: {  }
   su_shared_tags:
-    type: options_shs
+    type: cshs
     weight: 7
     region: content
     settings:

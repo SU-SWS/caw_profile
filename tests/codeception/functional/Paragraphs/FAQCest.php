@@ -69,6 +69,7 @@ class FAQCest {
     $I->canSee('Expand All', 'button');
     $I->cantSeeElement('details[open]');
 
+    $I->canSeeNumberOfElements('.expand-collapse-button', 1);
     $I->click('Expand All');
     $I->canSee('“no-bell” prize');
     $I->canSee('An impasta');

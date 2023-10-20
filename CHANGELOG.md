@@ -201,6 +201,10 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.0.1
+-------------------------------------------------------------------------------
+- Fix site setting redirect logic
+
 11.0.0
 -------------------------------------------------------------------------------
 - Use h2 heading for global message

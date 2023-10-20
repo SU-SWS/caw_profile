@@ -1,0 +1,6 @@
+services:
+  caw_profile.commands:
+    class: Drupal\caw_profile_helper\Drush\Commands\CawProfileHelperCommands
+    arguments: ['@entity_type.manager', '@uuid']
+    tags:
+      - { name: drush.command }

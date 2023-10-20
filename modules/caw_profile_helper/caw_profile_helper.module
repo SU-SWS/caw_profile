@@ -20,6 +20,33 @@ use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Cache\Cache;
 
+function mikes() {
+  $field_name = 'caw_benefits_foobarbaz';
+  $options = ['below' => 'caw_benefits_med_maternity_stay'];
+  $label = NULL;
+  /** @var \Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay $view */
+  $view = \Drupal::entityTypeManager()
+    ->getStorage('entity_view_display')
+    ->load('node.caw_benefits.default');
+  foreach ($view->getSections() as $section) {
+    foreach ($section->getComponents() as $component) {
+      $component_config = $component->get('configuration');
+      if (str_ends_with($component->getPluginId(), $options['below'])) {
+        $uuid = \Drupal::service('uuid')->generate();
+        $new_config = $component_config;
+        $new_config['id'] = str_replace($options['below'], $field_name, $new_config['id']);
+        $new_config['label'] = $label?: $field_name;
+        $new_component = new \Drupal\layout_builder\SectionComponent($uuid, $component->getRegion(),$new_config);
+        $new_component->setWeight($component->getWeight() + 1);
+
+        $section->insertAfterComponent($component->getUuid(), $new_component);
+        $view->save();
+        return;
+      }
+    }
+  }
+}
+
 /**
  * Implements hook_paragraphs_behavior_info_alter().
  */
@@ -84,7 +111,7 @@ function caw_profile_helper_field_widget_form_alter(&$element, FormStateInterfac
  */
 function caw_profile_helper_field_widget_fontawesome_icon_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   $children = Element::children($element['settings']);
-  $children = array_filter($children, function ($child) {
+  $children = array_filter($children, function($child) {
     return !in_array($child, ['style', 'size']);
   });
   // Hide all the advanced options except the style and size options.
@@ -204,7 +231,9 @@ function caw_profile_helper_preprocess_ds_entity_view(&$variables) {
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $form_state) {
-  if ($form_state->getFormObject()->getEntity()->bundle() != 'stanford_page' || empty($form['book'])) {
+  if ($form_state->getFormObject()
+      ->getEntity()
+      ->bundle() != 'stanford_page' || empty($form['book'])) {
     // Don't allow any other content to be added to subsites.
     unset($form['book']);
     return;
@@ -285,7 +314,6 @@ function caw_profile_helper_views_pre_execute(ViewExecutable $view) {
  * Implements hook_views_query_alter().
  */
 function caw_profile_helper_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-
   // Only modify the queries for media related views.
   if (!in_array($view->id(), ['media_library', 'media'])) {
     return;

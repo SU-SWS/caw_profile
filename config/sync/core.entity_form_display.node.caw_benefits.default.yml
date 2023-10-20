@@ -92,6 +92,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
     - field.field.node.caw_benefits.caw_benefits_perks
+    - field.field.node.caw_benefits.caw_benefits_prosthetic
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
     - field.field.node.caw_benefits.caw_benefits_vision_extras
@@ -190,6 +191,7 @@ third_party_settings:
         - caw_benefits_med_trans
         - caw_benefits_med_travel
         - caw_benefits_perks
+        - caw_benefits_prosthetic
       label: Medical
       region: content
       parent_name: group_benefits
@@ -1019,6 +1021,14 @@ content:
     weight: 140
     region: content
     settings: {  }
+    third_party_settings: {  }
+  caw_benefits_prosthetic:
+    type: string_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
     third_party_settings: {  }
   caw_benefits_vision_contacts:
     type: string_textarea

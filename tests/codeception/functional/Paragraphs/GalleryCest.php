@@ -75,7 +75,7 @@ class GalleryCest {
     $I->assertNotEquals($first_image_src, $second_image_src);
   }
 
-  protected function getNode(FunctionalTester $I){
+  protected function getNode(FunctionalTester $I) {
     $paragraph = $I->createEntity([
       'type' => 'stanford_gallery',
     ], 'paragraph');

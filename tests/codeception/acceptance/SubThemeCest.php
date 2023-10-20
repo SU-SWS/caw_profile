@@ -59,6 +59,7 @@ abstract class SubThemeCest {
 
   /**
    * Enable the subtheme and the config should reflect the changes done.
+   *
    * @group minimal-subtheme-test2
    */
   public function testSubTheme(AcceptanceTester $I) {
@@ -86,9 +87,10 @@ abstract class SubThemeCest {
     $I->canSeeResponseCodeIs(200);
   }
 
-/**
-   * Enable the minimally branded subtheme and the config should reflect the changes done.
-   * Test the changes are there.
+  /**
+   * Enable the minimally branded subtheme and the config should reflect the
+   * changes done. Test the changes are there.
+   *
    * @group minimal-subtheme-test
    */
   public function testMinimalSubtheme(AcceptanceTester $I) {
@@ -124,7 +126,8 @@ abstract class SubThemeCest {
   protected function createTheme() {
     if (!file_exists("{$this->themePath}/{$this->themeName}.info.yml")) {
       mkdir($this->themePath, 0777, TRUE);
-      $info = file_get_contents(\Drupal::service('extension.list.theme')->getPath('stanford_basic') . '/stanford_basic.info.yml');
+      $info = file_get_contents(\Drupal::service('extension.list.theme')
+          ->getPath('stanford_basic') . '/stanford_basic.info.yml');
       $info = Yaml::decode($info);
       $info['name'] = $this->themeName;
       $info['base theme'] = 'stanford_basic';

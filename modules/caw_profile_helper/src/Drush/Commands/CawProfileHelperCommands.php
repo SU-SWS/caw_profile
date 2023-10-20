@@ -9,6 +9,7 @@ use Drush\Commands\DrushCommands;
 
 /**
  * A Drush commandfile.
+ * @codeCoverageIgnore
  */
 class CawProfileHelperCommands extends DrushCommands {
 

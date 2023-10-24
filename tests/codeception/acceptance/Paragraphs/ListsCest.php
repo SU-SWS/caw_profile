@@ -26,6 +26,8 @@ class ListsCest {
 
   /**
    * Shared tags on each content type are identical.
+   *
+   * @group jsonapi
    */
   public function _before() {
     \Drupal::state()->set('caw_profile_allow_all_paragraphs', TRUE);
@@ -33,6 +35,8 @@ class ListsCest {
 
   /**
    * News items should display in the list paragraph.
+   *
+   * @group jsonapi
    */
   public function testListParagraphNews(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
@@ -52,6 +56,16 @@ class ListsCest {
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
     $I->canSee($title);
+
+    $I->amOnPage('/jsonapi/views/stanford_news/block_1?page[limit]=99');
+    $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
+    $I->assertArrayHasKey('data', $json_data);
+
+    $json_titles = [];
+    foreach ($json_data['data'] as $item) {
+      $json_titles[] = $item['attributes']['title'];
+    }
+    $I->assertContains($title, $json_titles);
   }
 
   /**
@@ -95,9 +109,11 @@ class ListsCest {
 
   /**
    * When using the list paragraph and view arguments, it should filter results.
+   *
+   * @group jsonapi
    */
   public function testListParagraphNewsFiltersNoFilter(AcceptanceTester $I) {
-    $I->logInWithRole('site_manager');
+    $I->logInWithRole('contributor');
 
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
 
@@ -125,7 +141,7 @@ class ListsCest {
    * When using the list paragraph and view arguments, it should filter results.
    */
   public function testListParagraphNewsFiltersRandomFilter(AcceptanceTester $I) {
-    $I->logInWithRole('site_manager');
+    $I->logInWithRole('contributor');
 
     $random_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
@@ -155,7 +171,7 @@ class ListsCest {
    * When using the list paragraph and view arguments, it should filter results.
    */
   public function testListParagraphNewsFiltersTopicFilter(AcceptanceTester $I) {
-    $I->logInWithRole('site_manager');
+    $I->logInWithRole('contributor');
 
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     // Use a child term but the argument is the parent term to verify children
@@ -290,7 +306,6 @@ class ListsCest {
       ],
     ]);
 
-    $I->amOnPage('/');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($headline_text);
     $I->cantSee($message);
@@ -298,6 +313,8 @@ class ListsCest {
 
   /**
    * Event items should display in the list paragraph.
+   *
+   * @group jsonapi
    */
   public function testListParagraphEvents(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
@@ -408,6 +425,16 @@ class ListsCest {
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($event->label());
+
+    $I->amOnPage('/jsonapi/views/stanford_events/list_page?page[limit]=99');
+    $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
+    $I->assertArrayHasKey('data', $json_data);
+
+    $json_titles = [];
+    foreach ($json_data['data'] as $item) {
+      $json_titles[] = $item['attributes']['title'];
+    }
+    $I->assertContains($event->label(), $json_titles);
   }
 
   /**

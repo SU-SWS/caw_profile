@@ -208,6 +208,11 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.0.3
+-------------------------------------------------------------------------------
+- Next site settings and config ignores (#735)
+- D8CORE-7040 Fix source ending tags
+
 11.0.2
 -------------------------------------------------------------------------------
 - Fix acceptance tests.

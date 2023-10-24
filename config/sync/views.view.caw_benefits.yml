@@ -1327,20 +1327,10 @@ display:
           table: node__caw_benefits_med_transpants
           field: caw_benefits_med_transpants
           plugin_id: field
-        caw_benefits_med_nursing:
-          id: caw_benefits_med_nursing
-          table: node__caw_benefits_med_nursing
-          field: caw_benefits_med_nursing
-          plugin_id: field
         caw_benefits_med_pt:
           id: caw_benefits_med_pt
           table: node__caw_benefits_med_pt
           field: caw_benefits_med_pt
-          plugin_id: field
-        caw_benefits_med_surgery_md:
-          id: caw_benefits_med_surgery_md
-          table: node__caw_benefits_med_surgery_md
-          field: caw_benefits_med_surgery_md
           plugin_id: field
         caw_benefits_prosthetic:
           id: caw_benefits_prosthetic
@@ -1404,6 +1394,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        caw_benefits_med_nursing:
+          id: caw_benefits_med_nursing
+          table: node__caw_benefits_med_nursing
+          field: caw_benefits_med_nursing
+          plugin_id: field
+        caw_benefits_med_surgery_md:
+          id: caw_benefits_med_surgery_md
+          table: node__caw_benefits_med_surgery_md
+          field: caw_benefits_med_surgery_md
+          plugin_id: field
         caw_benefits_med_surgery_facil:
           id: caw_benefits_med_surgery_facil
           table: node__caw_benefits_med_surgery_facil

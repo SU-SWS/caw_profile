@@ -1,5 +1,12 @@
 # Cardinal at Work Profile
 
+10.0.3
+--------------------------------------------------------------------------------
+_Release Date: 2023-10-24_
+
+- D8CORE-7051 Use display field copy instead of token fields (#737)
+- Update order of fields in benefit comparison
+
 10.0.2
 --------------------------------------------------------------------------------
 _Release Date: 2023-10-23_

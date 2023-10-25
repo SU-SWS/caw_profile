@@ -222,6 +222,11 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.0.7
+-------------------------------------------------------------------------------
+- Invalidate cache tag when saving site contact details
+- Allow figure and figcaption in embeddables
+
 11.0.6
 -------------------------------------------------------------------------------
 - Fixed event day display with timezones.

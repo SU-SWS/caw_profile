@@ -222,6 +222,10 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.0.6
+-------------------------------------------------------------------------------
+- Fixed event day display with timezones.
+
 11.0.4
 -------------------------------------------------------------------------------
 - D8CORE-7051 Use display field copy instead of token fields

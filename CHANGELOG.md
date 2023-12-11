@@ -1,5 +1,26 @@
 # Cardinal at Work Profile
 
+10.1.0
+--------------------------------------------------------------------------------
+_Release Date: 2023-12-11_
+
+- D8CORE-7055: added an aria-hidden is true (#745)
+- D8CORE-7096 Update algolia search results styles and structure (#747)
+- Strip more html from algolia indexed items
+- Fixed absolute urls for algolia results
+- D8CORE-7074 Implement Search API Algolia (#743)
+- D8CORE-6726: Overrode the colorbox formatter template to remove aria-label (#746)
+- Update alert styles (#744)
+- Added cron job config
+- D8CORE-2761: reduced padding on filterby menu (#728)
+- Updated config split settings
+- D8CORE-7066 Adjust site contact fields & language (#741)
+- Update contact field labels
+- Adjusted access denied message
+- Added the anchor for contact details on site settings
+- Invalidate cache tag when saving site contact details
+- Allow figure and figcaption in embeddables
+
 10.0.3
 --------------------------------------------------------------------------------
 _Release Date: 2023-10-24_

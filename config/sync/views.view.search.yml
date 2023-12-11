@@ -421,6 +421,7 @@ display:
           min_length: null
           fields:
             - rendered_item
+            - title
       style:
         type: html_list
         options:

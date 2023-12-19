@@ -90,6 +90,7 @@ permissions:
   - 'access block library'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access media overview'
   - 'access patterns page'
   - 'access taxonomy overview'

@@ -264,7 +264,7 @@ module:
   caw_profile: 1000
 theme:
   claro: 0
-  stanford_profile_admin: 0
+  stanford_profile_admin_theme: 0
   stanford_basic: 0
   stable9: 0
   caw_theme: 0

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.edit_link
 label: 'Edit Link'
+description: ''
 targetEntityType: node
 cache: true

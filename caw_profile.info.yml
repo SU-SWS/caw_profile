@@ -120,7 +120,6 @@ install:
   - 'xmlsitemap:xmlsitemap_engines'
 themes:
     - stable9
-    - seven
     - stanford_basic
 default_content:
   block_content:

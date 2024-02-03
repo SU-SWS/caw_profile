@@ -445,10 +445,10 @@ display:
           condition: eq
           equalto: medical
           then: Maternity
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_med_maternity_stay:
           id: caw_benefits_med_maternity_stay
           table: node__caw_benefits_med_maternity_stay
@@ -537,10 +537,10 @@ display:
           condition: eq
           equalto: medical
           then: 'Mental Health/Substance Abuse'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_med_mental_health:
           id: caw_benefits_med_mental_health
           table: node__caw_benefits_med_mental_health
@@ -609,10 +609,10 @@ display:
           condition: eq
           equalto: medical
           then: 'Prescription Drugs'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_med_pharmacy:
           id: caw_benefits_med_pharmacy
           table: node__caw_benefits_med_pharmacy
@@ -681,10 +681,10 @@ display:
           condition: eq
           equalto: medical
           then: 'Preventive Care'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_med_adult_physical:
           id: caw_benefits_med_adult_physical
           table: node__caw_benefits_med_adult_physical
@@ -778,10 +778,10 @@ display:
           condition: eq
           equalto: dental
           then: 'Preventive Type of Care'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_dent_cleanings:
           id: caw_benefits_dent_cleanings
           table: node__caw_benefits_dent_cleanings
@@ -855,10 +855,10 @@ display:
           condition: eq
           equalto: dental
           then: 'Orthodontic Services'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_dent_ortho:
           id: caw_benefits_dent_ortho
           table: node__caw_benefits_dent_ortho
@@ -962,10 +962,10 @@ display:
           condition: neq
           equalto: vision
           then: 'Other Services (A-D)'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_dent_anesthesia:
           id: caw_benefits_dent_anesthesia
           table: node__caw_benefits_dent_anesthesia
@@ -1146,10 +1146,10 @@ display:
           condition: neq
           equalto: vision
           then: 'Other Services (E-N)'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_dent_extraction:
           id: caw_benefits_dent_extraction
           table: node__caw_benefits_dent_extraction
@@ -1283,10 +1283,10 @@ display:
           condition: neq
           equalto: vision
           then: 'Other Services (O-Z)'
-          then_translate: 1
+          then_translate: true
           or: ''
-          or_translate: 1
-          strip_tags: 0
+          or_translate: true
+          strip_tags: false
         caw_benefits_dent_onlay:
           id: caw_benefits_dent_onlay
           table: node__caw_benefits_dent_onlay
@@ -1703,7 +1703,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -3251,7 +3250,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

@@ -9,12 +9,6 @@ name: 'Limited HTML'
 format: stanford_limited_html
 weight: 0
 filters:
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
@@ -24,13 +18,12 @@ filters:
       allowed_html: '<br> <p> <a class="su-button su-button--big su-button--secondary su-link--action" hreflang title href data-entity-type data-entity-uuid data-entity-substitution> <div> <cite> <dd> <blockquote cite> <ul type class> <ol type class start> <li class> <strong> <em> <code>'
       filter_html_help: true
       filter_html_nofollow: false
-  linkit:
-    id: linkit
-    provider: linkit
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
     status: true
-    weight: 0
-    settings:
-      title: true
+    weight: 10
+    settings: {  }
   filter_responsive_tables_filter:
     id: filter_responsive_tables_filter
     provider: responsive_tables_filter
@@ -39,3 +32,10 @@ filters:
     settings:
       tablesaw_type: stack
       tablesaw_persist: '1'
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

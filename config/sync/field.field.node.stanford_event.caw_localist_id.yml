@@ -1,0 +1,19 @@
+uuid: 177ff05f-bb24-4fba-ad68-009f3144f3ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_localist_id
+    - node.type.stanford_event
+id: node.stanford_event.caw_localist_id
+field_name: caw_localist_id
+entity_type: node
+bundle: stanford_event
+label: 'Localist ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

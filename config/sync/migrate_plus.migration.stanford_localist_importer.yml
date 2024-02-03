@@ -297,6 +297,7 @@ source:
     plus: +
     timezone: America/Los_Angeles
 process:
+  caw_localist_id: id
   status: constants/one
   type: constants/type
   canceled:
@@ -502,6 +503,7 @@ destination:
     - title
     - body/value
     - body/format
+    - caw_localist_id
     - su_event_alt_loc
     - su_event_map_link/uri
     - su_event_map_link/title

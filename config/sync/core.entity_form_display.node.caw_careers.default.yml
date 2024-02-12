@@ -204,4 +204,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  syndication: true
   unpublish_on: true

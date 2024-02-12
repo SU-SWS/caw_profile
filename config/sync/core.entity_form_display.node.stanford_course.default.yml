@@ -195,4 +195,5 @@ content:
 hidden:
   node_edit_link: true
   su_course_id: true
+  syndication: true
   unpublish_on: true

@@ -1189,4 +1189,5 @@ content:
     third_party_settings: {  }
 hidden:
   node_edit_link: true
+  syndication: true
   unpublish_on: true

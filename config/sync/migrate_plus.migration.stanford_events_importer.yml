@@ -12,7 +12,7 @@ migration_tags: null
 migration_group: stanford_events
 label: 'Events importer'
 source:
-  orphan_action: forget
+  orphan_action: delete
   track_changes: true
   plugin: url
   data_fetcher_plugin: http

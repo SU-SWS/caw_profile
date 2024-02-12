@@ -61,6 +61,7 @@ dependencies:
     - field_permissions
     - file
     - filter
+    - help
     - layout_builder
     - media
     - menu_admin_per_menu
@@ -76,6 +77,7 @@ dependencies:
     - stanford_migrate
     - stanford_policy
     - stanford_publication
+    - stanford_syndication
     - system
     - taxonomy
     - toolbar
@@ -109,6 +111,7 @@ permissions:
   - 'administer redirects'
   - 'administer stanford-event-types menu items'
   - 'administer stanford-person-type menu items'
+  - 'administer stanford_syndication content'
   - 'administer url aliases'
   - 'administer users'
   - 'assign caw_reviewer role'

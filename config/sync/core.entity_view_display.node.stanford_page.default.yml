@@ -188,6 +188,7 @@ third_party_settings:
       - 'Custom Blocks'
       - 'Custom block types'
       - 'Custom blocks'
+      - Editoria11y
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -266,15 +267,10 @@ third_party_settings:
         'Custom Blocks':
           - custom_markup
         Menus:
-          - 'menu_block:stanford-event-types'
           - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
-          - 'system_menu_block:main'
-          - 'menu_block:stanford-person-type'
           - 'system_menu_block:stanford-person-type'
-          - 'menu_block:stanford-publication-topics'
           - 'system_menu_block:stanford-publication-topics'
-          - 'menu_block:news-topics'
           - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
@@ -288,6 +284,7 @@ third_party_settings:
         - 'Changelog (Views)'
         - 'Chaos Tools'
         - 'Config Pages'
+        - Editoria11y
         - Forms
         - Help
         - 'Layout Builder Block'

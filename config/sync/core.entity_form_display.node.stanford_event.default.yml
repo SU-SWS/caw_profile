@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.stanford_event.body
     - field.field.node.stanford_event.caw_event_category
+    - field.field.node.stanford_event.caw_localist_id
     - field.field.node.stanford_event.layout_builder__layout
     - field.field.node.stanford_event.stanford_intranet__access
     - field.field.node.stanford_event.su_event_alt_loc
@@ -150,6 +151,60 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  caw_localist_id:
+    type: readonly_field_widget
+    weight: 53
+    region: content
+    settings:
+      label: above
+      formatter_type: string
+      formatter_settings:
+        link_ally_class:
+          class: ''
+          link_text: ''
+          screenreader_text: ''
+          tag: ''
+        wrapper_class:
+          class: ''
+          tag: div
+          link: false
+          link_class: ''
+          summary: false
+          trim: 200
+        string_list_class:
+          class: ''
+          list_type: ul
+        smart_trim:
+          trim_length: 600
+          trim_type: chars
+          trim_suffix: ''
+          wrap_output: false
+          wrap_class: trimmed
+          more:
+            display_link: false
+            target_blank: false
+            link_trim_only: false
+            class: more-link
+            text: More
+            aria_label: 'Read more about [node:title]'
+            token_browser: ''
+          trim_options:
+            text: false
+            trim_zero: false
+            replace_tokens: false
+        entity_title_heading:
+          tag: h2
+        string:
+          link_to_entity: false
+      formatter_third_party_settings:
+        empty_fields:
+          handler: ''
+        field_formatter_class:
+          class: ''
+      show_description: false
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   publish_on:
     type: datetime_timestamp_no_default
     weight: 52
@@ -234,7 +289,10 @@ content:
         custom
       show_extra: false
       hide_date: true
+      separator: to
       add_abbreviations: ''
+      allday: true
+      remove_seconds: false
     third_party_settings: {  }
   su_event_dek:
     type: string_textfield
@@ -260,6 +318,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_keywords:
@@ -270,6 +329,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_location:
@@ -333,6 +393,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_telephone:

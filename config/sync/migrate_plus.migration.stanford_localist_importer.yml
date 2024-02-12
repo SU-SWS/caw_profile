@@ -20,7 +20,7 @@ source:
   urls: {  }
   data_parser_plugin: localist_json
   item_selector: events
-  orphan_action: forget
+  orphan_action: delete
   fields:
     -
       name: id

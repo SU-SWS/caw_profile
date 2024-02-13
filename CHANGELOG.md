@@ -1,5 +1,20 @@
 # Cardinal at Work Profile
 
+10.1.0
+--------------------------------------------------------------------------------
+_Release Date: 2024-02-12_
+
+- CAWUHR-154 Add a little styling for layout builder block headers
+- CAWURH-163 Manage events view with filters (#144)
+- CAWUHR-161 add and configure stanford syndication
+- D8CORE-6982 Add validation to publication DOI fields to avoid full urls
+- D8CORE-7203 Some improvements to metatags on some content types
+- Add empty alt text to logo in policy print page
+- D8CORE-7088 Replace policy print page h2 with h1 tag
+- Adjust allowed menus in layout builder restrictions
+- D8CORE-7132 Add policy content types to teasser paragraph field
+- D8CORE-7255 exclude lazy load oembed links from external links (#760)
+
 10.0.3
 --------------------------------------------------------------------------------
 _Release Date: 2023-10-24_

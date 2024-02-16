@@ -495,6 +495,7 @@ process:
           entity_type: taxonomy_term
           ignore_case: true
           source: name
+  su_event_ext_image: photo_url
 destination:
   plugin: 'entity:node'
   overwrite_properties:

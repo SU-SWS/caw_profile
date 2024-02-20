@@ -1,5 +1,14 @@
 # Cardinal at Work Profile
 
+10.1.1
+--------------------------------------------------------------------------------
+_Release Date: 2024-02-20_
+
+- Update pager on manage events view
+- Added external image url for events content from Localist
+- D8CORE-7125 Use field_label module to choose which heading element for field labels (#761)
+
+
 10.1.0
 --------------------------------------------------------------------------------
 _Release Date: 2024-02-12_

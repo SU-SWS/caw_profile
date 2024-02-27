@@ -8,6 +8,8 @@ dependencies:
     - field.storage.node.su_event_type
     - node.type.stanford_event
     - taxonomy.vocabulary.stanford_event_types
+    - user.role.site_editor
+    - user.role.site_manager
   module:
     - better_exposed_filters
     - node
@@ -136,9 +138,11 @@ display:
               su_event_date_time_value_1:
                 plugin_id: default
       access:
-        type: perm
+        type: role
         options:
-          perm: 'administer nodes'
+          role:
+            site_manager: site_manager
+            site_editor: site_editor
       cache:
         type: tag
         options: {  }
@@ -245,7 +249,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   events:
     id: events
@@ -1170,7 +1174,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.caw_localist_id'
         - 'config:field.storage.node.su_event_date_time'
@@ -1191,5 +1195,5 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }

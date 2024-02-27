@@ -1,5 +1,12 @@
 # Cardinal at Work Profile
 
+10.1.2
+--------------------------------------------------------------------------------
+_Release Date: 2024-02-27_
+
+- Allow site editors to view manage events view.
+- Fixes for algolia search results.
+
 10.1.1
 --------------------------------------------------------------------------------
 _Release Date: 2024-02-20_

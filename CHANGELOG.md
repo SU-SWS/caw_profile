@@ -248,6 +248,12 @@ _Release Date: 2022-08-11_
 
 11.2.1
 -------------------------------------------------------------------------------
+- Provide items per page for graphql views
+- Expose event image via graphql
+- Added external image url for events content from Localist
+
+11.2.1
+-------------------------------------------------------------------------------
 - Fixed logger syntax during site install.
 
 11.2.0

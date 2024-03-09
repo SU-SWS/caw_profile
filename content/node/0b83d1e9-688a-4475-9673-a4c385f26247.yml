@@ -214,7 +214,8 @@ default:
           behavior_settings:
             -
               value:
-                list_paragraph: {  }
+                list_paragraph:
+                  hide_heading: true
                 layout_paragraphs:
                   parent_uuid: 2d463708-e40e-441f-8608-c657d3151371
                   region: first

@@ -17,3 +17,6 @@ behavior_plugins:
     enabled: true
   su_card_styles:
     enabled: true
+    heading: h2
+    hide_heading: false
+    link_style: null

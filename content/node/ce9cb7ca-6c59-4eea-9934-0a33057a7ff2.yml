@@ -222,7 +222,7 @@ default:
                   region: first
           revision_translation_affected:
             -
-              value: true
+              value: "Publications"
           su_list_view:
             -
               target_id: stanford_publications

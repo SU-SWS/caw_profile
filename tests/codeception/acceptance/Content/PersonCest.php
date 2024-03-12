@@ -5,7 +5,7 @@ use Faker\Factory;
 /**
  * Test the news functionality.
  *
- * @group person
+ * @group content
  */
 class PersonCest {
 
@@ -165,7 +165,7 @@ class PersonCest {
       'parent' => ['target_id' => $term1->id()],
     ], 'taxonomy_term');
 
-    drupal_flush_all_caches();
+    $I->runDrush('cache:rebuild');
     $I->amOnPage($term3->toUrl()->toString());
     $I->canSeeLink($term1->label());
     $I->canSeeLink($term2->label());
@@ -177,7 +177,6 @@ class PersonCest {
     $I->click('Save');
     $I->amOnPage('/user/logout');
 
-    drupal_flush_all_caches();
     $I->amOnPage('/people');
     $I->canSeeLink($term3->label());
 
@@ -187,7 +186,6 @@ class PersonCest {
     $I->click('Save');
     $I->amOnPage('/user/logout');
 
-    drupal_flush_all_caches();
     $I->amOnPage('/people');
     $I->cantSeeLink($term3->label());
 
@@ -232,7 +230,6 @@ class PersonCest {
       ],
     ]);
 
-    drupal_flush_all_caches();
     $I->amOnPage($great_grandchild->toUrl()->toString());
     $I->canSee($node->label());
     $I->amOnPage($grandchild->toUrl()->toString());

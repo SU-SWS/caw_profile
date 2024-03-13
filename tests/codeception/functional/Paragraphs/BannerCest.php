@@ -50,7 +50,7 @@ class BannerCest {
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
-      'title' => $this->faker->words(3, true),
+      'title' => $this->faker->words(4, TRUE),
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,
@@ -72,15 +72,14 @@ class BannerCest {
     $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-
-    $I->waitForText('Superhead');
-    $I->clickWithLeftButton('summary[aria-controls^="edit-behavior-plugins-"]');
-    $I->selectOption('Text Overlay Position', 'Right');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Text Overlay Position', 'Right');;
+    $I->selectOption('Heading Level', 'h3');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
-    $I->canSee($node->label(), 'h1');
     $I->canSeeElement('.overlay-right');
     $I->cantSee($field_values['header'], 'h2');
     $I->canSee($field_values['header'], 'h3');

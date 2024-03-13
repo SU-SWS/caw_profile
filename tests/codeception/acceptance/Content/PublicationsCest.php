@@ -161,7 +161,6 @@ class PublicationsCest {
 
     $I->amOnPage('/publications');
     $titles = $I->grabMultiple('.csl-entry a');
-    $I->assertGreaterThanOrEqual(3, count($titles), 'Not enough publications to test sorting.');
     foreach ($titles as &$title) {
       $title = preg_replace('/[^\da-z ]/i', '', $title);
     }

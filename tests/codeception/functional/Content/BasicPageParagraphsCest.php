@@ -52,10 +52,9 @@ class BasicPageParagraphsCest {
     $I->fillField('Headline', $card_values['headline']);
     $I->fillField('URL', $card_values['uri']);
     $I->fillField('Link text', $card_values['title']);
-
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
-
+    $I->wait(1);
     $I->click('Save', '#edit-actions');
     $I->canSee($card_values['superhead']);
     $I->canSee($card_values['headline']);
@@ -91,16 +90,15 @@ class BasicPageParagraphsCest {
     $I->canSeeNumberOfElements('.diff-revisions tbody tr', 2);
 
     $I->amOnPage("/node/{$node->id()}/edit");
-
+    $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-
     $I->waitForText('Superhead');
     $I->fillField('Superhead', $this->faker->text(10));
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
-
     $I->click('Save');
+
     $I->amOnPage("/node/{$node->id()}/revisions");
     $I->canSeeNumberOfElements('.diff-revisions tbody tr', 3);
   }

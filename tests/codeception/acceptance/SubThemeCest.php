@@ -65,9 +65,16 @@ abstract class SubThemeCest {
    *   Tester.
    */
   public function _after(AcceptanceTester $I) {
-    $this->runConfigImport($I, TRUE);
-    if (file_exists($this->themePath . '/' . strtolower($this->themeName) . '.info.yml')) {
-      unlink($this->themePath . '/' . strtolower($this->themeName) . '.info.yml');
+    $I->runDrush('config:set system.theme default ' . $this->originalTheme . ' -y');
+    try {
+      $I->runDrush('theme:uninstall ' . strtolower($this->themeName));
+    }
+    catch (\Throwable $e) {
+      // Nothing to do if the theme wasn't enabled to begin.
+    }
+    $info_path = $this->themePath . '/' . strtolower($this->themeName) . '.info.yml';
+    if (file_exists($info_path)) {
+      unlink($info_path);
       rmdir($this->themePath);
     }
   }

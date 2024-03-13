@@ -3,14 +3,14 @@
 use Faker\Factory;
 
 /**
- * Tests on the card paragraph.
- *
- * @group paragraphs
+ * Card paragraph tests.
  */
 class CardCest {
 
   /**
    * Faker service.
+   *
+   * @var \Faker\Generator
    */
   protected $faker;
 
@@ -22,117 +22,107 @@ class CardCest {
   }
 
   /**
-   * Card paragraph FontAwesome field.
+   * The banner paragraph should display its fields.
+   *
+   * @group foobar
    */
-  public function testIconCards(FunctionalTester $I) {
-    $node = $I->createEntity([
+  public function testCardBehaviors(FunctionalTester $I) {
+    $field_values = [
+      'sup_header' => $this->faker->words(3, TRUE),
+      'header' => $this->faker->words(3, TRUE),
+      'body' => $this->faker->words(3, TRUE),
+      'uri' => $this->faker->url,
       'title' => $this->faker->words(3, TRUE),
-      'type' => 'stanford_page',
-    ]);
-    $I->logInWithRole('contributor');
-    $I->amOnPage($node->toUrl('edit-form')->toString());
+    ];
 
-    $I->click('Add section');
-    $I->waitForText('Create new Layout');
-    $I->click('Save', '.ui-dialog-buttonset');
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_card',
+      'su_card_super_header' => $field_values['sup_header'],
+      'su_card_header' => $field_values['header'],
+      'su_card_link' => [
+        'uri' => $field_values['uri'],
+        'title' => $field_values['title'],
+        'options' => [],
+      ],
+      'su_card_body' => $field_values['body'],
+    ], 'paragraph');
 
-    $I->waitForElement('.lpb-btn--add');
-    $I->moveMouseOver('.js-lpb-region', 10, 10);
-    $I->click('Choose component');
-    $I->waitForText('Choose a paragraph');
-    $I->click('Card');
-    $I->waitForText('Create new Card');
-
-    $I->fillField('Icon', 'drupal');
-    $I->fillField('Superhead', 'Some Text');
-    $I->fillField('Headline', 'Headliner');
-
-    $I->click('Save', '.ui-dialog-buttonpane');
-    $I->waitForElementNotVisible('.ui-dialog');
-    $I->click('Save');
-
-    $I->canSee($node->label(), 'h1');
-    $I->canSeeElement('.fontawesome-icon .fa-drupal');
-    $I->canSeeElement('.su-card--icon');
-
-    $I->click('Edit', '.tabs');
-    $I->moveMouseOver('.js-lpb-component[data-type="stanford_card"]', 10, 10);
-    $I->click('Edit', '.js-lpb-component[data-type="stanford_card"] .lpb-controls');
-    $I->waitForText('Edit Card');
-    $I->click('Add media', '.ui-dialog');
-    $I->waitForText('Add or select media');
-    $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
-    $I->click('Upload and Continue');
-    $I->waitForText('The media item has been created but has not yet been saved');
-    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
-
-    $I->waitForElementNotVisible('.media-library-widget-modal');
-    $I->waitForElement('.media-library-item__preview img');
-
-    $I->fillField('Superhead', 'Different Text');
-    $I->click('Save', '.ui-dialog-buttonpane');
-    $I->waitForElementNotVisible('.ui-dialog');
-    $I->click('Save');
-
-    $I->canSee($node->label(), 'h1');
-    $I->canSee('Different Text');
-    $I->cantSeeElement('.fontawesome-icon');
-    $I->cantSeeElement('.su-card--icon');
-    $I->canSeeElement('.su-card img');
-  }
-
-  /**
-   * Test card link behavior.
-   */
-  public function testWholeCardBehavior(FunctionalTester $I) {
     $node = $I->createEntity([
-      'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
+      'title' => $this->faker->words(4, TRUE),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
     ]);
-    $I->logInWithRole('contributor');
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($field_values['header'], 'h2');
+
+    $I->logInWithRole('site_manager');
+
+    // Overlay position and h3 heading.
     $I->amOnPage($node->toUrl('edit-form')->toString());
-
-    $I->click('Add section');
-    $I->waitForText('Create new Layout');
-    $I->click('Save', '.ui-dialog-buttonset');
-
-    $I->waitForElement('.lpb-btn--add');
-    $I->moveMouseOver('.js-lpb-region', 10, 10);
-    $I->click('Choose component');
-    $I->waitForText('Choose a paragraph');
-    $I->click('Card');
-    $I->waitForText('Create new Card');
-
-    $I->click('Add media', '.ui-dialog');
-    $I->waitForText('Add or select media');
-    $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
-    $I->click('Upload and Continue');
-    $I->waitForText('The media item has been created but has not yet been saved');
-    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
-
-    $I->waitForElementNotVisible('.media-library-widget-modal');
-    $I->waitForElement('.media-library-item__preview img');
-
-    $headline = $this->faker->word;
-    $link_url = $this->faker->url;
-    $link_title = $this->faker->words(3, true);
-
-    $I->fillField('Superhead', $this->faker->word);
-    $I->fillField('Headline', $headline);
-    $I->fillField('URL', $link_url);
-    $I->fillField('Link text', $link_title);
-
-    $I->click('.lpb-behavior-plugins summary');
-    $I->selectOption('Link Style', 'Whole Card');
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Heading Level', 'h3');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
+    $I->cantSee($field_values['header'], 'h2');
+    $I->canSee($field_values['header'], 'h3');
 
-    $I->canSee($node->label(), 'h1');
-    $I->canSee($headline, 'h2');
-    $I->canSeeLink($link_title, $link_url);
-    $I->canSeeElement('.su-card.stretch-link a.su-link');
+    // H4 heading.
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Heading Level', 'h4');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save');
+    $I->cantSee($field_values['header'], 'h2');
+    $I->canSee($field_values['header'], 'h4');
+
+    // Splash Text heading.
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Heading Level', 'Splash Text');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save');
+    $I->cantSee($field_values['header'], 'h2');
+    $I->cantSee($field_values['header'], 'h3');
+    $I->cantSee($field_values['header'], 'h4');
+    $I->canSee($field_values['header'], 'div.su-font-splash');
+
+    // Visually hidden heading.
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Heading Level', 'h2');
+    $I->checkOption('Visually Hide Heading');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save');
+    $I->canSee($field_values['header'], 'h2.visually-hidden');
   }
 
 }

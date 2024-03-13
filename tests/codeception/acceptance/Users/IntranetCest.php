@@ -7,7 +7,7 @@
  * @group no-parallel
  * @group intranet
  */
-abstract class IntranetCest {
+class IntranetCest {
 
   /**
    * Save the Intranet state before the tests and reset after the tests.
@@ -121,10 +121,12 @@ abstract class IntranetCest {
     $quote = 'Life is like a box of chocolates. You never know what you’re going to get.';
     $text_area = $I->createEntity([
       'type' => 'stanford_wysiwyg',
-      'su_wysiwyg_text' => [[
-        'value' => "<p>$quote</p>",
-        'format' => 'stanford_html',
-      ]],
+      'su_wysiwyg_text' => [
+        [
+          'value' => "<p>$quote</p>",
+          'format' => 'stanford_html',
+        ],
+      ],
     ], 'paragraph');
     $node = $I->createEntity([
       'title' => 'Forest Gump',

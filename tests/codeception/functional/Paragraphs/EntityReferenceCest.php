@@ -78,7 +78,8 @@ class EntityReferenceCest {
     $I->canSee($this->fieldValues['description']);
     $I->canSeeLink($this->fieldValues['title'], $this->fieldValues['uri']);
 
-    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->amOnPage("/node/{$node->id()}/edit");
+    $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
 

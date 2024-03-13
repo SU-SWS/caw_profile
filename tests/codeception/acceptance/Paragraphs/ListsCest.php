@@ -29,8 +29,105 @@ class ListsCest {
    *
    * @group jsonapi
    */
-  public function _before() {
-    \Drupal::state()->set('caw_profile_allow_all_paragraphs', TRUE);
+  public function testSharedTags(AcceptanceTester $I) {
+    $shared_tag = $I->createEntity([
+      'name' => $this->faker->jobTitle,
+      'vid' => 'su_shared_tags',
+    ], 'taxonomy_term');
+    $basic_page = $I->createEntity([
+      'title' => $this->faker->text(20),
+      'type' => 'stanford_page',
+      'su_shared_tags' => $shared_tag->id(),
+    ]);
+    $news = $I->createEntity([
+      'title' => $this->faker->text(20),
+      'type' => 'stanford_news',
+      'su_shared_tags' => $shared_tag->id(),
+    ]);
+    $event = $I->createEntity([
+      'title' => $this->faker->text(20),
+      'type' => 'stanford_event',
+      'su_shared_tags' => $shared_tag->id(),
+    ]);
+    $person = $I->createEntity([
+      'su_person_first_name' => $this->faker->firstName,
+      'su_person_last_name' => $this->faker->lastName,
+      'type' => 'stanford_person',
+      'su_shared_tags' => $shared_tag->id(),
+    ]);
+    $publication = $I->createEntity([
+      'title' => $this->faker->text(20),
+      'type' => 'stanford_publication',
+      'su_shared_tags' => $shared_tag->id(),
+    ]);
+
+    // List with all content types.
+    $node_list = $this->getNodeWithList($I, [
+      'target_id' => 'stanford_shared_tags',
+      'display_id' => 'card_grid',
+      'items_to_display' => 100,
+      'arguments' => $shared_tag->label(),
+    ]);
+    $I->amOnPage($node_list->toUrl()->toString());
+    $I->canSee($basic_page->label(), 'h3');
+    $I->canSee($news->label(), 'h3');
+    $I->canSee($event->label(), 'h3');
+    $I->canSee($person->label(), 'h3');
+    $I->canSee($publication->label(), 'h3');
+
+    // List with only events and news.
+    $node_list = $this->getNodeWithList($I, [
+      'target_id' => 'stanford_shared_tags',
+      'display_id' => 'card_grid',
+      'items_to_display' => 100,
+      'arguments' => $shared_tag->label() . '/stanford_event+stanford_news',
+    ]);
+    $I->amOnPage($node_list->toUrl()->toString());
+    $I->cantSee($basic_page->label());
+    $I->canSee($news->label(), 'h3');
+    $I->canSee($event->label(), 'h3');
+    $I->cantSee($person->label());
+    $I->cantSee($publication->label());
+
+    // List with only people.
+    $node_list = $this->getNodeWithList($I, [
+      'target_id' => 'stanford_shared_tags',
+      'display_id' => 'card_grid',
+      'items_to_display' => 100,
+      'arguments' => $shared_tag->label() . '/stanford_person',
+    ]);
+    $I->amOnPage($node_list->toUrl()->toString());
+    $I->cantSee($basic_page->label());
+    $I->cantSee($news->label());
+    $I->cantSee($event->label());
+    $I->canSee($person->label(), 'h3');
+    $I->cantSee($publication->label());
+
+    $I->logInWithRole('contributor');
+    $I->amOnPage($basic_page->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('Shared Tags (value 1)', $shared_tag->label());
+    $I->amOnPage($news->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('Shared Tags (value 1)', $shared_tag->label());
+    $I->amOnPage($event->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('Shared Tags (value 1)', $shared_tag->label());
+    $I->amOnPage($person->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('Shared Tags (value 1)', $shared_tag->label());
+    $I->amOnPage($publication->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('Shared Tags (value 1)', $shared_tag->label());
+
+    $I->amOnPage('/jsonapi/views/stanford_shared_tags/card_grid?page[limit]=50&views-argument[]=' . preg_replace('/[^a-z0-9-]/', '-', strtolower($shared_tag->label())));
+    $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
+    $I->assertArrayHasKey('data', $json_data);
+
+    $json_ids = [];
+    foreach ($json_data['data'] as $item) {
+      $json_ids[] = $item['id'];
+    }
+    $I->assertContains($basic_page->uuid(), $json_ids);
+    $I->assertContains($news->uuid(), $json_ids);
+    $I->assertContains($event->uuid(), $json_ids);
+    $I->assertContains($person->uuid(), $json_ids);
+    $I->assertContains($publication->uuid(), $json_ids);
   }
 
   /**
@@ -66,45 +163,6 @@ class ListsCest {
       $json_titles[] = $item['attributes']['title'];
     }
     $I->assertContains($title, $json_titles);
-  }
-
-  /**
-   * Event lists should display with categories.
-   *
-   * @group caw
-   */
-  public function testCawEventCategory(AcceptanceTester $I) {
-    $term = $I->createEntity([
-      'name' => $this->faker->words(3, TRUE),
-      'vid' => 'caw_event_category',
-    ], 'taxonomy_term');
-    $first_event = $I->createEntity([
-      'type' => 'stanford_event',
-      'title' => $this->faker->words(3, TRUE),
-      'su_event_date_time' => [
-        'value' => time() + (60 * 60 * 24),
-        'end_value' => time() + (60 * 60 * 24 * 7),
-      ],
-    ]);
-    $event = $I->createEntity([
-      'type' => 'stanford_event',
-      'title' => $this->faker->words(3, TRUE),
-      'caw_event_category' => $term->id(),
-      'su_event_date_time' => [
-        'value' => time() + (60 * 60 * 24),
-        'end_value' => time() + (60 * 60 * 24 * 7),
-      ],
-    ]);
-    $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
-      'display_id' => 'list_page',
-      'items_to_display' => 100,
-      'arguments' => str_replace(' ', '-', $term->label()),
-    ]);
-    $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
-    $I->cantSee($first_event->label());
-    $I->canSeeNumberOfElements('.su-event-list-item', 1);
   }
 
   /**

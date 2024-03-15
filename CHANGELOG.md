@@ -253,6 +253,10 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.3.1
+-------------------------------------------------------------------------------
+- Fix images and oembed videos to be lazy loading
+
 11.3.0
 -------------------------------------------------------------------------------
 - Add taxonomy terms to algolia search indexing

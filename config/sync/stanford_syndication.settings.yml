@@ -1,4 +1,9 @@
 _core:
   default_config_hash: h_GoHMT1wZOnfyDpWHUvRSQ4EDm3OqPq6l3khDBGkVE
 enabled: true
-syndicators: {  }
+syndicators:
+  stanford_enterprise:
+    id: stanford_enterprise
+    node_types:
+      - stanford_news
+    webhook: 'https://in.connect.squiz.cloud/hook/64b918de78e4cf0012eca0ea'

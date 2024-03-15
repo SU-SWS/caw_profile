@@ -112,6 +112,7 @@ hidden:
   su_careers_honored: true
   su_careers_image: true
   su_careers_years: true
+  syndication: true
   title: true
   uid: true
   unpublish_on: true

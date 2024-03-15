@@ -74,6 +74,8 @@ content:
     weight: 2
     region: card_body
 hidden:
+  caw_event_series_competencies: true
+  caw_event_series_format: true
   field_menulink: true
   layout_builder__layout: true
   links: true

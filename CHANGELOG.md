@@ -1,5 +1,17 @@
 # Cardinal at Work Profile
 
+10.2.0
+--------------------------------------------------------------------------------
+_Release Date: 2024-03-15_
+
+- Add taxonomy terms to algolia search indexing
+- D8CORE-7333 Change paragraph behaviors for teaser and lists
+- D8CORE-7307 Remove anonymous access to /patterns or /admin/patterns page
+- D8CORE-7300 Add Algolia checkbox to allow indexing separate from search results
+- D8CORE-7212 Use h3 header for cards in teasers when appropriate
+- D8CORE-7207 Add Page Title Banner Paragraph
+- D8CORE-7211 Header behaviors for card and banners
+
 10.1.2
 --------------------------------------------------------------------------------
 _Release Date: 2024-02-27_

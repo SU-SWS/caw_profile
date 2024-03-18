@@ -1,5 +1,12 @@
 # Cardinal at Work Profile
 
+10.2.1
+--------------------------------------------------------------------------------
+_Release Date: 2024-03-18_
+ 
+- Fixed Headings on past events
+- Updated stanford syndication config.
+
 10.2.0
 --------------------------------------------------------------------------------
 _Release Date: 2024-03-15_

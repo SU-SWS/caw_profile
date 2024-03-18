@@ -1,6 +1,7 @@
 _core:
   default_config_hash: h_GoHMT1wZOnfyDpWHUvRSQ4EDm3OqPq6l3khDBGkVE
 enabled: true
+debug: false
 syndicators:
   stanford_enterprise:
     id: stanford_enterprise

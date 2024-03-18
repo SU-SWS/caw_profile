@@ -20,9 +20,9 @@ features:
   - favicon
   - logo
 
-components:
-  namespaces:
-    caw-theme: lib/components
+#components:
+#  namespaces:
+#    caw-theme: lib/components
 
 libraries:
   - caw_theme/base

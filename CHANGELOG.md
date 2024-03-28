@@ -272,6 +272,24 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.3.6
+-------------------------------------------------------------------------------
+- D8CORE-000 Update Past Event List
+
+11.3.5
+-------------------------------------------------------------------------------
+- Disabled link trimming on content type displays and view settings.
+
+11.3.4
+-------------------------------------------------------------------------------
+- Index algolia items only during cron
+- Added event image to algolia index data
+- D8CORE-7295 D8CORE-7301 Enable rabbit hole for publications content type
+
+11.3.3
+-------------------------------------------------------------------------------
+- D8CORE-7341 Add h2 headings to courses quarter term pages
+
 11.3.2
 -------------------------------------------------------------------------------
 - D8CORE-7341 Add h2 headings to past events and courses term pages

@@ -5,7 +5,7 @@
  * caw_profile.profile
  */
 
-use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\config_pages\ConfigPagesInterface;
 use Drupal\Core\Installer\InstallerKernel;
 
 /**

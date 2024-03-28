@@ -1,5 +1,16 @@
 # Cardinal at Work Profile
 
+10.2.2
+--------------------------------------------------------------------------------
+_Release Date: 2024-03-28_
+
+- D8CORE-000 Update Past Event List (#783)
+- Disable link trimming on any link/url field display in views or display modes
+- Index algolia items only during cron
+- Added event image to algolia index data
+- D8CORE-7295 D8CORE-7301 Enable rabbit hole for publications content type
+- D8CORE-7341 Fixed course term page headings
+
 10.2.1
 --------------------------------------------------------------------------------
 _Release Date: 2024-03-18_

@@ -25,27 +25,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Current user account object.
-   *
-   * @var \Drupal\Core\Session\AccountInterface
-   */
-  protected $currentUser;
-
-  /**
-   * Entity Type Manager service.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * Route match service.
-   *
-   * @var \Drupal\Core\Routing\RouteMatchInterface
-   */
-  protected $routeMatch;
-
-  /**
    * {@inheritDoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
@@ -60,13 +39,23 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
   }
 
   /**
-   * {@inheritDoc}
+   * Block constructor.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Session\AccountInterface $currentUser
+   *   Current active user.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity type manager service
+   * @param \Drupal\Core\Routing\RouteMatchInterface $routeMatch
+   *   Route match service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, AccountInterface $current_user, EntityTypeManagerInterface $entity_type_manager, RouteMatchInterface $route_match) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected AccountInterface $currentUser, protected EntityTypeManagerInterface $entityTypeManager,protected  RouteMatchInterface $routeMatch) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->currentUser = $current_user;
-    $this->entityTypeManager = $entity_type_manager;
-    $this->routeMatch = $route_match;
   }
 
   /**
@@ -77,7 +66,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $node = $this->routeMatch->getParameter('node');
     $hyvor_key = Settings::get('hyvor_talk_private_key');
 
-    if (!($node instanceof NodeInterface) || !$hyvor_key) {
+    if (!($node instanceof NodeInterface && $hyvor_key)) {
       return [];
     }
 
@@ -87,8 +76,6 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $encodedUserData = $userData ? base64_encode(json_encode($userData)) : "";
     $hash = $userData ? hash_hmac('sha256', $encodedUserData, $hyvor_key) : "";
 
-    $current_url = Url::fromRoute($this->routeMatch->getRouteName(), $this->routeMatch->getRawParameters()
-      ->all(), ['absolute' => TRUE])->toString();
     $build = [
       'div' => [
         '#type' => 'html_tag',
@@ -97,7 +84,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
         '#attributes' => [
           'website-id' => Settings::get('hyvor_talk_id'),
           'page-id' => $node->id(),
-          'login-url' => self::getLoginUrl($current_url),
+          'login-url' => self::getLoginUrl($node->toUrl()->toString()),
           'sso-user' => $encodedUserData,
           'sso-hash' => $hash,
         ],
@@ -152,10 +139,10 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
       'query' => ['destination' => $current_url],
     ]);
 
-    if (\Drupal::moduleHandler()->moduleExists('simplesamlphp_auth')) {
-      $url = Url::fromRoute('simplesamlphp_auth.saml_login', [], [
+    if (\Drupal::moduleHandler()->moduleExists('samlauth')) {
+      $url = Url::fromRoute('samlauth.saml_controller_login', [], [
         'absolute' => TRUE,
-        'query' => ['ReturnTo' => $current_url],
+        'query' => ['destination' => $current_url],
       ]);
     }
 

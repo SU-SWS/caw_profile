@@ -11,6 +11,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\UrlGenerator;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\user\UserInterface;
@@ -54,7 +55,10 @@ class HyvorBlockTest extends UnitTestCase {
 
     $block = HyvorBlock::create($container, [], '', ['provider' => 'caw_profile_helper']);
     $this->assertEmpty($block->build());
+    $url = $this->createMock(Url::class);
+    $url->method('toString')->willReturn('foobar');
     $node = $this->createMock(NodeInterface::class);
+    $node->method('toUrl')->willReturn($url);
     $route_match->method('getParameter')->willReturn($node);
 
     \Drupal::setContainer($container);

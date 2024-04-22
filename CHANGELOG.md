@@ -289,6 +289,20 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.3.8
+-------------------------------------------------------------------------------
+
+- Updated stanford_samlauth.settings timeout.
+
+11.3.7
+-------------------------------------------------------------------------------
+- Improve decoupled menu by using js data on the page instead of json api
+- D8CORE-7362 Add necessary permission for site embedder role (#786)
+- Fixed publication url rabbit hole
+- D8CORE-6981: Fix lockup on very small screen size (#785)
+- Added noscript on algolia search results page
+- D8CORE-7360 Adjust Person  node detail page heading structure for "Links" field
+
 11.3.6
 -------------------------------------------------------------------------------
 - D8CORE-000 Update Past Event List

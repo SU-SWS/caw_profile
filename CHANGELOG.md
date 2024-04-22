@@ -1,5 +1,21 @@
 # Cardinal at Work Profile
 
+10.2.4
+--------------------------------------------------------------------------------
+_Release Date: 2024-04-22_
+
+- Updated scheduler config
+- minor improvement to performance on decouple menu
+- Improve decoupled menu by using js data on the page instead of json api
+- Removed acquia memcache settings composer dependency. (#788)
+- Enabled image styles and blocks to graphql endpoint
+- D8CORE-7362 Add necessary permission for site embedder role (#786)
+- Fixed publication url rabbit hole
+- D8CORE-6981: Fix lockup on very small screen size (#785)
+- Added noscript on algolia search results page
+- D8CORE-7360 Adjust Person  node detail page heading structure for "Links" field
+- uninstall page cache query ignore
+
 10.2.3
 --------------------------------------------------------------------------------
 _Release Date: 2024-04-02_

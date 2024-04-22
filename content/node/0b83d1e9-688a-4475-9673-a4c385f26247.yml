@@ -31,7 +31,7 @@ default:
       value: true
   path:
     -
-      alias: /engage/news
+      alias: /community/news
       langcode: en
       pathauto: 0
   rh_action:

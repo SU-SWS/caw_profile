@@ -26,6 +26,6 @@ default:
       value: true
   path:
     -
-      alias: /engage/events/conference-symposium
+      alias: /community/events/conference-symposium
       langcode: en
       pathauto: 1

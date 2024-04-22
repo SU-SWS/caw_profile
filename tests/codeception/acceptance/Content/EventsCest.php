@@ -46,7 +46,7 @@ class EventsCest {
     }
 
     $I->logInWithRole('site_manager');
-    $I->amOnPage('/engage/events');
+    $I->amOnPage('/community/events');
     $I->canSeeResponseCodeIs(200);
     $I->canSee('No events at this time');
 
@@ -66,7 +66,7 @@ class EventsCest {
     $I->click('Save');
     $I->canSee($event->label(), 'h1');
 
-    $I->amOnPage('/engage/events');
+    $I->amOnPage('/community/events');
     $I->canSee($event->label());
     $I->cantSee('No events at this time');
 
@@ -117,7 +117,7 @@ class EventsCest {
     if (is_string($values)) {
       $values = explode("\n", $values);
     }
-    $I->assertContains("/engage/events*", $values);
+    $I->assertContains("/community/events*", $values);
   }
 
   /**

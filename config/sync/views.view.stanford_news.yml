@@ -261,7 +261,7 @@ display:
             alter_text: false
             text: ''
             make_link: false
-            path: '/engage/news/{{ su_news_topics }}'
+            path: '/community/news/{{ su_news_topics }}'
             absolute: false
             external: false
             replace_spaces: true
@@ -1363,7 +1363,7 @@ display:
             alter_text: false
             text: ''
             make_link: false
-            path: '/engage/news/{{ su_news_topics }}'
+            path: '/community/news/{{ su_news_topics }}'
             absolute: false
             external: false
             replace_spaces: true
@@ -1611,7 +1611,7 @@ display:
       use_more_always: false
       use_more_text: 'See All News'
       link_display: custom_url
-      link_url: /engage/news
+      link_url: /community/news
       block_hide_empty: 1
     cache_metadata:
       max-age: -1
@@ -1885,7 +1885,7 @@ display:
       use_more_always: false
       use_more_text: 'See All News'
       link_display: custom_url
-      link_url: /engage/news
+      link_url: /community/news
       display_extenders: {  }
       block_description: ''
       block_category: 'News Lists (Views)'

@@ -35,7 +35,7 @@ default:
       value: true
   path:
     -
-      alias: /engage/news/sample-stanford-researchers-find-misfiring-jittery-neurons
+      alias: /community/news/sample-stanford-researchers-find-misfiring-jittery-neurons
       langcode: en
       pathauto: 1
   rh_action:

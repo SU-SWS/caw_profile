@@ -28,7 +28,7 @@ default:
       value: false
   path:
     -
-      alias: /engage/events
+      alias: /community/events
       langcode: en
       pathauto: 0
   rh_action:

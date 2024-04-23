@@ -26,6 +26,6 @@ default:
       value: true
   path:
     -
-      alias: /engage/events/seminar
+      alias: /community/events/seminar
       langcode: en
       pathauto: 1

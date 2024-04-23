@@ -7,7 +7,7 @@ dependencies:
 id: event_nodes
 label: 'Event Nodes'
 type: 'canonical_entities:node'
-pattern: 'engage/events/[node:su_event_type:entity:name]/[node:title]'
+pattern: 'community/events/[node:su_event_type:entity:name]/[node:title]'
 selection_criteria:
   5b543c59-0804-4b8a-b4c4-fe911792ef69:
     id: 'entity_bundle:node'

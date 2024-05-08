@@ -14,7 +14,6 @@ const config = {
   wdsPort: 3001,
 };
 
-
 const componentStyles = glob.sync('./lib/components/**/*.scss').reduce((acc, path) => {
   const entry = path.replace('.scss', '').replace('./lib/', '');
   acc[entry] = path
@@ -29,7 +28,6 @@ const styleSheets = glob.sync('./lib/scss/**/*.scss').reduce((acc, file) => {
   acc[entry] = file
   return acc
 }, {});
-
 
 var webpackConfig = {
   entry: {...componentStyles, ...styleSheets },

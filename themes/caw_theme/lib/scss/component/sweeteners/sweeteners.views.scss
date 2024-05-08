@@ -200,6 +200,12 @@
     }
   }
 
+  &.teaser-list {
+    .flex-container {
+      gap: 20px;
+    }
+  }
+
   a {
     @include modular-typography(2);
     color: $su-color-digital-red;

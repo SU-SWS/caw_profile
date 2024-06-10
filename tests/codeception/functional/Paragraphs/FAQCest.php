@@ -67,6 +67,7 @@ class FAQCest {
     $I->canSee('FAQ Headliner', 'h2');
     $I->canSee('the knock-knock joke', 'details');
     $I->canSee('Expand All', 'button');
+    $I->canSeeNumberOfElements('.su-accordion__expand-all', 1);
     $I->cantSeeElement('details[open]');
 
     $I->canSeeNumberOfElements('.expand-collapse-button', 1);

@@ -20,7 +20,9 @@ dependencies:
     - node.type.caw_careers
   module:
     - ds
+    - empty_fields
     - field_formatter_class
+    - field_label
     - layout_builder
     - layout_builder_restrictions
     - layout_library
@@ -69,7 +71,8 @@ third_party_settings:
         settings:
           link: true
           'link class': ''
-          wrapper: h2
+          link_target: ''
+          wrapper: h3
           class: ''
 id: node.caw_careers.stanford_card
 targetEntityType: node
@@ -87,10 +90,19 @@ content:
     weight: 3
     region: job_title
   su_careers_honored:
-    type: number_unformatted
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: h4
     weight: 5
     region: honored
   su_careers_image:
@@ -100,9 +112,15 @@ content:
       view_mode: default
       link: false
       image_style: responsive_1_1
+      remove_alt: '1'
     third_party_settings:
+      empty_fields:
+        handler: ''
       field_formatter_class:
         class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 0
     region: image
   su_careers_job:
@@ -115,12 +133,17 @@ content:
     region: job_title
   su_careers_years:
     type: entity_reference_label
-    label: inline
+    label: above
     settings:
       link: false
     third_party_settings:
+      empty_fields:
+        handler: ''
       field_formatter_class:
         class: ''
+      field_label:
+        label_value: ''
+        label_tag: h4
     weight: 4
     region: years
 hidden:

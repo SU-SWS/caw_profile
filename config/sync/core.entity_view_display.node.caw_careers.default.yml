@@ -19,8 +19,10 @@ dependencies:
     - node.type.caw_careers
   module:
     - ds
+    - empty_fields
     - entity_reference_revisions
     - field_formatter_class
+    - field_label
     - stanford_media
     - user
 third_party_settings:
@@ -56,16 +58,6 @@ third_party_settings:
       related:
         - 'dynamic_block_field:node-caw_other_careers'
     fields:
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: false
-          'link class': ''
-          wrapper: h1
-          class: ''
       'dynamic_block_field:node-caw_other_careers':
         plugin_id: 'dynamic_block_field:node-caw_other_careers'
         weight: 12
@@ -76,6 +68,16 @@ third_party_settings:
         weight: 12
         label: hidden
         formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
 id: node.caw_careers.default
 targetEntityType: node
 bundle: caw_careers
@@ -115,10 +117,19 @@ content:
     weight: 7
     region: body
   su_careers_honored:
-    type: number_unformatted
+    type: number_integer
     label: above
-    settings: {  }
-    third_party_settings: {  }
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: h2
     weight: 5
     region: honored
   su_careers_image:
@@ -128,9 +139,15 @@ content:
       view_mode: default
       link: false
       image_style: responsive_1_1
+      remove_alt: '1'
     third_party_settings:
+      empty_fields:
+        handler: ''
       field_formatter_class:
         class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 0
     region: image
   su_careers_job:
@@ -168,8 +185,13 @@ content:
     settings:
       link: false
     third_party_settings:
+      empty_fields:
+        handler: ''
       field_formatter_class:
         class: ''
+      field_label:
+        label_value: ''
+        label_tag: h2
     weight: 4
     region: years
 hidden:

@@ -28,6 +28,10 @@
 // // Styles for the other career celebrations on node bottom
 div {
   .dynamic-block-fieldnode-caw-other-careers {
+    h2 {
+      text-align: center;
+    }
+
     > div {
       &:nth-child(1) {
         @include type-b;

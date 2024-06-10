@@ -33,3 +33,5 @@ ckeditor_stylesheets:
 libraries-override:
   # Don't load the react library from CDN, we include it in the component.
   pdb_react/react: false
+  chosen/drupal.chosen: false
+  chosen/drupal.chosen.all: false

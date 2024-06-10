@@ -176,13 +176,17 @@
 
     form {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       column-gap: 45px;
+      width: 100%;
+      align-items: center;
 
-      @include grid-media('md') {
-        > div {
-          width: 40%;
-        }
+      > * {
+        width: 100%;
+      }
+
+      @include grid-media-min("lg"){
+        flex-direction: row;
       }
 
       label {
@@ -207,6 +211,9 @@
 
       .form-actions {
         margin: auto 0 5px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
       }
     }
 

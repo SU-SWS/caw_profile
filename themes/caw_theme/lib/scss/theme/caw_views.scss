@@ -4,7 +4,17 @@
 @import 'decanter/core/src/scss/decanter-no-markup';
 
 .view {
+.chosen-container {
+  .chosen-results {
+    display: none;
+  }
 
+  &.chosen-container-active {
+    .chosen-results {
+      display: block;
+    }
+  }
+}
   header {
 
     h2 {

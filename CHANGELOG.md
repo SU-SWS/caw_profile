@@ -1,5 +1,20 @@
 # Cardinal at Work Profile
 
+10.2.7
+--------------------------------------------------------------------------------
+_Release Date: 2024-06-10_
+
+- CAWUHR-184 Better expand all button tests
+- CAWUHR-177 Improve responsive styling on benefit comparison tool
+- CAWUHR-177 Replace chosen with custom select list
+- CAWUHR-128 CAWUHR-129 CAWUHR-130 Improve heading structure and semantic html on career celebrations
+- CAWUHR-184 CAWUHR-181 Fix accordion button and chosen empty container
+- Enabled jscookie module
+- D8CORE-7413 Enabled search api processor to add spaces between html tags (#792)
+- D8CORE-7414: Different sorting option for Basic Page lists (#791)
+- Removed menu block patch
+- Remove banner behavior on page title banner
+
 10.2.6
 --------------------------------------------------------------------------------
 _Release Date: 2024-05-08_

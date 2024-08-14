@@ -1,0 +1,5 @@
+adding:
+  third_party_settings:
+    allowed_formats:
+      stanford_limited_html: stanford_limited_html
+removing: {  }

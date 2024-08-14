@@ -1,0 +1,9 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_event_series.caw_event_series_competencies
+      - field.field.node.stanford_event_series.caw_event_series_format
+  hidden:
+    caw_event_series_competencies: true
+    caw_event_series_format: true
+removing: {  }

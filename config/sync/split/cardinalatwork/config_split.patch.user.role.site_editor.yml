@@ -1,0 +1,106 @@
+adding:
+  dependencies:
+    config:
+      - filter.format.stanford_limited_html
+      - node.type.caw_benefits
+      - node.type.caw_careers
+      - node.type.caw_sweetener
+      - taxonomy.vocabulary.careers_departments
+      - taxonomy.vocabulary.careers_years
+      - taxonomy.vocabulary.caw_event_category
+      - taxonomy.vocabulary.caw_event_series_competencies
+      - taxonomy.vocabulary.caw_event_series_format
+      - taxonomy.vocabulary.caw_page_category
+      - taxonomy.vocabulary.caw_page_role
+      - taxonomy.vocabulary.caw_page_type
+      - taxonomy.vocabulary.caw_sweet_available
+      - taxonomy.vocabulary.caw_sweet_type
+      - taxonomy.vocabulary.media
+    module:
+      - node_edit_link
+  permissions:
+    config_split_sequence_ahdj2ftlcd33s6tn: 'create caw_benefits content'
+    config_split_sequence_ri1e9n0dig236of9: 'create caw_careers content'
+    config_split_sequence_58kqr0qeuk4b2u5k: 'create caw_sweetener content'
+    config_split_sequence_2877f0lm32b2d0a4: 'create terms in careers_departments'
+    config_split_sequence_auknmbb2sf6rf41d: 'create terms in careers_years'
+    config_split_sequence_iejv13n5s896plbt: 'create terms in caw_event_category'
+    config_split_sequence_3gej97v3438mbjkb: 'create terms in caw_event_series_competencies'
+    config_split_sequence_lesobiij61ok19a1: 'create terms in caw_event_series_format'
+    config_split_sequence_57974adgl5mvt36: 'create terms in caw_page_category'
+    config_split_sequence_oldrf7hcs0g6ak8p: 'create terms in caw_page_role'
+    config_split_sequence_ot632tegg5sb5in: 'create terms in caw_page_type'
+    config_split_sequence_837l5j71d4kpqsa0: 'create terms in caw_sweet_available'
+    config_split_sequence_carl6apun5mp9n0k: 'create terms in caw_sweet_type'
+    config_split_sequence_2a46flj7ter9efj: 'create terms in media'
+    config_split_sequence_cot2l22141mcr4tg: 'delete any caw_benefits content'
+    config_split_sequence_mvj8jbqk7jha9l9g: 'delete any caw_careers content'
+    config_split_sequence_rdum5o65h9uo33qq: 'delete any caw_sweetener content'
+    config_split_sequence_srm2u6vrlrb8abdh: 'delete any embeddable media'
+    config_split_sequence_ph5vd4j3a0clu6fd: 'delete any google_form media'
+    config_split_sequence_jk4m1d5nk8urpesf: 'delete caw_benefits revisions'
+    config_split_sequence_dpeupgrcce43ab85: 'delete caw_careers revisions'
+    config_split_sequence_sk1bkoe77kdlct5n: 'delete caw_sweetener revisions'
+    config_split_sequence_1_q3bd7i2nnhlgkop0: 'delete citation entities'
+    config_split_sequence_1_18aebr9dnqfjilpr: 'delete media'
+    config_split_sequence_beq32gs2g466q2gs: 'delete own caw_benefits content'
+    config_split_sequence_rvn55mr03740f7n7: 'delete own caw_careers content'
+    config_split_sequence_leek9f37urdqfrr6: 'delete own caw_sweetener content'
+    config_split_sequence_jn2ce0ptr0cudnk7: 'delete terms in careers_departments'
+    config_split_sequence_9c7c59tkljujfe28: 'delete terms in careers_years'
+    config_split_sequence_4tp3t7kieumhugk4: 'delete terms in caw_event_category'
+    config_split_sequence_ajvtgnp6g5b6bg5g: 'delete terms in caw_event_series_competencies'
+    config_split_sequence_v8pg93ilgatuvfkr: 'delete terms in caw_event_series_format'
+    config_split_sequence_pofpkug06r0gmtrh: 'delete terms in caw_page_category'
+    config_split_sequence_p3grpugg27r2p80p: 'delete terms in caw_page_role'
+    config_split_sequence_en9aci7v3dosrtn: 'delete terms in caw_page_type'
+    config_split_sequence_vporj63i236nla4: 'delete terms in caw_sweet_available'
+    config_split_sequence_5k41ssv16soo8rsr: 'delete terms in caw_sweet_type'
+    config_split_sequence_ampu125218aqeubp: 'delete terms in media'
+    config_split_sequence_329qm767mppn7qmm: 'edit any caw_benefits content'
+    config_split_sequence_ces9o0vs34evkp55: 'edit any caw_careers content'
+    config_split_sequence_756ch7h29sdeujlh: 'edit any caw_sweetener content'
+    config_split_sequence_4f78vs4bohlod9hv: 'edit own caw_benefits content'
+    config_split_sequence_ueh1t2o3jfpk15l1: 'edit own caw_careers content'
+    config_split_sequence_q01fvjknvc1js1br: 'edit own caw_sweetener content'
+    config_split_sequence_homghagqqitfe494: 'edit terms in careers_departments'
+    config_split_sequence_87k6t9d3avsbat5k: 'edit terms in careers_years'
+    config_split_sequence_eicpuaicgmb48j7d: 'edit terms in caw_event_category'
+    config_split_sequence_41pfg8mlathkukja: 'edit terms in caw_event_series_competencies'
+    config_split_sequence_gprmjo8jhf0tf35v: 'edit terms in caw_event_series_format'
+    config_split_sequence_qvnpuikukvbkalo4: 'edit terms in caw_page_category'
+    config_split_sequence_84ma9p8ttlh5rala: 'edit terms in caw_page_role'
+    config_split_sequence_mbas46s9iek6gc7d: 'edit terms in caw_page_type'
+    config_split_sequence_altuv0d36qudshjn: 'edit terms in caw_sweet_available'
+    config_split_sequence_hh8hu5ilqb71p314: 'edit terms in caw_sweet_type'
+    config_split_sequence_m56duj71hvcqtbi3: 'edit terms in media'
+    config_split_sequence_5fb644g1glec3tpk: 'revert caw_benefits revisions'
+    config_split_sequence_vtdub5lla4cae92f: 'revert caw_careers revisions'
+    config_split_sequence_u08os47h4fv1au7m: 'revert caw_sweetener revisions'
+    config_split_sequence_jne77754nmov8slq: 'send one time edit link'
+    config_split_sequence_419sj9v1uog4l3lm: 'use text format stanford_limited_html'
+    config_split_sequence_i3nadsa3kc5a17et: 'view any unpublished caw_benefits content'
+    config_split_sequence_fms8dpflr01v8vu: 'view any unpublished caw_careers content'
+    config_split_sequence_rd9nb724djopqcvf: 'view any unpublished caw_sweetener content'
+    config_split_sequence_1fgqtij5l5de33l2: 'view caw_benefits revisions'
+    config_split_sequence_fgrq3ftf7r3p6rp5: 'view caw_careers revisions'
+    config_split_sequence_834vegbg4ddm3sus: 'view caw_sweetener revisions'
+removing:
+  dependencies:
+    config:
+      - taxonomy.vocabulary.media_tags
+    module:
+      - pathauto
+      - views_bulk_edit
+  permissions:
+    config_split_sequence_aqo2i4j9mugeotpu: 'create terms in media_tags'
+    config_split_sequence_n6bd84qqqml5bv5j: 'delete terms in media_tags'
+    config_split_sequence_8kvrqg953jtqu35u: 'edit any file media'
+    config_split_sequence_rhq618ul4l009p2l: 'edit any google_form media'
+    config_split_sequence_uolifb3t2fd8kqdl: 'edit any image media'
+    config_split_sequence_nejmcrf9aatqk5g: 'edit field_media_embeddable_code'
+    config_split_sequence_dgqd3jetrpkbni11: 'edit terms in media_tags'
+    config_split_sequence_23ofe0mkc6hqlunj: 'edit terms in su_shared_tags'
+    config_split_sequence_vu2tdkqdonpq4ve6: 'notify of path changes'
+    config_split_sequence_i1k6k0c9jadaglah: 'update any media'
+    config_split_sequence_9qllrk2q70oled7m: 'use views bulk edit'

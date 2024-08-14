@@ -1,0 +1,24 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_icon
+    module:
+      - field_formatter_class
+      - fontawesome
+  third_party_settings:
+    ds:
+      regions:
+        card_image:
+          - su_card_icon
+  content:
+    su_card_icon:
+      type: fontawesome_icon_formatter
+      label: hidden
+      settings:
+        layers: false
+      third_party_settings:
+        field_formatter_class:
+          class: ''
+      weight: 5
+      region: card_image
+removing: {  }

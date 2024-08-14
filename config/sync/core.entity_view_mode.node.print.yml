@@ -1,4 +1,4 @@
-uuid: 39f324c9-1aac-4097-92a7-574ba279b104
+uuid: e8928169-abb9-4850-b34c-53e3fac9863e
 langcode: en
 status: false
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     module:
       - book
 _core:
-  default_config_hash: ERjobPGdPFAM9p5cmQIcJzk-0cY-1mE1OV_pKmMlJaE
+  default_config_hash: es9asR8rmvOZwRXJRTBJ1TlLL1hzbVn4ZGuqR1pvU0E
 id: node.print
 label: Print
 description: ''

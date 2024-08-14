@@ -1,0 +1,80 @@
+uuid: 96c3b78c-d3e1-4e91-92f5-d5a6a29b1c59
+langcode: en
+status: true
+dependencies: {  }
+id: cardinalatwork
+label: 'Cardinal at work'
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: collection
+folder: ''
+module:
+  better_exposed_filters: 0
+  custom_markup_block: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
+  node_edit_link: 0
+  stanford_syndication: 0
+  views_autocomplete_filters: 0
+  views_conditional: 0
+  views_flipped_table: 0
+  caw_profile_helper: 10
+theme: {  }
+complete_list:
+  - 'config_pages.type.caw_*'
+  - 'core.base_field_override.node.caw_*'
+  - 'core.entity_form_display.caw_*'
+  - 'core.entity_form_display.config_pages.caw_*'
+  - 'core.entity_form_display.node.caw_*'
+  - 'core.entity_form_display.paragraph.caw_*'
+  - 'core.entity_form_display.taxonomy_term.caw_*'
+  - 'core.entity_view_display.caw_*'
+  - 'core.entity_view_display.config_pages.caw_*'
+  - 'core.entity_view_display.node.caw_*'
+  - 'core.entity_view_display.paragraph.caw_*'
+  - 'core.entity_view_display.taxonomy_term.caw_*'
+  - 'field.field.caw_.*'
+  - 'field.field.config_pages.caw_*'
+  - 'field.field.media.caw_*'
+  - 'field.field.node.caw_*'
+  - 'field.field.paragraph.caw_*'
+  - 'field.field.taxonomy_term.caw_*'
+  - 'field.storage.caw_*'
+  - 'field.storage.config_pages.caw_*'
+  - 'field.storage.media.caw_*'
+  - 'field.storage.node.caw_*'
+  - 'field.storage.paragraph.caw_*'
+  - 'field.storage.taxonomy_term.caw_*'
+  - 'media.type.caw_*'
+  - 'migrate_plus.migration.caw_*'
+  - 'migrate_plus.migration_group.caw_*'
+  - 'node.type.caw_*'
+  - 'paragraphs.paragraphs_type.caw_*'
+  - 'pathauto.pattern.caw_*'
+  - 'taxonomy.vocabulary.caw_*'
+  - 'user.role.caw_*'
+  - 'views.view.caw_*'
+  - auto_entitylabel.settings.node.caw_careers
+  - core.entity_form_mode.node.edit_link
+  - core.entity_view_mode.paragraph.caw_form_preview
+  - ds.field.caw_other_careers
+  - ds.field.hyvor_comments
+  - paragraphs.paragraphs_type.layout
+  - taxonomy.vocabulary.careers_departments
+  - taxonomy.vocabulary.careers_years
+  - taxonomy.vocabulary.media
+partial_list:
+  - '*stanford_*'
+  - '*su_*'
+  - 'core.entity_form_display.media.*'
+  - 'core.entity_view_display.media.*'
+  - 'field.field.media.file.field_*'
+  - 'pathauto.pattern.*'
+  - 'search_api.index.*'
+  - 'user.role.*'
+  - book.settings
+  - chosen.settings
+  - graphql_compose.settings

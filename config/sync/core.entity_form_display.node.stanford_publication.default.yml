@@ -152,11 +152,9 @@ content:
 hidden:
   created: true
   layout_builder__layout: true
-  node_edit_link: true
   path: true
   promote: true
   sticky: true
-  syndication: true
   uid: true
   unpublish_on: true
   url_redirects: true

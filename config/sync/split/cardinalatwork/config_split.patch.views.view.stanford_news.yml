@@ -1,0 +1,40 @@
+adding:
+  display:
+    default:
+      display_options:
+        fields:
+          su_news_topics:
+            alter:
+              path: '/community/news/{{ su_news_topics }}'
+    topics_list:
+      display_options:
+        fields:
+          su_news_topics:
+            alter:
+              path: '/community/news/{{ su_news_topics }}'
+    vertical_cards:
+      display_options:
+        link_url: /community/news
+    vertical_teaser_term:
+      display_options:
+        link_url: /community/news
+removing:
+  display:
+    default:
+      display_options:
+        fields:
+          su_news_topics:
+            alter:
+              path: '/news/{{ su_news_topics }}'
+    topics_list:
+      display_options:
+        fields:
+          su_news_topics:
+            alter:
+              path: '/news/{{ su_news_topics }}'
+    vertical_cards:
+      display_options:
+        link_url: /news
+    vertical_teaser_term:
+      display_options:
+        link_url: /news

@@ -1,0 +1,10 @@
+adding:
+  field_settings:
+    rendered_item:
+      configuration:
+        view_mode:
+          'entity:node':
+            caw_benefits: search_indexing
+            caw_careers: search_indexing
+            caw_sweetener: search_indexing
+removing: {  }

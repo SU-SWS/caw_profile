@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.stanford_event.body
-    - field.field.node.stanford_event.caw_event_category
-    - field.field.node.stanford_event.caw_localist_id
     - field.field.node.stanford_event.layout_builder__layout
     - field.field.node.stanford_event.stanford_intranet__access
     - field.field.node.stanford_event.su_event_alt_loc
@@ -55,7 +53,7 @@ third_party_settings:
       label: 'Editorial Content'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -69,7 +67,7 @@ third_party_settings:
       label: 'Body Content'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -91,7 +89,7 @@ third_party_settings:
       label: 'Event Details'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -104,7 +102,7 @@ third_party_settings:
       label: 'Schedule Details'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -145,66 +143,6 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  caw_event_category:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  caw_localist_id:
-    type: readonly_field_widget
-    weight: 53
-    region: content
-    settings:
-      label: above
-      formatter_type: string
-      formatter_settings:
-        link_ally_class:
-          class: ''
-          link_text: ''
-          screenreader_text: ''
-          tag: ''
-        wrapper_class:
-          class: ''
-          tag: div
-          link: false
-          link_class: ''
-          summary: false
-          trim: 200
-        string_list_class:
-          class: ''
-          list_type: ul
-        smart_trim:
-          trim_length: 600
-          trim_type: chars
-          trim_suffix: ''
-          wrap_output: false
-          wrap_class: trimmed
-          more:
-            display_link: false
-            target_blank: false
-            link_trim_only: false
-            class: more-link
-            text: More
-            aria_label: 'Read more about [node:title]'
-            token_browser: ''
-          trim_options:
-            text: false
-            trim_zero: false
-            replace_tokens: false
-        entity_title_heading:
-          tag: h2
-        string:
-          link_to_entity: false
-      formatter_third_party_settings:
-        empty_fields:
-          handler: ''
-        field_formatter_class:
-          class: ''
-      show_description: false
-    third_party_settings:
-      change_labels:
-        field_label_overwrite: ''
   publish_on:
     type: datetime_timestamp_no_default
     weight: 52
@@ -224,7 +162,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -289,10 +227,7 @@ content:
         custom
       show_extra: false
       hide_date: true
-      separator: to
       add_abbreviations: ''
-      allday: true
-      remove_seconds: false
     third_party_settings: {  }
   su_event_dek:
     type: string_textfield
@@ -318,7 +253,6 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
-      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_keywords:
@@ -329,7 +263,6 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
-      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_location:
@@ -393,7 +326,6 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
-      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_telephone:
@@ -448,12 +380,10 @@ content:
 hidden:
   created: true
   layout_builder__layout: true
-  node_edit_link: true
   path: true
   promote: true
   sticky: true
   su_event_ext_image: true
-  syndication: true
   uid: true
   unpublish_on: true
   url_redirects: true

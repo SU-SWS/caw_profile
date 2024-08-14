@@ -18,9 +18,9 @@ source:
   request_options:
     timeout: 60
   urls: {  }
-  data_parser_plugin: localist_json
+  data_parser_plugin: json
   item_selector: events
-  orphan_action: delete
+  orphan_action: forget
   fields:
     -
       name: id
@@ -297,7 +297,6 @@ source:
     plus: +
     timezone: America/Los_Angeles
 process:
-  caw_localist_id: id
   status: constants/one
   type: constants/type
   canceled:
@@ -499,22 +498,31 @@ process:
 destination:
   plugin: 'entity:node'
   overwrite_properties:
-    - status
-    - type
-    - title
-    - body/value
     - body/format
-    - caw_localist_id
+    - body/value
+    - departments
+    - groups
+    - keywords
+    - merged_tags
     - su_event_alt_loc
-    - su_event_map_link/uri
-    - su_event_map_link/title
-    - su_event_cta/uri
-    - su_event_cta/title
-    - su_event_source/uri
-    - su_event_source/title
-    - su_event_date_time/value
-    - su_event_date_time/end_value
-    - su_event_date_time/duration
-    - su_event_date_time/timezone
     - su_event_audience
+    - su_event_cta/title
+    - su_event_cta/uri
+    - su_event_date_time/duration
+    - su_event_date_time/end_value
+    - su_event_date_time/timezone
+    - su_event_date_time/value
+    - su_event_ext_image
+    - su_event_groups
+    - su_event_keywords
+    - su_event_map_link/title
+    - su_event_map_link/uri
+    - su_event_source/title
+    - su_event_source/uri
+    - su_event_subject
+    - su_event_type
+    - tags
+    - tags_chunked
+    - title
+    - type
 migration_dependencies: {  }

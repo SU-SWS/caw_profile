@@ -1,0 +1,21 @@
+adding:
+  layout:
+    -
+      components:
+        4fba82f7-8808-4c93-95d9-7ecdde2fb0b1:
+          configuration:
+            context_mapping:
+              view_mode: view_mode
+            formatter:
+              type: layout_paragraphs
+              third_party_settings:
+                field_formatter_class:
+                  class: ''
+removing:
+  layout:
+    -
+      components:
+        4fba82f7-8808-4c93-95d9-7ecdde2fb0b1:
+          configuration:
+            formatter:
+              type: entity_reference_revisions_entity_view

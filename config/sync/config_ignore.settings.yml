@@ -2,6 +2,8 @@ _core:
   default_config_hash: v7E8C8wJWeAW2BGohMNY1tZSBc4bexM6O62tGxecTfE
 mode: simple
 ignored_config_entities:
+  - 'block.block.*'
+  - 'core.extension:theme'
   - 'google_tag.container.*'
   - 'next.next_entity_type_config.*'
   - 'next.next_site.*'

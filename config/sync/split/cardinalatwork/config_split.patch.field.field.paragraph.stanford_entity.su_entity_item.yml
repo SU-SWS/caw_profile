@@ -1,0 +1,18 @@
+adding:
+  dependencies:
+    config:
+      - node.type.caw_careers
+      - node.type.caw_sweetener
+  settings:
+    handler_settings:
+      target_bundles:
+        caw_careers: caw_careers
+        caw_sweetener: caw_sweetener
+removing:
+  dependencies:
+    config:
+      - node.type.stanford_course
+  settings:
+    handler_settings:
+      target_bundles:
+        stanford_course: stanford_course

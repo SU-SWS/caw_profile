@@ -19,7 +19,7 @@ mode: default
 content:
   field_media_image:
     type: image_focal_point
-    weight: 1
+    weight: 26
     region: content
     settings:
       progress_indicator: throbber
@@ -29,19 +29,19 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   su_media_category:
-    type: options_shs
-    weight: 2
+    type: cshs
+    weight: 27
     region: content
     settings:
-      force_deepest: false
       save_lineage: false
+      force_deepest: false
       parent: ''
       level_labels: ''
       hierarchy_depth: 0

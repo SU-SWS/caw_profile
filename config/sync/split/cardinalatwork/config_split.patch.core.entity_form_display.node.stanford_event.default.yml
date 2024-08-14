@@ -1,0 +1,112 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.caw_event_category
+      - field.field.node.stanford_event.caw_localist_id
+  third_party_settings:
+    field_group:
+      group_editorial_content:
+        weight: 3
+      group_body_content:
+        weight: 4
+      group_event_details:
+        weight: 5
+      group_schedule_details:
+        weight: 6
+  content:
+    caw_event_category:
+      type: options_select
+      weight: 2
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    caw_localist_id:
+      type: readonly_field_widget
+      weight: 53
+      region: content
+      settings:
+        label: above
+        formatter_type: string
+        formatter_settings:
+          link_ally_class:
+            class: ''
+            link_text: ''
+            screenreader_text: ''
+            tag: ''
+          wrapper_class:
+            class: ''
+            tag: div
+            link: false
+            link_class: ''
+            summary: false
+            trim: 200
+          string_list_class:
+            class: ''
+            list_type: ul
+          smart_trim:
+            trim_length: 600
+            trim_type: chars
+            trim_suffix: ''
+            wrap_output: false
+            wrap_class: trimmed
+            more:
+              display_link: false
+              target_blank: false
+              link_trim_only: false
+              class: more-link
+              text: More
+              aria_label: 'Read more about [node:title]'
+              token_browser: ''
+            trim_options:
+              text: false
+              trim_zero: false
+              replace_tokens: false
+          entity_title_heading:
+            tag: h2
+          string:
+            link_to_entity: false
+        formatter_third_party_settings:
+          empty_fields:
+            handler: ''
+          field_formatter_class:
+            class: ''
+        show_description: false
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
+    status:
+      weight: 7
+    su_event_date_time:
+      settings:
+        separator: to
+        allday: true
+        remove_seconds: false
+    su_event_groups:
+      settings:
+        formatter_third_party_settings: {  }
+    su_event_keywords:
+      settings:
+        formatter_third_party_settings: {  }
+    su_event_subject:
+      settings:
+        formatter_third_party_settings: {  }
+  hidden:
+    node_edit_link: true
+    syndication: true
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.su_event_ext_image
+  third_party_settings:
+    field_group:
+      group_editorial_content:
+        weight: 2
+      group_body_content:
+        weight: 3
+      group_event_details:
+        weight: 4
+      group_schedule_details:
+        weight: 5
+  content:
+    status:
+      weight: 6

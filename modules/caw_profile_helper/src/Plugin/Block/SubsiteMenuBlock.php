@@ -6,7 +6,7 @@ use Drupal\book\Plugin\Block\BookNavigationBlock;
 use Drupal\caw_profile_helper\BookManager;
 
 /**
- * Provides an subsite secondary navigation menu.
+ * Provides a subsite secondary navigation menu.
  *
  * @Block(
  *   id = "subsite_menu_block",

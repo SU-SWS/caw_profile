@@ -6,6 +6,7 @@ use Drupal\caw_profile_helper\Plugin\Block\SubsiteMenuBlock;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -54,6 +55,9 @@ class SubsiteMenuBlockTest extends CawProfileHelperKernelTestBase {
 
     $route_match = $this->createMock(RouteMatchInterface::class);
     $route_match->method('getParameter')->willReturn($child_page);
+
+    $parameter_bag = new ParameterBag();
+    $route_match->method('getRawParameters')->willReturn($parameter_bag);
     \Drupal::getContainer()->set('current_route_match', $route_match);
   }
 

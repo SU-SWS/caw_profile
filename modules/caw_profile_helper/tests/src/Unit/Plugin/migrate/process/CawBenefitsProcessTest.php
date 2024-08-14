@@ -27,8 +27,8 @@ class CawBenefitsProcessTest extends UnitTestCase {
     $this->assertEquals('foo', $plugin->transform('<p>foo</p>', $migrate_executable, $row, 'foo'));
     $this->assertEquals("foo\nbar", $plugin->transform("\n\t<p>foo</p>   <p>bar</p>", $migrate_executable, $row, 'foo'));
 
-    $this->expectException(MigrateSkipProcessException::class);
     $plugin->transform(NULL, $migrate_executable, $row, 'foo');
+    $this->assertTrue($plugin->isPipelineStopped());
   }
 
 }

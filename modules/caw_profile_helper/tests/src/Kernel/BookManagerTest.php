@@ -65,7 +65,7 @@ class BookManagerTest extends CawProfileHelperKernelTestBase {
       'bid' => $this->subsite->id(),
     ];
     $child_page->save();
-    drupal_flush_all_caches();
+    \Drupal::service('book.memory_cache')->deleteAll();
 
     $link = $book_manager->loadBookLink($this->subsite->id());
     $tree_data = $book_manager->bookTreeAllData($this->subsite->id(), $link);

@@ -27,8 +27,8 @@ class CawBenefitsOfferedProcessTest extends UnitTestCase {
     $this->assertEquals('retirees', $plugin->transform('Plan | Retirees | Dental Plans', $migrate_executable, $row, 'foo'));
     $this->assertEquals("early_retirees", $plugin->transform("Blue Shield | Early retirees under 65 | Medical Plans", $migrate_executable, $row, 'foo'));
 
-    $this->expectException(MigrateSkipProcessException::class);
-    $this->assertEquals('retirees', $plugin->transform(null, $migrate_executable, $row, 'foo'));
+    $plugin->transform(NULL, $migrate_executable, $row, 'foo');
+    $this->assertTrue($plugin->isPipelineStopped());
   }
 
 }

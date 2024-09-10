@@ -256,6 +256,7 @@ module:
   paragraphs: 11
   caw_profile: 1000
 theme:
+  caw_theme: 0
   claro: 0
   minimally_branded_subtheme: 0
   stable9: 0

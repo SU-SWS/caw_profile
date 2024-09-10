@@ -1,7 +1,5 @@
-adding:
-  uuid: 20bed69f-96d7-495a-9606-f519807896ed
+adding: {  }
 removing:
-  uuid: 368828b6-e04f-4f2f-94bb-3cb3871fc627
   dependencies:
     config:
       - core.entity_view_display.node.stanford_event.default

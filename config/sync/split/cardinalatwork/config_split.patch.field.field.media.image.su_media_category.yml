@@ -1,5 +1,4 @@
 adding:
-  uuid: 70cce997-6ea7-4ed1-a8c8-437f666a7fa7
   dependencies:
     config:
       - taxonomy.vocabulary.media
@@ -9,7 +8,6 @@ adding:
       target_bundles:
         media: media
 removing:
-  uuid: e3e7f718-fa5a-44dc-8586-1c0bbc640bd7
   dependencies:
     config:
       - taxonomy.vocabulary.media_tags

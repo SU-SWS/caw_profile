@@ -12,6 +12,7 @@ ignored_config_entities:
   - 'system.action.user_remove_role_action.custm_*'
   - 'system.theme:default'
   - 'user.role.custm_*'
+  - '~block.block.caw_theme_*'
   - '~block.block.claro_*'
   - '~block.block.minimally_branded_subtheme_*'
   - '~block.block.stanford_basic_*'

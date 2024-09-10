@@ -1,0 +1,20 @@
+uuid: 92c75af5-c7df-4c0e-b64b-4aa9dcb47158
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - caw_theme
+id: caw_theme_messages
+theme: caw_theme
+region: content
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

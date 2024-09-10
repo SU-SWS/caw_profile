@@ -1,0 +1,20 @@
+uuid: 99d31706-a1ca-4822-899a-a48a6e42a926
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - caw_theme
+id: caw_theme_help
+theme: caw_theme
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

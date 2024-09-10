@@ -78,9 +78,9 @@ adding:
       weight: 7
     su_event_date_time:
       settings:
-        separator: to
         allday: true
         remove_seconds: false
+        separator: to
     su_event_groups:
       settings:
         formatter_third_party_settings: {  }

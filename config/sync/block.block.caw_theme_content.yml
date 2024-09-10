@@ -1,0 +1,20 @@
+uuid: 5d1b3b50-2394-41e2-bbc5-cfcd081599ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - caw_theme
+id: caw_theme_content
+theme: caw_theme
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

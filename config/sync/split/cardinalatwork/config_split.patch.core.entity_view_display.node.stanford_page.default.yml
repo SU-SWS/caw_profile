@@ -11,29 +11,6 @@ adding:
       sections:
         -
           components:
-            9ec5b37b-33a4-4aca-b787-7f0584234d1a:
-              uuid: 9ec5b37b-33a4-4aca-b787-7f0584234d1a
-              region: main
-              configuration:
-                id: 'field_block:node:stanford_page:su_page_components'
-                label: Paragraphs
-                label_display: '0'
-                provider: layout_builder
-                context_mapping:
-                  entity: layout_builder.entity
-                  view_mode: view_mode
-                formatter:
-                  type: layout_paragraphs
-                  label: hidden
-                  settings:
-                    view_mode: default
-                  third_party_settings:
-                    empty_fields:
-                      handler: ''
-                    field_formatter_class:
-                      class: ''
-              weight: -9
-              additional: {  }
             21f2f599-071a-4bc0-bcd7-2434b5be05cd:
               uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
               region: left

@@ -1,0 +1,20 @@
+uuid: e38a0dac-dce5-45e4-8996-dfa7a57448f8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - caw_theme
+id: caw_theme_local_tasks
+theme: caw_theme
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

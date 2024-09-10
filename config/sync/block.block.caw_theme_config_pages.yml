@@ -1,0 +1,29 @@
+uuid: f344ae1d-fad4-468c-b4eb-2e411c969355
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+  theme:
+    - caw_theme
+id: caw_theme_config_pages
+theme: caw_theme
+region: footer
+weight: 0
+provider: null
+plugin: config_pages_block
+settings:
+  id: config_pages_block
+  label: 'Local Footer'
+  label_display: '0'
+  provider: config_pages
+  config_page_type: stanford_local_footer
+  config_page_view_mode: full
+visibility:
+  config_pages_values_access:
+    id: config_pages_values_access
+    negate: false
+    context_mapping: {  }
+    config_page_field: stanford_local_footer|su_footer_enabled|boolean
+    operator: '=='
+    condition_value: '1'

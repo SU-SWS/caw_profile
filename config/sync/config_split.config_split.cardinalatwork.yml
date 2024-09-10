@@ -23,6 +23,14 @@ module:
   views_flipped_table: 0
 theme: {  }
 complete_list:
+  - auto_entitylabel.settings.node.caw_careers
+  - core.entity_form_mode.node.edit_link
+  - ds.field.caw_other_careers
+  - ds.field.hyvor_comments
+  - paragraphs.paragraphs_type.layout
+  - taxonomy.vocabulary.careers_departments
+  - taxonomy.vocabulary.careers_years
+  - taxonomy.vocabulary.media
   - 'config_pages.type.caw_*'
   - 'core.base_field_override.node.caw_*'
   - 'core.entity_form_display.caw_*'
@@ -56,16 +64,11 @@ complete_list:
   - 'taxonomy.vocabulary.caw_*'
   - 'user.role.caw_*'
   - 'views.view.caw_*'
-  - auto_entitylabel.settings.node.caw_careers
-  - core.entity_form_mode.node.edit_link
   - core.entity_view_mode.paragraph.caw_form_preview
-  - ds.field.caw_other_careers
-  - ds.field.hyvor_comments
-  - paragraphs.paragraphs_type.layout
-  - taxonomy.vocabulary.careers_departments
-  - taxonomy.vocabulary.careers_years
-  - taxonomy.vocabulary.media
 partial_list:
+  - book.settings
+  - chosen.settings
+  - graphql_compose.settings
   - '*stanford_*'
   - '*su_*'
   - 'core.entity_form_display.media.*'
@@ -74,6 +77,5 @@ partial_list:
   - 'pathauto.pattern.*'
   - 'search_api.index.*'
   - 'user.role.*'
-  - book.settings
-  - chosen.settings
-  - graphql_compose.settings
+  - views.view.media
+  - views.view.media_library

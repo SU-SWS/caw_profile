@@ -33,24 +33,42 @@ adding:
                 label_link: null
               weight: 2
               additional: {  }
+        -
+          components:
+            e95176ee-5db9-4906-a260-5a00ba56ff52:
+              uuid: e95176ee-5db9-4906-a260-5a00ba56ff52
+              region: left
+              configuration:
+                id: subsite_menu_block
+                label: 'Subsite Menu block'
+                label_display: '0'
+                provider: caw_profile_helper
+                context_mapping: {  }
+                block_mode: 'book pages'
+              weight: 1
+              additional: {  }
     layout_builder_restrictions:
       allowed_block_categories:
         - 'Benefits (Views)'
         - CAW
         - 'Career Celebrations (Views)'
         - 'Custom Blocks'
-        - 'Layout Builder Block'
+        - Devel
+        - 'Devel PHP'
         - 'Sweeteners (Views)'
       entity_view_mode_restriction:
         allowlisted_blocks:
           'Custom Blocks':
             - custom_markup
+          Menus:
+            - subsite_menu_block
         restricted_categories:
           - 'Benefits (Views)'
           - CAW
           - 'Career Celebrations (Views)'
           - 'Changelog (Views)'
-          - 'Layout Builder Block'
+          - Devel
+          - 'Devel PHP'
           - 'Sweeteners (Views)'
   content:
     su_page_components:

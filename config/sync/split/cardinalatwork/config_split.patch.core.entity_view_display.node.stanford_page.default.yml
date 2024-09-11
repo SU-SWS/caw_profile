@@ -1,49 +1,4 @@
 adding:
-  dependencies:
-    config:
-      - field.field.node.stanford_page.caw_page_resource_category
-      - field.field.node.stanford_page.caw_page_resource_role
-      - field.field.node.stanford_page.caw_page_resource_type
-    module:
-      - caw_profile_helper
-  third_party_settings:
-    layout_builder:
-      sections:
-        -
-          components:
-            602ed16a-8aa5-4c3d-8e0c-286d0fb77f85:
-              uuid: 602ed16a-8aa5-4c3d-8e0c-286d0fb77f85
-              region: left
-              configuration:
-                id: subsite_menu_block
-                label: 'Subsite Menu block'
-                label_display: '0'
-                provider: caw_profile_helper
-                context_mapping: {  }
-                block_mode: 'book pages'
-              weight: 1
-              additional: {  }
-    layout_builder_restrictions:
-      allowed_block_categories:
-        - 'Benefits (Views)'
-        - CAW
-        - 'Career Celebrations (Views)'
-        - 'Custom Blocks'
-        - Devel
-        - 'Devel PHP'
-        - 'Sweeteners (Views)'
-      entity_view_mode_restriction:
-        allowlisted_blocks:
-          Menus:
-            - subsite_menu_block
-        restricted_categories:
-          - 'Benefits (Views)'
-          - CAW
-          - 'Career Celebrations (Views)'
-          - 'Custom Blocks'
-          - Devel
-          - 'Devel PHP'
-          - 'Sweeteners (Views)'
   hidden:
     caw_page_resource_category: true
     caw_page_resource_role: true

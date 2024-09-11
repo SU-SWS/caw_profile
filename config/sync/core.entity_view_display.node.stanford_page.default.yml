@@ -143,6 +143,18 @@ third_party_settings:
                     class: ''
             weight: -9
             additional: {  }
+          3e808c4f-1c33-4861-87ee-7f656e4e53c4:
+            uuid: 3e808c4f-1c33-4861-87ee-7f656e4e53c4
+            region: left
+            configuration:
+              id: subsite_menu_block
+              label: 'Subsite Menu block'
+              label_display: '0'
+              provider: caw_profile_helper
+              context_mapping: {  }
+              block_mode: 'book pages'
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
@@ -179,6 +191,13 @@ third_party_settings:
       - User
       - Views
       - core
+      - 'Benefits (Views)'
+      - CAW
+      - 'Career Celebrations (Views)'
+      - 'Custom Blocks'
+      - Devel
+      - 'Devel PHP'
+      - 'Sweeteners (Views)'
     entity_view_mode_restriction:
       allowed_layouts:
         - jumpstart_ui_one_column
@@ -239,6 +258,7 @@ third_party_settings:
           - 'system_menu_block:stanford-person-type'
           - 'system_menu_block:stanford-publication-topics'
           - 'system_menu_block:news-topics'
+          - subsite_menu_block
         System:
           - system_breadcrumb_block
         core:
@@ -259,6 +279,13 @@ third_party_settings:
         - 'Taxonomy Terms (Views)'
         - User
         - Views
+        - 'Benefits (Views)'
+        - CAW
+        - 'Career Celebrations (Views)'
+        - 'Custom Blocks'
+        - Devel
+        - 'Devel PHP'
+        - 'Sweeteners (Views)'
 id: node.stanford_page.default
 targetEntityType: node
 bundle: stanford_page

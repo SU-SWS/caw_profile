@@ -34,8 +34,6 @@ class NewsCest {
 
   /**
    * Test that the default content has installed and is unpublished.
-   *
-   * @group foobar
    */
   public function testDefaultContentExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
@@ -44,13 +42,18 @@ class NewsCest {
     $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
     $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
 
-    $I->amOnPage("/community/news/blog/sample-smith-conference");
+    $I->click("Sample: Smith Conference");
+    $I->see("Sample: Smith Conference", "h1");
     $I->see("This page is currently unpublished and not visible to the public.");
 
-    $I->amOnPage("/community/news/announcement/sample-runners-15-feet-new-6-feet-social-distancing");
+    $I->amOnPage("/admin/content");
+    $I->click("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
+    $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?", "h1");
     $I->see("This page is currently unpublished and not visible to the public.");
 
-    $I->amOnPage("/community/news/announcement/sample-stanford-researchers-find-misfiring-jittery-neurons");
+    $I->amOnPage("/admin/content");
+    $I->click("Sample: Stanford researchers find that misfiring from jittery neurons");
+    $I->see("Sample: Stanford researchers find that misfiring from jittery neurons", "h1");
     $I->see("This page is currently unpublished and not visible to the public.");
 
     $I->see("News", ".su-multi-menu");
@@ -71,7 +74,7 @@ class NewsCest {
   public function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage('/community/news');
     $I->seeLink('Announcement');
-    $I->click("a[href='/community/news/announcement']");
+    $I->click("a[href*='/news/announcement']");
     $I->canSeeResponseCodeIs(200);
     $I->see("News Topics");
   }

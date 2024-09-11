@@ -11,32 +11,8 @@ adding:
       sections:
         -
           components:
-            21f2f599-071a-4bc0-bcd7-2434b5be05cd:
-              uuid: 21f2f599-071a-4bc0-bcd7-2434b5be05cd
-              region: left
-              configuration:
-                id: subsite_menu_block
-                label: 'Subsite Menu block'
-                label_display: '0'
-                provider: caw_profile_helper
-                context_mapping: {  }
-                block_mode: 'book pages'
-                follow: null
-                follow_parent: null
-                level: null
-                depth: null
-                expand_all_items: false
-                parent: null
-                render_parent: null
-                suggestion: null
-                label_type: null
-                label_link: null
-              weight: 2
-              additional: {  }
-        -
-          components:
-            e95176ee-5db9-4906-a260-5a00ba56ff52:
-              uuid: e95176ee-5db9-4906-a260-5a00ba56ff52
+            602ed16a-8aa5-4c3d-8e0c-286d0fb77f85:
+              uuid: 602ed16a-8aa5-4c3d-8e0c-286d0fb77f85
               region: left
               configuration:
                 id: subsite_menu_block
@@ -58,39 +34,18 @@ adding:
         - 'Sweeteners (Views)'
       entity_view_mode_restriction:
         allowlisted_blocks:
-          'Custom Blocks':
-            - custom_markup
           Menus:
             - subsite_menu_block
         restricted_categories:
           - 'Benefits (Views)'
           - CAW
           - 'Career Celebrations (Views)'
-          - 'Changelog (Views)'
+          - 'Custom Blocks'
           - Devel
           - 'Devel PHP'
           - 'Sweeteners (Views)'
-  content:
-    su_page_components:
-      label: hidden
-      weight: 3
-      region: content
   hidden:
     caw_page_resource_category: true
     caw_page_resource_role: true
     caw_page_resource_type: true
-removing:
-  third_party_settings:
-    layout_builder_restrictions:
-      entity_view_mode_restriction:
-        denylisted_blocks:
-          'Content fields':
-            - 'field_block:node:stanford_page:su_metatags'
-        allowlisted_blocks:
-          'Changelog (Views)':
-            - 'views_block:change_logs-policy_changes'
-  content:
-    su_page_components:
-      label: above
-      weight: 8
-      region: main
+removing: {  }

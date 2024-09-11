@@ -1,0 +1,37 @@
+uuid: e284d471-3351-4be0-a485-4114dff0694d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.caw_embedded_document
+    - field.field.media.file.field_media_file
+    - field.field.media.file.su_media_category
+    - media.type.file
+  module:
+    - gdoc_field
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: BZf-1W-t9DuoDU18y0NYGJhrFdAHS1LERKi296ZADps
+id: media.file.caw_embedded_document
+targetEntityType: media
+bundle: file
+mode: caw_embedded_document
+content:
+  field_media_file:
+    type: gdoc_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  su_media_category: true
+  thumbnail: true
+  uid: true

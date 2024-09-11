@@ -121,6 +121,7 @@ removing:
     module:
       - views_bulk_edit
   permissions:
+    config_split_sequence_9h864egv6pnet8vv: 'assign layout_builder_user role'
     config_split_sequence_1fd1ch7k8rn92jt6: 'create new books'
     config_split_sequence_all2i9idlhoupmi3: 'create policy log'
     config_split_sequence_aqo2i4j9mugeotpu: 'create terms in media_tags'

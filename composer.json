@@ -82,6 +82,7 @@
         "drupal/file_mdm": "^2.4 || ^3.0",
         "drupal/flat_taxonomy": "^2.0",
         "drupal/fontawesome": "^2.19",
+        "drupal/gdoc_field": "^1.4",
         "drupal/google_analytics": "^4.0",
         "drupal/google_tag": "^2.0",
         "drupal/graphql_compose": "^2.0",

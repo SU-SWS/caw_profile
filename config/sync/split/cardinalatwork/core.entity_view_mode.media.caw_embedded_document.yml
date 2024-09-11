@@ -1,0 +1,11 @@
+uuid: 48e16758-818b-4be0-bfcc-39cbf604dd92
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.caw_embedded_document
+label: 'Embedded Document'
+description: ''
+targetEntityType: media
+cache: true

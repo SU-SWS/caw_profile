@@ -106,6 +106,7 @@ removing:
     module:
       - views_bulk_edit
   permissions:
+    - 'assign layout_builder_user role'
     - 'create new books'
     - 'create policy log'
     - 'create terms in media_tags'

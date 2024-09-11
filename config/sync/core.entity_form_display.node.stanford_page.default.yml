@@ -3,9 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.stanford_page.caw_page_resource_category
-    - field.field.node.stanford_page.caw_page_resource_role
-    - field.field.node.stanford_page.caw_page_resource_type
+    - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
@@ -37,9 +35,6 @@ third_party_settings:
         - su_page_description
         - su_basic_page_type
         - su_shared_tags
-        - caw_page_resource_type
-        - caw_page_resource_category
-        - caw_page_resource_role
       label: 'Page Metadata'
       region: content
       parent_name: ''
@@ -57,24 +52,6 @@ targetEntityType: node
 bundle: stanford_page
 mode: default
 content:
-  caw_page_resource_category:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  caw_page_resource_role:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  caw_page_resource_type:
-    type: options_select
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 2
@@ -98,13 +75,6 @@ content:
     weight: 3
     region: content
     settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
@@ -130,16 +100,9 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 16
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   su_basic_page_type:
     type: cshs
-    weight: 6
+    weight: 2
     region: content
     settings:
       save_lineage: false
@@ -182,17 +145,19 @@ content:
         field_label_overwrite: ''
   su_page_components:
     type: layout_paragraphs
-    weight: 10
+    weight: 7
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 1
-      empty_message: 'No Content'
-    third_party_settings: {  }
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
   su_page_description:
     type: string_textfield
-    weight: 5
+    weight: 1
     region: content
     settings:
       size: 60
@@ -200,14 +165,14 @@ content:
     third_party_settings: {  }
   su_page_image:
     type: media_library_widget
-    weight: 4
+    weight: 0
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   su_shared_tags:
     type: cshs
-    weight: 7
+    weight: 3
     region: content
     settings:
       save_lineage: false
@@ -243,6 +208,6 @@ content:
     third_party_settings: {  }
 hidden:
   layout_builder__layout: true
-  node_edit_link: true
-  syndication: true
+  promote: true
+  sticky: true
   unpublish_on: true

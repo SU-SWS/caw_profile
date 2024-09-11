@@ -1,0 +1,23 @@
+adding:
+  content:
+    status:
+      type: boolean_checkbox
+      weight: 6
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+    su_schedule_date_time:
+      settings:
+        default_duration: 60
+        default_duration_increments: |-
+          30
+          60|1 hour
+          90
+          120|2 hours
+          custom
+        show_extra: false
+        hide_date: true
+removing:
+  hidden:
+    status: true

@@ -1,0 +1,15 @@
+adding:
+  settings:
+    allowed_views:
+      caw_benefits: caw_benefits
+      caw_careers: caw_careers
+      caw_basic_pages: caw_basic_pages
+      caw_event_series: caw_event_series
+      caw_sweeteners: caw_sweeteners
+    allowed_display_types:
+      attachment: '0'
+removing:
+  settings:
+    allowed_views:
+      stanford_courses: stanford_courses
+      stanford_shared_tags: stanford_shared_tags

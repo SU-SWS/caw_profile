@@ -1,0 +1,18 @@
+adding:
+  content:
+    field_media_image:
+      weight: 1
+    name:
+      weight: 0
+    su_media_category:
+      type: options_shs
+      weight: 2
+removing:
+  content:
+    field_media_image:
+      weight: 26
+    name:
+      weight: -5
+    su_media_category:
+      type: cshs
+      weight: 27

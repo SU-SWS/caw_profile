@@ -3,14 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.node.stanford_event.default
-    - core.entity_view_display.node.stanford_event_series.default
-    - core.entity_view_display.node.stanford_news.default
-    - core.entity_view_display.node.stanford_page.default
-    - core.entity_view_display.node.stanford_person.default
-    - core.entity_view_display.node.stanford_publication.default
     - filter.format.stanford_html
-    - filter.format.stanford_limited_html
     - filter.format.stanford_minimal_html
     - media.type.embeddable
     - media.type.file
@@ -18,9 +11,6 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
-    - node.type.caw_benefits
-    - node.type.caw_careers
-    - node.type.caw_sweetener
     - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
@@ -30,29 +20,16 @@ dependencies:
     - node.type.stanford_policy
     - node.type.stanford_publication
     - taxonomy.vocabulary.basic_page_types
-    - taxonomy.vocabulary.careers_departments
-    - taxonomy.vocabulary.careers_years
-    - taxonomy.vocabulary.caw_event_category
-    - taxonomy.vocabulary.caw_event_series_competencies
-    - taxonomy.vocabulary.caw_event_series_format
-    - taxonomy.vocabulary.caw_page_category
-    - taxonomy.vocabulary.caw_page_role
-    - taxonomy.vocabulary.caw_page_type
-    - taxonomy.vocabulary.caw_sweet_available
-    - taxonomy.vocabulary.caw_sweet_type
     - taxonomy.vocabulary.event_audience
-    - taxonomy.vocabulary.media
+    - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
     - taxonomy.vocabulary.stanford_publication_topics
     - taxonomy.vocabulary.su_shared_tags
   module:
-    - block
-    - block_content
     - block_content_permissions
     - book
-    - caw_profile
     - config_pages
     - content_lock
     - contextual
@@ -62,11 +39,9 @@ dependencies:
     - file
     - filter
     - help
-    - layout_builder
     - media
     - menu_admin_per_menu
     - node
-    - node_edit_link
     - paragraphs
     - path
     - pathauto
@@ -76,20 +51,20 @@ dependencies:
     - scheduler
     - stanford_migrate
     - stanford_policy
+    - caw_profile
     - stanford_publication
-    - stanford_syndication
     - system
     - taxonomy
     - toolbar
     - ui_patterns_library
     - view_unpublished
+    - views_bulk_edit
 id: site_manager
 label: 'Site Manager'
 weight: -3
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access help pages'
@@ -100,9 +75,6 @@ permissions:
   - 'access user profiles'
   - 'add citation entities'
   - 'add content to books'
-  - 'administer block content'
-  - 'administer block types'
-  - 'administer blocks'
   - 'administer book outlines'
   - 'administer citation entities'
   - 'administer main menu items'
@@ -111,10 +83,8 @@ permissions:
   - 'administer redirects'
   - 'administer stanford-event-types menu items'
   - 'administer stanford-person-type menu items'
-  - 'administer stanford_syndication content'
   - 'administer url aliases'
   - 'administer users'
-  - 'assign caw_reviewer role'
   - 'assign contributor role'
   - 'assign layout_builder_user role'
   - 'assign site_editor role'
@@ -122,27 +92,17 @@ permissions:
   - 'assign stanford_faculty role'
   - 'assign stanford_staff role'
   - 'assign stanford_student role'
-  - 'assign subsite_contributor role'
   - 'break content lock'
   - 'cancel account'
   - 'choose layout for node stanford_page'
-  - 'configure editable stanford_event node layout overrides'
-  - 'configure editable stanford_event_series node layout overrides'
-  - 'configure editable stanford_news node layout overrides'
-  - 'configure editable stanford_page node layout overrides'
-  - 'configure editable stanford_person node layout overrides'
-  - 'configure editable stanford_publication node layout overrides'
-  - 'create and edit custom blocks'
-  - 'create caw_benefits content'
-  - 'create caw_careers content'
-  - 'create caw_sweetener content'
   - 'create embeddable media'
   - 'create field_media_embeddable_code'
   - 'create file media'
   - 'create google_form media'
   - 'create image media'
   - 'create media'
-  - 'create stanford_component_block block content'
+  - 'create new books'
+  - 'create policy log'
   - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
@@ -153,18 +113,8 @@ permissions:
   - 'create stanford_policy content'
   - 'create stanford_publication content'
   - 'create terms in basic_page_types'
-  - 'create terms in careers_departments'
-  - 'create terms in careers_years'
-  - 'create terms in caw_event_category'
-  - 'create terms in caw_event_series_competencies'
-  - 'create terms in caw_event_series_format'
-  - 'create terms in caw_page_category'
-  - 'create terms in caw_page_role'
-  - 'create terms in caw_page_type'
-  - 'create terms in caw_sweet_available'
-  - 'create terms in caw_sweet_type'
   - 'create terms in event_audience'
-  - 'create terms in media'
+  - 'create terms in media_tags'
   - 'create terms in stanford_event_types'
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
@@ -172,15 +122,11 @@ permissions:
   - 'create terms in su_shared_tags'
   - 'create url aliases'
   - 'create video media'
-  - 'delete any caw_benefits content'
-  - 'delete any caw_careers content'
-  - 'delete any caw_sweetener content'
   - 'delete any embeddable media'
   - 'delete any file media'
   - 'delete any google_form media'
   - 'delete any image media'
   - 'delete any media'
-  - 'delete any stanford_component_block block content'
   - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
@@ -191,16 +137,8 @@ permissions:
   - 'delete any stanford_policy content'
   - 'delete any stanford_publication content'
   - 'delete any video media'
-  - 'delete caw_benefits revisions'
-  - 'delete caw_careers revisions'
-  - 'delete caw_sweetener revisions'
-  - 'delete citation entities'
   - 'delete citation entities'
   - 'delete media'
-  - 'delete media'
-  - 'delete own caw_benefits content'
-  - 'delete own caw_careers content'
-  - 'delete own caw_sweetener content'
   - 'delete own embeddable media'
   - 'delete own file media'
   - 'delete own files'
@@ -226,27 +164,14 @@ permissions:
   - 'delete stanford_policy revisions'
   - 'delete stanford_publication revisions'
   - 'delete terms in basic_page_types'
-  - 'delete terms in careers_departments'
-  - 'delete terms in careers_years'
-  - 'delete terms in caw_event_category'
-  - 'delete terms in caw_event_series_competencies'
-  - 'delete terms in caw_event_series_format'
-  - 'delete terms in caw_page_category'
-  - 'delete terms in caw_page_role'
-  - 'delete terms in caw_page_type'
-  - 'delete terms in caw_sweet_available'
-  - 'delete terms in caw_sweet_type'
   - 'delete terms in event_audience'
-  - 'delete terms in media'
+  - 'delete terms in media_tags'
   - 'delete terms in stanford_event_types'
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
   - 'delete terms in stanford_publication_topics'
   - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
-  - 'edit any caw_benefits content'
-  - 'edit any caw_careers content'
-  - 'edit any caw_sweetener content'
   - 'edit any embeddable media'
   - 'edit any file media'
   - 'edit any google_form media'
@@ -265,9 +190,6 @@ permissions:
   - 'edit citation entities'
   - 'edit field_media_embeddable_code'
   - 'edit lockup_settings config page entity'
-  - 'edit own caw_benefits content'
-  - 'edit own caw_careers content'
-  - 'edit own caw_sweetener content'
   - 'edit own embeddable media'
   - 'edit own field_media_embeddable_code'
   - 'edit own file media'
@@ -293,24 +215,14 @@ permissions:
   - 'edit stanford_saml config page entity'
   - 'edit stanford_super_footer config page entity'
   - 'edit terms in basic_page_types'
-  - 'edit terms in careers_departments'
-  - 'edit terms in careers_years'
-  - 'edit terms in caw_event_category'
-  - 'edit terms in caw_event_series_competencies'
-  - 'edit terms in caw_event_series_format'
-  - 'edit terms in caw_page_category'
-  - 'edit terms in caw_page_role'
-  - 'edit terms in caw_page_type'
-  - 'edit terms in caw_sweet_available'
-  - 'edit terms in caw_sweet_type'
   - 'edit terms in event_audience'
-  - 'edit terms in media'
+  - 'edit terms in media_tags'
   - 'edit terms in stanford_event_types'
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'
   - 'edit terms in stanford_publication_topics'
-  - 'import caw_celebrations migration'
-  - 'import stanford_events_importer migration'
+  - 'edit terms in su_shared_tags'
+  - 'import stanford_courses migration'
   - 'import stanford_localist_importer migration'
   - 'import stanford_publications migration'
   - 'import su_stanford_person migration'
@@ -318,9 +230,6 @@ permissions:
   - 'mark as ok in editoria11y'
   - 'notify of path changes'
   - 'rabbit hole bypass node'
-  - 'revert caw_benefits revisions'
-  - 'revert caw_careers revisions'
-  - 'revert caw_sweetener revisions'
   - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
   - 'revert stanford_event_series revisions'
@@ -330,18 +239,14 @@ permissions:
   - 'revert stanford_policy revisions'
   - 'revert stanford_publication revisions'
   - 'schedule publishing of nodes'
-  - 'send one time edit link'
   - 'update any media'
   - 'update any stanford_component_block block content'
   - 'update media'
   - 'use text format stanford_html'
-  - 'use text format stanford_limited_html'
   - 'use text format stanford_minimal_html'
+  - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'
-  - 'view any unpublished caw_benefits content'
-  - 'view any unpublished caw_careers content'
-  - 'view any unpublished caw_sweetener content'
   - 'view any unpublished content'
   - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
@@ -351,13 +256,7 @@ permissions:
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
-  - 'view caw_benefits revisions'
-  - 'view caw_careers revisions'
-  - 'view caw_sweetener revisions'
   - 'view editoria11y checker'
-  - 'view own unpublished content'
-  - 'view own unpublished media'
-  - 'view restricted block content'
   - 'view scheduled content'
   - 'view stanford_policy revisions'
   - 'view stanford_publication revisions'

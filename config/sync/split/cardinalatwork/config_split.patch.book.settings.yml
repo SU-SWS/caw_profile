@@ -1,0 +1,6 @@
+adding:
+  allowed_types:
+    - stanford_page
+  child_type: stanford_page
+removing:
+  child_type: stanford_policy

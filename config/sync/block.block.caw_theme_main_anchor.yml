@@ -1,4 +1,4 @@
-uuid: a229c6a5-e85f-4299-b400-d32688b863b8
+uuid: 7eee6e9c-a76b-4929-8f4f-5615f6624096
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 id: caw_theme_main_anchor
 theme: caw_theme
 region: content
-weight: -10
+weight: -3
 provider: null
 plugin: jumpstart_ui_skipnav_main_anchor
 settings:

@@ -1,0 +1,5 @@
+adding:
+  hidden:
+    caw_event_series_competencies: true
+    caw_event_series_format: true
+removing: {  }

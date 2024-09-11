@@ -1,0 +1,12 @@
+adding:
+  behavior_plugins:
+    layout_paragraphs:
+      enabled: false
+removing:
+  behavior_plugins:
+    layout_paragraphs:
+      enabled: true
+      available_layouts:
+        layout_paragraphs_1_column: '1 Column'
+        layout_paragraphs_2_column: '2 Column'
+        layout_paragraphs_3_column: '3 Column'

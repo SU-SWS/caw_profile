@@ -1,0 +1,19 @@
+adding:
+  minimum_single: 0
+  minimum_multiple: 0
+  minimum_width: 200
+  jquery_selector: 'select:not([name*="su_list_view"], [class*="shs-enabled"])'
+  disabled_themes:
+    stanford_profile_admin: '0'
+    caw_theme: '0'
+  chosen_include: 1
+removing:
+  langcode: en
+  minimum_single: 20
+  minimum_multiple: 20
+  minimum_width: 300
+  jquery_selector: "select:not([class*='simpler-select']):visible"
+  disabled_themes:
+    minimally_branded_subtheme: '0'
+    stanford_profile_admin_theme: '0'
+  chosen_include: 2

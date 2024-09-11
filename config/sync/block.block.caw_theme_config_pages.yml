@@ -1,4 +1,4 @@
-uuid: 28e6ab53-eb93-4d12-82a9-50328a1aa8bc
+uuid: f344ae1d-fad4-468c-b4eb-2e411c969355
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: caw_theme_config_pages
 theme: caw_theme
 region: footer
-weight: -3
+weight: 0
 provider: null
 plugin: config_pages_block
 settings:

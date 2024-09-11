@@ -5,15 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.stanford_card.su_card_body
     - field.field.paragraph.stanford_card.su_card_header
-    - field.field.paragraph.stanford_card.su_card_icon
     - field.field.paragraph.stanford_card.su_card_link
     - field.field.paragraph.stanford_card.su_card_media
     - field.field.paragraph.stanford_card.su_card_super_header
     - paragraphs.paragraphs_type.stanford_card
   module:
     - ds
-    - field_formatter_class
-    - fontawesome
     - link
     - stanford_media
     - text
@@ -31,7 +28,6 @@ third_party_settings:
     regions:
       card_image:
         - su_card_media
-        - su_card_icon
       card_super_headline:
         - su_card_super_header
       card_headline:
@@ -68,16 +64,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: card_headline
-  su_card_icon:
-    type: fontawesome_icon_formatter
-    label: hidden
-    settings:
-      layers: false
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-    weight: 5
-    region: card_image
   su_card_link:
     type: link
     label: hidden

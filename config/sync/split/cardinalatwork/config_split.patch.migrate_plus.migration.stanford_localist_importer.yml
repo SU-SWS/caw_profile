@@ -1,0 +1,27 @@
+adding:
+  source:
+    data_parser_plugin: localist_json
+    orphan_action: delete
+  process:
+    caw_localist_id: id
+  destination:
+    overwrite_properties:
+      - status
+      - caw_localist_id
+removing:
+  source:
+    data_parser_plugin: json
+    orphan_action: forget
+  destination:
+    overwrite_properties:
+      - departments
+      - groups
+      - keywords
+      - merged_tags
+      - su_event_ext_image
+      - su_event_groups
+      - su_event_keywords
+      - su_event_subject
+      - su_event_type
+      - tags
+      - tags_chunked

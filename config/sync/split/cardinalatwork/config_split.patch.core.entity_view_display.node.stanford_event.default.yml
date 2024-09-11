@@ -1,0 +1,34 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.caw_event_category
+  hidden:
+    caw_event_category: true
+    caw_localist_id: true
+removing:
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            d64439dc-f59e-4822-aba0-cdca5a9dc331:
+              uuid: d64439dc-f59e-4822-aba0-cdca5a9dc331
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_event:su_event_type'
+                label: 'Related Topics'
+                label_display: visible
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_reference_label
+                  label: hidden
+                  settings:
+                    link: true
+                  third_party_settings:
+                    field_formatter_class:
+                      class: su-event-type-bottom
+              weight: 4
+              additional: {  }

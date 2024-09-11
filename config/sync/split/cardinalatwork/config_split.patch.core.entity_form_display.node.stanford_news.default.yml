@@ -1,0 +1,13 @@
+adding:
+  content:
+    syndication:
+      type: boolean_checkbox
+      weight: 53
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+  hidden:
+    node_edit_link: true
+    path: true
+removing: {  }

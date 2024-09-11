@@ -1,0 +1,20 @@
+adding:
+  dependencies:
+    config:
+      - taxonomy.vocabulary.media
+  display:
+    default:
+      display_options:
+        filters:
+          taxonomy_entity_index_tid_depth:
+            vid: media
+removing:
+  dependencies:
+    config:
+      - taxonomy.vocabulary.media_tags
+  display:
+    default:
+      display_options:
+        filters:
+          taxonomy_entity_index_tid_depth:
+            vid: media_tags

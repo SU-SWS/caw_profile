@@ -1,0 +1,31 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_icon
+    module:
+      - fontawesome
+  content:
+    status:
+      weight: 7
+    su_card_body:
+      weight: 4
+    su_card_header:
+      weight: 3
+    su_card_icon:
+      type: fontawesome_icon_widget
+      weight: 1
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    su_card_super_header:
+      weight: 2
+removing:
+  content:
+    status:
+      weight: 6
+    su_card_body:
+      weight: 3
+    su_card_header:
+      weight: 2
+    su_card_super_header:
+      weight: 1

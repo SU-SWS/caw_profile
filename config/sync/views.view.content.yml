@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
-    0: node
-    1: user
-    3: views_bulk_operations
+    - node
+    - user
+    - views_bulk_operations
 id: content
 label: Content
 module: node

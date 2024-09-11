@@ -1,0 +1,12 @@
+adding:
+  source:
+    orphan_action: delete
+  destination:
+    overwrite_properties:
+      - status
+removing:
+  source:
+    orphan_action: forget
+  destination:
+    overwrite_properties:
+      - su_event_type

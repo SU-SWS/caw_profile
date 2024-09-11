@@ -124,6 +124,8 @@ class FAQCest {
     $I->canSee($node->label(), 'h1');
     $I->canSee('FAQ Headliner', 'h2');
     $I->canSee('the knock-knock joke', 'details');
+    $I->waitForElementVisible('.expand-collapse-button');
+
     $I->canSee('Expand All', 'button');
     $I->cantSeeElement('details[open]');
 

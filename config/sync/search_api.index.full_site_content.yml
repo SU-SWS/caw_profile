@@ -37,9 +37,6 @@ field_settings:
         - administrator
       view_mode:
         'entity:node':
-          caw_benefits: search_indexing
-          caw_careers: search_indexing
-          caw_sweetener: search_indexing
           stanford_course: search_indexing
           stanford_event: search_indexing
           stanford_event_series: search_indexing

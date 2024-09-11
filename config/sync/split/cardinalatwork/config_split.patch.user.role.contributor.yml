@@ -1,0 +1,39 @@
+adding:
+  dependencies:
+    config:
+      - filter.format.stanford_limited_html
+      - node.type.caw_benefits
+      - node.type.caw_careers
+      - node.type.caw_sweetener
+  permissions:
+    - 'create caw_benefits content'
+    - 'create caw_careers content'
+    - 'create caw_sweetener content'
+    - 'delete own caw_benefits content'
+    - 'delete own caw_careers content'
+    - 'delete own caw_sweetener content'
+    - 'edit any caw_benefits content'
+    - 'edit any caw_careers content'
+    - 'edit any caw_sweetener content'
+    - 'edit own caw_benefits content'
+    - 'edit own caw_careers content'
+    - 'edit own caw_sweetener content'
+    - 'use text format stanford_limited_html'
+    - 'view any unpublished caw_benefits content'
+    - 'view any unpublished caw_careers content'
+    - 'view any unpublished caw_sweetener content'
+    - 'view caw_benefits revisions'
+    - 'view caw_careers revisions'
+    - 'view caw_sweetener revisions'
+    - 'view unpublished paragraphs'
+removing:
+  dependencies:
+    config:
+      - media.type.embeddable
+  permissions:
+    - 'edit any embeddable media'
+    - 'edit any file media'
+    - 'edit any google_form media'
+    - 'edit any image media'
+    - 'edit own embeddable media'
+    - 'view any unpublished stanford_course content'

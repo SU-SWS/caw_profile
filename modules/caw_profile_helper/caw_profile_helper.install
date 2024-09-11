@@ -351,3 +351,48 @@ function caw_profile_helper_update_9010() {
 function caw_profile_helper_update_9011() {
   \Drupal::service('module_installer')->install(['stanford_layout_paragraphs']);
 }
+
+/**
+ * Create config split setting for easier inheritance.
+ */
+function caw_profile_helper_update_9012() {
+  \Drupal::service('theme_installer')->install(['minimally_branded_subtheme']);
+  /** @var \Drupal\Core\Config\FileStorage $config_storage */
+  $config_storage = \Drupal::service('config.storage.sync');
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('config_split.config_split.cardinalatwork')
+    ->setData($config_storage->read('config_split.config_split.cardinalatwork'))
+    ->save();
+  $config_factory->getEditable('config_ignore.settings')
+    ->setData($config_storage->read('config_ignore.settings'))
+    ->save();
+
+  // Fix field storage configs.
+  _caw_profile_helper_update_fix_configs('field.storage.');
+
+  // Set the block configs to fix any issues like uuid's or others.
+  _caw_profile_helper_update_fix_configs('block.block.');
+
+  // Set the view configs to fix any issues like uuid's or others.
+  _caw_profile_helper_update_fix_configs('views.view.');
+}
+
+/**
+ * Set config settings to match the sync directory.
+ *
+ * @param string $config_prefix
+ *   Config prefix sting for a group of configs.
+ */
+function _caw_profile_helper_update_fix_configs(string $config_prefix){
+  /** @var \Drupal\Core\Config\FileStorage $config_storage */
+  $config_storage = \Drupal::service('config.storage.sync');
+  $config_factory = \Drupal::configFactory();
+
+  foreach ($config_storage->listAll($config_prefix) as $name) {
+    if ($config_factory->listAll($name)) {
+      $config_factory->getEditable($name)
+        ->setData($config_storage->read($name))
+        ->save();
+    }
+  }
+}

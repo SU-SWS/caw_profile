@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
-    - taxonomy.vocabulary.media
+    - taxonomy.vocabulary.media_tags
   module:
     - image
     - media
@@ -25,7 +25,7 @@ base_field: mid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -445,8 +445,6 @@ display:
               site_developer: '0'
               layout_builder_user: '0'
               decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -461,7 +459,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: media
+          vid: media_tags
           type: select
           hierarchy: true
           limit: true
@@ -487,7 +485,9 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: {  }
+          query_tags:
+            - term_children
+          contextual_filters_or: false
       relationships: {  }
       css_class: ''
       use_ajax: true
@@ -1156,8 +1156,6 @@ display:
               site_developer: '0'
               layout_builder_user: '0'
               decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1172,7 +1170,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: media
+          vid: media_tags
           type: select
           hierarchy: true
           limit: true
@@ -1273,7 +1271,7 @@ display:
             image_link: ''
             image_style: media_library
             image_loading:
-              attribute: eager
+              attribute: lazy
         name:
           id: name
           table: media_field_data
@@ -1528,8 +1526,6 @@ display:
               site_developer: '0'
               layout_builder_user: '0'
               decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1544,7 +1540,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: media
+          vid: media_tags
           type: select
           hierarchy: true
           limit: true

@@ -1,0 +1,16 @@
+adding:
+  content:
+    field_media_image:
+      weight: 0
+    name:
+      weight: -5
+    su_media_category:
+      weight: 1
+removing:
+  content:
+    field_media_image:
+      weight: 1
+    name:
+      weight: 0
+    su_media_category:
+      weight: 2

@@ -1,0 +1,48 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_event_series.caw_event_series_competencies
+      - field.field.node.stanford_event_series.caw_event_series_format
+    module:
+      - menu_link
+      - paragraphs
+      - path
+  content:
+    caw_event_series_competencies:
+      type: options_select
+      weight: 8
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    caw_event_series_format:
+      type: options_select
+      weight: 7
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    path:
+      type: path
+      weight: 9
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    url_redirects:
+      weight: 10
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+  hidden:
+    field_menulink: true
+    node_edit_link: true
+    syndication: true
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_event_series.field_menulink
+  content:
+    field_menulink:
+      type: menu_link_default
+      weight: 53
+  hidden:
+    path: true
+    url_redirects: true

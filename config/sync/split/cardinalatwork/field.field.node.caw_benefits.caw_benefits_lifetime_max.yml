@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_lifetime_max
 field_name: caw_benefits_lifetime_max
 entity_type: node
 bundle: caw_benefits
-label: 'Lifetime maximum'
+label: 'Overall Lifetime Maximum Benefit'
 description: ''
 required: false
 translatable: true

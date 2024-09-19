@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_med_mri
 field_name: caw_benefits_med_mri
 entity_type: node
 bundle: caw_benefits
-label: 'Magnetic resonance imaging - MRI'
+label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
 description: ''
 required: false
 translatable: true

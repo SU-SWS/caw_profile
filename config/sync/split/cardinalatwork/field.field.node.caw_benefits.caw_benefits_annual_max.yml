@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_annual_max
 field_name: caw_benefits_annual_max
 entity_type: node
 bundle: caw_benefits
-label: 'Annual maximum'
+label: 'Out-of-Pocket Maximum'
 description: ''
 required: false
 translatable: true

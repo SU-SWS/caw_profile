@@ -52,6 +52,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_ct_scan
     - field.field.node.caw_benefits.caw_benefits_med_delivery
     - field.field.node.caw_benefits.caw_benefits_med_dental
+    - field.field.node.caw_benefits.caw_benefits_med_doulas
     - field.field.node.caw_benefits.caw_benefits_med_durable_equip
     - field.field.node.caw_benefits.caw_benefits_med_er
     - field.field.node.caw_benefits.caw_benefits_med_hearing
@@ -383,7 +384,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_annual_max'
-              label: 'Annual maximum'
+              label: 'Out-of-Pocket Maximum'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -409,7 +410,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_lifetime_max'
-              label: 'Lifetime maximum'
+              label: 'Overall Lifetime Maximum Benefit'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -651,7 +652,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_xray'
-              label: X-rays
+              label: 'X-rays (Basic Imaging)'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -1200,7 +1201,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 26
+            weight: 27
             additional: {  }
           3f85ec91-9969-49d3-af2c-7dce79b6efe9:
             uuid: 3f85ec91-9969-49d3-af2c-7dce79b6efe9
@@ -1226,7 +1227,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 27
+            weight: 28
             additional: {  }
           c2f9e2f9-dc65-457f-9e46-e0e49ff687cb:
             uuid: c2f9e2f9-dc65-457f-9e46-e0e49ff687cb
@@ -1252,7 +1253,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 29
+            weight: 30
             additional: {  }
           a3d9a9f6-1388-4413-812a-8632b917100a:
             uuid: a3d9a9f6-1388-4413-812a-8632b917100a
@@ -1278,7 +1279,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 30
+            weight: 31
             additional: {  }
           31bf62bb-350b-4aec-b087-f9ed1a7ca4f6:
             uuid: 31bf62bb-350b-4aec-b087-f9ed1a7ca4f6
@@ -1304,7 +1305,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 68
+            weight: 69
             additional: {  }
           191101d5-0474-4053-b009-e6a8ea811129:
             uuid: 191101d5-0474-4053-b009-e6a8ea811129
@@ -1415,7 +1416,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_med_prenatal'
-              label: 'Prenatal Visits'
+              label: 'Prenatal and Postnatal Physician Office Visits'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -1434,7 +1435,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 20
+            weight: 21
             additional: {  }
           7646c9f3-6e48-49d2-8d8c-0fd223e559a2:
             uuid: 7646c9f3-6e48-49d2-8d8c-0fd223e559a2
@@ -1460,7 +1461,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 21
+            weight: 22
             additional: {  }
           83dc72ed-2d74-47e2-8897-19aab19abd71:
             uuid: 83dc72ed-2d74-47e2-8897-19aab19abd71
@@ -1486,7 +1487,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 22
+            weight: 23
             additional: {  }
           5b1f32b0-7b66-46ea-8931-04f89380eeee:
             uuid: 5b1f32b0-7b66-46ea-8931-04f89380eeee
@@ -1512,7 +1513,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 23
+            weight: 24
             additional: {  }
           c68226c6-7b60-40ee-82b4-1413521c1b2d:
             uuid: c68226c6-7b60-40ee-82b4-1413521c1b2d
@@ -1538,7 +1539,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 24
+            weight: 25
             additional: {  }
           6828d097-9b2c-44d2-99c1-344d1c345a6a:
             uuid: 6828d097-9b2c-44d2-99c1-344d1c345a6a
@@ -1564,7 +1565,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 25
+            weight: 26
             additional: {  }
           25f8b1c5-b41f-4fab-ae41-61a653a0468e:
             uuid: 25f8b1c5-b41f-4fab-ae41-61a653a0468e
@@ -1590,14 +1591,14 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 28
+            weight: 29
             additional: {  }
           074b72f0-d7f3-458f-b610-498c66d9fa7a:
             uuid: 074b72f0-d7f3-458f-b610-498c66d9fa7a
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_med_ct_scan'
-              label: 'CT Scans'
+              label: 'CT and PET Scans (Complex Imaging)'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -1616,7 +1617,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 31
+            weight: 32
             additional: {  }
           996457f0-456b-4ec5-aa13-d111036897b4:
             uuid: 996457f0-456b-4ec5-aa13-d111036897b4
@@ -1642,7 +1643,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 32
+            weight: 33
             additional: {  }
           fe1a929d-1e23-4862-b8f8-5d42087d2b87:
             uuid: fe1a929d-1e23-4862-b8f8-5d42087d2b87
@@ -1668,7 +1669,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 33
+            weight: 34
             additional: {  }
           db7cd6db-8971-4536-88f2-b4f52c914d62:
             uuid: db7cd6db-8971-4536-88f2-b4f52c914d62
@@ -1694,7 +1695,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 34
+            weight: 35
             additional: {  }
           a183cdc8-4717-4571-bb89-1a2a696d81a4:
             uuid: a183cdc8-4717-4571-bb89-1a2a696d81a4
@@ -1720,7 +1721,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 35
+            weight: 36
             additional: {  }
           8f38cda0-1252-4160-9dbe-2d9bd9754238:
             uuid: 8f38cda0-1252-4160-9dbe-2d9bd9754238
@@ -1746,7 +1747,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 36
+            weight: 37
             additional: {  }
           648a5e38-608b-4605-a7f5-22bbe9a0fd68:
             uuid: 648a5e38-608b-4605-a7f5-22bbe9a0fd68
@@ -1772,7 +1773,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 37
+            weight: 38
             additional: {  }
           d7d12342-8ee7-46e3-9523-1983ef66d2e7:
             uuid: d7d12342-8ee7-46e3-9523-1983ef66d2e7
@@ -1798,7 +1799,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 38
+            weight: 39
             additional: {  }
           29e43d7d-7530-4871-a004-dcbee7ffe2a6:
             uuid: 29e43d7d-7530-4871-a004-dcbee7ffe2a6
@@ -1824,7 +1825,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 39
+            weight: 40
             additional: {  }
           b7c564c7-5941-4dc1-8ee9-59d3579f2f08:
             uuid: b7c564c7-5941-4dc1-8ee9-59d3579f2f08
@@ -1850,7 +1851,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 40
+            weight: 41
             additional: {  }
           c09e2053-c12b-4780-9d21-e7c5ad6e7fe4:
             uuid: c09e2053-c12b-4780-9d21-e7c5ad6e7fe4
@@ -1876,7 +1877,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 41
+            weight: 42
             additional: {  }
           94adaa5e-8c92-447b-8daf-34723a01263b:
             uuid: 94adaa5e-8c92-447b-8daf-34723a01263b
@@ -1902,7 +1903,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 42
+            weight: 43
             additional: {  }
           c0f6dd40-d543-4454-841f-172cbcb3c3a2:
             uuid: c0f6dd40-d543-4454-841f-172cbcb3c3a2
@@ -1928,14 +1929,14 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 43
+            weight: 44
             additional: {  }
           38c67278-0690-43df-9a58-0329c061b5e5:
             uuid: 38c67278-0690-43df-9a58-0329c061b5e5
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_med_mri'
-              label: 'Magnetic resonance imaging - MRI'
+              label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -1954,7 +1955,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 44
+            weight: 45
             additional: {  }
           a06c0bcc-699c-465e-84a6-8b2e82040e2a:
             uuid: a06c0bcc-699c-465e-84a6-8b2e82040e2a
@@ -1980,7 +1981,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 45
+            weight: 46
             additional: {  }
           70ff1e68-ecd8-447b-842a-2db1d34b0bc6:
             uuid: 70ff1e68-ecd8-447b-842a-2db1d34b0bc6
@@ -2006,7 +2007,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 46
+            weight: 47
             additional: {  }
           75dcd007-ea73-4e34-bd83-505e81451f56:
             uuid: 75dcd007-ea73-4e34-bd83-505e81451f56
@@ -2032,7 +2033,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 47
+            weight: 48
             additional: {  }
           a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14:
             uuid: a2fa23fe-fd2c-4f3e-bb83-3ebaa65b6c14
@@ -2058,7 +2059,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 48
+            weight: 49
             additional: {  }
           c8ad1988-517d-4980-8534-a6fa08da8334:
             uuid: c8ad1988-517d-4980-8534-a6fa08da8334
@@ -2084,7 +2085,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 49
+            weight: 50
             additional: {  }
           8679c4fd-eca0-4bcb-9915-41671b5d26f8:
             uuid: 8679c4fd-eca0-4bcb-9915-41671b5d26f8
@@ -2110,7 +2111,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 51
+            weight: 52
             additional: {  }
           ade2f6a8-9f05-46a4-a72b-1f107f5b85c6:
             uuid: ade2f6a8-9f05-46a4-a72b-1f107f5b85c6
@@ -2136,7 +2137,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 52
+            weight: 53
             additional: {  }
           11678003-5392-4589-98e6-44e19dd77c0b:
             uuid: 11678003-5392-4589-98e6-44e19dd77c0b
@@ -2162,7 +2163,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 53
+            weight: 54
             additional: {  }
           0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5:
             uuid: 0cc29cd8-cb4f-42cd-8e7e-f81aa99275a5
@@ -2188,7 +2189,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 54
+            weight: 55
             additional: {  }
           4c50effd-379b-4663-bfd1-c85daa0f0d66:
             uuid: 4c50effd-379b-4663-bfd1-c85daa0f0d66
@@ -2214,14 +2215,14 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 55
+            weight: 56
             additional: {  }
           ff1b635b-1e50-47bb-8bae-dae02aefab00:
             uuid: ff1b635b-1e50-47bb-8bae-dae02aefab00
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_xray'
-              label: X-rays
+              label: 'X-rays (Basic Imaging)'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -2240,7 +2241,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 56
+            weight: 57
             additional: {  }
           5a411258-3684-4583-b5f3-4b424b9f6fb0:
             uuid: 5a411258-3684-4583-b5f3-4b424b9f6fb0
@@ -2266,7 +2267,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 57
+            weight: 58
             additional: {  }
           fbe77b34-aecb-4640-832c-942a8af70ba2:
             uuid: fbe77b34-aecb-4640-832c-942a8af70ba2
@@ -2292,7 +2293,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 58
+            weight: 59
             additional: {  }
           9616a5d0-8a5b-4f5c-9f23-945eadb06de4:
             uuid: 9616a5d0-8a5b-4f5c-9f23-945eadb06de4
@@ -2318,7 +2319,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 59
+            weight: 60
             additional: {  }
           da4c2b37-4ad8-4316-86d9-2dc47f207607:
             uuid: da4c2b37-4ad8-4316-86d9-2dc47f207607
@@ -2344,7 +2345,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 60
+            weight: 61
             additional: {  }
           2c9bc1ab-d4b8-4191-8222-5fafbee71749:
             uuid: 2c9bc1ab-d4b8-4191-8222-5fafbee71749
@@ -2370,7 +2371,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 61
+            weight: 62
             additional: {  }
           deabb1c9-c14e-4383-a641-ad76f05a6a97:
             uuid: deabb1c9-c14e-4383-a641-ad76f05a6a97
@@ -2396,7 +2397,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 62
+            weight: 63
             additional: {  }
           af92e4d1-0ed1-4d9b-b24c-6e425ffe0875:
             uuid: af92e4d1-0ed1-4d9b-b24c-6e425ffe0875
@@ -2422,7 +2423,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 63
+            weight: 64
             additional: {  }
           e9854641-f71f-491f-bda2-c9a85f4e1341:
             uuid: e9854641-f71f-491f-bda2-c9a85f4e1341
@@ -2448,7 +2449,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 64
+            weight: 65
             additional: {  }
           39dffa38-6db3-4817-b2d8-eaa7e9d36569:
             uuid: 39dffa38-6db3-4817-b2d8-eaa7e9d36569
@@ -2474,7 +2475,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 65
+            weight: 66
             additional: {  }
           68fb4d8c-8889-443e-8a64-1b771a7957eb:
             uuid: 68fb4d8c-8889-443e-8a64-1b771a7957eb
@@ -2500,7 +2501,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 66
+            weight: 67
             additional: {  }
           f2ec1a74-d9f9-4c25-8df4-6b0e5569c090:
             uuid: f2ec1a74-d9f9-4c25-8df4-6b0e5569c090
@@ -2526,7 +2527,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 67
+            weight: 68
             additional: {  }
           3af5f97f-6ed3-4ba7-954f-b31df5f8fb91:
             uuid: 3af5f97f-6ed3-4ba7-954f-b31df5f8fb91
@@ -2552,7 +2553,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 69
+            weight: 70
             additional: {  }
           21a8e032-8510-4c14-8a3e-32d80cd52e40:
             uuid: 21a8e032-8510-4c14-8a3e-32d80cd52e40
@@ -2578,7 +2579,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 70
+            weight: 71
             additional: {  }
           2214e1b4-3614-48c4-8678-d9fd2b7373c0:
             uuid: 2214e1b4-3614-48c4-8678-d9fd2b7373c0
@@ -2606,7 +2607,7 @@ third_party_settings:
                     handler: ''
                   field_formatter_class:
                     class: ''
-            weight: 71
+            weight: 72
             additional: {  }
           121a3b74-cb2d-4285-941d-c3686feeb94c:
             uuid: 121a3b74-cb2d-4285-941d-c3686feeb94c
@@ -2634,7 +2635,7 @@ third_party_settings:
                     handler: ''
                   field_formatter_class:
                     class: ''
-            weight: 72
+            weight: 73
             additional: {  }
           bbb764e8-034d-4ed7-83c4-dd63f9ff2fab:
             uuid: bbb764e8-034d-4ed7-83c4-dd63f9ff2fab
@@ -2662,7 +2663,7 @@ third_party_settings:
                     handler: ''
                   field_formatter_class:
                     class: ''
-            weight: 73
+            weight: 74
             additional: {  }
           20657312-7051-4ca6-ab41-0e8ee38007a8:
             uuid: 20657312-7051-4ca6-ab41-0e8ee38007a8
@@ -2688,7 +2689,38 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 50
+            weight: 51
+            additional: {  }
+          ccf2651b-20b7-47fa-8604-ddc2151f5bc4:
+            uuid: ccf2651b-20b7-47fa-8604-ddc2151f5bc4
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_med_doulas'
+              label: Doulas
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 20
             additional: {  }
         third_party_settings: {  }
       -
@@ -2897,6 +2929,13 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  caw_benefits_med_doulas:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: main
   links:
     settings: {  }
     third_party_settings: {  }

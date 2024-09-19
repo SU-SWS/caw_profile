@@ -113,7 +113,7 @@
         "drupal/name": "^1.0@RC",
         "drupal/next": "^1.2",
         "drupal/nobots": "^1.0",
-        "drupal/node_revision_delete": "^1.0@RC",
+        "drupal/node_revision_delete": "^2.0@RC",
         "drupal/page_cache_query_ignore": "^2.2",
         "drupal/page_manager": "^4.0@beta",
         "drupal/paragraphs": "^1.11",

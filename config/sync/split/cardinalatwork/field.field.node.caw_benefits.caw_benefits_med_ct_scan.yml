@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_med_ct_scan
 field_name: caw_benefits_med_ct_scan
 entity_type: node
 bundle: caw_benefits
-label: 'CT Scans'
+label: 'CT and PET Scans (Complex Imaging)'
 description: ''
 required: false
 translatable: true

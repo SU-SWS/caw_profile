@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_med_prenatal
 field_name: caw_benefits_med_prenatal
 entity_type: node
 bundle: caw_benefits
-label: 'Prenatal Visits'
+label: 'Prenatal and Postnatal Physician Office Visits'
 description: ''
 required: false
 translatable: true

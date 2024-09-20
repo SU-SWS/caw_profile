@@ -1838,6 +1838,7 @@ display:
             caw_benefits_med_baby_exam: caw_benefits_med_baby_exam
             caw_benefits_med_birthing: caw_benefits_med_birthing
             caw_benefits_med_midwives: caw_benefits_med_midwives
+            caw_benefits_med_doulas: caw_benefits_med_doulas
             caw_benefits_med_prenatal: caw_benefits_med_prenatal
             caw_benefits_med_delivery: caw_benefits_med_delivery
             caw_benefits_med_preg_term: caw_benefits_med_preg_term
@@ -1915,14 +1916,18 @@ display:
             caw_benefits_dent_tmj: caw_benefits_dent_tmj
             caw_benefits_med_occupational: caw_benefits_med_occupational
             caw_benefits_med_transpants: caw_benefits_med_transpants
-            caw_benefits_med_nursing: caw_benefits_med_nursing
             caw_benefits_med_pt: caw_benefits_med_pt
+            caw_benefits_prosthetic: caw_benefits_prosthetic
+            caw_benefits_med_nursing: caw_benefits_med_nursing
             caw_benefits_med_surgery_md: caw_benefits_med_surgery_md
             caw_benefits_med_surgery_facil: caw_benefits_med_surgery_facil
             caw_benefits_med_speech: caw_benefits_med_speech
             caw_benefits_med_tubal: caw_benefits_med_tubal
+            caw_benefits_med_trans: caw_benefits_med_trans
+            caw_benefits_med_travel: caw_benefits_med_travel
             caw_benefits_med_vasectomy: caw_benefits_med_vasectomy
             caw_benefits_xray: caw_benefits_xray
+            caw_benefits_perks: caw_benefits_perks
           info:
             su_benefit_type:
               sortable: 0
@@ -2040,6 +2045,13 @@ display:
               empty_column: 1
               responsive: ''
             caw_benefits_med_midwives:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_doulas:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -2569,14 +2581,21 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
-            caw_benefits_med_nursing:
+            caw_benefits_med_pt:
               sortable: 0
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: 1
               responsive: ''
-            caw_benefits_med_pt:
+            caw_benefits_prosthetic:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_nursing:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -2611,6 +2630,20 @@ display:
               separator: ''
               empty_column: 1
               responsive: ''
+            caw_benefits_med_trans:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_med_travel:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
             caw_benefits_med_vasectomy:
               sortable: 0
               default_sort_order: asc
@@ -2619,6 +2652,13 @@ display:
               empty_column: 1
               responsive: ''
             caw_benefits_xray:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 1
+              responsive: ''
+            caw_benefits_perks:
               sortable: 0
               default_sort_order: asc
               align: ''

@@ -29,16 +29,6 @@ careers.views:
   js:
     lib/js/careers.views.js: { }
 
-components.faq:
-  css:
-    component:
-      dist/css/faq.css: { }
-  js:
-    lib/js/components/faq.js: { }
-  dependencies:
-    - core/jquery
-    - core/once
-
 components.news_list:
   css:
     component:

@@ -6,14 +6,7 @@ dependencies:
     - field.storage.node.body
     - node.type.caw_benefits
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    stanford_html: '0'
-    stanford_limited_html: '0'
-    stanford_minimal_html: '0'
-    plain_text: '0'
 id: node.caw_benefits.body
 field_name: body
 entity_type: node

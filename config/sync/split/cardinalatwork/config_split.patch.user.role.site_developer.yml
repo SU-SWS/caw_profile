@@ -1,12 +1,10 @@
 adding:
   dependencies:
     config:
+      - block_content.type.stanford_component_block
       - core.entity_view_display.node.stanford_event.default
       - core.entity_view_display.node.stanford_event_series.default
-      - core.entity_view_display.node.stanford_news.default
       - core.entity_view_display.node.stanford_page.default
-      - core.entity_view_display.node.stanford_person.default
-      - core.entity_view_display.node.stanford_publication.default
       - filter.format.stanford_limited_html
       - node.type.caw_benefits
       - node.type.caw_careers
@@ -30,10 +28,7 @@ adding:
     - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_event node layout overrides'
     - 'configure editable stanford_event_series node layout overrides'
-    - 'configure editable stanford_news node layout overrides'
     - 'configure editable stanford_page node layout overrides'
-    - 'configure editable stanford_person node layout overrides'
-    - 'configure editable stanford_publication node layout overrides'
     - 'create caw_benefits content'
     - 'create caw_careers content'
     - 'create caw_sweetener content'
@@ -98,7 +93,6 @@ adding:
     - 'view caw_benefits revisions'
     - 'view caw_careers revisions'
     - 'view caw_sweetener revisions'
-    - 'view restricted block content'
 removing:
   dependencies:
     config:

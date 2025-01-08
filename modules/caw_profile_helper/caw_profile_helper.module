@@ -47,7 +47,7 @@ function caw_profile_helper_contextual_links_alter(array &$links, $group, array 
 /**
  * Implements hook_form_alter().
  */
-function caw_profile_helper_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function caw_profile_helper_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (preg_match('/node_.*_book_outline_form/', $form_id)) {
     caw_profile_helper_form_node_form_alter($form, $form_state);
   }

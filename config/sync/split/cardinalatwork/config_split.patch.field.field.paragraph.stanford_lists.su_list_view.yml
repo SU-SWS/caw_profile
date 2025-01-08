@@ -11,5 +11,5 @@ adding:
 removing:
   settings:
     allowed_views:
-      stanford_courses: stanford_courses
       stanford_shared_tags: stanford_shared_tags
+      stanford_courses: stanford_courses

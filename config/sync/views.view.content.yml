@@ -89,8 +89,8 @@ display:
               action_id: views_bulk_edit
               preconfiguration:
                 add_confirmation: false
-                get_bundles_from_results: true
                 message_override: ''
+                get_bundles_from_results: true
             -
               action_id: views_bulk_operations_delete_entity
               preconfiguration:

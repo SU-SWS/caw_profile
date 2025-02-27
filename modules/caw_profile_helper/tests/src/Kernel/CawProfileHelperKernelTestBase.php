@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Drupal\Tests\caw_profile_helper\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
@@ -43,7 +42,7 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
     $this->installEntitySchema('node');
     $this->installEntitySchema('user');
     $this->installConfig(['user']);
-    $this->installConfig('system');
+    $this->installConfig(['system', 'book']);
     $this->installSchema('book', 'book');
     \Drupal::configFactory()
       ->getEditable('system.site')
@@ -55,7 +54,11 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
     $anonymous_role->save();
 
     NodeType::create(['type' => 'page'])->save();
-    $this->subsite = Node::create(['type' => 'page', 'title' => 'Book Name', 'status' => TRUE]);
+    $this->subsite = Node::create([
+      'type' => 'page',
+      'title' => 'Book Name',
+      'status' => TRUE,
+    ]);
     $this->subsite->book = [
       'nid' => NULL,
       'bid' => 'new',
@@ -66,6 +69,11 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
       'weight' => 0,
     ];
     $this->subsite->save();
+
+    \Drupal::configFactory()
+      ->getEditable('book.settings')
+      ->set('allowed_types', ['page'])
+      ->save();
   }
 
 }

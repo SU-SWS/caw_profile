@@ -19,7 +19,7 @@ class SubsiteMenuBlock extends BookNavigationBlock {
   /**
    * {@inheritDoc}
    */
-  public function build() {
+  public function build(): array {
     $build = parent::build();
     $subsite_node = BookManager::getSubsiteNode(TRUE);
 

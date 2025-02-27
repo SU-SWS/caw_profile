@@ -39,7 +39,7 @@ settings:
       stanford_entity: stanford_entity
       stanford_gallery: stanford_gallery
       stanford_lists: stanford_lists
-      stanford_layout: stanford_layout
+      layout: layout
       stanford_faq: stanford_faq
     negate: 0
     target_bundles_drag_drop:
@@ -61,7 +61,7 @@ settings:
       stanford_gallery:
         weight: 14
         enabled: true
-      stanford_layout:
+      layout:
         weight: 18
         enabled: true
       stanford_lists:

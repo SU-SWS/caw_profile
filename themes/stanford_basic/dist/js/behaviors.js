@@ -1,80 +1,223 @@
-!function (n) {
-  var o = {};
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
-  function a(t) {
-    if (o[t]) {
-      return o[t].exports;
-    }
-    var e = o[t] = {i: t, l: !1, exports: {}};
-    return n[t].call(e.exports, e, e.exports, a), e.l = !0, e.exports
+/***/ 8035:
+/***/ (function() {
+
+var header = document.getElementById('block-stanford-basic-local-tasks');
+var sticky = 0;
+if (header) {
+  sticky = header.getBoundingClientRect().top;
+  window.onscroll = function () {
+    stickyHeaderOnScroll();
+  };
+}
+
+/**
+ * Stick the local block tasks to the top of the window.
+ */
+function stickyHeaderOnScroll() {
+  var toolbarHeight = 0;
+  var toolbarOpen = document.body.classList.contains('toolbar-tray-open');
+  if (toolbarOpen === true) {
+    toolbarHeight = 79;
+  } else {
+    toolbarHeight = 39;
   }
+  if (window.pageYOffset >= sticky - toolbarHeight) {
+    header.classList.add('sticky');
+    header.style.marginTop = toolbarHeight + 'px';
+  } else {
+    header.classList.remove('sticky');
+    header.style.marginTop = '0px';
+  }
+}
 
-  a.m = n, a.c = o, a.d = function (t, e, n) {
-    a.o(t, e) || Object.defineProperty(t, e, {enumerable: !0, get: n})
-  }, a.r = function (t) {
-    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(t, "__esModule", {value: !0})
-  }, a.t = function (e, t) {
-    if (1 & t && (e = a(e)), 8 & t) {
-      return e;
-    }
-    if (4 & t && "object" == typeof e && e && e.__esModule) {
-      return e;
-    }
-    var n = Object.create(null);
-    if (a.r(n), Object.defineProperty(n, "default", {
-      enumerable: !0,
-      value: e
-    }), 2 & t && "string" != typeof e) {
-      for (var o in e) {
-        a.d(n, o, function (t) {
-          return e[t]
-        }.bind(null, o));
-      }
-    }
-    return n
-  }, a.n = function (t) {
-    var e = t && t.__esModule ? function () {
-      return t.default
-    } : function () {
-      return t
-    };
-    return a.d(e, "a", e), e
-  }, a.o = function (t, e) {
-    return Object.prototype.hasOwnProperty.call(t, e)
-  }, a.p = "", a(a.s = 329)
-}({
-  318: function (t, e) {
-    var n, o = document.getElementById("block-stanford-basic-local-tasks");
-    o && (n = o.getBoundingClientRect().top, window.onscroll = function () {
-      var t = 0;
-      t = !0 === document.body.classList.contains("toolbar-tray-open") ? 79 : 39, window.pageYOffset >= n - t ? (o.classList.add("sticky"), o.style.marginTop = t + "px") : (o.classList.remove("sticky"), o.style.marginTop = "0px")
-    })
-  }, 319: function (t, e) {
-    window.Drupal.behaviors.stanford_basic = {
-      attach: function (t, e) {
-        var o = jQuery, n = once;
-        o("#main-content", t).length || o(".su-skipnav--content", t).attr("href", "#page-content"), o("#secondary-navigation", t).length || o(".su-skipnav--secondary", t).remove();
-        var a, r = o(".su-masthead .su-site-search", t);
+/***/ }),
 
-        function i() {
-          o(window).scrollTop() >= 3 * o(window).height() ? o("#back-to-top").fadeIn() : o("#back-to-top").fadeOut()
+/***/ 5644:
+/***/ (function() {
+
+/**
+ * Behavior Example that works with Webpack.
+ *
+ * @see: https://www.npmjs.com/package/drupal-behaviors-loader
+ *
+ * Webpack wraps everything in enclosures and hides the global variables from
+ * scripts so special handling is needed.
+ */
+
+window.Drupal.behaviors.stanford_basic = {
+  // Attach Drupal Behavior.
+  attach: function attach(context, settings) {
+    (function ($, once) {
+      // If some embed code contains a caption, make sure the figure respects
+      // the iframe width of 100%.
+      $('figure', context).each(function () {
+        var $iframeWithin = $('iframe', this);
+        var iframeWidth = $iframeWithin.attr('width');
+        if ($iframeWithin.length && (!iframeWidth || iframeWidth === '100%')) {
+          $(this).css('width', '100%');
         }
+      });
 
-        r.length && ((a = r.clone()).addClass("search-block-form"), a.attr("id", "block-stanford-basic-search-mobile"), a.find("[id]").each(function (t, e) {
-          var n = o(e).attr("id");
-          a.find('[for="'.concat(n, '"]')).attr("for", "".concat(n, "-mobile")), o(e).attr("id", "".concat(n, "-mobile"))
-        }), a.prependTo(".su-masthead .su-multi-menu > ul", t).wrap('<li class="su-mobile-site-search"></li>')), o("#block-stanford-basic-local-tasks", t).length && o(".page-content", t).addClass("stanford-basic--outline"), o(".page-user-login", t) && o(".su-back-to-site", t).removeClass("hidden"), i(), o(window).scroll(i), o(n("back-to-top", "#back-to-top", t)).click(function (t) {
-          t.preventDefault(), o("html, body").animate({scrollTop: 0}, "slow"), o("#page-content").attr("tabIndex", "-1").focus()
-        }), o(".topics__collapsable-menu", t).click(function () {
-          o(this).toggleClass("show"), "none" != o(this).siblings(".menu").css("display") ? o(this).attr("aria-expanded", "true") : o(this).attr("aria-expanded", "false")
-        })
-      }, detach: function () {
+      // Validate there is a skip link anchor for the main content. If not,
+      // default to #page-content.
+      var $title = $('h1', context);
+      if ($title.length) {
+        if (!$title.attr('id')) {
+          $title.attr('id', 'page-title');
+        }
+        $('.su-masthead .su-skipnav--content', context).attr('href', '#' + $title.attr('id'));
+      } else {
+        if (!$('#main-content', context).length) {
+          $('.su-skipnav--content', context).attr('href', '#page-content');
+        }
       }
-    }
-  }, 329: function (t, e, n) {
-    "use strict";
-    n.r(e);
-    n(318), n(319)
+
+      // Validate there is a skip link for the secondary navigation. If not,
+      // remove the skip link. If the mobile hamburger is visible, remove the link.
+      var $sn = $('#secondary-navigation', context).length;
+      if (!$sn) {
+        $('.su-skipnav--secondary', context).remove();
+      }
+
+      // Check for search box and move the second block to the mobile navigation.
+      // Hide it and then only show for mobile sites.
+      var $search = $('.su-masthead .su-site-search', context);
+      if ($search.length) {
+        var $clonedSearch = $search.clone();
+        $clonedSearch.addClass('search-block-form');
+        // Adjust the parent id attribute.
+        $clonedSearch.attr('id', 'block-stanford-basic-search-mobile');
+        // Adjust all the children id attributes and fix any labels.
+        $clonedSearch.find('[id]').each(function (i, element) {
+          var idAttribute = $(element).attr('id');
+          $clonedSearch.find("[for=\"".concat(idAttribute, "\"]")).attr('for', "".concat(idAttribute, "-mobile"));
+          $(element).attr('id', "".concat(idAttribute, "-mobile"));
+        });
+        $clonedSearch.prependTo('.su-masthead .su-multi-menu > ul', context).wrap('<li class="su-mobile-site-search"></li>');
+      }
+
+      // Add an outline class to the page-content region if local tasks are
+      // available.
+      var localTab = $('#block-stanford-basic-local-tasks', context);
+      if (localTab.length) {
+        $('.page-content', context).addClass('stanford-basic--outline');
+      }
+      var userLogin = $('.page-user-login', context);
+      if (userLogin) {
+        $('.su-back-to-site', context).removeClass('hidden');
+      }
+      backToTop();
+      $(window).scroll(backToTop);
+      $(once('back-to-top', '#back-to-top', context)).click(function (e) {
+        e.preventDefault();
+        $("html, body").animate({
+          scrollTop: 0
+        }, "slow");
+        $('#page-content').attr('tabIndex', '-1').focus();
+      });
+
+      /**
+       * Hide show back to top links.
+       */
+      function backToTop() {
+        if ($(window).scrollTop() >= $(window).height() * 3) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
+      }
+
+      /**
+       * Open and close on the filter menu: News, People, Publications, Events
+       */
+      $('.topics__collapsable-menu', context).click(function () {
+        $(this).toggleClass('show');
+        if ($(this).siblings('.menu').css('display') != 'none') {
+          $(this).attr('aria-expanded', 'true');
+        } else {
+          $(this).attr('aria-expanded', 'false');
+        }
+      });
+      $(once('faq-expand-all', '.ptype-stanford-faq', context)).each(function (index, faq) {
+        var $accordionButtons = $('.accordion__title', faq);
+        if ($accordionButtons.length < 2 || $('.ptype-stanford-faq', faq).length) {
+          return;
+        }
+        var $button = $('<button class="expand-collapse-button expand-all su-button--secondary">' + '<span class="expand-collapse">Expand</span> All' + '<span class="visually-hidden"> Items below.</span>' + '</button>');
+        $button.click(function () {
+          $button.toggleClass('expand-all').toggleClass('collapse-all');
+          var expanded = !$button.hasClass('expand-all');
+          $('span', $button).text(expanded ? 'Collapse' : 'Expand');
+          $accordionButtons.click();
+        });
+        var $headline = $('.su-faq-headline', faq);
+        if ($headline.length) {
+          $headline.append($('<div class="button-wrapper">').append($button));
+        } else {
+          $(faq).prepend($('<div class="button-wrapper clearfix">').append($button));
+        }
+      });
+    })(jQuery, once);
+  },
+  // Detach Example.
+  detach: function detach() {
+    // console.log("Detached.");
   }
-});
-//# sourceMappingURL=behaviors.js.map
+};
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+!function() {
+"use strict";
+
+// EXTERNAL MODULE: ./src/js/theme/menu/StickyHeaderOnScroll.js
+var StickyHeaderOnScroll = __webpack_require__(8035);
+;// ./src/js/theme/menu/index.js
+
+;// ./src/js/theme/index.js
+/**
+ * Primary roll up file
+ */
+
+// The Local Task Menu
+
+// EXTERNAL MODULE: ./src/js/stanford_basic.behavior.js
+var stanford_basic_behavior = __webpack_require__(5644);
+;// ./src/js/behaviors.js
+// Theme code.
+
+
+}();
+/******/ })()
+;

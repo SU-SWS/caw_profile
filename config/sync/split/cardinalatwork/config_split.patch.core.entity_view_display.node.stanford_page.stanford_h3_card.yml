@@ -1,5 +1,6 @@
 adding:
   hidden:
+    book_navigation: true
     caw_page_resource_category: true
     caw_page_resource_role: true
     caw_page_resource_type: true

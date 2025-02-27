@@ -8,6 +8,8 @@ use Drupal\paragraphs\ParagraphInterface;
 
 /**
  * Provides behaviors for card paragraphs to add color classes.
+ *
+ * @codeCoverageIgnore
  */
 class CawHeroBehavior extends HeroPatternBehavior {
 

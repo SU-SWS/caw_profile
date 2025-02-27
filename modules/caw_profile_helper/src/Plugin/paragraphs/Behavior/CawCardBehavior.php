@@ -8,6 +8,8 @@ use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
 
 /**
  * Provides behaviors for card paragraphs to add color classes.
+ *
+ * @codeCoverageIgnore
  */
 class CawCardBehavior extends CardBehavior {
 

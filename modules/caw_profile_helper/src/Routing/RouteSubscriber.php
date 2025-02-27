@@ -10,6 +10,8 @@ use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Listens to the dynamic route events.
+ *
+ * @codeCoverageIgnore
  */
 class RouteSubscriber extends RouteSubscriberBase {
 

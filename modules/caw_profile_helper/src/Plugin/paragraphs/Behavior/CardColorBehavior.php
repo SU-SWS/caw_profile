@@ -12,6 +12,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * Provides behaviors for card paragraphs to add color classes.
  *
+ * @codeCoverageIgnore
+ *
  * @ParagraphsBehavior(
  *   id = "card_color",
  *   label = @Translation("Card Colors"),

@@ -18,4 +18,5 @@ settings:
   label_display: '0'
   provider: book
   block_mode: 'book pages'
+  use_top_level_title: false
 visibility: {  }

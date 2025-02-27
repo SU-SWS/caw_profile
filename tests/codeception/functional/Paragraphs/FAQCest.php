@@ -65,7 +65,7 @@ class FAQCest {
 
     $I->canSee($node->label(), 'h1');
     $I->canSee('FAQ Headliner', 'h2');
-    $I->canSee('the knock-knock joke', 'details');
+    $I->canSee('the knock-knock joke', 'button');
     $I->canSee('Expand All', 'button');
     $I->cantSeeElement('details[open]');
 
@@ -74,7 +74,7 @@ class FAQCest {
     $I->canSee('“no-bell” prize');
     $I->canSee('An impasta');
     $I->canSee('Collapse All', 'button');
-    $I->canSeeElement('details[open]');
+    $I->canSeeElement('button[aria-expanded=true]');
   }
 
 
@@ -123,18 +123,18 @@ class FAQCest {
 
     $I->canSee($node->label(), 'h1');
     $I->canSee('FAQ Headliner', 'h2');
-    $I->canSee('the knock-knock joke', 'details');
+    $I->canSee('the knock-knock joke', 'button');
     $I->waitForElementVisible('.expand-collapse-button');
 
     $I->canSee('Expand All', 'button');
-    $I->cantSeeElement('details[open]');
+    $I->cantSeeElement('button[aria-expanded=true]');
 
     $I->canSeeNumberOfElements('.expand-collapse-button', 1);
     $I->click('Expand All');
     $I->canSee('“no-bell” prize');
     $I->canSee('An impasta');
     $I->canSee('Collapse All', 'button');
-    $I->canSeeElement('details[open]');
+    $I->canSeeElement('button[aria-expanded=true]');
   }
 
 }

@@ -35,7 +35,7 @@ settings:
       stanford_card: stanford_card
       stanford_entity: stanford_entity
       stanford_gallery: stanford_gallery
-      stanford_layout: stanford_layout
+      layout: layout
       stanford_lists: stanford_lists
       stanford_media_caption: stanford_media_caption
       stanford_spacer: stanford_spacer
@@ -61,7 +61,7 @@ settings:
       stanford_gallery:
         weight: 18
         enabled: true
-      stanford_layout:
+      layout:
         weight: 19
         enabled: true
       stanford_lists:

@@ -6,12 +6,11 @@ adding:
   settings:
     handler_settings:
       target_bundles:
-        stanford_accordion: stanford_accordion
         layout: layout
+        stanford_accordion: stanford_accordion
       target_bundles_drag_drop:
         layout:
           weight: 16
-          enabled: true
         stanford_accordion:
           enabled: true
         stanford_layout:
@@ -22,10 +21,8 @@ removing:
       - paragraphs.paragraphs_type.stanford_layout
   settings:
     handler_settings:
-      target_bundles:
-        stanford_layout: stanford_layout
       target_bundles_drag_drop:
+        layout:
+          weight: -18
         stanford_accordion:
           enabled: false
-        stanford_layout:
-          enabled: true

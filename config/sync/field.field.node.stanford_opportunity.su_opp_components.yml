@@ -43,6 +43,9 @@ settings:
       stanford_faq: stanford_faq
     negate: 0
     target_bundles_drag_drop:
+      layout:
+        weight: 19
+        enabled: true
       stanford_accordion:
         weight: 14
         enabled: false
@@ -60,9 +63,6 @@ settings:
         enabled: true
       stanford_gallery:
         weight: 18
-        enabled: true
-      layout:
-        weight: 19
         enabled: true
       stanford_lists:
         weight: 20

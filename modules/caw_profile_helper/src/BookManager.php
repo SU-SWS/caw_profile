@@ -33,8 +33,13 @@ class BookManager extends Manager {
    */
   public static function getSubsiteNode($return_current_page = FALSE) {
     $node = &drupal_static(__FUNCTION__);
-    if (!$node) {
-      $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node == NULL) {
+      try {
+        $node = \Drupal::routeMatch()->getParameter('node');
+      }
+      catch (\Throwable $e) {
+        $node = FALSE;
+      }
     }
 
     // Ensure the request stack gave us the node entity and that the current
@@ -66,7 +71,7 @@ class BookManager extends Manager {
    *
    * Override Core's book method to display the entire book tree.
    */
-  protected function bookTreeBuild(int|string $bid, array $parameters = []): array{
+  protected function bookTreeBuild(int|string $bid, array $parameters = []): array {
     if ($this->loadAllData) {
       unset($parameters['expanded']);
     }

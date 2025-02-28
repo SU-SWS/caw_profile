@@ -5,13 +5,17 @@ namespace Drupal\caw_profile_helper\Drush\Commands;
 use Drupal\Component\Uuid\UuidInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\layout_builder\SectionComponent;
+use Drush\Commands\AutowireTrait;
 use Drush\Commands\DrushCommands;
 
 /**
  * A Drush commandfile.
+ *
  * @codeCoverageIgnore
  */
 class CawProfileHelperCommands extends DrushCommands {
+
+  use AutowireTrait;
 
   /**
    * Constructs a CawProfileHelperCommands object.
@@ -84,7 +88,8 @@ class CawProfileHelperCommands extends DrushCommands {
 
             $section->insertAfterComponent($component->getUuid(), $new_component);
             $view->save();
-            $this->logger()->info('Make sure to add the new field to the view.');
+            $this->logger()
+              ->info('Make sure to add the new field to the view.');
             return;
           }
         }

@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.su_event_type
     - node.type.stanford_event
     - taxonomy.vocabulary.stanford_event_types
+    - user.role.administrator
     - user.role.site_editor
     - user.role.site_manager
   module:
@@ -142,6 +143,7 @@ display:
         type: role
         options:
           role:
+            administrator: administrator
             site_manager: site_manager
             site_editor: site_editor
       cache:

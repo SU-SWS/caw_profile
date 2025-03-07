@@ -44,8 +44,9 @@ tasks:
       blt settings &&
       sed -i 's/stanford_profile/caw_profile/' docroot/sites/settings/global.settings.php &&
       sed -i 's/stanford_profile/caw_profile/' blt/local.blt.yml &&
-      blt di -n &&
-      drush cim -y
+      mkdir -p config/default &&
+      touch config/default/core.extension.yml &&
+      blt di -n
     command: |
       apache2ctl restart &&
       drush uli &&

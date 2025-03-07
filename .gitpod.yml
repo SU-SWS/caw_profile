@@ -29,26 +29,26 @@ tasks:
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       export PROFILE_BRANCH=`cd ../profile && git rev-parse --abbrev-ref HEAD` &&
-      composer require su-sws/stanford_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
+      composer require su-sws/caw_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
       composer update --no-interaction &&
       rm -rf docroot/*/custom/* &&
       composer install --prefer-source --no-interaction &&
-      cd $GITPOD_REPO_ROOT/docroot/profiles/custom/stanford_profile &&
-      git remote set-url origin git@github.com:SU-SWS/stanford_profile.git &&
+      cd $GITPOD_REPO_ROOT/docroot/profiles/custom/caw_profile &&
+      git remote set-url origin git@github.com:SU-SWS/caw_profile.git &&
       cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
       find docroot/sites/ -name 'local*' | xargs rm &&
       cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
       cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
-      blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      drush si stanford_profile -v -y
-      drush cr
-      drush cim -y
+      sed -i 's/stanford_profile/caw_profile/' docroot/sites/settings/global.settings.php &&
+      sed -i 's/stanford_profile/caw_profile/' blt/local.blt.yml &&
+      mkdir -p config/default &&
+      touch config/default/core.extension.yml &&
+      blt di -n
     command: |
-      apache2ctl restart
-      drush uli
-      drush uli | xargs gp preview --external
+      apache2ctl restart &&
+      drush uli &&
+      drush uli | xargs gp preview --external &&
       git config core.fileMode false
-      blt blt:telemetry:disable --no-interaction

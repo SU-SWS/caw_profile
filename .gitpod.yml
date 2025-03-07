@@ -44,10 +44,10 @@ tasks:
       blt settings &&
       sed -i 's/stanford_profile/caw_profile/' docroot/sites/settings/global.settings.php &&
       sed -i 's/stanford_profile/caw_profile/' blt/local.blt.yml &&
-      blt di -n
+      blt di -n &&
+      drush cim -y
     command: |
-      apache2ctl restart
-      drush uli
-      drush uli | xargs gp preview --external
+      apache2ctl restart &&
+      drush uli &&
+      drush uli | xargs gp preview --external &&
       git config core.fileMode false
-      blt blt:telemetry:disable --no-interaction

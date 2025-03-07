@@ -43,6 +43,7 @@ tasks:
       cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
+      echo '$settings["config_sync_directory"] = $repo_root . "/docroot/profiles/custom/caw_profile/config/sync";' >> docroot/sites/settings/global.settings.php &&
       drush si caw_profile -v -y
       drush cr
       drush cim -y

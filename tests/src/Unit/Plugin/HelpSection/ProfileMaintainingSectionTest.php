@@ -4,14 +4,14 @@ namespace Drupal\Tests\caw_profile\Unit\Plugin\HelpSection;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Utility\LinkGeneratorInterface;
-use Drupal\caw_profile\Plugin\HelpSection\ProfileConnectSection;
+use Drupal\caw_profile\Plugin\HelpSection\ProfileHelpMaintainingSection;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ProfileMaintainingSectionTest
  *
  * @group caw_profile
- * @coversDefaultClass \Drupal\caw_profile\Plugin\HelpSection\ProfileConnectSection
+ * @coversDefaultClass \Drupal\caw_profile\Plugin\HelpSection\ProfileHelpMaintainingSection
  */
 class ProfileMaintainingSectionTest extends UnitTestCase {
 

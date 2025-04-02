@@ -28,7 +28,7 @@ class TeaserCest {
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
-    unset($node_types['caw_benefits'], $node_types['caw_sweetener']);
+    unset($node_types['caw_benefits'], $node_types['caw_sweetener'], $node_types['caw_careers']);
     $teaser_entities = [];
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {

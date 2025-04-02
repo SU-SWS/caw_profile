@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_gold
     - field.field.node.caw_benefits.caw_benefits_dent_implant
     - field.field.node.caw_benefits.caw_benefits_dent_inlay
+    - field.field.node.caw_benefits.caw_benefits_dent_max_annual
     - field.field.node.caw_benefits.caw_benefits_dent_onlay
     - field.field.node.caw_benefits.caw_benefits_dent_oral_surg
     - field.field.node.caw_benefits.caw_benefits_dent_ortho
@@ -207,6 +208,7 @@ third_party_settings:
         required_fields: true
     group_dental:
       children:
+        - caw_benefits_dent_max_annual
         - caw_benefits_dent_cleanings
         - caw_benefits_dent_flouride
         - caw_benefits_dent_exam
@@ -328,7 +330,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_anesthesia:
     type: string_textarea
-    weight: 92
+    weight: 94
     region: content
     settings:
       rows: 1
@@ -336,7 +338,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_bridges:
     type: string_textarea
-    weight: 93
+    weight: 95
     region: content
     settings:
       rows: 1
@@ -344,7 +346,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_cleanings:
     type: string_textarea
-    weight: 86
+    weight: 88
     region: content
     settings:
       rows: 1
@@ -352,7 +354,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_crown:
     type: string_textarea
-    weight: 94
+    weight: 96
     region: content
     settings:
       rows: 1
@@ -360,7 +362,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_denture:
     type: string_textarea
-    weight: 95
+    weight: 97
     region: content
     settings:
       rows: 1
@@ -368,7 +370,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_exam:
     type: string_textarea
-    weight: 88
+    weight: 90
     region: content
     settings:
       rows: 1
@@ -376,7 +378,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_extraction:
     type: string_textarea
-    weight: 96
+    weight: 98
     region: content
     settings:
       rows: 1
@@ -384,7 +386,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_filling:
     type: string_textarea
-    weight: 97
+    weight: 99
     region: content
     settings:
       rows: 1
@@ -392,7 +394,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_flouride:
     type: string_textarea
-    weight: 87
+    weight: 89
     region: content
     settings:
       rows: 1
@@ -400,7 +402,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_gingivectomy:
     type: string_textarea
-    weight: 98
+    weight: 100
     region: content
     settings:
       rows: 1
@@ -408,7 +410,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_gold:
     type: string_textarea
-    weight: 99
+    weight: 101
     region: content
     settings:
       rows: 1
@@ -416,7 +418,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_implant:
     type: string_textarea
-    weight: 100
+    weight: 102
     region: content
     settings:
       rows: 1
@@ -424,7 +426,15 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_inlay:
     type: string_textarea
-    weight: 101
+    weight: 103
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+  caw_benefits_dent_max_annual:
+    type: string_textarea
+    weight: 87
     region: content
     settings:
       rows: 1
@@ -432,7 +442,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_onlay:
     type: string_textarea
-    weight: 102
+    weight: 104
     region: content
     settings:
       rows: 1
@@ -440,7 +450,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_oral_surg:
     type: string_textarea
-    weight: 103
+    weight: 105
     region: content
     settings:
       rows: 1
@@ -448,7 +458,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_ortho:
     type: string_textarea
-    weight: 90
+    weight: 92
     region: content
     settings:
       rows: 1
@@ -456,7 +466,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_perio_surg:
     type: string_textarea
-    weight: 104
+    weight: 106
     region: content
     settings:
       rows: 1
@@ -469,7 +479,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_retainer:
     type: string_textarea
-    weight: 91
+    weight: 93
     region: content
     settings:
       rows: 1
@@ -477,7 +487,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_root:
     type: string_textarea
-    weight: 106
+    weight: 108
     region: content
     settings:
       rows: 1
@@ -485,7 +495,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_rx:
     type: string_textarea
-    weight: 105
+    weight: 107
     region: content
     settings:
       rows: 1
@@ -493,7 +503,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_sealant:
     type: string_textarea
-    weight: 89
+    weight: 91
     region: content
     settings:
       rows: 1
@@ -501,7 +511,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_space:
     type: string_textarea
-    weight: 107
+    weight: 109
     region: content
     settings:
       rows: 1
@@ -509,7 +519,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_splint:
     type: string_textarea
-    weight: 108
+    weight: 110
     region: content
     settings:
       rows: 1
@@ -517,7 +527,7 @@ content:
     third_party_settings: {  }
   caw_benefits_dent_tmj:
     type: string_textarea
-    weight: 109
+    weight: 111
     region: content
     settings:
       rows: 1

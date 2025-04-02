@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_gold
     - field.field.node.caw_benefits.caw_benefits_dent_implant
     - field.field.node.caw_benefits.caw_benefits_dent_inlay
+    - field.field.node.caw_benefits.caw_benefits_dent_max_annual
     - field.field.node.caw_benefits.caw_benefits_dent_onlay
     - field.field.node.caw_benefits.caw_benefits_dent_oral_surg
     - field.field.node.caw_benefits.caw_benefits_dent_ortho
@@ -138,6 +139,7 @@ hidden:
   caw_benefits_dent_gold: true
   caw_benefits_dent_implant: true
   caw_benefits_dent_inlay: true
+  caw_benefits_dent_max_annual: true
   caw_benefits_dent_onlay: true
   caw_benefits_dent_oral_surg: true
   caw_benefits_dent_ortho: true

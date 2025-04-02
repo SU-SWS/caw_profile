@@ -43,7 +43,7 @@ class MediaFormsCest {
     $I->click($name);
     $I->seeInCurrentUrl('edit');
     $I->seeLink('request support.', $support_url);
-    $I->click('Delete');
+    $I->click('Delete', '.block-local-tasks-block');
     $I->seeInCurrentUrl('delete');
     $I->click('Delete', 'form');
     $I->seeInCurrentUrl('/admin/content/media');

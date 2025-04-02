@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_gold
     - field.field.node.caw_benefits.caw_benefits_dent_implant
     - field.field.node.caw_benefits.caw_benefits_dent_inlay
+    - field.field.node.caw_benefits.caw_benefits_dent_max_annual
     - field.field.node.caw_benefits.caw_benefits_dent_onlay
     - field.field.node.caw_benefits.caw_benefits_dent_oral_surg
     - field.field.node.caw_benefits.caw_benefits_dent_ortho
@@ -541,7 +542,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 28
+            weight: 29
             additional: {  }
           9e71cab9-de36-4426-b6e9-19f78c02a1ec:
             uuid: 9e71cab9-de36-4426-b6e9-19f78c02a1ec
@@ -567,7 +568,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 6
+            weight: 7
             additional: {  }
           7b296bc7-0f24-462d-a638-00064453f3b4:
             uuid: 7b296bc7-0f24-462d-a638-00064453f3b4
@@ -593,7 +594,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 7
+            weight: 8
             additional: {  }
           f53f84e9-0623-4d80-bf67-02234d86f2d9:
             uuid: f53f84e9-0623-4d80-bf67-02234d86f2d9
@@ -619,7 +620,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 8
+            weight: 9
             additional: {  }
           c62f9c83-5ef1-440f-b653-5c0b6acc45b4:
             uuid: c62f9c83-5ef1-440f-b653-5c0b6acc45b4
@@ -645,7 +646,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 9
+            weight: 10
             additional: {  }
           f60d162b-2737-43fc-9c2d-50cbc4a04708:
             uuid: f60d162b-2737-43fc-9c2d-50cbc4a04708
@@ -671,7 +672,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 10
+            weight: 11
             additional: {  }
           8a3c1e48-3ff8-47df-8c5c-6f28430eac63:
             uuid: 8a3c1e48-3ff8-47df-8c5c-6f28430eac63
@@ -697,7 +698,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 11
+            weight: 12
             additional: {  }
           06e987c4-9093-4693-9894-b70a4bfe0f42:
             uuid: 06e987c4-9093-4693-9894-b70a4bfe0f42
@@ -723,7 +724,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 12
+            weight: 13
             additional: {  }
           e7b613e3-a0d3-43ab-9017-453a9cabb8ad:
             uuid: e7b613e3-a0d3-43ab-9017-453a9cabb8ad
@@ -749,7 +750,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 13
+            weight: 14
             additional: {  }
           e161f3d4-4188-4136-8cb7-86167c29cafc:
             uuid: e161f3d4-4188-4136-8cb7-86167c29cafc
@@ -775,7 +776,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 14
+            weight: 15
             additional: {  }
           cd385e7b-bd8d-482b-8aa1-e40cbb0715e2:
             uuid: cd385e7b-bd8d-482b-8aa1-e40cbb0715e2
@@ -801,7 +802,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 15
+            weight: 16
             additional: {  }
           1c29dcda-3e9b-499c-9951-1626ed633a32:
             uuid: 1c29dcda-3e9b-499c-9951-1626ed633a32
@@ -827,7 +828,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 16
+            weight: 17
             additional: {  }
           e9214fb0-af65-4479-abd8-08f23d055d15:
             uuid: e9214fb0-af65-4479-abd8-08f23d055d15
@@ -853,7 +854,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 17
+            weight: 18
             additional: {  }
           64bc2a2e-d388-4986-8a95-5d2c8458e37c:
             uuid: 64bc2a2e-d388-4986-8a95-5d2c8458e37c
@@ -879,7 +880,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 18
+            weight: 19
             additional: {  }
           ce640c5e-14ea-487c-86c9-6e2d684c0a26:
             uuid: ce640c5e-14ea-487c-86c9-6e2d684c0a26
@@ -905,7 +906,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 19
+            weight: 20
             additional: {  }
           426a8db8-0a3a-4a09-9883-551bf4cceba1:
             uuid: 426a8db8-0a3a-4a09-9883-551bf4cceba1
@@ -931,7 +932,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 20
+            weight: 21
             additional: {  }
           dd5530af-e25e-4da9-9914-a797eb8df882:
             uuid: dd5530af-e25e-4da9-9914-a797eb8df882
@@ -957,7 +958,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 21
+            weight: 22
             additional: {  }
           9f85623c-b58b-4209-9420-09ba82c6d475:
             uuid: 9f85623c-b58b-4209-9420-09ba82c6d475
@@ -983,7 +984,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 22
+            weight: 23
             additional: {  }
           cafcec4c-892f-4b1d-a059-9792cb1b652e:
             uuid: cafcec4c-892f-4b1d-a059-9792cb1b652e
@@ -1009,7 +1010,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 23
+            weight: 24
             additional: {  }
           c59a7a5e-4567-401b-bacc-29d0aaa4aa3e:
             uuid: c59a7a5e-4567-401b-bacc-29d0aaa4aa3e
@@ -1035,7 +1036,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 24
+            weight: 25
             additional: {  }
           363e675a-c7e6-4c23-a951-50288d752edf:
             uuid: 363e675a-c7e6-4c23-a951-50288d752edf
@@ -1061,7 +1062,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 25
+            weight: 26
             additional: {  }
           f1384060-f2ae-476b-899a-81d3a618960c:
             uuid: f1384060-f2ae-476b-899a-81d3a618960c
@@ -1087,7 +1088,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 26
+            weight: 27
             additional: {  }
           2ebede73-bb90-4626-ab4d-be50b1499a1b:
             uuid: 2ebede73-bb90-4626-ab4d-be50b1499a1b
@@ -1113,7 +1114,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 27
+            weight: 28
             additional: {  }
           fbc98b71-abdd-4b85-b1f4-071c731ea739:
             uuid: fbc98b71-abdd-4b85-b1f4-071c731ea739
@@ -1139,7 +1140,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 29
+            weight: 30
             additional: {  }
           0b4501a2-979a-4b0b-91da-c3eb36d4f78d:
             uuid: 0b4501a2-979a-4b0b-91da-c3eb36d4f78d
@@ -1165,7 +1166,33 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 30
+            weight: 31
+            additional: {  }
+          1f5af45b-89d4-442a-a76e-c29e0d21918e:
+            uuid: 1f5af45b-89d4-442a-a76e-c29e0d21918e
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_dent_max_annual'
+              label: 'Maximum Annual Benefit'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: above
+                settings:
+                  class: ''
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 6
             additional: {  }
         third_party_settings: {  }
       -
@@ -2981,6 +3008,7 @@ hidden:
   caw_benefits_dent_gold: true
   caw_benefits_dent_implant: true
   caw_benefits_dent_inlay: true
+  caw_benefits_dent_max_annual: true
   caw_benefits_dent_onlay: true
   caw_benefits_dent_oral_surg: true
   caw_benefits_dent_ortho: true

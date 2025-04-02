@@ -20,6 +20,7 @@ dependencies:
     - field.storage.node.caw_benefits_dent_gold
     - field.storage.node.caw_benefits_dent_implant
     - field.storage.node.caw_benefits_dent_inlay
+    - field.storage.node.caw_benefits_dent_max_annual
     - field.storage.node.caw_benefits_dent_onlay
     - field.storage.node.caw_benefits_dent_oral_surg
     - field.storage.node.caw_benefits_dent_ortho
@@ -388,6 +389,68 @@ display:
           table: node__caw_benefits_annual_max
           field: caw_benefits_annual_max
           plugin_id: field
+        caw_benefits_dent_max_annual:
+          id: caw_benefits_dent_max_annual
+          table: node__caw_benefits_dent_max_annual
+          field: caw_benefits_dent_max_annual
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Maximum Annual Benefit'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         caw_benefits_lifetime_max:
           id: caw_benefits_lifetime_max
           table: node__caw_benefits_lifetime_max
@@ -1827,6 +1890,7 @@ display:
             caw_benefits_med_copay: caw_benefits_med_copay
             caw_benefits_coinsurance: caw_benefits_coinsurance
             caw_benefits_annual_max: caw_benefits_annual_max
+            caw_benefits_dent_max_annual: caw_benefits_dent_max_annual
             caw_benefits_lifetime_max: caw_benefits_lifetime_max
             views_conditional_field: views_conditional_field
             caw_benefits_med_maternity_stay: caw_benefits_med_maternity_stay
@@ -2001,6 +2065,13 @@ display:
               empty_column: true
               responsive: ''
             caw_benefits_annual_max:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: ''
+            caw_benefits_dent_max_annual:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2716,6 +2787,7 @@ display:
         - 'config:field.storage.node.caw_benefits_dent_gold'
         - 'config:field.storage.node.caw_benefits_dent_implant'
         - 'config:field.storage.node.caw_benefits_dent_inlay'
+        - 'config:field.storage.node.caw_benefits_dent_max_annual'
         - 'config:field.storage.node.caw_benefits_dent_onlay'
         - 'config:field.storage.node.caw_benefits_dent_oral_surg'
         - 'config:field.storage.node.caw_benefits_dent_ortho'
@@ -2838,6 +2910,7 @@ display:
         - 'config:field.storage.node.caw_benefits_dent_gold'
         - 'config:field.storage.node.caw_benefits_dent_implant'
         - 'config:field.storage.node.caw_benefits_dent_inlay'
+        - 'config:field.storage.node.caw_benefits_dent_max_annual'
         - 'config:field.storage.node.caw_benefits_dent_onlay'
         - 'config:field.storage.node.caw_benefits_dent_oral_surg'
         - 'config:field.storage.node.caw_benefits_dent_ortho'

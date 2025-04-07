@@ -1,6 +1,8 @@
 <?php
 
 use Faker\Factory;
+use Codeception\Attribute\DataProvider;
+use Codeception\Example;
 
 /**
  * Class AccordionCest.
@@ -16,10 +18,20 @@ class AccordionCest {
     $this->faker = Factory::create();
   }
 
+  public function accordionFormats(): array {
+    return [
+      ['format' => 'plain_text'],
+      ['format' => 'stanford_html'],
+      ['format' => 'stanford_limited_html'],
+      ['format' => 'stanford_minimal_html'],
+    ];
+  }
+
   /**
    * Create and check the accordion.
    */
-  public function testCreatingAccordion(FunctionalTester $I) {
+  #[DataProvider('accordionFormats')]
+  public function testCreatingAccordion(FunctionalTester $I, Example $example) {
     $q_and_a = [
       [$this->faker->words(3, TRUE), $this->faker->paragraph()],
       [$this->faker->words(3, TRUE), $this->faker->paragraph()],
@@ -33,7 +45,7 @@ class AccordionCest {
         'su_accordion_title' => $item[0],
         'su_accordion_body' => [
           'value' => $item[1],
-          'format' => 'stanford_minimal_html',
+          'format' => $example['format'],
         ],
       ], 'paragraph');
       $questions[] = [
@@ -47,7 +59,7 @@ class AccordionCest {
       'su_faq_headline' => $this->faker->words(4, TRUE),
       'su_faq_description' => [
         'value' => $this->faker->paragraph,
-        'format' => 'stanford_html',
+        'format' => $example['format'],
       ],
       'su_faq_questions' => $questions,
     ], 'paragraph');
@@ -83,6 +95,18 @@ class AccordionCest {
     $I->click('Collapse All');
     foreach ($q_and_a as $item) {
       $I->cantSee($item[1]);
+    }
+
+    $I->logInWithRole('site_manager');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Questions/Answers');
+    $I->click('Edit all');
+    $I->waitForText('The clickable text displayed above the body.');
+    foreach ($q_and_a as $item) {
+      $I->canSee($item[1]);
     }
   }
 

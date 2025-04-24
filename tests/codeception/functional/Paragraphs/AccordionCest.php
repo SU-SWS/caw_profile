@@ -106,7 +106,7 @@ class AccordionCest {
     $I->click('Edit all');
     $I->waitForText('The clickable text displayed above the body.');
     foreach ($q_and_a as $item) {
-      $I->canSee($item[1]);
+      $I->canSee($item[1], '.ck-content');
     }
   }
 

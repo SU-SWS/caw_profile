@@ -9,6 +9,7 @@ use Codeception\Example;
  *
  * @group paragraphs
  * @group banner-caption
+ * @group format-access
  */
 class CawMediaCaptionCest {
 

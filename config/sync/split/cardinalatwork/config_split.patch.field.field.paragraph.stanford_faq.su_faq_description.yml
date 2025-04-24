@@ -1,7 +1,10 @@
 adding:
+  dependencies:
+    config:
+      - filter.format.stanford_html
+      - filter.format.stanford_limited_html
   settings:
     allowed_formats:
       - stanford_html
-      - plain_text
       - stanford_limited_html
 removing: {  }

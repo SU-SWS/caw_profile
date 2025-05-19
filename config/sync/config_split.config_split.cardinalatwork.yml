@@ -11,11 +11,7 @@ no_patching: false
 storage: collection
 folder: ''
 module:
-  better_exposed_filters: 0
   custom_markup_block: 0
-  jquery_ui_datepicker: 0
-  jquery_ui_slider: 0
-  jquery_ui_touch_punch: 0
   node_edit_link: 0
   stanford_syndication: 0
   views_autocomplete_filters: 0

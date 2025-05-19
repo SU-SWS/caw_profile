@@ -1551,9 +1551,45 @@ removing:
             type: string
             settings:
               link_to_entity: false
+    list_page_graphql:
+      display_options:
+        sorts:
+          nid:
+            id: nid
+            table: node_field_data
+            field: nid
+            relationship: none
+            group_type: group
+            admin_label: ''
+            entity_type: node
+            entity_field: nid
+            plugin_id: standard
+            order: ASC
+            expose:
+              label: ''
+              field_identifier: ''
+            exposed: false
     more_events_block:
       display_options:
         link_url: /events
     past_events_list_block:
       display_options:
         link_url: /events/past
+    past_events_list_block_graphql:
+      display_options:
+        sorts:
+          nid:
+            id: nid
+            table: node_field_data
+            field: nid
+            relationship: none
+            group_type: group
+            admin_label: ''
+            entity_type: node
+            entity_field: nid
+            plugin_id: standard
+            order: ASC
+            expose:
+              label: ''
+              field_identifier: ''
+            exposed: false

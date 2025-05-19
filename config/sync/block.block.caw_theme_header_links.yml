@@ -1,0 +1,22 @@
+uuid: 104929db-6414-4ce3-a2db-2131a0094660
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+  theme:
+    - caw_theme
+id: caw_theme_header_links
+theme: caw_theme
+region: search
+weight: -6
+provider: null
+plugin: config_pages_block
+settings:
+  id: config_pages_block
+  label: 'Site Header Links'
+  label_display: '0'
+  provider: config_pages
+  config_page_type: stanford_basic_site_settings
+  config_page_view_mode: site_settings_header
+visibility: {  }

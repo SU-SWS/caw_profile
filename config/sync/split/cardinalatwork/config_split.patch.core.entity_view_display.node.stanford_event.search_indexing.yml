@@ -2,7 +2,80 @@ adding:
   dependencies:
     config:
       - field.field.node.stanford_event.caw_event_category
+    module:
+      - link
+  content:
+    su_event_alt_loc:
+      weight: 14
+    su_event_audience:
+      weight: 11
+    su_event_cta:
+      type: link
+      label: hidden
+      settings:
+        trim_length: null
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 10
+      region: content
+    su_event_date_time:
+      weight: 13
+    su_event_map_link:
+      type: link
+      label: hidden
+      settings:
+        trim_length: null
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 15
+      region: content
+    su_event_schedule:
+      weight: 12
+    su_event_source:
+      type: link
+      label: hidden
+      settings:
+        trim_length: null
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 16
+      region: content
   hidden:
     caw_event_category: true
     caw_localist_id: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.su_event_ext_image
+  content:
+    su_event_alt_loc:
+      weight: 13
+    su_event_audience:
+      weight: 10
+    su_event_date_time:
+      settings:
+        localize: false
+        parts:
+          - start
+          - end
+        duration:
+          separator: ' | '
+          unit: ''
+          decimals: 2
+          suffix: h
+      weight: 12
+    su_event_schedule:
+      weight: 11
+  hidden:
+    su_event_cta: true
+    su_event_map_link: true
+    su_event_source: true

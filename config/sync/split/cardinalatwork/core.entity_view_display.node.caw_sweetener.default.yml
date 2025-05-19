@@ -34,6 +34,7 @@ third_party_settings:
           extra_classes: 'su-margin-bottom-3 su-margin-top-6'
           centered: centered-container
           orientation: equal
+          force_regions: false
         components:
           b92ff1ad-67a9-4d46-85c3-43de5ae73623:
             uuid: b92ff1ad-67a9-4d46-85c3-43de5ae73623

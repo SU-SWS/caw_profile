@@ -7,6 +7,7 @@ module:
   admin_toolbar_tools: 0
   autologout: 0
   basic_auth: 0
+  better_exposed_filters: 0
   block: 0
   block_content: 0
   book: 0
@@ -137,6 +138,7 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   mysql: 0
+  mysql57: 0
   name: 0
   next: 0
   nobots: 0

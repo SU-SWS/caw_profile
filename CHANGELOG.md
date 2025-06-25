@@ -1,5 +1,43 @@
 # Cardinal at Work Profile
 
+10.4.0
+--------------------------------------------------------------------------------
+_Release Date: 2025-06-25_
+
+- D8CORE-8052 Style social link for "X.com" to match "twitter.com"
+- Upgrade to drupal 10.5 (#959)
+- UE-536: adjusting opportunity layout to be in only 2 cols (#956)
+- Wrap page header and page footer in `data-nosnippet` to prevent google snippets from the menus
+- D8CORE-8144: Removed duplication of fields in sidebar on opportunities (#955)
+- D8CORE-8019: Move opportunity fields into a view for better styles (#924)
+- D8CORE-8063 Fix html structure on opportunity list items (#952)
+- D8CORE-8071 Added an "Imported" field populated by imports (#951)
+- D8CORE-8014 Fix hover state on mobile menu hamburger
+- D8CORE-8065 Move opportunity node page "Main content" anchor above page title
+- Adjust opportunity filters to use radio buttons (#950)
+- D8CORE-8036: RSS Feed For News (#936)
+- Added heading level selection for stat card paragraph (#949)
+- D8CORE-8045: Adding spacing to header bottom when there is no navigation menu. (#943)
+- Add fontawesome icon template to hide icon from screen readers
+- D8CORE-7987: Copy the utility links and buttons for the mobile display (#935)
+- D8CORE-8133: Changed sort for the opportunities view (#945)
+- Update stat card color choices
+- Updated editorially settings
+- Require headline in stat card (#940)
+- Revert "D8CORE-8134: Use "And" logic for opportunities filters"
+- D8CORE-8134: Use "And" logic for opportunities filters
+- Added stat card icon
+- D8CORE-8000: Add validation for numeric "Items to display" on list paragraph (#937)
+- D8CORE-7843 D8CORE-8086 Add stat card and section background color options (#932)
+- D8CORE-8042 - External source field for person with page redirect (#933)
+- Update admin toolbar config
+- D8CORE-7736: Add unpublished site banner to all pages (#931)
+- D8CORE-7836: added past and upcoming filter and indicator to "Manage events" page. (#928)
+- D8CORE-8047: Manage Basic Pages content management view (#927)
+- D8CORE-6470: Update Event Importer help text (#929)
+- D8CORE-7949 - removed 2 unusued user roles. (#926)
+
+
 10.2.7
 --------------------------------------------------------------------------------
 _Release Date: 2024-06-10_
@@ -63,7 +101,7 @@ _Release Date: 2024-03-28_
 10.2.1
 --------------------------------------------------------------------------------
 _Release Date: 2024-03-18_
- 
+
 - Fixed Headings on past events
 - Updated stanford syndication config.
 

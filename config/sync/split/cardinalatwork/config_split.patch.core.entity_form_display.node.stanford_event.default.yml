@@ -78,9 +78,9 @@ adding:
       weight: 7
     su_event_date_time:
       settings:
-        separator: to
         allday: true
         remove_seconds: false
+        separator: to
     su_event_groups:
       settings:
         formatter_third_party_settings: {  }
@@ -97,6 +97,7 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_event.su_event_ext_image
+      - field.field.node.stanford_event.su_imported
   third_party_settings:
     field_group:
       group_editorial_content:

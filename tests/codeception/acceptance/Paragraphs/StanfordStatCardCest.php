@@ -34,9 +34,9 @@ class StanfordStatCardCest {
   #[CodeceptionAttribute\Group('stat-card')]
   public function testStatCard(AcceptanceTester $I, Example $example) {
     /** @var \Drupal\paragraphs\ParagraphInterface $layout */
-    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout = $I->createEntity(['type' => 'layout'], 'paragraph');
     $layout->setBehaviorSettings('layout_paragraphs', [
-      'layout' => 'layout_paragraphs_1_column',
+      'layout' => 'caw_one_column',
     ]);
     $layout->save();
     $text = $this->faker->paragraph;
@@ -73,7 +73,7 @@ class StanfordStatCardCest {
 
     $card->setBehaviorSettings('layout_paragraphs', [
       'parent_uuid' => $layout->uuid(),
-      'region' => 'main',
+      'region' => 'first',
     ]);
     $card->save();
 

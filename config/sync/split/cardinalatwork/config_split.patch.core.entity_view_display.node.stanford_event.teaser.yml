@@ -5,4 +5,6 @@ adding:
   hidden:
     caw_event_category: true
     caw_localist_id: true
-removing: {  }
+removing:
+  hidden:
+    su_imported: true

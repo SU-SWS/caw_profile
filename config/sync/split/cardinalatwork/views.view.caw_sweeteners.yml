@@ -362,8 +362,6 @@ display:
               contributor: 0
               site_manager: 0
               site_editor: 0
-              site_builder: 0
-              site_developer: 0
             reduce: 0
           is_grouped: false
           group_info:
@@ -417,8 +415,6 @@ display:
               contributor: 0
               site_manager: 0
               site_editor: 0
-              site_builder: 0
-              site_developer: 0
             reduce: 0
           is_grouped: false
           group_info:
@@ -686,8 +682,6 @@ display:
               contributor: 0
               site_manager: 0
               site_editor: 0
-              site_builder: 0
-              site_developer: 0
             reduce: 0
           is_grouped: false
           group_info:
@@ -741,8 +735,6 @@ display:
               contributor: 0
               site_manager: 0
               site_editor: 0
-              site_builder: 0
-              site_developer: 0
             reduce: 0
           is_grouped: false
           group_info:

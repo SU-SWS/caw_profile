@@ -12,8 +12,6 @@ visibility:
     contributor: contributor
     site_manager: site_manager
     site_editor: site_editor
-    site_builder: site_builder
-    site_developer: site_developer
     layout_builder_user: layout_builder_user
     su_site_embedder: su_site_embedder
     decoupled_site_users: decoupled_site_users

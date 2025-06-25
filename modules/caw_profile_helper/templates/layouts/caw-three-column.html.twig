@@ -1,19 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display three column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout wrapper.
+ *
+ * @ingroup themeable
+ */
+#}
 {% set classes = [
-  'caw-layout',
-  'caw-layout--three-column',
+  'layout',
+  'layout--layout-paragraphs-three-column',
 ] %}
+
+{% set wrapper_classes = ['layout-background'] %}
+
+{% if settings.bg_color %}
+  {% set wrapper_classes = wrapper_classes|merge(['background-color', 'bg-' ~ settings.bg_color]) %}
+{% endif %}
+
+{% if settings.bottom_margin %}
+  {% set wrapper_classes = wrapper_classes|merge(['bottom-margin-' ~ settings.bottom_margin]) %}
+{% endif %}
+
+{% if settings.bottom_padding %}
+  {% set wrapper_classes = wrapper_classes|merge(['bottom-padding-' ~ settings.bottom_padding]) %}
+{% endif %}
+
+{% if settings.top_padding %}
+  {% set wrapper_classes = wrapper_classes|merge(['top-padding-' ~ settings.top_padding]) %}
+{% endif %}
+
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
-      {{ content.first }}
-    </div>
+  <div class="{{ wrapper_classes|join(' ') }}">
+    <div{{ attributes.addClass(classes) }}>
 
-    <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
-      {{ content.second }}
-    </div>
+      {% if content.first %}
+        <div {{ region_attributes.left.addClass('layout__region', 'layout__region--sidebar') }}>
+          {{ content.first }}
+        </div>
+      {% endif %}
 
-    <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third') }}>
-      {{ content.third }}
+      {% if content.second %}
+        <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+          {{ content.second }}
+        </div>
+      {% endif %}
+
+      {% if content.third %}
+        <div {{ region_attributes.right.addClass('layout__region', 'layout__region--sidebar') }}>
+          {{ content.third }}
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endif %}
+

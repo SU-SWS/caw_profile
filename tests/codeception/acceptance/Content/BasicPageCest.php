@@ -405,9 +405,9 @@ class BasicPageCest {
   #[CodeceptionAttribute\Group('layout-backgrounds')]
   public function testLayoutBackgrounds(AcceptanceTester $I, Example $example) {
     /** @var \Drupal\paragraphs\ParagraphInterface $layout */
-    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout = $I->createEntity(['type' => 'layout'], 'paragraph');
     $layout->setBehaviorSettings('layout_paragraphs', [
-      'layout' => 'layout_paragraphs_1_column',
+      'layout' => 'caw_one_column',
       'config' => [
         'bg_color' => $example[0],
         'bottom_margin' => $example[1],
@@ -424,7 +424,7 @@ class BasicPageCest {
     ], 'paragraph');
     $wysiwyg->setBehaviorSettings('layout_paragraphs', [
       'parent_uuid' => $layout->uuid(),
-      'region' => 'main',
+      'region' => 'first',
     ]);
     $wysiwyg->save();
 

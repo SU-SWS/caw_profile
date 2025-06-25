@@ -32,3 +32,5 @@ removing:
                       class: su-event-type-bottom
               weight: 4
               additional: {  }
+  hidden:
+    su_imported: true

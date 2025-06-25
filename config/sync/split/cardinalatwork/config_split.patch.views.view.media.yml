@@ -17,4 +17,8 @@ removing:
       display_options:
         filters:
           taxonomy_entity_index_tid_depth:
+            expose:
+              remember_roles:
+                site_builder: '0'
+                site_developer: '0'
             vid: media_tags

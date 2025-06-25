@@ -38,13 +38,13 @@
     <div{{ attributes.addClass(classes) }}>
 
       {% if content.first %}
-        <div {{ region_attributes.left.addClass('layout__region', 'layout__region--main') }}>
+        <div {{ region_attributes.first.addClass('layout__region', 'layout__region--main') }}>
           {{ content.first }}
         </div>
       {% endif %}
 
       {% if content.second %}
-        <div {{ region_attributes.right.addClass('layout__region', 'layout__region--sidebar') }}>
+        <div {{ region_attributes.second.addClass('layout__region', 'layout__region--sidebar') }}>
           {{ content.second }}
         </div>
       {% endif %}

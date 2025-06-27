@@ -45,7 +45,7 @@ class EventsSubscriberTest extends KernelTestBase {
     $request = Request::create('http://example.com/node/5/edit');
     $request->setSession($session);
 
-    $event = new RequestEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+    $event = new RequestEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST);
 
     $this->assertEquals(5, $this->session['node_edit_link']);
     $subscriber = new EventsSubscriber();
@@ -55,7 +55,7 @@ class EventsSubscriberTest extends KernelTestBase {
     $request = Request::create('http://example.com/node/25/edit');
     $request->setSession($session);
 
-    $event = new RequestEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+    $event = new RequestEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST);
     $subscriber->onKernelRequest($event);
     $this->assertArrayNotHasKey('node_edit_link', $this->session);
   }

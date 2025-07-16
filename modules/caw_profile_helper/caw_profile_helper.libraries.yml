@@ -41,3 +41,26 @@ patterns.hero:
   css:
     theme:
       styles/dist/css/components/patterns.hero.css: {}
+
+layout_one_column:
+  css:
+    theme:
+      styles/dist/css/layouts/caw_layouts.css: {}
+  dependencies:
+    - stanford_layout_paragraphs/one_column
+
+layout_two_column:
+  css:
+    theme:
+      styles/dist/css/layouts/two_column.css: {}
+  dependencies:
+    - caw_profile_helper/layout_one_column
+    - stanford_layout_paragraphs/two_column
+
+layout_three_column:
+  css:
+    theme:
+      styles/dist/css/layouts/three_column.css: {}
+  dependencies:
+    - caw_profile_helper/layout_one_column
+    - stanford_layout_paragraphs/three_column

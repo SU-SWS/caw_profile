@@ -3,7 +3,7 @@ caw_one_column:
   category: 'CAW Layouts'
   class: '\Drupal\stanford_layout_paragraphs\Layouts\OneColumn'
   template: templates/layouts/caw-one-column
-  library: stanford_layout_paragraphs/one_column
+  library: caw_profile_helper/layout_one_column
   default_region: first
   icon_map:
     - [first]
@@ -15,7 +15,7 @@ caw_two_column:
   category: 'CAW Layouts'
   class: '\Drupal\stanford_layout_paragraphs\Layouts\TwoColumn'
   template: templates/layouts/caw-two-column
-  library: stanford_layout_paragraphs/two_column
+  library: caw_profile_helper/layout_two_column
   default_region: first
   icon_map:
     - [ first, second ]
@@ -29,7 +29,7 @@ caw_three_column:
   category: 'CAW Layouts'
   class: '\Drupal\stanford_layout_paragraphs\Layouts\ThreeColumn'
   template: templates/layouts/caw-three-column
-  library: stanford_layout_paragraphs/three_column
+  library: caw_profile_helper/layout_three_column
   default_region: second
   icon_map:
     - [ first, second, third ]

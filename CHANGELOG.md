@@ -1,5 +1,12 @@
 # Cardinal at Work Profile
 
+10.4.1
+--------------------------------------------------------------------------------
+_Release Date: 2025-07-17_
+
+- Fixed CSS selectors for views since the layout classes changed
+- CAW-1006: Fix column width selections
+
 10.4.0
 --------------------------------------------------------------------------------
 _Release Date: 2025-06-25_

@@ -370,6 +370,11 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+11.8.3
+-------------------------------------------------------------------------------
+- Fixed minimally branded theme unpublished banner visibility
+- Update book config
+
 11.8.2
 -------------------------------------------------------------------------------
 - D8CORE-8052 Style social link for "X.com" to match "twitter.com"

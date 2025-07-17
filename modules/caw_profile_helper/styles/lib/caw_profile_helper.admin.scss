@@ -16,8 +16,8 @@ h1.page-title {
     outline: 1px solid blue;
   }
 
-  .caw-layout--two-column &,
-  .caw-layout--three-column &,
+  .layout--layout-paragraphs-two-column &,
+  .layout--layout-paragraphs-three-column &,
   &[data-type="stanford_banner"],
   &[data-type="layout"] {
     max-width: 100%;

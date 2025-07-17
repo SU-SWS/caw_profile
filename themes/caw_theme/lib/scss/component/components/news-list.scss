@@ -1,4 +1,4 @@
-.caw-layout--one-column {
+.layout--layout-paragraphs-one-column {
   .ptype-stanford-lists:not([data-react-columns="12"]) {
     .su-news-list {
       img,
@@ -9,8 +9,8 @@
   }
 }
 
-.caw-layout--two-column,
-.caw-layout--three-column {
+.layout--layout-paragraphs-two-column,
+.layout--layout-paragraphs-three-column {
   .su-news-list__header {
     grid-template-columns: 1fr;
     grid-template-areas:

@@ -180,7 +180,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: 'More Sweeteners'
-              items_per_page: none
+              items_per_page: 0
             weight: 2
             additional: {  }
           7def151f-2a7a-47b3-8463-c55f1e914700:
@@ -191,10 +191,10 @@ third_party_settings:
               label: 'Sweeteners Filter Intro'
               label_display: '0'
               provider: block_content
+              context_mapping: {  }
               status: true
               info: ''
               view_mode: full
-              context_mapping: {  }
             weight: 0
             additional: {  }
           47935898-6176-4122-a99e-ab3227e71d37:

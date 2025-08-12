@@ -2,6 +2,7 @@
 
 namespace Drupal\caw_profile\Plugin\InstallTask;
 
+use Drupal\caw_profile\Attribute\InstallTask;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;

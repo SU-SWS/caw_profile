@@ -2,13 +2,45 @@ adding:
   dependencies:
     config:
       - field.field.node.stanford_event.caw_event_category
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            625d8b06-94fb-4027-bec0-f39e16810c8a:
+              configuration:
+                label: Sponsor
+                label_display: '0'
+                formatter:
+                  third_party_settings:
+                    ds:
+                      ds_limit: ''
+    layout_builder_restrictions:
+      allowed_block_categories:
+        - 'PDB React'
   hidden:
     caw_event_category: true
     caw_localist_id: true
 removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.su_imported
   third_party_settings:
     layout_builder:
       sections:
+        -
+          components:
+            625d8b06-94fb-4027-bec0-f39e16810c8a:
+              configuration:
+                label: 'Sponsored by'
+                label_display: visible
+                formatter:
+                  third_party_settings:
+                    empty_fields:
+                      handler: ''
+                    field_label:
+                      label_value: ''
+                      label_tag: span
         -
           components:
             d64439dc-f59e-4822-aba0-cdca5a9dc331:
@@ -32,5 +64,3 @@ removing:
                       class: su-event-type-bottom
               weight: 4
               additional: {  }
-  hidden:
-    su_imported: true

@@ -230,6 +230,7 @@ display:
           empty_table: false
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:
@@ -828,19 +829,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              su_site_embedder: '0'
-              decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             placeholder: ''
             autocomplete_filter: 0
             autocomplete_min_chars: '0'
@@ -929,19 +917,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              su_site_embedder: '0'
-              decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -989,19 +964,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              su_site_embedder: '0'
-              decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1105,19 +1067,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              su_site_embedder: '0'
-              decoupled_site_users: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''

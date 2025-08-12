@@ -2,6 +2,7 @@
 
 namespace Drupal\caw_profile_helper\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -9,19 +10,19 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides an subsite secondary navigation menu.
- *
- * @Block(
- *   id = "hyvor",
- *   admin_label = @Translation("Hyvor Commenting"),
- *   category = @Translation("CAW")
- * )
+ * Provides Hyvor commenting block.
  */
+#[Block(
+  id: 'hyvor',
+  admin_label: new TranslatableMarkup('Hyvor Commenting'),
+  category: new TranslatableMarkup('CAW')
+)]
 class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
@@ -54,7 +55,7 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * @param \Drupal\Core\Routing\RouteMatchInterface $routeMatch
    *   Route match service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected AccountInterface $currentUser, protected EntityTypeManagerInterface $entityTypeManager,protected  RouteMatchInterface $routeMatch) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected AccountInterface $currentUser, protected EntityTypeManagerInterface $entityTypeManager, protected RouteMatchInterface $routeMatch) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -98,7 +99,11 @@ class HyvorBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritDoc}
    */
   public function getCacheContexts() {
-    return Cache::mergeContexts(parent::getCacheContexts(), ['user', 'url.path', 'url.query_args']);
+    return Cache::mergeContexts(parent::getCacheContexts(), [
+      'user',
+      'url.path',
+      'url.query_args',
+    ]);
   }
 
   /**

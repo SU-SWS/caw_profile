@@ -1,0 +1,76 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: f365713e-ac4b-4001-9494-538e98b632b3
+  bundle: stanford_component_block
+  default_langcode: en
+  depends:
+    21b5aaf2-f121-46e9-9c64-e4853a474c8b: user
+default:
+  revision_user:
+    -
+      entity: 21b5aaf2-f121-46e9-9c64-e4853a474c8b
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Sweeteners Filter Intro'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| Cardinal at Work'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: '/'
+    -
+      tag: meta
+      attributes:
+        property: 'og:site_name'
+        content: 'Cardinal at Work'
+    -
+      tag: meta
+      attributes:
+        property: 'og:type'
+        content: website
+    -
+      tag: meta
+      attributes:
+        property: 'og:url'
+        content: '/'
+  su_component:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1429efeb-876c-4e92-a97e-8febe1db364f
+          bundle: stanford_wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1628274455
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          su_wysiwyg_text:
+            -
+              value: "<div>\r\n<div class=\"flex-container\">\r\n<div class=\"flex-lg-4-of-12\">\r\n<div class=\"su-margin-left-3 su-margin-top-3\">\r\n<drupal-media data-entity-type=\"media\" data-entity-uuid=\"cff2d70f-a532-498c-83e4-ec5750ff89ed\" data-view-mode=\"stanford_image_medium\"></drupal-media>\r\n</div>\r\n</div>\r\n\r\n<div class=\"flex-lg-8-of-12\">\r\n<div class=\"su-margin-left-3 su-margin-top-3 su-margin-right-3\">\r\n<p class=\"plain-text\">It's pretty \"sweet\" to be connected with Stanford! Stanford Sweeteners presents the \"sweetest\" perks and rewards of being affiliated with Stanford, from discounts and incentives to facilities access and professional development.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n"
+              format: stanford_html

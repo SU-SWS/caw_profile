@@ -2,6 +2,7 @@
 
 namespace Drupal\caw_profile\Plugin\InstallTask;
 
+use Drupal\caw_profile\Attribute\InstallTask;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\caw_profile\InstallTaskBase;

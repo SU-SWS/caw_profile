@@ -61,7 +61,6 @@
         "drupal/allowed_formats": "^3.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/better_exposed_filters": "^7.0",
-        "drupal/block_content_permissions": "^1.8",
         "drupal/book": "^2.0",
         "drupal/change_labels": "^1.0",
         "drupal/chosen": "^5.0",

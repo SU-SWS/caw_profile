@@ -72,7 +72,7 @@ class EventSubscriberTest extends KernelTestBase {
     $messenger = \Drupal::messenger();
     $client = $this->createMock(ClientInterface::class);
 
-    $this->eventSubscriber = new TestStanfordStanfordProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
+    $this->eventSubscriber = new TestCawProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
 
     /** @var \Drupal\media\MediaTypeInterface $media_type */
     $media_type = MediaType::create([
@@ -95,7 +95,7 @@ class EventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $this->assertContains('onContentImport', StanfordProfileEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', CawProfileEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
@@ -163,7 +163,7 @@ class EventSubscriberTest extends KernelTestBase {
 /**
  * {@inheritDoc}
  */
-class TestStanfordStanfordProfileEventSubscriber extends CawProfileEventSubscriber {
+class TestCawProfileEventSubscriber extends CawProfileEventSubscriber {
 
   /**
    * {@inheritDoc}

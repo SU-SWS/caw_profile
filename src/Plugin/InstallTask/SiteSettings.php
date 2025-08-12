@@ -17,11 +17,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * SNOW site settings installation.
- *
- * @InstallTask(
- *   id="caw_profile_site_settings"
- * )
  */
+#[InstallTask(id: 'caw_profile_site_settings')]
 class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

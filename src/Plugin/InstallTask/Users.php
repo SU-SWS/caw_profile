@@ -9,11 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Install users task.
- *
- * @InstallTask(
- *   id="caw_profile_users"
- * )
  */
+#[InstallTask(id: 'caw_profile_users')]
 class Users extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

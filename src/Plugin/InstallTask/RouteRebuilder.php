@@ -9,11 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Rebuilds the routes.
- *
- * @InstallTask(
- *   id="caw_profile_route_rebuilder"
- * )
  */
+#[InstallTask(id: 'caw_profile_route_rebuilder')]
 class RouteRebuilder extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

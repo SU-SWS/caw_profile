@@ -12,9 +12,6 @@ image: pookmish/drupal8ci:gitpod
 tasks:
   - before: |
       mkdir -p ~/.ssh
-      if [[ ! -z $SSH_PUBLIC_KEY  ]]; then
-          echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_rsa.pub
-      fi
       if [[ ! -z $SSH_PRIVATE_KEY ]]; then
           echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
       fi
@@ -22,9 +19,14 @@ tasks:
           echo $GITCONFIG | base64 -d > ~/.gitconfig && chmod 644 ~/.gitconfig
       fi
     init: >
+      export PACKAGE=$(cat composer.json | jq -r '.name') &&
+      export PROFILE_NAME=$(ls | grep info.yml | sed 's/\.info.*//') &&
+      export PROFILE_BRANCH=$(echo $GITPOD_WORKSPACE_CONTEXT | jq -r '.ref') &&
+
       cd /workspace &&
-      mv $GITPOD_REPO_ROOT profile &&
-      git clone https://github.com/SU-SWS/acsf-cardinalsites-public.git $GITPOD_REPO_ROOT &&
+
+      rm -rf $GITPOD_REPO_ROOT &&
+      git clone --branch 2.x https://github.com/SU-SWS/acsf-cardinalsites-public.git $GITPOD_REPO_ROOT &&
       cd $GITPOD_REPO_ROOT &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
@@ -48,6 +50,7 @@ tasks:
       touch config/default/core.extension.yml &&
       blt di -n
     command: |
+      cd $GITPOD_REPO_ROOT &&
       apache2ctl restart &&
       drush uli &&
       drush uli | xargs gp preview --external &&

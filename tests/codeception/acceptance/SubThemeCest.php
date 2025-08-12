@@ -1,13 +1,11 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Drupal\Core\Serialization\Yaml;
 use Faker\Factory;
 
 /**
  * Class SubThemeCest.
- *
- * @group no-parallel
- * @group subthemes
  */
 abstract class SubThemeCest {
 
@@ -41,7 +39,7 @@ abstract class SubThemeCest {
    * SubThemeCest constructor.
    */
   public function __construct() {
-    $this->themeName = Factory::create()->firstName;
+    $this->themeName = Factory::create()->firstName();
     $path = \Drupal::service('extension.list.theme')->getPath('stanford_basic');
     $this->themePath = realpath(dirname($path)) . '/' . strtolower($this->themeName);
     $this->faker = Factory::create();
@@ -81,11 +79,10 @@ abstract class SubThemeCest {
 
   /**
    * Enable the subtheme and the config should reflect the changes done.
-   *
-   * @group subtheme
    */
+  #[CodeceptionAttribute\Group('subtheme')]
   public function testSubTheme(AcceptanceTester $I) {
-    $paragraph_text = $this->faker->paragraph;
+    $paragraph_text = $this->faker->paragraph();
     $paragraph = $I->createEntity([
       'type' => 'stanford_wysiwyg',
       'su_wysiwyg_text' => [
@@ -138,9 +135,8 @@ abstract class SubThemeCest {
   /**
    * Enable the minimally branded subtheme and the config should reflect the
    * changes done. Test the changes are there.
-   *
-   * @group minimal-theme
    */
+  #[CodeceptionAttribute\Group('minimal-theme')]
   public function testMinimalSubtheme(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/');
@@ -173,7 +169,7 @@ abstract class SubThemeCest {
         'description' => $this->themeName,
         'package' => 'testing',
         'version' => '1.0.0',
-        'core_version_requirement' => '^10',
+        'core_version_requirement' => '^10 || ^11',
         'base theme' => 'stanford_basic',
         'regions' => $stanford_basic_info['regions'],
       ];

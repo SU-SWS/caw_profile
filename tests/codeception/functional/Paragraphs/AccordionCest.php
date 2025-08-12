@@ -1,5 +1,6 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 use Codeception\Attribute\DataProvider;
 use Codeception\Example;
@@ -11,6 +12,8 @@ use Codeception\Example;
  * @group accordions
  * @group format-access
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('accordions')]
 class AccordionCest {
 
   protected $faker;

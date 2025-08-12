@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\caw_profile\Kernel\EventSubscriber;
 
+use Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber;
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -12,8 +13,6 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\caw_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
-use Drupal\user\Entity\Role;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +23,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * Class EventSubscriberTest.
  *
  * @group caw_profile
- * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\EventSubscriber
+ * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -164,7 +163,7 @@ class EventSubscriberTest extends KernelTestBase {
 /**
  * {@inheritDoc}
  */
-class TestStanfordStanfordProfileEventSubscriber extends StanfordProfileEventSubscriber {
+class TestStanfordStanfordProfileEventSubscriber extends CawProfileEventSubscriber {
 
   /**
    * {@inheritDoc}

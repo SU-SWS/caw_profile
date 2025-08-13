@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -68,22 +69,11 @@ class NodeCsrfTokenTest extends KernelTestBase {
     ]);
     $this->node->save();
 
-    $session = $this->createMock(SessionInterface::class);
-
-    $query = $this->createMock(ParameterBagInterface::class);
-    $query->method('get')
-      ->will($this->returnCallback([$this, 'parameterBagGetCallback']));
-
-    $current_request = $this->createMock(Request::class);
-    $current_request->query = $query;
-    $current_request->cookies = $this->createMock(ParameterBagInterface::class);
-    $r = $this->createMock(ParameterBagInterface::class);
-    $r->method('all')->willReturn([]);
-    $current_request->request = $r;
-    $current_request->method('getSession')->willReturn($session);
-
     $request_stack = $this->createMock(RequestStack::class);
-    $request_stack->method('getCurrentRequest')->willReturn($current_request);
+    $request_stack->method('getCurrentRequest')->willReturnCallback([
+      $this,
+      'getCurrentRequest',
+    ]);
     \Drupal::getContainer()->set('request_stack', $request_stack);
   }
 
@@ -102,9 +92,14 @@ class NodeCsrfTokenTest extends KernelTestBase {
    * The access token should allow access, but then deny after loading the form.
    */
   public function testAllowedTokenAccess() {
-    $service = \Drupal::service('node_edit_link.csrf');
-    $this->token = $service->createCsrfToken($this->node, 'foo@bar.baz');
     $this->mail = substr(md5('foo@bar.baz'), 0, 5);
+    $this->token = $this->container->get('csrf_token')
+      ->get(time() . $this->mail);
+
+    $cid = 'node_edit_link:' . $this->node->id() . ':' . $this->mail;
+    \Drupal::cache()->set($cid, ['csrf' => $this->token]);
+
+    $service = \Drupal::service('node_edit_link.csrf');
     $this->assertTrue($service->checkAccess($this->node));
 
     \Drupal::service('entity.form_builder')
@@ -121,14 +116,21 @@ class NodeCsrfTokenTest extends KernelTestBase {
     $this->assertNull($service->sendEmail($this->node, $this->token, 'foo@bar.baz'));
   }
 
-  /**
-   * Current request query `get` callback.
-   */
-  public function parameterBagGetCallback($key) {
-    if ($key == 'mail') {
-      return $this->mail;
-    }
-    return $this->token;
+  public function getCurrentRequest() {
+    $session = $this->createMock(SessionInterface::class);
+
+    $current_request = $this->createMock(Request::class);
+    $current_request->query = new InputBag();
+
+    $current_request->query->set('mail', $this->mail);
+    $current_request->query->set('edit-token', $this->token);
+
+    $current_request->cookies = new InputBag();
+
+    $current_request->request = new InputBag();
+    $current_request->method('getSession')->willReturn($session);
+
+    return $current_request;
   }
 
 }

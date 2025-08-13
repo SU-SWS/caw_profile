@@ -526,17 +526,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -582,17 +571,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -638,17 +616,6 @@ display:
             multiple: true
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              layout_builder_user: '0'
-              caw_reviewer: '0'
-              subsite_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:

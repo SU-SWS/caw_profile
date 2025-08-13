@@ -2,6 +2,7 @@
 
 namespace Drupal\Tests\caw_profile\Kernel\EventSubscriber;
 
+use Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber;
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -12,8 +13,6 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\caw_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
-use Drupal\user\Entity\Role;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +23,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * Class EventSubscriberTest.
  *
  * @group caw_profile
- * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\EventSubscriber
+ * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -73,7 +72,7 @@ class EventSubscriberTest extends KernelTestBase {
     $messenger = \Drupal::messenger();
     $client = $this->createMock(ClientInterface::class);
 
-    $this->eventSubscriber = new TestStanfordStanfordProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
+    $this->eventSubscriber = new TestCawProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
 
     /** @var \Drupal\media\MediaTypeInterface $media_type */
     $media_type = MediaType::create([
@@ -96,7 +95,7 @@ class EventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $this->assertContains('onContentImport', StanfordProfileEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', CawProfileEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
@@ -164,7 +163,7 @@ class EventSubscriberTest extends KernelTestBase {
 /**
  * {@inheritDoc}
  */
-class TestStanfordStanfordProfileEventSubscriber extends StanfordProfileEventSubscriber {
+class TestCawProfileEventSubscriber extends CawProfileEventSubscriber {
 
   /**
    * {@inheritDoc}

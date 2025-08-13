@@ -25,7 +25,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
  *
  * @package Drupal\caw_profile\EventSubscriber
  */
-class StanfordProfileEventSubscriber implements EventSubscriberInterface {
+class CawProfileEventSubscriber implements EventSubscriberInterface {
 
   /**
    * External site url to fetch the given file from.

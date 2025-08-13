@@ -3,7 +3,7 @@ services:
     class: Drupal\caw_profile\InstallTaskManager
     parent: default_plugin_manager
   caw_profile.event_subscriber:
-    class: '\Drupal\caw_profile\EventSubscriber\EventSubscriber'
+    class: '\Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber'
     arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }

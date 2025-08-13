@@ -4,6 +4,8 @@ namespace Drupal\caw_profile_helper\Plugin\paragraphs\Behavior;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -13,13 +15,12 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * Provides behaviors for card paragraphs to add color classes.
  *
  * @codeCoverageIgnore
- *
- * @ParagraphsBehavior(
- *   id = "card_color",
- *   label = @Translation("Card Colors"),
- *   description = @Translation("Change background colors.")
- * )
  */
+#[ParagraphsBehavior(
+  id: 'card_color',
+  label: new TranslatableMarkup('Card Colors'),
+  description: new TranslatableMarkup('Change background colors.')
+)]
 class CardColorBehavior extends ParagraphsBehaviorBase {
 
   /**

@@ -75,3 +75,4 @@ partial_list:
   - 'user.role.*'
   - views.view.media
   - views.view.media_library
+  - 'views.view.stanford_*'

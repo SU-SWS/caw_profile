@@ -4,18 +4,6 @@ adding:
       - taxonomy.vocabulary.caw_event_category
       - taxonomy.vocabulary.stanford_event_types
   display:
-    default:
-      display_options:
-        link_url: /community/events
-    cards:
-      display_options:
-        arguments:
-          term_node_taxonomy_name_depth:
-            admin_label: 'Taxonomy Name: Audience, Type, or Category'
-            summary_options:
-              count: 1
-            vocabularies:
-              caw_event_category: caw_event_category
     filtering_list:
       id: filtering_list
       display_title: 'Filtering List'
@@ -36,34 +24,34 @@ adding:
             group_type: group
             admin_label: ''
             label: ''
-            exclude: false
+            exclude: 1
             alter:
-              alter_text: false
+              alter_text: 0
               text: ''
-              make_link: false
+              make_link: 0
               path: ''
-              absolute: false
+              absolute: 0
               external: false
-              replace_spaces: false
+              replace_spaces: 0
               path_case: none
-              trim_whitespace: false
+              trim_whitespace: 0
               alt: ''
               rel: ''
               link_class: ''
               prefix: ''
               suffix: ''
               target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
+              nl2br: 0
+              max_length: '0'
+              word_boundary: 1
+              ellipsis: 1
+              more_link: 0
               more_link_text: ''
               more_link_path: ''
-              strip_tags: false
-              trim: false
+              strip_tags: 0
+              trim: 0
               preserve_tags: ''
-              html: false
+              html: 0
             element_type: ''
             element_class: ''
             element_label_type: ''
@@ -71,14 +59,14 @@ adding:
             element_label_colon: false
             element_wrapper_type: ''
             element_wrapper_class: ''
-            element_default_classes: false
+            element_default_classes: 1
             empty: ''
-            hide_empty: false
-            empty_zero: false
-            hide_alter_empty: true
+            hide_empty: 0
+            empty_zero: 0
+            hide_alter_empty: 1
             text: view
-            output_url_as_text: true
-            absolute: false
+            output_url_as_text: 1
+            absolute: 0
             entity_type: node
             plugin_id: entity_link
           su_event_source:
@@ -89,34 +77,34 @@ adding:
             group_type: group
             admin_label: ''
             label: ''
-            exclude: false
+            exclude: 0
             alter:
-              alter_text: false
+              alter_text: 0
               text: ''
-              make_link: false
+              make_link: 0
               path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
+              absolute: 0
+              external: 0
+              replace_spaces: 0
               path_case: none
-              trim_whitespace: false
+              trim_whitespace: 0
               alt: ''
               rel: ''
               link_class: ''
               prefix: ''
               suffix: ''
               target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
+              nl2br: 0
+              max_length: '0'
+              word_boundary: 1
+              ellipsis: 1
+              more_link: 0
               more_link_text: ''
               more_link_path: ''
-              strip_tags: false
-              trim: false
+              strip_tags: 0
+              trim: 0
               preserve_tags: ''
-              html: false
+              html: 0
             element_type: ''
             element_class: ''
             element_label_type: ''
@@ -124,19 +112,19 @@ adding:
             element_label_colon: false
             element_wrapper_type: ''
             element_wrapper_class: ''
-            element_default_classes: false
-            empty: ''
-            hide_empty: false
-            empty_zero: false
-            hide_alter_empty: true
+            element_default_classes: 1
+            empty: '{{ view_node }}'
+            hide_empty: 0
+            empty_zero: 0
+            hide_alter_empty: 1
             click_sort_column: uri
             type: link
             settings:
-              trim_length: null
-              url_only: true
-              url_plain: true
-              rel: '0'
-              target: '0'
+              trim_length: ''
+              url_only: 1
+              url_plain: 1
+              rel: 0
+              target: 0
             group_column: ''
             group_columns: {  }
             group_rows: true
@@ -146,7 +134,7 @@ adding:
             delta_first_last: false
             multi_type: separator
             separator: ', '
-            field_api_classes: false
+            field_api_classes: 0
             plugin_id: field
           title:
             id: title
@@ -156,50 +144,50 @@ adding:
             group_type: group
             admin_label: ''
             label: ''
-            exclude: false
+            exclude: 0
             alter:
-              alter_text: true
-              text: "<a class=\"su-link{% if su_event_source %} su-link--external{% endif %}\" href=\"{% if su_event_source %}{{ su_event_source }}{% else %}{{ view_node }}{% endif %}\">\r\n  {{ title }}\r\n</a>"
-              make_link: false
+              alter_text: 0
+              text: ''
+              make_link: 0
               path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
+              absolute: 0
+              external: 0
+              replace_spaces: 0
               path_case: none
-              trim_whitespace: false
+              trim_whitespace: 0
               alt: ''
               rel: ''
               link_class: ''
               prefix: ''
               suffix: ''
               target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: false
-              ellipsis: false
-              more_link: false
+              nl2br: 0
+              max_length: '0'
+              word_boundary: 0
+              ellipsis: 0
+              more_link: 0
               more_link_text: ''
               more_link_path: ''
-              strip_tags: false
-              trim: false
+              strip_tags: 0
+              trim: 0
               preserve_tags: ''
-              html: false
-            element_type: h2
+              html: 0
+            element_type: h3
             element_class: ''
             element_label_type: ''
             element_label_class: ''
             element_label_colon: false
             element_wrapper_type: ''
             element_wrapper_class: ''
-            element_default_classes: true
+            element_default_classes: 1
             empty: ''
-            hide_empty: false
-            empty_zero: false
-            hide_alter_empty: true
+            hide_empty: 0
+            empty_zero: 0
+            hide_alter_empty: 1
             click_sort_column: value
             type: string
             settings:
-              link_to_entity: false
+              link_to_entity: 1
             group_column: value
             group_columns: {  }
             group_rows: true
@@ -209,7 +197,7 @@ adding:
             delta_first_last: false
             multi_type: separator
             separator: ', '
-            field_api_classes: false
+            field_api_classes: 0
             entity_type: node
             entity_field: title
             plugin_id: field
@@ -284,34 +272,34 @@ adding:
             group_type: group
             admin_label: ''
             label: ''
-            exclude: false
+            exclude: 0
             alter:
-              alter_text: false
+              alter_text: 0
               text: ''
-              make_link: false
+              make_link: 0
               path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
+              absolute: 0
+              external: 0
+              replace_spaces: 0
               path_case: none
-              trim_whitespace: false
+              trim_whitespace: 0
               alt: ''
               rel: ''
               link_class: ''
               prefix: ''
               suffix: ''
               target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
+              nl2br: 0
+              max_length: '0'
+              word_boundary: 1
+              ellipsis: 1
+              more_link: 0
               more_link_text: ''
               more_link_path: ''
-              strip_tags: false
-              trim: false
+              strip_tags: 0
+              trim: 0
               preserve_tags: ''
-              html: false
+              html: 0
             element_type: ''
             element_class: ''
             element_label_type: ''
@@ -319,15 +307,15 @@ adding:
             element_label_colon: false
             element_wrapper_type: ''
             element_wrapper_class: ''
-            element_default_classes: true
+            element_default_classes: 1
             empty: ''
-            hide_empty: false
-            empty_zero: false
-            hide_alter_empty: true
+            hide_empty: 0
+            empty_zero: 0
+            hide_alter_empty: 1
             click_sort_column: value
-            type: entity_title_heading
+            type: string
             settings:
-              tag: h3
+              link_to_entity: 0
             group_column: value
             group_columns: {  }
             group_rows: true
@@ -337,7 +325,7 @@ adding:
             delta_first_last: false
             multi_type: separator
             separator: ', '
-            field_api_classes: false
+            field_api_classes: 0
             plugin_id: field
           su_event_dek:
             id: su_event_dek
@@ -800,59 +788,6 @@ adding:
             separator: ', '
             field_api_classes: false
             plugin_id: field
-          edit_node:
-            id: edit_node
-            table: node
-            field: edit_node
-            relationship: none
-            group_type: group
-            admin_label: ''
-            label: ''
-            exclude: false
-            alter:
-              alter_text: false
-              text: ''
-              make_link: false
-              path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
-              path_case: none
-              trim_whitespace: false
-              alt: ''
-              rel: ''
-              link_class: ''
-              prefix: ''
-              suffix: ''
-              target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
-              more_link_text: ''
-              more_link_path: ''
-              strip_tags: false
-              trim: false
-              preserve_tags: ''
-              html: false
-            element_type: div
-            element_class: su-events-edit-article
-            element_label_type: ''
-            element_label_class: ''
-            element_label_colon: false
-            element_wrapper_type: ''
-            element_wrapper_class: ''
-            element_default_classes: true
-            empty: ''
-            hide_empty: true
-            empty_zero: false
-            hide_alter_empty: true
-            text: 'Edit this event item'
-            output_url_as_text: false
-            absolute: false
-            entity_type: node
-            plugin_id: entity_link_edit
         defaults:
           fields: false
           style: false
@@ -860,7 +795,6 @@ adding:
           arguments: false
           filters: false
           filter_groups: false
-          empty: false
         style:
           type: html_list
           options:
@@ -892,78 +826,73 @@ adding:
             separator: ''
             hide_empty: 1
             pattern: events_list
-            variants:
-              alert: default
-              brandbar: default
-              button: default
-              card: default
-              cta: default
-              date-stacked: default
-              hero: default
-              link: default
-              lockup: a
-              media: default
             pattern_mapping:
+              'views_row:su_event_source':
+                destination: url
+                weight: 0
+                plugin: views_row
+                source: su_event_source
               'views_row:title':
                 destination: headline
-                weight: 0
+                weight: 1
                 plugin: views_row
                 source: title
               'views_row:su_event_date_time':
                 destination: date_time
-                weight: 1
+                weight: 2
                 plugin: views_row
                 source: su_event_date_time
               'views_row:su_event_date_time_value_1':
                 destination: start_month
-                weight: 2
+                weight: 3
                 plugin: views_row
                 source: su_event_date_time_value_1
               'views_row:su_event_alt_loc':
                 destination: location
-                weight: 3
+                weight: 4
                 plugin: views_row
                 source: su_event_alt_loc
               'views_row:su_event_date_time_value':
                 destination: start_date
-                weight: 4
+                weight: 5
                 plugin: views_row
                 source: su_event_date_time_value
               'views_row:su_event_date_time_end_value_1':
                 destination: end_date
-                weight: 5
+                weight: 6
                 plugin: views_row
                 source: su_event_date_time_end_value_1
               'views_row:su_event_date_time_end_value':
                 destination: end_month
-                weight: 6
+                weight: 7
                 plugin: views_row
                 source: su_event_date_time_end_value
               'views_row:su_event_type':
                 destination: event_type
-                weight: 7
+                weight: 8
                 plugin: views_row
                 source: su_event_type
               'views_row:su_event_subheadline':
                 destination: subheadline
-                weight: 8
+                weight: 9
                 plugin: views_row
                 source: su_event_subheadline
               'views_row:su_event_dek':
                 destination: dek
-                weight: 9
+                weight: 10
                 plugin: views_row
                 source: su_event_dek
               'views_row:su_event_location':
                 destination: address
-                weight: 10
+                weight: 11
                 plugin: views_row
                 source: su_event_location
               'views_row:edit_node':
                 destination: edit
-                weight: 11
+                weight: 12
                 plugin: views_row
                 source: edit_node
+            pattern_variant: h3_header
         arguments:
           term_node_taxonomy_name_depth:
             id: term_node_taxonomy_name_depth
@@ -971,7 +900,7 @@ adding:
             field: term_node_taxonomy_name_depth
             relationship: none
             group_type: group
-            admin_label: 'Taxonomy Name: Audience, Type, or Category'
+            admin_label: 'Taxonomy Name: Audience or Type'
             default_action: ignore
             exception:
               value: all
@@ -984,9 +913,9 @@ adding:
               argument: ''
             summary_options:
               base_path: ''
-              count: 1
-              override: 0
+              count: '1'
               items_per_page: '25'
+              override: 0
             summary:
               sort_order: asc
               number_of_records: '0'
@@ -998,7 +927,6 @@ adding:
             validate_options: {  }
             depth: '1'
             vocabularies:
-              caw_event_category: caw_event_category
               event_audience: event_audience
               stanford_event_types: stanford_event_types
             break_phrase: 1
@@ -1145,6 +1073,7 @@ adding:
             expose:
               operator_limit_selection: false
               operator_list: {  }
+            group: 1
           su_event_date_time_end_value:
             id: su_event_date_time_end_value
             table: node__su_event_date_time
@@ -1199,7 +1128,7 @@ adding:
             admin_label: ''
             operator: or
             value: {  }
-            group: '1'
+            group: 1
             exposed: true
             expose:
               operator_id: su_event_type_target_id_op
@@ -1215,18 +1144,7 @@ adding:
               multiple: 1
               remember_roles:
                 authenticated: authenticated
-                administrator: 0
-                anonymous: 0
-                stanford_faculty: 0
-                stanford_staff: 0
-                stanford_student: 0
-                contributor: 0
-                site_manager: 0
-                site_editor: 0
-                layout_builder_user: 0
-                caw_reviewer: 0
-                subsite_contributor: 0
-              reduce: 0
+              reduce: false
             is_grouped: false
             group_info:
               label: ''
@@ -1255,7 +1173,7 @@ adding:
             admin_label: ''
             operator: or
             value: {  }
-            group: '1'
+            group: 1
             exposed: true
             expose:
               operator_id: caw_event_category_target_id_op
@@ -1271,19 +1189,6 @@ adding:
               multiple: 1
               remember_roles:
                 authenticated: authenticated
-                administrator: 0
-                anonymous: 0
-                stanford_faculty: 0
-                stanford_staff: 0
-                stanford_student: 0
-                contributor: 0
-                site_manager: 0
-                site_editor: 0
-                site_builder: 0
-                site_developer: 0
-                layout_builder_user: 0
-                caw_reviewer: 0
-                subsite_contributor: 0
               reduce: false
             is_grouped: false
             group_info:
@@ -1308,20 +1213,6 @@ adding:
           operator: AND
           groups:
             1: AND
-        empty:
-          area:
-            id: area
-            table: views
-            field: area
-            relationship: none
-            group_type: group
-            admin_label: ''
-            empty: true
-            tokenize: 0
-            content:
-              value: '<div class="centered-container"><p>No events match the chosen filters. Please try again or check back later.</p></div>'
-              format: stanford_html
-            plugin_id: text
       cache_metadata:
         max-age: -1
         contexts:
@@ -1329,7 +1220,6 @@ adding:
           - 'languages:language_interface'
           - url
           - url.query_args
-          - user
           - 'user.node_grants:view'
           - user.permissions
         tags:
@@ -1340,254 +1230,4 @@ adding:
           - 'config:field.storage.node.su_event_source'
           - 'config:field.storage.node.su_event_subheadline'
           - 'config:field.storage.node.su_event_type'
-    list_page:
-      display_options:
-        fields:
-          edit_node:
-            id: edit_node
-            table: node
-            field: edit_node
-            relationship: none
-            group_type: group
-            admin_label: ''
-            label: ''
-            exclude: false
-            alter:
-              alter_text: false
-              text: ''
-              make_link: false
-              path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
-              path_case: none
-              trim_whitespace: false
-              alt: ''
-              rel: ''
-              link_class: ''
-              prefix: ''
-              suffix: ''
-              target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
-              more_link_text: ''
-              more_link_path: ''
-              strip_tags: false
-              trim: false
-              preserve_tags: ''
-              html: false
-            element_type: div
-            element_class: su-events-edit-article
-            element_label_type: ''
-            element_label_class: ''
-            element_label_colon: false
-            element_wrapper_type: ''
-            element_wrapper_class: ''
-            element_default_classes: true
-            empty: ''
-            hide_empty: true
-            empty_zero: false
-            hide_alter_empty: true
-            text: 'Edit this event item'
-            output_url_as_text: false
-            absolute: false
-            entity_type: node
-            plugin_id: entity_link_edit
-        arguments:
-          term_node_taxonomy_name_depth:
-            admin_label: 'Taxonomy Name: Audience, Type, or Category'
-            summary_options:
-              count: 1
-            vocabularies:
-              caw_event_category: caw_event_category
-    list_page_filtered:
-      display_options:
-        fields:
-          su_event_subheadline:
-            type: entity_title_heading
-            settings:
-              tag: h3
-          edit_node:
-            id: edit_node
-            table: node
-            field: edit_node
-            relationship: none
-            group_type: group
-            admin_label: ''
-            entity_type: node
-            plugin_id: entity_link_edit
-            label: ''
-            exclude: false
-            alter:
-              alter_text: false
-              text: ''
-              make_link: false
-              path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
-              path_case: none
-              trim_whitespace: false
-              alt: ''
-              rel: ''
-              link_class: ''
-              prefix: ''
-              suffix: ''
-              target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
-              more_link_text: ''
-              more_link_path: ''
-              strip_tags: false
-              trim: false
-              preserve_tags: ''
-              html: false
-            element_type: div
-            element_class: su-events-edit-article
-            element_label_type: ''
-            element_label_class: ''
-            element_label_colon: false
-            element_wrapper_type: ''
-            element_wrapper_class: ''
-            element_default_classes: true
-            empty: ''
-            hide_empty: true
-            empty_zero: false
-            hide_alter_empty: true
-            text: 'Edit this event item'
-            output_url_as_text: false
-            absolute: false
-    more_events_block:
-      display_options:
-        link_url: /community/events
-    past_events_list_block:
-      display_options:
-        fields:
-          edit_node:
-            id: edit_node
-            table: node
-            field: edit_node
-            relationship: none
-            group_type: group
-            admin_label: ''
-            label: ''
-            exclude: false
-            alter:
-              alter_text: false
-              text: ''
-              make_link: false
-              path: ''
-              absolute: false
-              external: false
-              replace_spaces: false
-              path_case: none
-              trim_whitespace: false
-              alt: ''
-              rel: ''
-              link_class: ''
-              prefix: ''
-              suffix: ''
-              target: ''
-              nl2br: false
-              max_length: 0
-              word_boundary: true
-              ellipsis: true
-              more_link: false
-              more_link_text: ''
-              more_link_path: ''
-              strip_tags: false
-              trim: false
-              preserve_tags: ''
-              html: false
-            element_type: div
-            element_class: su-events-edit-article
-            element_label_type: ''
-            element_label_class: ''
-            element_label_colon: false
-            element_wrapper_type: ''
-            element_wrapper_class: ''
-            element_default_classes: true
-            empty: ''
-            hide_empty: true
-            empty_zero: false
-            hide_alter_empty: true
-            text: 'Edit this event item'
-            output_url_as_text: false
-            absolute: false
-            entity_type: node
-            plugin_id: entity_link_edit
-        link_url: /community/events/past
-removing:
-  display:
-    default:
-      display_options:
-        link_url: /events
-    cards:
-      display_options:
-        arguments:
-          term_node_taxonomy_name_depth:
-            admin_label: 'Taxonomy Name: Audience or Type'
-            summary_options:
-              count: '1'
-    list_page:
-      display_options:
-        arguments:
-          term_node_taxonomy_name_depth:
-            admin_label: 'Taxonomy Name: Audience or Type'
-            summary_options:
-              count: '1'
-    list_page_filtered:
-      display_options:
-        fields:
-          su_event_subheadline:
-            type: string
-            settings:
-              link_to_entity: false
-    list_page_graphql:
-      display_options:
-        sorts:
-          nid:
-            id: nid
-            table: node_field_data
-            field: nid
-            relationship: none
-            group_type: group
-            admin_label: ''
-            entity_type: node
-            entity_field: nid
-            plugin_id: standard
-            order: ASC
-            expose:
-              label: ''
-              field_identifier: ''
-            exposed: false
-    more_events_block:
-      display_options:
-        link_url: /events
-    past_events_list_block:
-      display_options:
-        link_url: /events/past
-    past_events_list_block_graphql:
-      display_options:
-        sorts:
-          nid:
-            id: nid
-            table: node_field_data
-            field: nid
-            relationship: none
-            group_type: group
-            admin_label: ''
-            entity_type: node
-            entity_field: nid
-            plugin_id: standard
-            order: ASC
-            expose:
-              label: ''
-              field_identifier: ''
-            exposed: false
+removing: {  }

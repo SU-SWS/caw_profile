@@ -4,16 +4,17 @@ namespace Drupal\caw_profile_helper\Plugin\Block;
 
 use Drupal\book\Plugin\Block\BookNavigationBlock;
 use Drupal\caw_profile_helper\BookManager;
+use Drupal\Core\Block\Attribute\Block;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Provides a subsite secondary navigation menu.
- *
- * @Block(
- *   id = "subsite_menu_block",
- *   admin_label = @Translation("Subsite Menu block"),
- *   category = @Translation("Menus")
- * )
  */
+#[Block(
+  id: 'subsite_menu_block',
+  admin_label: new TranslatableMarkup('Subsite Menu block'),
+  category: new TranslatableMarkup('Menus')
+)]
 class SubsiteMenuBlock extends BookNavigationBlock {
 
   /**

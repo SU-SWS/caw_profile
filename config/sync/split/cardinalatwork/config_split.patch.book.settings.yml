@@ -4,4 +4,3 @@ adding:
   child_type: stanford_page
 removing:
   child_type: stanford_policy
-  show_top_item: false

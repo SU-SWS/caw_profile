@@ -2,17 +2,15 @@
 
 namespace Drupal\caw_profile_helper\Plugin\migrate\process;
 
+use Drupal\migrate\Attribute\MigrateProcess;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 
 /**
  * Provides a 'CawBenefitsOfferedProcess' migrate process plugin.
- *
- * @MigrateProcessPlugin(
- *  id = "caw_benefits_offered"
- * )
  */
+#[MigrateProcess('caw_benefits_offered')]
 class CawBenefitsOfferedProcess extends ProcessPluginBase {
 
   /**

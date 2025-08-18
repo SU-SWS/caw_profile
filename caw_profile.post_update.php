@@ -26,7 +26,7 @@ function caw_profile_removed_post_updates() {
 }
 
 /**
- * Implements hook_post_update_NAME().
+ * Create new rabbit hole message block for subthemes.
  */
 function caw_profile_post_update_rabbit_hole_block() {
   $theme = \Drupal::config('system.theme')->get('default');

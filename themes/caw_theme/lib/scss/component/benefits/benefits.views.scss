@@ -5,6 +5,16 @@
 .caw-benefits {
   &.filtering-list {
 
+    thead {
+      th {
+        width: 20%;
+
+        &:first-child {
+          width: 5%;
+        }
+      }
+    }
+
     .rows {
       background: $su-color-foggy-light;
       // Moves the filter box to be offset.
@@ -46,7 +56,7 @@
         @include responsive-spacing('padding', null 3);
       }
 
-      .views-field-caw-benefits-plan-number{
+      .views-field-caw-benefits-plan-number {
         @include responsive-spacing('padding-bottom', 1);
       }
 
@@ -190,7 +200,7 @@
         width: 100%;
       }
 
-      @include grid-media-min("lg"){
+      @include grid-media-min("lg") {
         flex-direction: row;
       }
 

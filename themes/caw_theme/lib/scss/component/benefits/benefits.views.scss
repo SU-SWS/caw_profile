@@ -40,9 +40,14 @@
 
       // Card spacing
       .views-field-title,
+      .views-field-caw-benefits-plan-number,
       .views-field-su-benefits-offered,
       .views-field-body {
         @include responsive-spacing('padding', null 3);
+      }
+
+      .views-field-caw-benefits-plan-number{
+        @include responsive-spacing('padding-bottom', 1);
       }
 
       .views-field-title {
@@ -218,20 +223,9 @@
     }
 
     .selected-items li {
-      display: inline;
-      margin-right: 5px;
       background: none;
       border: 0;
       border-radius: 0;
-
-      &:after {
-        content: ',';
-        display: inline-block;
-      }
-
-      &:last-child:after {
-        content: '';
-      }
     }
   }
 
@@ -275,7 +269,7 @@
   caption {
     @include type-e;
 
-    padding: 4px;
+    padding: 9px;
     background: $caw-color-lime-light;
     width: 100%;
     font-weight: $su-font-semi-bold;

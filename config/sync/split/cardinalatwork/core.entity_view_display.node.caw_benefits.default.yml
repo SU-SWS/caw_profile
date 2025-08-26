@@ -94,6 +94,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
     - field.field.node.caw_benefits.caw_benefits_perks
+    - field.field.node.caw_benefits.caw_benefits_plan_number
     - field.field.node.caw_benefits.caw_benefits_prosthetic
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
@@ -151,6 +152,31 @@ third_party_settings:
                   field_formatter_class:
                     class: ''
             weight: 0
+            additional: {  }
+          bcd68421-2904-46a1-b58f-19f21dd337ee:
+            uuid: bcd68421-2904-46a1-b58f-19f21dd337ee
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_plan_number'
+              label: 'Plan Number'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -3081,6 +3107,7 @@ hidden:
   caw_benefits_med_well_woman: true
   caw_benefits_parttime_cost: true
   caw_benefits_perks: true
+  caw_benefits_plan_number: true
   caw_benefits_prosthetic: true
   caw_benefits_vision_contacts: true
   caw_benefits_vision_exam: true

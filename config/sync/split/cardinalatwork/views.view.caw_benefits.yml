@@ -1951,6 +1951,7 @@ display:
           columns:
             su_benefit_type: su_benefit_type
             title: title
+            caw_benefits_plan_number: caw_benefits_plan_number
             nothing: nothing
             body: body
             caw_benefits_fulltime_cost: caw_benefits_fulltime_cost
@@ -2068,6 +2069,13 @@ display:
               empty_column: true
               responsive: ''
             title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: ''
+            caw_benefits_plan_number:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2809,6 +2817,7 @@ display:
           empty_table: false
           caption: 'You can scroll in the results box to see all the benefit categories available.'
           description: ''
+          class: ''
           flipped_table_header_first_field: true
       row:
         type: fields
@@ -3096,10 +3105,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: 1
           inline: {  }
           separator: ''
-          hide_empty: false
-          default_field_elements: true
+          hide_empty: 1
       fields:
         title:
           id: title

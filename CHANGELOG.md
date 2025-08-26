@@ -377,6 +377,13 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+12.0.1
+-------------------------------------------------------------------------------
+
+- D8CORE-8279: A11y changes for federated search (#982)
+- Set title on profile helper cron job
+
+
 12.0.0
 -------------------------------------------------------------------------------
 

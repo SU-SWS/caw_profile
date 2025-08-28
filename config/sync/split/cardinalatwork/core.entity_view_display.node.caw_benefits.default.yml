@@ -158,7 +158,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_plan_number'
-              label: 'Plan Number'
+              label: 'Plan ID'
               label_display: '0'
               provider: layout_builder
               context_mapping:

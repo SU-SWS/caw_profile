@@ -247,7 +247,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Plan Number'
+          label: 'Plan ID'
           exclude: false
           alter:
             alter_text: false

@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_plan_number
 field_name: caw_benefits_plan_number
 entity_type: node
 bundle: caw_benefits
-label: 'Plan Number'
+label: 'Plan ID'
 description: ''
 required: false
 translatable: true

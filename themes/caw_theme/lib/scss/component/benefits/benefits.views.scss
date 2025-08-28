@@ -323,13 +323,11 @@
         background: #eaedee;
         position: sticky;
         top: 0;
+        -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
+        box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
 
         th {
-          @include responsive-spacing('padding-bottom', 4);
-
-          -webkit-box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
-          box-shadow: 0 3px 8px -7px $su-color-black, 5px 5px 15px 5px transparent;
-
+          @include responsive-spacing('padding-bottom', 1);
         }
       }
 

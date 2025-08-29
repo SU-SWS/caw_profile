@@ -94,6 +94,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
     - field.field.node.caw_benefits.caw_benefits_perks
+    - field.field.node.caw_benefits.caw_benefits_plan_number
     - field.field.node.caw_benefits.caw_benefits_prosthetic
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
@@ -124,7 +125,7 @@ third_party_settings:
       label: Benefits
       region: content
       parent_name: ''
-      weight: 18
+      weight: 5
       format_type: tabs
       format_settings:
         classes: ''
@@ -1041,6 +1042,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  caw_benefits_plan_number:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
   caw_benefits_prosthetic:
     type: string_textarea
     weight: 40
@@ -1123,33 +1132,33 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 99
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 99
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 99
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 99
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 99
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -1187,7 +1196,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 99
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -1196,7 +1205,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 99
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

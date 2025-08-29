@@ -95,6 +95,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_med_well_woman
     - field.field.node.caw_benefits.caw_benefits_parttime_cost
     - field.field.node.caw_benefits.caw_benefits_perks
+    - field.field.node.caw_benefits.caw_benefits_plan_number
     - field.field.node.caw_benefits.caw_benefits_prosthetic
     - field.field.node.caw_benefits.caw_benefits_vision_contacts
     - field.field.node.caw_benefits.caw_benefits_vision_exam
@@ -213,6 +214,7 @@ hidden:
   caw_benefits_med_well_woman: true
   caw_benefits_parttime_cost: true
   caw_benefits_perks: true
+  caw_benefits_plan_number: true
   caw_benefits_prosthetic: true
   caw_benefits_vision_contacts: true
   caw_benefits_vision_exam: true

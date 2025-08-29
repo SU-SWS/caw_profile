@@ -2,6 +2,12 @@
   Drupal.behaviors.cawBenefits = {
     attach: function attach(context, settings) {
 
+      if ($(context).hasClass('filtering-list-view')){
+        $([document.documentElement, document.body]).animate({
+          scrollTop: $(context).offset().top
+        }, 500);
+      }
+
       const $table = $('table', context)
       if ($(context).hasClass('comparison-table--wrapper') && $table.length > 0) {
         $(context).attr('role', 'region')

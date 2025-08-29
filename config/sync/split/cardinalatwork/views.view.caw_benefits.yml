@@ -92,6 +92,7 @@ dependencies:
     - field.storage.node.caw_benefits_med_well_woman
     - field.storage.node.caw_benefits_parttime_cost
     - field.storage.node.caw_benefits_perks
+    - field.storage.node.caw_benefits_plan_number
     - field.storage.node.caw_benefits_prosthetic
     - field.storage.node.caw_benefits_vision_contacts
     - field.storage.node.caw_benefits_vision_exam
@@ -228,6 +229,68 @@ display:
           type: string
           settings:
             link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        caw_benefits_plan_number:
+          id: caw_benefits_plan_number
+          table: node__caw_benefits_plan_number
+          field: caw_benefits_plan_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Plan ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1748,7 +1811,7 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Search
+          submit_button: 'Apply Filters'
           reset_button: true
           reset_button_label: 'Clear Filters'
           exposed_sorts_label: 'Sort by'
@@ -1768,6 +1831,7 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
+              reset_button_always_show: false
             filter:
               su_benefits_offered_value:
                 plugin_id: default
@@ -1775,7 +1839,9 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: false
               su_benefit_type_value:
@@ -1783,8 +1849,10 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: ''
+                    filter_rewrite_values: '- Any -|- Choose -'
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: false
       access:
@@ -1883,6 +1951,7 @@ display:
           columns:
             su_benefit_type: su_benefit_type
             title: title
+            caw_benefits_plan_number: caw_benefits_plan_number
             nothing: nothing
             body: body
             caw_benefits_fulltime_cost: caw_benefits_fulltime_cost
@@ -2000,6 +2069,13 @@ display:
               empty_column: true
               responsive: ''
             title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: true
+              responsive: ''
+            caw_benefits_plan_number:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2741,6 +2817,7 @@ display:
           empty_table: false
           caption: 'You can scroll in the results box to see all the benefit categories available.'
           description: ''
+          class: ''
           flipped_table_header_first_field: true
       row:
         type: fields
@@ -2862,6 +2939,7 @@ display:
         - 'config:field.storage.node.caw_benefits_med_well_woman'
         - 'config:field.storage.node.caw_benefits_parttime_cost'
         - 'config:field.storage.node.caw_benefits_perks'
+        - 'config:field.storage.node.caw_benefits_plan_number'
         - 'config:field.storage.node.caw_benefits_prosthetic'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
@@ -2985,6 +3063,7 @@ display:
         - 'config:field.storage.node.caw_benefits_med_well_woman'
         - 'config:field.storage.node.caw_benefits_parttime_cost'
         - 'config:field.storage.node.caw_benefits_perks'
+        - 'config:field.storage.node.caw_benefits_plan_number'
         - 'config:field.storage.node.caw_benefits_prosthetic'
         - 'config:field.storage.node.caw_benefits_vision_contacts'
         - 'config:field.storage.node.caw_benefits_vision_exam'
@@ -3026,10 +3105,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: 1
           inline: {  }
           separator: ''
-          hide_empty: false
-          default_field_elements: true
+          hide_empty: 1
       fields:
         title:
           id: title
@@ -3095,6 +3174,68 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: title
+          plugin_id: field
+        caw_benefits_plan_number:
+          id: caw_benefits_plan_number
+          table: node__caw_benefits_plan_number
+          field: caw_benefits_plan_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: 0
+          alter:
+            alter_text: 0
+            text: ''
+            make_link: 0
+            path: ''
+            absolute: 0
+            external: 0
+            replace_spaces: 0
+            path_case: none
+            trim_whitespace: 0
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: 0
+            max_length: '0'
+            word_boundary: 1
+            ellipsis: 1
+            more_link: 0
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: 0
+            trim: 0
+            preserve_tags: ''
+            html: 0
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: 1
+          empty: ''
+          hide_empty: 0
+          empty_zero: 0
+          hide_alter_empty: 1
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
           plugin_id: field
         su_benefits_offered:
           id: su_benefits_offered
@@ -3586,5 +3727,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
+        - 'config:field.storage.node.caw_benefits_plan_number'
         - 'config:field.storage.node.su_benefit_type'
         - 'config:field.storage.node.su_benefits_offered'

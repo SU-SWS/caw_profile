@@ -76,20 +76,6 @@ adding:
           field_label_overwrite: ''
     status:
       weight: 7
-    su_event_date_time:
-      settings:
-        allday: true
-        remove_seconds: false
-        separator: to
-    su_event_groups:
-      settings:
-        formatter_third_party_settings: {  }
-    su_event_keywords:
-      settings:
-        formatter_third_party_settings: {  }
-    su_event_subject:
-      settings:
-        formatter_third_party_settings: {  }
   hidden:
     node_edit_link: true
     syndication: true

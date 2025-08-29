@@ -76,6 +76,7 @@ const FilterIsland = ({focus = false}) => {
           onChange={onSelectChange}
           defaultValue={getDefaultValue()}
           emptyLabel={selectOptions.find(item => item.value === 'All')?.label}
+          required={!!originalSelect.getAttribute('required')}
         />
       }
     </div>

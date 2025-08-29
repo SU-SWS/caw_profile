@@ -1864,6 +1864,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        caw_benefits_display_order_value:
+          id: caw_benefits_display_order_value
+          table: node__caw_benefits_display_order
+          field: caw_benefits_display_order_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         title:
           id: title
           table: node_field_data

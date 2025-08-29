@@ -152,6 +152,7 @@ hidden:
   caw_benefits_dent_space: true
   caw_benefits_dent_splint: true
   caw_benefits_dent_tmj: true
+  caw_benefits_display_order: true
   caw_benefits_fulltime_cost: true
   caw_benefits_lifetime_max: true
   caw_benefits_med_abulance: true

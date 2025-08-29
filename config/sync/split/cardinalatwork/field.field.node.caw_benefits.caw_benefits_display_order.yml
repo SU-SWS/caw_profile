@@ -1,0 +1,25 @@
+uuid: 0959b48c-a87e-418b-af7f-6fb2b227224b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_display_order
+    - node.type.caw_benefits
+id: node.caw_benefits.caw_benefits_display_order
+field_name: caw_benefits_display_order
+entity_type: node
+bundle: caw_benefits
+label: 'Display Order'
+description: 'Provide a number to sort the benefit in the comparison list. Lower numbers appear first. Larger numbers will appear last.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 999
+  prefix: ''
+  suffix: ''
+field_type: integer

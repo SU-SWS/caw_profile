@@ -1,5 +1,14 @@
 # Cardinal at Work Profile
 
+11.0.2
+--------------------------------------------------------------------------------
+_Release Date: 2025-09-09_
+
+- Updated external link settings
+- Added acceptance test for publication csv importer
+- Prevent federated search checkbox shrinking
+- Added person and policy external source fields to graphql
+
 11.0.1
 --------------------------------------------------------------------------------
 _Release Date: 2025-08-29_

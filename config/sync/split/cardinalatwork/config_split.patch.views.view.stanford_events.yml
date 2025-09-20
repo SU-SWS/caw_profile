@@ -4,6 +4,12 @@ adding:
       - taxonomy.vocabulary.caw_event_category
       - taxonomy.vocabulary.stanford_event_types
   display:
+    cards:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            summary_options:
+              count: 1
     filtering_list:
       id: filtering_list
       display_title: 'Filtering List'
@@ -913,9 +919,9 @@ adding:
               argument: ''
             summary_options:
               base_path: ''
-              count: '1'
-              items_per_page: '25'
+              count: 1
               override: 0
+              items_per_page: '25'
             summary:
               sort_order: asc
               number_of_records: '0'
@@ -927,6 +933,7 @@ adding:
             validate_options: {  }
             depth: '1'
             vocabularies:
+              caw_event_category: caw_event_category
               event_audience: event_audience
               stanford_event_types: stanford_event_types
             break_phrase: 1
@@ -1230,4 +1237,29 @@ adding:
           - 'config:field.storage.node.su_event_source'
           - 'config:field.storage.node.su_event_subheadline'
           - 'config:field.storage.node.su_event_type'
-removing: {  }
+    list_page:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            summary_options:
+              count: 1
+removing:
+  display:
+    cards:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            summary_options:
+              count: '1'
+    list_page:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            summary_options:
+              count: '1'
+    list_page_graphql:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            vocabularies:
+              caw_event_category: caw_event_category

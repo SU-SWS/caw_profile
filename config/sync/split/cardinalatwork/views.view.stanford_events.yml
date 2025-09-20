@@ -812,9 +812,9 @@ display:
             argument: ''
           summary_options:
             base_path: ''
-            count: '1'
-            items_per_page: '25'
+            count: 1
             override: 0
+            items_per_page: '25'
           summary:
             sort_order: asc
             number_of_records: '0'
@@ -826,6 +826,7 @@ display:
           validate_options: {  }
           depth: '1'
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
           break_phrase: 1
@@ -4042,9 +4043,9 @@ display:
             argument: ''
           summary_options:
             base_path: ''
-            count: '1'
-            items_per_page: '25'
+            count: 1
             override: 0
+            items_per_page: '25'
           summary:
             sort_order: asc
             number_of_records: '0'
@@ -4056,6 +4057,7 @@ display:
           validate_options: {  }
           depth: '1'
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
           break_phrase: 1

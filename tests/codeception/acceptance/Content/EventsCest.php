@@ -31,6 +31,63 @@ class EventsCest {
     }
   }
 
+  #[CodeceptionAttribute\Group('caw-category')]
+  public function testCawCategories(AcceptanceTester $I) {
+    $event = $I->createEntity([
+      'type' => 'stanford_event',
+      'title' => $this->faker->words(3, TRUE),
+      'su_event_date_time' => [
+        'value' => time() + (60 * 60 * 24),
+        'end_value' => time() + (60 * 60 * 24),
+        'duration' => 0,
+        'timezone' => 'America/Los_Angeles',
+      ],
+    ]);
+    $term = $I->createEntity([
+      'vid' => 'caw_event_category',
+      'name' => strtolower($this->faker->word()),
+    ], 'taxonomy_term');
+
+    $list_headline = $this->faker->words(3, TRUE);
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_headline' => $list_headline,
+      'su_list_view' => [
+        'target_id' => 'stanford_events',
+        'display_id' => 'list_page',
+        'arguments' => $term->label(),
+        'items_to_display' => NULL,
+      ],
+    ], 'paragraph');
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+    $paragraph->setParentEntity($node, 'su_page_components');
+    $paragraph->save();
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($list_headline, 'h2');
+
+    $I->cantSee($event->label(), 'h3');
+
+    $event->set('caw_event_category', ['target_id' => $term->id()])->save();
+
+    Cache::invalidateTags(['paragraph_view']);
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($list_headline, 'h2');
+
+    $I->canSee($event->label(), 'h3');
+  }
+
   /**
    * Events list intro block is at the top of the page.
    */

@@ -824,6 +824,7 @@ display:
           validate_options: {  }
           depth: '1'
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
           break_phrase: 1
@@ -2828,6 +2829,7 @@ display:
           validate_options: {  }
           depth: '1'
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
           break_phrase: 1
@@ -4894,6 +4896,7 @@ display:
           depth: '1'
           use_taxonomy_term_path: false
           vocabularies:
+            caw_event_category: caw_event_category
             event_audience: event_audience
             stanford_event_types: stanford_event_types
         term_node_taxonomy_name_depth_1:

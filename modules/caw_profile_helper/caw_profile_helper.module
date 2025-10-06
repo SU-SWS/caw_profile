@@ -259,14 +259,15 @@ function _caw_profile_helper_subsite_save(&$form, FormStateInterface $form_state
  */
 function caw_profile_helper_views_pre_build(ViewExecutable $view) {
   if ($view->id() == 'caw_benefits' && $view->current_display == 'filtering_list') {
-    if (!empty($view->args[0]) && strlen($view->args[0]) == 4) {
-      $view->args[0] .= '-01-01';
-    }
-    else {
+    if (empty($view->args[0])) {
       // Use the current year if argument is not provided, but use next year if
-      // it's currently November or December.
-      $year = date('m') >= 11 ? (int) date('Y') + 1 : (int) date('Y');
+      // it's currently October, November or December.
+      $year = date('m') >= 10 ? (int) date('Y') + 1 : (int) date('Y');
       $view->args = ["$year-01-01"];
+    }
+
+    if (!empty($view->args[0]) && strlen($view->args[0]) == 4 && is_numeric($view->args[0])) {
+      $view->args[0] .= '-01-01';
     }
   }
 }

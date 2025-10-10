@@ -119,6 +119,7 @@ removing:
     module:
       - views_bulk_edit
   permissions:
+    config_split_sequence_6je4pmjs2jvoeapm: 'assign custm_caw_hr_comms role'
     config_split_sequence_1fd1ch7k8rn92jt6: 'create new books'
     config_split_sequence_all2i9idlhoupmi3: 'create policy log'
     config_split_sequence_aqo2i4j9mugeotpu: 'create terms in media_tags'

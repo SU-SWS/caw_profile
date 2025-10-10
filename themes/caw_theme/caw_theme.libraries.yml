@@ -50,7 +50,3 @@ benefits.node:
     component:
       dist/css/benefits.node.css: { }
 
-select-preact:
-  version: VERSION
-  js:
-    lib/js/select-lists/dist/islands/select-list-filters.island.js: {minified: true}

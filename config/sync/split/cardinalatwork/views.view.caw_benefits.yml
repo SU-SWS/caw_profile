@@ -1834,7 +1834,7 @@ display:
               reset_button_always_show: false
             filter:
               su_benefits_offered_value:
-                plugin_id: default
+                plugin_id: preact_combo_box
                 advanced:
                   sort_options: false
                   rewrite:
@@ -1845,7 +1845,7 @@ display:
                   is_secondary: false
                   hide_label: false
               su_benefit_type_value:
-                plugin_id: default
+                plugin_id: preact_combo_box
                 advanced:
                   sort_options: false
                   rewrite:
@@ -3115,6 +3115,7 @@ display:
         header: false
         filters: false
         filter_groups: false
+        empty: false
       row:
         type: fields
         options:
@@ -3730,6 +3731,20 @@ display:
         operator: AND
         groups:
           1: AND
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: 0
+          content:
+            value: "<div class=\"layout--layout-paragraphs-one-column\">\r\n<div class=\"su-wysiwyg-text su-margin-top-5\">\r\n<p>No health plans matching these criteria are currently available in the comparison tool.</p>\r\n</div>\r\n</div>"
+            format: stanford_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

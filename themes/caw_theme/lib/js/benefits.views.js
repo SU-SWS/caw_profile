@@ -16,29 +16,7 @@
           .focus();
       }
 
-      const disableSelectOptions = available => {
-        const $available = $(available);
-        const $type = $('.view.caw-benefits.filtering-list select[name="type"]');
-
-        const availableIds = settings.cawBenefits.available[$available.val()];
-        $('option', $type).each((j, option) => {
-          const typeIds = settings.cawBenefits.type[$(option).attr('value')];
-          const intersectionIds = availableIds.filter(value => typeIds.includes(value));
-
-          if (intersectionIds.length === 0 && $(option).attr('value') !== 'All') {
-            $(option).attr('disabled', true);
-          }
-          else {
-            $(option).attr('disabled', false);
-          }
-        })
-      };
       const $view = $('.view.caw-benefits.filtering-list');
-
-      // Add change listener to disable options that don't have any results.
-      $(once('select-benefits', 'select[name="available"]', $view.get(0)))
-        .on('change', e => disableSelectOptions(e.currentTarget))
-        .each((i, select) => disableSelectOptions(select));
 
       // The header is the comparison summary, but the actual text inside the
       // $headerSummary is updated on click, so set this variable for easier

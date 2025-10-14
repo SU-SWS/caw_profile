@@ -782,7 +782,7 @@ third_party_settings:
               provider: jumpstart_ui
               context_mapping: {  }
               heading_text: Maternity
-              wrapper: h1
+              wrapper: h2
               hide_heading: 0
             weight: 16
             additional: {  }
@@ -828,7 +828,7 @@ third_party_settings:
             configuration:
               id: jumpstart_ui_page_heading
               label: 'Mental Health'
-              label_display: visible
+              label_display: '0'
               provider: jumpstart_ui
               context_mapping: {  }
               heading_text: 'Mental Health/Autism/Substance Abuse'

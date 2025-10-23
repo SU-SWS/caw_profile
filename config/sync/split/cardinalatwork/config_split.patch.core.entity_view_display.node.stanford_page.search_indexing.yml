@@ -9,4 +9,7 @@ adding:
     caw_page_resource_category: true
     caw_page_resource_role: true
     caw_page_resource_type: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.body

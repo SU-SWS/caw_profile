@@ -67,7 +67,7 @@ removing:
     su_basic_page_type:
       weight: 2
     su_page_components:
-      weight: 7
+      weight: 8
       settings:
         empty_message: ''
       third_party_settings:

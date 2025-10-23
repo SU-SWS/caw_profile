@@ -320,7 +320,8 @@ display:
           buttons: false
           action_title: Action
           clear_on_exposed: true
-          force_selection_info: false
+          show_multipage_selection_box: default
+          show_select_all: always_hide
           selected_actions:
             5:
               action_id: node_assign_owner_action

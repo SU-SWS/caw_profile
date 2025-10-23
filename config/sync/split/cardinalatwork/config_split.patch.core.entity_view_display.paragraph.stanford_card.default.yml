@@ -3,7 +3,6 @@ adding:
     config:
       - field.field.paragraph.stanford_card.su_card_icon
     module:
-      - field_formatter_class
       - fontawesome
   third_party_settings:
     ds:

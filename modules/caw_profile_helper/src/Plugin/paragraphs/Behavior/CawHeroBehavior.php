@@ -18,7 +18,7 @@ class CawHeroBehavior extends HeroPatternBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
     $form = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $form['overlay_position']['#options']['center'] = $this->t('Centered with no background');
+    $form['overlay_position']['#options']['center_transparent'] = $this->t('Centered with no overlay');
     return $form;
   }
 

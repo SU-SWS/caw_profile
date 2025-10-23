@@ -396,3 +396,29 @@ function _caw_profile_helper_update_fix_configs(string $config_prefix){
     }
   }
 }
+
+/**
+ * Update banner paragraphs set to "center" text.
+ */
+function caw_profile_helper_update_9013(&$sandbox) {
+  $storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  if (empty($sandbox)) {
+    $sandbox['todo'] = $storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', 'stanford_banner')
+      ->condition('behavior_settings', '%center%', 'LIKE')
+      ->execute();
+    $sandbox['total'] = count($sandbox['todo']);
+    $sandbox['#finished'] = 0;
+  }
+
+  $ids = array_splice($sandbox['todo'], 0, 20);
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  foreach ($storage->loadMultiple($ids) as $paragraph) {
+    $settings = $paragraph->getAllBehaviorSettings()['hero_pattern'];
+    $settings['overlay_position'] = 'center_transparent';
+    $paragraph->setBehaviorSettings('hero_pattern', $settings);
+    $paragraph->save();
+  }
+  $sandbox['#finished'] = 1 - (count($sandbox['todo']) / $sandbox['total']);
+}

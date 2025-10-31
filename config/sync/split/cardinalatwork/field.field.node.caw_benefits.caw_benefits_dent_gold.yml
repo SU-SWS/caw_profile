@@ -9,7 +9,7 @@ id: node.caw_benefits.caw_benefits_dent_gold
 field_name: caw_benefits_dent_gold
 entity_type: node
 bundle: caw_benefits
-label: 'Gold restorations'
+label: 'Restorations'
 description: ''
 required: false
 translatable: true

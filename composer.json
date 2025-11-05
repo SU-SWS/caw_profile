@@ -212,9 +212,6 @@
             }
         },
         "patches": {
-            "drupal/fontawesome":{
-                "https://www.drupal.org/project/fontawesome/issues/3515051": "https://www.drupal.org/files/issues/2025-03-24/fontawesome--fix-style-class-saved-incorrectly.patch"
-            },
             "drupal/menu_link": {
                 "https://www.drupal.org/project/menu_link/issues/3358081": "https://git.drupalcode.org/project/menu_link/-/merge_requests/9.patch"
             },

@@ -7,4 +7,20 @@ adding:
             caw_benefits: search_indexing
             caw_careers: search_indexing
             caw_sweetener: search_indexing
-removing: {  }
+  processor_settings:
+    html_filter:
+      tags:
+        b: 2.0
+        h1: 5.0
+        h2: 3.0
+        h3: 2.0
+        strong: 2.0
+removing:
+  processor_settings:
+    html_filter:
+      tags:
+        b: 2
+        h1: 5
+        h2: 3
+        h3: 2
+        strong: 2

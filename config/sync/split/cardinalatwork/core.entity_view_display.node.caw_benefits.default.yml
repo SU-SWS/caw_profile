@@ -2643,7 +2643,7 @@ third_party_settings:
             region: main
             configuration:
               id: 'field_block:node:caw_benefits:caw_benefits_dent_gold'
-              label: 'Restorations'
+              label: Restorations
               label_display: '0'
               provider: layout_builder
               context_mapping:

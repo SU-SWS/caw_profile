@@ -10,6 +10,7 @@ dependencies:
     - taxonomy.vocabulary.caw_event_series_competencies
     - taxonomy.vocabulary.caw_event_series_format
   module:
+    - better_exposed_filters
     - node
     - stanford_fields
     - taxonomy
@@ -416,7 +417,7 @@ display:
             automatically_load_content: false
             initially_load_all_pages: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: true
@@ -425,6 +426,29 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: null
+          bef:
+            general:
+              autosubmit: false
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            sort:
+              plugin_id: default
+            filter:
+              caw_event_series_competencies_target_id:
+                plugin_id: default
+              caw_event_series_format_target_id:
+                plugin_id: default
       access:
         type: perm
         options:
@@ -727,7 +751,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -744,6 +767,65 @@ display:
       display_description: 'Event Series All'
       block_description: 'Event Series'
       block_category: 'Events Lists (Views)'
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: 1
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: stanford_html
+          bef:
+            general:
+              autosubmit: 0
+              auto_submit_sort_only: 0
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: 0
+              autosubmit_textfield_delay: '500'
+              autosubmit_textfield_minimum_length: '3'
+              autosubmit_hide: 0
+              input_required: 0
+              allow_secondary: 0
+              secondary_label: 'Advanced options'
+              secondary_open: 0
+              reset_button_always_show: 0
+            filter:
+              caw_event_series_competencies_target_id:
+                plugin_id: preact_combo_box
+                advanced:
+                  sort_options: 0
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: 1
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: 0
+                  hide_label: 0
+                  collapsible: 0
+                  collapsible_disable_automatic_open: 0
+                  open_by_default: 0
+                  is_secondary: 0
+                  field_classes: ''
+              caw_event_series_format_target_id:
+                plugin_id: preact_combo_box
+                advanced:
+                  sort_options: 0
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: 1
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: 0
+                  hide_label: 0
+                  collapsible: 0
+                  collapsible_disable_automatic_open: 0
+                  open_by_default: 0
+                  is_secondary: 0
+                  field_classes: ''
+      defaults:
+        exposed_form: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -751,7 +833,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -776,7 +857,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

@@ -1,0 +1,5 @@
+adding:
+  hidden:
+    node_edit_link: true
+    syndication: true
+removing: {  }

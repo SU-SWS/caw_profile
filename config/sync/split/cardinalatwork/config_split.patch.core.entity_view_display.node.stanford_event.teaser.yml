@@ -1,7 +1,4 @@
 adding:
-  dependencies:
-    config:
-      - field.field.node.stanford_event.caw_event_category
   hidden:
     caw_event_category: true
     caw_localist_id: true

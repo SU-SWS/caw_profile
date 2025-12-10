@@ -404,6 +404,11 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+12.1.2
+-------------------------------------------------------------------------------
+- Updated help text on news dek field
+- Added localist id field for lookup on the external system
+
 12.1.1
 -------------------------------------------------------------------------------
 - Add course_filters to site manager role permissions

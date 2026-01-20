@@ -83,6 +83,7 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_event.su_event_ext_image
+      - field.field.node.stanford_event.su_event_localist_id
       - field.field.node.stanford_event.su_imported
   third_party_settings:
     field_group:

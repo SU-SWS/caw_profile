@@ -4,6 +4,7 @@ adding:
       - taxonomy.vocabulary.caw_event_category
       - taxonomy.vocabulary.stanford_event_types
     module:
+      - better_exposed_filters
       - ui_patterns_views
   display:
     default:
@@ -390,6 +391,32 @@ adding:
             multi_type: separator
             separator: ', '
             field_api_classes: false
+        exposed_form:
+          type: bef
+          options:
+            text_input_required: 'Select any filter and click on Apply to see results'
+            text_input_required_format: null
+            bef:
+              general:
+                autosubmit: false
+                auto_submit_sort_only: false
+                autosubmit_breakpoint: ''
+                autosubmit_exclude_textfield: false
+                autosubmit_textfield_delay: 500
+                autosubmit_textfield_minimum_length: 3
+                autosubmit_hide: false
+                input_required: false
+                allow_secondary: false
+                secondary_label: 'Advanced options'
+                secondary_open: false
+                reset_button_always_show: false
+              sort:
+                plugin_id: default
+              filter:
+                su_event_type_target_id:
+                  plugin_id: default
+                caw_event_category_target_id:
+                  plugin_id: default
         row:
           type: fields
       cache_metadata:
@@ -1380,6 +1407,7 @@ adding:
           arguments: false
           filters: false
           filter_groups: false
+          exposed_form: false
         style:
           type: html_list
           options:
@@ -1799,6 +1827,63 @@ adding:
           operator: AND
           groups:
             1: AND
+        exposed_form:
+          type: bef
+          options:
+            submit_button: Apply
+            reset_button: 0
+            reset_button_label: Reset
+            exposed_sorts_label: 'Sort by'
+            expose_sort_order: true
+            sort_asc_label: Asc
+            sort_desc_label: Desc
+            text_input_required: 'Select any filter and click on Apply to see results'
+            text_input_required_format: stanford_html
+            bef:
+              general:
+                autosubmit: 0
+                auto_submit_sort_only: 0
+                autosubmit_breakpoint: ''
+                autosubmit_exclude_textfield: 0
+                autosubmit_textfield_delay: '500'
+                autosubmit_textfield_minimum_length: '3'
+                autosubmit_hide: 0
+                input_required: 0
+                allow_secondary: 0
+                secondary_label: 'Advanced options'
+                secondary_open: 0
+                reset_button_always_show: false
+              filter:
+                su_event_type_target_id:
+                  plugin_id: preact_combo_box
+                  advanced:
+                    sort_options: 0
+                    sort_options_method: alphabetical_asc
+                    sort_options_natural: 1
+                    rewrite:
+                      filter_rewrite_values: ''
+                      filter_rewrite_values_key: 0
+                    hide_label: 0
+                    collapsible: 0
+                    collapsible_disable_automatic_open: 0
+                    open_by_default: 0
+                    is_secondary: 0
+                    field_classes: ''
+                caw_event_category_target_id:
+                  plugin_id: preact_combo_box
+                  advanced:
+                    sort_options: 0
+                    sort_options_method: alphabetical_asc
+                    sort_options_natural: 1
+                    rewrite:
+                      filter_rewrite_values: ''
+                      filter_rewrite_values_key: 0
+                    hide_label: 0
+                    collapsible: 0
+                    collapsible_disable_automatic_open: 0
+                    open_by_default: 0
+                    is_secondary: 0
+                    field_classes: ''
       cache_metadata:
         max-age: -1
         contexts:
@@ -4521,6 +4606,8 @@ removing:
   display:
     default:
       display_options:
+        exposed_form:
+          type: basic
         row:
           type: 'entity:node'
           options:

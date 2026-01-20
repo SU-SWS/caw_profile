@@ -96,3 +96,5 @@ removing:
                       class: su-event-type-bottom
               weight: 4
               additional: {  }
+  hidden:
+    su_event_localist_id: true

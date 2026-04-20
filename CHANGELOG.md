@@ -415,6 +415,10 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+12.2.2
+-------------------------------------------------------------------------------
+- D8CORE-8658: Update aria-label for secondary navigation
+
 12.2.1
 -------------------------------------------------------------------------------
 - Check for decoupled menu item access for user

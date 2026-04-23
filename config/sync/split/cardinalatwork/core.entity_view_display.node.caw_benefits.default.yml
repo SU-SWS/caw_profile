@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_additional_info
     - field.field.node.caw_benefits.caw_benefits_annual_max
     - field.field.node.caw_benefits.caw_benefits_coinsurance
     - field.field.node.caw_benefits.caw_benefits_deductible
@@ -106,15 +107,18 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_vision_lowvis
     - field.field.node.caw_benefits.caw_benefits_vision_urgent
     - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.field_menulink
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
     - node.type.caw_benefits
+    - system.menu.main
   module:
     - datetime
     - jumpstart_ui
     - layout_builder
     - layout_library
+    - menu_block
     - options
     - text
     - user
@@ -165,33 +169,76 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
       -
-        layout_id: jumpstart_ui_one_column
+        layout_id: jumpstart_ui_two_column
         layout_settings:
           label: ''
           context_mapping: {  }
           extra_classes: ''
           centered: centered-container
-          columns: flex-10-of-12
+          orientation: right
+          force_regions: 0
         components:
-          f985690d-3c13-4327-9703-c5c8e3fc5f80:
-            uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
+          3c730a1e-c814-4918-a8d4-b5d98d33da08:
+            uuid: 3c730a1e-c814-4918-a8d4-b5d98d33da08
             region: main
             configuration:
-              id: 'field_block:node:caw_benefits:su_benefit_type'
-              label: 'Benefit Type'
+              id: 'field_block:node:caw_benefits:body'
+              label: Overview
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: list_default
-                label: above
+                type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings:
+                  empty_fields:
+                    handler: ''
                   field_formatter_class:
-                    class: caw-benefits-basics
-            weight: 4
+                    class: ''
+                  field_label:
+                    label_value: Overview
+                    label_tag: ''
+            weight: 0
+            additional: {  }
+          4ee9be48-193c-4bf3-89c1-1aad98e1a6b8:
+            uuid: 4ee9be48-193c-4bf3-89c1-1aad98e1a6b8
+            region: left
+            configuration:
+              id: 'menu_block:main'
+              label: 'Main navigation'
+              label_display: '0'
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: child
+              display_empty: false
+              label_link: false
+              label_type: block
+              level: 2
+              depth: 0
+              expand_all_items: true
+              parent: 'main:'
+              render_parent: false
+              suggestion: secondary_nav
+              hide_on_nonactive: false
+            weight: 0
+            additional: {  }
+          e750012c-a267-49c4-a864-5211045ead0f:
+            uuid: e750012c-a267-49c4-a864-5211045ead0f
+            region: main
+            configuration:
+              id: jumpstart_ui_page_heading
+              label: Info
+              label_display: '0'
+              provider: jumpstart_ui
+              context_mapping: {  }
+              heading_text: 'Basic Information'
+              wrapper: h2
+              hide_heading: 1
+            weight: 1
             additional: {  }
           bcd68421-2904-46a1-b58f-19f21dd337ee:
             uuid: bcd68421-2904-46a1-b58f-19f21dd337ee
@@ -216,27 +263,7 @@ third_party_settings:
                   field_label:
                     label_value: ''
                     label_tag: ''
-            weight: 1
-            additional: {  }
-          624a925c-ea58-4874-97d9-be05c7399dca:
-            uuid: 624a925c-ea58-4874-97d9-be05c7399dca
-            region: main
-            configuration:
-              id: 'field_block:node:caw_benefits:su_benefits_offered'
-              label: 'Offered To'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: list_default
-                label: above
-                settings: {  }
-                third_party_settings:
-                  field_formatter_class:
-                    class: caw-benefits-basics
-            weight: 3
+            weight: 2
             additional: {  }
           1d197a64-275c-42ab-9936-9e336b4b0818:
             uuid: 1d197a64-275c-42ab-9936-9e336b4b0818
@@ -258,7 +285,47 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: caw-benefits-basics
-            weight: 2
+            weight: 3
+            additional: {  }
+          624a925c-ea58-4874-97d9-be05c7399dca:
+            uuid: 624a925c-ea58-4874-97d9-be05c7399dca
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_benefits_offered'
+              label: 'Offered To'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: caw-benefits-basics
+            weight: 4
+            additional: {  }
+          f985690d-3c13-4327-9703-c5c8e3fc5f80:
+            uuid: f985690d-3c13-4327-9703-c5c8e3fc5f80
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_benefit_type'
+              label: 'Benefit Type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: caw-benefits-basics
+            weight: 5
             additional: {  }
           f1e7d387-89f7-4ffd-8d37-b58292c66381:
             uuid: f1e7d387-89f7-4ffd-8d37-b58292c66381
@@ -284,7 +351,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 5
+            weight: 6
             additional: {  }
           73ebf651-a547-4d9e-aadc-643864b67366:
             uuid: 73ebf651-a547-4d9e-aadc-643864b67366
@@ -310,21 +377,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 6
-            additional: {  }
-          e750012c-a267-49c4-a864-5211045ead0f:
-            uuid: e750012c-a267-49c4-a864-5211045ead0f
-            region: main
-            configuration:
-              id: jumpstart_ui_page_heading
-              label: Info
-              label_display: '0'
-              provider: jumpstart_ui
-              context_mapping: {  }
-              heading_text: 'Basic Information'
-              wrapper: h2
-              hide_heading: 1
-            weight: 0
+            weight: 7
             additional: {  }
         third_party_settings: {  }
       -
@@ -336,37 +389,6 @@ third_party_settings:
           centered: centered-container
           columns: flex-10-of-12
         components:
-          3c730a1e-c814-4918-a8d4-b5d98d33da08:
-            uuid: 3c730a1e-c814-4918-a8d4-b5d98d33da08
-            region: main
-            configuration:
-              id: 'field_block:node:caw_benefits:body'
-              label: Overview
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: wrapper_class
-                label: above
-                settings:
-                  class: caw-benefits-basics
-                  tag: div
-                  link: false
-                  link_class: ''
-                  summary: false
-                  trim: 200
-                third_party_settings:
-                  empty_fields:
-                    handler: ''
-                  field_formatter_class:
-                    class: ''
-                  field_label:
-                    label_value: Overview
-                    label_tag: ''
-            weight: -4
-            additional: {  }
           340d847f-2b67-4bdd-8ef3-2303c2f414f5:
             uuid: 340d847f-2b67-4bdd-8ef3-2303c2f414f5
             region: main
@@ -3157,6 +3179,41 @@ third_party_settings:
             weight: 10
             additional: {  }
         third_party_settings: {  }
+      -
+        layout_id: defaults
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+        components:
+          2eba1436-b4e0-4023-a2f1-543648025ec1:
+            uuid: 2eba1436-b4e0-4023-a2f1-543648025ec1
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:caw_benefits_additional_info'
+              label: 'Additional Info'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
   layout_library:
     enable: false
 id: node.caw_benefits.default
@@ -3207,6 +3264,7 @@ content:
     weight: 102
     region: content
 hidden:
+  caw_benefits_additional_info: true
   caw_benefits_annual_max: true
   caw_benefits_coinsurance: true
   caw_benefits_deductible: true
@@ -3308,4 +3366,5 @@ hidden:
   caw_benefits_vision_lowvis: true
   caw_benefits_vision_urgent: true
   caw_benefits_xray: true
+  field_menulink: true
   search_api_excerpt: true

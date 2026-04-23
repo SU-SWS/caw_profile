@@ -1,0 +1,561 @@
+uuid: e22eb014-52cf-4b98-9e9a-41b4ada7eed5
+langcode: en
+status: true
+dependencies:
+  module:
+    - migrate_source_csv
+    - stanford_migrate
+id: caw_benefits
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: default
+label: 'CAW Benefits'
+source:
+  plugin: csv
+  path: /tmp/foo.csv
+  ids:
+    - id
+  fields:
+    -
+      name: id
+      label: ID
+      selector: id
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: type
+      label: Type
+      selector: type
+    -
+      name: prostheticOrthoticDevices
+      label: 'Prosthetic & Orthotic Devices'
+      selector: prostheticOrthoticDevices
+    -
+      name: doctorDeliveryCharge
+      label: 'Doctor Delivery Charge'
+      selector: doctorDeliveryCharge
+    -
+      name: cosmeticSurgery
+      label: 'Cosmetic Surgery'
+      selector: cosmeticSurgery
+    -
+      name: travelAndLodging
+      label: 'Travel and Lodging'
+      selector: travelAndLodging
+    -
+      name: immunizations
+      label: Immunizations
+      selector: immunizations
+    -
+      name: CTAndPETScansComplexImaging
+      label: 'CT and PET Scans (Complex Imaging)'
+      selector: CTAndPETScansComplexImaging
+    -
+      name: allergyTests
+      label: 'Allergy Tests'
+      selector: allergyTests
+    -
+      name: transportation
+      label: Transportation
+      selector: transportation
+    -
+      name: bridges
+      label: Bridges
+      selector: bridges
+    -
+      name: frames
+      label: Frames
+      selector: frames
+    -
+      name: papSmears
+      label: 'Pap smears'
+      selector: papSmears
+    -
+      name: allergyTreatment
+      label: 'Allergy Treatment'
+      selector: allergyTreatment
+    -
+      name: ambulanceCharges
+      label: 'Ambulance charges'
+      selector: ambulanceCharges
+    -
+      name: speechTherapy
+      label: 'Speech Therapy'
+      selector: speechTherapy
+    -
+      name: mentalHealth
+      label: 'Mental Health'
+      selector: mentalHealth
+    -
+      name: medicalUrgentEyeCare
+      label: 'Medical & Urgent Eye Care'
+      selector: medicalUrgentEyeCare
+    -
+      name: dentures
+      label: Dentures
+      selector: dentures
+    -
+      name: sealants
+      label: Sealants
+      selector: sealants
+    -
+      name: xRaysBasicImaging
+      label: 'X-rays (Basic Imaging)'
+      selector: xRaysBasicImaging
+    -
+      name: occupationalTherapy
+      label: 'Occupational Therapy'
+      selector: occupationalTherapy
+    -
+      name: durableMedicalEquipment
+      label: 'Durable Medical Equipment'
+      selector: durableMedicalEquipment
+    -
+      name: TMJtemporomandibularJointSyndrome
+      label: 'TMJ (Temporomandibular joint syndrome)'
+      selector: TMJtemporomandibularJointSyndrome
+    -
+      name: splinting
+      label: Splinting
+      selector: splinting
+    -
+      name: alternativeMedicine
+      label: 'Alternative Medicine'
+      selector: alternativeMedicine
+    -
+      name: extras
+      label: Extras
+      selector: extras
+    -
+      name: gingivectomy
+      label: Gingivectomy
+      selector: gingivectomy
+    -
+      name: officeCoPay
+      label: 'Office co-pay'
+      selector: officeCoPay
+    -
+      name: partTimeEmployeeContributionPerPayPeriod
+      label: 'Part-Time Employee * Contribution Per Pay Period'
+      selector: partTimeEmployeeContributionPerPayPeriod
+    -
+      name: magneticResonanceImagingMRIComplexImaging
+      label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
+      selector: magneticResonanceImagingMRIComplexImaging
+    -
+      name: doulas
+      label: Doulas
+      selector: doulas
+    -
+      name: surgeryPhysicianServices
+      label: 'Surgery : Physician Services'
+      selector: surgeryPhysicianServices
+    -
+      name: physicalExamsForChildren
+      label: 'Physical exams for children'
+      selector: physicalExamsForChildren
+    -
+      name: planID
+      label: 'Plan ID'
+      selector: planID
+    -
+      name: reproductiveHealth
+      label: 'Reproductive Health'
+      selector: reproductiveHealth
+    -
+      name: laboratoryCharges
+      label: 'Laboratory Charges'
+      selector: laboratoryCharges
+    -
+      name: inlays
+      label: Inlays
+      selector: inlays
+    -
+      name: babySFirstExam
+      label: "Baby's First Exam"
+      selector: babySFirstExam
+    -
+      name: careManagement
+      label: 'Care Management'
+      selector: careManagement
+    -
+      name: onlays
+      label: Onlays
+      selector: onlays
+    -
+      name: transgenderServices
+      label: 'Transgender Services'
+      selector: transgenderServices
+    -
+      name: orthodontia
+      label: Orthodontia
+      selector: orthodontia
+    -
+      name: homeHealthCare
+      label: 'Home Health Care'
+      selector: homeHealthCare
+    -
+      name: acupuncture
+      label: Acupuncture
+      selector: acupuncture
+    -
+      name: chiropractors
+      label: Chiropractors
+      selector: chiropractors
+    -
+      name: electiveContactLenses
+      label: 'Elective Contact Lenses'
+      selector: electiveContactLenses
+    -
+      name: maternityHospitalStay
+      label: 'Maternity Hospital Stay'
+      selector: maternityHospitalStay
+    -
+      name: visionExam
+      label: 'Vision Exam'
+      selector: visionExam
+    -
+      name: infertilityTreatment
+      label: 'Infertility Treatment'
+      selector: infertilityTreatment
+    -
+      name: benefitPerks
+      label: 'Benefit Perks'
+      selector: benefitPerks
+    -
+      name: prenatalAndPostnatalPhysicianOfficeVisits
+      label: 'Prenatal and Postnatal Physician Office Visits'
+      selector: prenatalAndPostnatalPhysicianOfficeVisits
+    -
+      name: restorations
+      label: Restorations
+      selector: restorations
+    -
+      name: rootCanals
+      label: 'Root canals'
+      selector: rootCanals
+    -
+      name: periodontalSurgery
+      label: 'Periodontal surgery'
+      selector: periodontalSurgery
+    -
+      name: prostateSpecificAntigenTestPSA
+      label: 'Prostate Specific Antigen test - PSA'
+      selector: prostateSpecificAntigenTestPSA
+    -
+      name: skilledNursing
+      label: 'Skilled Nursing'
+      selector: skilledNursing
+    -
+      name: implants
+      label: Implants
+      selector: implants
+    -
+      name: christianSciencePractitioners
+      label: 'Christian Science Practitioners'
+      selector: christianSciencePractitioners
+    -
+      name: physicalTherapy
+      label: 'Physical Therapy'
+      selector: physicalTherapy
+    -
+      name: mailOrderDrugProgram
+      label: 'Mail order drug program'
+      selector: mailOrderDrugProgram
+    -
+      name: mammograms
+      label: Mammograms
+      selector: mammograms
+    -
+      name: extractions
+      label: Extractions
+      selector: extractions
+    -
+      name: maximumAnnualBenefit
+      label: 'Maximum Annual Benefit'
+      selector: maximumAnnualBenefit
+    -
+      name: fluorideTreatments
+      label: 'Fluoride treatments'
+      selector: fluorideTreatments
+    -
+      name: hearingCare
+      label: 'Hearing Care'
+      selector: hearingCare
+    -
+      name: substanceAbuse
+      label: 'Substance Abuse'
+      selector: substanceAbuse
+    -
+      name: autism
+      label: Autism
+      selector: autism
+    -
+      name: preAuthorizationRequirement
+      label: 'Pre-Authorization Requirement'
+      selector: preAuthorizationRequirement
+    -
+      name: coinsurance
+      label: Coinsurance
+      selector: coinsurance
+    -
+      name: birthControlPills
+      label: 'Birth Control Pills'
+      selector: birthControlPills
+    -
+      name: tubalLigation
+      label: 'Tubal Ligation'
+      selector: tubalLigation
+    -
+      name: spaceMaintainers
+      label: 'Space maintainers'
+      selector: spaceMaintainers
+    -
+      name: pharmacyRetail
+      label: 'Pharmacy (Retail)'
+      selector: pharmacyRetail
+    -
+      name: outOfCountryAccess
+      label: 'Out of Country Access'
+      selector: outOfCountryAccess
+    -
+      name: lowVisionServices
+      label: 'Low-Vision Services'
+      selector: lowVisionServices
+    -
+      name: hospiceCare
+      label: 'Hospice Care'
+      selector: hospiceCare
+    -
+      name: vasectomy
+      label: Vasectomy
+      selector: vasectomy
+    -
+      name: emergencyRoom
+      label: 'Emergency Room'
+      selector: emergencyRoom
+    -
+      name: fullTimeEmployeeContributionPerPayPeriod
+      label: 'Full-Time Employee * Contribution Per Pay Period'
+      selector: fullTimeEmployeeContributionPerPayPeriod
+    -
+      name: cleanings
+      label: Cleanings
+      selector: cleanings
+    -
+      name: physicalExamsForAdults
+      label: 'Physical exams for adults'
+      selector: physicalExamsForAdults
+    -
+      name: midwives
+      label: Midwives
+      selector: midwives
+    -
+      name: deductible
+      label: Deductible
+      selector: deductible
+    -
+      name: additionalInfo
+      label: 'Additional Info'
+      selector: additionalInfo
+    -
+      name: anesthesia
+      label: Anesthesia
+      selector: anesthesia
+    -
+      name: oralSurgery
+      label: 'Oral surgery'
+      selector: oralSurgery
+    -
+      name: displayOrder
+      label: 'Display Order'
+      selector: displayOrder
+    -
+      name: overallLifetimeMaximumBenefit
+      label: 'Overall Lifetime Maximum Benefit'
+      selector: overallLifetimeMaximumBenefit
+    -
+      name: retainers
+      label: Retainers
+      selector: retainers
+    -
+      name: lenses
+      label: Lenses
+      selector: lenses
+    -
+      name: outOfPocketMaximum
+      label: 'Out-of-Pocket Maximum'
+      selector: outOfPocketMaximum
+    -
+      name: prescriptionDrugs
+      label: 'Prescription drugs'
+      selector: prescriptionDrugs
+    -
+      name: organTransplants
+      label: 'Organ Transplants'
+      selector: organTransplants
+    -
+      name: visionCare
+      label: 'Vision care'
+      selector: visionCare
+    -
+      name: wellWomanVisits
+      label: 'Well-woman visits'
+      selector: wellWomanVisits
+    -
+      name: hospitalStay
+      label: 'Hospital Stay'
+      selector: hospitalStay
+    -
+      name: routineExams
+      label: 'Routine exams'
+      selector: routineExams
+    -
+      name: birthingCenters
+      label: 'Birthing Centers'
+      selector: birthingCenters
+    -
+      name: meals
+      label: Meals
+      selector: meals
+    -
+      name: fillings
+      label: Fillings
+      selector: fillings
+    -
+      name: urgentCare
+      label: 'Urgent Care'
+      selector: urgentCare
+    -
+      name: dentalTreatment
+      label: 'Dental Treatment'
+      selector: dentalTreatment
+    -
+      name: crown
+      label: Crown
+      selector: crown
+    -
+      name: surgeryFacilityCharges
+      label: 'Surgery : Facility Charges'
+      selector: surgeryFacilityCharges
+process:
+  title: title
+  status:
+    plugin: default_value
+    source: published
+    default_value: 1
+  su_benefit_type: type
+  caw_benefits_prosthetic: prostheticOrthoticDevices
+  caw_benefits_med_delivery: doctorDeliveryCharge
+  caw_benefits_med_cosmetic: cosmeticSurgery
+  caw_benefits_med_travel: travelAndLodging
+  caw_benefits_med_immunizations: immunizations
+  caw_benefits_med_ct_scan: CTAndPETScansComplexImaging
+  caw_benefits_med_allergy_test: allergyTests
+  caw_benefits_med_transport: transportation
+  caw_benefits_dent_bridges: bridges
+  caw_benefits_vision_frames: frames
+  caw_benefits_med_pap_smears: papSmears
+  caw_benefits_med_allergy_treat: allergyTreatment
+  caw_benefits_med_abulance: ambulanceCharges
+  caw_benefits_med_speech: speechTherapy
+  caw_benefits_med_mental_health: mentalHealth
+  caw_benefits_vision_urgent: medicalUrgentEyeCare
+  caw_benefits_dent_denture: dentures
+  caw_benefits_dent_sealant: sealants
+  caw_benefits_xray: xRaysBasicImaging
+  caw_benefits_med_occupational: occupationalTherapy
+  caw_benefits_med_durable_equip: durableMedicalEquipment
+  caw_benefits_dent_tmj: TMJtemporomandibularJointSyndrome
+  caw_benefits_dent_splint: splinting
+  caw_benefits_med_alt_medicine: alternativeMedicine
+  caw_benefits_vision_extras: extras
+  caw_benefits_dent_gingivectomy: gingivectomy
+  caw_benefits_med_copay: officeCoPay
+  caw_benefits_parttime_cost: partTimeEmployeeContributionPerPayPeriod
+  caw_benefits_med_mri: magneticResonanceImagingMRIComplexImaging
+  caw_benefits_med_doulas: doulas
+  caw_benefits_med_surgery_md: surgeryPhysicianServices
+  caw_benefits_med_child_psycial: physicalExamsForChildren
+  caw_benefits_plan_number: planID
+  caw_benefits_med_preg_term: reproductiveHealth
+  caw_benefits_med_lab: laboratoryCharges
+  caw_benefits_dent_inlay: inlays
+  caw_benefits_med_baby_exam: babySFirstExam
+  caw_benefits_med_care_mgmt: careManagement
+  caw_benefits_dent_onlay: onlays
+  caw_benefits_med_trans: transgenderServices
+  caw_benefits_dent_ortho: orthodontia
+  caw_benefits_med_home_health: homeHealthCare
+  caw_benefits_med_acupuncture: acupuncture
+  caw_benefits_med_chiro: chiropractors
+  caw_benefits_vision_contacts: electiveContactLenses
+  caw_benefits_med_maternity_stay: maternityHospitalStay
+  caw_benefits_vision_exam: visionExam
+  caw_benefits_med_infertility: infertilityTreatment
+  caw_benefits_perks: benefitPerks
+  caw_benefits_med_prenatal: prenatalAndPostnatalPhysicianOfficeVisits
+  caw_benefits_dent_gold: restorations
+  caw_benefits_dent_root: rootCanals
+  caw_benefits_dent_perio_surg: periodontalSurgery
+  caw_benefits_med_psa: prostateSpecificAntigenTestPSA
+  caw_benefits_med_nursing: skilledNursing
+  caw_benefits_dent_implant: implants
+  caw_benefits_med_christian_prac: christianSciencePractitioners
+  caw_benefits_med_pt: physicalTherapy
+  caw_benefits_med_mail_rx: mailOrderDrugProgram
+  caw_benefits_med_mammograms: mammograms
+  caw_benefits_dent_extraction: extractions
+  caw_benefits_dent_max_annual: maximumAnnualBenefit
+  caw_benefits_dent_flouride: fluorideTreatments
+  caw_benefits_med_hearing: hearingCare
+  caw_benefits_med_substance: substanceAbuse
+  caw_benefits_med_autism: autism
+  caw_benefits_med_preauth_req: preAuthorizationRequirement
+  caw_benefits_coinsurance: coinsurance
+  caw_benefits_med_birth_control: birthControlPills
+  caw_benefits_med_tubal: tubalLigation
+  caw_benefits_dent_space: spaceMaintainers
+  caw_benefits_med_pharmacy: pharmacyRetail
+  caw_benefits_vision_intl: outOfCountryAccess
+  caw_benefits_vision_lowvis: lowVisionServices
+  caw_benefits_med_hospice: hospiceCare
+  caw_benefits_med_vasectomy: vasectomy
+  caw_benefits_med_er: emergencyRoom
+  caw_benefits_fulltime_cost: fullTimeEmployeeContributionPerPayPeriod
+  caw_benefits_dent_cleanings: cleanings
+  caw_benefits_med_adult_physical: physicalExamsForAdults
+  caw_benefits_med_midwives: midwives
+  caw_benefits_deductible: deductible
+  caw_benefits_additional_info: additionalInfo
+  caw_benefits_dent_anesthesia: anesthesia
+  caw_benefits_dent_oral_surg: oralSurgery
+  caw_benefits_display_order: displayOrder
+  caw_benefits_lifetime_max: overallLifetimeMaximumBenefit
+  caw_benefits_dent_retainer: retainers
+  caw_benefits_vision_lenses: lenses
+  caw_benefits_annual_max: outOfPocketMaximum
+  caw_benefits_dent_rx: prescriptionDrugs
+  caw_benefits_med_transpants: organTransplants
+  caw_benefits_med_vision: visionCare
+  caw_benefits_med_well_woman: wellWomanVisits
+  caw_benefits_med_hopsital_stay: hospitalStay
+  caw_benefits_dent_exam: routineExams
+  caw_benefits_med_birthing: birthingCenters
+  caw_benefits_med_meals: meals
+  caw_benefits_dent_filling: fillings
+  caw_benefits_med_urgent: urgentCare
+  caw_benefits_med_dental: dentalTreatment
+  caw_benefits_dent_crown: crown
+  caw_benefits_med_surgery_facil: surgeryFacilityCharges
+destination:
+  plugin: 'entity:node'
+  default_bundle: caw_benefits
+idMap: {  }
+migration_dependencies:
+  required: {  }
+include: null

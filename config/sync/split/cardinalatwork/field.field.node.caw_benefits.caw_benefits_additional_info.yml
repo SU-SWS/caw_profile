@@ -1,0 +1,22 @@
+uuid: 5e916554-ca61-46da-ae5e-df3fe5d62596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_additional_info
+    - node.type.caw_benefits
+  module:
+    - text
+id: node.caw_benefits.caw_benefits_additional_info
+field_name: caw_benefits_additional_info
+entity_type: node
+bundle: caw_benefits
+label: 'Additional Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

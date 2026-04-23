@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_additional_info
     - field.field.node.caw_benefits.caw_benefits_annual_max
     - field.field.node.caw_benefits.caw_benefits_coinsurance
     - field.field.node.caw_benefits.caw_benefits_deductible
@@ -33,6 +34,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_space
     - field.field.node.caw_benefits.caw_benefits_dent_splint
     - field.field.node.caw_benefits.caw_benefits_dent_tmj
+    - field.field.node.caw_benefits.caw_benefits_display_order
     - field.field.node.caw_benefits.caw_benefits_fulltime_cost
     - field.field.node.caw_benefits.caw_benefits_lifetime_max
     - field.field.node.caw_benefits.caw_benefits_med_abulance
@@ -106,6 +108,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_vision_lowvis
     - field.field.node.caw_benefits.caw_benefits_vision_urgent
     - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.field_menulink
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
@@ -124,6 +127,7 @@ content:
     region: content
 hidden:
   body: true
+  caw_benefits_additional_info: true
   caw_benefits_annual_max: true
   caw_benefits_coinsurance: true
   caw_benefits_deductible: true
@@ -226,6 +230,7 @@ hidden:
   caw_benefits_vision_lowvis: true
   caw_benefits_vision_urgent: true
   caw_benefits_xray: true
+  field_menulink: true
   search_api_excerpt: true
   su_benefit_type: true
   su_benefits_offered: true

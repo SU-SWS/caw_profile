@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_additional_info
     - field.field.node.caw_benefits.caw_benefits_annual_max
     - field.field.node.caw_benefits.caw_benefits_coinsurance
     - field.field.node.caw_benefits.caw_benefits_deductible
@@ -106,12 +107,14 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_vision_lowvis
     - field.field.node.caw_benefits.caw_benefits_vision_urgent
     - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.field_menulink
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
     - node.type.caw_benefits
   module:
     - field_group
+    - menu_link
     - path
     - stanford_fields
     - text
@@ -279,6 +282,7 @@ third_party_settings:
         - caw_benefits_annual_max
         - caw_benefits_lifetime_max
         - caw_benefits_xray
+        - caw_benefits_additional_info
       label: Common
       region: content
       parent_name: group_benefits
@@ -305,6 +309,14 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  caw_benefits_additional_info:
+    type: text_textarea
+    weight: 141
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   caw_benefits_annual_max:
     type: string_textarea
@@ -1141,6 +1153,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_menulink:
+    type: menu_link_default
+    weight: 142
     region: content
     settings: {  }
     third_party_settings: {  }

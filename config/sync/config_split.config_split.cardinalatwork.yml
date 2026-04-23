@@ -61,10 +61,13 @@ complete_list:
   - 'user.role.caw_*'
   - 'views.view.caw_*'
   - core.entity_view_mode.paragraph.caw_form_preview
+  - 'migrate_plus.migration.caw_*'
 partial_list:
   - book.settings
   - chosen.settings
   - graphql_compose.settings
+  - views.view.media
+  - views.view.media_library
   - '*stanford_*'
   - '*su_*'
   - 'core.entity_form_display.media.*'
@@ -73,6 +76,4 @@ partial_list:
   - 'pathauto.pattern.*'
   - 'search_api.index.*'
   - 'user.role.*'
-  - views.view.media
-  - views.view.media_library
   - 'views.view.stanford_*'

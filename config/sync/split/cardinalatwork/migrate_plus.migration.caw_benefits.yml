@@ -31,6 +31,18 @@ source:
       label: Type
       selector: type
     -
+      name: year
+      label: Year
+      selector: year
+    -
+      name: offeredTo
+      label: 'Offered To'
+      selector: offeredTo
+    -
+      name: planID
+      label: 'Plan ID'
+      selector: planID
+    -
       name: prostheticOrthoticDevices
       label: 'Prosthetic & Orthotic Devices'
       selector: prostheticOrthoticDevices
@@ -158,10 +170,6 @@ source:
       name: physicalExamsForChildren
       label: 'Physical exams for children'
       selector: physicalExamsForChildren
-    -
-      name: planID
-      label: 'Plan ID'
-      selector: planID
     -
       name: reproductiveHealth
       label: 'Reproductive Health'
@@ -448,7 +456,40 @@ process:
     plugin: default_value
     source: published
     default_value: 1
-  su_benefit_type: type
+  su_benefit_type:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: type
+    -
+      plugin: callback
+      callable: strtolower
+  su_benefits_year:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: year
+    -
+      plugin: str_replace
+      regex: true
+      search: '/^(\d+)$/'
+      replace: '$1-01-01'
+  su_benefits_offered:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: offeredTo
+    -
+      plugin: str_replace
+      case_insensitive: true
+      search:
+        - Employees
+        - 'Non-Medicare Retirees'
+        - 'Medicare Retirees'
+      replace:
+        - active
+        - early_retirees
+        - retirees
   caw_benefits_prosthetic: prostheticOrthoticDevices
   caw_benefits_med_delivery: doctorDeliveryCharge
   caw_benefits_med_cosmetic: cosmeticSurgery

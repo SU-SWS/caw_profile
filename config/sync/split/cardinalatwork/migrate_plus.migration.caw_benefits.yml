@@ -472,8 +472,8 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: '/^(\d+)$/'
-      replace: '$1-01-01'
+      search: /^(\d+)$/
+      replace: $1-01-01
   su_benefits_offered:
     -
       plugin: skip_on_empty

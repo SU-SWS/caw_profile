@@ -36,6 +36,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_tmj
     - field.field.node.caw_benefits.caw_benefits_display_order
     - field.field.node.caw_benefits.caw_benefits_fulltime_cost
+    - field.field.node.caw_benefits.caw_benefits_intro
     - field.field.node.caw_benefits.caw_benefits_lifetime_max
     - field.field.node.caw_benefits.caw_benefits_med_abulance
     - field.field.node.caw_benefits.caw_benefits_med_acupuncture
@@ -158,6 +159,7 @@ hidden:
   caw_benefits_dent_tmj: true
   caw_benefits_display_order: true
   caw_benefits_fulltime_cost: true
+  caw_benefits_intro: true
   caw_benefits_lifetime_max: true
   caw_benefits_med_abulance: true
   caw_benefits_med_acupuncture: true

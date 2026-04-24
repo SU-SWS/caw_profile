@@ -10,12 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.28.3",
+    "@babel/core": "^7.29.0",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.28.3",
-    "autoprefixer": "^10.4.21",
-    "babel-loader": "^10.0.0",
-    "css-loader": "^7.1.2",
+    "@babel/preset-env": "^7.29.2",
+    "autoprefixer": "^10.5.0",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.4",
     "decanter": "^6.3.3",
     "drupal-behaviors-loader": "^1.0.1",
     "element-closest-polyfill": "^1.0.7",
@@ -23,16 +23,17 @@
     "element-qsa-scope": "^1.1.0",
     "es6-object-assign": "^1.1.0",
     "filemanager-webpack-plugin": "^8.0.0",
-    "mini-css-extract-plugin": "^2.9.4",
-    "node-sass": "^9.0.0",
+    "mini-css-extract-plugin": "^2.10.2",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
-    "postcss-loader": "^8.1.1",
-    "postcss-preset-env": "^10.3.0",
-    "sass-loader": "^16.0.5",
+    "postcss-loader": "^8.2.1",
+    "postcss-preset-env": "^10.6.1",
+    "sass": "^1.99.0",
+    "sass-loader": "^16.0.7",
     "style-loader": "^4.0.0",
-    "webpack": "^5.101.3",
+    "webpack": "^5.106.2",
     "webpack-cli": "^6.0.1",
-    "webpack-fix-style-only-entries": "^0.6.1"
+    "webpack-fix-style-only-entries": "^0.6.1",
+    "webpack-remove-empty-scripts": "^1.1.1"
   },
-  "packageManager": "yarn@4.9.4"
+  "packageManager": "yarn@4.14.1"
 }

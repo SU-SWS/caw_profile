@@ -11,17 +11,19 @@
           $expandAllButton.html('Expand All<span class="visually-hidden"> details below</span>');
         }
       });
-      $('.caw-benefits.plan-details h2').after($expandAllButton);
+      $(once('benefits-plan-expand-all', '.caw-benefits.plan-details h2', context)).after($expandAllButton);
 
-      $('.views-element-container', context).each(function () {
-        $(this).closest('.views-block').addClass('accordion-block')
+      $(once('benefits-plan-accordions', '.views-element-container', context)).each(function () {
+        $(this).closest('.views-block').addClass('accordion-block');
         const $heading = $(this).find('h3').wrapInner('<span class="button-text"></span>');
         const $accordionContent = $(this).find('.view.benefit-accordion');
         if (!$accordionContent.length) {
           return;
         }
-
-        const id = $heading.text().toLowerCase().replaceAll(/[^a-z0-9-]/gi, '-');
+        let id = $heading.text().toLowerCase().replaceAll(/[^a-z0-9-]/gi, '-');
+        while ($(`#${id}`).length) {
+          id += '-' + Math.random() * 10;
+        }
         $accordionContent.attr('id', id)
           .attr('aria-labelledby', `${id}-heading`)
           .attr('role', 'region')

@@ -4,30 +4,13 @@ declare(strict_types=1);
 
 namespace Drupal\caw_profile_helper\Hook;
 
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Hook\Attribute\Hook;
-use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
-use Drupal\layout_builder\SectionComponent;
-use Drupal\node\NodeInterface;
 use Drupal\views\ViewExecutable;
 
 /**
  * Hooks related to benefits content type.
  */
 class CawBenefitsHooks {
-
-  /**
-   * Implements hook_ENTITY_TYPE_view_alter().
-   */
-  #[Hook('node_view_alter')]
-  public function cawBenefitsNodeViewAlter(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display) {
-    if (
-      $entity->bundle() != 'caw_benefits' ||
-      $display->getMode() != 'default'
-    ) {
-      return;
-    }
-  }
 
   /**
    * Implements hook_views_pre_build().

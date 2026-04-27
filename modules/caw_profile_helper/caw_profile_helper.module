@@ -20,37 +20,6 @@ use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 use Drupal\Core\Cache\Cache;
 
-function mikes() {
-  $cf = \Drupal::configFactory();
-  $view = $cf->getEditable('views.view.caw_benefits');
-  $display_ids = [
-    'basics',
-    'maternity',
-    'mental_autism_substance',
-    'orthodontic_services',
-    'other_dental_services',
-    'other_services',
-    'perscription_drugs',
-    'plan_info',
-    'prentive_dental_care',
-    'preventive_care',
-    'vision_services',
-  ];
-  foreach ($display_ids as $display_id) {
-    $fields = $view->get("display.$display_id.display_options.fields");
-    foreach ($fields as $field_name => $config) {
-      $type = $cf->get("field.storage.node.$field_name")
-        ->get('type');
-      if ($type == 'string_long') {
-        $view->set("display.$display_id.display_options.filters.{$field_name}_value.group", 2);
-      }
-    }
-
-    $view->set("display.$display_id.display_options.filter_groups.2", "OR");
-  }
-  $view->save();
-}
-
 /**
  * Implements hook_paragraphs_behavior_info_alter().
  */

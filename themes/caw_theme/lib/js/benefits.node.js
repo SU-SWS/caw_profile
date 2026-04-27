@@ -30,7 +30,7 @@
           .addClass('hidden');
 
         $heading.attr('id', `${id}-heading`);
-        $heading.wrapInner('<button class="accordion-button"></button>');
+        $heading.wrapInner('<button type="button" class="accordion-button"></button>');
 
         const $button = $heading.find('button');
         $button.append('<i class="fa-solid fa-plus"></i>');

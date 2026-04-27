@@ -22,7 +22,7 @@
         }
         let id = $heading.text().toLowerCase().replaceAll(/[^a-z0-9-]/gi, '-');
         while ($(`#${id}`).length) {
-          id += '-' + Math.random() * 10;
+          id += '-' + Date.now();
         }
         $accordionContent.attr('id', id)
           .attr('aria-labelledby', `${id}-heading`)

@@ -1,7 +1,7 @@
 (function ($, Drupal, once) {
   Drupal.behaviors.cawBenefitsNode = {
     attach: function attach(context, settings) {
-      const $expandAllButton = $('<button class="expand-all su-button--secondary">').html('Expand All<span class="visually-hidden"> details below</span>');
+      const $expandAllButton = $('<button type="button" class="expand-all su-button--secondary">').html('Expand All<span class="visually-hidden"> details below</span>');
       $expandAllButton.click(function () {
         if ($expandAllButton.text().includes('Expand')) {
           $('button[aria-expanded="false"]').click();

@@ -3440,7 +3440,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3502,7 +3502,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3564,7 +3564,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3626,7 +3626,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3688,7 +3688,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3750,7 +3750,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3812,7 +3812,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -3874,7 +3874,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -5271,7 +5271,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -5333,7 +5333,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -5362,6 +5362,7 @@ display:
           field: caw_benefits_med_birthing
           plugin_id: field
           label: 'Birthing Centers'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_midwives:
           id: caw_benefits_med_midwives
@@ -5369,6 +5370,7 @@ display:
           field: caw_benefits_med_midwives
           plugin_id: field
           label: Midwives
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_doulas:
           id: caw_benefits_med_doulas
@@ -5409,7 +5411,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -5438,6 +5440,7 @@ display:
           field: caw_benefits_med_prenatal
           plugin_id: field
           label: 'Prenatal and Postnatal Physician Office Visits'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_delivery:
           id: caw_benefits_med_delivery
@@ -5445,6 +5448,7 @@ display:
           field: caw_benefits_med_delivery
           plugin_id: field
           label: 'Doctor Delivery Charge'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_preg_term:
           id: caw_benefits_med_preg_term
@@ -5452,6 +5456,7 @@ display:
           field: caw_benefits_med_preg_term
           plugin_id: field
           label: 'Reproductive Health'
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -6025,7 +6030,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -6087,7 +6092,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -6149,7 +6154,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -6466,6 +6471,7 @@ display:
           field: caw_benefits_dent_ortho
           plugin_id: field
           label: Orthodontia
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_retainer:
           id: caw_benefits_dent_retainer
@@ -6473,6 +6479,7 @@ display:
           field: caw_benefits_dent_retainer
           plugin_id: field
           label: Retainers
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -6719,6 +6726,7 @@ display:
           field: caw_benefits_dent_anesthesia
           plugin_id: field
           label: Anesthesia
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_bridges:
           id: caw_benefits_dent_bridges
@@ -6726,6 +6734,7 @@ display:
           field: caw_benefits_dent_bridges
           plugin_id: field
           label: Bridges
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_crown:
           id: caw_benefits_dent_crown
@@ -6733,6 +6742,7 @@ display:
           field: caw_benefits_dent_crown
           plugin_id: field
           label: Crown
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_denture:
           id: caw_benefits_dent_denture
@@ -6740,6 +6750,7 @@ display:
           field: caw_benefits_dent_denture
           plugin_id: field
           label: Dentures
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_extraction:
           id: caw_benefits_dent_extraction
@@ -6747,6 +6758,7 @@ display:
           field: caw_benefits_dent_extraction
           plugin_id: field
           label: Extractions
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_filling:
           id: caw_benefits_dent_filling
@@ -6754,6 +6766,7 @@ display:
           field: caw_benefits_dent_filling
           plugin_id: field
           label: Fillings
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_gingivectomy:
           id: caw_benefits_dent_gingivectomy
@@ -6761,6 +6774,7 @@ display:
           field: caw_benefits_dent_gingivectomy
           plugin_id: field
           label: Gingivectomy
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_gold:
           id: caw_benefits_dent_gold
@@ -6768,6 +6782,7 @@ display:
           field: caw_benefits_dent_gold
           plugin_id: field
           label: Restorations
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_implant:
           id: caw_benefits_dent_implant
@@ -6775,6 +6790,7 @@ display:
           field: caw_benefits_dent_implant
           plugin_id: field
           label: Implants
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_inlay:
           id: caw_benefits_dent_inlay
@@ -6782,6 +6798,7 @@ display:
           field: caw_benefits_dent_inlay
           plugin_id: field
           label: Inlays
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_onlay:
           id: caw_benefits_dent_onlay
@@ -6789,6 +6806,7 @@ display:
           field: caw_benefits_dent_onlay
           plugin_id: field
           label: Onlays
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_oral_surg:
           id: caw_benefits_dent_oral_surg
@@ -6796,6 +6814,7 @@ display:
           field: caw_benefits_dent_oral_surg
           plugin_id: field
           label: 'Oral surgery'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_perio_surg:
           id: caw_benefits_dent_perio_surg
@@ -6803,6 +6822,7 @@ display:
           field: caw_benefits_dent_perio_surg
           plugin_id: field
           label: 'Periodontal surgery'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_rx:
           id: caw_benefits_dent_rx
@@ -6810,6 +6830,7 @@ display:
           field: caw_benefits_dent_rx
           plugin_id: field
           label: 'Prescription drugs'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_root:
           id: caw_benefits_dent_root
@@ -6817,6 +6838,7 @@ display:
           field: caw_benefits_dent_root
           plugin_id: field
           label: 'Root canals'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_space:
           id: caw_benefits_dent_space
@@ -6824,6 +6846,7 @@ display:
           field: caw_benefits_dent_space
           plugin_id: field
           label: 'Space maintainers'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_splint:
           id: caw_benefits_dent_splint
@@ -6831,6 +6854,7 @@ display:
           field: caw_benefits_dent_splint
           plugin_id: field
           label: Splinting
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_tmj:
           id: caw_benefits_dent_tmj
@@ -6838,6 +6862,7 @@ display:
           field: caw_benefits_dent_tmj
           plugin_id: field
           label: 'TMJ (Temporomandibular joint syndrome)'
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -7901,7 +7926,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -7930,6 +7955,7 @@ display:
           field: caw_benefits_med_allergy_test
           plugin_id: field
           label: 'Allergy Tests'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_allergy_treat:
           id: caw_benefits_med_allergy_treat
@@ -7937,6 +7963,7 @@ display:
           field: caw_benefits_med_allergy_treat
           plugin_id: field
           label: 'Allergy Treatment'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_alt_medicine:
           id: caw_benefits_med_alt_medicine
@@ -7944,6 +7971,7 @@ display:
           field: caw_benefits_med_alt_medicine
           plugin_id: field
           label: 'Alternative Medicine'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_abulance:
           id: caw_benefits_med_abulance
@@ -7951,6 +7979,7 @@ display:
           field: caw_benefits_med_abulance
           plugin_id: field
           label: 'Ambulance charges'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_perks:
           id: caw_benefits_perks
@@ -7991,7 +8020,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8020,6 +8049,7 @@ display:
           field: caw_benefits_med_ct_scan
           plugin_id: field
           label: 'CT and PET Scans (Complex Imaging)'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_chiro:
           id: caw_benefits_med_chiro
@@ -8027,6 +8057,7 @@ display:
           field: caw_benefits_med_chiro
           plugin_id: field
           label: Chiropractors
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_christian_prac:
           id: caw_benefits_med_christian_prac
@@ -8034,6 +8065,7 @@ display:
           field: caw_benefits_med_christian_prac
           plugin_id: field
           label: 'Christian Science Practitioners'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_cosmetic:
           id: caw_benefits_med_cosmetic
@@ -8041,6 +8073,7 @@ display:
           field: caw_benefits_med_cosmetic
           plugin_id: field
           label: 'Cosmetic Surgery'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_dental:
           id: caw_benefits_med_dental
@@ -8048,6 +8081,7 @@ display:
           field: caw_benefits_med_dental
           plugin_id: field
           label: 'Dental Treatment'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_er:
           id: caw_benefits_med_er
@@ -8055,6 +8089,7 @@ display:
           field: caw_benefits_med_er
           plugin_id: field
           label: 'Emergency Room'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_urgent:
           id: caw_benefits_med_urgent
@@ -8062,6 +8097,7 @@ display:
           field: caw_benefits_med_urgent
           plugin_id: field
           label: 'Urgent Care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_hearing:
           id: caw_benefits_med_hearing
@@ -8069,6 +8105,7 @@ display:
           field: caw_benefits_med_hearing
           plugin_id: field
           label: 'Hearing Care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_home_health:
           id: caw_benefits_med_home_health
@@ -8076,6 +8113,7 @@ display:
           field: caw_benefits_med_home_health
           plugin_id: field
           label: 'Home Health Care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_hospice:
           id: caw_benefits_med_hospice
@@ -8083,6 +8121,7 @@ display:
           field: caw_benefits_med_hospice
           plugin_id: field
           label: 'Hospice Care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_hopsital_stay:
           id: caw_benefits_med_hopsital_stay
@@ -8090,6 +8129,7 @@ display:
           field: caw_benefits_med_hopsital_stay
           plugin_id: field
           label: 'Hospital Stay'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_infertility:
           id: caw_benefits_med_infertility
@@ -8097,6 +8137,7 @@ display:
           field: caw_benefits_med_infertility
           plugin_id: field
           label: 'Infertility Treatment'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_lab:
           id: caw_benefits_med_lab
@@ -8104,6 +8145,7 @@ display:
           field: caw_benefits_med_lab
           plugin_id: field
           label: 'Laboratory Charges'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_mri:
           id: caw_benefits_med_mri
@@ -8111,6 +8153,7 @@ display:
           field: caw_benefits_med_mri
           plugin_id: field
           label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_meals:
           id: caw_benefits_med_meals
@@ -8151,7 +8194,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8180,6 +8223,7 @@ display:
           field: caw_benefits_med_durable_equip
           plugin_id: field
           label: 'Durable Medical Equipment'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_occupational:
           id: caw_benefits_med_occupational
@@ -8187,6 +8231,7 @@ display:
           field: caw_benefits_med_occupational
           plugin_id: field
           label: 'Occupational Therapy'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_transpants:
           id: caw_benefits_med_transpants
@@ -8194,6 +8239,7 @@ display:
           field: caw_benefits_med_transpants
           plugin_id: field
           label: 'Organ Transplants'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_nursing:
           id: caw_benefits_med_nursing
@@ -8201,6 +8247,7 @@ display:
           field: caw_benefits_med_nursing
           plugin_id: field
           label: 'Skilled Nursing'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_pt:
           id: caw_benefits_med_pt
@@ -8208,6 +8255,7 @@ display:
           field: caw_benefits_med_pt
           plugin_id: field
           label: 'Physical Therapy'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_prosthetic:
           id: caw_benefits_prosthetic
@@ -8248,7 +8296,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8277,6 +8325,7 @@ display:
           field: caw_benefits_med_speech
           plugin_id: field
           label: 'Speech Therapy'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_surgery_facil:
           id: caw_benefits_med_surgery_facil
@@ -8284,6 +8333,7 @@ display:
           field: caw_benefits_med_surgery_facil
           plugin_id: field
           label: 'Surgery : Facility Charges'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_surgery_md:
           id: caw_benefits_med_surgery_md
@@ -8291,6 +8341,7 @@ display:
           field: caw_benefits_med_surgery_md
           plugin_id: field
           label: 'Surgery : Physician Services'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_trans:
           id: caw_benefits_med_trans
@@ -8331,7 +8382,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8393,7 +8444,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8455,7 +8506,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -8484,6 +8535,7 @@ display:
           field: caw_benefits_med_tubal
           plugin_id: field
           label: 'Tubal Ligation'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_vasectomy:
           id: caw_benefits_med_vasectomy
@@ -8491,6 +8543,7 @@ display:
           field: caw_benefits_med_vasectomy
           plugin_id: field
           label: Vasectomy
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_vision:
           id: caw_benefits_med_vision
@@ -8498,6 +8551,7 @@ display:
           field: caw_benefits_med_vision
           plugin_id: field
           label: 'Vision care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_xray:
           id: caw_benefits_xray
@@ -8505,6 +8559,7 @@ display:
           field: caw_benefits_xray
           plugin_id: field
           label: 'X-rays (Basic Imaging)'
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -10499,7 +10554,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -10561,7 +10616,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -10623,7 +10678,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -10974,7 +11029,7 @@ display:
             html: false
           element_type: h2
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
@@ -11037,7 +11092,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
@@ -11099,7 +11154,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
@@ -11300,7 +11355,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -11364,7 +11419,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -11426,7 +11481,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -11455,6 +11510,7 @@ display:
           field: caw_benefits_fulltime_cost
           plugin_id: field
           label: 'Full-Time Employee * Contribution Per Pay Period'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_parttime_cost:
           id: caw_benefits_parttime_cost
@@ -11462,6 +11518,7 @@ display:
           field: caw_benefits_parttime_cost
           plugin_id: field
           label: 'Part-Time Employee * Contribution Per Pay Period'
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -11711,6 +11768,7 @@ display:
           field: caw_benefits_dent_cleanings
           plugin_id: field
           label: Cleanings
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_flouride:
           id: caw_benefits_dent_flouride
@@ -11718,6 +11776,7 @@ display:
           field: caw_benefits_dent_flouride
           plugin_id: field
           label: 'Fluoride treatments'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_exam:
           id: caw_benefits_dent_exam
@@ -11725,6 +11784,7 @@ display:
           field: caw_benefits_dent_exam
           plugin_id: field
           label: 'Routine exams'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_dent_sealant:
           id: caw_benefits_dent_sealant
@@ -11732,6 +11792,7 @@ display:
           field: caw_benefits_dent_sealant
           plugin_id: field
           label: Sealants
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -12109,7 +12170,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -12138,6 +12199,7 @@ display:
           field: caw_benefits_med_child_psycial
           plugin_id: field
           label: 'Physical exams for children'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_pap_smears:
           id: caw_benefits_med_pap_smears
@@ -12145,6 +12207,7 @@ display:
           field: caw_benefits_med_pap_smears
           plugin_id: field
           label: 'Pap smears'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_mammograms:
           id: caw_benefits_med_mammograms
@@ -12152,6 +12215,7 @@ display:
           field: caw_benefits_med_mammograms
           plugin_id: field
           label: Mammograms
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_immunizations:
           id: caw_benefits_med_immunizations
@@ -12159,6 +12223,7 @@ display:
           field: caw_benefits_med_immunizations
           plugin_id: field
           label: Immunizations
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_psa:
           id: caw_benefits_med_psa
@@ -12166,6 +12231,7 @@ display:
           field: caw_benefits_med_psa
           plugin_id: field
           label: 'Prostate Specific Antigen test - PSA'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_med_well_woman:
           id: caw_benefits_med_well_woman
@@ -12173,6 +12239,7 @@ display:
           field: caw_benefits_med_well_woman
           plugin_id: field
           label: 'Well-woman visits'
+          element_label_type: h4
           element_label_colon: true
       sorts: {  }
       arguments:
@@ -12664,6 +12731,7 @@ display:
           field: caw_benefits_vision_exam
           plugin_id: field
           label: 'Vision Exam'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_lenses:
           id: caw_benefits_vision_lenses
@@ -12671,6 +12739,7 @@ display:
           field: caw_benefits_vision_lenses
           plugin_id: field
           label: Lenses
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_frames:
           id: caw_benefits_vision_frames
@@ -12678,6 +12747,7 @@ display:
           field: caw_benefits_vision_frames
           plugin_id: field
           label: Frames
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_contacts:
           id: caw_benefits_vision_contacts
@@ -12685,6 +12755,7 @@ display:
           field: caw_benefits_vision_contacts
           plugin_id: field
           label: 'Elective Contact Lenses'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_lowvis:
           id: caw_benefits_vision_lowvis
@@ -12692,6 +12763,7 @@ display:
           field: caw_benefits_vision_lowvis
           plugin_id: field
           label: 'Low-Vision Services'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_extras:
           id: caw_benefits_vision_extras
@@ -12732,7 +12804,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''
@@ -12761,6 +12833,7 @@ display:
           field: caw_benefits_vision_urgent
           plugin_id: field
           label: 'Medical & Urgent Eye Care'
+          element_label_type: h4
           element_label_colon: true
         caw_benefits_vision_intl:
           id: caw_benefits_vision_intl
@@ -12801,7 +12874,7 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h4
           element_label_class: ''
           element_label_colon: true
           element_wrapper_type: ''

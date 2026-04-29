@@ -97,6 +97,7 @@ adding:
     config_split_sequence_altuv0d36qudshjn: 'edit terms in caw_sweet_available'
     config_split_sequence_hh8hu5ilqb71p314: 'edit terms in caw_sweet_type'
     config_split_sequence_m56duj71hvcqtbi3: 'edit terms in media'
+    config_split_sequence_qhng5a5q62lkben5: 'import caw_benefits migration'
     config_split_sequence_dhtgted2vrms3kq7: 'import caw_celebrations migration'
     config_split_sequence_tse3ndh7ee1ds77j: 'import stanford_events_importer migration'
     config_split_sequence_5fb644g1glec3tpk: 'revert caw_benefits revisions'

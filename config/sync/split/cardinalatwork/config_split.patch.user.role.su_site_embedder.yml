@@ -4,7 +4,4 @@ adding:
       - file
   permissions:
     - 'delete own files'
-removing:
-  dependencies:
-    module:
-      - stanford_media
+removing: {  }

@@ -6,24 +6,19 @@
   margin-top: 9.5rem;
 }
 
-.views-label {
-  margin-bottom: 0;
-}
-
-
 .node-caw-benefits-caw-benefits-intro {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 .node-caw-benefits-caw-benefits-additional-info {
-  margin: 2em 0;
+  margin: 2rem 0;
 }
 
 .views-field-title {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 
   h2 {
     margin: 0;
@@ -38,23 +33,32 @@
 .views-field-caw-benefits-plan-number {
   @include modular-typography(2);
   font-weight: 600;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .accordion-block {
   border-bottom: 1px solid $su-color-black-20;
 
-  &:last-of-type {
-    margin-bottom: 2em;
+  button {
+    font-size: 2.25rem;
   }
 
-  h3 {
+  &:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  h3,
+  h4 {
     margin: 0;
     padding: 0;
   }
 
+  h4 {
+    @include modular-typography(0);
+  }
+
   .views-field {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 }
 

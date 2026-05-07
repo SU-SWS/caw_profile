@@ -27,9 +27,17 @@ source:
       label: Title
       selector: title
     -
-      name: type
-      label: Type
-      selector: type
+      name: additionalInfo
+      label: 'Additional Info'
+      selector: additionalInfo
+    -
+      name: displayOrder
+      label: 'Display Order'
+      selector: displayOrder
+    -
+      name: planID
+      label: 'Plan ID'
+      selector: planID
     -
       name: year
       label: Year
@@ -39,261 +47,85 @@ source:
       label: 'Offered To'
       selector: offeredTo
     -
-      name: planID
-      label: 'Plan ID'
-      selector: planID
+      name: type
+      label: Type
+      selector: type
     -
-      name: prostheticOrthoticDevices
-      label: 'Prosthetic & Orthotic Devices'
-      selector: prostheticOrthoticDevices
-    -
-      name: doctorDeliveryCharge
-      label: 'Doctor Delivery Charge'
-      selector: doctorDeliveryCharge
-    -
-      name: cosmeticSurgery
-      label: 'Cosmetic Surgery'
-      selector: cosmeticSurgery
-    -
-      name: travelAndLodging
-      label: 'Travel and Lodging'
-      selector: travelAndLodging
-    -
-      name: immunizations
-      label: Immunizations
-      selector: immunizations
-    -
-      name: CTAndPETScansComplexImaging
-      label: 'CT and PET Scans (Complex Imaging)'
-      selector: CTAndPETScansComplexImaging
-    -
-      name: allergyTests
-      label: 'Allergy Tests'
-      selector: allergyTests
-    -
-      name: transportation
-      label: Transportation
-      selector: transportation
-    -
-      name: bridges
-      label: Bridges
-      selector: bridges
-    -
-      name: frames
-      label: Frames
-      selector: frames
-    -
-      name: papSmears
-      label: 'Pap smears'
-      selector: papSmears
-    -
-      name: allergyTreatment
-      label: 'Allergy Treatment'
-      selector: allergyTreatment
-    -
-      name: ambulanceCharges
-      label: 'Ambulance charges'
-      selector: ambulanceCharges
-    -
-      name: speechTherapy
-      label: 'Speech Therapy'
-      selector: speechTherapy
-    -
-      name: mentalHealth
-      label: 'Mental Health'
-      selector: mentalHealth
-    -
-      name: medicalUrgentEyeCare
-      label: 'Medical & Urgent Eye Care'
-      selector: medicalUrgentEyeCare
-    -
-      name: dentures
-      label: Dentures
-      selector: dentures
-    -
-      name: sealants
-      label: Sealants
-      selector: sealants
-    -
-      name: xRaysBasicImaging
-      label: 'X-rays (Basic Imaging)'
-      selector: xRaysBasicImaging
-    -
-      name: occupationalTherapy
-      label: 'Occupational Therapy'
-      selector: occupationalTherapy
-    -
-      name: durableMedicalEquipment
-      label: 'Durable Medical Equipment'
-      selector: durableMedicalEquipment
-    -
-      name: TMJtemporomandibularJointSyndrome
-      label: 'TMJ (Temporomandibular joint syndrome)'
-      selector: TMJtemporomandibularJointSyndrome
-    -
-      name: splinting
-      label: Splinting
-      selector: splinting
-    -
-      name: alternativeMedicine
-      label: 'Alternative Medicine'
-      selector: alternativeMedicine
-    -
-      name: extras
-      label: Extras
-      selector: extras
-    -
-      name: gingivectomy
-      label: Gingivectomy
-      selector: gingivectomy
-    -
-      name: officeCoPay
-      label: 'Office co-pay'
-      selector: officeCoPay
+      name: fullTimeEmployeeContributionPerPayPeriod
+      label: 'Full-Time Employee * Contribution Per Pay Period'
+      selector: fullTimeEmployeeContributionPerPayPeriod
     -
       name: partTimeEmployeeContributionPerPayPeriod
       label: 'Part-Time Employee * Contribution Per Pay Period'
       selector: partTimeEmployeeContributionPerPayPeriod
     -
-      name: magneticResonanceImagingMRIComplexImaging
-      label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
-      selector: magneticResonanceImagingMRIComplexImaging
-    -
-      name: doulas
-      label: Doulas
-      selector: doulas
-    -
-      name: surgeryPhysicianServices
-      label: 'Surgery : Physician Services'
-      selector: surgeryPhysicianServices
-    -
-      name: physicalExamsForChildren
-      label: 'Physical exams for children'
-      selector: physicalExamsForChildren
-    -
-      name: reproductiveHealth
-      label: 'Reproductive Health'
-      selector: reproductiveHealth
-    -
-      name: laboratoryCharges
-      label: 'Laboratory Charges'
-      selector: laboratoryCharges
-    -
-      name: inlays
-      label: Inlays
-      selector: inlays
-    -
-      name: babySFirstExam
-      label: "Baby's First Exam"
-      selector: babySFirstExam
+      name: preAuthorizationRequirement
+      label: 'Pre-Authorization Requirement'
+      selector: preAuthorizationRequirement
     -
       name: careManagement
       label: 'Care Management'
       selector: careManagement
     -
-      name: onlays
-      label: Onlays
-      selector: onlays
+      name: deductible
+      label: Deductible
+      selector: deductible
     -
-      name: transgenderServices
-      label: 'Transgender Services'
-      selector: transgenderServices
+      name: officeCoPay
+      label: 'Office co-pay'
+      selector: officeCoPay
     -
-      name: orthodontia
-      label: Orthodontia
-      selector: orthodontia
+      name: coinsurance
+      label: Coinsurance
+      selector: coinsurance
     -
-      name: homeHealthCare
-      label: 'Home Health Care'
-      selector: homeHealthCare
-    -
-      name: acupuncture
-      label: Acupuncture
-      selector: acupuncture
-    -
-      name: chiropractors
-      label: Chiropractors
-      selector: chiropractors
-    -
-      name: electiveContactLenses
-      label: 'Elective Contact Lenses'
-      selector: electiveContactLenses
-    -
-      name: maternityHospitalStay
-      label: 'Maternity Hospital Stay'
-      selector: maternityHospitalStay
-    -
-      name: visionExam
-      label: 'Vision Exam'
-      selector: visionExam
-    -
-      name: infertilityTreatment
-      label: 'Infertility Treatment'
-      selector: infertilityTreatment
-    -
-      name: benefitPerks
-      label: 'Benefit Perks'
-      selector: benefitPerks
-    -
-      name: prenatalAndPostnatalPhysicianOfficeVisits
-      label: 'Prenatal and Postnatal Physician Office Visits'
-      selector: prenatalAndPostnatalPhysicianOfficeVisits
-    -
-      name: restorations
-      label: Restorations
-      selector: restorations
-    -
-      name: rootCanals
-      label: 'Root canals'
-      selector: rootCanals
-    -
-      name: periodontalSurgery
-      label: 'Periodontal surgery'
-      selector: periodontalSurgery
-    -
-      name: prostateSpecificAntigenTestPSA
-      label: 'Prostate Specific Antigen test - PSA'
-      selector: prostateSpecificAntigenTestPSA
-    -
-      name: skilledNursing
-      label: 'Skilled Nursing'
-      selector: skilledNursing
-    -
-      name: implants
-      label: Implants
-      selector: implants
-    -
-      name: christianSciencePractitioners
-      label: 'Christian Science Practitioners'
-      selector: christianSciencePractitioners
-    -
-      name: physicalTherapy
-      label: 'Physical Therapy'
-      selector: physicalTherapy
-    -
-      name: mailOrderDrugProgram
-      label: 'Mail order drug program'
-      selector: mailOrderDrugProgram
-    -
-      name: mammograms
-      label: Mammograms
-      selector: mammograms
-    -
-      name: extractions
-      label: Extractions
-      selector: extractions
+      name: outOfPocketMaximum
+      label: 'Out-of-Pocket Maximum'
+      selector: outOfPocketMaximum
     -
       name: maximumAnnualBenefit
       label: 'Maximum Annual Benefit'
       selector: maximumAnnualBenefit
     -
-      name: fluorideTreatments
-      label: 'Fluoride treatments'
-      selector: fluorideTreatments
+      name: overallLifetimeMaximumBenefit
+      label: 'Overall Lifetime Maximum Benefit'
+      selector: overallLifetimeMaximumBenefit
     -
-      name: hearingCare
-      label: 'Hearing Care'
-      selector: hearingCare
+      name: maternityHospitalStay
+      label: 'Maternity Hospital Stay'
+      selector: maternityHospitalStay
+    -
+      name: babySFirstExam
+      label: "Baby's First Exam"
+      selector: babySFirstExam
+    -
+      name: birthingCenters
+      label: 'Birthing Centers'
+      selector: birthingCenters
+    -
+      name: midwives
+      label: Midwives
+      selector: midwives
+    -
+      name: doulas
+      label: Doulas
+      selector: doulas
+    -
+      name: prenatalAndPostnatalPhysicianOfficeVisits
+      label: 'Prenatal and Postnatal Physician Office Visits'
+      selector: prenatalAndPostnatalPhysicianOfficeVisits
+    -
+      name: doctorDeliveryCharge
+      label: 'Doctor Delivery Charge'
+      selector: doctorDeliveryCharge
+    -
+      name: reproductiveHealth
+      label: 'Reproductive Health'
+      selector: reproductiveHealth
+    -
+      name: mentalHealth
+      label: 'Mental Health'
+      selector: mentalHealth
     -
       name: substanceAbuse
       label: 'Substance Abuse'
@@ -303,153 +135,321 @@ source:
       label: Autism
       selector: autism
     -
-      name: preAuthorizationRequirement
-      label: 'Pre-Authorization Requirement'
-      selector: preAuthorizationRequirement
+      name: pharmacyRetail
+      label: 'Pharmacy (Retail)'
+      selector: pharmacyRetail
     -
-      name: coinsurance
-      label: Coinsurance
-      selector: coinsurance
+      name: mailOrderDrugProgram
+      label: 'Mail order drug program'
+      selector: mailOrderDrugProgram
     -
       name: birthControlPills
       label: 'Birth Control Pills'
       selector: birthControlPills
     -
-      name: tubalLigation
-      label: 'Tubal Ligation'
-      selector: tubalLigation
-    -
-      name: spaceMaintainers
-      label: 'Space maintainers'
-      selector: spaceMaintainers
-    -
-      name: pharmacyRetail
-      label: 'Pharmacy (Retail)'
-      selector: pharmacyRetail
-    -
-      name: outOfCountryAccess
-      label: 'Out of Country Access'
-      selector: outOfCountryAccess
-    -
-      name: lowVisionServices
-      label: 'Low-Vision Services'
-      selector: lowVisionServices
-    -
-      name: hospiceCare
-      label: 'Hospice Care'
-      selector: hospiceCare
-    -
-      name: vasectomy
-      label: Vasectomy
-      selector: vasectomy
-    -
-      name: emergencyRoom
-      label: 'Emergency Room'
-      selector: emergencyRoom
-    -
-      name: fullTimeEmployeeContributionPerPayPeriod
-      label: 'Full-Time Employee * Contribution Per Pay Period'
-      selector: fullTimeEmployeeContributionPerPayPeriod
-    -
-      name: cleanings
-      label: Cleanings
-      selector: cleanings
-    -
       name: physicalExamsForAdults
       label: 'Physical exams for adults'
       selector: physicalExamsForAdults
     -
-      name: midwives
-      label: Midwives
-      selector: midwives
+      name: physicalExamsForChildren
+      label: 'Physical exams for children'
+      selector: physicalExamsForChildren
     -
-      name: deductible
-      label: Deductible
-      selector: deductible
+      name: papSmears
+      label: 'Pap smears'
+      selector: papSmears
     -
-      name: additionalInfo
-      label: 'Additional Info'
-      selector: additionalInfo
+      name: mammograms
+      label: Mammograms
+      selector: mammograms
     -
-      name: anesthesia
-      label: Anesthesia
-      selector: anesthesia
+      name: immunizations
+      label: Immunizations
+      selector: immunizations
     -
-      name: oralSurgery
-      label: 'Oral surgery'
-      selector: oralSurgery
-    -
-      name: displayOrder
-      label: 'Display Order'
-      selector: displayOrder
-    -
-      name: overallLifetimeMaximumBenefit
-      label: 'Overall Lifetime Maximum Benefit'
-      selector: overallLifetimeMaximumBenefit
-    -
-      name: retainers
-      label: Retainers
-      selector: retainers
-    -
-      name: lenses
-      label: Lenses
-      selector: lenses
-    -
-      name: outOfPocketMaximum
-      label: 'Out-of-Pocket Maximum'
-      selector: outOfPocketMaximum
-    -
-      name: prescriptionDrugs
-      label: 'Prescription drugs'
-      selector: prescriptionDrugs
-    -
-      name: organTransplants
-      label: 'Organ Transplants'
-      selector: organTransplants
-    -
-      name: visionCare
-      label: 'Vision care'
-      selector: visionCare
+      name: prostateSpecificAntigenTestPSA
+      label: 'Prostate Specific Antigen test - PSA'
+      selector: prostateSpecificAntigenTestPSA
     -
       name: wellWomanVisits
       label: 'Well-woman visits'
       selector: wellWomanVisits
     -
-      name: hospitalStay
-      label: 'Hospital Stay'
-      selector: hospitalStay
+      name: acupuncture
+      label: Acupuncture
+      selector: acupuncture
     -
-      name: routineExams
-      label: 'Routine exams'
-      selector: routineExams
+      name: allergyTests
+      label: 'Allergy Tests'
+      selector: allergyTests
     -
-      name: birthingCenters
-      label: 'Birthing Centers'
-      selector: birthingCenters
+      name: allergyTreatment
+      label: 'Allergy Treatment'
+      selector: allergyTreatment
     -
-      name: meals
-      label: Meals
-      selector: meals
+      name: alternativeMedicine
+      label: 'Alternative Medicine'
+      selector: alternativeMedicine
     -
-      name: fillings
-      label: Fillings
-      selector: fillings
+      name: ambulanceCharges
+      label: 'Ambulance charges'
+      selector: ambulanceCharges
     -
-      name: urgentCare
-      label: 'Urgent Care'
-      selector: urgentCare
+      name: benefitPerks
+      label: 'Benefit Perks'
+      selector: benefitPerks
+    -
+      name: CTAndPETScansComplexImaging
+      label: 'CT and PET Scans (Complex Imaging)'
+      selector: CTAndPETScansComplexImaging
+    -
+      name: chiropractors
+      label: Chiropractors
+      selector: chiropractors
+    -
+      name: christianSciencePractitioners
+      label: 'Christian Science Practitioners'
+      selector: christianSciencePractitioners
+    -
+      name: cosmeticSurgery
+      label: 'Cosmetic Surgery'
+      selector: cosmeticSurgery
     -
       name: dentalTreatment
       label: 'Dental Treatment'
       selector: dentalTreatment
     -
-      name: crown
-      label: Crown
-      selector: crown
+      name: emergencyRoom
+      label: 'Emergency Room'
+      selector: emergencyRoom
+    -
+      name: urgentCare
+      label: 'Urgent Care'
+      selector: urgentCare
+    -
+      name: hearingCare
+      label: 'Hearing Care'
+      selector: hearingCare
+    -
+      name: homeHealthCare
+      label: 'Home Health Care'
+      selector: homeHealthCare
+    -
+      name: hospiceCare
+      label: 'Hospice Care'
+      selector: hospiceCare
+    -
+      name: hospitalStay
+      label: 'Hospital Stay'
+      selector: hospitalStay
+    -
+      name: infertilityTreatment
+      label: 'Infertility Treatment'
+      selector: infertilityTreatment
+    -
+      name: laboratoryCharges
+      label: 'Laboratory Charges'
+      selector: laboratoryCharges
+    -
+      name: magneticResonanceImagingMRIComplexImaging
+      label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
+      selector: magneticResonanceImagingMRIComplexImaging
+    -
+      name: meals
+      label: Meals
+      selector: meals
+    -
+      name: durableMedicalEquipment
+      label: 'Durable Medical Equipment'
+      selector: durableMedicalEquipment
+    -
+      name: occupationalTherapy
+      label: 'Occupational Therapy'
+      selector: occupationalTherapy
+    -
+      name: organTransplants
+      label: 'Organ Transplants'
+      selector: organTransplants
+    -
+      name: skilledNursing
+      label: 'Skilled Nursing'
+      selector: skilledNursing
+    -
+      name: physicalTherapy
+      label: 'Physical Therapy'
+      selector: physicalTherapy
+    -
+      name: prostheticOrthoticDevices
+      label: 'Prosthetic & Orthotic Devices'
+      selector: prostheticOrthoticDevices
+    -
+      name: speechTherapy
+      label: 'Speech Therapy'
+      selector: speechTherapy
     -
       name: surgeryFacilityCharges
       label: 'Surgery : Facility Charges'
       selector: surgeryFacilityCharges
+    -
+      name: surgeryPhysicianServices
+      label: 'Surgery : Physician Services'
+      selector: surgeryPhysicianServices
+    -
+      name: transgenderServices
+      label: 'Transgender Services'
+      selector: transgenderServices
+    -
+      name: transportation
+      label: Transportation
+      selector: transportation
+    -
+      name: travelAndLodging
+      label: 'Travel and Lodging'
+      selector: travelAndLodging
+    -
+      name: tubalLigation
+      label: 'Tubal Ligation'
+      selector: tubalLigation
+    -
+      name: vasectomy
+      label: Vasectomy
+      selector: vasectomy
+    -
+      name: visionCare
+      label: 'Vision care'
+      selector: visionCare
+    -
+      name: xRaysBasicImaging
+      label: 'X-rays (Basic Imaging)'
+      selector: xRaysBasicImaging
+    -
+      name: cleanings
+      label: Cleanings
+      selector: cleanings
+    -
+      name: fluorideTreatments
+      label: 'Fluoride treatments'
+      selector: fluorideTreatments
+    -
+      name: routineExams
+      label: 'Routine exams'
+      selector: routineExams
+    -
+      name: sealants
+      label: Sealants
+      selector: sealants
+    -
+      name: orthodontia
+      label: Orthodontia
+      selector: orthodontia
+    -
+      name: retainers
+      label: Retainers
+      selector: retainers
+    -
+      name: anesthesia
+      label: Anesthesia
+      selector: anesthesia
+    -
+      name: bridges
+      label: Bridges
+      selector: bridges
+    -
+      name: crown
+      label: Crown
+      selector: crown
+    -
+      name: dentures
+      label: Dentures
+      selector: dentures
+    -
+      name: extractions
+      label: Extractions
+      selector: extractions
+    -
+      name: fillings
+      label: Fillings
+      selector: fillings
+    -
+      name: gingivectomy
+      label: Gingivectomy
+      selector: gingivectomy
+    -
+      name: restorations
+      label: Restorations
+      selector: restorations
+    -
+      name: implants
+      label: Implants
+      selector: implants
+    -
+      name: inlays
+      label: Inlays
+      selector: inlays
+    -
+      name: onlays
+      label: Onlays
+      selector: onlays
+    -
+      name: oralSurgery
+      label: 'Oral surgery'
+      selector: oralSurgery
+    -
+      name: periodontalSurgery
+      label: 'Periodontal surgery'
+      selector: periodontalSurgery
+    -
+      name: prescriptionDrugs
+      label: 'Prescription drugs'
+      selector: prescriptionDrugs
+    -
+      name: rootCanals
+      label: 'Root canals'
+      selector: rootCanals
+    -
+      name: spaceMaintainers
+      label: 'Space maintainers'
+      selector: spaceMaintainers
+    -
+      name: splinting
+      label: Splinting
+      selector: splinting
+    -
+      name: TMJtemporomandibularJointSyndrome
+      label: 'TMJ (Temporomandibular joint syndrome)'
+      selector: TMJtemporomandibularJointSyndrome
+    -
+      name: visionExam
+      label: 'Vision Exam'
+      selector: visionExam
+    -
+      name: lenses
+      label: Lenses
+      selector: lenses
+    -
+      name: frames
+      label: Frames
+      selector: frames
+    -
+      name: electiveContactLenses
+      label: 'Elective Contact Lenses'
+      selector: electiveContactLenses
+    -
+      name: lowVisionServices
+      label: 'Low-Vision Services'
+      selector: lowVisionServices
+    -
+      name: extras
+      label: Extras
+      selector: extras
+    -
+      name: medicalUrgentEyeCare
+      label: 'Medical & Urgent Eye Care'
+      selector: medicalUrgentEyeCare
+    -
+      name: outOfCountryAccess
+      label: 'Out of Country Access'
+      selector: outOfCountryAccess
 process:
   title: title
   status:

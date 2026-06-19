@@ -77,6 +77,5 @@ removing:
       weight: 11
   hidden:
     su_event_cta: true
-    su_event_localist_id: true
     su_event_map_link: true
     su_event_source: true

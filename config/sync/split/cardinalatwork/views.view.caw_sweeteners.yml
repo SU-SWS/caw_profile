@@ -475,6 +475,8 @@ display:
                 select_all_none: 0
                 select_all_none_nested: false
                 display_inline: 1
+                scrollable: false
+                scrollable_height: 300
               su_sweet_avail_target_id:
                 plugin_id: bef
                 advanced:
@@ -487,6 +489,8 @@ display:
                 select_all_none: 0
                 select_all_none_nested: false
                 display_inline: 1
+                scrollable: false
+                scrollable_height: 300
       header:
         entity_block_content:
           id: entity_block_content

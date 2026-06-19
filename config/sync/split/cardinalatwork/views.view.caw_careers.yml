@@ -135,7 +135,6 @@ display:
                   is_secondary: false
                   hide_label: false
                   field_classes: ''
-                  sort_options_unsupported: ''
               su_careers_department_target_id:
                 plugin_id: preact_combo_box
                 advanced:
@@ -175,7 +174,6 @@ display:
                   is_secondary: false
                   hide_label: false
                   field_classes: ''
-                  sort_options_unsupported: ''
                 max: 2030
                 min: 1990
       access:

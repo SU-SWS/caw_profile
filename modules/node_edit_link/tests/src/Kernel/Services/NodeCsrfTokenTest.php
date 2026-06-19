@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -129,6 +130,8 @@ class NodeCsrfTokenTest extends KernelTestBase {
 
     $current_request->request = new InputBag();
     $current_request->method('getSession')->willReturn($session);
+
+    $current_request->headers = new HeaderBag();
 
     return $current_request;
   }

@@ -12,6 +12,13 @@ use Drupal\paragraphs\ParagraphInterface;
 /**
  * Implements hook_preprocess_HOOK().
  */
+function caw_theme_preprocess_pattern_hero(&$variables) {
+  $variables['card_headline_attributes']['class'][] = 'no-anchor';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function caw_theme_preprocess_field__dynamic_block_field__node_caw_other_careers(&$variables) {
   $variables['label_tag'] = 'h2';
 }

@@ -2,6 +2,8 @@ uuid: af003eb8-db58-4b58-a730-9e8dd1bfdcfd
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.caw_careers
   module:
     - node
 id: caw_careers
@@ -12,7 +14,6 @@ selection_criteria:
   241bb606-36d7-4855-a9bf-05d01d81837a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 241bb606-36d7-4855-a9bf-05d01d81837a
     context_mapping:
       node: node
     bundles:

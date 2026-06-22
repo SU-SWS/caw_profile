@@ -7,4 +7,9 @@ adding:
             caw_benefits: search_indexing
             caw_careers: search_indexing
             caw_sweetener: search_indexing
-removing: {  }
+removing:
+  dependencies:
+    module:
+      - trash
+  processor_settings:
+    trash_status: {  }

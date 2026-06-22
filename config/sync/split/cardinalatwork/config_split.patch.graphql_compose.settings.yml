@@ -1,0 +1,331 @@
+adding:
+  entity_config:
+    node:
+      caw_sweetener:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
+      caw_careers:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
+      caw_benefits:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
+    paragraph:
+      layout:
+        enabled: true
+        query_load_enabled: true
+    taxonomy_term:
+      careers_departments:
+        enabled: true
+        query_load_enabled: true
+      careers_years:
+        enabled: true
+        query_load_enabled: true
+      caw_event_category:
+        enabled: true
+        query_load_enabled: true
+      caw_event_series_competencies:
+        enabled: true
+        query_load_enabled: true
+      caw_event_series_format:
+        enabled: true
+        query_load_enabled: true
+      caw_page_category:
+        enabled: true
+        query_load_enabled: true
+      caw_page_role:
+        enabled: true
+        query_load_enabled: true
+      caw_page_type:
+        enabled: true
+        query_load_enabled: true
+      caw_sweet_available:
+        enabled: true
+        query_load_enabled: true
+      caw_sweet_type:
+        enabled: true
+        query_load_enabled: true
+      media:
+        enabled: true
+        query_load_enabled: true
+  field_config:
+    node:
+      stanford_event:
+        caw_localist_id:
+          enabled: true
+        caw_event_category:
+          enabled: true
+      stanford_event_series:
+        caw_event_series_competencies:
+          enabled: true
+        caw_event_series_format:
+          enabled: true
+      stanford_page:
+        caw_page_resource_category:
+          enabled: true
+        caw_page_resource_role:
+          enabled: true
+        caw_page_resource_type:
+          enabled: true
+      caw_sweetener:
+        su_sweet_info:
+          enabled: true
+        su_sweet_image:
+          enabled: true
+        su_sweet_components:
+          enabled: true
+        su_sweet_avail:
+          enabled: true
+        su_sweet_type:
+          enabled: true
+      caw_careers:
+        su_careers_proud_project:
+          enabled: true
+        su_careers_memory:
+          enabled: true
+        su_careers_lname:
+          enabled: true
+        su_careers_legacy:
+          enabled: true
+        su_careers_job:
+          enabled: true
+        su_careers_image:
+          enabled: true
+        su_careers_honored:
+          enabled: true
+        su_careers_fun_fact:
+          enabled: true
+        su_careers_fname:
+          enabled: true
+        su_careers_favorite_thing:
+          enabled: true
+        su_careers_components:
+          enabled: true
+        su_careers_department:
+          enabled: true
+        su_careers_years:
+          enabled: true
+      caw_benefits:
+        su_benefit_type:
+          enabled: true
+        su_benefits_year:
+          enabled: true
+        su_benefits_offered:
+          enabled: true
+        caw_benefits_xray:
+          enabled: true
+        caw_benefits_vision_urgent:
+          enabled: true
+        caw_benefits_vision_lowvis:
+          enabled: true
+        caw_benefits_vision_lenses:
+          enabled: true
+        caw_benefits_vision_intl:
+          enabled: true
+        caw_benefits_vision_frames:
+          enabled: true
+        caw_benefits_vision_extras:
+          enabled: true
+        caw_benefits_vision_exam:
+          enabled: true
+        caw_benefits_vision_contacts:
+          enabled: true
+        caw_benefits_prosthetic:
+          enabled: true
+        caw_benefits_plan_number:
+          enabled: true
+        caw_benefits_perks:
+          enabled: true
+        caw_benefits_parttime_cost:
+          enabled: true
+        caw_benefits_med_well_woman:
+          enabled: true
+        caw_benefits_med_vision:
+          enabled: true
+        caw_benefits_med_vasectomy:
+          enabled: true
+        caw_benefits_med_urgent:
+          enabled: true
+        caw_benefits_med_tubal:
+          enabled: true
+        caw_benefits_med_travel:
+          enabled: true
+        caw_benefits_med_transport:
+          enabled: true
+        caw_benefits_med_transpants:
+          enabled: true
+        caw_benefits_med_trans:
+          enabled: true
+        caw_benefits_med_surgery_md:
+          enabled: true
+        caw_benefits_med_surgery_facil:
+          enabled: true
+        caw_benefits_med_substance:
+          enabled: true
+        caw_benefits_med_speech:
+          enabled: true
+        caw_benefits_med_pt:
+          enabled: true
+        caw_benefits_med_psa:
+          enabled: true
+        caw_benefits_med_prenatal:
+          enabled: true
+        caw_benefits_med_preg_term:
+          enabled: true
+        caw_benefits_med_preauth_req:
+          enabled: true
+        caw_benefits_med_pharmacy:
+          enabled: true
+        caw_benefits_med_pap_smears:
+          enabled: true
+        caw_benefits_med_occupational:
+          enabled: true
+        caw_benefits_med_nursing:
+          enabled: true
+        caw_benefits_med_mri:
+          enabled: true
+        caw_benefits_med_midwives:
+          enabled: true
+        caw_benefits_med_mental_health:
+          enabled: true
+        caw_benefits_med_meals:
+          enabled: true
+        caw_benefits_med_maternity_stay:
+          enabled: true
+        caw_benefits_med_mammograms:
+          enabled: true
+        caw_benefits_med_mail_rx:
+          enabled: true
+        caw_benefits_med_lab:
+          enabled: true
+        caw_benefits_med_infertility:
+          enabled: true
+        caw_benefits_med_immunizations:
+          enabled: true
+        caw_benefits_med_hospice:
+          enabled: true
+        caw_benefits_med_hopsital_stay:
+          enabled: true
+        caw_benefits_med_home_health:
+          enabled: true
+        caw_benefits_med_hearing:
+          enabled: true
+        caw_benefits_med_er:
+          enabled: true
+        caw_benefits_med_durable_equip:
+          enabled: true
+        caw_benefits_med_doulas:
+          enabled: true
+        caw_benefits_med_dental:
+          enabled: true
+        caw_benefits_med_delivery:
+          enabled: true
+        caw_benefits_med_ct_scan:
+          enabled: true
+        caw_benefits_med_cosmetic:
+          enabled: true
+        caw_benefits_med_copay:
+          enabled: true
+        caw_benefits_med_christian_prac:
+          enabled: true
+        caw_benefits_med_chiro:
+          enabled: true
+        caw_benefits_med_child_psycial:
+          enabled: true
+        caw_benefits_med_care_mgmt:
+          enabled: true
+        caw_benefits_med_birth_control:
+          enabled: true
+        caw_benefits_med_birthing:
+          enabled: true
+        caw_benefits_med_baby_exam:
+          enabled: true
+        caw_benefits_med_autism:
+          enabled: true
+        caw_benefits_med_alt_medicine:
+          enabled: true
+        caw_benefits_med_allergy_treat:
+          enabled: true
+        caw_benefits_med_allergy_test:
+          enabled: true
+        caw_benefits_med_adult_physical:
+          enabled: true
+        caw_benefits_med_acupuncture:
+          enabled: true
+        caw_benefits_med_abulance:
+          enabled: true
+        caw_benefits_lifetime_max:
+          enabled: true
+        caw_benefits_fulltime_cost:
+          enabled: true
+        caw_benefits_display_order:
+          enabled: true
+        caw_benefits_dent_tmj:
+          enabled: true
+        caw_benefits_dent_splint:
+          enabled: true
+        caw_benefits_dent_space:
+          enabled: true
+        caw_benefits_dent_sealant:
+          enabled: true
+        caw_benefits_dent_rx:
+          enabled: true
+        caw_benefits_dent_root:
+          enabled: true
+        caw_benefits_dent_retainer:
+          enabled: true
+        caw_benefits_dent_perio_surg:
+          enabled: true
+        caw_benefits_dent_ortho:
+          enabled: true
+        caw_benefits_dent_oral_surg:
+          enabled: true
+        caw_benefits_dent_onlay:
+          enabled: true
+        caw_benefits_dent_max_annual:
+          enabled: true
+        caw_benefits_dent_inlay:
+          enabled: true
+        caw_benefits_dent_implant:
+          enabled: true
+        caw_benefits_dent_gold:
+          enabled: true
+        caw_benefits_dent_gingivectomy:
+          enabled: true
+        caw_benefits_dent_flouride:
+          enabled: true
+        caw_benefits_dent_filling:
+          enabled: true
+        caw_benefits_dent_extraction:
+          enabled: true
+        caw_benefits_dent_exam:
+          enabled: true
+        caw_benefits_dent_denture:
+          enabled: true
+        caw_benefits_dent_crown:
+          enabled: true
+        caw_benefits_dent_cleanings:
+          enabled: true
+        caw_benefits_dent_bridges:
+          enabled: true
+        caw_benefits_dent_anesthesia:
+          enabled: true
+        caw_benefits_deductible:
+          enabled: true
+        caw_benefits_coinsurance:
+          enabled: true
+        caw_benefits_annual_max:
+          enabled: true
+        body:
+          enabled: true
+    paragraph:
+      stanford_card:
+        su_card_icon:
+          enabled: true
+removing: {  }

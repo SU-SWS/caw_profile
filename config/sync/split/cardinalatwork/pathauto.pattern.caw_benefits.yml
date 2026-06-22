@@ -2,6 +2,8 @@ uuid: 227b40c1-d76d-41be-bc57-1fd6617e8873
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.caw_benefits
   module:
     - node
 id: caw_benefits
@@ -12,7 +14,6 @@ selection_criteria:
   c1da4281-611e-4431-9467-8fcb454f3b2e:
     id: 'entity_bundle:node'
     negate: false
-    uuid: c1da4281-611e-4431-9467-8fcb454f3b2e
     context_mapping:
       node: node
     bundles:

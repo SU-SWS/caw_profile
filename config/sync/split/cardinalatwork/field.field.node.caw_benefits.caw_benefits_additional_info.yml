@@ -1,0 +1,97 @@
+uuid: cee6b2b6-34c6-413f-849f-e3b32bcd2659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_additional_info
+    - node.type.caw_benefits
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.stanford_accordion
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_entity
+    - paragraphs.paragraphs_type.stanford_faq
+    - paragraphs.paragraphs_type.stanford_lists
+    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_stat_card
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.caw_benefits.caw_benefits_additional_info
+field_name: caw_benefits_additional_info
+entity_type: node
+bundle: caw_benefits
+label: 'Additional Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      layout: layout
+      stanford_accordion: stanford_accordion
+      stanford_card: stanford_card
+      stanford_entity: stanford_entity
+      stanford_faq: stanford_faq
+      stanford_lists: stanford_lists
+      stanford_media_caption: stanford_media_caption
+      stanford_spacer: stanford_spacer
+      stanford_stat_card: stanford_stat_card
+      stanford_wysiwyg: stanford_wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      layout:
+        weight: 18
+        enabled: true
+      stanford_accordion:
+        weight: 19
+        enabled: true
+      stanford_banner:
+        weight: 20
+        enabled: false
+      stanford_card:
+        weight: 21
+        enabled: true
+      stanford_entity:
+        weight: 22
+        enabled: true
+      stanford_faq:
+        weight: 23
+        enabled: true
+      stanford_filtered_lists:
+        weight: 24
+        enabled: false
+      stanford_gallery:
+        weight: 25
+        enabled: false
+      stanford_layout:
+        weight: 26
+        enabled: false
+      stanford_lists:
+        weight: 27
+        enabled: true
+      stanford_media_caption:
+        weight: 28
+        enabled: true
+      stanford_page_title_banner:
+        weight: 29
+        enabled: false
+      stanford_person_cta:
+        weight: 30
+        enabled: false
+      stanford_schedule:
+        weight: 31
+        enabled: false
+      stanford_spacer:
+        weight: 32
+        enabled: true
+      stanford_stat_card:
+        weight: 33
+        enabled: true
+      stanford_wysiwyg:
+        weight: 34
+        enabled: true
+field_type: entity_reference_revisions

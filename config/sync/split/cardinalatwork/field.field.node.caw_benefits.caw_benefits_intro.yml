@@ -1,0 +1,22 @@
+uuid: 1c9b5aa4-8bc1-4c22-af5f-e6b6f4a87f82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.caw_benefits_intro
+    - node.type.caw_benefits
+  module:
+    - text
+id: node.caw_benefits.caw_benefits_intro
+field_name: caw_benefits_intro
+entity_type: node
+bundle: caw_benefits
+label: 'Introduction Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

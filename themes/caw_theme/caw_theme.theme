@@ -36,6 +36,9 @@ function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $var
   if ($variables['elements']['#plugin_id'] == 'system_branding_block' && BookManager::getSubsiteNode()) {
     $suggestions[] = 'block__subsite__system_branding_block';
   }
+  if (str_starts_with($variables['elements']['#plugin_id'], 'views_block:caw_benefits-')) {
+    $suggestions[] = 'block__caw_benefits_views';
+  }
 }
 
 /**
@@ -123,8 +126,11 @@ function caw_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] == 'caw_careers') {
     $variables['#attached']['library'][] = 'caw_theme/careers.views';
   }
-  if ($variables['id'] == 'caw_benefits') {
-    $variables['#attached']['library'][] = 'caw_theme/benefits.views';
+  if (
+    $variables['id'] == 'caw_benefits' &&
+    ($variables['display_id'] == 'comparison' || $variables['display_id'] == 'filtering_list')
+  ) {
+    $variables['#attached']['library'][] = 'caw_theme/benefits.views_comparison';
   }
 }
 

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.caw_benefits.body
+    - field.field.node.caw_benefits.caw_benefits_additional_info
     - field.field.node.caw_benefits.caw_benefits_annual_max
     - field.field.node.caw_benefits.caw_benefits_coinsurance
     - field.field.node.caw_benefits.caw_benefits_deductible
@@ -34,6 +35,7 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_dent_tmj
     - field.field.node.caw_benefits.caw_benefits_display_order
     - field.field.node.caw_benefits.caw_benefits_fulltime_cost
+    - field.field.node.caw_benefits.caw_benefits_intro
     - field.field.node.caw_benefits.caw_benefits_lifetime_max
     - field.field.node.caw_benefits.caw_benefits_med_abulance
     - field.field.node.caw_benefits.caw_benefits_med_acupuncture
@@ -106,12 +108,17 @@ dependencies:
     - field.field.node.caw_benefits.caw_benefits_vision_lowvis
     - field.field.node.caw_benefits.caw_benefits_vision_urgent
     - field.field.node.caw_benefits.caw_benefits_xray
+    - field.field.node.caw_benefits.field_menulink
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
     - node.type.caw_benefits
   module:
+    - change_labels
+    - field_formatter_class
     - field_group
+    - layout_paragraphs
+    - menu_link
     - path
     - stanford_fields
     - text
@@ -126,7 +133,7 @@ third_party_settings:
       label: Benefits
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: tabs
       format_settings:
         classes: ''
@@ -306,6 +313,25 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  caw_benefits_additional_info:
+    type: layout_paragraphs
+    weight: 141
+    region: content
+    settings:
+      view_mode: default
+      preview_view_mode: default
+      form_display_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+      field_formatter_class:
+        class: ''
   caw_benefits_annual_max:
     type: string_textarea
     weight: 137
@@ -548,6 +574,14 @@ content:
     region: content
     settings:
       rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+  caw_benefits_intro:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   caw_benefits_lifetime_max:
@@ -1140,33 +1174,39 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_menulink:
+    type: menu_link_default
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -1204,7 +1244,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -1213,7 +1253,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

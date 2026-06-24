@@ -7,7 +7,7 @@ use Faker\Factory;
  * Test for the lockup settings.
  */
 #[CodeceptionAttribute\Group('navigation')]
-class NavigationDropDownsCest {
+abstract class NavigationDropDownsCest {
 
   /**
    * Faker service.

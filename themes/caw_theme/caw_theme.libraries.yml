@@ -34,12 +34,12 @@ components.news_list:
     component:
       dist/css/news-list.css: { }
 
-benefits.views:
+benefits.views_comparison:
   css:
     component:
-      dist/css/benefits.views.css: { }
+      dist/css/benefits.views_comparison.css: { }
   js:
-    lib/js/benefits.views.js: { }
+    lib/js/benefits.views_comparison.js: { }
   dependencies:
     - core/drupalSettings
     - core/once
@@ -49,4 +49,9 @@ benefits.node:
   css:
     component:
       dist/css/benefits.node.css: { }
-
+  js:
+    lib/js/benefits.node.js: { }
+  dependencies:
+    - core/drupalSettings
+    - core/once
+    - core/jquery

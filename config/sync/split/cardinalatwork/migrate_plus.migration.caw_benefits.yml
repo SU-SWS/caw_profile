@@ -27,10 +27,6 @@ source:
       label: Title
       selector: title
     -
-      name: introText
-      label: 'Introduction Text'
-      selector: introText
-    -
       name: displayOrder
       label: 'Display Order'
       selector: displayOrder
@@ -572,7 +568,6 @@ process:
   caw_benefits_med_adult_physical: physicalExamsForAdults
   caw_benefits_med_midwives: midwives
   caw_benefits_deductible: deductible
-  caw_benefits_intro: introText
   caw_benefits_dent_anesthesia: anesthesia
   caw_benefits_dent_oral_surg: oralSurgery
   caw_benefits_display_order: displayOrder

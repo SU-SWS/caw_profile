@@ -9,7 +9,7 @@ id: caw_benefits
 class: null
 field_plugin_method: null
 cck_plugin_method: null
-migration_tags: {  }
+migration_tags: { }
 migration_group: caw_benefits
 label: 'CAW Benefits'
 source:
@@ -18,432 +18,325 @@ source:
   ids:
     - id
   fields:
-    -
-      name: id
+    - name: id
       label: ID
       selector: id
-    -
-      name: title
+    - name: title
       label: Title
       selector: title
-    -
-      name: displayOrder
+    - name: displayOrder
       label: 'Display Order'
       selector: displayOrder
-    -
-      name: planID
+    - name: planID
       label: 'Plan ID'
       selector: planID
-    -
-      name: year
+    - name: year
       label: Year
       selector: year
-    -
-      name: offeredTo
+    - name: offeredTo
       label: 'Offered To'
       selector: offeredTo
-    -
-      name: type
+    - name: type
       label: Type
       selector: type
-    -
-      name: fullTimeEmployeeContributionPerPayPeriod
+    - name: fullTimeEmployeeContributionPerPayPeriod
       label: 'Full-Time Employee * Contribution Per Pay Period'
       selector: fullTimeEmployeeContributionPerPayPeriod
-    -
-      name: partTimeEmployeeContributionPerPayPeriod
+    - name: partTimeEmployeeContributionPerPayPeriod
       label: 'Part-Time Employee * Contribution Per Pay Period'
       selector: partTimeEmployeeContributionPerPayPeriod
-    -
-      name: preAuthorizationRequirement
+    - name: preAuthorizationRequirement
       label: 'Pre-Authorization Requirement'
       selector: preAuthorizationRequirement
-    -
-      name: careManagement
+    - name: careManagement
       label: 'Care Management'
       selector: careManagement
-    -
-      name: deductible
+    - name: deductible
       label: Deductible
       selector: deductible
-    -
-      name: officeCoPay
+    - name: officeCoPay
       label: 'Office co-pay'
       selector: officeCoPay
-    -
-      name: coinsurance
+    - name: coinsurance
       label: Coinsurance
       selector: coinsurance
-    -
-      name: outOfPocketMaximum
+    - name: outOfPocketMaximum
       label: 'Out-of-Pocket Maximum'
       selector: outOfPocketMaximum
-    -
-      name: maximumAnnualBenefit
+    - name: maximumAnnualBenefit
       label: 'Maximum Annual Benefit'
       selector: maximumAnnualBenefit
-    -
-      name: overallLifetimeMaximumBenefit
+    - name: overallLifetimeMaximumBenefit
       label: 'Overall Lifetime Maximum Benefit'
       selector: overallLifetimeMaximumBenefit
-    -
-      name: maternityHospitalStay
+    - name: maternityHospitalStay
       label: 'Maternity Hospital Stay'
       selector: maternityHospitalStay
-    -
-      name: babySFirstExam
+    - name: babySFirstExam
       label: "Baby's First Exam"
       selector: babySFirstExam
-    -
-      name: birthingCenters
+    - name: birthingCenters
       label: 'Birthing Centers'
       selector: birthingCenters
-    -
-      name: midwives
+    - name: midwives
       label: Midwives
       selector: midwives
-    -
-      name: doulas
+    - name: doulas
       label: Doulas
       selector: doulas
-    -
-      name: prenatalAndPostnatalPhysicianOfficeVisits
+    - name: prenatalAndPostnatalPhysicianOfficeVisits
       label: 'Prenatal and Postnatal Physician Office Visits'
       selector: prenatalAndPostnatalPhysicianOfficeVisits
-    -
-      name: doctorDeliveryCharge
+    - name: doctorDeliveryCharge
       label: 'Doctor Delivery Charge'
       selector: doctorDeliveryCharge
-    -
-      name: reproductiveHealth
+    - name: reproductiveHealth
       label: 'Reproductive Health'
       selector: reproductiveHealth
-    -
-      name: mentalHealth
+    - name: mentalHealth
       label: 'Mental Health'
       selector: mentalHealth
-    -
-      name: substanceAbuse
+    - name: substanceAbuse
       label: 'Substance Abuse'
       selector: substanceAbuse
-    -
-      name: autism
+    - name: autism
       label: Autism
       selector: autism
-    -
-      name: pharmacyRetail
+    - name: pharmacyRetail
       label: 'Pharmacy (Retail)'
       selector: pharmacyRetail
-    -
-      name: mailOrderDrugProgram
+    - name: mailOrderDrugProgram
       label: 'Mail order drug program'
       selector: mailOrderDrugProgram
-    -
-      name: birthControlPills
+    - name: birthControlPills
       label: 'Birth Control Pills'
       selector: birthControlPills
-    -
-      name: physicalExamsForAdults
+    - name: physicalExamsForAdults
       label: 'Physical exams for adults'
       selector: physicalExamsForAdults
-    -
-      name: physicalExamsForChildren
+    - name: physicalExamsForChildren
       label: 'Physical exams for children'
       selector: physicalExamsForChildren
-    -
-      name: papSmears
+    - name: papSmears
       label: 'Pap smears'
       selector: papSmears
-    -
-      name: mammograms
+    - name: mammograms
       label: Mammograms
       selector: mammograms
-    -
-      name: immunizations
+    - name: immunizations
       label: Immunizations
       selector: immunizations
-    -
-      name: prostateSpecificAntigenTestPSA
+    - name: prostateSpecificAntigenTestPSA
       label: 'Prostate Specific Antigen test - PSA'
       selector: prostateSpecificAntigenTestPSA
-    -
-      name: wellWomanVisits
+    - name: wellWomanVisits
       label: 'Well-woman visits'
       selector: wellWomanVisits
-    -
-      name: acupuncture
+    - name: acupuncture
       label: Acupuncture
       selector: acupuncture
-    -
-      name: allergyTests
+    - name: allergyTests
       label: 'Allergy Tests'
       selector: allergyTests
-    -
-      name: allergyTreatment
+    - name: allergyTreatment
       label: 'Allergy Treatment'
       selector: allergyTreatment
-    -
-      name: alternativeMedicine
+    - name: alternativeMedicine
       label: 'Alternative Medicine'
       selector: alternativeMedicine
-    -
-      name: ambulanceCharges
+    - name: ambulanceCharges
       label: 'Ambulance charges'
       selector: ambulanceCharges
-    -
-      name: benefitPerks
+    - name: benefitPerks
       label: 'Benefit Perks'
       selector: benefitPerks
-    -
-      name: CTAndPETScansComplexImaging
+    - name: CTAndPETScansComplexImaging
       label: 'CT and PET Scans (Complex Imaging)'
       selector: CTAndPETScansComplexImaging
-    -
-      name: chiropractors
+    - name: chiropractors
       label: Chiropractors
       selector: chiropractors
-    -
-      name: christianSciencePractitioners
+    - name: christianSciencePractitioners
       label: 'Christian Science Practitioners'
       selector: christianSciencePractitioners
-    -
-      name: cosmeticSurgery
+    - name: cosmeticSurgery
       label: 'Cosmetic Surgery'
       selector: cosmeticSurgery
-    -
-      name: dentalTreatment
+    - name: dentalTreatment
       label: 'Dental Treatment'
       selector: dentalTreatment
-    -
-      name: emergencyRoom
+    - name: emergencyRoom
       label: 'Emergency Room'
       selector: emergencyRoom
-    -
-      name: urgentCare
+    - name: urgentCare
       label: 'Urgent Care'
       selector: urgentCare
-    -
-      name: hearingCare
+    - name: hearingCare
       label: 'Hearing Care'
       selector: hearingCare
-    -
-      name: homeHealthCare
+    - name: homeHealthCare
       label: 'Home Health Care'
       selector: homeHealthCare
-    -
-      name: hospiceCare
+    - name: hospiceCare
       label: 'Hospice Care'
       selector: hospiceCare
-    -
-      name: hospitalStay
+    - name: hospitalStay
       label: 'Hospital Stay'
       selector: hospitalStay
-    -
-      name: infertilityTreatment
+    - name: infertilityTreatment
       label: 'Infertility Treatment'
       selector: infertilityTreatment
-    -
-      name: laboratoryCharges
+    - name: laboratoryCharges
       label: 'Laboratory Charges'
       selector: laboratoryCharges
-    -
-      name: magneticResonanceImagingMRIComplexImaging
+    - name: magneticResonanceImagingMRIComplexImaging
       label: 'Magnetic Resonance Imaging (MRI) (Complex Imaging)'
       selector: magneticResonanceImagingMRIComplexImaging
-    -
-      name: meals
+    - name: meals
       label: Meals
       selector: meals
-    -
-      name: durableMedicalEquipment
+    - name: durableMedicalEquipment
       label: 'Durable Medical Equipment'
       selector: durableMedicalEquipment
-    -
-      name: occupationalTherapy
+    - name: occupationalTherapy
       label: 'Occupational Therapy'
       selector: occupationalTherapy
-    -
-      name: organTransplants
+    - name: organTransplants
       label: 'Organ Transplants'
       selector: organTransplants
-    -
-      name: skilledNursing
+    - name: skilledNursing
       label: 'Skilled Nursing'
       selector: skilledNursing
-    -
-      name: physicalTherapy
+    - name: physicalTherapy
       label: 'Physical Therapy'
       selector: physicalTherapy
-    -
-      name: prostheticOrthoticDevices
+    - name: prostheticOrthoticDevices
       label: 'Prosthetic & Orthotic Devices'
       selector: prostheticOrthoticDevices
-    -
-      name: speechTherapy
+    - name: speechTherapy
       label: 'Speech Therapy'
       selector: speechTherapy
-    -
-      name: surgeryFacilityCharges
+    - name: surgeryFacilityCharges
       label: 'Surgery : Facility Charges'
       selector: surgeryFacilityCharges
-    -
-      name: surgeryPhysicianServices
+    - name: surgeryPhysicianServices
       label: 'Surgery : Physician Services'
       selector: surgeryPhysicianServices
-    -
-      name: transgenderServices
+    - name: transgenderServices
       label: 'Transgender Services'
       selector: transgenderServices
-    -
-      name: transportation
+    - name: transportation
       label: Transportation
       selector: transportation
-    -
-      name: travelAndLodging
+    - name: travelAndLodging
       label: 'Travel and Lodging'
       selector: travelAndLodging
-    -
-      name: tubalLigation
+    - name: tubalLigation
       label: 'Tubal Ligation'
       selector: tubalLigation
-    -
-      name: vasectomy
+    - name: vasectomy
       label: Vasectomy
       selector: vasectomy
-    -
-      name: visionCare
+    - name: visionCare
       label: 'Vision care'
       selector: visionCare
-    -
-      name: xRaysBasicImaging
+    - name: xRaysBasicImaging
       label: 'X-rays (Basic Imaging)'
       selector: xRaysBasicImaging
-    -
-      name: cleanings
+    - name: cleanings
       label: Cleanings
       selector: cleanings
-    -
-      name: fluorideTreatments
+    - name: fluorideTreatments
       label: 'Fluoride treatments'
       selector: fluorideTreatments
-    -
-      name: routineExams
+    - name: routineExams
       label: 'Routine exams'
       selector: routineExams
-    -
-      name: sealants
+    - name: sealants
       label: Sealants
       selector: sealants
-    -
-      name: orthodontia
+    - name: orthodontia
       label: Orthodontia
       selector: orthodontia
-    -
-      name: retainers
+    - name: retainers
       label: Retainers
       selector: retainers
-    -
-      name: anesthesia
+    - name: anesthesia
       label: Anesthesia
       selector: anesthesia
-    -
-      name: bridges
+    - name: bridges
       label: Bridges
       selector: bridges
-    -
-      name: crown
+    - name: crown
       label: Crown
       selector: crown
-    -
-      name: dentures
+    - name: dentures
       label: Dentures
       selector: dentures
-    -
-      name: extractions
+    - name: extractions
       label: Extractions
       selector: extractions
-    -
-      name: fillings
+    - name: fillings
       label: Fillings
       selector: fillings
-    -
-      name: gingivectomy
+    - name: gingivectomy
       label: Gingivectomy
       selector: gingivectomy
-    -
-      name: restorations
+    - name: restorations
       label: Restorations
       selector: restorations
-    -
-      name: implants
+    - name: implants
       label: Implants
       selector: implants
-    -
-      name: inlays
+    - name: inlays
       label: Inlays
       selector: inlays
-    -
-      name: onlays
+    - name: onlays
       label: Onlays
       selector: onlays
-    -
-      name: oralSurgery
+    - name: oralSurgery
       label: 'Oral surgery'
       selector: oralSurgery
-    -
-      name: periodontalSurgery
+    - name: periodontalSurgery
       label: 'Periodontal surgery'
       selector: periodontalSurgery
-    -
-      name: prescriptionDrugs
+    - name: prescriptionDrugs
       label: 'Prescription drugs'
       selector: prescriptionDrugs
-    -
-      name: rootCanals
+    - name: rootCanals
       label: 'Root canals'
       selector: rootCanals
-    -
-      name: spaceMaintainers
+    - name: spaceMaintainers
       label: 'Space maintainers'
       selector: spaceMaintainers
-    -
-      name: splinting
+    - name: splinting
       label: Splinting
       selector: splinting
-    -
-      name: TMJtemporomandibularJointSyndrome
+    - name: TMJtemporomandibularJointSyndrome
       label: 'TMJ (Temporomandibular joint syndrome)'
       selector: TMJtemporomandibularJointSyndrome
-    -
-      name: visionExam
+    - name: visionExam
       label: 'Vision Exam'
       selector: visionExam
-    -
-      name: lenses
+    - name: lenses
       label: Lenses
       selector: lenses
-    -
-      name: frames
+    - name: frames
       label: Frames
       selector: frames
-    -
-      name: electiveContactLenses
+    - name: electiveContactLenses
       label: 'Elective Contact Lenses'
       selector: electiveContactLenses
-    -
-      name: lowVisionServices
+    - name: lowVisionServices
       label: 'Low-Vision Services'
       selector: lowVisionServices
-    -
-      name: extras
+    - name: extras
       label: Extras
       selector: extras
-    -
-      name: medicalUrgentEyeCare
+    - name: medicalUrgentEyeCare
       label: 'Medical & Urgent Eye Care'
       selector: medicalUrgentEyeCare
-    -
-      name: outOfCountryAccess
+    - name: outOfCountryAccess
       label: 'Out of Country Access'
       selector: outOfCountryAccess
 process:
@@ -453,30 +346,24 @@ process:
     source: published
     default_value: 1
   su_benefit_type:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
       source: type
-    -
-      plugin: callback
+    - plugin: callback
       callable: strtolower
   su_benefits_year:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
       source: year
-    -
-      plugin: str_replace
+    - plugin: str_replace
       regex: true
       search: /^(\d+)$/
       replace: $1-01-01
   su_benefits_offered:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
       source: offeredTo
-    -
-      plugin: str_replace
+    - plugin: str_replace
       case_insensitive: true
       search:
         - Employees
@@ -486,112 +373,826 @@ process:
         - active
         - early_retirees
         - retirees
-  caw_benefits_prosthetic: prostheticOrthoticDevices
-  caw_benefits_med_delivery: doctorDeliveryCharge
-  caw_benefits_med_cosmetic: cosmeticSurgery
-  caw_benefits_med_travel: travelAndLodging
-  caw_benefits_med_immunizations: immunizations
-  caw_benefits_med_ct_scan: CTAndPETScansComplexImaging
-  caw_benefits_med_allergy_test: allergyTests
-  caw_benefits_med_transport: transportation
-  caw_benefits_dent_bridges: bridges
-  caw_benefits_vision_frames: frames
-  caw_benefits_med_pap_smears: papSmears
-  caw_benefits_med_allergy_treat: allergyTreatment
-  caw_benefits_med_abulance: ambulanceCharges
-  caw_benefits_med_speech: speechTherapy
-  caw_benefits_med_mental_health: mentalHealth
-  caw_benefits_vision_urgent: medicalUrgentEyeCare
-  caw_benefits_dent_denture: dentures
-  caw_benefits_dent_sealant: sealants
-  caw_benefits_xray: xRaysBasicImaging
-  caw_benefits_med_occupational: occupationalTherapy
-  caw_benefits_med_durable_equip: durableMedicalEquipment
-  caw_benefits_dent_tmj: TMJtemporomandibularJointSyndrome
-  caw_benefits_dent_splint: splinting
-  caw_benefits_med_alt_medicine: alternativeMedicine
-  caw_benefits_vision_extras: extras
-  caw_benefits_dent_gingivectomy: gingivectomy
-  caw_benefits_med_copay: officeCoPay
-  caw_benefits_parttime_cost: partTimeEmployeeContributionPerPayPeriod
-  caw_benefits_med_mri: magneticResonanceImagingMRIComplexImaging
-  caw_benefits_med_doulas: doulas
-  caw_benefits_med_surgery_md: surgeryPhysicianServices
-  caw_benefits_med_child_psycial: physicalExamsForChildren
-  caw_benefits_plan_number: planID
-  caw_benefits_med_preg_term: reproductiveHealth
-  caw_benefits_med_lab: laboratoryCharges
-  caw_benefits_dent_inlay: inlays
-  caw_benefits_med_baby_exam: babySFirstExam
-  caw_benefits_med_care_mgmt: careManagement
-  caw_benefits_dent_onlay: onlays
-  caw_benefits_med_trans: transgenderServices
-  caw_benefits_dent_ortho: orthodontia
-  caw_benefits_med_home_health: homeHealthCare
-  caw_benefits_med_acupuncture: acupuncture
-  caw_benefits_med_chiro: chiropractors
-  caw_benefits_vision_contacts: electiveContactLenses
-  caw_benefits_med_maternity_stay: maternityHospitalStay
-  caw_benefits_vision_exam: visionExam
-  caw_benefits_med_infertility: infertilityTreatment
-  caw_benefits_perks: benefitPerks
-  caw_benefits_med_prenatal: prenatalAndPostnatalPhysicianOfficeVisits
-  caw_benefits_dent_gold: restorations
-  caw_benefits_dent_root: rootCanals
-  caw_benefits_dent_perio_surg: periodontalSurgery
-  caw_benefits_med_psa: prostateSpecificAntigenTestPSA
-  caw_benefits_med_nursing: skilledNursing
-  caw_benefits_dent_implant: implants
-  caw_benefits_med_christian_prac: christianSciencePractitioners
-  caw_benefits_med_pt: physicalTherapy
-  caw_benefits_med_mail_rx: mailOrderDrugProgram
-  caw_benefits_med_mammograms: mammograms
-  caw_benefits_dent_extraction: extractions
-  caw_benefits_dent_max_annual: maximumAnnualBenefit
-  caw_benefits_dent_flouride: fluorideTreatments
-  caw_benefits_med_hearing: hearingCare
-  caw_benefits_med_substance: substanceAbuse
-  caw_benefits_med_autism: autism
-  caw_benefits_med_preauth_req: preAuthorizationRequirement
-  caw_benefits_coinsurance: coinsurance
-  caw_benefits_med_birth_control: birthControlPills
-  caw_benefits_med_tubal: tubalLigation
-  caw_benefits_dent_space: spaceMaintainers
-  caw_benefits_med_pharmacy: pharmacyRetail
-  caw_benefits_vision_intl: outOfCountryAccess
-  caw_benefits_vision_lowvis: lowVisionServices
-  caw_benefits_med_hospice: hospiceCare
-  caw_benefits_med_vasectomy: vasectomy
-  caw_benefits_med_er: emergencyRoom
-  caw_benefits_fulltime_cost: fullTimeEmployeeContributionPerPayPeriod
-  caw_benefits_dent_cleanings: cleanings
-  caw_benefits_med_adult_physical: physicalExamsForAdults
-  caw_benefits_med_midwives: midwives
-  caw_benefits_deductible: deductible
-  caw_benefits_dent_anesthesia: anesthesia
-  caw_benefits_dent_oral_surg: oralSurgery
-  caw_benefits_display_order: displayOrder
-  caw_benefits_lifetime_max: overallLifetimeMaximumBenefit
-  caw_benefits_dent_retainer: retainers
-  caw_benefits_vision_lenses: lenses
-  caw_benefits_annual_max: outOfPocketMaximum
-  caw_benefits_dent_rx: prescriptionDrugs
-  caw_benefits_med_transpants: organTransplants
-  caw_benefits_med_vision: visionCare
-  caw_benefits_med_well_woman: wellWomanVisits
-  caw_benefits_med_hopsital_stay: hospitalStay
-  caw_benefits_dent_exam: routineExams
-  caw_benefits_med_birthing: birthingCenters
-  caw_benefits_med_meals: meals
-  caw_benefits_dent_filling: fillings
-  caw_benefits_med_urgent: urgentCare
-  caw_benefits_med_dental: dentalTreatment
-  caw_benefits_dent_crown: crown
-  caw_benefits_med_surgery_facil: surgeryFacilityCharges
+  caw_benefits_prosthetic:
+    - plugin: skip_on_empty
+      method: process
+      source: prostheticOrthoticDevices
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_delivery:
+    - plugin: skip_on_empty
+      method: process
+      source: doctorDeliveryCharge
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_cosmetic:
+    - plugin: skip_on_empty
+      method: process
+      source: cosmeticSurgery
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_travel:
+    - plugin: skip_on_empty
+      method: process
+      source: travelAndLodging
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_immunizations:
+    - plugin: skip_on_empty
+      method: process
+      source: immunizations
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_ct_scan:
+    - plugin: skip_on_empty
+      method: process
+      source: CTAndPETScansComplexImaging
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_allergy_test:
+    - plugin: skip_on_empty
+      method: process
+      source: allergyTests
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_transport:
+    - plugin: skip_on_empty
+      method: process
+      source: transportation
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_bridges:
+    - plugin: skip_on_empty
+      method: process
+      source: bridges
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_frames:
+    - plugin: skip_on_empty
+      method: process
+      source: frames
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_pap_smears:
+    - plugin: skip_on_empty
+      method: process
+      source: papSmears
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_allergy_treat:
+    - plugin: skip_on_empty
+      method: process
+      source: allergyTreatment
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_abulance:
+    - plugin: skip_on_empty
+      method: process
+      source: ambulanceCharges
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_speech:
+    - plugin: skip_on_empty
+      method: process
+      source: speechTherapy
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_mental_health:
+    - plugin: skip_on_empty
+      method: process
+      source: mentalHealth
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_urgent:
+    - plugin: skip_on_empty
+      method: process
+      source: medicalUrgentEyeCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_denture:
+    - plugin: skip_on_empty
+      method: process
+      source: dentures
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_sealant:
+    - plugin: skip_on_empty
+      method: process
+      source: sealants
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_xray:
+    - plugin: skip_on_empty
+      method: process
+      source: xRaysBasicImaging
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_occupational:
+    - plugin: skip_on_empty
+      method: process
+      source: occupationalTherapy
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_durable_equip:
+    - plugin: skip_on_empty
+      method: process
+      source: durableMedicalEquipment
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_tmj:
+    - plugin: skip_on_empty
+      method: process
+      source: TMJtemporomandibularJointSyndrome
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_splint:
+    - plugin: skip_on_empty
+      method: process
+      source: splinting
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_alt_medicine:
+    - plugin: skip_on_empty
+      method: process
+      source: alternativeMedicine
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_extras:
+    - plugin: skip_on_empty
+      method: process
+      source: extras
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_gingivectomy:
+    - plugin: skip_on_empty
+      method: process
+      source: gingivectomy
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_copay:
+    - plugin: skip_on_empty
+      method: process
+      source: officeCoPay
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_parttime_cost:
+    - plugin: skip_on_empty
+      method: process
+      source: partTimeEmployeeContributionPerPayPeriod
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_mri:
+    - plugin: skip_on_empty
+      method: process
+      source: magneticResonanceImagingMRIComplexImaging
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_doulas:
+    - plugin: skip_on_empty
+      method: process
+      source: doulas
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_surgery_md:
+    - plugin: skip_on_empty
+      method: process
+      source: surgeryPhysicianServices
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_child_psycial:
+    - plugin: skip_on_empty
+      method: process
+      source: physicalExamsForChildren
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_plan_number:
+    - plugin: skip_on_empty
+      method: process
+      source: planID
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_preg_term:
+    - plugin: skip_on_empty
+      method: process
+      source: reproductiveHealth
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_lab:
+    - plugin: skip_on_empty
+      method: process
+      source: laboratoryCharges
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_inlay:
+    - plugin: skip_on_empty
+      method: process
+      source: inlays
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_baby_exam:
+    - plugin: skip_on_empty
+      method: process
+      source: babySFirstExam
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_care_mgmt:
+    - plugin: skip_on_empty
+      method: process
+      source: careManagement
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_onlay:
+    - plugin: skip_on_empty
+      method: process
+      source: onlays
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_trans:
+    - plugin: skip_on_empty
+      method: process
+      source: transgenderServices
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_ortho:
+    - plugin: skip_on_empty
+      method: process
+      source: orthodontia
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_home_health:
+    - plugin: skip_on_empty
+      method: process
+      source: homeHealthCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_acupuncture:
+    - plugin: skip_on_empty
+      method: process
+      source: acupuncture
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_chiro:
+    - plugin: skip_on_empty
+      method: process
+      source: chiropractors
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_contacts:
+    - plugin: skip_on_empty
+      method: process
+      source: electiveContactLenses
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_maternity_stay:
+    - plugin: skip_on_empty
+      method: process
+      source: maternityHospitalStay
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_exam:
+    - plugin: skip_on_empty
+      method: process
+      source: visionExam
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_infertility:
+    - plugin: skip_on_empty
+      method: process
+      source: infertilityTreatment
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_perks:
+    - plugin: skip_on_empty
+      method: process
+      source: benefitPerks
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_prenatal:
+    - plugin: skip_on_empty
+      method: process
+      source: prenatalAndPostnatalPhysicianOfficeVisits
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_gold:
+    - plugin: skip_on_empty
+      method: process
+      source: restorations
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_root:
+    - plugin: skip_on_empty
+      method: process
+      source: rootCanals
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_perio_surg:
+    - plugin: skip_on_empty
+      method: process
+      source: periodontalSurgery
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_psa:
+    - plugin: skip_on_empty
+      method: process
+      source: prostateSpecificAntigenTestPSA
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_nursing:
+    - plugin: skip_on_empty
+      method: process
+      source: skilledNursing
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_implant:
+    - plugin: skip_on_empty
+      method: process
+      source: implants
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_christian_prac:
+    - plugin: skip_on_empty
+      method: process
+      source: christianSciencePractitioners
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_pt:
+    - plugin: skip_on_empty
+      method: process
+      source: physicalTherapy
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_mail_rx:
+    - plugin: skip_on_empty
+      method: process
+      source: mailOrderDrugProgram
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_mammograms:
+    - plugin: skip_on_empty
+      method: process
+      source: mammograms
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_extraction:
+    - plugin: skip_on_empty
+      method: process
+      source: extractions
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_max_annual:
+    - plugin: skip_on_empty
+      method: process
+      source: maximumAnnualBenefit
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_flouride:
+    - plugin: skip_on_empty
+      method: process
+      source: fluorideTreatments
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_hearing:
+    - plugin: skip_on_empty
+      method: process
+      source: hearingCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_substance:
+    - plugin: skip_on_empty
+      method: process
+      source: substanceAbuse
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_autism:
+    - plugin: skip_on_empty
+      method: process
+      source: autism
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_preauth_req:
+    - plugin: skip_on_empty
+      method: process
+      source: preAuthorizationRequirement
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_coinsurance:
+    - plugin: skip_on_empty
+      method: process
+      source: coinsurance
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_birth_control:
+    - plugin: skip_on_empty
+      method: process
+      source: birthControlPills
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_tubal:
+    - plugin: skip_on_empty
+      method: process
+      source: tubalLigation
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_space:
+    - plugin: skip_on_empty
+      method: process
+      source: spaceMaintainers
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_pharmacy:
+    - plugin: skip_on_empty
+      method: process
+      source: pharmacyRetail
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_intl:
+    - plugin: skip_on_empty
+      method: process
+      source: outOfCountryAccess
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_lowvis:
+    - plugin: skip_on_empty
+      method: process
+      source: lowVisionServices
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_hospice:
+    - plugin: skip_on_empty
+      method: process
+      source: hospiceCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_vasectomy:
+    - plugin: skip_on_empty
+      method: process
+      source: vasectomy
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_er:
+    - plugin: skip_on_empty
+      method: process
+      source: emergencyRoom
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_fulltime_cost:
+    - plugin: skip_on_empty
+      method: process
+      source: fullTimeEmployeeContributionPerPayPeriod
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_cleanings:
+    - plugin: skip_on_empty
+      method: process
+      source: cleanings
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_adult_physical:
+    - plugin: skip_on_empty
+      method: process
+      source: physicalExamsForAdults
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_midwives:
+    - plugin: skip_on_empty
+      method: process
+      source: midwives
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_deductible:
+    - plugin: skip_on_empty
+      method: process
+      source: deductible
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_anesthesia:
+    - plugin: skip_on_empty
+      method: process
+      source: anesthesia
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_oral_surg:
+    - plugin: skip_on_empty
+      method: process
+      source: oralSurgery
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_display_order:
+    - plugin: skip_on_empty
+      method: process
+      source: displayOrder
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_lifetime_max:
+    - plugin: skip_on_empty
+      method: process
+      source: overallLifetimeMaximumBenefit
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_retainer:
+    - plugin: skip_on_empty
+      method: process
+      source: retainers
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_vision_lenses:
+    - plugin: skip_on_empty
+      method: process
+      source: lenses
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_annual_max:
+    - plugin: skip_on_empty
+      method: process
+      source: outOfPocketMaximum
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_rx:
+    - plugin: skip_on_empty
+      method: process
+      source: prescriptionDrugs
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_transpants:
+    - plugin: skip_on_empty
+      method: process
+      source: organTransplants
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_vision:
+    - plugin: skip_on_empty
+      method: process
+      source: visionCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_well_woman:
+    - plugin: skip_on_empty
+      method: process
+      source: wellWomanVisits
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_hopsital_stay:
+    - plugin: skip_on_empty
+      method: process
+      source: hospitalStay
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_exam:
+    - plugin: skip_on_empty
+      method: process
+      source: routineExams
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_birthing:
+    - plugin: skip_on_empty
+      method: process
+      source: birthingCenters
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_meals:
+    - plugin: skip_on_empty
+      method: process
+      source: meals
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_filling:
+    - plugin: skip_on_empty
+      method: process
+      source: fillings
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_urgent:
+    - plugin: skip_on_empty
+      method: process
+      source: urgentCare
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_dental:
+    - plugin: skip_on_empty
+      method: process
+      source: dentalTreatment
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_dent_crown:
+    - plugin: skip_on_empty
+      method: process
+      source: crown
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
+  caw_benefits_med_surgery_facil:
+    - plugin: skip_on_empty
+      method: process
+      source: surgeryFacilityCharges
+    - plugin: str_replace
+      search: '/<br ?\/>/'
+      replace: "\r\n"
+      regex: true
 destination:
   plugin: 'entity:node'
   default_bundle: caw_benefits
-idMap: {  }
+idMap: { }
 migration_dependencies:
-  required: {  }
+  required: { }
 include: null

@@ -477,6 +477,7 @@ display:
                 display_inline: 1
                 scrollable: false
                 scrollable_height: 300
+                soft_limit_include_children: false
               su_sweet_avail_target_id:
                 plugin_id: bef
                 advanced:
@@ -491,6 +492,7 @@ display:
                 display_inline: 1
                 scrollable: false
                 scrollable_height: 300
+                soft_limit_include_children: false
       header:
         entity_block_content:
           id: entity_block_content

@@ -1,0 +1,37 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Career Card
+status: stable
+props:
+  type: object
+  properties:
+    header_tag:
+      type: string
+      title: Header Tag
+      default: h2
+      enum:
+        - h1
+        - h2
+        - h3
+    title:
+      type: string
+      title: Title
+      # @todo Add examples here.
+      examples: []
+    job_title:
+      type: string
+      title: Job Title
+      # @todo Add examples here.
+      examples: []
+    years:
+      type: integer
+      title: Years
+      # @todo Add examples here.
+      examples: []
+    honored:
+      type: integer
+      title: Year Honored
+      # @todo Add examples here.
+      examples: []
+slots:
+  image:
+    title: Image

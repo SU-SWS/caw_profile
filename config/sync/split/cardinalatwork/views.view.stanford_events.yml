@@ -5110,6 +5110,7 @@ display:
       row:
         type: ui_patterns
         options:
+          hide_empty: true
           default_field_elements: false
           inline:
             view_node: '0'
@@ -5127,7 +5128,6 @@ display:
             su_event_location: '0'
             edit_node: '0'
           separator: ''
-          hide_empty: true
           pattern: events_list
           pattern_mapping:
             'views_row:title':

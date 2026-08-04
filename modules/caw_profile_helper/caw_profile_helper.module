@@ -161,19 +161,19 @@ function caw_profile_helper_library_info_alter(&$libraries, $extension) {
  * Implements hook_ENTITY_TYPE_view_alter().
  */
 function caw_profile_helper_paragraph_view_alter(array &$build, ParagraphInterface $paragraph, EntityViewDisplayInterface $display) {
-  switch ($paragraph->bundle()) {
-    case 'stanford_card':
-      // If an uploaded media exist, do not display the icon.
-      if ($paragraph->get('su_card_media')->count()) {
-        unset($build['su_card_icon']);
-      }
-      // If no media exists but there is an icon, wrap the display in the
-      // modifier class.
-      elseif ($paragraph->get('su_card_icon')->count()) {
-        $build['#attributes']['class'][] = 'su-card--icon';
-      }
-      break;
-  }
+  //  switch ($paragraph->bundle()) {
+  //    case 'stanford_card':
+  //      // If an uploaded media exist, do not display the icon.
+  //      if ($paragraph->get('su_card_media')->count()) {
+  //        unset($build['su_card_icon']);
+  //      }
+  //      // If no media exists but there is an icon, wrap the display in the
+  //      // modifier class.
+  //      elseif ($paragraph->get('su_card_icon')->count()) {
+  //        $build['#attributes']['class'][] = 'su-card--icon';
+  //      }
+  //      break;
+  //  }
 }
 
 /**
@@ -181,32 +181,36 @@ function caw_profile_helper_paragraph_view_alter(array &$build, ParagraphInterfa
  */
 function caw_profile_helper_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
-  $paragraph = $variables['paragraph'];
-  $ptype = Html::cleanCssIdentifier("ptype-" . $paragraph->bundle());
-  $variables['attributes']['class'][] = $ptype;
+  //  $paragraph = $variables['paragraph'];
+  //  $ptype = Html::cleanCssIdentifier("ptype-" . $paragraph->bundle());
+  //  $variables['attributes']['class'][] = $ptype;
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
 function caw_profile_helper_preprocess_ds_entity_view(&$variables) {
-  if (!empty($variables['attributes']['class'])) {
-    $position = array_search('su-card--icon', $variables['attributes']['class']);
-    // Remove the `su-card--icon` class because it's already passed down to the
-    // pattern.
-    if ($position !== FALSE) {
-      unset($variables['attributes']['class'][$position]);
-    }
-  }
+  //  if (!empty($variables['attributes']['class'])) {
+  //    $position = array_search('su-card--icon', $variables['attributes']['class']);
+  //    // Remove the `su-card--icon` class because it's already passed down to the
+  //    // pattern.
+  //    if ($position !== FALSE) {
+  //      unset($variables['attributes']['class'][$position]);
+  //    }
+  //  }
 }
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function caw_profile_helper_form_node_form_alter(&$form, FormStateInterface $form_state) {
-  if ($form_state->getFormObject()
-      ->getEntity()
-      ->bundle() != 'stanford_page' || empty($form['book'])) {
+  $node_bundle = $form_state->getFormObject()
+    ->getEntity()
+    ->bundle();
+  if (
+    $node_bundle != 'stanford_page' ||
+    empty($form['book'])
+  ) {
     // Don't allow any other content to be added to subsites.
     unset($form['book']);
     return;
@@ -258,7 +262,11 @@ function _caw_profile_helper_subsite_save(&$form, FormStateInterface $form_state
  * Implements hook_views_pre_execute().
  */
 function caw_profile_helper_views_pre_execute(ViewExecutable $view) {
-  if (_stanford_layout_paragraphs_is_editing_layout_paragraphs()) {
+  $layout_paragraphs_routes = ['entity.node.edit_form'];
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $is_editing = $route_name && (in_array($route_name, $layout_paragraphs_routes) || str_starts_with($route_name, 'layout_paragraphs.'));
+
+  if ($is_editing) {
     $current_limit = $view->query->getLimit();
     if ($current_limit <= 0 || $current_limit > 5) {
       $view->query->setLimit(5);

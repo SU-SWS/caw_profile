@@ -1,29 +1,37 @@
 <article{{ attributes.addClass('caw-careers-card su-card su-card--horizontal') }}>
 
+
   <div class="caw-careers-card--left">
-    {{ image }}
+    {% block image %}
+      {{ image }}
+    {% endblock %}
   </div>
+
 
   <div class="caw-careers-card--right su-card__contents">
     <div class="su-card__contents-wrapper">
+      <{{ header_tag }}>
       {{ title }}
+    </{{ header_tag }}>
 
-      {% if job_title %}
-        <div class="caw-careers-card--job-title">
-          {{ job_title }}
-        </div>
-      {% endif %}
-    </div>
+    {% if job_title %}
+      <div class="caw-careers-card--job-title">
+        {{ job_title }}
+      </div>
+    {% endif %}
+  </div>
   </div>
 
   <div class="caw-careers-card--years-honored">
     {% if years %}
       <div class="caw-careers-card--years">
+        <h2>Years at Stanford</h2>
         {{ years }}
       </div>
     {% endif %}
     {% if honored %}
       <div class="caw-careers-card--honored">
+        <h2>Honored</h2>
         {{ honored }}
       </div>
     {% endif %}

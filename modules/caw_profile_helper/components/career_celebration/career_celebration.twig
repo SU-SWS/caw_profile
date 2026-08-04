@@ -1,0 +1,27 @@
+<article{{ attributes.addClass('caw-careers') }}>
+  <div class="caw-careers--card">
+    {{ include("caw_profile_helper:career_card", {
+      title: title,
+      job_title: job_title,
+      years: years,
+      honored: honored,
+      image: image,
+      header_tag: header_tag
+    }) }}
+  </div>
+
+  <div class="caw-careers--body">
+    {% block body %}
+      {{ body }}
+    {% endblock %}
+  </div>
+
+  <div class="centered-container">
+    <div class="su-margin-bottom-3">
+      {% block related %}
+        {{ related }}
+      {% endblock %}
+    </div>
+  </div>
+
+</article>

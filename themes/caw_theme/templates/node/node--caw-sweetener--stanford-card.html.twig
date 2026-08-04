@@ -1,0 +1,11 @@
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:card", {
+    image: content.su_sweet_image
+    super_headline: node.label
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
+
+

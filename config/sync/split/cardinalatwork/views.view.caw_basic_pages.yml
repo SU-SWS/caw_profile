@@ -758,6 +758,7 @@ display:
       row:
         type: ui_patterns
         options:
+          hide_empty: false
           default_field_elements: false
           inline:
             title: '0'
@@ -766,7 +767,6 @@ display:
             su_page_image: '0'
             edit_node: '0'
           separator: ''
-          hide_empty: false
           pattern: basic-page-types-list
           pattern_mapping:
             'views_row:title':

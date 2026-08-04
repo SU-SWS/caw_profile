@@ -10,21 +10,32 @@ const autoprefixer = require('autoprefixer')({ grid: true });
 const config = {
   isProd: process.env.NODE_ENV === "production",
   hmrEnabled: process.env.NODE_ENV !== "production" && !process.env.NO_HMR,
-  distFolder: path.resolve(__dirname, "./dist/css"),
+  distFolder: path.resolve(__dirname, "./styles/dist/css"),
   wdsPort: 3001,
 };
 
-const entryPoints = glob.sync('./lib/**/*.scss').reduce((acc, file) => {
+const components = glob.sync('./components/**/*.scss').reduce((acc, file) => {
   if (file.indexOf('/_') > 0) {
     return acc;
   }
-  const entry =  file.replace('.scss', '').split('/').slice(2).join('/');
+  const entry =  file.replace('.scss', '').replace('./', '');
+  acc[`../../../${entry}`] = file
+  return acc
+}, {});
+
+
+const entryPoints = glob.sync('./styles/lib/**/*.scss').reduce((acc, file) => {
+  if (file.indexOf('/_') > 0) {
+    return acc;
+  }
+  const entry =  file.replace('.scss', '').replace('/lib/', '/').split('/').slice(2).join('/');
   acc[entry] = file
   return acc
 }, {});
 
+
 var webpackConfig = {
-  entry: entryPoints,
+  entry: {...components, ...entryPoints},
   output: {
     path: config.distFolder,
     filename: '[name].js',
@@ -97,7 +108,7 @@ var webpackConfig = {
     new FileManagerPlugin({
       events: {
         onStart: {
-          delete: ["dist"]
+          delete: ["styles/dist"]
         }
       }
     }),

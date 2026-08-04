@@ -1,9 +1,0 @@
-adding:
-  dependencies:
-    config:
-      - field.field.paragraph.stanford_card.su_card_icon
-  hidden:
-    su_card_icon: true
-removing:
-  hidden:
-    su_card_link_display: true

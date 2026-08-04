@@ -19,7 +19,6 @@ removing:
     module:
       - filter
       - layout_builder
-      - ui_patterns_library
   permissions:
     - 'access patterns page'
     - 'configure editable stanford_event node layout overrides'

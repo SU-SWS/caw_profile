@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\Tests\stanford_basic\Unit\Hook;
+namespace Drupal\Tests\caw_stanford_basic\Unit\Hook;
 
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\FieldItemListInterface;

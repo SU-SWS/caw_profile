@@ -228,7 +228,11 @@
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\caw_profile\\": "tests/src",
-            "Drupal\\Tests\\caw_profile_helper\\": "modules/caw_profile_helper/tests/src"
+            "Drupal\\Tests\\caw_profile_helper\\": "modules/caw_profile_helper/tests/src",
+            "Drupal\\Tests\\caw_jemison\\": "themes/jemison/tests/src",
+            "Drupal\\Tests\\caw_stanford_basic\\": "themes/stanford_basic/tests/src",
+            "Drupal\\Tests\\caw_minimally_branded_subtheme\\": "themes/minimally_branded_subtheme/tests/src"
+
         }
     },
     "extra": {

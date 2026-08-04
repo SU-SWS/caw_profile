@@ -6,7 +6,8 @@
     title: node.label,
     job_title: node.su_careers_department.entity.name.value,
     years: node.su_careers_years.entity.name.value,
-    honored: node.su_careers_honored.value
+    honored: node.su_careers_honored.value,
+    url: url
   } %}
   {% block image %}
     {{ content.su_careers_image }}
@@ -14,5 +15,6 @@
   {% endembed %}
   {{ title_suffix }}
 </div>
+
 
 

@@ -32,6 +32,9 @@ props:
       title: Year Honored
       # @todo Add examples here.
       examples: []
+    url:
+      type: string
+      title: URL
 slots:
   image:
     title: Image

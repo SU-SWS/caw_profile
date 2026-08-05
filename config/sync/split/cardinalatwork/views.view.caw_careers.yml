@@ -744,6 +744,7 @@ display:
       link_url: /working-stanford/recognition/service-recognition/stanford-celebrates-you/annual-recognition
       header: {  }
       display_extenders: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: 0
       contexts:

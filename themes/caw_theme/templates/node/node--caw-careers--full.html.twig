@@ -1,0 +1,29 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("caw_profile_helper:career_celebration", {
+    header_tag: 'h1',
+    title: node.label,
+    job_title: node.su_careers_department.entity.name.value,
+    years: node.su_careers_years.entity.name.value,
+    honored: node.su_careers_honored.value,
+    image: content.su_careers_image
+  }, with_context = false) }}
+
+  {{ title_suffix }}
+
+  <div class="caw-careers--body">
+    {{ content|without("su_careers_image") }}
+
+    {{ drupal_block('hyvor') }}
+  </div>
+  {% if drupal_view_result('caw_careers', 'other_celebrations', node.su_careers_honored.value, node.id)|length != 0 %}
+    <div class="centered-container">
+      <div class="su-margin-bottom-3 dynamic-block-fieldnode-caw-other-careers">
+        <h2>Other Career Celebrations</h2>
+        {{ drupal_view('caw_careers', 'other_celebrations', node.su_careers_honored.value, node.id) }}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+

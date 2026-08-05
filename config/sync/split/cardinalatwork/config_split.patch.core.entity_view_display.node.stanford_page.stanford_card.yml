@@ -13,3 +13,7 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_page.body
+    module:
+      - empty_fields
+      - field_label
+      - smart_trim

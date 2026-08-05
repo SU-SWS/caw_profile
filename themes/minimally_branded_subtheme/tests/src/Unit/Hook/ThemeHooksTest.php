@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\Tests\minimally_branded_subtheme\Unit\Hook;
+namespace Drupal\Tests\caw_minimally_branded_subtheme\Unit\Hook;
 
 use Drupal\Core\Extension\ThemeExtensionList;
 use Drupal\minimally_branded_subtheme\Hook\ThemeHooks;

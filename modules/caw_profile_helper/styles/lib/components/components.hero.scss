@@ -11,8 +11,8 @@
   }
 }
 
-.su-hero.overlay-center_transparent,
-.js-lpb-component.overlay-center_transparent .su-hero {
+.su-hero.overlay-center,
+.js-lpb-component.overlay-center .su-hero {
   @include grid-media('md') {
     .su-hero__media {
 

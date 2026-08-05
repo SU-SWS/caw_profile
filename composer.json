@@ -212,7 +212,7 @@
         "su-sws/stanford_actions": "^8.2",
         "su-sws/stanford_media": "^11.3",
         "su-sws/stanford_migrate": "^9.0",
-        "su-sws/stanford_profile_helper": "^10.1",
+        "su-sws/stanford_profile_helper": "11.x-dev",
         "su-sws/stanford_samlauth": "^2.0",
         "su-sws/stanford_syndication": "^1.0@beta"
     },
@@ -228,7 +228,11 @@
     "autoload-dev": {
         "psr-4": {
             "Drupal\\Tests\\caw_profile\\": "tests/src",
-            "Drupal\\Tests\\caw_profile_helper\\": "modules/caw_profile_helper/tests/src"
+            "Drupal\\Tests\\caw_profile_helper\\": "modules/caw_profile_helper/tests/src",
+            "Drupal\\Tests\\caw_jemison\\": "themes/jemison/tests/src",
+            "Drupal\\Tests\\caw_stanford_basic\\": "themes/stanford_basic/tests/src",
+            "Drupal\\Tests\\caw_minimally_branded_subtheme\\": "themes/minimally_branded_subtheme/tests/src"
+
         }
     },
     "extra": {

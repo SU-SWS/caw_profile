@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 // Import Decanter Library:
 @import 'decanter/core/src/scss/decanter-no-markup';
 
@@ -22,7 +24,7 @@
     &::before {
       content: "";
       position: absolute;
-      background: $su-color-foggy-light url("../assets/png/career-celebrations-banner--node.png") no-repeat center;
+      background: $su-color-foggy-light url("career-celebrations-banner--node.png") no-repeat center;
       background-size: cover;
       opacity: 0.75;
       top: 0;

@@ -1,0 +1,20 @@
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% embed "caw_profile_helper:career_card" with {
+    header_tag: 'h3',
+    title: node.label,
+    job_title: node.su_careers_department.entity.name.value,
+    years: node.su_careers_years.entity.name.value,
+    honored: node.su_careers_honored.value,
+    url: url
+  } %}
+  {% block image %}
+    {{ content.su_careers_image }}
+    {% endblock %}
+  {% endembed %}
+  {{ title_suffix }}
+</div>
+
+
+

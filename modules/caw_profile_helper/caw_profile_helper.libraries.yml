@@ -31,16 +31,11 @@ admin:
   dependencies:
     - caw_profile_helper/global
 
-patterns.card:
+components.hero:
   version: VERSION
   css:
     theme:
-      styles/dist/css/components/patterns.card.css: {}
-patterns.hero:
-  version: VERSION
-  css:
-    theme:
-      styles/dist/css/components/patterns.hero.css: {}
+      styles/dist/css/components/components.hero.css: {}
 
 layout_one_column:
   css:

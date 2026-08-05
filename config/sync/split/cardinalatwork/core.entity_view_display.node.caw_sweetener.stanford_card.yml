@@ -11,57 +11,37 @@ dependencies:
     - field.field.node.caw_sweetener.su_sweet_type
     - node.type.caw_sweetener
   module:
-    - ds
+    - empty_fields
     - field_formatter_class
-    - layout_builder
-    - layout_builder_restrictions
-    - layout_library
+    - field_formatter_range
+    - field_label
+    - link
     - stanford_media
     - user
-third_party_settings:
-  layout_builder:
-    enabled: false
-    allow_custom: false
-  layout_library:
-    enable: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts: {  }
-      restricted_categories: {  }
-      blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
-  ds:
-    layout:
-      id: pattern_card
-      library: null
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        pattern:
-          field_templates: default
-          variant: default
-    regions:
-      card_image:
-        - su_sweet_image
-      card_super_headline:
-        - node_title
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          'link class': su-link--action
-          wrapper: ''
-          class: ''
 id: node.caw_sweetener.stanford_card
 targetEntityType: node
 bundle: caw_sweetener
 mode: stanford_card
 content:
+  su_sweet_avail:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 1
+    region: content
   su_sweet_image:
     type: media_responsive_image_formatter
     label: hidden
@@ -69,15 +49,56 @@ content:
       view_mode: default
       link: false
       image_style: card_2_1
+      remove_alt: 0
     third_party_settings:
+      empty_fields:
+        handler: ''
       field_formatter_class:
         class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 0
-    region: card_image
+    region: content
+  su_sweet_info:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 2
+    region: content
+  su_sweet_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 3
+    region: content
 hidden:
   links: true
   search_api_excerpt: true
-  su_sweet_avail: true
   su_sweet_components: true
-  su_sweet_info: true
-  su_sweet_type: true

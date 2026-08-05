@@ -54,6 +54,9 @@ adding:
       media:
         enabled: true
         query_load_enabled: true
+      thurman:
+        enabled: true
+        query_load_enabled: true
   field_config:
     node:
       stanford_event:

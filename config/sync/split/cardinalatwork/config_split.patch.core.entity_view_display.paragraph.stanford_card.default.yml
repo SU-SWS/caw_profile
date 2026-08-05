@@ -4,11 +4,6 @@ adding:
       - field.field.paragraph.stanford_card.su_card_icon
     module:
       - fontawesome
-  third_party_settings:
-    ds:
-      regions:
-        card_image:
-          - su_card_icon
   content:
     su_card_icon:
       type: fontawesome_icon_formatter
@@ -16,8 +11,13 @@ adding:
       settings:
         layers: false
       third_party_settings:
+        empty_fields:
+          handler: ''
         field_formatter_class:
           class: ''
+        field_label:
+          label_value: ''
+          label_tag: ''
       weight: 5
-      region: card_image
+      region: content
 removing: {  }

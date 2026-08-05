@@ -53,10 +53,6 @@ class CardColorBehavior extends ParagraphsBehaviorBase {
   /**
    * {@inheritDoc}
    */
-  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
-    if ($bg_color = $paragraph->getBehaviorSetting('card_color', 'bg_color')) {
-      $build['#attributes']['class'][] = "bg-$bg_color";
-    }
-  }
+  public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {}
 
 }

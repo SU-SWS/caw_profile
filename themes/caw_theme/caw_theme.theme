@@ -10,23 +10,6 @@ use Drupal\caw_profile_helper\BookManager;
 use Drupal\paragraphs\ParagraphInterface;
 
 /**
- * Implements hook_preprocess_HOOK().
- */
-function caw_theme_preprocess_pattern_hero(&$variables) {
-  $route = \Drupal::routeMatch()->getRouteName();
-  if ($route != 'ui_patterns.patterns.overview') {
-    $variables['card_headline_attributes']['class'][] = 'no-anchor';
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function caw_theme_preprocess_field__dynamic_block_field__node_caw_other_careers(&$variables) {
-  $variables['label_tag'] = 'h2';
-}
-
-/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function caw_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
@@ -95,13 +78,106 @@ function caw_theme_preprocess_book_tree(&$variables) {
 
   foreach ($variables['items'] as &$item) {
     $menu_item = [$item];
-    _stanford_basic_menu_process_submenu($menu_item, $current_path);
+    _caw_theme_menu_process_submenu($menu_item, $current_path);
     $item = $menu_item[0];
   }
 
   if (theme_get_setting('nav_dropdown_enabled', 'stanford_basic')) {
     $variables['attributes']['class'][] = 'su-multi-menu--dropdowns';
   }
+}
+
+/**
+ * Set active and active-trail class for sub-menus recursively.
+ *
+ * @param array $submenu
+ *   The `$item['below']` structure from a menu array.
+ * @param string $current_path
+ *   A path to match against for "on this page".
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _caw_theme_menu_process_submenu(&$submenu, $current_path) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+  foreach ($submenu as &$item) {
+    $item_path = is_string($item['url']) ? $item['url'] : $item['url']->toString(TRUE)->getGeneratedUrl();
+    if ($item_path == $current_path || (_caw_theme_path_is_home($item_path) && $is_front)) {
+      $item['is_active'] = TRUE;
+    }
+
+    if ($item['url'] instanceof Url && !_caw_theme_link_is_public($item['url'])) {
+      $item['unpublished'] = TRUE;
+    }
+
+    if (!empty($item['below'])) {
+      _caw_theme_menu_process_submenu($item['below'], $current_path);
+    }
+  }
+}
+
+/**
+ * Determine if a menu path corresponds to the current home page.
+ *
+ * @param string $path
+ *   The path given for a menu entry
+ *
+ * @return bool
+ *   TRUE if the path corresponds to the current home page.
+ */
+function _caw_theme_path_is_home(string $path): bool {
+  // account for weird paths in input
+  $normal_path = strtolower(trim($path));
+
+  $front_path = &drupal_static(__FUNCTION__);
+
+  if (is_null($front_path)) {
+    $config = \Drupal::config('system.site');
+    $front_uri = $config->get('page.front');
+    $front_alias = \Drupal::service('path_alias.manager')
+      ->getAliasByPath($front_uri);
+    $front_path = [$front_uri, $front_alias];
+  }
+
+  [$front_uri, $front_alias] = $front_path;
+
+  if (
+    $normal_path == base_path() ||
+    $normal_path == $front_uri ||
+    $normal_path == $front_alias ||
+    $normal_path == '<front>'
+  ) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Is the given url public.
+ *
+ * @param \Drupal\Core\Url $url
+ *   Menu link url object.
+ *
+ * @return bool
+ *   False if the link is a node link to an unpublished link, true otherwise.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _caw_theme_link_is_public(Url $url) {
+  if ($url->isRouted() && $url->getRouteName() == 'entity.node.canonical') {
+    $parameters = $url->getRouteParameters();
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->load($parameters['node']);
+    if ($node) {
+      return $node->isPublished();
+    }
+    return TRUE;
+  }
+  return TRUE;
 }
 
 /**
@@ -189,23 +265,14 @@ function caw_theme_preprocess_field(&$variables) {
 }
 
 /**
- * Implements hook_preprocess().
- */
-function caw_theme_preprocess(&$variables, $hook) {
-  if (str_replace('-', '_', $hook) == 'pattern_news_list') {
-    $variables['#attached']['library'][] = 'caw_theme/components.news_list';
-  }
-}
-
-/**
  * Implements hook_prepreprocess_HOOK().
  */
 function caw_theme_preprocess_pattern_card(&$variables) {
-  $entity = $variables['context']->getProperty('entity');
-  if ($entity instanceof ParagraphInterface && $entity->bundle() == 'stanford_card') {
-    $link_display = $entity->getBehaviorSetting('su_card_styles', 'link_style');
-    if ($link_display == 'card') {
-      $variables['attributes']->addClass('stretch-link');
-    }
-  }
+//  $entity = $variables['context']->getProperty('entity');
+//  if ($entity instanceof ParagraphInterface && $entity->bundle() == 'stanford_card') {
+//    $link_display = $entity->getBehaviorSetting('su_card_styles', 'link_style');
+//    if ($link_display == 'card') {
+//      $variables['attributes']->addClass('stretch-link');
+//    }
+//  }
 }

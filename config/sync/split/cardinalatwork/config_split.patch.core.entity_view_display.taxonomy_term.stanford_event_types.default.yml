@@ -1,5 +1,0 @@
-adding:
-  dependencies:
-    config:
-      - views.view.stanford_events
-removing: {  }

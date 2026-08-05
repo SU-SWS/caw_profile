@@ -263,16 +263,3 @@ function caw_theme_preprocess_field(&$variables) {
   $variables['attributes']['class'][] = 'field';
   $variables['title_attributes']['class'][] = 'label';
 }
-
-/**
- * Implements hook_prepreprocess_HOOK().
- */
-function caw_theme_preprocess_pattern_card(&$variables) {
-//  $entity = $variables['context']->getProperty('entity');
-//  if ($entity instanceof ParagraphInterface && $entity->bundle() == 'stanford_card') {
-//    $link_display = $entity->getBehaviorSetting('su_card_styles', 'link_style');
-//    if ($link_display == 'card') {
-//      $variables['attributes']->addClass('stretch-link');
-//    }
-//  }
-}

@@ -2,8 +2,10 @@
 <div{{ attributes }}>
   {{ title_prefix }}
   {{ include("jumpstart_ui:card", {
-    image: content.su_sweet_image
-    super_headline: node.label
+    header_tag: "div",
+    image: content.su_sweet_image,
+    headline: node.label,
+    headline_url: url
   }, with_context = false) }}
   {{ title_suffix }}
 </div>

@@ -11,6 +11,7 @@ no_patching: false
 storage: collection
 folder: ''
 module:
+  ds: 0
   custom_markup_block: 0
   node_edit_link: 0
   stanford_syndication: 0
@@ -21,8 +22,6 @@ theme: {  }
 complete_list:
   - auto_entitylabel.settings.node.caw_careers
   - core.entity_form_mode.node.edit_link
-  - ds.field.caw_other_careers
-  - ds.field.hyvor_comments
   - paragraphs.paragraphs_type.layout
   - taxonomy.vocabulary.careers_departments
   - taxonomy.vocabulary.careers_years

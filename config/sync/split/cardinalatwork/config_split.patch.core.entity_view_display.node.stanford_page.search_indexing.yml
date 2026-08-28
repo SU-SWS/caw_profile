@@ -13,3 +13,4 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_page.body
+      - field.field.node.stanford_page.su_search_exclusion

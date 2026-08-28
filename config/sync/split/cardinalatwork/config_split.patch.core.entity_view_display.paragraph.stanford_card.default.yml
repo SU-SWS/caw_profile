@@ -11,10 +11,10 @@ adding:
       settings:
         layers: false
       third_party_settings:
-        empty_fields:
-          handler: ''
         field_formatter_class:
           class: ''
+        empty_fields:
+          handler: ''
         field_label:
           label_value: ''
           label_tag: ''

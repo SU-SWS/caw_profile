@@ -157,8 +157,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: 'su-event-sponsor flex-7-of-12'
-                  ds:
-                    ds_limit: ''
             weight: -5
             additional: {  }
           229e196d-4f22-4f5a-b265-added1838d5d:
@@ -354,8 +352,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-event-audience
-                  ds:
-                    ds_limit: ''
             weight: 5
             additional: {  }
           be4ceb41-1f4b-40f8-be69-c6714369f7bf:
@@ -821,4 +817,5 @@ hidden:
   su_event_tags: true
   su_imported: true
   su_metatags: true
+  su_search_exclusion: true
   su_shared_tags: true

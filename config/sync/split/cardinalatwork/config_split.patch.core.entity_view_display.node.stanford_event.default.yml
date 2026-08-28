@@ -11,10 +11,6 @@ adding:
               configuration:
                 label: Sponsor
                 label_display: '0'
-                formatter:
-                  third_party_settings:
-                    ds:
-                      ds_limit: ''
         -
           components:
             c4f8811e-dd0e-44ae-b65d-b0f82cf894df:

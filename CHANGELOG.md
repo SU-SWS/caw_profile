@@ -415,6 +415,10 @@ _Release Date: 2022-08-11_
 
 - Fixed events importer title property.
 
+13.0.7
+-------------------------------------------------------------------------------
+- Fixed template rendering for event schedule paragraphs.
+
 13.0.5
 -------------------------------------------------------------------------------
 - Adjusted content widths in the local footer

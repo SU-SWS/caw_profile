@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
+    - field.field.node.caw_sweetener.su_metatags
+    - field.field.node.caw_sweetener.su_search_exclusion
     - field.field.node.caw_sweetener.su_sweet_avail
     - field.field.node.caw_sweetener.su_sweet_components
     - field.field.node.caw_sweetener.su_sweet_image
@@ -101,4 +103,6 @@ content:
 hidden:
   links: true
   search_api_excerpt: true
+  su_metatags: true
+  su_search_exclusion: true
   su_sweet_components: true

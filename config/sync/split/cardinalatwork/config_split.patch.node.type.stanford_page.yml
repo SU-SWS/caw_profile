@@ -1,0 +1,21 @@
+adding:
+  third_party_settings:
+    node_revision_delete:
+      created:
+        status: false
+        settings:
+          age: 1
+      drafts:
+        status: false
+        settings:
+          age: 1
+      only_drafts:
+        status: false
+        settings:
+          age: 0
+    scheduler:
+      unpublish_enable: true
+removing:
+  third_party_settings:
+    scheduler:
+      unpublish_enable: false

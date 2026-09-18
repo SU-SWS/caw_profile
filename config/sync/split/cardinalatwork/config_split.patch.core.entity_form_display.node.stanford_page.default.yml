@@ -37,6 +37,8 @@ adding:
       settings:
         display_label: true
       third_party_settings: {  }
+    scheduler_settings:
+      weight: 50
     sticky:
       type: boolean_checkbox
       weight: 16
@@ -56,14 +58,19 @@ adding:
       weight: 4
     su_shared_tags:
       weight: 7
+    unpublish_on:
+      type: datetime_timestamp_no_default
+      weight: 54
+      region: content
+      settings: {  }
+      third_party_settings: {  }
   hidden:
     node_edit_link: true
     syndication: true
 removing:
-  dependencies:
-    config:
-      - field.field.node.stanford_page.field_menulink
   content:
+    scheduler_settings:
+      weight: 13
     su_basic_page_type:
       weight: 2
     su_page_components:
@@ -82,3 +89,4 @@ removing:
   hidden:
     promote: true
     sticky: true
+    unpublish_on: true

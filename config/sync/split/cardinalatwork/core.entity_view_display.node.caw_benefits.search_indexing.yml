@@ -113,6 +113,8 @@ dependencies:
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
+    - field.field.node.caw_benefits.su_metatags
+    - field.field.node.caw_benefits.su_search_exclusion
     - node.type.caw_benefits
   module:
     - datetime
@@ -303,3 +305,5 @@ hidden:
   caw_benefits_xray: true
   field_menulink: true
   search_api_excerpt: true
+  su_metatags: true
+  su_search_exclusion: true

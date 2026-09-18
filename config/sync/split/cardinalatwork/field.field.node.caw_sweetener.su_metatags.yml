@@ -1,0 +1,21 @@
+uuid: ea1141fd-862c-48e2-b89a-e283e231a4ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_metatags
+    - node.type.caw_sweetener
+  module:
+    - metatag
+id: node.caw_sweetener.su_metatags
+field_name: su_metatags
+entity_type: node
+bundle: caw_sweetener
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -21,28 +21,6 @@ use Drupal\views\ViewExecutable;
 use Drupal\Core\Cache\Cache;
 
 /**
- * Implements hook_ENTITY_TYPE_access().
- */
-function caw_profile_helper_paragraph_access(ParagraphInterface $entity, $operation, AccountInterface $account) {
-  if ($operation == 'view' && $account->isAnonymous() && $entity->bundle() == 'layout') {
-    $layoutUuid = $entity->uuid();
-
-    /** @var \Drupal\node\NodeInterface $node */
-    $node = $entity->getParentEntity();
-    $parentField = $entity->get('parent_field_name')->getString();
-
-    $components = $node->get($parentField)->getValue();
-    $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
-    foreach ($components as &$component) {
-      $component = $paragraphStorage->load($component['target_id']);
-    }
-    $children = array_filter($components, fn(ParagraphInterface $child) => $child->getBehaviorSetting('layout_paragraphs', 'parent_uuid') == $layoutUuid && $child->isPublished());
-    return AccessResult::forbiddenIf(!$children, 'No published children in the layout.');
-  }
-  return AccessResult::neutral();
-}
-
-/**
  * Implements hook_paragraphs_behavior_info_alter().
  */
 function caw_profile_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {

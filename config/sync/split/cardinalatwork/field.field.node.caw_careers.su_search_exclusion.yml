@@ -1,0 +1,21 @@
+uuid: b303e578-c8c8-4bce-8a21-aeb447669d41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_search_exclusion
+    - node.type.caw_careers
+  module:
+    - search_api_exclude_entity
+id: node.caw_careers.su_search_exclusion
+field_name: su_search_exclusion
+entity_type: node
+bundle: caw_careers
+label: 'Exclude from Search'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

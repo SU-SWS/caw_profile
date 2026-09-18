@@ -1,0 +1,21 @@
+uuid: 791fc239-5a1e-44a4-98a5-0ee6eb9e4c99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_search_exclusion
+    - node.type.caw_benefits
+  module:
+    - search_api_exclude_entity
+id: node.caw_benefits.su_search_exclusion
+field_name: su_search_exclusion
+entity_type: node
+bundle: caw_benefits
+label: 'Exclude from Search'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

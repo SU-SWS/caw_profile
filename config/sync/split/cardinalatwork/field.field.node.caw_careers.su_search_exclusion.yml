@@ -15,7 +15,9 @@ label: 'Exclude from Search'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: true
 default_value_callback: ''
 settings: {  }
 field_type: search_api_exclude_entity

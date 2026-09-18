@@ -18,7 +18,7 @@ class SystemCest {
     $I->canSee('11.3', '.system-status-general-info');
     if ($I->grabMultiple('.system-status-counter--error')) {
       $error_count = \Drupal::moduleHandler()
-        ->moduleExists('config_inspector') ? '2 Errors' : '1 Error';
+        ->moduleExists('config_inspector') ? '3 Errors' : '2 Error';
 
       $I->canSee($error_count, '.system-status-counter--error');
       $I->canSee('Access to update.php ', '.system-status-report__status-icon--error');

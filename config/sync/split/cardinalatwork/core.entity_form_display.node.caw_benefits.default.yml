@@ -112,6 +112,7 @@ dependencies:
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
+    - field.field.node.caw_benefits.su_metatags
     - field.field.node.caw_benefits.su_search_exclusion
     - node.type.caw_benefits
   module:
@@ -317,7 +318,7 @@ content:
     third_party_settings: {  }
   caw_benefits_additional_info:
     type: layout_paragraphs
-    weight: 141
+    weight: 17
     region: content
     settings:
       view_mode: default
@@ -1238,7 +1239,7 @@ content:
     third_party_settings: {  }
   su_search_exclusion:
     type: search_api_exclude_entity_widget
-    weight: 27
+    weight: 16
     region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
@@ -1270,5 +1271,6 @@ content:
 hidden:
   node_edit_link: true
   publish_on: true
+  su_metatags: true
   syndication: true
   unpublish_on: true

@@ -1,0 +1,21 @@
+uuid: 9a6ace4c-48bd-4c33-bfb5-44b1bad31790
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_metatags
+    - node.type.caw_benefits
+  module:
+    - metatag
+id: node.caw_benefits.su_metatags
+field_name: su_metatags
+entity_type: node
+bundle: caw_benefits
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -112,6 +112,7 @@ dependencies:
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
+    - field.field.node.caw_benefits.su_metatags
     - field.field.node.caw_benefits.su_search_exclusion
     - node.type.caw_benefits
     - system.menu.main
@@ -124,6 +125,7 @@ dependencies:
     - layout_builder_restrictions
     - layout_library
     - menu_block
+    - metatag
     - options
     - search_api_exclude_entity
     - text
@@ -191,6 +193,21 @@ third_party_settings:
                   format_custom_true: ''
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
+          21a00752-be10-4cb9-9469-6085a1f42a00:
+            uuid: 21a00752-be10-4cb9-9469-6085a1f42a00
+            region: main
+            configuration:
+              id: 'field_block:node:caw_benefits:su_metatags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -522,6 +539,13 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  su_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: main
   su_search_exclusion:
     type: search_api_exclude_entity_formatter
     label: above

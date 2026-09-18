@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.caw_careers.su_careers_memory
     - field.field.node.caw_careers.su_careers_proud_project
     - field.field.node.caw_careers.su_careers_years
+    - field.field.node.caw_careers.su_metatags
     - field.field.node.caw_careers.su_search_exclusion
     - node.type.caw_careers
   module:
@@ -23,7 +24,6 @@ dependencies:
     - entity_reference_revisions
     - field_formatter_class
     - field_label
-    - search_api_exclude_entity
     - stanford_media
     - user
 id: node.caw_careers.default
@@ -93,16 +93,6 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  su_search_exclusion:
-    type: search_api_exclude_entity_formatter
-    label: above
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 7
-    region: content
 hidden:
   links: true
   search_api_excerpt: true
@@ -112,3 +102,5 @@ hidden:
   su_careers_job: true
   su_careers_lname: true
   su_careers_years: true
+  su_metatags: true
+  su_search_exclusion: true

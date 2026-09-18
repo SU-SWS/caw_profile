@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.caw_careers.su_careers_memory
     - field.field.node.caw_careers.su_careers_proud_project
     - field.field.node.caw_careers.su_careers_years
+    - field.field.node.caw_careers.su_metatags
     - field.field.node.caw_careers.su_search_exclusion
     - node.type.caw_careers
 id: node.caw_careers.edit_link
@@ -107,6 +108,7 @@ hidden:
   su_careers_honored: true
   su_careers_image: true
   su_careers_years: true
+  su_metatags: true
   su_search_exclusion: true
   syndication: true
   title: true

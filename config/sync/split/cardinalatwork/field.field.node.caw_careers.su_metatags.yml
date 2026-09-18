@@ -1,0 +1,21 @@
+uuid: 4482152f-abe8-4585-a42b-4d6ae98e5a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_metatags
+    - node.type.caw_careers
+  module:
+    - metatag
+id: node.caw_careers.su_metatags
+field_name: su_metatags
+entity_type: node
+bundle: caw_careers
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

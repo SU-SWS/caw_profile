@@ -308,7 +308,6 @@ class MediaCest {
     $I->amOnPage($media->toUrl('edit-form')->toString());
     $I->canSeeInField('Category', $child_term->id());
 
-    return;
     $I->click('Save');
 
     $I->amOnPage('/admin/content/media');

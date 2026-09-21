@@ -283,16 +283,16 @@ class MediaCest {
 
     $unrelated_term = $I->createEntity([
       'vid' => 'media',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
 
     $parent_term = $I->createEntity([
       'vid' => 'media',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $child_term = $I->createEntity([
       'vid' => 'media',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
       'parent' => $parent_term->id(),
     ], 'taxonomy_term');
 
@@ -307,6 +307,7 @@ class MediaCest {
 
     $I->amOnPage($media->toUrl('edit-form')->toString());
     $I->canSeeInField('Category', $child_term->id());
+
     $I->click('Save');
 
     $I->amOnPage('/admin/content/media');

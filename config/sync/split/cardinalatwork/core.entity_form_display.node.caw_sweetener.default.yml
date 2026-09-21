@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.caw_sweetener.su_metatags
+    - field.field.node.caw_sweetener.su_search_exclusion
     - field.field.node.caw_sweetener.su_sweet_avail
     - field.field.node.caw_sweetener.su_sweet_components
     - field.field.node.caw_sweetener.su_sweet_image
@@ -15,6 +17,7 @@ dependencies:
     - paragraphs
     - path
     - scheduler
+    - search_api_exclude_entity
 id: node.caw_sweetener.default
 targetEntityType: node
 bundle: caw_sweetener
@@ -41,7 +44,7 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -58,6 +61,14 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  su_search_exclusion:
+    type: search_api_exclude_entity_widget
+    weight: 13
+    region: content
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+      use_details_container: true
     third_party_settings: {  }
   su_sweet_avail:
     type: options_select
@@ -130,5 +141,6 @@ content:
     third_party_settings: {  }
 hidden:
   node_edit_link: true
+  su_metatags: true
   syndication: true
   unpublish_on: true

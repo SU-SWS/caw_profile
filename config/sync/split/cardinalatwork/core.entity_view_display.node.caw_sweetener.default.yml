@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.caw_sweetener.su_metatags
+    - field.field.node.caw_sweetener.su_search_exclusion
     - field.field.node.caw_sweetener.su_sweet_avail
     - field.field.node.caw_sweetener.su_sweet_components
     - field.field.node.caw_sweetener.su_sweet_image
@@ -19,6 +21,8 @@ dependencies:
     - layout_builder
     - layout_builder_restrictions
     - layout_library
+    - metatag
+    - search_api_exclude_entity
     - user
     - views
 third_party_settings:
@@ -225,7 +229,24 @@ id: node.caw_sweetener.default
 targetEntityType: node
 bundle: caw_sweetener
 mode: default
-content: {  }
+content:
+  su_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: main
+  su_search_exclusion:
+    type: search_api_exclude_entity_formatter
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: main
 hidden:
   links: true
   search_api_excerpt: true

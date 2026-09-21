@@ -87,6 +87,10 @@ adding:
           enabled: true
         su_sweet_type:
           enabled: true
+        su_search_exclusion:
+          enabled: true
+        su_metatags:
+          enabled: true
       caw_careers:
         su_careers_proud_project:
           enabled: true
@@ -113,6 +117,10 @@ adding:
         su_careers_department:
           enabled: true
         su_careers_years:
+          enabled: true
+        su_search_exclusion:
+          enabled: true
+        su_metatags:
           enabled: true
       caw_benefits:
         su_benefit_type:
@@ -326,6 +334,10 @@ adding:
         caw_benefits_annual_max:
           enabled: true
         body:
+          enabled: true
+        su_search_exclusion:
+          enabled: true
+        su_metatags:
           enabled: true
     paragraph:
       stanford_card:

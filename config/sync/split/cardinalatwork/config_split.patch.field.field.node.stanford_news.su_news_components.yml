@@ -6,8 +6,8 @@ adding:
   settings:
     handler_settings:
       target_bundles:
-        stanford_accordion: stanford_accordion
         layout: layout
+        stanford_accordion: stanford_accordion
       target_bundles_drag_drop:
         stanford_accordion:
           enabled: true

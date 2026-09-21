@@ -113,6 +113,8 @@ dependencies:
     - field.field.node.caw_benefits.su_benefit_type
     - field.field.node.caw_benefits.su_benefits_offered
     - field.field.node.caw_benefits.su_benefits_year
+    - field.field.node.caw_benefits.su_metatags
+    - field.field.node.caw_benefits.su_search_exclusion
     - node.type.caw_benefits
   module:
     - path
@@ -290,5 +292,7 @@ hidden:
   su_benefit_type: true
   su_benefits_offered: true
   su_benefits_year: true
+  su_metatags: true
+  su_search_exclusion: true
   syndication: true
   unpublish_on: true

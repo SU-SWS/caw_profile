@@ -16,11 +16,14 @@ dependencies:
     - field.field.node.caw_careers.su_careers_memory
     - field.field.node.caw_careers.su_careers_proud_project
     - field.field.node.caw_careers.su_careers_years
+    - field.field.node.caw_careers.su_metatags
+    - field.field.node.caw_careers.su_search_exclusion
     - node.type.caw_careers
   module:
     - media_library
     - paragraphs
     - path
+    - search_api_exclude_entity
 id: node.caw_careers.default
 targetEntityType: node
 bundle: caw_careers
@@ -173,6 +176,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  su_search_exclusion:
+    type: search_api_exclude_entity_widget
+    weight: 22
+    region: content
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+      use_details_container: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -198,5 +209,6 @@ content:
     third_party_settings: {  }
 hidden:
   publish_on: true
+  su_metatags: true
   syndication: true
   unpublish_on: true

@@ -10,6 +10,7 @@ use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\State\StateInterface;
 use Drupal\caw_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Class ConfigOverridesTest
@@ -17,6 +18,7 @@ use Drupal\Tests\UnitTestCase;
  * @group caw_profile
  * @coversDefaultClass \Drupal\caw_profile\Config\ConfigOverrides
  */
+#[Group('stanford_profile')]
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
@@ -27,7 +29,7 @@ class ConfigOverridesTest extends UnitTestCase {
   /**
    * {@inheritDoc}
    */
-  public function setup(): void {
+  protected function setUp(): void {
     parent::setUp();
     $state = $this->createMock(StateInterface::class);
     $state->method('get')

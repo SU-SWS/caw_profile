@@ -18,6 +18,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Class EventSubscriberTest.
@@ -25,6 +27,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * @group caw_profile
  * @coversDefaultClass \Drupal\caw_profile\EventSubscriber\CawProfileEventSubscriber
  */
+#[Group('stanford_profile')]
+#[RunTestsInSeparateProcesses]
 class EventSubscriberTest extends KernelTestBase {
 
   /**
@@ -57,7 +61,7 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * {@inheritDoc}
    */
-  public function setup(): void {
+  protected function setUp(): void {
     parent::setUp();
     $this->installEntitySchema('file');
 

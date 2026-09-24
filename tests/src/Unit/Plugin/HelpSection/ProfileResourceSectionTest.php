@@ -7,6 +7,7 @@ use Drupal\Core\Utility\LinkGeneratorInterface;
 use Drupal\caw_profile\Plugin\HelpSection\ProfileConnectSection;
 use Drupal\caw_profile\Plugin\HelpSection\ProfileResourceSection;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Class ProfileConnectSectionTest
@@ -14,12 +15,13 @@ use Drupal\Tests\UnitTestCase;
  * @group caw_profile
  * @coversDefaultClass \Drupal\caw_profile\Plugin\HelpSection\ProfileResourceSection
  */
+#[Group('stanford_profile')]
 class ProfileResourceSectionTest extends UnitTestCase {
 
   /**
    * {@inheritDoc}
    */
-  public function setup(): void {
+  protected function setUp(): void {
     parent::setUp();
     $container = new ContainerBuilder();
     $container->set('string_translation', $this->getStringTranslationStub());

@@ -1,5 +1,11 @@
 adding:
   display:
+    cards:
+      display_options:
+        arguments:
+          term_node_taxonomy_name_depth:
+            summary_options:
+              count: 1
     list_page:
       display_options:
         arguments:
@@ -12,8 +18,8 @@ removing:
       display_options:
         arguments:
           term_node_taxonomy_name_depth:
-            vocabularies:
-              caw_event_category: caw_event_category
+            summary_options:
+              count: '1'
     list_page:
       display_options:
         arguments:

@@ -1,0 +1,24 @@
+{% if node.su_event_series_type|length %}
+  {% set event_type %}
+    <div>
+      {% for series_type in node.su_event_series_type %}
+        {% set term_path = path('entity.taxonomy_term.canonical', {'taxonomy_term': series_type.entity.id}) %}
+        <a href="{{ term_path }}">{{ series_type.entity.label }}</a>
+      {% endfor %}
+    </div>
+  {% endset %}
+{% endif %}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:event_list", {
+    header_tag: "h3",
+    url: url,
+    headline: node.title.value,
+    event_type: event_type,
+    subheadline: node.su_event_series_subheadline.value,
+    dek: node.su_event_series_dek.value,
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
+

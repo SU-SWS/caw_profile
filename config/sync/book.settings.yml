@@ -2,6 +2,9 @@ _core:
   default_config_hash: i-_2TVi6FUEAqBgNRJkt6aaYmiw1k_LTrXzJS6wlZ4U
 allowed_types:
   -
+    content_type: stanford_page
+    child_type: stanford_page
+  -
     content_type: stanford_policy
     child_type: stanford_policy
 book_sort: weight

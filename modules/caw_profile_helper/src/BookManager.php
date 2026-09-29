@@ -2,8 +2,8 @@
 
 namespace Drupal\caw_profile_helper;
 
+use Drupal\book\BookInterface;
 use Drupal\book\BookManager as Manager;
-use Drupal\node\NodeInterface;
 
 /**
  * Class BookManager.
@@ -44,13 +44,13 @@ class BookManager extends Manager {
 
     // Ensure the request stack gave us the node entity and that the current
     // node exists in a book.
-    if ($node && $node instanceof NodeInterface && !empty($node->book['bid'])) {
+    if ($node instanceof BookInterface && !empty($node->getBook()['bid'])) {
       if ($return_current_page) {
         return $node;
       }
 
       return \Drupal::entityTypeManager()->getStorage('node')
-        ->load($node->book['bid']);
+        ->load($node->getBook()['bid']);
     }
   }
 
@@ -59,9 +59,9 @@ class BookManager extends Manager {
    *
    * Override Core's book method to display the entire book tree.
    */
-  public function bookTreeAllData(int $bid, ?array $link = NULL, ?int $max_depth = NULL, ?int $min_depth = NULL): array {
+  public function bookTreeAllData(int $bid, ?array $link = NULL, ?int $max_depth = NULL, ?int $min_depth = NULL, bool $expanded = FALSE): array {
     $this->loadAllData = TRUE;
-    $data = parent::bookTreeAllData($bid, $link, $max_depth, $min_depth);
+    $data = parent::bookTreeAllData($bid, $link, $max_depth, $min_depth, $expanded);
     $this->loadAllData = FALSE;
     return $data;
   }

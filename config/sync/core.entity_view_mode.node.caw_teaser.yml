@@ -1,0 +1,11 @@
+uuid: fc698a7a-6aa0-4336-9121-f59d73b2a5a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.caw_teaser
+label: 'CAW Teaser'
+description: null
+targetEntityType: node
+cache: true

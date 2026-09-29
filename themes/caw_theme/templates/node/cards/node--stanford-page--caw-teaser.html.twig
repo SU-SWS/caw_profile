@@ -1,0 +1,10 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("caw_theme:basic_page_list", {
+    title: node.title.value,
+    url: url,
+    description: node.su_page_description.value,
+    image: content.su_page_image
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>

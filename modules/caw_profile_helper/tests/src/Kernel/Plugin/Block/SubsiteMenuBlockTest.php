@@ -54,7 +54,8 @@ class SubsiteMenuBlockTest extends CawProfileHelperKernelTestBase {
     $child_page->save();
 
     $route_match = $this->createMock(RouteMatchInterface::class);
-    $route_match->method('getParameter')->willReturn($child_page);
+    $route_match->method('getParameter')
+      ->willReturn(Node::load($child_page->id()));
 
     $parameter_bag = new ParameterBag();
     $route_match->method('getRawParameters')->willReturn($parameter_bag);

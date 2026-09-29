@@ -1,0 +1,25 @@
+@import 'decanter/core/src/scss/decanter-no-markup';
+
+[data-component-id="caw_theme:basic_page_list"] {
+  border-bottom: 1px solid #d2d3d4;
+  padding: 2em 0;
+  display: flex;
+  gap: 40px;
+
+  a {
+    color: $su-color-digital-red;
+
+    &:hover, &:focus {
+      color: $su-color-black
+    }
+  }
+
+  picture, img {
+    display: none;
+    max-width: 250px;
+
+    @include grid-media-min('lg') {
+      display: block;
+    }
+  }
+}

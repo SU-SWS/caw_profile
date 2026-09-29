@@ -15,6 +15,11 @@
   }
 
   picture, img {
+    display: none;
     max-width: 250px;
+
+    @include grid-media-min('lg') {
+      display: block;
+    }
   }
 }

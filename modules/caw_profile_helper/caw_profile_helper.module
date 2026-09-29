@@ -41,8 +41,8 @@ function caw_profile_helper_paragraph_access(ParagraphInterface $entity, $operat
     $parent = $entity->getParentEntity();
     $parentField = $entity->get('parent_field_name')->getString();
 
-    $children = array_map(fn($item) => $item->entity, iterator_to_array($parent->get($parentField)
-      ->getIterator()));
+    $children = iterator_to_array($parent->get($parentField)->getIterator());
+    $children = array_filter(array_map(fn($item) => $item->entity, $children));
     $children = array_filter($children, fn(ParagraphInterface $child) => $child->getBehaviorSetting('layout_paragraphs', 'parent_uuid') == $layoutUuid && $child->isPublished());
     return AccessResult::forbiddenIf(!$children, 'No published children in the layout.')
       ->addCacheableDependency($editAccess);

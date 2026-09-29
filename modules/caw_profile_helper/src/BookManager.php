@@ -2,8 +2,8 @@
 
 namespace Drupal\caw_profile_helper;
 
+use Drupal\book\BookInterface;
 use Drupal\book\BookManager as Manager;
-use Drupal\node\NodeInterface;
 
 /**
  * Class BookManager.
@@ -44,13 +44,13 @@ class BookManager extends Manager {
 
     // Ensure the request stack gave us the node entity and that the current
     // node exists in a book.
-    if ($node && $node instanceof NodeInterface && !empty($node->book['bid'])) {
+    if ($node instanceof BookInterface && !empty($node->getBook()['bid'])) {
       if ($return_current_page) {
         return $node;
       }
 
       return \Drupal::entityTypeManager()->getStorage('node')
-        ->load($node->book['bid']);
+        ->load($node->getBook()['bid']);
     }
   }
 

@@ -3,10 +3,11 @@
 namespace Drupal\Tests\caw_profile_helper\Kernel\Config;
 
 use Drupal\book\Access\BookNodeOutlineAccessCheck;
+use Drupal\book\Entity\Node\Book;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\node\NodeInterface;
 use Drupal\Tests\caw_profile_helper\Kernel\CawProfileHelperKernelTestBase;
+use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
  * Class BookConfigOverridderTest.
@@ -44,8 +45,8 @@ class BookConfigOverridderTest extends CawProfileHelperKernelTestBase {
    */
   public function testSitenameOutsideSubsite() {
 
-    $node = $this->createMock(NodeInterface::class);
-    $node->book = ['bid' => 99999];
+    $node = $this->createMock(Book::class);
+    $node->method('getBook')->willReturn(['bid' => 99999]);
     $route_match = $this->createMock(RouteMatchInterface::class);
     $route_match->method('getParameter')->willReturn($node);
     \Drupal::getContainer()->set('current_route_match', $route_match);
@@ -57,10 +58,11 @@ class BookConfigOverridderTest extends CawProfileHelperKernelTestBase {
    * On an node page in a subsite, the sitename changes.
    */
   public function testSiteNameWithinSubsite() {
-    $node = $this->createMock(NodeInterface::class);
-    $node->book = ['bid' => $this->subsite->id()];
+    $node = $this->createMock(Book::class);
+    $node->method('getBook')->willReturn(['bid' => $this->subsite->id()]);
     $route_match = $this->createMock(RouteMatchInterface::class);
     $route_match->method('getParameter')->willReturn($node);
+    $route_match->method('getRawParameters')->willReturn(new ParameterBag());
     \Drupal::getContainer()->set('current_route_match', $route_match);
     $this->assertEquals($this->subsite->label(), \Drupal::config('system.site')
       ->get('name'));

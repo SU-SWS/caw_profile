@@ -54,6 +54,12 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
     $anonymous_role->save();
 
     NodeType::create(['type' => 'page'])->save();
+    \Drupal::configFactory()
+      ->getEditable('book.settings')
+      ->set('allowed_types', [
+        ['content_type' => 'page', 'child_type' => 'page'],
+      ])
+      ->save();
     $this->subsite = Node::create([
       'type' => 'page',
       'title' => 'Book Name',
@@ -69,11 +75,6 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
       'weight' => 0,
     ];
     $this->subsite->save();
-
-    \Drupal::configFactory()
-      ->getEditable('book.settings')
-      ->set('allowed_types', ['page'])
-      ->save();
   }
 
 }

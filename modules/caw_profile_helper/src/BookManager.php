@@ -59,9 +59,9 @@ class BookManager extends Manager {
    *
    * Override Core's book method to display the entire book tree.
    */
-  public function bookTreeAllData(int $bid, ?array $link = NULL, ?int $max_depth = NULL, ?int $min_depth = NULL): array {
+  public function bookTreeAllData(int $bid, ?array $link = NULL, ?int $max_depth = NULL, ?int $min_depth = NULL, bool $expanded = FALSE): array {
     $this->loadAllData = TRUE;
-    $data = parent::bookTreeAllData($bid, $link, $max_depth, $min_depth);
+    $data = parent::bookTreeAllData($bid, $link, $max_depth, $min_depth, $expanded);
     $this->loadAllData = FALSE;
     return $data;
   }

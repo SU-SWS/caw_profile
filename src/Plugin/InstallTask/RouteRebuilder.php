@@ -6,6 +6,7 @@ use Drupal\caw_profile\Attribute\InstallTask;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\caw_profile\InstallTaskBase;
+use Drupal\node\NodeAccessRebuild;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

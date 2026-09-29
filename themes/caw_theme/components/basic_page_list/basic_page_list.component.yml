@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Basic Page List
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: title
+      # @todo Add examples here.
+      examples: []
+    url:
+      type: string
+      title: url
+      # @todo Add examples here.
+      examples: []
+    description:
+      type: string
+      title: description
+      # @todo Add examples here.
+      examples: []
+slots:
+  image:
+    title: image

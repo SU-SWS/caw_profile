@@ -1,0 +1,9 @@
+<div {{ attributes }}>
+  <div>
+    <h3><a href="{{ url }}">{{ title }}</a></h3>
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
+  </div>
+  {% block image %}{{ image }}{% endblock %}
+</div>

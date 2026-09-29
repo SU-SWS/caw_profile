@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.caw_teaser
     - field.storage.node.su_event_series_dek
     - field.storage.node.su_event_series_subheadline
     - field.storage.node.su_event_series_type
@@ -14,7 +15,6 @@ dependencies:
     - node
     - stanford_fields
     - taxonomy
-    - ui_patterns_views
     - user
     - views_infinite_scroll
     - views_taxonomy_term_name_depth
@@ -675,61 +675,10 @@ display:
       style:
         type: default
       row:
-        type: ui_patterns
+        type: 'entity:node'
         options:
-          hide_empty: true
-          default_field_elements: false
-          inline:
-            su_event_series_type: '0'
-            title: '0'
-            su_event_series_subheadline: '0'
-            su_event_series_dek: '0'
-            edit_node: '0'
-            view_node: '0'
-          separator: ''
-          pattern: events_list
-          pattern_mapping:
-            'views_row:su_event_series_type':
-              plugin: views_row
-              source: su_event_series_type
-              destination: event_type
-              weight: 0
-            'views_row:edit_node':
-              plugin: views_row
-              source: edit_node
-              destination: edit
-              weight: 1
-            'views_row:view_node':
-              plugin: views_row
-              source: view_node
-              destination: url
-              weight: 2
-            'views_row:title':
-              plugin: views_row
-              source: title
-              destination: headline
-              weight: 3
-            'views_row:su_event_series_subheadline':
-              plugin: views_row
-              source: su_event_series_subheadline
-              destination: subheadline
-              weight: 4
-            'views_row:su_event_series_dek':
-              plugin: views_row
-              source: su_event_series_dek
-              destination: dek
-              weight: 5
-          variants:
-            media: default
-            lockup: a
-            hero: default
-            brandbar: default
-            link: default
-            button: default
-            date-stacked: default
-            cta: default
-            alert: default
-            card: default
+          relationship: none
+          view_mode: caw_teaser
       query:
         type: views_query
         options:

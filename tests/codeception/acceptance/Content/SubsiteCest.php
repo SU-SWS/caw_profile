@@ -29,8 +29,19 @@ class SubsiteCest {
     $subsite = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
-      'book' => ['bid' => 'new'],
     ]);
+    // The book module no longer fills in the book link when creating a node
+    // with `bid => new`. Token module still reads the book nid during save, so
+    // add the saved node to its own book with a complete book link.
+    $subsite->book = [
+      'nid' => $subsite->id(),
+      'bid' => $subsite->id(),
+      'pid' => 0,
+      'original_bid' => 0,
+      'has_children' => 0,
+      'weight' => 0,
+    ];
+    $subsite->save();
 
     $first_subsite_page = $this->faker->words(3, true);
     $second_subsite_page = $this->faker->words(3, true);

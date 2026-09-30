@@ -6,6 +6,7 @@ adding:
       - field.field.node.stanford_page.caw_page_resource_type
   hidden:
     book_navigation: true
+    book_navigation_without_tree: true
     caw_page_resource_category: true
     caw_page_resource_role: true
     caw_page_resource_type: true

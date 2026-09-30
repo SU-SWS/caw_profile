@@ -67,4 +67,86 @@ class CawListsCest {
     }
   }
 
+  /**
+   * @param \FunctionalTester $I
+   *
+   * @return void
+   */
+  public function testCawEventSeries(FunctionalTester $I) {
+    $comp1 = $I->createEntity([
+      'vid' => 'caw_event_series_competencies',
+      'name' => $this->faker->uuid(),
+    ], 'taxonomy_term');
+    $comp2 = $I->createEntity([
+      'vid' => 'caw_event_series_competencies',
+      'name' => $this->faker->uuid(),
+    ], 'taxonomy_term');
+    $format1 = $I->createEntity([
+      'vid' => 'caw_event_series_format',
+      'name' => $this->faker->uuid(),
+    ], 'taxonomy_term');
+    $format2 = $I->createEntity([
+      'vid' => 'caw_event_series_format',
+      'name' => $this->faker->uuid(),
+    ], 'taxonomy_term');
+
+    $event1 = $I->createEntity([
+      'type' => 'stanford_event_series',
+      'title' => $this->faker->text(30),
+      'caw_event_series_competencies' => $comp1->id(),
+      'caw_event_series_format' => $format1->id(),
+    ]);
+    $event2 = $I->createEntity([
+      'type' => 'stanford_event_series',
+      'title' => $this->faker->text(30),
+      'caw_event_series_competencies' => $comp2->id(),
+      'caw_event_series_format' => $format2->id(),
+    ]);
+
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_view' => [
+        'target_id' => 'caw_event_series',
+        'display_id' => 'event_series',
+        'arguments' => '',
+        'items_to_display' => NULL,
+      ],
+    ], 'paragraph');
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+    $I->logInWithRole('authenticated');
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($event1->label(), 'h3');
+    $I->canSee($event2->label(), 'h3');
+    $I->canSeeElement('//h3[contains(., "' . $event2->label() . '")]');
+
+    $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
+    $I->clickWithLeftButton('//li[contains(text(), "' . $comp1->label() . '")]');
+    $I->waitForElementNotVisible('//h3[contains(., "' . $event2->label() . '")]');
+
+    $I->canSee($event1->label(), 'h3');
+
+    $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
+    $I->clickWithLeftButton('//li[contains(text(), "' . $comp1->label() . '")]');
+    $I->waitForText($event2->label());
+    $I->canSee($event1->label(), 'h3');
+
+    $I->clickWithLeftButton('//div[contains(text(), "Format")]/following-sibling::button');
+    $I->clickWithLeftButton('//li[contains(text(), "' . $format2->label() . '")]');
+    $I->waitForElementNotVisible('//h3[contains(., "' . $event1->label() . '")]');
+    $I->canSee($event2->label(), 'h3');
+
+    $I->click('Reset');
+    $I->canSee($event1->label(), 'h3');
+    $I->canSee($event2->label(), 'h3');
+    $I->canSeeInCurrentUrl($node->toUrl()->toString());
+  }
+
 }

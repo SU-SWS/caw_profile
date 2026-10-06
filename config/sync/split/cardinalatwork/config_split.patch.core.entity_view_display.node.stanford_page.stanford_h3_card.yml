@@ -1,6 +1,7 @@
 adding:
   hidden:
     book_navigation: true
+    book_navigation_without_tree: true
     caw_page_resource_category: true
     caw_page_resource_role: true
     caw_page_resource_type: true

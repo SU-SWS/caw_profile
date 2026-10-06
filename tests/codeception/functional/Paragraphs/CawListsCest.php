@@ -128,18 +128,21 @@ class CawListsCest {
     $I->canSeeElement('//h3[contains(., "' . $event2->label() . '")]');
 
     $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
-    $I->clickWithLeftButton('//li[contains(text(), "' . $comp1->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "' . $comp1->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
     $I->waitForElementNotVisible('//h3[contains(., "' . $event2->label() . '")]');
 
     $I->canSee($event1->label(), 'h3');
 
     $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
-    $I->clickWithLeftButton('//li[contains(text(), "' . $comp1->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "' . $comp1->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "Competencies")]/following-sibling::button');
     $I->waitForText($event2->label());
     $I->canSee($event1->label(), 'h3');
 
     $I->clickWithLeftButton('//div[contains(text(), "Format")]/following-sibling::button');
-    $I->clickWithLeftButton('//li[contains(text(), "' . $format2->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "' . $format2->label() . '")]');
+    $I->clickWithLeftButton('//div[contains(text(), "Format")]/following-sibling::button');
     $I->waitForElementNotVisible('//h3[contains(., "' . $event1->label() . '")]');
     $I->canSee($event2->label(), 'h3');
 

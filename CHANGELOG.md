@@ -1,5 +1,34 @@
 # Cardinal at Work Profile
 
+12.0.0
+--------------------------------------------------------------------------------
+_Release Date: 2026-10-21_
+
+- Updated editoria11y settings (#1121)
+- Add data-nosnippet to views and teaser field (#1123)
+- Split AV items into separate pages (#1122)
+- Updated book configuration settings (#1120)
+- Adjust SDR style to ensure minimum 800px size
+- Updated mathjax to v4
+- Enable unpublished pages in linkit autocomplete
+- Reset filter should stay on the current page (#187)
+- Update entity usage settings for contrib supported feature (#1119)
+- Fix page list & subsites (#186)
+- Updated book, graphql, graphql_compose, Imagick, Editoria11y, and extlink (#1117)
+- Prevent access to empty layout paragraphs
+- Adjust heading on benefit detail page
+- Refactor deprecated code and functions to prepare for D12 (#1116)
+- Update to Drupal 11.4
+- Fix and enhance issues for 12.x release (#185)
+- Change opportunity cards to squares
+- Remove media_content_filters permissions for site editor (#1113)
+- Add publication_filters permissions for site_manager role (#1112)
+- Remove event schedule view that is not used (#1111)
+- Fixed event series cards
+- Fix local footer content sizes and support minimal branded theme
+- Fixed card displays for news and A/V (#1107)
+- Reduce markup for basic page teaser cards around the image
+
 11.1.0
 --------------------------------------------------------------------------------
 _Release Date: 2026-02-24_

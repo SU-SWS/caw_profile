@@ -4,6 +4,7 @@
 --------------------------------------------------------------------------------
 _Release Date: 2026-10-21_
 
+- Fixed CAW book manager override being replaced by stanford_fields; now extends the stanford_fields book manager via a service provider
 - Updated editoria11y settings (#1121)
 - Add data-nosnippet to views and teaser field (#1123)
 - Split AV items into separate pages (#1122)

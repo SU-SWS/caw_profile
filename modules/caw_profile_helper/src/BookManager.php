@@ -3,14 +3,18 @@
 namespace Drupal\caw_profile_helper;
 
 use Drupal\book\BookInterface;
-use Drupal\book\BookManager as Manager;
+use Drupal\stanford_fields\Service\StanfordFieldsBookManager;
 
 /**
- * Class BookManager.
+ * Book manager service override.
  *
- * @package Drupal\caw_profile_helper
+ * Extends the stanford_fields book manager so that its behavior, and any new
+ * or changed methods in the book module, are inherited. The parent constructor
+ * is never overridden so changes to its arguments don't break this service.
+ *
+ * @see \Drupal\caw_profile_helper\CawProfileHelperServiceProvider::alter()
  */
-class BookManager extends Manager {
+class BookManager extends StanfordFieldsBookManager {
 
   /**
    * Boolean flag when loading all tree data.

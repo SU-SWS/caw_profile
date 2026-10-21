@@ -7,6 +7,7 @@ package: 'Cardinal at Work'
 dependencies:
   - drupal:book
   - drupal:node
+  - stanford_fields:stanford_fields
   - stanford_profile_helper:stanford_layout_paragraphs
 
 components:

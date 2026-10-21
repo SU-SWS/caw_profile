@@ -25,6 +25,7 @@ class BookManagerTest extends CawProfileHelperKernelTestBase {
 
     /** @var \Drupal\caw_profile_helper\BookManager $book_manager */
     $book_manager = \Drupal::service('book.manager');
+    $this->assertInstanceOf(BookManager::class, $book_manager);
 
     $tree_data = $book_manager->bookTreeAllData($this->subsite->id());
     $this->assertCount(1, $tree_data);

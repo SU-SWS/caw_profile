@@ -91,9 +91,15 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     $current_request_query = $this->currentRequest->query;
     $mail_hash = $current_request_query->get('mail', FALSE);
     $session = $this->currentRequest->getSession();
+    // A session can't be started once the response headers are sent, such as
+    // when nodes are loaded during kernel termination.
+    if (!$session || (!$session->isStarted() && headers_sent())) {
+      return FALSE;
+    }
+
     // If the user has already started the session for the current node, they
     // should have access to it, until they submit the form.
-    if (!$node->isNew() && $session && $session->get('node_edit_link') == $node->id()) {
+    if (!$node->isNew() && $session->get('node_edit_link') == $node->id()) {
       return TRUE;
     }
 

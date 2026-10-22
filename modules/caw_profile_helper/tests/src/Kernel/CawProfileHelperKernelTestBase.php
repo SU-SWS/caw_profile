@@ -31,6 +31,10 @@ abstract class CawProfileHelperKernelTestBase extends KernelTestBase {
     'block',
     'node',
     'user',
+    'field',
+    // Service providers run in this order, so stanford_fields must be before
+    // caw_profile_helper for the book manager override to match the site.
+    'stanford_fields',
     'caw_profile_helper',
   ];
 

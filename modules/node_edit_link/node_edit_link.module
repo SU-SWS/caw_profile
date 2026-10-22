@@ -15,10 +15,17 @@ use Drupal\Core\Access\AccessResult;
  * Implements hook_ENTITY_TYPE_access().
  */
 function node_edit_link_node_access(NodeInterface $node, $operation, AccountInterface $account) {
-  return AccessResult::allowedIf(
-    $operation == 'update' &&
-    \Drupal::service('node_edit_link.csrf')->checkAccess($node)
-  )->addCacheContexts(['url.query_args:edit-token']);
+  // Edit links only grant update access to the user making the current request.
+  if ($operation != 'update' || $account->id() != \Drupal::currentUser()->id()) {
+    return AccessResult::neutral();
+  }
+  return AccessResult::allowedIf(\Drupal::service('node_edit_link.csrf')->checkAccess($node))
+    ->addCacheContexts([
+      'route',
+      'session',
+      'url.query_args:edit-token',
+      'url.query_args:mail',
+    ]);
 }
 
 /**

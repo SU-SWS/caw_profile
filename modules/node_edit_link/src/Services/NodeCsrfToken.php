@@ -2,9 +2,10 @@
 
 namespace Drupal\node_edit_link\Services;
 
+use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\EmailValidatorInterface;
-use Drupal\Core\Access\CsrfTokenGenerator;
-use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\KeyValueStore\KeyValueExpirableFactoryInterface;
+use Drupal\Core\KeyValueStore\KeyValueStoreExpirableInterface;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -12,6 +13,8 @@ use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
 use Drupal\node_edit_link\NodeCsrfTokenInterface;
+use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -30,25 +33,18 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   protected $sessionManager;
 
   /**
-   * Current request stack service.
+   * Request stack service.
    *
-   * @var \Symfony\Component\HttpFoundation\Request|null
+   * @var \Symfony\Component\HttpFoundation\RequestStack
    */
-  protected $currentRequest;
+  protected $requestStack;
 
   /**
-   * CSRF Token service.
+   * Expirable key value storage for the edit tokens.
    *
-   * @var \Drupal\Core\Access\CsrfTokenGenerator
+   * @var \Drupal\Core\KeyValueStore\KeyValueStoreExpirableInterface
    */
-  protected $csrfToken;
-
-  /**
-   * Default cache service.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  protected $cache;
+  protected KeyValueStoreExpirableInterface $tokenStorage;
 
   /**
    * Mail manager service.
@@ -74,11 +70,10 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   /**
    * {@inheritDoc}
    */
-  public function __construct(SessionManagerInterface $session_manager, RequestStack $request_stack, CsrfTokenGenerator $csrf_token, CacheBackendInterface $cache, MailManagerInterface $mail_manager, AccountProxyInterface $current_user, EmailValidatorInterface $mail_validator) {
+  public function __construct(SessionManagerInterface $session_manager, RequestStack $request_stack, KeyValueExpirableFactoryInterface $key_value_expirable, MailManagerInterface $mail_manager, AccountProxyInterface $current_user, EmailValidatorInterface $mail_validator) {
     $this->sessionManager = $session_manager;
-    $this->currentRequest = $request_stack->getCurrentRequest();
-    $this->csrfToken = $csrf_token;
-    $this->cache = $cache;
+    $this->requestStack = $request_stack;
+    $this->tokenStorage = $key_value_expirable->get('node_edit_link');
     $this->mailManager = $mail_manager;
     $this->currentUser = $current_user;
     $this->emailValidator = $mail_validator;
@@ -88,12 +83,23 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    * {@inheritDoc}
    */
   public function checkAccess(NodeInterface $node): bool {
-    $current_request_query = $this->currentRequest->query;
-    $mail_hash = $current_request_query->get('mail', FALSE);
-    $session = $this->currentRequest->getSession();
+    $request = $this->requestStack->getCurrentRequest();
+    // Edit links only ever grant access to the node's edit form, never to any
+    // other route that checks for update access, such as REST.
+    if ($node->isNew() || !$request || !self::isNodeEditRoute($request, $node->id()) || !$request->hasSession()) {
+      return FALSE;
+    }
+
+    $session = $request->getSession();
+    // A session can't be started once the response headers are sent, such as
+    // when nodes are loaded during kernel termination.
+    if (!$session->isStarted() && headers_sent()) {
+      return FALSE;
+    }
+
     // If the user has already started the session for the current node, they
     // should have access to it, until they submit the form.
-    if (!$node->isNew() && $session && $session->get('node_edit_link') == $node->id()) {
+    if ($session->get('node_edit_link') == $node->id()) {
       return TRUE;
     }
 
@@ -102,23 +108,47 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
     // to be allowed access to the node. If all is satisfied, initiate a session
     // for the user. This is necessary so that they will be able to successfully
     // submit the node form.
-    if ($mail_hash && $cache = $this->cache->get($this->getCid($node, $mail_hash))) {
-      if ($cache->data['csrf'] == $current_request_query->get('edit-token')) {
-        $this->sessionManager->start();
-        $this->currentRequest->getSession()->set('node_edit_link', $node->id());
-        return TRUE;
-      }
+    $mail_hash = $request->query->get('mail');
+    $token = $request->query->get('edit-token');
+    if (!is_string($mail_hash) || !is_string($token) || $mail_hash === '' || $token === '') {
+      return FALSE;
+    }
+
+    $stored_token = $this->tokenStorage->get($this->getCid($node, $mail_hash));
+    if (is_string($stored_token) && hash_equals($stored_token, $token)) {
+      $this->sessionManager->start();
+      $session->set('node_edit_link', $node->id());
+      return TRUE;
     }
     return FALSE;
+  }
+
+  /**
+   * Check if the request is for the given node's edit form.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   Request object.
+   * @param int|string $nid
+   *   Node ID.
+   *
+   * @return bool
+   *   If the request is for the node edit form.
+   */
+  public static function isNodeEditRoute(Request $request, int|string $nid): bool {
+    if ($request->attributes->get('_route') !== 'entity.node.edit_form') {
+      return FALSE;
+    }
+    $raw_variables = $request->attributes->get('_raw_variables');
+    return $raw_variables instanceof ParameterBag && (string) $raw_variables->get('node') === (string) $nid;
   }
 
   /**
    * {@inheritDoc}
    */
   public function createCsrfToken(NodeInterface $node, string $mail, int $expires = 604800): string {
-    $token = $this->csrfToken->get(time() . $mail);
-    // Create a token and save it in cache for reference later.
-    $this->cache->set($this->getCid($node, $mail), ['csrf' => $token], time() + $expires, ['node_edit_link:' . $node->id()]);
+    $token = Crypt::randomBytesBase64(32);
+    // Save the token in the expirable storage for reference later.
+    $this->tokenStorage->setWithExpire($this->getCid($node, $mail), $token, $expires);
     return $token;
   }
 
@@ -126,7 +156,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    * {@inheritDoc}
    */
   public function clearCsrfToken(NodeInterface $node, string $mail): void {
-    $this->cache->delete($this->getCid($node, $mail));
+    $this->tokenStorage->delete($this->getCid($node, $mail));
   }
 
   /**
@@ -159,7 +189,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
   }
 
   /**
-   * Get a cache id string for the given node and email address.
+   * Get a storage key for the given node and email address.
    *
    * @param \Drupal\node\NodeInterface $node
    *   Node entity object.
@@ -167,7 +197,7 @@ class NodeCsrfToken implements NodeCsrfTokenInterface {
    *   The email address or the hashed email address.
    *
    * @return string
-   *   Cache ID string.
+   *   Storage key string.
    */
   protected function getCid(NodeInterface $node, string $mail): string {
     $cid = 'node_edit_link:' . $node->id();

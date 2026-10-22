@@ -1,7 +1,7 @@
 services:
   node_edit_link.csrf:
     class: Drupal\node_edit_link\Services\NodeCsrfToken
-    arguments: [ '@session_manager', '@request_stack', '@csrf_token', '@cache.default', '@plugin.manager.mail', '@current_user', '@email.validator' ]
+    arguments: [ '@session_manager', '@request_stack', '@keyvalue.expirable', '@plugin.manager.mail', '@current_user', '@email.validator' ]
   node_edit_link.route_subscriber:
     class: Drupal\node_edit_link\Routing\RouteSubscriber
     tags:

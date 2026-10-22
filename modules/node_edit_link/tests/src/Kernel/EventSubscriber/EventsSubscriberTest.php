@@ -4,6 +4,7 @@ namespace Drupal\Tests\node_edit_link\Kernel\EventSubscriber;
 
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\node_edit_link\EventSubscriber\EventsSubscriber;
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -44,6 +45,8 @@ class EventsSubscriberTest extends KernelTestBase {
 
     $request = Request::create('http://example.com/node/5/edit');
     $request->setSession($session);
+    $request->attributes->set('_route', 'entity.node.edit_form');
+    $request->attributes->set('_raw_variables', new ParameterBag(['node' => 5]));
 
     $event = new RequestEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST);
 
@@ -52,8 +55,11 @@ class EventsSubscriberTest extends KernelTestBase {
     $subscriber->onKernelRequest($event);
     $this->assertEquals(5, $this->session['node_edit_link']);
 
-    $request = Request::create('http://example.com/node/25/edit');
+    // The path alone, such as in the query string, doesn't keep the session.
+    $request = Request::create('http://example.com/node/5/layout?foo=/node/5/edit');
     $request->setSession($session);
+    $request->attributes->set('_route', 'layout_builder.overrides.node.view');
+    $request->attributes->set('_raw_variables', new ParameterBag(['node' => 5]));
 
     $event = new RequestEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST);
     $subscriber->onKernelRequest($event);

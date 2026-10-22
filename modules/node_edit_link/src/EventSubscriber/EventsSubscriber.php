@@ -2,6 +2,7 @@
 
 namespace Drupal\node_edit_link\EventSubscriber;
 
+use Drupal\node_edit_link\Services\NodeCsrfToken;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -30,14 +31,10 @@ class EventsSubscriber implements EventSubscriberInterface {
     if ($session = $event->getRequest()->getSession()) {
       $node_edit_link = $session->get('node_edit_link');
 
-      if ($node_edit_link) {
-        $uri = $event->getRequest()->getRequestUri();
-
-        // If the user had ventured off the node edit form, clear out the
-        // session that they started when loading the form.
-        if (strpos($uri, "/node/$node_edit_link/edit") === FALSE) {
-          $session->clear();
-        }
+      // If the user had ventured off the node edit form, clear out the
+      // session that they started when loading the form.
+      if ($node_edit_link && !NodeCsrfToken::isNodeEditRoute($event->getRequest(), $node_edit_link)) {
+        $session->clear();
       }
     }
   }

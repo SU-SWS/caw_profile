@@ -500,6 +500,31 @@ class NewsCest {
     $I->canSee('Spotlight', '.su-spotlight-label p');
   }
 
+  /**
+   * News topic term aliases should be prefixed with /community/news.
+   */
+  #[CodeceptionAttribute\Group('pathauto')]
+  public function testTermPathAlias(AcceptanceTester $I) {
+    $parent = $I->createEntity([
+      'vid' => 'stanford_news_topics',
+      'name' => $this->faker->lexify('??????????'),
+    ], 'taxonomy_term');
+    $child = $I->createEntity([
+      'vid' => 'stanford_news_topics',
+      'name' => $this->faker->lexify('??????????'),
+      'parent' => $parent->id(),
+    ], 'taxonomy_term');
+
+    $parent_path = '/community/news/' . $parent->label();
+    $child_path = $parent_path . '/' . $child->label();
+    $I->assertEquals($parent_path, $parent->toUrl()->toString());
+    $I->assertEquals($child_path, $child->toUrl()->toString());
+
+    $I->amOnPage($child_path);
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee($child->label(), 'h1');
+  }
+
   #[CodeceptionAttribute\Group('unpublished-terms')]
   public function testUnpublishedTerms(AcceptanceTester $I) {
     $term = $I->createEntity([

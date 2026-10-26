@@ -1,0 +1,4 @@
+adding:
+  pattern: '/community/news/[term:parents:join-path]/[term:name]'
+removing:
+  pattern: '/news/[term:parents:join-path]/[term:name]'

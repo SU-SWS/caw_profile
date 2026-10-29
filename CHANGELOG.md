@@ -1,5 +1,15 @@
 # Cardinal at Work Profile
 
+12.0.2
+--------------------------------------------------------------------------------
+_Release Date: 2026-10-29_
+
+- Updated contrib config
+- Updated metatag for 403 and 404 pages
+- Update migrate source plugins (#1128)
+- Add consistent descriptions to all taxonomy vocabularies (#1126)
+- Add help text to Audio/Visual content type fields (#1127)
+
 12.0.1
 --------------------------------------------------------------------------------
 _Release Date: 2026-10-26_

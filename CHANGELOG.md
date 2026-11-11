@@ -1,5 +1,15 @@
 # Cardinal at Work Profile
 
+12.0.3
+--------------------------------------------------------------------------------
+_Release Date: 2026-11-11_
+
+- Added test for jsonapi event list that is used in the mini-calendar (#1133)
+- Added github actions for gitleaks scan (#1132)
+- Added exposed filter to events graphql view for filtered lists
+- Use config override for person importer
+- Updated editoria11y config
+
 12.0.2
 --------------------------------------------------------------------------------
 _Release Date: 2026-10-29_
